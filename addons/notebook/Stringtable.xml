@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="IEDD">
+	<Package name="Notebook">
+		<Container name="Notebook Sounds">
+			<Key ID="STR_iedd_notebook_Sound_Page_0">
+				<Original>Page sound 1</Original>
+				<English>Page sound 1</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Page_1">
+				<Original>Page sound 2</Original>
+				<English>Page sound 2</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Page_2">
+				<Original>Page sound 3</Original>
+				<English>Page sound 3</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Page_3">
+				<Original>Page sound 4</Original>
+				<English>Page sound 4</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Page_4">
+				<Original>Page sound 5</Original>
+				<English>Page sound 5</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Side_0">
+				<Original>Sidetab sound 1</Original>
+				<English>Sidetab sound 1</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Side_1">
+				<Original>Sidetab sound 2</Original>
+				<English>Sidetab sound 2</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Side_2">
+				<Original>Sidetab sound 3</Original>
+				<English>Sidetab sound 3</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Side_3">
+				<Original>Sidetab sound 4</Original>
+				<English>Sidetab sound 4</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Open">
+				<Original>Sidetab sound 1</Original>
+				<English>Sidetab sound 1</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Sound_Close">
+				<Original>Sidetab sound 1</Original>
+				<English>Sidetab sound 1</English>
+			</Key>
+		</Container>
+		<Container name="Notebook Action Names">
+			<Key ID="STR_iedd_notebook_Action_Menu">
+				<Original>IEDD Menu</Original>
+				<English>IEDD Menu</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Action_Open">
+				<Original>Open IEDD Notebook</Original>
+				<English>Open IEDD Notebook</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Action_Active">
+				<Original>Activate IED(s)</Original>
+				<English>Activate IED(s)</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Action_Explode">
+				<Original>Explode IED(s)</Original>
+				<English>Explode IED(s)</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Action_Drop">
+				<Original>Drop IEDD Notebook</Original>
+				<English>Drop IEDD Notebook</English>
+			</Key>
+		</Container>
+		<Container name="Notebook Tooltips">
+			<Key ID="STR_iedd_notebook_Previous">
+				<Original>Previous</Original>
+				<English>Previous</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Next">
+				<Original>Next</Original>
+				<English>Next</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Introduction">
+				<Original>Introduction</Original>
+				<English>Introduction</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Contents">
+				<Original>Contents</Original>
+				<English>Contents</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_About">
+				<Original>About IEDs</Original>
+				<English>About IEDs</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_PlasticCanister">
+				<Original>Plastic canister variations</Original>
+				<English>Plastic canister variations</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_FuelCanister">
+				<Original>Fuel canister variations</Original>
+				<English>Fuel canister variations</English>
+			</Key>		
+			<Key ID="STR_iedd_notebook_Cardboard">
+				<Original>Cardboard box variations</Original>
+				<English>Cardboard box variations</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Cinder">
+				<Original>Cinder block variations</Original>
+				<English>Cinder block variations</English>
+			</Key>		
+			<Key ID="STR_iedd_notebook_PlasticBarrel">
+				<Original>Plastic barrel variations</Original>
+				<English>Plastic barrel variations</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_MetalBarrel">
+				<Original>Metal barrel variations</Original>
+				<English>Metal barrel variations</English>
+			</Key>					
+			<Key ID="STR_iedd_notebook_Empty">
+				<Original>(empty)</Original>
+				<English>(empty)</English>
+			</Key>
+			<Key ID="STR_iedd_notebook_Dictionary">
+				<Original>Dictionary</Original>
+				<English>Dictionary</English>
+			</Key>			
+			<Key ID="STR_iedd_notebook_Credits">
+				<Original>Credits</Original>
+				<English>Credits</English>
+			</Key>
+		</Container>
+	</Package>
+</Project>

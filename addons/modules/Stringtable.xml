@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="IEDD">
+	<Package name="ied">
+		<Container name="IEDD Multi Module">
+			<Key ID="STR_iedd_modules_Multi_DisplayName">
+				<Original>IED Area</Original>
+				<English>IED Area</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Ieds_Category">
+				<Original>IEDS</Original>
+				<English>IEDS</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Type_Tooltip">
+				<Original>Spawn this type of IEDs.</Original>
+				<English>Spawn this type of IEDs.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Count">
+				<Original>Number of IEDs</Original>
+				<English>Number of IEDs</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Count_Tooltip">
+				<Original>Amount of IEDs in the area.</Original>
+				<English>Amount of IEDs in the area.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Fake_Category">
+				<Original>FAKE IEDS</Original>
+				<English>FAKE IEDS</English>
+			</Key>			
+			<Key ID="STR_iedd_modules_FakeCount">
+				<Original>Number of IEDs</Original>
+				<English>Number of IEDs</English>
+			</Key>
+			<Key ID="STR_iedd_modules_FakeCount_Tooltip">
+				<Original>Amount of fake IEDs in the area.</Original>
+				<English>Amount of fake IEDs in the area.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Signs_Category">
+				<Original>GROUND SIGNS</Original>
+				<English>GROUND SIGNS</English>
+			</Key>		
+			<Key ID="STR_iedd_modules_Signs">
+				<Original>IED Ground Signs</Original>
+				<English>IED Ground Signs</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Signs_Tooltip">
+				<Original>Spawn ground signs under IEDs.</Original>
+				<English>Spawn ground signs under IEDs.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_ExtraSigns">
+				<Original>IED Extra Ground Signs</Original>
+				<English>IED Extra Ground Signs</English>
+			</Key>
+			<Key ID="STR_iedd_modules_ExtraSigns_Tooltip">
+				<Original>Spawn ground signs on the roads near IEDs.</Original>
+				<English>Spawn ground signs on the roads near IEDs.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_FakeSigns">
+				<Original>Fake IED Ground Signs</Original>
+				<English>Fake IED Ground Signs</English>
+			</Key>
+			<Key ID="STR_iedd_modules_FakeSigns_Tooltip">
+				<Original>Spawn ground signs under fake IEDs.</Original>
+				<English>Spawn ground signs under fake IEDs.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_ExtraCount">
+				<Original>Extra Ground Signs In Area</Original>
+				<English>Extra Ground Signs In Area</English>
+			</Key>
+			<Key ID="STR_iedd_modules_ExtraCount_Tooltip">
+				<Original>Amount of ground signs in the area.</Original>
+				<English>Amount of ground signs in the area.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Dud_Category">
+				<Original>DUDS</Original>
+				<English>DUDS</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Dud">
+				<Original>Chance of dud (%)</Original>
+				<English>Chance of dud (%)</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Dud_Tooltip">
+				<Original>Probability of IED being dud.</Original>
+				<English>Probability of IED being dud.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Blacklist_Category">
+				<Original>BLACKLIST</Original>
+				<English>BLACKLIST</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Blacklist">
+				<Original>Blacklist Area(s)</Original>
+				<English>Blacklist Area(s)</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Blacklist_Tooltip">
+				<Original>Marker(s) where IEDs, fake IEDs and groud signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</Original>
+				<English>Marker(s) where IEDs, fake IEDs and groud signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Color_Tooltip">
+				<Original>Set color of fuel canister.</Original>
+				<English>Set color of fuel canister.</English>
+			</Key>
+		</Container>
+		<Container name="IEDD Zeus Modules">							
+			<Key ID="STR_iedd_modules_Zeus_Place_Ied">
+				<Original>Place IED</Original>
+				<English>Place IED</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Sign">
+				<Original>Ground sign</Original>
+				<English>Ground sign</English>
+			</Key>											
+			<Key ID="STR_iedd_modules_Zeus_Active">
+				<Original>Activate IED</Original>
+				<English>Activate IED</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Explode">
+				<Original>Explode IED</Original>
+				<English>Explode IED</English>
+			</Key>											
+			<Key ID="STR_iedd_modules_Zeus_Type">
+				<Original>IED TYPE</Original>
+				<English>IED TYPE</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Type_Tooltip">
+				<Original>Select type of IED.</Original>
+				<English>Select type of IED.</English>
+			</Key>																			
+
+			<Key ID="STR_iedd_modules_Zeus_Variation">
+				<Original>IED VARIATION</Original>
+				<English>IED VARIATION</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Variation_Tooltip">
+				<Original>Select variation of IED.</Original>
+				<English>Select variation of IED.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Size">
+				<Original>EXPLOSION SIZE</Original>
+				<English>EXPLOSION SIZE</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Size_Tooltip">
+				<Original>Select size of explosion.</Original>
+				<English>Select size of explosion.</English>
+			</Key>
+
+			<Key ID="STR_iedd_modules_Zeus_Dud_Category">
+				<Original>CHANCE OF DUD (%)</Original>
+				<English>CHANCE OF DUD (%)</English>
+			</Key>																																		
+			<Key ID="STR_iedd_modules_Zeus_Sign_Category">
+				<Original>GROUND SIGN TYPE</Original>
+				<English>GROUND SIGN TYPE</English>
+			</Key>	
+			<Key ID="STR_iedd_modules_Zeus_Sign_Category_Tooltip">
+				<Original>Select type of ground sign.</Original>
+				<English>Select type of ground sign.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Garbage_Small">
+				<Original>Garbage (Small)</Original>
+				<English>Garbage (Small)</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Garbage_Large">
+				<Original>Garbage (Large)</Original>
+				<English>Garbage (Large)</English>
+			</Key>			
+			<Key ID="STR_iedd_modules_Garbage_Line">
+				<Original>Garbage (Line)</Original>
+				<English>Garbage (Line)</English>
+			</Key>
+			<Key ID="STR_iedd_modules_RoadDirt_1">
+				<Original>Road Dirt 1</Original>
+				<English>Road Dirt 1</English>
+			</Key>	
+			<Key ID="STR_iedd_modules_RoadDirt_2">
+				<Original>Road Dirt 2</Original>
+				<English>Road Dirt 2</English>
+			</Key>
+			<Key ID="STR_iedd_modules_RoadDirt_3">
+				<Original>Road Dirt 3</Original>
+				<English>Road Dirt 3</English>
+			</Key>
+			<Key ID="STR_iedd_modules_RoadDirt_4">
+				<Original>Road Dirt 4</Original>
+				<English>Road Dirt 4</English>
+			</Key>
+			<Key ID="STR_iedd_modules_RoadDirt_5">
+				<Original>Road Dirt 5</Original>
+				<English>Road Dirt 5</English>
+			</Key>	
+			<Key ID="STR_iedd_modules_RoadDirt_6">
+				<Original>Road Dirt 6</Original>
+				<English>Road Dirt 6</English>
+			</Key>	
+			<Key ID="STR_iedd_modules_RoadDirt_7">
+				<Original>Road Dirt 7</Original>
+				<English>Road Dirt 7</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Crack_1">
+				<Original>Road Crack 1</Original>
+				<English>Road Crack 1</English>
+			</Key>	
+			<Key ID="STR_iedd_modules_Crack_2">
+				<Original>Road Crack 2</Original>
+				<English>Road Crack 2</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Crack_3">
+				<Original>Road Crack 3</Original>
+				<English>Road Crack 3</English>
+			</Key>	
+			<Key ID="STR_iedd_modules_DirtRocks_1">
+				<Original>Dirt Rocks 1</Original>
+				<English>Dirt Rocks 1</English>
+			</Key>
+			<Key ID="STR_iedd_modules_DirtRocks_2">
+				<Original>Dirt Rocks 2</Original>
+				<English>Dirt Rocks 2</English>
+			</Key>							
+		</Container>
+	</Package>
+</Project>

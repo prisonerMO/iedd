@@ -1,0 +1,28 @@
+name = "IEDD Notebook"
+prefix = "iedd"
+author = "PRION - Team"
+mainprefix = "x"
+
+[files]
+include = [
+    "mod.cpp"
+]
+
+[version]
+git_hash = 0
+
+[asc]
+enabled = true
+exclude = [
+    "/initsettings.sqf",
+    "/xeh_prep.sqf",
+]
+
+[hemtt.config]
+preset = "Hemtt"
+
+[hemtt.launch]
+workshop = [
+    "450814997", # CBA_A3
+    "463939057", # ace
+]

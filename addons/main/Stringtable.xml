@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="IEDD">
+	<Package name="Main">
+		<Key ID="STR_iedd_main_Category_Main">
+			<Original>IEDD Notebook</Original>
+			<English>IEDD Notebook</English>
+		</Key>
+		<Key ID="STR_iedd_main_Category_Equipment">
+			<Original>Equipment</Original>
+			<English>Equipment</English>
+		</Key>
+		<Key ID="STR_iedd_main_Category_IEDs">
+			<Original>IEDs</Original>
+			<English>IEDs</English>
+		</Key>
+		<Key ID="STR_iedd_main_Category_Items">
+			<Original>Items</Original>
+			<English>Items</English>
+		</Key>
+		<Key ID="STR_iedd_main_Category_Modules">
+			<Original>Modules</Original>
+			<English>Modules</English>
+		</Key>
+		<Key ID="STR_iedd_main_Category_Markers">
+			<Original>Markers</Original>
+			<English>Markers</English>
+		</Key>
+		<Key ID="STR_iedd_main_Category_GroundWires">
+			<Original>Ground Wires</Original>
+			<English>Ground Wires</English>
+		</Key>
+		<Key ID="STR_iedd_main_Category_SmallWires">
+			<Original>Small Wires</Original>
+			<English>Small Wires</English>
+		</Key>
+		<Key ID="STR_iedd_main_Category_Parts">
+			<Original>IEDD Parts</Original>
+			<English>IEDD Wires</English>
+	    </Key>
+	</Package>
+</Project>

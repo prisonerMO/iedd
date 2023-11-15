@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="IEDD">
+	<Package name="Models">
+		<Key ID="STR_iedd_models_Straight_Red">
+			<Original>Wire Straight (Red)</Original>
+			<English>Wire Straight (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Straight_Yellow">
+			<Original>Wire Straight (Yellow)</Original>
+			<English>Wire Straight (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Straight_Green">
+			<Original>Wire Straight (Green)</Original>
+			<English>Wire Straight (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Straight_Blue">
+			<Original>Wire Straight (Blue)</Original>
+			<English>Wire Straight (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Straight_Black">
+			<Original>Wire Straight (Black)</Original>
+			<English>Wire Straight (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_1_Red">
+			<Original>Ground Wire 1 (Red)</Original>
+			<English>Ground Wire 1 (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_1_Yellow">
+			<Original>Ground Wire 1 (Yellow)</Original>
+			<English>Ground Wire 1 (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_1_Green">
+			<Original>Ground Wire 1 (Green)</Original>
+			<English>Ground Wire 1 (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_1_Blue">
+			<Original>Ground Wire 1 (Blue)</Original>
+			<English>Ground Wire 1 (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_1_Black">
+			<Original>Ground Wire 1 (Black)</Original>
+			<English>Ground Wire 1 (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_2_Red">
+			<Original>Ground Wire 2 (Red)</Original>
+			<English>Ground Wire 2 (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_2_Yellow">
+			<Original>Ground Wire 2 (Yellow)</Original>
+			<English>Ground Wire 2 (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_2_Green">
+			<Original>Ground Wire 2 (Green)</Original>
+			<English>Ground Wire 2 (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_2_Blue">
+			<Original>Ground Wire 2 (Blue)</Original>
+			<English>Ground Wire 2 (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_2_Black">
+			<Original>Ground Wire 2 (Black)</Original>
+			<English>Ground Wire 2 (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_3_Red">
+			<Original>Ground Wire 3 (Red)</Original>
+			<English>Ground Wire 3 (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_3_Yellow">
+			<Original>Ground Wire 3 (Yellow)</Original>
+			<English>Ground Wire 3 (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_3_Green">
+			<Original>Ground Wire 3 (Green)</Original>
+			<English>Ground Wire 3 (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_3_Blue">
+			<Original>Ground Wire 3 (Blue)</Original>
+			<English>Ground Wire 3 (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Thick_3_Black">
+			<Original>Ground Wire 3 (Black)</Original>
+			<English>Ground Wire 3 (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_1_Red">
+			<Original>Ground Wire Twist 1 (Red)</Original>
+			<English>Ground Wire Twist 1 (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_1_Yellow">
+			<Original>Ground Wire Twist 1 (Yellow)</Original>
+			<English>Ground Wire Twist 1 (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_1_Green">
+			<Original>Ground Wire Twist 1 (Green)</Original>
+			<English>Ground Wire Twist 1 (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_1_Blue">
+			<Original>Ground Wire Twist 1 (Blue)</Original>
+			<English>Ground Wire Twist 1 (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_1_Black">
+			<Original>Ground Wire Twist 1 (Black)</Original>
+			<English>Ground Wire Twist 1 (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_2_Red">
+			<Original>Ground Wire Twist 2 (Red)</Original>
+			<English>Ground Wire Twist 2 (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_2_Yellow">
+			<Original>Ground Wire Twist 2 (Yellow)</Original>
+			<English>Ground Wire Twist 2 (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_2_Green">
+			<Original>Ground Wire Twist 2 (Green)</Original>
+			<English>Ground Wire Twist 2 (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_2_Blue">
+			<Original>Ground Wire Twist 2 (Blue)</Original>
+			<English>Ground Wire Twist 2 (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_2_Black">
+			<Original>Ground Wire Twist 2 (Black)</Original>
+			<English>Ground Wire Twist 2 (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_3_Red">
+			<Original>Ground Wire Twist 3 (Red)</Original>
+			<English>Ground Wire Twist 3 (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_3_Yellow">
+			<Original>Ground Wire Twist 31 (Yellow)</Original>
+			<English>Ground Wire Twist 3 (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_3_Green">
+			<Original>Ground Wire Twist 3 (Green)</Original>
+			<English>Ground Wire Twist 3 (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_3_Blue">
+			<Original>Ground Wire Twist 3 (Blue)</Original>
+			<English>Ground Wire Twist 3 (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_3_Black">
+			<Original>Ground Wire Twist 3 (Black)</Original>
+			<English>Ground Wire Twist 3 (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_4_Red">
+			<Original>Ground Wire Twist 4 (Red)</Original>
+			<English>Ground Wire Twist 4 (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_4_Yellow">
+			<Original>Ground Wire Twist 4 (Yellow)</Original>
+			<English>Ground Wire Twist 4 (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_4_Green">
+			<Original>Ground Wire Twist 4 (Green)</Original>
+			<English>Ground Wire Twist 4 (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_4_Blue">
+			<Original>Ground Wire Twist 4 (Blue)</Original>
+			<English>Ground Wire Twist 4 (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Twist_4_Black">
+			<Original>Ground Wire Twist 4 (Black)</Original>
+			<English>Ground Wire Twist 4 (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Small_Red">
+			<Original>Wire Small (Red)</Original>
+			<English>Wire Small (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Small_Yellow">
+			<Original>Wire Small (Yellow)</Original>
+			<English>Wire Small (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Small_Green">
+			<Original>Wire Small (Green)</Original>
+			<English>Wire Small (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Small_Blue">
+			<Original>Wire Small (Blue)</Original>
+			<English>Wire Small (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Small_Black">
+			<Original>Wire Small (Black)</Original>
+			<English>Wire Small (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_L_Red">
+			<Original>Wire L (Red)</Original>
+			<English>Wire L (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_L_Yellow">
+			<Original>Wire L (Yellow)</Original>
+			<English>Wire L (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_L_Green">
+			<Original>Wire L (Green)</Original>
+			<English>Wire L (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_L_Blue">
+			<Original>Wire L (Blue)</Original>
+			<English>Wire L (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_L_Black">
+			<Original>Wire L (Black)</Original>
+			<English>Wire L (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Corner_Red">
+			<Original>Wire Corner (Red)</Original>
+			<English>Wire Corner (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Corner_Yellow">
+			<Original>Wire Corner (Yellow)</Original>
+			<English>Wire Corner (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Corner_Green">
+			<Original>Wire Corner (Green)</Original>
+			<English>Wire Corner (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Corner_Blue">
+			<Original>Wire Corner (Blue)</Original>
+			<English>Wire Corner (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_Corner_Black">
+			<Original>Wire Corner (Black)</Original>
+			<English>Wire Corner (Black)</English>
+		</Key>
+		<Key ID="STR_iedd_models_C_Red">
+			<Original>Wire C (Red)</Original>
+			<English>Wire C (Red)</English>
+		</Key>
+		<Key ID="STR_iedd_models_C_Yellow">
+			<Original>Wire C (Yellow)</Original>
+			<English>Wire C (Yellow)</English>
+		</Key>
+		<Key ID="STR_iedd_models_C_Green">
+			<Original>Wire C (Green)</Original>
+			<English>Wire C (Green)</English>
+		</Key>
+		<Key ID="STR_iedd_models_C_Blue">
+			<Original>Wire C (Blue)</Original>
+			<English>Wire C (Blue)</English>
+		</Key>
+		<Key ID="STR_iedd_models_C_Black">
+			<Original>Wire C (Black)</Original>
+			<English>Wire C (Black)</English>
+		</Key>		
+	</Package>
+</Project>

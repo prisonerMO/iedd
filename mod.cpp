@@ -1,0 +1,12 @@
+name = "IEDD Notebook";
+picture = "x\iedd\addons\models\preview\notebook.paa";
+actionName = "Steam";
+action = "";
+description = "IEDD Notebook - Version 1.2.0";
+logo = "x\iedd\addons\models\preview\notebook.paa";
+logoOver = "x\iedd\addons\models\preview\notebook.paa";
+tooltip = "IEDD Notebook";
+tooltipOwned = "IEDD Notebook Owned";
+overview = "Small notebook for improvised explosive device disposal.";
+author = "IEDD Notebook Team";
+overviewPicture = "x\iedd\addons\models\preview\notebook.paa";
