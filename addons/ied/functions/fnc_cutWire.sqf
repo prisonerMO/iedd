@@ -5,9 +5,9 @@ private _failChance = if ([_player] call ace_common_fnc_isEOD || _player getUnit
 } else {
 	GVAR(failChance);
 };
-private _chance = floor (random 1);
-if (_chance  < _failChance) exitWith {
-	private _exploseChance = floor (random 1);
+private _chance = random 1;
+if (_chance < _failChance) exitWith {
+	private _exploseChance = random 1;
 	if (_exploseChance < GVAR(failExploseChance)) then {
 		[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
 	};
@@ -23,7 +23,6 @@ deleteVehicle _wire;
 		private _attachedObjects = attachedObjects _bombObj;
 		private _currentCount = count _attachedObjects;
 		private _count = _currentCount-_uncount;
-		sleep 0.05;
 		if (_count isEqualTo _order) then {
 			if (_count isEqualTo 0) then {
 				_bombObj setVariable [QGVAR(bomb), nil, true];

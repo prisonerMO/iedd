@@ -2,25 +2,12 @@ class CBA_Extended_EventHandlers;
 class CfgVehicles {
 	class Item_Base_F;
     class Box_NATO_Equip_F;
-	class GVAR(Base):Box_NATO_Equip_F {
+	class GVAR(Box):Box_NATO_Equip_F {
 		author = "prisoner";
-		displayName = "";
+		displayName = CSTRING(EquimentBox_displayName);
 		editorCategory = "IEDD_MAINCATEGORY"; 
 		editorSubcategory = "IEDD_EQUIPMENT";	
 		vehicleClass = "IEDD_EQUIPMENT";
-		scope = 0; //Scope 2 will show in editor
-		scopeCurator = 0;
-		transportMaxWeapons = 9001;
-		transportMaxMagazines = 9001;
-		transportMaxItems = 9001;
-		maximumload = 9001;
-		class TransportWeapons {};
-		class TransportMagazines {};
-		class TransportItems {};
-		class TransportBackpacks {};
-	};
-	class GVAR(Box):GVAR(Base) {
-		displayName = CSTRING(EquimentBox_displayName);
 		scope = 2; //Scope 2 will show in editor
 		scopeCurator = 2;
 		class TransportWeapons {
