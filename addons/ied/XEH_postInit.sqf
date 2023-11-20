@@ -42,7 +42,7 @@
 						params ["_actionParams","_player"];                              
 						_this #0 #0 params ["_wire", "_wireColor", "_bombObj", "_order", "_uncount"];
 						_this #0 #1 params ["_player"];
-						[_player,_wire, _wireColor, _bombObj, _order, _uncount] spawn FUNC(cutWire);        
+						[_player,_wire, _wireColor, _bombObj, _order, _uncount] call FUNC(cutWire);        
 					},
 					{
 						params ["_actionParams","_player"];
