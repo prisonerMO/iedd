@@ -119,7 +119,9 @@
 
 [QGVAR(hideObject), {
     params ["_object", "_value"];
-        _object hideObject _value;
+		if (!isNull _object) then {
+			_object hideObject _value;
+		};        
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(updateBombList), {
