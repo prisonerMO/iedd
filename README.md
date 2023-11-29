@@ -1,13 +1,14 @@
-<p align="center">
-    <img src="https://github.com/prisonerMO/iedd/raw/readme/extras/assets/logo/logo.png" width="480">
-</p>
+
 
 <p align="center">
-    <sup><strong>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases">CBA A3</a>.<br/>
-    <strong>Requires the latest version of <a href="https://github.com/acemod/ACE3/releases">ACE 3</a>.<br/>
+    <img src="https://github.com/prisonerMO/iedd/raw/readme/extras/assets/logo/logo.png" width="480" alt="IEDD logo">
+    <sup><strong>
+    Requires the latest version of CBA A3 mod (<a href="https://github.com/CBATeam/CBA_A3/releases">git</a> (<a href="https://steamcommunity.com/workshop/filedetails/?id=450814997">Steam workshop</a>).<br/>
+    Requires the latest version of ACE 3 mod (<a href="https://github.com/acemod/ACE3/releases">git</a>) (<a href="https://steamcommunity.com/workshop/filedetails/?id=463939057">Steam workshop</a>).
+    </strong></sup>
 </p>
 
-The project is entirely **open-source** and all contributions are welcome. Feel free to maintain your own custom version, so long as the changes you make are open to the public in accordance with the GNU General Public License ([GPLv2](https://github.com/prisonerMO/iedd/blob/main/LICENSE.txt)).
+The project is entirely **open-source** and all contributions are welcome. Feel free to maintain your own custom version as long as the changes you make are open to the public in accordance with the <a href="LICENSE.txt">GNU General Public License</a>.
 
 ## Core features
 - You have to move slowly nearby (walk)
@@ -68,7 +69,7 @@ Please comment on issues if you want to contribute with, to avoid duplicating ef
 
 Head over to the [Issues](https://github.com/prisonerMO/iedd/issues) and press the “New Issue” button in the top right corner. 
 Fill out the issue template. Add a link (gist or pastebin) to the client and/or server RPT file. 
-An instruction to find your RPT files can be found here <a href="https://community.bistudio.com/wiki/Crash_Files">.
+An instruction to find your RPT files can be found from [BI Studio wiki](https://community.bistudio.com/wiki/Crash_Files).
 
 
 ### Get in touch
@@ -82,4 +83,14 @@ An instruction to find your RPT files can be found here <a href="https://communi
 
 ## License
 
-IEDD Notebook is licensed under the GNU General Public License ([GPLv2](https://github.com/prisonerMO/iedd/blob/main/LICENSE.txt)).
+IEDD Notebook is licensed under the <a href="[license-url]">GNU General Public License</a>.
+
+
+
+
+
+[license-url]: https://github.com/prisonerMO/iedd/blob/master/LICENSE.txt
+[mod-cba-url-git]: 
+[mod-cba-url-ws]: 
+[mod-ace-url-git]: 
+[mod-ace-url-ws]: 
