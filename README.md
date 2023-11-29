@@ -58,13 +58,17 @@ the latest version of <a href="https://github.com/acemod/ACE3/releases">ACE 3</a
 
 ## Contributing
 
-You can help out with the ongoing development by looking for potential bugs in our code base, or by contributing new features. We are always welcoming new pull requests containing bug fixes, refactors and new features. We have a list of tasks and bugs on our issue tracker on Github. Please comment on issues if you want to contribute with, to avoid duplicating effort.
+You can help out with the ongoing development by looking for potential bugs in our code base, or by contributing new features. 
+We are always welcoming new pull requests containing bug fixes, refactors and new features. 
+We have a list of tasks and bugs on our issue tracker on Github. 
+Please comment on issues if you want to contribute with, to avoid duplicating effort.
 
 
-### Submitting issues and requesting features
+### Submitting issues
 
-
-### Testing & building
+Head over to the [Issues](https://github.com/prisonerMO/iedd/issues) and press the “New Issue” button in the top right corner. 
+Fill out the issue template. Add a link (gist or pastebin) to the client and/or server RPT file. 
+An instruction to find your RPT files can be found here <a href="https://community.bistudio.com/wiki/Crash_Files">.
 
 
 ### Get in touch
