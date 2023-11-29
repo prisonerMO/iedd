@@ -1,14 +1,16 @@
 
 
 <p align="center">
-    <img src="https://github.com/prisonerMO/iedd/raw/readme/extras/assets/logo/logo.png" width="480" alt="IEDD logo"><br/>
-    <sup><strong>
-    Requires the latest version of CBA A3 mod (<a href="https://github.com/CBATeam/CBA_A3/releases">git</a> (<a href="https://steamcommunity.com/workshop/filedetails/?id=450814997">Steam workshop</a>).<br/>
-    Requires the latest version of ACE 3 mod (<a href="https://github.com/acemod/ACE3/releases">git</a>) (<a href="https://steamcommunity.com/workshop/filedetails/?id=463939057">Steam workshop</a>).
-    </strong></sup>
+    <img src="https://github.com/prisonerMO/iedd/raw/readme/extras/assets/logo/logo.png" width="480" alt="IEDD logo">
 </p>
 
+
+***
+# Arma 3 mod: Improvised Explosive Device Disposal
+
 The project is entirely **open-source** and all contributions are welcome. Feel free to maintain your own custom version as long as the changes you make are open to the public in accordance with the <a href="LICENSE.txt">GNU General Public License</a>.
+* Requires the latest version of CBA A3 mod [git][mod-cba-url-git] / [Steam workshop][mod-cba-url-ws]
+* Requires the latest version of ACE 3 mod [git][mod-ace-url-git] / [Steam workshop][mod-ace-url-ws]
 
 ## Core features
 - You have to move slowly nearby (walk)
@@ -54,8 +56,10 @@ The project is entirely **open-source** and all contributions are welcome. Feel 
 
 ## Getting started
 
-IEDD Notebook requires Arma 3, the latest version of [![CBA A3][mod-cba-url-ws]] and 
-the latest version of [![ACE3][mod-ace-url-ws]].
+IEDD Notebook requires [Arma 3][arma3-link-steam], the latest version of [CBA A3][mod-cba-url-ws] and 
+the latest version of [ACE3][mod-ace-url-ws].
+- You can use this mods [published version][mod-iedd-url-ws] simply by subscribing it from Steam Workshop and activating it in Arma3 Launcher.
+- If you want to compile your own version you can clone this source and use [HEMTT][hemmt-releases-link] to compile it.
 
 ## Contributing
 
@@ -67,19 +71,16 @@ Please comment on issues if you want to contribute with, to avoid duplicating ef
 
 ### Submitting issues
 
-Head over to the [Issues](https://github.com/prisonerMO/iedd/issues) and press the “New Issue” button in the top right corner. 
+Head over to the [Issues](issues) and press the “New Issue” button in the top right corner. 
 Fill out the issue template. Add a link (gist or pastebin) to the client and/or server RPT file. 
-An instruction to find your RPT files can be found from [BI Studio wiki](https://community.bistudio.com/wiki/Crash_Files).
+An instruction to find your RPT files can be found from [BI Studio wiki][bistudio-link-crashfiles].
 
 
 ### Get in touch
 
-<table>
-  <tr>
-    <td><a href="https://discord.gg/SU3WJxHqtS">Discord</a></td>
-    <td>We have a public Discord server that anyone can join. This is where all our developers and contributors hang out and where we make announcements</td>
-  </tr>
-</table>
+| [Discord][discord-link] | We have a public Discord server that anyone can join. This is where all our developers and contributors hang out and where we make announcements |
+| :---: | :---- |
+
 
 ## License
 
@@ -87,9 +88,15 @@ IEDD Notebook is licensed under the <a href="LICENSE.txt">GNU General Public Lic
 
 
 
-
-
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[discord-link]: https://discord.gg/SU3WJxHqtS
+[arma3-link-steam]: https://store.steampowered.com/app/107410/Arma_3/
+[bistudio-link-crashfiles]: https://community.bistudio.com/wiki/Crash_Files
 [mod-cba-url-git]: https://github.com/CBATeam/CBA_A3/
 [mod-cba-url-ws]: https://steamcommunity.com/workshop/filedetails/?id=450814997
 [mod-ace-url-git]: https://github.com/acemod/ACE3
 [mod-ace-url-ws]: https://steamcommunity.com/workshop/filedetails/?id=463939057
+[mod-iedd-url-ws]: https://steamcommunity.com/workshop/filedetails/?id=3048818056
+[hemmt-releases-link]: https://github.com/BrettMayson/HEMTT/releases
+
