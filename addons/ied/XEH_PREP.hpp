@@ -12,7 +12,7 @@ PREP(deleted);
 PREP(dud);
 PREP(dudWires);
 PREP(explosion);
-PREP(iedCheckLoop);
+PREP(iedCheck);
 PREP(jerry);
 PREP(metal);
 
