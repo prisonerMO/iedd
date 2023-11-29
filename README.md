@@ -1,7 +1,7 @@
 
 
 <p align="center">
-    <img src="https://github.com/prisonerMO/iedd/raw/readme/extras/assets/logo/logo.png" width="480" alt="IEDD logo">
+    <img src="https://github.com/prisonerMO/iedd/raw/readme/extras/assets/logo/logo.png" width="480" alt="IEDD logo"><br/>
     <sup><strong>
     Requires the latest version of CBA A3 mod (<a href="https://github.com/CBATeam/CBA_A3/releases">git</a> (<a href="https://steamcommunity.com/workshop/filedetails/?id=450814997">Steam workshop</a>).<br/>
     Requires the latest version of ACE 3 mod (<a href="https://github.com/acemod/ACE3/releases">git</a>) (<a href="https://steamcommunity.com/workshop/filedetails/?id=463939057">Steam workshop</a>).
@@ -54,8 +54,8 @@ The project is entirely **open-source** and all contributions are welcome. Feel 
 
 ## Getting started
 
-IEDD Notebook requires Arma 3, the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases">CBA A3</a> and 
-the latest version of <a href="https://github.com/acemod/ACE3/releases">ACE 3</a>.
+IEDD Notebook requires Arma 3, the latest version of [![CBA A3][mod-cba-url-ws]] and 
+the latest version of [![ACE3][mod-ace-url-ws]].
 
 ## Contributing
 
@@ -83,14 +83,13 @@ An instruction to find your RPT files can be found from [BI Studio wiki](https:/
 
 ## License
 
-IEDD Notebook is licensed under the <a href="[license-url]">GNU General Public License</a>.
+IEDD Notebook is licensed under the <a href="LICENSE.txt">GNU General Public License</a>.
 
 
 
 
 
-[license-url]: https://github.com/prisonerMO/iedd/blob/master/LICENSE.txt
-[mod-cba-url-git]: 
-[mod-cba-url-ws]: 
-[mod-ace-url-git]: 
-[mod-ace-url-ws]: 
+[mod-cba-url-git]: https://github.com/CBATeam/CBA_A3/
+[mod-cba-url-ws]: https://steamcommunity.com/workshop/filedetails/?id=450814997
+[mod-ace-url-git]: https://github.com/acemod/ACE3
+[mod-ace-url-ws]: https://steamcommunity.com/workshop/filedetails/?id=463939057
