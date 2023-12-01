@@ -53,6 +53,6 @@ if (GVAR(bombs) isNotEqualTo []) then {
 	_checkTime = 0.5;	
 };
 //diag_log format ["Current objects %1, CheckTime: %3, Time: %2", count GVAR(bombs),time, _checkTime];
-[FUNC(iedCheckLoop), [], _checkTime] call CBA_fnc_waitAndExecute;
+[FUNC(iedCheck), [], _checkTime] call CBA_fnc_waitAndExecute;
 
 
