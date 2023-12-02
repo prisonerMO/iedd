@@ -191,7 +191,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                                 };
                                 class 5 {
                                     text = ECSTRING(ied,Name_Random);                                
-                                    default = 1;                                  
+                                    value = 4;                                
                                 };
                             };
                         };
