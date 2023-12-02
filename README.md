@@ -1,7 +1,7 @@
 
 
 <p align="center">
-    <img src="https://github.com/prisonerMO/iedd/raw/readme/extras/assets/logo/logo.png" width="480" alt="IEDD logo">
+    <img src="https://github.com/prisonerMO/iedd/raw/main/extras/assets/logo/logo.png" width="480" alt="IEDD logo">
 </p>
 
 
