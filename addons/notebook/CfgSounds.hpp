@@ -30,37 +30,37 @@ class CfgSounds {
 	};
 
 	class GVAR(side0) {
-		name = CSTRING(Sounde_Side_0);
+		name = CSTRING(Sound_Side_0);
         sound[] = {QPATHTOF(sounds\side0.ogg),1, 1,100};
 		titles[] = {0, ""};
 	};
 
 	class GVAR(side1) {
-		name = CSTRING(Sounde_Side_1);
+		name = CSTRING(Sound_Side_1);
         sound[] = {QPATHTOF(sounds\side1.ogg),1, 1,100};
 		titles[] = {0, ""};
 	};
 
 	class GVAR(side2) {
-		name = CSTRING(Sounde_Side_2);
+		name = CSTRING(Sound_Side_2);
         sound[] = {QPATHTOF(sounds\side2.ogg),1, 1,100};
 		titles[] = {0, ""};
 	};
 
 	class GVAR(side3) {
-		name = CSTRING(Sounde_Side_3);
+		name = CSTRING(Sound_Side_3);
         sound[] = {QPATHTOF(sounds\side3.ogg),1, 1,100};
 		titles[] = {0, ""};
 	};
 
 	class GVAR(open) {
-		name = CSTRING(Open);
+		name = CSTRING(Sound_Open);
         sound[] = {QPATHTOF(sounds\open.ogg),1, 1,100};
 		titles[] = {0, ""};
 	};
 
 	class GVAR(close) {
-		name = CSTRING(Close);
+		name = CSTRING(Sound_Close);
         sound[] = {QPATHTOF(sounds\close.ogg),1, 1,100};
 		titles[] = {0, ""};
 	};
