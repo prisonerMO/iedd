@@ -1,8 +1,8 @@
 name = "IEDD Notebook";
 picture = "x\iedd\addons\models\preview\notebook.paa";
-actionName = "Steam";
+actionName = "";
 action = "";
-description = "IEDD Notebook - Version 1.2.0";
+description = "IEDD Notebook - Version 1.2.2";
 logo = "x\iedd\addons\models\preview\notebook.paa";
 logoOver = "x\iedd\addons\models\preview\notebook.paa";
 tooltip = "IEDD Notebook";

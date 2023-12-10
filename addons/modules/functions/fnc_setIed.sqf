@@ -47,7 +47,7 @@ private _fnc_onConfirm = {
     private _sizeCtrl = _display displayCtrl 52522;
     private _size = lbCurSel _sizeCtrl;
     if (_size > 3) then {
-        _size = floor (random 4);
+        _size = floor (random 3);
     };
     private _positionOfSlider = sliderPosition (_display displayCtrl 52523);
     private _dud = _positionOfSlider;    

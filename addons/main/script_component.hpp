@@ -15,5 +15,3 @@
 #endif
 
 #include "script_macros.hpp"
-
-#define IEDD_DEBUG true

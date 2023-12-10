@@ -119,7 +119,9 @@
 
 [QGVAR(hideObject), {
     params ["_object", "_value"];
-        _object hideObject _value;
+		if (!isNull _object) then {
+			_object hideObject _value;
+		};        
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(updateBombList), {
@@ -132,7 +134,7 @@ if (isServer) then {
 		time > 10 && !isNil QGVAR(bombs)},		
 	{
 		INFO_1("Detect event called [Time: %1]",time);
-		call FUNC(iedCheckLoop);
+		call FUNC(iedCheck);
 	},
 	[]] call CBA_fnc_waitUntilAndExecute;
 };
