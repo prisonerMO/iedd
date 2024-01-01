@@ -63,6 +63,27 @@
 	};
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(detachAction), {
+	params ["_bombObj"];
+	private _object = attachedTo _bombObj;
+	private _condition = {  
+		params ["_target", "_player", "_actionParams"];
+		_actionParams params ["_object"];
+		!isNull _target && {
+		alive _object
+		};
+	};
+
+	private _statement = {  
+		params ["_target", "_player", "_actionParams"];
+		_actionParams params ["_object"];
+		[QGVAR(defused), [_object]] call CBA_fnc_serverEvent;
+	};
+
+	private _iedSubAction = [QGVAR(disarmAction), "Detach IED Charge", "", _statement, _condition,{},[_object], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+	[_bombObj, 0, ["ACE_MainActions", "IEDD_DisarmMenu"], _iedSubAction] call ace_interact_menu_fnc_addActionToObject;
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(disarmAction), {
 	params ["_bombObj"];
 	_action = ["IEDD_DisarmMenu","Disarm","",{},{true}] call ace_interact_menu_fnc_createAction;
@@ -145,13 +166,13 @@
 	private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
 	if (_index == -1) exitWith {};
 	private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
-	private _posX = -0.15;
+	private _positions = [[-0.45,0.225,0.0],[0,0.45,0.0],[0.45,0.225,0.0]];
+	private _pos = _object modelToWorldWorld [0,0,0];
     {
         private _charge = _x;
-        deleteVehicle _charge;		
-		private _vector = [_position,_position,0];
-		QGVAR(Charge) createVehicle (getPosATL _object vectorAdd [_posX,0,0]);
-		_posX = _posX+0.15;
+        deleteVehicle _charge;
+		private _holder = createVehicle [QGVAR(Charge), _pos, [], 0, "CAN_COLLIDE"];
+		_holder setPosWorld (_object modelToWorldWorld (_positions select _forEachIndex)); //TODO Pickup action for bombs.
     } forEach _charges;
 
 }] call CBA_fnc_addEventHandler;

@@ -31,8 +31,7 @@ deleteVehicle _wire;
 					deleteVehicle _object;
 				};
 				if (typeOf _bombObj == QGVAR(Charge)) then {
-					private _object = attachedTo _bombObj;
-					[QGVAR(defused), [_object]] call CBA_fnc_serverEvent; 
+					[QGVAR(detachAction), [_bombObj]] call CBA_fnc_serverEvent; 
 				};
 			};
 		} else {
