@@ -158,7 +158,6 @@
 
 ["ace_unconscious", {
 	params ["_unit", "_isUnconscious"];
-	diag_log format ["called: %1", _this];
 	_this call FUNC(handleUnconscious);
 }] call CBA_fnc_addEventHandler;
 

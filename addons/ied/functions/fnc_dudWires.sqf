@@ -52,10 +52,15 @@ if (_type == QGVAR(Barrel) || _type == QGVAR(Barrel_Grey)) exitWith {
 	} forEach _ieddWires;
 };
 if (_type == QGVAR(Charge)) exitWith {
+	private _unit = attachedTo _bombObj;
+	diag_log format ["Unit %1 , alive unit %2", _unit, alive _unit];
 	{
 		if (!isNull _x) then  {
-			_x attachTo [_bombObj,(IEDD_DUDS_BARREL #_forEachIndex) #0];
-			_x setVectorDirAndUp ((IEDD_DUDS_BARREL #_forEachIndex) #1);
+			_x attachTo [_bombObj,(IEDD_DUDS_CHARGE #_forEachIndex) #0];
+			_x setVectorDirAndUp ((IEDD_DUDS_CHARGE #_forEachIndex) #1);
 		};
 	} forEach _ieddWires;
+	if (!alive _unit) then {
+		_unit call FUNC(deleted);
+	};
 };
