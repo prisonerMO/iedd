@@ -47,14 +47,11 @@ class GVAR(multi): Module_F {
 	class Attributes: AttributesBase {
 
 /************ IEDS ***********************/
-		class GVAR(iedsEmpty):GVAR(SubTitle) {
-			property = QGVAR(iedsEmpty);
-            displayName = "";
+		class GVAR(iedsEmpty_SubCategory) {
+			data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
+			control = "SubCategory";
+			displayName = CSTRING(Ieds_Category); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
 		};
-		class GVAR(iedsSubTitle):GVAR(SubTitle) {
-			property = QGVAR(countSubTitle);
-            displayName = CSTRING(Ieds_Category);
-		};	
 		class EGVAR(ied,CanisterPlastic):Checkbox {
 			property = QGVAR(CanisterPlastic);
 			displayName = ECSTRING(ied,PlasticCanister_DisplayName);
@@ -101,16 +98,11 @@ class GVAR(multi): Module_F {
 		};
 		
 /************ FAKE IED ***********************/
-		class GVAR(fakeIedsEmpty):GVAR(SubTitle) {
-			property = QGVAR(fakeIedsEmpty);
-            displayName = "";
+		class GVAR(fakeIeds_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = CSTRING(Fake_Category);
 		};
-
-		class GVAR(fakeIedsSubTitle):GVAR(SubTitle) {
-			property = QGVAR(fakeIedsSubTitle);
-            displayName = CSTRING(Fake_Category);
-		};
-
 		class Land_CanisterPlastic_F:Checkbox {
 			property = QGVAR(CanisterPlastic_F);
 			displayName = ECSTRING(ied,PlasticCanister_DisplayName);
@@ -156,14 +148,11 @@ class GVAR(multi): Module_F {
 			defaultValue = 4;
 		};
 /************ GROUND SIGNS ***********************/
-		class GVAR(signsEmpty):GVAR(SubTitle) {
-			property = QGVAR(signsEmpty);
-            displayName = "";
-		};
-		class GVAR(signsSubTitle):GVAR(SubTitle) {
-			property = QGVAR(signsSubTitle);
-            displayName = CSTRING(Signs_Category);
-		};		
+		class GVAR(Signs_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = CSTRING(Signs_Category);
+		};	
 		class GVAR(signs):Checkbox {
 			property = QGVAR(signs);
 			displayName = CSTRING(Signs);
@@ -191,14 +180,11 @@ class GVAR(multi): Module_F {
 			defaultValue = "0";
 		};
 /************DUDS ***********************/
-		class GVAR(dudEmpty):GVAR(SubTitle) {
-			property = QGVAR(dudEmpty);
-            displayName = "";
-		};
-		class GVAR(dudSubTitle):GVAR(SubTitle) {
-			property = QGVAR(dudSubTitle);
-            displayName = CSTRING(Dud_Category);
-		};
+		class GVAR(Dud_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = CSTRING(Dud_Category);
+		};	
 		class GVAR(dud):Combo {
 			property = QGVAR(dud);
 			displayName = CSTRING(Dud);
@@ -207,13 +193,10 @@ class GVAR(multi): Module_F {
 			control = "Slider";
 		};
 /************ BLACKLIST ***********************/
-		class GVAR(blackEmpty):GVAR(SubTitle) {
-			property = QGVAR(blackEmpty);
-            displayName = "";
-		};
-		class GVAR(blackSubTitle):GVAR(SubTitle) {
-			property = QGVAR(blackSubTitle);
-            displayName = CSTRING(Blacklist_Category);
+		class GVAR(Blacklist_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = CSTRING(Blacklist_Category);
 		};	
 		class GVAR(black):Default {
 			property = QGVAR(black);
