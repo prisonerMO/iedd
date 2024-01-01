@@ -12,7 +12,11 @@ PREP(deleted);
 PREP(dud);
 PREP(dudWires);
 PREP(explosion);
+PREP(handleKilled);
+PREP(handleUnconscious);
+PREP(charge);
 PREP(iedCheck);
 PREP(jerry);
 PREP(metal);
+PREP(setAttributes);
 

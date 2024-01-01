@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-params ["_player","_wire", "_wireColor", "_bombObj", "_order", "_uncount"];
+params ["_player","_wire", "_wireColor", "_bombObj", "_order"];
 private _failChance = if ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist") then {
     GVAR(failChanceEOD);
 } else {
@@ -19,24 +19,27 @@ deleteVehicle _wire;
 		isNull (_this select 0)
 	},
  	{
-		params ["_wire","_bombObj","_order","_uncount"];
-		private _attachedObjects = attachedObjects _bombObj;
-		private _currentCount = count _attachedObjects;
-		private _count = _currentCount-_uncount;
+		params ["_wire","_bombObj","_order"];
+		private _wires = _bombObj getVariable [QGVAR(wires),[]];
+		private _count = count (_wires select {!isNull _x});
 		if (_count isEqualTo _order) then {
 			if (_count isEqualTo 0) then {
 				_bombObj setVariable [QGVAR(bomb), nil, true];
-				private _index = _attachedObjects findIf {typeOf _x == QEGVAR(equipment,mine_ammo)};
+				private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge_Ammo)};
 				if (_index isNotEqualTo -1) then {
 					private _object = _attachedObjects select _index;
 					deleteVehicle _object;
+				};
+				if (typeOf _bombObj == QGVAR(Charge)) then {
+					private _object = attachedTo _bombObj;
+					[QGVAR(defused), [_object]] call CBA_fnc_serverEvent; 
 				};
 			};
 		} else {
 			[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
 		};
 	}, 
-	[_wire,_bombObj,_order,_uncount]
+	[_wire,_bombObj,_order]
 ] call CBA_fnc_waitUntilAndExecute;
 
 

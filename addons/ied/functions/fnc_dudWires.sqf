@@ -51,3 +51,11 @@ if (_type == QGVAR(Barrel) || _type == QGVAR(Barrel_Grey)) exitWith {
 		};
 	} forEach _ieddWires;
 };
+if (_type == QGVAR(Charge)) exitWith {
+	{
+		if (!isNull _x) then  {
+			_x attachTo [_bombObj,(IEDD_DUDS_BARREL #_forEachIndex) #0];
+			_x setVectorDirAndUp ((IEDD_DUDS_BARREL #_forEachIndex) #1);
+		};
+	} forEach _ieddWires;
+};

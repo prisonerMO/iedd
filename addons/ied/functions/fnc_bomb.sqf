@@ -6,7 +6,7 @@ if (_possiblity > random 1 || GVAR(isDuds)) then {
 	_bombObj setVariable [QGVAR(bomb),nil,true];
 	[QGVAR(dudEffect),[_bombObj]] call CBA_fnc_globalEvent;
 	private _attachedObjects = attachedObjects _bombObj;
-	private _index = _attachedObjects findIf {typeOf _x == QEGVAR(equipment,mine_ammo)};
+	private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge_Ammo)};
 	if (_index isNotEqualTo -1) then {
 		private _object = _attachedObjects select _index;
 		deleteVehicle _object;

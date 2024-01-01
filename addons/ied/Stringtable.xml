@@ -189,6 +189,62 @@
 				<English>Set color of fuel canister.</English>
 			</Key>
 		</Container>
+		<Container name="IEDD Options">
+			<Key ID="STR_iedd_ied_Charge_DisplayName">
+				<Original>IED Charge Vest on unit</Original>
+				<English>IED Charge Vest on unit</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_Description">
+				<Original>IED Charge Vest on unit Description</Original>
+				<English>IED Charge Vest on unit Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_isHandcuffed_DisplayName">
+				<Original>Make Unit Handcuffed</Original>
+				<English>Make Unit Handcuffed</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_isHandcuffed_Description">
+				<Original>Make Unit Handcuffed Description</Original>
+				<English>Make Unit Handcuffed Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_isSurrendered_DisplayName">
+				<Original>Make Unit Surrender</Original>
+				<English>Make Unit Surrender</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_isSurrendered_Description">
+				<Original>Make Unit Surrender Description</Original>
+				<English>Make Unit Surrender Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_Settings_DisplayName">
+				<Original>Object IED Settings</Original>
+				<English>Object IED Settings</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_Status_DisplayName">
+				<Original>Object Status Settings</Original>
+				<English>Object Status Settings</English>
+			</Key>			
+		</Container>		
+		<Container name="IEDD Explosives">
+			<Key ID="STR_iedd_ied_Charge_DisplayName">
+				<Original>IED Charge</Original>
+				<English>IED Charge</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_Mag_DisplayName">
+				<Original>IED Magazine</Original>
+				<English>IED Magazine</English>
+			</Key>											
+			<Key ID="STR_iedd_ied_Charge_Mag_Desc">
+				<Original>IED Magazine Description</Original>
+				<English>IED Magazine Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_Mag_LibDesc">
+				<Original>IED Magazine Lib Description</Original>
+				<English>IED Magazine Lib Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Charge_Ammo_DisplayName">
+				<Original>IED Ammo</Original>
+				<English>IED Ammo</English>
+			</Key>												
+		</Container>
 		<Container name="IEDD Notebook Settings">							
 			<Key ID="STR_iedd_ied_IsDuds">
 				<Original>Dud IEDs</Original>

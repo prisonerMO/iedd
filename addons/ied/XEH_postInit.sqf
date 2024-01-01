@@ -5,26 +5,30 @@
 } forEach IEDD_CLASSES;
 
 [QGVAR(defuseAction), {
-	params ["_bombObj", "_wireSet", "_wires", "_uncount", "_type"];
+	params ["_bombObj","_wireSet"];
 	if (isNull _bombObj) exitWith {};
 	_this spawn {
-		params ["_bombObj", "_wireSet", "_wires", "_uncount"];
-		private _text = " (long)";
-		private _r = [0,1,2,3,4,5,6] call BIS_fnc_arrayShuffle;
-		for "_i" from 0 to 6 do {
+		params ["_bombObj","_wireSet"];
+		private _wires = _bombObj getVariable [QGVAR(wires),[]];
+		private _countWires = count _wires-1;
+		private _shuffleArray = [];
+		for "_i" from 0 to _countWires do {
+			_shuffleArray pushBack _i;
+		};
+		private _r = _shuffleArray call BIS_fnc_arrayShuffle;
+		for "_i" from 0 to _countWires do {
 			private _s = _r select _i;
 			private _wire = _wires #_s;
 			private _order = _wireSet #1 #_s;
-			private _wireColor = if (_s < 5) then {
-					_wireSet #0 #_s;
-				} else {
-					(_wireSet #0 #_s)+_text;
-				};
+			private _text = _wire getVariable [QGVAR(text),""];
+			private _wireColor = (_wireSet #0 #_s) + _text;
+
 			private _condition = {  
 				params ["_target", "_player", "_actionParams"];
 				_actionParams params ["_wire"];
 				!isNull _wire;
 			};
+
 			private _statement = {    
 				params ["_target", "_player", "_actionParams"];
 				if (currentWeapon _player != "") then {
@@ -40,9 +44,9 @@
 					[_actionParams,_player],
 					{                         
 						params ["_actionParams","_player"];                              
-						_this #0 #0 params ["_wire", "_wireColor", "_bombObj", "_order", "_uncount"];
+						_this #0 #0 params ["_wire", "_wireColor", "_bombObj", "_order"];
 						_this #0 #1 params ["_player"];
-						[_player,_wire, _wireColor, _bombObj, _order, _uncount] call FUNC(cutWire);        
+						[_player,_wire, _wireColor, _bombObj, _order] call FUNC(cutWire);        
 					},
 					{
 						params ["_actionParams","_player"];
@@ -52,11 +56,17 @@
 					["isNotSwimming"]
 				] call ace_common_fnc_progressBar; 
 			};
-			private _iedSubAction = [_wireColor, "Cut " + toLower _wireColor, "", _statement, _condition,{},[_wire, _wireColor, _bombObj, _order, _uncount], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+			private _iedSubAction = [_wireColor, "Cut " + toLower _wireColor, "", _statement, _condition,{},[_wire, _wireColor, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
 			[_bombObj, 0, ["ACE_MainActions", "IEDD_DisarmMenu"], _iedSubAction] call ace_interact_menu_fnc_addActionToObject;
 			sleep 0.1;
 		};
 	};
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(disarmAction), {
+	params ["_bombObj"];
+	_action = ["IEDD_DisarmMenu","Disarm","",{},{true}] call ace_interact_menu_fnc_createAction;
+	[_bombObj, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(dudEffect), {
@@ -129,7 +139,33 @@
 	[{!isNil QGVAR(bombs)}, {GVAR(bombs) pushBackUnique (_this select 0);}, [_object]] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(defused), {
+    params ["_object"];
+	private _attachedObjects = attachedObjects _object;
+	private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
+	if (_index == -1) exitWith {};
+	private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
+	private _posX = -0.15;
+    {
+        private _charge = _x;
+        deleteVehicle _charge;		
+		private _vector = [_position,_position,0];
+		QGVAR(Charge) createVehicle (getPosATL _object vectorAdd [_posX,0,0]);
+		_posX = _posX+0.15;
+    } forEach _charges;
+
+}] call CBA_fnc_addEventHandler;
+
+["ace_unconscious", {
+	params ["_unit", "_isUnconscious"];
+	diag_log format ["called: %1", _this];
+	_this call FUNC(handleUnconscious);
+}] call CBA_fnc_addEventHandler;
+
+["forceWalk", false, [QGVAR(Charge)]] call ace_common_statusEffect_addType;
+
 if (isServer) then {
+
 	[{
 		time > 10 && !isNil QGVAR(bombs)},		
 	{
