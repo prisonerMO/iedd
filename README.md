@@ -71,7 +71,7 @@ Please comment on issues if you want to contribute with, to avoid duplicating ef
 
 ### Submitting issues
 
-Head over to the [Issues](issues) and press the “New Issue” button in the top right corner. 
+Head over to the [Issues][mod-iedd-url-git-issues] and press the “New Issue” button in the top right corner. 
 Fill out the issue template. Add a link (gist or pastebin) to the client and/or server RPT file. 
 An instruction to find your RPT files can be found from [BI Studio wiki][bistudio-link-crashfiles].
 
@@ -99,4 +99,4 @@ IEDD Notebook is licensed under the <a href="LICENSE.txt">GNU General Public Lic
 [mod-ace-url-ws]: https://steamcommunity.com/workshop/filedetails/?id=463939057
 [mod-iedd-url-ws]: https://steamcommunity.com/workshop/filedetails/?id=3048818056
 [hemmt-releases-link]: https://github.com/BrettMayson/HEMTT/releases
-
+[mod-iedd-url-git-issues]: https://github.com/prisonerMO/iedd/issues
