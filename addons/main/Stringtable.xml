@@ -37,5 +37,22 @@
 			<Original>IEDD Parts</Original>
 			<English>IEDD Wires</English>
 	    </Key>
+		<Key ID="STR_iedd_main_Options">
+            <English>IEDD Options</English>
+            <German>IEDD-Optionen</German>
+            <Spanish>Opciones IEDD</Spanish>
+            <Polish>Ustawienia IEDD</Polish>
+            <Czech>IEDD Nastavení</Czech>
+            <French>Options IEDD</French>
+            <Russian>IEDD Настройки</Russian>
+            <Portuguese>Opções do IEDD</Portuguese>
+            <Hungarian>IEDD Beállítások</Hungarian>
+            <Italian>Opzioni IEDD</Italian>
+            <Japanese>IEDD オプション</Japanese>
+            <Korean>IEDD 옵션</Korean>
+            <Chinese>IEDD設定選項</Chinese>
+            <Chinesesimp>IEDD 设定选项</Chinesesimp>
+            <Turkish>IEDD Ayarları</Turkish>
+        </Key>
 	</Package>
 </Project>
