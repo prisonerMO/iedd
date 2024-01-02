@@ -184,7 +184,7 @@
 	_this call FUNC(handleUnconscious);
 }] call CBA_fnc_addEventHandler;
 
-["forceWalk", false, [QGVAR(Charge)]] call ace_common_statusEffect_addType;
+["forceWalk", false, [QGVAR(charge)]] call ace_common_statusEffect_addType;
 
 if (isServer) then {
 
