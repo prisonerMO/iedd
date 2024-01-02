@@ -167,14 +167,16 @@
 	if (_index == -1) exitWith {};
 	private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
 	private _positions = [[-0.45,0.225,0.0],[0,0.45,0.0],[0.45,0.225,0.0]];
-	private _pos = _object modelToWorldWorld [0,0,0];
+	private _pos = getPosATL _object;
     {
         private _charge = _x;
         deleteVehicle _charge;
-		private _holder = createVehicle [QGVAR(Charge), _pos, [], 0, "CAN_COLLIDE"];
+		private _holder = createVehicle ["groundweaponholder", _pos, [], 0, "CAN_COLLIDE"];
+		_holder addMagazineCargo  ["DemoCharge_Remote_Mag",1];
 		_holder setPosWorld (_object modelToWorldWorld (_positions select _forEachIndex)); //TODO Pickup action for bombs.
+		_memPos = getPosATL _holder;
+		_holder setPosATL (_memPos vectorAdd [0,0,-(_memPos select 2)]);
     } forEach _charges;
-
 }] call CBA_fnc_addEventHandler;
 
 ["ace_unconscious", {
