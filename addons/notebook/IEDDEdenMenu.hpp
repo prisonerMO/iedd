@@ -26,7 +26,7 @@ class Display3DEN
 				{
 					text=CSTRING(Action_Open);
 					picture="";
-					action="createDialog 'iedd_notebook_display'";
+					action="(findDisplay 313) createDisplay 'iedd_notebook_display'";
 					opensNewWindow=1;
                     shortCuts[] = {"1024+0xD0"};
 				};
