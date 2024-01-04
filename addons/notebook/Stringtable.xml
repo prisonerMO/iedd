@@ -113,7 +113,11 @@
 			<Key ID="STR_iedd_notebook_MetalBarrel">
 				<Original>Metal barrel variations</Original>
 				<English>Metal barrel variations</English>
-			</Key>					
+			</Key>
+			<Key ID="STR_iedd_notebook_Charge">
+				<Original>Bomb vest variations</Original>
+				<English>Bomb vest variations</English>
+			</Key>				
 			<Key ID="STR_iedd_notebook_Empty">
 				<Original>(empty)</Original>
 				<English>(empty)</English>
