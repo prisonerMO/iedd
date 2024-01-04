@@ -21,7 +21,7 @@
 			private _wire = _wires #_s;
 			private _order = _wireSet #1 #_s;
 			private _text = _wire getVariable [QGVAR(text),""];
-			private _wireColor = (_wireSet #0 #_s) + _text;
+			private _wireColor = " " + localize (format ["$STR_iedd_ied_Action_%1",toLower (_wireSet #0 #_s)]) + _text;
 
 			private _condition = {  
 				params ["_target", "_player", "_actionParams"];
@@ -56,7 +56,7 @@
 					["isNotSwimming"]
 				] call ace_common_fnc_progressBar; 
 			};
-			private _iedSubAction = [_wireColor, "Cut " + toLower _wireColor, "", _statement, _condition,{},[_wire, _wireColor, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+			private _iedSubAction = [_wireColor, localize LSTRING(Action_Cut) + toLower _wireColor, "", _statement, _condition,{},[_wire, _wireColor, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
 			[_bombObj, 0, ["ACE_MainActions", "IEDD_DisarmMenu"], _iedSubAction] call ace_interact_menu_fnc_addActionToObject;
 			sleep 0.1;
 		};
@@ -80,13 +80,13 @@
 		[QGVAR(defused), [_object]] call CBA_fnc_serverEvent;
 	};
 
-	private _iedSubAction = [QGVAR(disarmAction), "Detach IED Charge", "", _statement, _condition,{},[_object], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+	private _iedSubAction = [QGVAR(disarmAction), localize LSTRING(Detach_DisplayName), "", _statement, _condition,{},[_object], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
 	[_bombObj, 0, ["ACE_MainActions", "IEDD_DisarmMenu"], _iedSubAction] call ace_interact_menu_fnc_addActionToObject;
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(disarmAction), {
 	params ["_bombObj"];
-	_action = ["IEDD_DisarmMenu","Disarm","",{},{true}] call ace_interact_menu_fnc_createAction;
+	_action = ["IEDD_DisarmMenu",localize LSTRING(Disarm_DisplayName),"",{},{true}] call ace_interact_menu_fnc_createAction;
 	[_bombObj, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 }] call CBA_fnc_addEventHandler;
 

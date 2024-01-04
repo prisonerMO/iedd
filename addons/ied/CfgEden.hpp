@@ -8,8 +8,8 @@ class Cfg3DEN {
                     class GVAR(isCharge) {
                         property = QGVAR(isCharge);
                         control = "CheckboxState";
-                        displayName = CSTRING(Charge_DisplayName);
-                        tooltip = CSTRING(Charge_Description);
+                        displayName = CSTRING(isCharge_DisplayName);
+                        tooltip = CSTRING(isCharge_Description);
                         expression = QUOTE(if (_value) then {[ARR_2(_this,true)] call FUNC(charge);_this setVariable [ARR_3(QQGVAR(isCharge),_value,true)]});
                         typeName = "BOOL";
                         condition = "objectControllable";
@@ -106,8 +106,8 @@ class Cfg3DEN {
                     class GVAR(isHandcuffed) {
                         property = QGVAR(isHandcuffed);
                         control = "Checkbox";
-                        displayName = CSTRING(Charge_isHandcuffed_DisplayName);
-                        tooltip = CSTRING(Charge_isHandcuffed_Description);
+                        displayName = CSTRING(isHandcuffed_DisplayName);
+                        tooltip = CSTRING(isHandcuffed_Description);
                         expression = QUOTE([ARR_4(_this,_value,'ace_isHandcuffed',QQGVAR(isHandcuffed))] call FUNC(setAttributes));
                         typeName = "BOOL";
                         condition = "objectControllable";
@@ -116,8 +116,8 @@ class Cfg3DEN {
                     class GVAR(isSurrendered) {
                         property = QGVAR(isSurrendered);
                         control = "Checkbox";
-                        displayName = CSTRING(Charge_isSurrendered_DisplayName);
-                        tooltip = CSTRING(Charge_isSurrendered_Description);
+                        displayName = CSTRING(isSurrendered_DisplayName);
+                        tooltip = CSTRING(isSurrendered_Description);
                         expression = QUOTE([ARR_4(_this,_value,'ace_isSurrendered',QQGVAR(isSurrendered))] call FUNC(setAttributes));
                         typeName = "BOOL";
                         condition = "objectControllable";

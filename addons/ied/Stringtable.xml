@@ -71,10 +71,6 @@
 			<Key ID="STR_iedd_ied_MetalBarrelEnglish_DisplayName">
 				<Original>Metal Barrel (English)</Original>
 				<English>Metal Barrel (English)</English>
-			</Key>			
-			<Key ID="STR_iedd_ied_Disarm_DisplayName">
-				<Original>Disarm</Original>
-				<English>Disarm</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Name_Green">
 				<Original>Green</Original>
@@ -189,30 +185,30 @@
 				<English>Set color of fuel canister.</English>
 			</Key>
 		</Container>
-		<Container name="IEDD Options">
-			<Key ID="STR_iedd_ied_Charge_DisplayName">
-				<Original>IED Charge Vest on unit</Original>
-				<English>IED Charge Vest on unit</English>
+		<Container name="IEDD Options Charge">
+			<Key ID="STR_iedd_ied_isCharge_DisplayName">
+				<Original>IED bomb vest on unit</Original>
+				<English>IED bomb vest on unit</English>
 			</Key>
-			<Key ID="STR_iedd_ied_Charge_Description">
-				<Original>IED Charge Vest on unit Description</Original>
-				<English>IED Charge Vest on unit Description</English>
+			<Key ID="STR_iedd_ied_isCharge_Description">
+				<Original>IED bomb vest on unit Description</Original>
+				<English>IED bomb vest on unit Description</English>
 			</Key>
-			<Key ID="STR_iedd_ied_Charge_isHandcuffed_DisplayName">
-				<Original>Make Unit Handcuffed</Original>
-				<English>Make Unit Handcuffed</English>
+			<Key ID="STR_iedd_ied_isHandcuffed_DisplayName">
+				<Original>Make unit handcuffed</Original>
+				<English>Make unit handcuffed</English>
 			</Key>
-			<Key ID="STR_iedd_ied_Charge_isHandcuffed_Description">
-				<Original>Make Unit Handcuffed Description</Original>
-				<English>Make Unit Handcuffed Description</English>
+			<Key ID="STR_iedd_ied_isHandcuffed_Description">
+				<Original>Make unit handcuffed Description</Original>
+				<English>Make unit handcuffed Description</English>
 			</Key>
-			<Key ID="STR_iedd_ied_Charge_isSurrendered_DisplayName">
-				<Original>Make Unit Surrender</Original>
-				<English>Make Unit Surrender</English>
+			<Key ID="STR_iedd_ied_isSurrendered_DisplayName">
+				<Original>Make unit surrender</Original>
+				<English>Make unit surrender</English>
 			</Key>
-			<Key ID="STR_iedd_ied_Charge_isSurrendered_Description">
-				<Original>Make Unit Surrender Description</Original>
-				<English>Make Unit Surrender Description</English>
+			<Key ID="STR_iedd_ied_isSurrendered_Description">
+				<Original>Make unit surrender Description</Original>
+				<English>Make unit surrender Description</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Charge_Settings_DisplayName">
 				<Original>Object IED Settings</Original>
@@ -222,7 +218,49 @@
 				<Original>Object Status Settings</Original>
 				<English>Object Status Settings</English>
 			</Key>			
-		</Container>		
+		</Container>
+		<Container name="IEDD Interaction Menu">
+			<Key ID="STR_iedd_ied_Action_red">
+				<Original>Red</Original>
+				<English>Red</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Action_blue">
+				<Original>Blue</Original>
+				<English>Blue</English>
+			</Key>											
+			<Key ID="STR_iedd_ied_Action_green">
+				<Original>Green</Original>
+				<English>Green</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Action_black">
+				<Original>Black</Original>
+				<English>Black</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Action_yellow">
+				<Original>Yellow</Original>
+				<English>Yellow</English>
+			</Key>												
+			<Key ID="STR_iedd_ied_Action_Long">
+				<Original>Long</Original>
+				<English>Long</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Action_Short">
+				<Original>Short</Original>
+				<English>Short</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Action_Cut">
+				<Original>Cut</Original>
+				<English>Cut</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Disarm_DisplayName">
+				<Original>Disarm</Original>
+				<English>Disarm</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Detach_DisplayName">
+				<Original>Detach bomb vest</Original>
+				<English>Detach bomb vest</English>
+			</Key>											
+		</Container>	
 		<Container name="IEDD Explosives">
 			<Key ID="STR_iedd_ied_Charge_DisplayName">
 				<Original>IED Charge</Original>
