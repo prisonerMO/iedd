@@ -21,7 +21,9 @@
 			private _wire = _wires #_s;
 			private _order = _wireSet #1 #_s;
 			private _text = _wire getVariable [QGVAR(text),""];
-			private _wireColor = " " + localize (format ["$STR_iedd_ied_Action_%1",toLower (_wireSet #0 #_s)]) + _text;
+			private _color = (_wireSet #0 #_s);
+			private _wireColor = " " + localize (format ["$STR_iedd_ied_Name_%1",_color]) + _text;
+			_wire setVariable [QGVAR(text),nil];
 
 			private _condition = {  
 				params ["_target", "_player", "_actionParams"];
@@ -44,9 +46,9 @@
 					[_actionParams,_player],
 					{                         
 						params ["_actionParams","_player"];                              
-						_this #0 #0 params ["_wire", "_wireColor", "_bombObj", "_order"];
+						_this #0 #0 params ["_wire", "_bombObj", "_order"];
 						_this #0 #1 params ["_player"];
-						[_player,_wire, _wireColor, _bombObj, _order] call FUNC(cutWire);        
+						[_player,_wire, _bombObj, _order] call FUNC(cutWire);        
 					},
 					{
 						params ["_actionParams","_player"];
@@ -56,7 +58,7 @@
 					["isNotSwimming"]
 				] call ace_common_fnc_progressBar; 
 			};
-			private _iedSubAction = [_wireColor, localize LSTRING(Action_Cut) + toLower _wireColor, "", _statement, _condition,{},[_wire, _wireColor, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+			private _iedSubAction = [_color, localize LSTRING(Name_Cut) + toLower _wireColor, "", _statement, _condition,{},[_wire, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
 			[_bombObj, 0, ["ACE_MainActions", "IEDD_DisarmMenu"], _iedSubAction] call ace_interact_menu_fnc_addActionToObject;
 			sleep 0.1;
 		};
@@ -198,4 +200,7 @@ if (isServer) then {
 };
 
 if (!hasInterface) exitWith {};
-["unit", {params ["_player"]; [_player] call FUNC(addItems);},true] call CBA_fnc_addPlayerEventHandler;
+["unit", {
+	params ["_player"];
+	[_player] call FUNC(addItems);
+},true] call CBA_fnc_addPlayerEventHandler;

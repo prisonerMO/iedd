@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-params ["_player","_wire", "_wireColor", "_bombObj", "_order"];
+params ["_player","_wire","_bombObj", "_order"];
 private _failChance = if ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist") then {
     GVAR(failChanceEOD);
 } else {

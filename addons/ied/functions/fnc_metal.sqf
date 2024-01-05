@@ -81,7 +81,7 @@ private _subObjPosAndDir = [
 } forEach _wires;
 
 {
-    _x setVariable [QGVAR(text)," ("+localize LSTRING(Action_Long)+")"];
+    _x setVariable [QGVAR(text)," ("+localize LSTRING(Name_Long)+")",true];
 } forEach [_subObj5, _subObj6];
 
 _bombObj setVariable [QGVAR(wires),_wires,true];

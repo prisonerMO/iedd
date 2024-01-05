@@ -114,7 +114,7 @@ _subObjPosAndDir = [
     _x setVectorDirAndUp ((_subObjPosAndDir select _forEachIndex) select 1);
 } forEach _wires;
 {
-    _x setVariable [QGVAR(text)," ("+localize LSTRING(Action_Short)+")"];
+    _x setVariable [QGVAR(text)," ("+localize LSTRING(Name_Short)+")",true];
 } forEach [_subObj5, _subObj6];
 
 _bombObj setVariable [QGVAR(wires), _wires,true];

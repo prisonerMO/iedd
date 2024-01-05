@@ -91,7 +91,7 @@ class Cfg3DEN {
                     };
                     class GVAR(charge_dud) {
                         displayName = CSTRING(Dud);
-                        tooltip = CSTRING(Dud_Tooltip);
+                        tooltip = CSTRING(ChargeDud_Tooltip);
                         property = QGVAR(charge_dud);
                         expression = QUOTE(_this setVariable [ARR_2(QQGVAR(charge_dud),_value)]);
                         control = "Slider";
@@ -121,7 +121,7 @@ class Cfg3DEN {
                         expression = QUOTE([ARR_4(_this,_value,'ace_isSurrendered',QQGVAR(isSurrendered))] call FUNC(setAttributes));
                         typeName = "BOOL";
                         condition = "objectControllable";
-                        defaultValue = QUOTE(true);
+                        defaultValue = QUOTE(false);
                     };
                 };
             };

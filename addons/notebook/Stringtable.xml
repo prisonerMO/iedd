@@ -49,8 +49,8 @@
 		</Container>
 		<Container name="Notebook Action Names">
 			<Key ID="STR_iedd_notebook_Action_Menu">
-				<Original>IEDD Menu</Original>
-				<English>IEDD Menu</English>
+				<Original>IEDD Notebook Menu</Original>
+				<English>IEDD Notebook Menu</English>
 			</Key>
 			<Key ID="STR_iedd_notebook_Action_Open">
 				<Original>Open IEDD Notebook</Original>

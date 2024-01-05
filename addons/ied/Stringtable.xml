@@ -88,6 +88,14 @@
 				<Original>White</Original>
 				<English>White</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Name_Black">
+				<Original>Black</Original>
+				<English>Black</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Name_Yellow">
+				<Original>Yellow</Original>
+				<English>Yellow</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Variation">
 				<Original>Variation</Original>
 				<English>Variation</English>
@@ -144,6 +152,18 @@
 				<Original>Huge</Original>
 				<English>Huge</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Name_Long">
+				<Original>Long</Original>
+				<English>Long</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Name_Short">
+				<Original>Short</Original>
+				<English>Short</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Name_Cut">
+				<Original>Cut</Original>
+				<English>Cut</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Decals">
 				<Original>Random ground sign</Original>
 				<English>Random ground sign</English>
@@ -187,78 +207,50 @@
 		</Container>
 		<Container name="IEDD Options Charge">
 			<Key ID="STR_iedd_ied_isCharge_DisplayName">
-				<Original>IED bomb vest on unit</Original>
-				<English>IED bomb vest on unit</English>
+				<Original>Add bomb vest</Original>
+				<English>Add bomb vest</English>
 			</Key>
 			<Key ID="STR_iedd_ied_isCharge_Description">
-				<Original>IED bomb vest on unit Description</Original>
-				<English>IED bomb vest on unit Description</English>
+				<Original>Add bomb vest on unit</Original>
+				<English>Add bomb vest on unit</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ChargeDud_Tooltip">
+				<Original>Set probability of bomb vest being dud.</Original>
+				<English>Set probability of bomb vest being dud.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_isHandcuffed_DisplayName">
 				<Original>Make unit handcuffed</Original>
 				<English>Make unit handcuffed</English>
 			</Key>
 			<Key ID="STR_iedd_ied_isHandcuffed_Description">
-				<Original>Make unit handcuffed Description</Original>
-				<English>Make unit handcuffed Description</English>
+				<Original>Check to make unit handcuffed (If surrender is also checked, this option will be selected).</Original>
+				<English>Check to make unit handcuffed (If surrender is also checked, this option will be selected).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_isSurrendered_DisplayName">
 				<Original>Make unit surrender</Original>
 				<English>Make unit surrender</English>
 			</Key>
 			<Key ID="STR_iedd_ied_isSurrendered_Description">
-				<Original>Make unit surrender Description</Original>
-				<English>Make unit surrender Description</English>
+				<Original>Check to make unit surrender (If handcuffed is also checked, that option will be selected).</Original>
+				<English>Check to make unit surrender (If handcuffed is also checked, that option will be selected).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Charge_Settings_DisplayName">
-				<Original>Object IED Settings</Original>
-				<English>Object IED Settings</English>
+				<Original>Bomb vest settings</Original>
+				<English>Bomb vest settings</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Charge_Status_DisplayName">
-				<Original>Object Status Settings</Original>
-				<English>Object Status Settings</English>
+				<Original>Unit Status Settings</Original>
+				<English>Unit Status Settings</English>
 			</Key>			
 		</Container>
-		<Container name="IEDD Interaction Menu">
-			<Key ID="STR_iedd_ied_Action_red">
-				<Original>Red</Original>
-				<English>Red</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Action_blue">
-				<Original>Blue</Original>
-				<English>Blue</English>
-			</Key>											
-			<Key ID="STR_iedd_ied_Action_green">
-				<Original>Green</Original>
-				<English>Green</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Action_black">
-				<Original>Black</Original>
-				<English>Black</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Action_yellow">
-				<Original>Yellow</Original>
-				<English>Yellow</English>
-			</Key>												
-			<Key ID="STR_iedd_ied_Action_Long">
-				<Original>Long</Original>
-				<English>Long</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Action_Short">
-				<Original>Short</Original>
-				<English>Short</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Action_Cut">
-				<Original>Cut</Original>
-				<English>Cut</English>
-			</Key>
+		<Container name="IEDD Interaction Menu">											
 			<Key ID="STR_iedd_ied_Disarm_DisplayName">
 				<Original>Disarm</Original>
 				<English>Disarm</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Detach_DisplayName">
-				<Original>Detach bomb vest</Original>
-				<English>Detach bomb vest</English>
+				<Original>Detach bombs</Original>
+				<English>Detach bombs</English>
 			</Key>											
 		</Container>	
 		<Container name="IEDD Explosives">
