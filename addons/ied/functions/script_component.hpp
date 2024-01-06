@@ -45,7 +45,7 @@
 
 #define IEDD_CHARGE [\
 	[["Green","Blue","Yellow","Black","Red","Black","Red"],[5,0,4,1,2,3,6]],\
-	[["Black","Blue","Yellow","Red","Green","Black","Red"],[3,2,5,6,1,0,4]],\
+	[["Black","Blue","Yellow","Red","Green","Black","Red"],[2,4,5,6,1,3,0]],\
 	[["Yellow","Red","Blue","Green","Black","Black","Red"],[4,3,6,1,5,0,2]],\
 	[["Black","Green","Yellow","Blue","Red","Black","Red"],[6,2,1,0,4,3,5]],\
 	[["Red","Black","Green","Blue","Yellow","Black","Red"],[5,4,6,2,3,1,0]]\
