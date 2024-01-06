@@ -211,8 +211,8 @@
 				<English>Add bomb vest</English>
 			</Key>
 			<Key ID="STR_iedd_ied_isCharge_Description">
-				<Original>Add bomb vest on unit</Original>
-				<English>Add bomb vest on unit</English>
+				<Original>Add bomb vest on this unit</Original>
+				<English>Add bomb vest on this unit</English>
 			</Key>
 			<Key ID="STR_iedd_ied_ChargeDud_Tooltip">
 				<Original>Set probability of bomb vest being dud.</Original>
@@ -235,8 +235,8 @@
 				<English>Check to make unit surrender (If handcuffed is also checked, that option will be selected).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Charge_Settings_DisplayName">
-				<Original>Bomb vest settings</Original>
-				<English>Bomb vest settings</English>
+				<Original>Bomb Vest Settings s</Original>
+				<English>Bomb Vest Settings </English>
 			</Key>
 			<Key ID="STR_iedd_ied_Charge_Status_DisplayName">
 				<Original>Unit Status Settings</Original>
