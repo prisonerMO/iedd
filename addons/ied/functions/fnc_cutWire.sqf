@@ -31,9 +31,9 @@ deleteVehicle _wire;
 					deleteVehicle _object;
 				};
 				if (typeOf _bombObj == QGVAR(Charge)) then {
-					private _object = attachedTo _bombObj;
-					[_object, "forceWalk", QGVAR(charge), false] call ace_common_fnc_statusEffect_set;					
-					[QGVAR(detachAction), [_bombObj]] call CBA_fnc_globalEventJIP; 
+					private _unit = attachedTo _bombObj;				
+					[QGVAR(detachAction), [_bombObj]] call CBA_fnc_globalEventJIP;
+					[_unit] call FUNC(removeEvents);
 				};
 			};
 		} else {

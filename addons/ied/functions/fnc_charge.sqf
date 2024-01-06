@@ -20,7 +20,15 @@ if (_killedEhId != -1) then {
 _killedEhId = _unit addEventHandler ["Killed", {
     [_this select 0] call FUNC(handleKilled);
 }];
+private _getInMan = _unit getVariable [QGVAR(GetInMan), -1];
+if (_getInMan != -1) then {
+    _unit removeEventHandler ["Killed", _getInMan];
+};
+_getInMan = _unit addEventHandler ["GetInMan", {
+    _this call FUNC(handleGetInMan);
+}];
 _unit setVariable [QGVAR(KilledEhId), _killedEhId, true];
+_unit setVariable [QGVAR(GetInMan), _getInManEH,true];
 
 
 private _expl1 = createSimpleObject [QGVAR(Charge), [0,0,0]];

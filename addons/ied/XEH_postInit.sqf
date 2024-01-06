@@ -179,6 +179,7 @@
 		_memPos = getPosATL _holder;
 		_holder setPosATL (_memPos vectorAdd [0,0,-(_memPos select 2)]);
     } forEach _charges;
+	[_object] call FUNC(removeEvents);
 }] call CBA_fnc_addEventHandler;
 
 ["ace_unconscious", {

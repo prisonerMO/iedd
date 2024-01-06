@@ -12,7 +12,11 @@ if (_possiblity > random 1 || GVAR(isDuds)) then {
 		deleteVehicle _object;
 	};
 } else {
+	if (typeOf _bombObj == QGVAR(Charge)) then {
+		detach _bombObj;
+	};
 	private _pos = _bombObj modelToWorld [0,0,0];
+	diag_log format ["_pos: %1",_pos];
 	private _size = _bombObj getVariable [QGVAR(size), 2];
 	if (_size > 3) then {
 		_size = floor (random 3);		
@@ -26,7 +30,7 @@ if (_possiblity > random 1 || GVAR(isDuds)) then {
 		}, 
 		{
 			params ["_bombObj","_pos","_type"];
-			_bomb = createVehicle [_type, [_pos #0, _pos #1, 0.15], [], 0, "NONE"];
+			_bomb = createVehicle [_type, [_pos #0, _pos #1, 0.05], [], 0, "CANCOLLIDE"];
 			[QGVAR(hideObject),[_bomb,true]] call CBA_fnc_globalEvent;
 			_bomb setDamage 1;
 		}, 

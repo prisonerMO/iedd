@@ -60,7 +60,7 @@ if (_type == QGVAR(Charge)) exitWith {
 			_x setVectorDirAndUp ((IEDD_DUDS_CHARGE #_forEachIndex) #1);
 		};
 	} forEach _ieddWires;
-	if (!alive _unit) then {
+	if (!alive _unit) exitWith {
 		_unit call FUNC(deleted);
 	};
 };
