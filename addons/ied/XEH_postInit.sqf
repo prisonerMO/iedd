@@ -79,7 +79,7 @@
 	private _statement = {  
 		params ["_target", "_player", "_actionParams"];
 		_actionParams params ["_object"];
-		[QGVAR(defused), [_object]] call CBA_fnc_serverEvent;
+		[QGVAR(detachCharges), [_object]] call CBA_fnc_serverEvent;
 	};
 
 	private _iedSubAction = [QGVAR(disarmAction), localize LSTRING(Detach_DisplayName), "", _statement, _condition,{},[_object], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
@@ -162,7 +162,7 @@
 	[{!isNil QGVAR(bombs)}, {GVAR(bombs) pushBackUnique (_this select 0);}, [_object]] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(defused), {
+[QGVAR(detachCharges), {
     params ["_object"];
 	private _attachedObjects = attachedObjects _object;
 	private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
