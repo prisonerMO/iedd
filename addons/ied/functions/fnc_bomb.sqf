@@ -30,7 +30,7 @@ if (_possiblity > random 1 || GVAR(isDuds)) then {
 		}, 
 		{
 			params ["_bombObj","_pos","_type"];
-			_bomb = createVehicle [_type, [_pos #0, _pos #1, 0.05], [], 0, "CANCOLLIDE"];
+			_bomb = createVehicle [_type, [_pos #0, _pos #1, 0.05], [], 0, "CAN_COLLIDE"];
 			[QGVAR(hideObject),[_bomb,true]] call CBA_fnc_globalEvent;
 			_bomb setDamage 1;
 		}, 
