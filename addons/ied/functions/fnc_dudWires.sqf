@@ -53,7 +53,6 @@ if (_type == QGVAR(Barrel) || _type == QGVAR(Barrel_Grey)) exitWith {
 };
 if (_type == QGVAR(Charge)) exitWith {
 	private _unit = attachedTo _bombObj;
-	diag_log format ["Unit %1 , alive unit %2", _unit, alive _unit];
 	{
 		if (!isNull _x) then  {
 			_x attachTo [_bombObj,(IEDD_DUDS_CHARGE #_forEachIndex) #0];

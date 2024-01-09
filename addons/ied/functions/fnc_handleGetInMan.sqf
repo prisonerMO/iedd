@@ -1,13 +1,11 @@
 #include "script_component.hpp"
 params ["_unit", "_role", "_vehicle", "_turret"];
-diag_log format ["GetInMan Called %1",_this];
 // ensure event is only called once
 [{
     params ["_args", "_idPFH"];
     _args params ["_unit","_vehicle"];
     _unit setVariable [QGVAR(getInManPH),_idPFH];
-    if (speed _vehicle > 45) then {        
-        diag_log format ["is speed unit %1, %2",speed _vehicle,_unit];
+    if (speed _vehicle > 45) then {
         _unit setDamage 1;
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
@@ -15,11 +13,9 @@ diag_log format ["GetInMan Called %1",_this];
 
 _unit addEventHandler ["GetOutMan", {
     params ["_unit", "_role", "_vehicle", "_turret", "_isEject"];
-    diag_log format ["GETOUT: %1", _this];
     private _idPFH = _unit getVariable [QGVAR(getInManPH),-1];
     if (_idPFH != -1) then {
         [_idPFH] call CBA_fnc_removePerFrameHandler;
-        diag_log format ["isEjected unit removed %1, %2",_unit,_idPFH];
     };
     private _attachedObjects = attachedObjects _unit;
     private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};

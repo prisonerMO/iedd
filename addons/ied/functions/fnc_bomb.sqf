@@ -16,7 +16,6 @@ if (_possiblity > random 1 || GVAR(isDuds)) then {
 		detach _bombObj;
 	};
 	private _pos = _bombObj modelToWorld [0,0,0];
-	diag_log format ["_pos: %1",_pos];
 	private _size = _bombObj getVariable [QGVAR(size), 2];
 	if (_size > 3) then {
 		_size = floor (random 3);		
