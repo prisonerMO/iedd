@@ -11,6 +11,6 @@ if (isServer) then {
 	} forEach IEDD_CLASSES;
 	GVAR(bombs) = [];
 };
-#include "initSettings.sqf"
+#include "initSettings.inc.sqf"
 
 ADDON = true;

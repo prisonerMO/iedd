@@ -1,11 +1,7 @@
 #define COMPONENT main
 #define COMPONENT_NAME "Main"
 #include "script_mod.hpp"
-
-// #define DEBUG_MODE_FULL
-// #define DISABLE_COMPILE_CACHE
-// #define ENABLE_PERFORMANCE_COUNTERS
-
+#include "\x\iedd\addons\main\script_debug.hpp"
 #ifdef DEBUG_ENABLED_MAIN
     #define DEBUG_MODE_FULL
 #endif

@@ -85,7 +85,7 @@ if (!isServer) exitWith {};
             _variation = floor (random 5);
         };
 
-
+        TRACE_4("IED Bomb Vest:",_bombObj,_variation,_bombObj getVariable QGVAR(size),_bombObj getVariable QGVAR(dud));
         if (GVAR(isDetectable)) then {
             private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
             _mine attachTo [_bombObj, [0,0,0]];

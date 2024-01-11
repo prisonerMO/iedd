@@ -405,5 +405,55 @@
 				<English>Player must have defusal kit to disarm IEDs.</English>
 			</Key>
 		</Container>
+		<Container name="IEDD Notebook Dev Settings">							
+			<Key ID="STR_iedd_ied_EquipmentDebug">
+				<Original>Enable Equipment addon debug</Original>
+				<English>Enable Equipment addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_EquipmentDebug_Description">
+				<Original>Enable Equipment addon debug</Original>
+				<English>Enable Equipment addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_IedDebug">
+				<Original>Enable Ied addon debug</Original>
+				<English>Enable Ied addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_IedDebug_Description">
+				<Original>Enable Ied addon debug</Original>
+				<English>Enable Ied addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_MainDebug">
+				<Original>Enable Main addon debug</Original>
+				<English>Enable Main addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_MainDebug_Description">
+				<Original>Enable Main addon debug</Original>
+				<English>Enable Main addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ModelsDebug">
+				<Original>Enable Models addon debug</Original>
+				<English>Enable Models addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ModelsDebug_Description">
+				<Original>Enable Models addon debug</Original>
+				<English>Enable Models addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ModulesDebug">
+				<Original>Enable Modules addon debug</Original>
+				<English>Enable Modules addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ModulesDebug_Description">
+				<Original>Enable Modules addon debug</Original>
+				<English>Enable Modules addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_NotebookDebug">
+				<Original>Enable Notebook addon debug</Original>
+				<English>Enable Notebook addon debug</English>
+			</Key>
+			<Key ID="STR_iedd_ied_NotebookDebug_Description">
+				<Original>Enable Notebook addon debug</Original>
+				<English>Enable Notebook addon debug</English>
+			</Key>			
+		</Container>
 	</Package>
 </Project>
