@@ -1,8 +1,8 @@
-name = "IEDD Notebook";
+name = "IEDD Notebook 0.0.0";
 picture = "x\iedd\addons\models\preview\notebook.paa";
-actionName = "";
-action = "";
-description = "IEDD Notebook - Version 1.3.0";
+actionName = "GitHub";
+action = "https://github.com/prisonerMO/iedd";
+description = "IEDD Notebook - Version 0.0.0";
 logo = "x\iedd\addons\models\preview\notebook.paa";
 logoOver = "x\iedd\addons\models\preview\notebook.paa";
 tooltip = "IEDD Notebook";
