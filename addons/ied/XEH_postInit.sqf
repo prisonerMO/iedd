@@ -189,6 +189,8 @@
 
 ["forceWalk", false, [QGVAR(charge)]] call ace_common_statusEffect_addType;
 
+//["ace_captiveStatusChanged", {_this call FUNC(handleHancuffed)}] call CBA_fnc_addEventHandler; //TODO ace isEscortin EH or this.
+
 if (isServer) then {
 
 	[{
