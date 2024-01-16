@@ -13,9 +13,9 @@ if (!isServer) exitWith {};
     {!isNull (_this select 0)},
     {     
         params ["_unit"];
+        TRACE_1("Bomb vest unit",_this);
         // TODO CHECK THIS 
         [_unit, "forceWalk", QGVAR(charge), true] call ace_common_fnc_statusEffect_set;
-
         private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
         if (_killedEhId != -1) then {
             _unit removeEventHandler ["Killed", _killedEhId];
@@ -25,14 +25,13 @@ if (!isServer) exitWith {};
         }];
         private _getInManEhId = _unit getVariable [QGVAR(GetInManEhId), -1];
         if (_getInManEhId != -1) then {
-            _unit removeEventHandler ["Killed", _getInMan];
+            _unit removeEventHandler ["GetInMan", _getInMan];
         };
         _getInManEhId = _unit addEventHandler ["GetInMan", {
             _this call FUNC(handleGetInMan);
         }];
-        _unit setVariable [QGVAR(KilledEhId), _killedEhId, true];
-        _unit setVariable [QGVAR(GetInManEhId), _getInManEhId,true];
-
+        _unit setVariable [QGVAR(KilledEhId), _killedEhId,true]; // need to be global?
+        _unit setVariable [QGVAR(GetInManEhId), _getInManEhId,true]; // need to be global?
 
         private _expl1 = createSimpleObject [QGVAR(Charge), [0,0,0]];
         _expl1 attachTo [_unit, [-0.15, 0.12, 0.15], "Pelvis"];
