@@ -174,10 +174,10 @@
         private _charge = _x;
         deleteVehicle _charge;
 		private _holder = createVehicle ["groundweaponholder", _pos, [], 0, "CAN_COLLIDE"];
-		_holder addMagazineCargo  ["DemoCharge_Remote_Mag",1];
+		_holder addMagazineCargoGlobal  ["DemoCharge_Remote_Mag",1];
 		_holder setPosWorld (_object modelToWorldWorld (_positions select _forEachIndex)); //TODO Pickup action for bombs.
 		_memPos = getPosATL _holder;
-		_holder setPosATL (_memPos vectorAdd [0,0,-(_memPos select 2)]);
+		_holder setPosATL [_memPos select 0, _memPos select 1, 0];
     } forEach _charges;
 	[_object] call FUNC(removeEvents);
 }] call CBA_fnc_addEventHandler;

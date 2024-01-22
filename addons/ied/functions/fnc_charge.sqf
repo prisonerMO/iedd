@@ -1,14 +1,15 @@
 //  CHARGE
 #include "script_component.hpp"
 params ["_unit","_actived"];
+TRACE_1("Charge call",_this);
 if (is3DEN) exitWith {
     private _value = (_unit get3DENAttribute QGVAR(isSurrendered)) select 0;
     [_unit,_value,"ace_isSurrendered",QGVAR(isSurrendered)] call FUNC(setAttributes);
     _value = (_unit get3DENAttribute QGVAR(isHandcuffed)) select 0;
     [_unit,_value,"ace_isHandcuffed",QGVAR(isHandcuffed)] call FUNC(setAttributes);
 };
-if (!_activated) exitWith {};
-if (!isServer) exitWith {};
+if (!_activated) exitWith {diag_log format ["ExitWith _actived:", _activated]};
+if (!isServer) exitWith {diag_log format ["ExitWith isServer:", isServer]};
 [
     {!isNull (_this select 0)},
     {     
