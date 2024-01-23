@@ -12,3 +12,8 @@ private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
 if (_killedEhId != -1) then {
     _unit removeEventHandler ["Killed", _killedEhId];
 };
+
+private _isCharge = _unit getVariable [QGVAR(isCharge),-1];
+if (_isCharge != -1) then {
+    _unit setVariable [QGVAR(isCharge),nil,true];
+}
