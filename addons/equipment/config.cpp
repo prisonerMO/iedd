@@ -18,7 +18,6 @@ class CfgPatches {
 		requiredAddons[] = {
             "A3_Characters_F",
             "A3_Supplies_F_Exp_Ammoboxes",
-			"A3_Weapons_F_Explosives",
 			"ace_main"
         };
 		url = "https://community.bistudio.com/wiki";
@@ -29,4 +28,3 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
-#include "CfgAmmo.hpp"

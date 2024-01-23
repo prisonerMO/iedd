@@ -1,6 +1,3 @@
-#ifndef DEBUG_MODE_FULL
-#define DEBUG_MODE_FULL
-#endif
 #include "\x\cba\addons\main\script_macros_common.hpp"
 #include "\x\cba\addons\xeh\script_xeh.hpp"
 #define AUTHOR "Prion"

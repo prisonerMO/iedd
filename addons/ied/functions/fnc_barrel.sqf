@@ -36,7 +36,7 @@ if (_isFake > random 1) exitWith {
 };
 
 if (GVAR(isDetectable)) then {
-    private _mine = QEGVAR(equipment,mine_ammo) createVehicle [0,0,0];
+    private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
     _mine attachTo [_bombObj, [0,0,0]];
     ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
     [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
@@ -88,9 +88,14 @@ _subObjPosAndDir = [
 ];
 
 {
-    _x attachTo [_bombObj,(_subObjPosAndDir select _forEachIndex) select 0];
-    _x setVectorDirAndUp ((_subObjPosAndDir select _forEachIndex) select 1);
+    private _wire = _x;
+    _wire  attachTo [_bombObj,(_subObjPosAndDir select _forEachIndex) select 0];
+    _wire  setVectorDirAndUp ((_subObjPosAndDir select _forEachIndex) select 1);
 } forEach _wires;
+
+{
+    _x setVariable [QGVAR(text)," ("+localize LSTRING(Name_Long)+")",true];
+} forEach [_subObj5, _subObj6];
 
 _bombObj setVariable [QGVAR(wires), _wires,true];
 _bombObj setVariable [QGVAR(bomb), true, true];
@@ -99,7 +104,7 @@ _bombObj setVariable [QGVAR(variation),_variation,true];
 [
     {speed (_this select 0) == 0},
     {     
-        params ["_bombObj", "_variation", "_decals", "_setDir", "_wireSet", "_wires"];
+        params ["_bombObj","_decals", "_setDir", "_wireSet"];
         if (_setDir) then {           
             private _bombPos = getPosATL _bombObj;
             _bombObj setDir random 359;
@@ -108,13 +113,10 @@ _bombObj setVariable [QGVAR(variation),_variation,true];
         if (_decals) then {
             [_bombObj] call FUNC(decals);
         };
-        private _attached = count attachedObjects _bombObj;
-        private _wireCount = count _wires;
-        private _uncount = _attached - _wireCount;
-        [QGVAR(defuseAction), [_bombObj, _wireSet, _wires, _uncount]] call CBA_fnc_globalEventJIP;
+        [QGVAR(defuseAction), [_bombObj, _wireSet]] call CBA_fnc_globalEventJIP;
         [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;  
     },
-    [_bombObj, _variation, _decals, _setDir, _wireSet, _wires],
+    [_bombObj,_decals, _setDir, _wireSet],
     1
 ] call CBA_fnc_waitUntilAndExecute;
 

@@ -6,4 +6,5 @@ class CfgVehicles {
 	#include "iedcinder.hpp"
 	#include "iedjerry.hpp"
 	#include "iedmetal.hpp"
+	#include "iedexplosives.hpp"
 };

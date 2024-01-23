@@ -37,5 +37,22 @@
 			<Original>IEDD Parts</Original>
 			<English>IEDD Wires</English>
 	    </Key>
+		<Key ID="STR_iedd_main_Options">
+            <English>IEDD Notebook Options</English>
+            <German>IEDD Notebook-Optionen</German>
+            <Spanish>Opciones IEDD Notebook</Spanish>
+            <Polish>Ustawienia IEDD Notebook</Polish>
+            <Czech>IEDD Notebook Nastavení</Czech>
+            <French>Options IEDD Notebook</French>
+            <Russian>IEDD Notebook Настройки</Russian>
+            <Portuguese>Opções do IEDD Notebook</Portuguese>
+            <Hungarian>IEDD Notebook Beállítások</Hungarian>
+            <Italian>Opzioni IEDD Notebook</Italian>
+            <Japanese>IEDD Notebook オプション</Japanese>
+            <Korean>IEDD Notebook 옵션</Korean>
+            <Chinese>IEDD Notebook 設定選項</Chinese>
+            <Chinesesimp>IEDD Notebook 设定选项</Chinesesimp>
+            <Turkish>IEDD Notebook Ayarlar</Turkish>
+        </Key>
 	</Package>
 </Project>

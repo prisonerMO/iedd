@@ -14,3 +14,4 @@ class CfgPatches {
 };
 #include "CfgEditorCategories.hpp"
 #include "CfgVehicleClasses.hpp"
+#include "CfgEden.hpp"

@@ -92,18 +92,4 @@ class CfgVehicles {
 		ace_dragging_canDrag = 0;
 		ace_dragging_canCarry = 0;
 	};
-	class DemoCharge_F;
-	class GVAR(mine):DemoCharge_F
-	{
-		author = "prisoner";
-		mapSize = 0.01;
-		_generalMacro = "DemoCharge_F";
-		scope = 0;
-		scopeCurator = 0;
-		icon = "iconExplosiveGP";
-		ammo = QGVAR(mine_ammo);
-		defaultMagazine = QGVAR(mine_mag);
-		model = "x\iedd\addons\models\data\IEDD_Wire_L.p3d";
-		displayName = "IED mine";
-	};
 };

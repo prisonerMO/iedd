@@ -14,8 +14,7 @@ git_hash = 0
 [asc]
 enabled = true
 exclude = [
-    "/initsettings.sqf",
-    "/xeh_prep.sqf",
+    ".inc.sqf"
 ]
 
 [hemtt.config]

@@ -44,7 +44,7 @@ if (_isFake > random 1) exitWith {
 };
 
 if (GVAR(isDetectable)) then {
-    private _mine = QEGVAR(equipment,mine_ammo) createVehicle [0,0,0];
+    private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
     _mine attachTo [_bombObj, [0,0,0]];
     ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
     [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
@@ -97,7 +97,7 @@ _bombObj setVariable [QGVAR(variation),_variation,true];
 [
     {speed (_this select 0) == 0},
     {     
-        params ["_bombObj", "_variation", "_decals", "_setDir", "_wireSet", "_wires","_color"];
+        params ["_bombObj","_decals", "_setDir", "_wireSet","_color"];
         if (_setDir) then {
             private _bombPos = getPosATL _bombObj;
             _bombObj setDir random 359;
@@ -109,13 +109,10 @@ _bombObj setVariable [QGVAR(variation),_variation,true];
         if (_color != "green") then {
             _bombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]   
         };
-        private _attached = count attachedObjects _bombObj;
-        private _wireCount = count _wires;
-        private _uncount = _attached - _wireCount;
-        [QGVAR(defuseAction), [_bombObj, _wireSet, _wires, _uncount]] call CBA_fnc_globalEventJIP;
+        [QGVAR(defuseAction), [_bombObj, _wireSet]] call CBA_fnc_globalEventJIP;
         [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;  
     },
-    [_bombObj, _variation, _decals, _setDir, _wireSet, _wires,_color],
+    [_bombObj,_decals, _setDir,_wireSet,_color],
     1
 ] call CBA_fnc_waitUntilAndExecute;
 
