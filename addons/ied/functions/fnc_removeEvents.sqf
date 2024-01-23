@@ -5,12 +5,12 @@ params ["_unit"];
 
 private _getInManEhId = _unit getVariable [QGVAR(GetInManEhId), -1];
 if (_getInManEhId != -1) then {
-    _unit setVariable [QGVAR(GetInManEhId),nil,true];
+    _unit removeEventHandler ["GetInMan", _getInManEhId];
 };
 
 private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
 if (_killedEhId != -1) then {
-    _unit setVariable [QGVAR(KilledEhId),nil,true];
+    _unit removeEventHandler ["Killed", _killedEhId];
 };
 
 private _isCharge = _unit getVariable [QGVAR(isCharge),false];
