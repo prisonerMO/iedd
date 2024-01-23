@@ -74,10 +74,6 @@ if (!isServer) exitWith {diag_log format ["ExitWith isServer:", isServer]};
         private _variation = _unit getVariable [QGVAR(charge_variation),5];
         private _dud = _unit getVariable [QGVAR(charge_dud),0];
         private _size = _unit getVariable [QGVAR(charge_size),0];
-        
-        {
-            _unit setVariable [_x,nil];
-        } forEach [QGVAR(charge_variation),QGVAR(charge_dud),QGVAR(charge_size)];
 
         _bombObj setVariable [QGVAR(size),_size,true];
         _bombObj setVariable [QGVAR(dud),_dud,true];
