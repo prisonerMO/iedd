@@ -177,6 +177,7 @@
 		_holder addMagazineCargoGlobal  ["DemoCharge_Remote_Mag",1];
 		_holder setPosWorld (_object modelToWorldWorld (_positions select _forEachIndex)); //TODO Pickup action for bombs.
 		_memPos = getPosATL _holder;
+		_holder setDir (random 359);
 		_holder setPosATL [_memPos select 0, _memPos select 1, 0];
     } forEach _charges;
 	[_object] call FUNC(removeEvents);
