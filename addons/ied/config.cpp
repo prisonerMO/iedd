@@ -12,7 +12,8 @@ class CfgPatches {
 			QGVAR(Cinder),
 			QGVAR(CanisterFuel),
 			QGVAR(Metal),
-			QGVAR(Metal_English)
+			QGVAR(Metal_English),
+			QGVAR(Charge)
 		};
 		weapons[] = {};
 		requiredVersion = REQUIRED_VERSION;
@@ -22,6 +23,7 @@ class CfgPatches {
 			"A3_Props_F_Orange_Humanitarian_Supplies",
 			"A3_Props_F_Orange_Civilian_Constructions",
 			"A3_Structures_F_EPC_Civ_Garbage",
+			"A3_Weapons_F_Explosives",
 			"iedd_main"
         };
 		url = "https://community.bistudio.com/wiki";
@@ -29,5 +31,8 @@ class CfgPatches {
 	};
 };
 #include "CfgEventHandlers.hpp"
+#include "CfgEden.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgMagazines.hpp"
+#include "CfgAmmo.hpp"
 #include "CfgSounds.hpp"

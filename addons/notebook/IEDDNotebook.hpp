@@ -209,13 +209,13 @@ class GVAR(display) {
 			h = QUOTE(GUI_GRID_CENTER_H * 1.5);			
 		};
 
-		class GVAR(empty1): RscActiveText {
+		class GVAR(charge): RscActiveText {
 
 			idc = 210;
 			style = 48;
 			text = QPATHTOF(images\brside\7.paa);
-			tooltip = CSTRING(Empty);
-			onButtonClick = QUOTE(['empty1'] call FUNC(tabs));
+			tooltip = CSTRING(Charge);
+			onButtonClick = QUOTE(['charge'] call FUNC(tabs));
 			color[] = {1,1,1,1};
 			colorActive[] = {0.2,0.2,0.2,0.2};
 			colorDisabled[] = {1,1,1,1};
