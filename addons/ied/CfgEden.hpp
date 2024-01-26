@@ -24,7 +24,7 @@ class Cfg3DEN {
                         displayName = CSTRING(Variation);
                         tooltip = CSTRING(Variation_Tooltip);
                         property = QGVAR(charge_variation);
-                        expression = QUOTE(_this setVariable [ARR_2(QQGVAR(charge_variation),_value),true]);
+                        expression = QUOTE(_this setVariable [ARR_3(QQGVAR(charge_variation),_value,true)]);
                         defaultValue = 5;
                         control = "Combo";
                         typeName = "NUMBER";
@@ -60,7 +60,7 @@ class Cfg3DEN {
                         displayName = CSTRING(Size);
                         tooltip = CSTRING(Size_Tooltip);
                         property = QGVAR(charge_size);
-                        expression = QUOTE(_this setVariable [ARR_2(QQGVAR(charge_size),_value),true]);
+                        expression = QUOTE(_this setVariable [ARR_3(QQGVAR(charge_size),_value,true)]);
                         defaultValue = 0;
                         control = "Combo";
                         typeName = "NUMBER";
@@ -93,7 +93,7 @@ class Cfg3DEN {
                         displayName = CSTRING(Dud);
                         tooltip = CSTRING(ChargeDud_Tooltip);
                         property = QGVAR(charge_dud);
-                        expression = QUOTE(_this setVariable [ARR_2(QQGVAR(charge_dud),_value),true]);
+                        expression = QUOTE(_this setVariable [ARR_3(QQGVAR(charge_dud),_value,true)]);
                         control = "Slider";
                         condition = "objectControllable";
                         defaultValue = 0;
