@@ -55,6 +55,15 @@ class Cfg3DEN {
                                 value = 5;
                             }; 				
                         };
+                    };
+                    class GVAR(charge_timer) {
+                        displayName = CSTRING(Timer);
+                        tooltip = CSTRING(Timer_Tooltip);
+                        property = QGVAR(charge_timer);
+                        control = "Combo";
+                        expression = QUOTE(_this setVariable [ARR_3(QQGVAR(charge_timer),_value,true)]);
+                        defaultValue = 0;		
+                        typeName = "BOOL";
                     };	
                     class GVAR(charge_size) {
                         displayName = CSTRING(Size);

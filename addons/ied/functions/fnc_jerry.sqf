@@ -8,6 +8,7 @@ private _decals = _bombObj getVariable [QGVAR(decals), false];
 private _setDir = _bombObj getVariable [QGVAR(dir), false];
 private _isFake = _bombObj getVariable [QGVAR(fake), 0];
 private _color = _bombObj getVariable [QGVAR(color), "green"];
+private _isTimer = _bombObj getVariable [QGVAR(timer), false];
 
 if (_color in [CSTRING(Name_Random),"random"]) then {
     _color = selectRandom ["green", "Blue", "red", "White"];
@@ -93,6 +94,13 @@ _subObjPosAndDir = [
 _bombObj setVariable [QGVAR(wires), _wires,true];
 _bombObj setVariable [QGVAR(bomb), true, true];
 _bombObj setVariable [QGVAR(variation),_variation,true];
+
+if (_isTimer) then {
+    private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
+    _watch attachTo [_bombObj,[-0.13,-0.17,-0.15]];		
+    _watch setVectorDirAndUp [[-0,-1,0],[-0,-0,1]];
+    _bombObj setVariable [QGVAR(timer),_isTimer, true];
+};
 
 [
     {speed (_this select 0) == 0},

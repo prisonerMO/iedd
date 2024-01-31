@@ -67,6 +67,15 @@ class Land_CanisterPlastic_F;
 					value = 5;
 				}; 				
 			};
+		};
+		class GVAR(timer) {
+			displayName = CSTRING(Timer);
+			tooltip = CSTRING(Timer_Tooltip);
+			property = QGVAR(timer);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 0;		
+			typeName = "BOOL";
 		};	
 		class GVAR(size) {
 			displayName = CSTRING(Size);

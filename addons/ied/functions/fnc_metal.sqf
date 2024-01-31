@@ -7,6 +7,7 @@ private _variation = _bombObj getVariable [QGVAR(variation), 5];
 private _decals = _bombObj getVariable [QGVAR(decals), false];
 private _setDir = _bombObj getVariable [QGVAR(dir), false];
 private _isFake = _bombObj getVariable [QGVAR(fake), 0];
+private _isTimer = _bombObj getVariable [QGVAR(timer), false];
 
 if (_isFake > random 1) exitWith {
     private _type = getText (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_default");
@@ -87,6 +88,13 @@ private _subObjPosAndDir = [
 _bombObj setVariable [QGVAR(wires),_wires,true];
 _bombObj setVariable [QGVAR(bomb),true,true];
 _bombObj setVariable [QGVAR(variation),_variation,true];
+
+if (_isTimer) then {
+    private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
+    _watch attachTo [_bombObj,[-0.05,0.156,0.352]];
+	_watch setVectorDirAndUp [[0,0,1],[0,1,0]];
+    _bombObj setVariable [QGVAR(timer),_isTimer, true];
+};
 
 [
     {speed (_this select 0) == 0},

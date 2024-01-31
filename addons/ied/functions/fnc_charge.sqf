@@ -34,46 +34,27 @@ if (!isServer) exitWith {diag_log format ["ExitWith isServer:", isServer]};
         _unit setVariable [QGVAR(KilledEhId), _killedEhId,true]; // need to be global?
         _unit setVariable [QGVAR(GetInManEhId), _getInManEhId,true]; // need to be global?
 
-        private _expl1 = createSimpleObject [QGVAR(Charge), [0,0,0]];
+        private _expl1 = createSimpleObject ["demoCharge_F", [0,0,0]];
         _expl1 attachTo [_unit, [-0.15, 0.12, 0.15], "Pelvis"];
-        private _yaw = 45; 
-        _pitch = -180; 
-        _roll = 90;
-        _expl1 setVectorDirAndUp [
-            [sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch],
-            [[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D
-        ];
-
-        private _expl3 = createSimpleObject [QGVAR(Charge), [0,0,0]];
+        _expl1 setVectorDirAndUp [[-0.707107,-0.707107,0],[0.707107,-0.707107,0]];
+        
+        private _expl3 = createSimpleObject ["demoCharge_F", [0,0,0]];
         _expl3 attachTo [_unit, [0.15, 0.12, 0.15], "Pelvis"];
-        _yaw = 135; _pitch = -180; _roll = 90;
-        _expl3 setVectorDirAndUp [
-            [sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch],
-            [[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D
-        ];
+        _expl3 setVectorDirAndUp [[-0.707107,0.707107,0],[-0.707107,-0.707107,0]];
 
         private _bombObj = QGVAR(Charge) createVehicle position _unit;
         _bombObj attachTo [_unit , [0, 0.17, 0.15], "Pelvis"];
-        _yaw = 90; _pitch = -180; _roll = 90;
-        _bombObj setVectorDirAndUp [
-            [sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch],
-            [[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D
-        ];
+        _bombObj setVectorDirAndUp [[-1,0,0],[-0,-1,0]];
 
-        private _box  = createSimpleObject ["\a3\Weapons_F_Enoch\Items\ChemicalDetector_01_F.p3d", [0,0,0]];
-        _box attachTo [_bombObj,[0,0,0]];
-
-        // set exact yaw, pitch, and roll
-        _yaw = 90; _pitch = 90; _roll = 0;
-        _box setVectorDirAndUp [
-            [sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch],
-            [[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D
-        ];
+		private _box  = createSimpleObject ["\a3\Weapons_F_Enoch\Items\ChemicalDetector_01_F.p3d", [0,0,0]];
+		_box attachTo [_bombObj,[0,0,0]];
+		_box setVectorDirAndUp [[0,0,1],[-1,0,0]];
         
         private _distance = [GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt;
         private _variation = _unit getVariable [QGVAR(charge_variation),5];
         private _dud = _unit getVariable [QGVAR(charge_dud),0];
         private _size = _unit getVariable [QGVAR(charge_size),0];
+        private _isTimer = _unit getVariable [QGVAR(charge_timer), false];
 
         _bombObj setVariable [QGVAR(size),_size,true];
         _bombObj setVariable [QGVAR(dud),_dud,true];
@@ -122,9 +103,16 @@ if (!isServer) exitWith {diag_log format ["ExitWith isServer:", isServer]};
             _x setVariable [QGVAR(text)," ("+localize LSTRING(Name_Short)+")",true];
         } forEach [_subObj5, _subObj6];
 
-        _bombObj setVariable [QGVAR(wires), _wires,true];
+        _bombObj setVariable [QGVAR(wires), _wires, true];
         _bombObj setVariable [QGVAR(bomb), true, true];
-        _bombObj setVariable [QGVAR(variation),_variation,true];
+        _bombObj setVariable [QGVAR(variation),_variation, true];
+
+        if (_isTimer) then {
+            private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d", [0,0,0]];
+            _watch attachTo [_bombObj,[0.02,-0.095,0.028]];
+            _watch setVectorDirAndUp [[-0,-1,0],[1,0,0]];
+            _bombObj setVariable [QGVAR(timer),_isTimer, true];
+        };
 
         [
             {speed (_this select 0) == 0},
