@@ -78,6 +78,25 @@
     [1, 20, 15, 0],
     1
 ] call CBA_fnc_addSetting;
+//IEDD Watch Settings
+
+[
+    QGVAR(minRandomTime),
+    "TIME",
+    [CSTRING(MinRandomTime),CSTRING(MinRandomTime_Description)],
+    [localize "STR_iedd_main_Category_Main","IEDs"],
+    [30, 300, 30, 0],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(maxRandomTime),
+    "TIME",
+    [CSTRING(MaxRandomTime),CSTRING(MaxRandomTime_Description)],
+    [localize "STR_iedd_main_Category_Main","IEDs"],
+    [30, 300, 180, 0],
+    1
+] call CBA_fnc_addSetting;
 
 [
     QGVAR(failChanceEOD),
@@ -160,6 +179,8 @@
     {},
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
+
+
 
 #ifdef ENABLE_IEDD_DEBUG
     [
