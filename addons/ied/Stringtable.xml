@@ -22,6 +22,10 @@
 				<Original>Bomb shortcircuit sound 4</Original>
 				<English>Bomb shortcircuit sound 4</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Sound_Peep1">
+				<Original>Watch peep sound 1</Original>
+				<English>Watch peep sound 1</English>
+			</Key>
 		</Container>
 		<Container name="IEDs Display and Attribues">
 			<Key ID="STR_iedd_ied_Barrel_DisplayName">
@@ -135,6 +139,14 @@
 			<Key ID="STR_iedd_ied_Size_Tooltip">
 				<Original>Set size of explosion (huge excluded from random).</Original>
 				<English>Set size of explosion (huge excluded from random).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Timer">
+				<Original>Timer display</Original>
+				<English>Timer display</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Timer_Tooltip">
+				<Original>Timer display Tooltip</Original>
+				<English>Timer display Tooltip</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Name_Small">
 				<Original>Small</Original>
@@ -339,6 +351,22 @@
 			<Key ID="STR_iedd_ied_MaxRange_Description">
 				<Original>Maximum distance to IED where player will activate it.</Original>
 				<English>Maximum distance to IED where player will activate it.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_MinRandomTime">
+				<Original>Minimum RandomTime</Original>
+				<English>Minimum RandomTime</English>
+			</Key>
+			<Key ID="STR_iedd_ied_MinRandomTime_Description">
+				<Original>Minimum RandomTime</Original>
+				<English>Minimum RandomTime</English>
+			</Key>								
+			<Key ID="STR_iedd_ied_MaxRandomTime">
+				<Original>Maximum RandomTime</Original>
+				<English>Maximum RandomTime</English>
+			</Key>
+			<Key ID="STR_iedd_ied_MaxRandomTime_Description">
+				<Original>Maximum RandomTime</Original>
+				<English>Maximum RandomTime</English>
 			</Key>
 			<Key ID="STR_iedd_ied_FailChanceEOD">
 				<Original>Chance to fail wire cut for EODs/Explosive Specialists</Original>
