@@ -50,7 +50,7 @@ The project is entirely **open-source** and all contributions are welcome. Feel 
 - Adjustable wire cut failure option for other units.
 - Adjustable possibility for activate IED after failed wire cut.
 - "Just keep talking and nobody explodes-mode" = IEDD Notebook can't be opened near IEDs.
-
+- Bomb vest (found under units attributes). Target with bomb vest can be escorted and unlike other IEDs in the mod, this doesn’t activate by moving/running near. Drive carefully! (max. 45km/h)
 
 ***and more coming...***
 
