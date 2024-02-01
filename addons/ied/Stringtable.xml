@@ -28,6 +28,10 @@
 			</Key>
 		</Container>
 		<Container name="IEDs Display and Attribues">
+			<Key ID="STR_iedd_ied_IED_Category">
+				<Original>Set IED</Original>
+				<English>Set IED</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Barrel_DisplayName">
 				<Original>Plastic Barrel</Original>
 				<English>Plastic Barrel</English>
@@ -140,13 +144,49 @@
 				<Original>Set size of explosion (huge excluded from random).</Original>
 				<English>Set size of explosion (huge excluded from random).</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Timer_Category">
+				<Original>Set Timer</Original>
+				<English>Set Timer</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Timer">
-				<Original>Timer display</Original>
-				<English>Timer display</English>
+				<Original>Timer</Original>
+				<English>Timer</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Timer_Tooltip">
-				<Original>Timer display Tooltip</Original>
-				<English>Timer display Tooltip</English>
+				<Original>Timer Tooltip</Original>
+				<English>Timer Tooltip</English>
+			</Key>
+			<Key ID="STR_iedd_ied_TimerValue">
+				<Original>Time</Original>
+				<English>Time</English>
+			</Key>
+			<Key ID="STR_iedd_ied_TimerValue_Tooltip">
+				<Original>Time Tooltip</Original>
+				<English>Time Tooltip</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimer">
+				<Original>Random</Original>
+				<English>Random</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimer_Tooltip">
+				<Original>Random Tooltip</Original>
+				<English>Random Tooltip</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimerMin">
+				<Original>Min</Original>
+				<English>Min</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimerMin_Tooltip">
+				<Original>Min Tooltip</Original>
+				<English>Min Tooltip</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimerMax">
+				<Original>Max</Original>
+				<English>Max</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimerMax_Tooltip">
+				<Original>Max Tooltip</Original>
+				<English>Max Tooltip</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Name_Small">
 				<Original>Small</Original>
