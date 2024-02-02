@@ -169,7 +169,7 @@ class Cfg3DEN {
                         tooltip = CSTRING(Timer_Tooltip);
                         property = QGVAR(c_timer);
                         control = "Combo";
-                        expression = "_this setVariable ['%s',_value];";
+                        expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timer),_value,true)]);
                         defaultValue = 0;		
                         typeName = "BOOL";
                         condition = "objectControllable";
@@ -179,7 +179,7 @@ class Cfg3DEN {
                         tooltip = CSTRING(TimerValue_Tooltip);
                         property = QGVAR(c_timerValue);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
-                        expression = "_this setVariable ['%s',_value];";
+                        expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timerValue),_value,true)]);
                         defaultValue = 120;	
                         typeName = "NUMBER";
                         condition = "objectControllable";	
@@ -189,7 +189,7 @@ class Cfg3DEN {
                         tooltip = CSTRING(RandomTimer_Tooltip);
                         property = QGVAR(c_randomTimer);
                         control = "Combo";
-                        expression = "_this setVariable ['%s',_value];";
+                        expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimer),_value,true)]);
                         defaultValue = "(false)";	
                         typeName = "BOOL";
                         condition = "objectControllable";	
@@ -199,7 +199,7 @@ class Cfg3DEN {
                         tooltip = CSTRING(RandomTimerMin_Tooltip);
                         property = QGVAR(c_randomTimerMin);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
-                        expression = "_this setVariable ['%s',_value];";
+                        expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimerMin),_value,true)]);
                         defaultValue = 60;	
                         typeName = "NUMBER";
                         condition = "objectControllable";	
@@ -209,7 +209,7 @@ class Cfg3DEN {
                         tooltip = CSTRING(RandomTimerMax_Tooltip);
                         property = QGVAR(c_randomTimerMax);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
-                        expression = "_this setVariable ['%s',_value];";
+                        expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimerMax),_value,true)]);
                         defaultValue = 150;	
                         typeName = "NUMBER";
                         condition = "objectControllable";
