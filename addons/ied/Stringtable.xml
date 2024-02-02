@@ -29,8 +29,8 @@
 		</Container>
 		<Container name="IEDs Display and Attribues">
 			<Key ID="STR_iedd_ied_IED_Category">
-				<Original>Set IED</Original>
-				<English>Set IED</English>
+				<Original>IED settings</Original>
+				<English>IED settings</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Barrel_DisplayName">
 				<Original>Plastic Barrel</Original>
@@ -145,48 +145,48 @@
 				<English>Set size of explosion (huge excluded from random).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Timer_Category">
-				<Original>Set Timer</Original>
-				<English>Set Timer</English>
+				<Original>Countdown timer settings</Original>
+				<English>Countdown timer settings</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Timer">
-				<Original>Timer</Original>
-				<English>Timer</English>
+				<Original>Countdown timer</Original>
+				<English>Countdown timer</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Timer_Tooltip">
-				<Original>Timer Tooltip</Original>
-				<English>Timer Tooltip</English>
+				<Original>Add countdown timer to IED.</Original>
+				<English>Add countdown timer to IED.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_TimerValue">
-				<Original>Time</Original>
-				<English>Time</English>
+				<Original>Countdown time</Original>
+				<English>Countdown time</English>
 			</Key>
 			<Key ID="STR_iedd_ied_TimerValue_Tooltip">
-				<Original>Time Tooltip</Original>
-				<English>Time Tooltip</English>
+				<Original>Set countdown time in seconds</Original>
+				<English>Set countdown time in seconds.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimer">
-				<Original>Random</Original>
-				<English>Random</English>
+				<Original>Random countdown time</Original>
+				<English>Random countdown time</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimer_Tooltip">
-				<Original>Random Tooltip</Original>
-				<English>Random Tooltip</English>
+				<Original>Set random time for countdown. If enabled, countdown time above will be disabled.</Original>
+				<English>Set random time for countdown. If enabled, countdown time above will be disabled.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimerMin">
-				<Original>Min</Original>
-				<English>Min</English>
+				<Original>Min. time for random</Original>
+				<English>Min. time for random</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimerMin_Tooltip">
-				<Original>Min Tooltip</Original>
-				<English>Min Tooltip</English>
+				<Original>Set minimum time for random.</Original>
+				<English>Set minimum time for random.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimerMax">
-				<Original>Max</Original>
-				<English>Max</English>
+				<Original>Max. time for random</Original>
+				<English>Max. time for random</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimerMax_Tooltip">
-				<Original>Max Tooltip</Original>
-				<English>Max Tooltip</English>
+				<Original>Set maximum time for random.</Original>
+				<English>Set maximum time for random.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Name_Small">
 				<Original>Small</Original>
@@ -391,22 +391,6 @@
 			<Key ID="STR_iedd_ied_MaxRange_Description">
 				<Original>Maximum distance to IED where player will activate it.</Original>
 				<English>Maximum distance to IED where player will activate it.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MinRandomTime">
-				<Original>Minimum RandomTime</Original>
-				<English>Minimum RandomTime</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MinRandomTime_Description">
-				<Original>Minimum RandomTime</Original>
-				<English>Minimum RandomTime</English>
-			</Key>								
-			<Key ID="STR_iedd_ied_MaxRandomTime">
-				<Original>Maximum RandomTime</Original>
-				<English>Maximum RandomTime</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MaxRandomTime_Description">
-				<Original>Maximum RandomTime</Original>
-				<English>Maximum RandomTime</English>
 			</Key>
 			<Key ID="STR_iedd_ied_FailChanceEOD">
 				<Original>Chance to fail wire cut for EODs/Explosive Specialists</Original>
