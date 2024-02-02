@@ -34,6 +34,11 @@ class GVAR(Metal):Land_GarbageBarrel_01_F {
 	ace_cargo_blockUnloadCarry = 0;
 	iedd_ied_default = "Land_GarbageBarrel_01_F";
 	class Attributes {
+		class GVAR(ied_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = CSTRING(IED_Category);
+		};
 		class GVAR(variation) {
 			displayName = CSTRING(Variation);
 			tooltip = CSTRING(Variation_Tooltip);
@@ -68,16 +73,7 @@ class GVAR(Metal):Land_GarbageBarrel_01_F {
 					value = 5;
 				}; 				
 			};
-		};
-		class GVAR(timer) {
-			displayName = CSTRING(Timer);
-			tooltip = CSTRING(Timer_Tooltip);
-			property = QGVAR(timer);
-			control = "Combo";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 0;		
-			typeName = "BOOL";
-		};		
+		};	
 		class GVAR(size) {
 			displayName = CSTRING(Size);
 			tooltip = CSTRING(Size_Tooltip);
@@ -143,7 +139,58 @@ class GVAR(Metal):Land_GarbageBarrel_01_F {
 			expression = "_this setVariable ['%s',_value];";
 			control = "Slider";
 			defaultValue = 0;
-		};		
+		};
+		/**********TIMER SETTINGS ********/
+		class GVAR(timer_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = CSTRING(Timer_Category);
+		};
+		class GVAR(timer) {
+			displayName = CSTRING(Timer);
+			tooltip = CSTRING(Timer_Tooltip);
+			property = QGVAR(timer);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 0;		
+			typeName = "BOOL";
+		};
+		class GVAR(timerValue) {
+			displayName = CSTRING(TimerValue);
+			tooltip = CSTRING(TimerValue_Tooltip);
+			property = QGVAR(timerValue);
+			control = QGVAR(timeSlider); // TODO time_slider min - max
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 120;	
+			typeName = "NUMBER";	
+		};
+		class GVAR(randomTimer) {
+			displayName = CSTRING(RandomTimer);
+			tooltip = CSTRING(RandomTimer_Tooltip);
+			property = QGVAR(randomTimer);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "(false)";	
+			typeName = "BOOL";	
+		};
+		class GVAR(randomTimerMin) {
+			displayName = CSTRING(RandomTimerMin);
+			tooltip = CSTRING(RandomTimerMin_Tooltip);
+			property = QGVAR(randomTimerMin);
+			control = QGVAR(timeSlider); // TODO time_slider min - max
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 60;	
+			typeName = "NUMBER";
+		};
+		class GVAR(randomTimerMax) {
+			displayName = CSTRING(RandomTimerMax);
+			tooltip = CSTRING(RandomTimerMax_Tooltip);
+			property = QGVAR(randomTimerMax);
+			control = QGVAR(timeSlider); // TODO time_slider min - max
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 150;	
+			typeName = "NUMBER";
+		};			
 	};
 };
 class GVAR(Metal_English):GVAR(Metal) {

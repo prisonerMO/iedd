@@ -158,9 +158,9 @@ class Land_CanisterPlastic_F;
 			displayName = CSTRING(TimerValue);
 			tooltip = CSTRING(TimerValue_Tooltip);
 			property = QGVAR(timerValue);
-			control = QGVAR(slider); // TODO time_slider min - max
+			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 150;	
+			defaultValue = 120;	
 			typeName = "NUMBER";	
 		};
 		class GVAR(randomTimer) {
@@ -176,23 +176,19 @@ class Land_CanisterPlastic_F;
 			displayName = CSTRING(RandomTimerMin);
 			tooltip = CSTRING(RandomTimerMin_Tooltip);
 			property = QGVAR(randomTimerMin);
-			control = QGVAR(slider); // TODO time_slider min - max
+			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 150;	
+			defaultValue = 60;	
 			typeName = "NUMBER";
-			condition = QUOTE(_this getVariable [ARR_2(QQVAR(randomTimer),false)]);	
 		};
 		class GVAR(randomTimerMax) {
 			displayName = CSTRING(RandomTimerMax);
 			tooltip = CSTRING(RandomTimerMax_Tooltip);
 			property = QGVAR(randomTimerMax);
-			control = QGVAR(slider); // TODO time_slider min - max
+			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 150;	
-			typeName = "NUMBER";
-			condition = QUOTE(_this getVariable [ARR_2(QQVAR(randomTimer),false)]);	
-		};
-
-		/****************************************/				
+			typeName = "NUMBER";	
+		};		
 	};
 };
