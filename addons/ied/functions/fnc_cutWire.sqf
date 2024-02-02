@@ -22,6 +22,11 @@ deleteVehicle _wire;
 		params ["_wire","_bombObj","_order"];
 		private _wires = _bombObj getVariable [QGVAR(wires),[]];
 		private _count = count (_wires select {!isNull _x});
+		private _isTimer = _bombObj getVariable [QGVAR(timer),false];
+		if (_isTimer && {
+			_count == count _wires -1}) then {
+			[QGVAR(timer), [_bombObj]] call CBA_fnc_serverEvent;
+		};
 		if (_count isEqualTo _order) then {
 			if (_count isEqualTo 0) then {
 				_bombObj setVariable [QGVAR(bomb), nil, true];

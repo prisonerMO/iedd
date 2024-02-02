@@ -139,6 +139,15 @@
 	_this call FUNC(bomb);
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(timer), {
+	params ["_object"];
+	private _time = _object getVariable [QGVAR(timerValue),0];
+	private _endTime = _time + time;
+	private _sound = createSoundSource [QGVAR(timerSound) , getPosATL _object, [], 0]; // starts alarm
+	_sound attachTo [_object,[0,0,0]];
+	[_object,_endTime,_sound] call FUNC(timer);
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(add), {
     params ["_unit","_item"];
 	if !(_item in (items _unit)) then {

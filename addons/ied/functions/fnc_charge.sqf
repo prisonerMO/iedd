@@ -51,10 +51,10 @@ if (!isServer) exitWith {diag_log format ["ExitWith isServer:", isServer]};
 		_box setVectorDirAndUp [[0,0,1],[-1,0,0]];
         
         private _distance = [GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt;
-        private _variation = _unit getVariable [QGVAR(charge_variation),5];
-        private _dud = _unit getVariable [QGVAR(charge_dud),0];
-        private _size = _unit getVariable [QGVAR(charge_size),0];
-        private _isTimer = _unit getVariable [QGVAR(charge_timer), false];
+        private _variation = _unit getVariable [QGVAR(c_variation),5];
+        private _dud = _unit getVariable [QGVAR(c_dud),0];
+        private _size = _unit getVariable [QGVAR(c_size),0];
+        private _isTimer = _unit getVariable [QGVAR(c_timer), false];
 
         _bombObj setVariable [QGVAR(size),_size,true];
         _bombObj setVariable [QGVAR(dud),_dud,true];
