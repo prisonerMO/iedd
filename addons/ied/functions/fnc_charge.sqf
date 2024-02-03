@@ -109,8 +109,8 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
 
         if (_isTimer) then {
             private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
-            _watch attachTo [_bombObj, [0.105,0.075,0.158]];
-            _watch setVectorDirAndUp [[-0.40,0.882948,0],[0.882948,0.469472,0.1]];
+            _watch attachTo [_bombObj,[0.02,-0.095,0.028]];
+            _watch setVectorDirAndUp [[-0,-1,0],[1,0,0]];
             _bombObj setVariable [QGVAR(timer),_isTimer, true];
             private _isRandom = _bombObj getVariable  [QGVAR(randomTimer),false];
             private _time = if (_isRandom) then {
