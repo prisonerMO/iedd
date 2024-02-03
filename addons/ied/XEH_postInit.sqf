@@ -94,8 +94,8 @@
 
 [QGVAR(dudEffect), {
 	params ["_bombObj"];
-		_bombObj call FUNC(dudWires);
-		[_bombObj] spawn {
+	_bombObj call FUNC(dudWires);
+	[_bombObj] spawn {
 		params ["_bombObj"];
 		private _sound = format ["iedd_ied_dud%1", floor (random 4)];
 		_bombObj say3D _sound;

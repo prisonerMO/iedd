@@ -8,8 +8,8 @@ if (is3DEN) exitWith {
     _value = (_unit get3DENAttribute QGVAR(isHandcuffed)) select 0;
     [_unit,_value,"ace_isHandcuffed",QGVAR(isHandcuffed)] call FUNC(setAttributes);
 };
-if (!_activated) exitWith {diag_log format ["ExitWith _actived:", _activated]};
-if (!isServer) exitWith {diag_log format ["ExitWith isServer:", isServer]};
+if (!_activated) exitWith {TRACE_1("ExitWith _actived:", _activated)};
+if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
 [
     {!isNull (_this select 0)},
     {     

@@ -103,23 +103,22 @@ _bombObj setVariable [QGVAR(bomb), true, true];
 _bombObj setVariable [QGVAR(variation), _variation, true];
 
 if (_isTimer) then {
-    diag_log format ["isTimer: %1",_isTimer];
     private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
     _watch attachTo [_bombObj, [0.105,0.075,0.158]];
     _watch setVectorDirAndUp [[-0.40,0.882948,0],[0.882948,0.469472,0.1]];
     _bombObj setVariable [QGVAR(timer),_isTimer, true];
     private _isRandom = _bombObj getVariable  [QGVAR(randomTimer),false];
-    diag_log format ["isRandom: %1",_isRandom];
+    TRACE_2("Timer",_isTimer,_isRandom);
     private _time = if (_isRandom) then {
         private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),60]);
         private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),150]);
-        diag_log format  ["_min: %1, _max: %2",_min,_max];
+        TRACE_2("min/max",_min,_max);
         [_min, _max] call BIS_fnc_randomInt;
     } else {
-        diag_log format  ["timerValue: %1",_bombObj getVariable  [QGVAR(timerValue),120]];
+        TRACE_1("Value",(_bombObj getVariable [ARR_2(QGVAR(timerValue),120)]));
         round (_bombObj getVariable  [QGVAR(timerValue),120]);
     };
-    diag_log format  ["time: %1",_time];
+    TRACE_1("time:",_time);
     _bombObj setVariable [QGVAR(timerValue),_time];
 };
 
