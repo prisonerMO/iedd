@@ -200,7 +200,7 @@
     [CSTRING(DefaultDirection),CSTRING(DefaultDirection_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
-        [0, 1], 
+        [false, true], 
         ["Disabled","Enabled"], 
         0
     ],
@@ -216,7 +216,7 @@
     [CSTRING(DefaultDecals),CSTRING(DefaultDecals_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
-        [0, 1], 
+        [false, true], 
         ["Disabled","Enabled"], 
         0
     ],
