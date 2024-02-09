@@ -456,6 +456,62 @@
 				<Original>Player must have defusal kit to disarm IEDs.</Original>
 				<English>Player must have defusal kit to disarm IEDs.</English>
 			</Key>
+			<Key ID="STR_iedd_ied_DefaultVariation">
+				<Original>Default Variation</Original>
+				<English>Default Variation</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultVariation_Description">
+				<Original>Default Variation Description</Original>
+				<English>Default Variation Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultSize">
+				<Original>Default Size</Original>
+				<English>Default Size</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultSize_Description">
+				<Original>Default Size Description</Original>
+				<English>Default Size Description</English>
+			</Key>		
+			<Key ID="STR_iedd_ied_DefaultDirection">
+				<Original>Default Direction</Original>
+				<English>Default Direction</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDirection_Description">
+				<Original>Default Direction Description</Original>
+				<English>Default Direction Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDecals">
+				<Original>Default Decals</Original>
+				<English>Default Decals</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDecals_Description">
+				<Original>Default Decals Description</Original>
+				<English>Default Decals Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultFake">
+				<Original>Default Fake</Original>
+				<English>Default Fake</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultFake_Description">
+				<Original>Default Fake Description</Original>
+				<English>Default Fake Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDud">
+				<Original>Default Dud</Original>
+				<English>Default Dud</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDud_Description">
+				<Original>Default Dud Description</Original>
+				<English>Default Dud Description</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultColor">
+				<Original>Default Color</Original>
+				<English>Default Color</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultColor_Description">
+				<Original>Default Color Description</Original>
+				<English>Default Color Description</English>
+			</Key>
 		</Container>
 		<Container name="IEDD Notebook Dev Settings">							
 			<Key ID="STR_iedd_ied_EquipmentDebug">
