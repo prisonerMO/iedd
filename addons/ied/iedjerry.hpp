@@ -43,7 +43,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			tooltip = CSTRING(Color_Tooltip);
 			property = QGVAR(color);
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "'green'";
+			defaultValue = QGVAR(defaultColor);	
 			control = "Combo";
 			typeName = "STRING";
 			class Values {
@@ -74,7 +74,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			tooltip = CSTRING(Variation_Tooltip);
 			property = QGVAR(variation);
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 5;
+			defaultValue = QGVAR(defaultVariation);
 			control = "Combo";
 			typeName = "NUMBER";
 			class Values {
@@ -103,13 +103,13 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 					value = 5;
 				}; 				
 			};
-		};	
+		};
 		class GVAR(size) {
 			displayName = CSTRING(Size);
 			tooltip = CSTRING(Size_Tooltip);
 			property = QGVAR(size);
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 2;
+			defaultValue = QGVAR(defaultSize);
 			control = "Combo";
 			typeName = "NUMBER";
 			class Values {
@@ -142,7 +142,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(decals);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 0;		
+			defaultValue = QGVAR(defaultDecals);		
 			typeName = "BOOL";
 		};
 		class GVAR(dir) {
@@ -151,7 +151,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(dir);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 0;
+			defaultValue = QGVAR(defaultDirection);
 			typeName = "BOOL";
 		};
 		class GVAR(dud) {
@@ -160,7 +160,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(dud);
 			expression = "_this setVariable ['%s',_value];";
 			control = "Slider";
-			defaultValue = 0;
+			defaultValue = QGVAR(defaultDud);
 		};		
 		class GVAR(fake) {
 			displayName = CSTRING(Fake);
@@ -168,7 +168,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(fake);
 			expression = "_this setVariable ['%s',_value];";
 			control = "Slider";
-			defaultValue = 0;
+			defaultValue = QGVAR(defaultFake);
 		};
 		/**********TIMER SETTINGS ********/
 		class GVAR(timer_SubCategory) {
