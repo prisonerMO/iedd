@@ -41,7 +41,7 @@ class CfgSFX
 	{
 		sounds[] = {QGVAR(Timer_Peep)};
 		name = "TODO";
-		GVAR(Timer_Peep)[] = {QPATHTOF(sounds\peep1.ogg), 1.0, 1.0, 100, 1, 0.896, 0.896, 0.896};  // path to addon sound
+		GVAR(Timer_Peep)[] = {QPATHTOF(sounds\peep1.ogg), 0.45, 1.0, 25, 1, 0.896, 0.896, 0.896};  // path to addon sound
 		empty[] = {"",0,0,0,0,0,0,0};
 	};
 };
