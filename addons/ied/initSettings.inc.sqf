@@ -161,6 +161,110 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+/* IED Default values */
+[
+    QGVAR(defaultVariation), 
+    "LIST",     
+    [CSTRING(DefaultVariation),CSTRING(DefaultVariation_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0,1,2,3,4,5],
+        [CSTRING(Variation_1),CSTRING(Variation_2),CSTRING(Variation_3),CSTRING(Variation_4),CSTRING(Variation_5),CSTRING(Name_Random)],
+        5
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultSize), 
+    "LIST",     
+    [CSTRING(DefaultSize),CSTRING(DefaultSize_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0,1,2,3,4],
+        [CSTRING(Name_Small),CSTRING(Name_Medium),CSTRING(Name_Large),CSTRING(Name_Huge),CSTRING(Name_Random)],
+        2
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultDirection), 
+    "LIST",     
+    [CSTRING(DefaultDirection),CSTRING(DefaultDirection_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0, 1], 
+        ["Disabled","Enabled"], 
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultDecals), 
+    "LIST",     
+    [CSTRING(DefaultDecals),CSTRING(DefaultDecals_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0, 1], 
+        ["Disabled","Enabled"], 
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultFake),
+    "SLIDER",
+    [CSTRING(DefaultFake),CSTRING(DefaultFake_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [0, 1, 0.25, 0, true],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultDud),
+    "SLIDER",
+    [CSTRING(DefaultDud),CSTRING(DefaultDud_Description)],
+	[localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [0, 1, 0.2, 0, true],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultColor), 
+    "LIST",     
+    [CSTRING(DefaultColor),CSTRING(DefaultColor_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        ["green","Blue","red","White","random"], 
+        [CSTRING(Name_Green),CSTRING(Name_Blue),CSTRING(Name_Red),CSTRING(Name_White),CSTRING(Name_Random)],
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
 
 
 #ifdef ENABLE_IEDD_DEBUG
