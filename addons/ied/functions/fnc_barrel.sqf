@@ -3,10 +3,10 @@
 params ["_bombObj"];
 if (is3DEN) exitWith {};
 if (!isServer) exitWith {};
-private _variation = _bombObj getVariable [QGVAR(variation), 5];
-private _decals = _bombObj getVariable [QGVAR(decals), false];
-private _setDir = _bombObj getVariable [QGVAR(dir), false];
-private _isFake = _bombObj getVariable [QGVAR(fake), 0];
+private _variation = _bombObj getVariable [QGVAR(variation), GVAR(defaultVariation)];
+private _decals = _bombObj getVariable [QGVAR(decals), GVAR(defaultDecals)];
+private _setDir = _bombObj getVariable [QGVAR(dir), GVAR(defaultDirection)];
+private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];
 private _isTimer = _bombObj getVariable [QGVAR(timer), false];
 
 if (_isFake > random 1) exitWith {
@@ -119,7 +119,7 @@ if (_isTimer) then {
         round (_bombObj getVariable  [QGVAR(timerValue),120]);
     };
     TRACE_1("time:",_time);
-    _bombObj setVariable [QGVAR(timerValue),_time];
+    _bombObj setVariable [QGVAR(timerValue), _time];
 };
 
 [
@@ -137,7 +137,7 @@ if (_isTimer) then {
         [QGVAR(defuseAction), [_bombObj, _wireSet]] call CBA_fnc_globalEventJIP;
         [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;  
     },
-    [_bombObj,_decals, _setDir, _wireSet],
+    [_bombObj, _decals, _setDir, _wireSet],
     1
 ] call CBA_fnc_waitUntilAndExecute;
 
