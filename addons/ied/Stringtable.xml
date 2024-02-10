@@ -457,60 +457,68 @@
 				<English>Player must have defusal kit to disarm IEDs.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultVariation">
-				<Original>Default Variation</Original>
-				<English>Default Variation</English>
+				<Original>Variations</Original>
+				<English>Variations</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultVariation_Description">
-				<Original>Default Variation Description</Original>
-				<English>Default Variation Description</English>
+				<Original>Set IED variation (if not changed somewhere else).</Original>
+				<English>Set IED variation (if not changed somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultSize">
-				<Original>Default Size</Original>
-				<English>Default Size</English>
+				<Original>Explosion sizes</Original>
+				<English>Explosion sizes</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultSize_Description">
-				<Original>Default Size Description</Original>
-				<English>Default Size Description</English>
+				<Original>Set explosion size (if not changed somewhere else).</Original>
+				<English>Set explosion size (if not changed somewhere else).</English>
 			</Key>		
 			<Key ID="STR_iedd_ied_DefaultDirection">
-				<Original>Default Direction</Original>
-				<English>Default Direction</English>
+				<Original>Random direction</Original>
+				<English>Random direction</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDirection_Description">
-				<Original>Default Direction Description</Original>
-				<English>Default Direction Description</English>
+				<Original>Set random direction for IEDs (if not changed somewhere else).</Original>
+				<English>Set random direction for IEDs (if not changed somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDecals">
-				<Original>Default Decals</Original>
-				<English>Default Decals</English>
+				<Original>Random ground signs</Original>
+				<English>Random ground signs</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDecals_Description">
-				<Original>Default Decals Description</Original>
-				<English>Default Decals Description</English>
+				<Original>Set random ground signs under IEDs (if not changed somewhere else).</Original>
+				<English>Set random ground signs under IEDs (if not changed somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultFake">
-				<Original>Default Fake</Original>
-				<English>Default Fake</English>
+				<Original>Chance of fake</Original>
+				<English>Chance of fake</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultFake_Description">
-				<Original>Default Fake Description</Original>
-				<English>Default Fake Description</English>
+				<Original>Set probability of IEDs being fakes (if not changed somewhere else).</Original>
+				<English>Set probability of IEDs being fakes (if not changed somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDud">
-				<Original>Default Dud</Original>
-				<English>Default Dud</English>
+				<Original>Chance of dud</Original>
+				<English>Chance of dud</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDud_Description">
-				<Original>Default Dud Description</Original>
-				<English>Default Dud Description</English>
+				<Original>Set probability of IEDs being duds (if not changed somewhere else).</Original>
+				<English>Set probability of IEDs being duds (if not changed somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultColor">
-				<Original>Default Color</Original>
-				<English>Default Color</English>
+				<Original>Color (Fuel canisters only)</Original>
+				<English>Color (Fuel canisters only)</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultColor_Description">
-				<Original>Default Color Description</Original>
-				<English>Default Color Description</English>
+				<Original>Set color of fuel canisters (if not changed somewhere else).</Original>
+				<English>Set color of fuel canisters (if not changed somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Name_Disabled">
+				<Original>Disabled</Original>
+				<English>Disabled</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Name_Enabled">
+				<Original>Enabled</Original>
+				<English>Enabled</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Notebook Dev Settings">							
