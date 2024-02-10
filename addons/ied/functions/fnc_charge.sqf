@@ -54,7 +54,8 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
         private _variation = _unit getVariable [QGVAR(c_variation),5];
         private _dud = _unit getVariable [QGVAR(c_dud),0];
         private _size = _unit getVariable [QGVAR(c_size),0];
-        private _isTimer = _unit getVariable [QGVAR(c_timer), false];
+        private _timerValue = _bombObj getVariable [QGVAR(timer), 0];
+        private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
 
         _bombObj setVariable [QGVAR(size),_size,true];
         _bombObj setVariable [QGVAR(dud),_dud,true];

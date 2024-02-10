@@ -201,7 +201,7 @@
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
         [false, true], 
-        ["Disabled","Enabled"], 
+        [CSTRING(Name_Disabled),CSTRING(Name_Enabled)], 
         0
     ],
     true,
@@ -217,7 +217,7 @@
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
         [false, true], 
-        ["Disabled","Enabled"], 
+        [CSTRING(Name_Disabled),CSTRING(Name_Enabled)], 
         0
     ],
     true,

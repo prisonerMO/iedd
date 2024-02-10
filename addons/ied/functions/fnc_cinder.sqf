@@ -7,7 +7,8 @@ private _variation = _bombObj getVariable [QGVAR(variation), GVAR(defaultVariati
 private _decals = _bombObj getVariable [QGVAR(decals), GVAR(defaultDecals)];
 private _setDir = _bombObj getVariable [QGVAR(dir), GVAR(defaultDirection)];
 private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];
-private _isTimer = _bombObj getVariable [QGVAR(timer), false];
+private _timerValue = _bombObj getVariable [QGVAR(timer), 0];
+private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
 
 if (_isFake > random 1) exitWith {
     private _type = getText (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_default");

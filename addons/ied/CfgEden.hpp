@@ -158,7 +158,7 @@ class Cfg3DEN {
                         condition = "objectControllable";
                         defaultValue = QUOTE(false);
                     };
-                    		/**********TIMER SETTINGS ********/
+                    /**********TIMER SETTINGS ********/
                     class GVAR(c_timer_SubCategory) {
                         data = "AttributeSystemSubcategory";
                         control = "SubCategory";
@@ -171,7 +171,21 @@ class Cfg3DEN {
                         control = "Combo";
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timer),_value,true)]);
                         defaultValue = 0;		
-                        typeName = "BOOL";
+                        typeName = "NUMBER";
+                        class Values {
+                            class 1	{
+                                name = CSTRING(Name_Disabled);	
+                                value = 0;
+                            }; 
+                            class 2	{
+                                name = CSTRING(Name_Enabled); 
+                                value = 1;
+                            };
+                            class 3	{
+                                name = CSTRING(Name_Random); 
+                                value = 2;
+                            };				
+                        };
                         condition = "objectControllable";
                     };
                     class GVAR(c_timerValue) {

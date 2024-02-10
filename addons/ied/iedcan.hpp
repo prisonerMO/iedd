@@ -152,7 +152,21 @@ class Land_CanisterPlastic_F;
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 0;		
-			typeName = "BOOL";
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = CSTRING(Name_Disabled);	
+					value = 0;
+				}; 
+				class 2	{
+					name = CSTRING(Name_Enabled); 
+					value = 1;
+				};
+				class 3	{
+					name = CSTRING(Name_Random); 
+					value = 2;
+				};				
+			};
 		};
 		class GVAR(timerValue) {
 			displayName = CSTRING(TimerValue);
