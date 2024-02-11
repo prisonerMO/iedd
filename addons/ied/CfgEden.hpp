@@ -170,7 +170,7 @@ class Cfg3DEN {
                         property = QGVAR(c_timer);
                         control = "Combo";
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timer),_value,true)]);
-                        defaultValue = 0;		
+                        defaultValue = QGVAR(defaultTimer);		
                         typeName = "NUMBER";
                         class Values {
                             class 1	{
@@ -194,7 +194,7 @@ class Cfg3DEN {
                         property = QGVAR(c_timerValue);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timerValue),_value,true)]);
-                        defaultValue = 120;	
+                        defaultValue = QGVAR(defaultTimerValue);	
                         typeName = "NUMBER";
                         condition = "objectControllable";	
                     };

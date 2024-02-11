@@ -151,7 +151,7 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			property = QGVAR(timer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 0;		
+			defaultValue = QGVAR(defaultTimer);	
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
@@ -174,7 +174,7 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			property = QGVAR(timerValue);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 120;	
+			defaultValue = QGVAR(defaultTimerValue);		
 			typeName = "NUMBER";	
 		};
 		class GVAR(randomTimer) {

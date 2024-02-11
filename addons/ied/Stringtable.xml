@@ -216,6 +216,14 @@
 				<Original>Cut</Original>
 				<English>Cut</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Name_Disabled">
+				<Original>Disabled</Original>
+				<English>Disabled</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Name_Enabled">
+				<Original>Enabled</Original>
+				<English>Enabled</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Decals">
 				<Original>Random ground sign</Original>
 				<English>Random ground sign</English>
@@ -512,13 +520,21 @@
 				<Original>Set color of fuel canisters (if not changed somewhere else).</Original>
 				<English>Set color of fuel canisters (if not changed somewhere else).</English>
 			</Key>
-			<Key ID="STR_iedd_ied_Name_Disabled">
-				<Original>Disabled</Original>
-				<English>Disabled</English>
+			<Key ID="STR_iedd_ied_DefaultTimer">
+				<Original>Countdown timer</Original>
+				<English>Countdown timer</English>
 			</Key>
-			<Key ID="STR_iedd_ied_Name_Enabled">
-				<Original>Enabled</Original>
-				<English>Enabled</English>
+			<Key ID="STR_iedd_ied_DefaultTimer_Description">
+				<Original>Set timer to IEDs with default time (if not changed somewhere else).</Original>
+				<English>Set timer to IEDs with default time (if not changed somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultTimerValue">
+				<Original>Countdown time</Original>
+				<English>Countdown time</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultTimerValue_Description">
+				<Original>Set timer countdown time to IEDs with default time (if not changed somewhere else).</Original>
+				<English>Set timer countdown time to IEDs with default time (if not changed somewhere else).</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Notebook Dev Settings">							

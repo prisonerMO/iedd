@@ -7,7 +7,7 @@ private _variation = _bombObj getVariable [QGVAR(variation), GVAR(defaultVariati
 private _decals = _bombObj getVariable [QGVAR(decals), GVAR(defaultDecals)];
 private _setDir = _bombObj getVariable [QGVAR(dir), GVAR(defaultDirection)];
 private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];
-private _timerValue = _bombObj getVariable [QGVAR(timer), 0];
+private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
 private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
 
 if (_isFake > random 1) exitWith {
@@ -108,7 +108,7 @@ if (_isTimer) then {
         private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),150]);
         [_min, _max] call BIS_fnc_randomInt;
     } else {
-        round (_bombObj getVariable  [QGVAR(timerValue),120]);
+        round (_bombObj getVariable  [QGVAR(timerValue),GVAR(defaultTimerValue)]);
     };
     _bombObj setVariable [QGVAR(timerValue),_time];
 };

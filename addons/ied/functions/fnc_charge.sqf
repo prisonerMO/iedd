@@ -54,7 +54,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
         private _variation = _unit getVariable [QGVAR(c_variation),5];
         private _dud = _unit getVariable [QGVAR(c_dud),0];
         private _size = _unit getVariable [QGVAR(c_size),0];
-        private _timerValue = _bombObj getVariable [QGVAR(timer), 0];
+        private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
         private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
 
         _bombObj setVariable [QGVAR(size),_size,true];
@@ -119,7 +119,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
                 private _max = round (_unit getVariable [QGVAR(c_randomTimerMax),150]);
                 [_min, _max] call BIS_fnc_randomInt;
             } else {
-                round (_unit getVariable  [QGVAR(c_timerValue),120]);
+                round (_unit getVariable  [QGVAR(c_timerValue),GVAR(defaultTimerValue)]);
             };
             _bombObj setVariable [QGVAR(timerValue),_time];
         };
