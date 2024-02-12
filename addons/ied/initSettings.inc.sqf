@@ -227,11 +227,11 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(defaultFake),
+    QGVAR(defaultDud),
     "SLIDER",
-    [CSTRING(DefaultFake),CSTRING(DefaultFake_Description)],
-    [localize "STR_iedd_main_Category_Main","IED Default Values"],
-    [0, 1, 0.25, 0, true],
+    [CSTRING(DefaultDud),CSTRING(DefaultDud_Description)],
+	[localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [0, 1, 0.2, 0, true],
     true,
     {},
     true // Needs mission restart
@@ -239,11 +239,11 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(defaultDud),
+    QGVAR(defaultFake),
     "SLIDER",
-    [CSTRING(DefaultDud),CSTRING(DefaultDud_Description)],
-	[localize "STR_iedd_main_Category_Main","IED Default Values"],
-    [0, 1, 0.2, 0, true],
+    [CSTRING(DefaultFake),CSTRING(DefaultFake_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [0, 1, 0.25, 0, true],
     true,
     {},
     true // Needs mission restart
