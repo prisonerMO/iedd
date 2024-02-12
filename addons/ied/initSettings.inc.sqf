@@ -269,7 +269,7 @@
 [
     QGVAR(defaultTimer), 
     "LIST",     
-    [CSTRING(DefaultTimer),CSTRING(DefaultTimer_Description)],
+    [CSTRING(Timer),CSTRING(DefaultTimer_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
         [0, 1, 2], 
@@ -285,9 +285,42 @@
 [
     QGVAR(defaultTimerValue),
     "TIME",
-    [CSTRING(DefaultTimerValue),CSTRING(DefaultTimerValue_Description)],
+    [CSTRING(TimerValue),CSTRING(DefaultTimerValue_Description)],
 	[localize "STR_iedd_main_Category_Main","IED Default Values"],
     [1, 300, 120],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultRandomTimer), 
+    "LIST",     
+    [CSTRING(RandomTimer),CSTRING(DefaultRandomTimer_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0, 1, 2], 
+        [CSTRING(Name_Disabled),CSTRING(Name_Enabled),CSTRING(Name_Random)], 
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultTimerMin),
+    "TIME",
+    [CSTRING(RandomTimerMin),CSTRING(DefaultTimerMin_Description)],
+	[localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [1, 300, 60],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultTimerMax),
+    "TIME",
+    [CSTRING(RandomTimerMax),CSTRING(DefaultTimerMax_Description)],
+	[localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [1, 300, 150],
     1
 ] call CBA_fnc_addSetting;
 
