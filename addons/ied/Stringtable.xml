@@ -469,73 +469,77 @@
 				<English>Variations</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultVariation_Description">
-				<Original>Set IED variation (if not changed somewhere else).</Original>
-				<English>Set IED variation (if not changed somewhere else).</English>
+				<Original>Set IED variation (if not defined somewhere else).</Original>
+				<English>Set IED variation (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultSize">
 				<Original>Explosion sizes</Original>
 				<English>Explosion sizes</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultSize_Description">
-				<Original>Set explosion size (if not changed somewhere else).</Original>
-				<English>Set explosion size (if not changed somewhere else).</English>
+				<Original>Set explosion size (if not defined somewhere else).</Original>
+				<English>Set explosion size (if not defined somewhere else).</English>
 			</Key>		
 			<Key ID="STR_iedd_ied_DefaultDirection">
 				<Original>Random direction</Original>
 				<English>Random direction</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDirection_Description">
-				<Original>Set random direction for IEDs (if not changed somewhere else).</Original>
-				<English>Set random direction for IEDs (if not changed somewhere else).</English>
+				<Original>Set random direction for IEDs (if not defined somewhere else).</Original>
+				<English>Set random direction for IEDs (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDecals">
 				<Original>Random ground signs</Original>
 				<English>Random ground signs</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDecals_Description">
-				<Original>Set random ground signs under IEDs (if not changed somewhere else).</Original>
-				<English>Set random ground signs under IEDs (if not changed somewhere else).</English>
+				<Original>Set random ground signs under IEDs (if not defined somewhere else).</Original>
+				<English>Set random ground signs under IEDs (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultFake">
 				<Original>Chance of fake</Original>
 				<English>Chance of fake</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultFake_Description">
-				<Original>Set probability of IEDs being fakes (if not changed somewhere else).</Original>
-				<English>Set probability of IEDs being fakes (if not changed somewhere else).</English>
+				<Original>Set probability of IEDs being fakes (if not defined somewhere else).</Original>
+				<English>Set probability of IEDs being fakes (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDud">
 				<Original>Chance of dud</Original>
 				<English>Chance of dud</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDud_Description">
-				<Original>Set probability of IEDs being duds (if not changed somewhere else).</Original>
-				<English>Set probability of IEDs being duds (if not changed somewhere else).</English>
+				<Original>Set probability of IEDs being duds (if not defined somewhere else).</Original>
+				<English>Set probability of IEDs being duds (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultColor">
 				<Original>Color (Fuel canisters only)</Original>
 				<English>Color (Fuel canisters only)</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultColor_Description">
-				<Original>Set color of fuel canisters (if not changed somewhere else).</Original>
-				<English>Set color of fuel canisters (if not changed somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultTimer">
-				<Original>Countdown timer</Original>
-				<English>Countdown timer</English>
+				<Original>Set color of fuel canisters (if not defined somewhere else).</Original>
+				<English>Set color of fuel canisters (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultTimer_Description">
-				<Original>Set timer to IEDs with default time (if not changed somewhere else).</Original>
-				<English>Set timer to IEDs with default time (if not changed somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultTimerValue">
-				<Original>Countdown time</Original>
-				<English>Countdown time</English>
+				<Original>Add countdown timer to IEDs (if not defined somewhere else).</Original>
+				<English>Add countdown timer to IEDs (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultTimerValue_Description">
-				<Original>Set timer countdown time to IEDs with default time (if not changed somewhere else).</Original>
-				<English>Set timer countdown time to IEDs with default time (if not changed somewhere else).</English>
+				<Original>Set countdown time (if not defined somewhere else).</Original>
+				<English>Set countdown time (if not defined somewhere else).</English>
 			</Key>
+			<Key ID="STR_iedd_ied_DefaultRandomTimer_Description">
+                <Original>Random enable/false/random (if not defined somewhere else).</Original>
+                <English>Random enable/false/random (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultTimerMin_Description">
+                <Original>Minimum value for random time (if not defined somewhere else).</Original>
+                <English>Minimum value for random time (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultTimerMax_Description">
+                <Original>Maximum value for random time (if not defined somewhere else).</Original>
+                <English>Maximum value for random time (if not defined somewhere else).</English>
+            </Key>
 		</Container>
 		<Container name="IEDD Notebook Dev Settings">							
 			<Key ID="STR_iedd_ied_EquipmentDebug">
