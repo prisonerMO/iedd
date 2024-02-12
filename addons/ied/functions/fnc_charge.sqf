@@ -113,10 +113,11 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
             _watch attachTo [_bombObj,[0.02,-0.095,0.028]];
             _watch setVectorDirAndUp [[-0,-1,0],[1,0,0]];
             _bombObj setVariable [QGVAR(timer),_isTimer, true];
-            private _isRandom = _bombObj getVariable  [QGVAR(randomTimer),false];
+            private _randomValue = _bombObj getVariable [QGVAR(c_randomTimer), GVAR(defaultRandomTimer)];
+            private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
             private _time = if (_isRandom) then {
-                private _min = round (_unit getVariable [QGVAR(c_randomTimerMin),60]);
-                private _max = round (_unit getVariable [QGVAR(c_randomTimerMax),150]);
+                private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),QGVAR(defaultTimerMin)]);
+                private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),QGVAR(defaultTimerMax)]);
                 [_min, _max] call BIS_fnc_randomInt;
             } else {
                 round (_unit getVariable  [QGVAR(c_timerValue),GVAR(defaultTimerValue)]);

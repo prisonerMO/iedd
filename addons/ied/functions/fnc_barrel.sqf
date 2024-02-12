@@ -108,11 +108,12 @@ if (_isTimer) then {
     _watch attachTo [_bombObj, [0.105,0.075,0.158]];
     _watch setVectorDirAndUp [[-0.40,0.882948,0],[0.882948,0.469472,0.1]];
     _bombObj setVariable [QGVAR(timer),_isTimer, true];
-    private _isRandom = _bombObj getVariable  [QGVAR(randomTimer),false];
+    private _randomValue = _bombObj getVariable [QGVAR(randomTimer), GVAR(defaultRandomTimer)];
+    private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
     TRACE_2("Timer",_isTimer,_isRandom);
     private _time = if (_isRandom) then {
-        private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),60]);
-        private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),150]);
+        private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),QGVAR(defaultTimerMin)]);
+        private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),QGVAR(defaultTimerMax)]);
         TRACE_2("min/max",_min,_max);
         [_min, _max] call BIS_fnc_randomInt;
     } else {

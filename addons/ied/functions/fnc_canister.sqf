@@ -97,10 +97,11 @@ if (_isTimer) then {
     private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
     _watch attachTo [_bombObj, [0.07,0.293,-0.116]];
     _bombObj setVariable [QGVAR(timer),_isTimer, true];
-    private _isRandom = _bombObj getVariable  [QGVAR(randomTimer),false];
+    private _randomValue = _bombObj getVariable [QGVAR(randomTimer), GVAR(defaultRandomTimer)];
+    private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
     private _time = if (_isRandom) then {
-        private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),60]);
-        private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),150]);
+        private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),QGVAR(defaultTimerMin)]);
+        private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),QGVAR(defaultTimerMax)]);
         [_min, _max] call BIS_fnc_randomInt;
     } else {
         round (_bombObj getVariable  [QGVAR(timerValue),GVAR(defaultTimerValue)]);
