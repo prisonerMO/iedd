@@ -183,8 +183,22 @@ class Land_CanisterPlastic_F;
 			property = QGVAR(randomTimer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "(false)";	
-			typeName = "BOOL";	
+			defaultValue = QGVAR(defaultRandomTimer);	
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = CSTRING(Name_Disabled);	
+					value = 0;
+				}; 
+				class 2	{
+					name = CSTRING(Name_Enabled); 
+					value = 1;
+				};
+				class 3	{
+					name = CSTRING(Name_Random); 
+					value = 2;
+				};				
+			};		
 		};
 		class GVAR(randomTimerMin) {
 			displayName = CSTRING(RandomTimerMin);
@@ -192,8 +206,8 @@ class Land_CanisterPlastic_F;
 			property = QGVAR(randomTimerMin);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 60;	
-			typeName = "NUMBER";
+			defaultValue = QGVAR(defaultTimerMin);	
+			typeName = "NUMBER";	
 		};
 		class GVAR(randomTimerMax) {
 			displayName = CSTRING(RandomTimerMax);
@@ -201,8 +215,8 @@ class Land_CanisterPlastic_F;
 			property = QGVAR(randomTimerMax);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 150;	
-			typeName = "NUMBER";	
+			defaultValue = QGVAR(defaultTimerMax);	
+			typeName = "NUMBER";
 		};		
 	};
 };

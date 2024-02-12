@@ -204,8 +204,22 @@ class Cfg3DEN {
                         property = QGVAR(c_randomTimer);
                         control = "Combo";
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimer),_value,true)]);
-                        defaultValue = "(false)";	
-                        typeName = "BOOL";
+                        defaultValue = QGVAR(defaultRandomTimer);	
+                        typeName = "NUMBER";
+                        class Values {
+                            class 1	{
+                                name = CSTRING(Name_Disabled);	
+                                value = 0;
+                            }; 
+                            class 2	{
+                                name = CSTRING(Name_Enabled); 
+                                value = 1;
+                            };
+                            class 3	{
+                                name = CSTRING(Name_Random); 
+                                value = 2;
+                            };				
+                        };	
                         condition = "objectControllable";	
                     };
                     class GVAR(c_randomTimerMin) {
@@ -214,7 +228,7 @@ class Cfg3DEN {
                         property = QGVAR(c_randomTimerMin);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimerMin),_value,true)]);
-                        defaultValue = 60;	
+                        defaultValue = QGVAR(defaultTimerMin);	
                         typeName = "NUMBER";
                         condition = "objectControllable";	
                     };
@@ -224,7 +238,7 @@ class Cfg3DEN {
                         property = QGVAR(c_randomTimerMax);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimerMax),_value,true)]);
-                        defaultValue = 150;	
+                        defaultValue = QGVAR(defaultTimerMax);	
                         typeName = "NUMBER";
                         condition = "objectControllable";
                     };                
