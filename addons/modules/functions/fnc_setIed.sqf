@@ -49,16 +49,22 @@ private _fnc_onConfirm = {
     if (_size > 3) then {
         _size = floor (random 3);
     };
+    private _timerCtrl = _display displayCtrl 52524;
+    private _timer = lbCurSel _timerCtrl;
+    diag_log _timer;
     private _positionOfSlider = sliderPosition (_display displayCtrl 52523);
     private _dud = _positionOfSlider;    
     private _bombObj = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];   
     _bombObj setVariable ["iedd_ied_variation",_variation,true];
     _bombObj setVariable ["iedd_ied_dud",_dud,true];
     _bombObj setVariable ["iedd_ied_size",_size,true];
+    _bombObj setVariable ["iedd_ied_timer",_timer,true]; // // using CBA Defaults timer countdown time
+    _bombObj setVariable ["iedd_ied_fake",0,true]; //Override CBA settings default value
     if (_type == QEGVAR(ied,CanisterFuel)) then {
         private _color = ["green", "Blue", "red", "White"] select _typeNum-1;
         _bombObj setVariable ["iedd_ied_color",_color,true];
     };
+
 };
 
 _display displayAddEventHandler ["unload", _fnc_onUnload];

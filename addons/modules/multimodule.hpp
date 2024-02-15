@@ -192,6 +192,87 @@ class GVAR(multi): Module_F {
 			defaultValue = "0.15";
 			control = "Slider";
 		};
+/************TIMER ***********************/
+		class GVAR(Timer_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = CSTRING(Timer_Category);
+		};	
+		class GVAR(timer) {
+			displayName = CSTRING(Timer);
+			tooltip = ECSTRING(ied,Timer_Tooltip);
+			property = QGVAR(timer);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QEGVAR(ied,defaultTimer);		
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = ECSTRING(ied,Name_Disabled);	
+					value = 0;
+					default = 1;
+				};
+				class 2	{
+					name = ECSTRING(ied,Name_Enabled); 
+					value = 1;
+				};
+				class 3	{
+					name = ECSTRING(ied,Name_Random); 
+					value = 2;
+				};				
+			};
+		};
+		/* USING CBA DEFAULTS TIMER VALUES ON COUNTDOWN TIME
+		class GVAR(timerValue) {
+			displayName = ECSTRING(ied,TimerValue);
+			tooltip = ECSTRING(ied,TimerValue_Tooltip);
+			property = QGVAR(timerValue);
+			control = EQGVAR(ied,timeSlider); // TODO time_slider min - max
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QEGVAR(ied,defaultTimerValue);		
+			typeName = "NUMBER";	
+		};
+		class GVAR(randomTimer) {
+			displayName = ECSTRING(ied,RandomTimer);
+			tooltip = ECSTRING(ied,RandomTimer_Tooltip);
+			property = QGVAR(randomTimer);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QEGVAR(ied,defaultRandomTimer);	
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = ECSTRING(ied,Name_Disabled);	
+					value = 0;
+				}; 
+				class 2	{
+					name = ECSTRING(ied,Name_Enabled); 
+					value = 1;
+				};
+				class 3	{
+					name = ECSTRING(ied,Name_Random); 
+					value = 2;
+				};				
+			};		
+		};
+		class GVAR(randomTimerMin) {
+			displayName = ECSTRING(ied,RandomTimerMin);
+			tooltip = ECSTRING(ied,RandomTimerMin_Tooltip);
+			property = QGVAR(randomTimerMin);
+			control = QEGVAR(ied,timeSlider); // TODO time_slider min - max
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QEGVAR(ied,defaultTimerMin);	
+			typeName = "NUMBER";	
+		};
+		class GVAR(randomTimerMax) {
+			displayName = ECSTRING(ied,RandomTimerMax);
+			tooltip = ECSTRING(ied,RandomTimerMax_Tooltip);
+			property = QGVAR(randomTimerMax);
+			control = QGVAR(timeSlider); // TODO time_slider min - max
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QEGVAR(ied,defaultTimerMax);	
+			typeName = "NUMBER";
+		};*/
 /************ BLACKLIST ***********************/
 		class GVAR(Blacklist_SubCategory) {
 			data = "AttributeSystemSubcategory";

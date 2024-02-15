@@ -86,7 +86,9 @@ switch _mode do {
 			if (_iedCount > 0) then {
 				if (count _iedTypes == 0) exitWith {
 					["None of types selected from IEDs, %1",str(_logic)] call BIS_fnc_error;
-				};				
+				};
+				private _timerValue = _bombObj getVariable [QGVAR(timer), EGVAR(ied,defaultTimer)];
+				//private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};			
 				for "_i" from 1 to _iedCount do {
 					_type = selectRandom _iedTypes;
 					if (_type == QEGVAR(ied,Metal)) then {
@@ -125,14 +127,15 @@ switch _mode do {
 						_bombObj setVariable [QEGVAR(ied,color),"random"];
 					};
 					_bombObj setDir random 359;
-					_size = floor (random 3);
+					_size = selectRandom [0,1,2];
 					_bombObj setVariable [QEGVAR(ied,dud),_dud];
 					_bombObj setVariable [QEGVAR(ied,size),_size];
+					_bombObj setVariable [QEGVAR(ied,timer),_timerValue]; // using CBA Defaults timer countdown time
+					_bombObj setVariable [QEGVAR(ied,fake),0]; // Override CBA settings default value
 					if (_signs) then {
 						[_bombObj] call EFUNC(ied,decals);
 					};
 					if (_extraSigns) then {
-						_text = 1;
 						private _decalPoses = [];	
 						private _decalPos = [0,0];
 						for "_i" from 0 to 3 do {													
