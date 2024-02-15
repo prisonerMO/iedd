@@ -212,7 +212,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
 
                         class GVAR(timerL): GVAR(typeL) {
                             text = CSTRING(Zeus_Timer);
-                            tooltip = CSTRING(Zeus_Timer_Tooltip);
+                            tooltip = CSTRING(Timer_Tooltip);
                             y = QUOTE(H_PART(4.4));
                         };
                         class GVAR(timer): RscCombo {

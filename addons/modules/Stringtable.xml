@@ -114,9 +114,9 @@
 				<Original>Add timer to IEDs</Original>
 				<English>Add timer to IEDs</English>
 			</Key>
-			<Key ID="STR_iedd_modules_CTimer_Tooltip">
-				<Original>Adds timer to IEDs, uses CBA default values pla pla pla.</Original>
-				<English>Adds timer to IEDs, uses CBA default values pla pla pla.</English>
+			<Key ID="STR_iedd_modules_Timer_Tooltip">
+				<Original>Adds timer to IEDs, uses default values on countdown time.</Original>
+				<English>Adds timer to IEDs, uses default values on countdown time.</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Zeus Modules">							
@@ -164,10 +164,6 @@
 			<Key ID="STR_iedd_modules_Zeus_Timer">
 				<Original>TIMER</Original>
 				<English>TIMER</English>
-			</Key>
-			<Key ID="STR_iedd_modules_Zeus_Timer_Tooltip">
-				<Original>Add countdown timer to IED.</Original>
-				<English>Add countdown timer to IED.</English>
 			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Dud_Category">
 				<Original>CHANCE OF DUD (%)</Original>

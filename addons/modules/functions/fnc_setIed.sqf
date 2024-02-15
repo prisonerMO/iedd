@@ -51,7 +51,6 @@ private _fnc_onConfirm = {
     };
     private _timerCtrl = _display displayCtrl 52524;
     private _timer = lbCurSel _timerCtrl;
-    diag_log _timer;
     private _positionOfSlider = sliderPosition (_display displayCtrl 52523);
     private _dud = _positionOfSlider;    
     private _bombObj = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];   

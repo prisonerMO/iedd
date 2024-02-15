@@ -200,7 +200,7 @@ class GVAR(multi): Module_F {
 		};	
 		class GVAR(timer) {
 			displayName = CSTRING(Timer);
-			tooltip = ECSTRING(ied,Timer_Tooltip);
+			tooltip = CSTRING(Timer_Tooltip);
 			property = QGVAR(timer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
