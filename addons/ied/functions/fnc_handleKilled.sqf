@@ -9,6 +9,7 @@ if (_killedEhId != -1) then {
     private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
     if (_index == -1) exitWith {};
     private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
+    diag_log _charges;
     {
         private _charge = _x;
         private _isBomb = _charge getVariable [QGVAR(bomb),false];

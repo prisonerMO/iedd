@@ -34,11 +34,11 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
         _unit setVariable [QGVAR(KilledEhId), _killedEhId,true]; // need to be global?
         _unit setVariable [QGVAR(GetInManEhId), _getInManEhId,true]; // need to be global?
 
-        private _expl1 = createSimpleObject ["demoCharge_F", [0,0,0]];
+        private _expl1 = createSimpleObject [QGVAR(Charge), [0,0,0]];
         _expl1 attachTo [_unit, [-0.15, 0.13, 0.15], "Pelvis"];
         _expl1 setVectorDirAndUp [[-0.707107,-0.707107,0],[0.707107,-0.707107,0]];
         
-        private _expl3 = createSimpleObject ["demoCharge_F", [0,0,0]];
+        private _expl3 = createSimpleObject [QGVAR(Charge), [0,0,0]];
         _expl3 attachTo [_unit, [0.15, 0.13, 0.15], "Pelvis"];
         _expl3 setVectorDirAndUp [[-0.707107,0.707107,0],[-0.707107,-0.707107,0]];
 
