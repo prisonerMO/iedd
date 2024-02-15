@@ -169,8 +169,8 @@
 				<English>Random countdown time</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimer_Tooltip">
-				<Original>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</Original>
-				<English>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</English>
+				<Original>Set random countdown time for timer. If enabled, countdown time above, will be disabled.</Original>
+				<English>Set random countdown time for timer. If enabled, countdown time above, will be disabled.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimerMin">
 				<Original>Min. time for random</Original>
@@ -429,24 +429,24 @@
 				<English>Just keep talking and nobody explodes-mode</English>
 			</Key>
 			<Key ID="STR_iedd_ied_IsBlockedRange_Description">
-				<Original> IEDD Notebook can't be opened near IEDs</Original>
-				<English> IEDD Notebook can't be opened near IEDs</English>
+				<Original> IEDD Notebook can't be opened near IEDs.</Original>
+				<English> IEDD Notebook can't be opened near IEDs.</English>
 			</Key>			
 			<Key ID="STR_iedd_ied_AddNotebook">
 				<Original>Add IEDD Notebook to EODs/Explosive specialists</Original>
 				<English>Add IEDD Notebook to EODs/Explosive specialists</English>
 			</Key>
 			<Key ID="STR_iedd_ied_AddNotebook_Description">
-				<Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start</Original>
-				<English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start</English>
+				<Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</Original>
+				<English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</English>
 			</Key>		
 			<Key ID="STR_iedd_ied_AddDefusalKit">
 				<Original>Add Defusal Kit to EODs/Explosive specialists</Original>
 				<English>Add Defusal Kit to EODs/Explosive specialists</English>
 			</Key>
 			<Key ID="STR_iedd_ied_AddDefusalKit_Description">
-				<Original>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start</Original>
-				<English>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start</English>
+				<Original>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</Original>
+				<English>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</English>
 			</Key>						
 			<Key ID="STR_iedd_ied_IsEod">
 				<Original>Require EOD/Explosive Specialist</Original>
@@ -529,17 +529,17 @@
 				<English>Set countdown time (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultRandomTimer_Description">
-                <Original>Random enable/false/random (if not defined somewhere else).</Original>
-                <English>Random enable/false/random (if not defined somewhere else).</English>
-            </Key>
-            <Key ID="STR_iedd_ied_DefaultTimerMin_Description">
-                <Original>Minimum value for random time (if not defined somewhere else).</Original>
-                <English>Minimum value for random time (if not defined somewhere else).</English>
-            </Key>
-            <Key ID="STR_iedd_ied_DefaultTimerMax_Description">
-                <Original>Maximum value for random time (if not defined somewhere else).</Original>
-                <English>Maximum value for random time (if not defined somewhere else).</English>
-            </Key>
+				<Original>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</Original>
+				<English>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultTimerMin_Description">
+				<Original>Minimum value for random time (if not defined somewhere else).</Original>
+				<English>Minimum value for random time (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultTimerMax_Description">
+				<Original>Maximum value for random time (if not defined somewhere else).</Original>
+				<English>Maximum value for random time (if not defined somewhere else).</English>
+			</Key>
 		</Container>
 		<Container name="IEDD Notebook Dev Settings">							
 			<Key ID="STR_iedd_ied_EquipmentDebug">

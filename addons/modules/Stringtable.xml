@@ -82,6 +82,14 @@
 				<Original>Probability of IED being dud.</Original>
 				<English>Probability of IED being dud.</English>
 			</Key>
+			<Key ID="STR_iedd_modules_Signs">
+				<Original>IED Ground Signs</Original>
+				<English>IED Ground Signs</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Signs_Tooltip">
+				<Original>Spawn ground signs under IEDs.</Original>
+				<English>Spawn ground signs under IEDs.</English>
+			</Key>
 			<Key ID="STR_iedd_modules_Blacklist_Category">
 				<Original>BLACKLIST</Original>
 				<English>BLACKLIST</English>
@@ -97,6 +105,18 @@
 			<Key ID="STR_iedd_modules_Color_Tooltip">
 				<Original>Set color of fuel canister.</Original>
 				<English>Set color of fuel canister.</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Timer_Category">
+				<Original>TIMER</Original>
+				<English>TIMER</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Timer">
+				<Original>Add timer to IEDs</Original>
+				<English>Add timer to IEDs</English>
+			</Key>
+			<Key ID="STR_iedd_modules_CTimer_Tooltip">
+				<Original>Adds timer to IEDs, uses CBA default values pla pla pla.</Original>
+				<English>Adds timer to IEDs, uses CBA default values pla pla pla.</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Zeus Modules">							
@@ -141,7 +161,14 @@
 				<Original>Select size of explosion.</Original>
 				<English>Select size of explosion.</English>
 			</Key>
-
+			<Key ID="STR_iedd_modules_Zeus_Timer">
+				<Original>TIMER</Original>
+				<English>TIMER</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Timer_Tooltip">
+				<Original>Add countdown timer to IED.</Original>
+				<English>Add countdown timer to IED.</English>
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Dud_Category">
 				<Original>CHANCE OF DUD (%)</Original>
 				<English>CHANCE OF DUD (%)</English>
