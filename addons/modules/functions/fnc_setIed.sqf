@@ -57,8 +57,9 @@ private _fnc_onConfirm = {
     _bombObj setVariable ["iedd_ied_variation",_variation,true];
     _bombObj setVariable ["iedd_ied_dud",_dud,true];
     _bombObj setVariable ["iedd_ied_size",_size,true];
-    _bombObj setVariable ["iedd_ied_timer",_timer,true]; // // using CBA Defaults timer countdown time
+    _bombObj setVariable ["iedd_ied_timer",_timer,true]; // using CBA Defaults to timer countdown time
     _bombObj setVariable ["iedd_ied_fake",0,true]; //Override CBA settings default value
+    _bombObj setVariable ["iedd_ied_decals",false,true]; //Override CBA settings default value
     if (_type == QEGVAR(ied,CanisterFuel)) then {
         private _color = ["green", "Blue", "red", "White"] select _typeNum-1;
         _bombObj setVariable ["iedd_ied_color",_color,true];

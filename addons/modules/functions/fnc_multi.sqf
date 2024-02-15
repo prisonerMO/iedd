@@ -128,6 +128,7 @@ switch _mode do {
 					};
 					_bombObj setDir random 359;
 					_size = selectRandom [0,1,2];
+					_bombObj setVariable [QEGVAR(ied,decals),false]; // Override CBA settings default value
 					_bombObj setVariable [QEGVAR(ied,dud),_dud];
 					_bombObj setVariable [QEGVAR(ied,size),_size];
 					_bombObj setVariable [QEGVAR(ied,timer),_timerValue]; // using CBA Defaults timer countdown time
