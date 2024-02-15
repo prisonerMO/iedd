@@ -169,8 +169,8 @@
 				<English>Random countdown time</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimer_Tooltip">
-				<Original>Set random time for countdown. If enabled, countdown time above will be disabled.</Original>
-				<English>Set random time for countdown. If enabled, countdown time above will be disabled.</English>
+				<Original>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</Original>
+				<English>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_RandomTimerMin">
 				<Original>Min. time for random</Original>
@@ -493,8 +493,8 @@
 				<English>Random ground signs</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultDecals_Description">
-				<Original>Set random ground signs under IEDs (if not defined somewhere else).</Original>
-				<English>Set random ground signs under IEDs (if not defined somewhere else).</English>
+				<Original>Add random ground signs under IEDs (if not defined somewhere else).</Original>
+				<English>Add random ground signs under IEDs (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultFake">
 				<Original>Chance of fake</Original>

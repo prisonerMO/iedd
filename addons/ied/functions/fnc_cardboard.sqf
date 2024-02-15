@@ -108,8 +108,8 @@ if (_isTimer) then {
     private _randomValue = _bombObj getVariable [QGVAR(randomTimer), GVAR(defaultRandomTimer)];
     private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
     private _time = if (_isRandom) then {
-        private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),QGVAR(defaultTimerMin)]);
-        private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),QGVAR(defaultTimerMax)]);
+        private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),GVAR(defaultTimerMin)]);
+        private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),GVAR(defaultTimerMax)]);
         [_min, _max] call BIS_fnc_randomInt;
     } else {
         round (_bombObj getVariable  [QGVAR(timerValue),GVAR(defaultTimerValue)]);

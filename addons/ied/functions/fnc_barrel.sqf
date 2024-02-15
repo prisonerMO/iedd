@@ -112,8 +112,8 @@ if (_isTimer) then {
     private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
     TRACE_2("Timer",_isTimer,_isRandom);
     private _time = if (_isRandom) then {
-        private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),QGVAR(defaultTimerMin)]);
-        private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),QGVAR(defaultTimerMax)]);
+        private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),GVAR(defaultTimerMin)]);
+        private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),GVAR(defaultTimerMax)]);
         TRACE_2("min/max",_min,_max);
         [_min, _max] call BIS_fnc_randomInt;
     } else {

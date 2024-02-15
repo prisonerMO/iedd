@@ -35,26 +35,25 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
         _unit setVariable [QGVAR(GetInManEhId), _getInManEhId,true]; // need to be global?
 
         private _expl1 = createSimpleObject ["demoCharge_F", [0,0,0]];
-        _expl1 attachTo [_unit, [-0.15, 0.12, 0.15], "Pelvis"];
+        _expl1 attachTo [_unit, [-0.15, 0.13, 0.15], "Pelvis"];
         _expl1 setVectorDirAndUp [[-0.707107,-0.707107,0],[0.707107,-0.707107,0]];
         
         private _expl3 = createSimpleObject ["demoCharge_F", [0,0,0]];
-        _expl3 attachTo [_unit, [0.15, 0.12, 0.15], "Pelvis"];
+        _expl3 attachTo [_unit, [0.15, 0.13, 0.15], "Pelvis"];
         _expl3 setVectorDirAndUp [[-0.707107,0.707107,0],[-0.707107,-0.707107,0]];
 
         private _bombObj = QGVAR(Charge) createVehicle position _unit;
-        _bombObj attachTo [_unit , [0, 0.17, 0.15], "Pelvis"];
+        _bombObj attachTo [_unit , [0, 0.2, 0.15], "Pelvis"];
         _bombObj setVectorDirAndUp [[-1,0,0],[-0,-1,0]];
 
 		private _box  = createSimpleObject ["\a3\Weapons_F_Enoch\Items\ChemicalDetector_01_F.p3d", [0,0,0]];
 		_box attachTo [_bombObj,[0,0,0]];
 		_box setVectorDirAndUp [[0,0,1],[-1,0,0]];
         
-        private _distance = [GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt;
         private _variation = _unit getVariable [QGVAR(c_variation),5];
         private _dud = _unit getVariable [QGVAR(c_dud),0];
         private _size = _unit getVariable [QGVAR(c_size),0];
-        private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
+        private _timerValue = _unit getVariable [QGVAR(c_timer), GVAR(defaultTimer)];
         private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
 
         _bombObj setVariable [QGVAR(size),_size,true];
@@ -93,7 +92,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
             [[0.109,-0.021,0.01],[[1,0.1,0],[-0.4,1,-44]]],
             [[0.105,-0.045,-0.01],[[1,0,0],[0,1,-25]]],
             [[0.120,0.066,0.04],[[-0,-0.642788,-0.766045],[0.34202,0.766045,-0.604023]]],
-            [[0.120,-0.066,0.043],[[-0,-0.34202,-0.939693],[0,0.939693,-0.34202]]]
+            [[0.120,-0.066,0.043],[[-0,-0.64202,-0.739693],[0,0.939693,-0.34202]]]
         ];
 
         {
@@ -113,11 +112,11 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
             _watch attachTo [_bombObj,[0.02,-0.095,0.028]];
             _watch setVectorDirAndUp [[-0,-1,0],[1,0,0]];
             _bombObj setVariable [QGVAR(timer),_isTimer, true];
-            private _randomValue = _bombObj getVariable [QGVAR(c_randomTimer), GVAR(defaultRandomTimer)];
+            private _randomValue = _unit getVariable [QGVAR(c_randomTimer), GVAR(defaultRandomTimer)];
             private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
             private _time = if (_isRandom) then {
-                private _min = round (_bombObj getVariable [QGVAR(randomTimerMin),QGVAR(defaultTimerMin)]);
-                private _max = round (_bombObj getVariable [QGVAR(randomTimerMax),QGVAR(defaultTimerMax)]);
+                private _min = round (_unit getVariable [QGVAR(randomTimerMin),GVAR(defaultTimerMin)]);
+                private _max = round (_unit getVariable [QGVAR(randomTimerMax),GVAR(defaultTimerMax)]);
                 [_min, _max] call BIS_fnc_randomInt;
             } else {
                 round (_unit getVariable  [QGVAR(c_timerValue),GVAR(defaultTimerValue)]);
