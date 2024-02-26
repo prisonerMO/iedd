@@ -26,7 +26,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:", isServer)};
         }];
         private _getInManEhId = _unit getVariable [QGVAR(GetInManEhId), -1];
         if (_getInManEhId != -1) then {
-            _unit removeEventHandler ["GetInMan", _getInMan];
+            _unit removeEventHandler ["GetInMan", _getInManEhId];
         };
         _getInManEhId = _unit addEventHandler ["GetInMan", {
             _this call FUNC(handleGetInMan);
