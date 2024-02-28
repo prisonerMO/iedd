@@ -11,7 +11,7 @@ if (!isServer) exitWith {};
     private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];
     private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
     private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
-
+    TRACE_6("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer);
     if (_isFake > random 1) exitWith {
         private _type = getText (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_default");
         private _dir = getDir _bombObj;
@@ -55,6 +55,7 @@ if (!isServer) exitWith {};
 
     private _distance = [GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt;
     _bombObj setVariable [QGVAR(dist),_distance];
+    TRACE_1("bombObj",_distance);
 
     private _wireSet = IEDD_CANVARS select _variation;
 

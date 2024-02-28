@@ -40,7 +40,8 @@
 						sleep 1.7;
 					};
 				}; 
-				private _cutTime = if ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist") then {GVAR(wireCutTimeEOD)} else {GVAR(wireCutTime)};
+				private _cutTime = [iedd_ied_wireCutTime, iedd_ied_wireCutTimeEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+				TRACE_1("Cut Time",_cutTime);
 				[
 					_cutTime,
 					[_actionParams,_player],

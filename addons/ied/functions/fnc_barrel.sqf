@@ -11,7 +11,6 @@ if (!isServer) exitWith {};
     private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];
     private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
     private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
-    //diag_log format (["Var: %1, Decals: %2, setDir: %3, isFake: %4, timer: %4, isTimer: %5",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer]);
     if (_isFake > random 1) exitWith {
         private _type = getText (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_default");
         private _dir = getDir _bombObj;

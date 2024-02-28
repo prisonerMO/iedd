@@ -1,10 +1,7 @@
 #include "script_component.hpp"
 params ["_player","_wire","_bombObj", "_order"];
-private _failChance = if ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist") then {
-    GVAR(failChanceEOD);
-} else {
-	GVAR(failChance);
-};
+private _failChance = [iedd_ied_failChance, iedd_ied_failChanceEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+TRACE_1("FailChance",_failChance);
 private _chance = random 1;
 if (_chance < _failChance) exitWith {
 	private _exploseChance = random 1;
