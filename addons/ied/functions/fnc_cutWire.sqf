@@ -16,7 +16,7 @@ deleteVehicle _wire;
 		isNull (_this select 0)
 	},
  	{
-		params ["_wire","_bombObj","_order"];
+		params ["_wire","_bombObj","_order","_player"];
 		private _wires = _bombObj getVariable [QGVAR(wires),[]];
 		private _count = count (_wires select {!isNull _x});
 		private _isTimer = _bombObj getVariable [QGVAR(timer),false];
@@ -37,12 +37,13 @@ deleteVehicle _wire;
 					[QGVAR(detachAction), [_bombObj]] call CBA_fnc_globalEventJIP;
 					[_unit] call FUNC(removeEvents);
 				};
+				[QGVAR(defused), [_player, _bombObj]] call CBA_fnc_globalEvent;
 			};
 		} else {
 			[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
 		};
 	}, 
-	[_wire,_bombObj,_order]
+	[_wire,_bombObj,_order,_player]
 ] call CBA_fnc_waitUntilAndExecute;
 
 

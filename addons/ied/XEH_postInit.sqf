@@ -200,6 +200,11 @@
 
 ["forceWalk", false, [QGVAR(charge)]] call ace_common_statusEffect_addType;
 
+[QGVAR(defused), {
+    params ["_unit", "_object"];
+	TRACE_2("Defused: ",_unit,_object);
+}] call CBA_fnc_addEventHandler;
+
 //["ace_captiveStatusChanged", {_this call FUNC(handleHancuffed)}] call CBA_fnc_addEventHandler; //TODO ace isEscortin EH or this.
 
 if (isServer) then {
