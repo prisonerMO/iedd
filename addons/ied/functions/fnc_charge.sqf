@@ -115,8 +115,8 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
             private _randomValue = _unit getVariable [QGVAR(c_randomTimer), GVAR(defaultRandomTimer)];
             private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
             private _time = if (_isRandom) then {
-                private _min = round (_unit getVariable [QGVAR(randomTimerMin),GVAR(defaultTimerMin)]);
-                private _max = round (_unit getVariable [QGVAR(randomTimerMax),GVAR(defaultTimerMax)]);
+                private _min = round (_unit getVariable [QGVAR(c_randomTimerMin),GVAR(defaultTimerMin)]);
+                private _max = round (_unit getVariable [QGVAR(c_randomTimerMax),GVAR(defaultTimerMax)]);
                 [_min, _max] call BIS_fnc_randomInt;
             } else {
                 round (_unit getVariable  [QGVAR(c_timerValue),GVAR(defaultTimerValue)]);

@@ -146,6 +146,7 @@
 	private _endTime = _time + time;
 	private _sound = createSoundSource [QGVAR(timerSound) , getPosATL _object, [], 0]; // starts alarm
 	_sound attachTo [_object,[0,0,0]];
+	TRACE_1("Timer CBAevent:",_this);
 	[_object,_endTime,_sound] call FUNC(timer);
 }] call CBA_fnc_addEventHandler;
 
