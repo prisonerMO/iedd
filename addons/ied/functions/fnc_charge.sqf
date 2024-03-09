@@ -112,6 +112,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
             _watch attachTo [_bombObj,[0.02,-0.095,0.028]];
             _watch setVectorDirAndUp [[-0,-1,0],[1,0,0]];
             _bombObj setVariable [QGVAR(timer),_isTimer, true];
+            _bombObj setVariable [QGVAR(unit),_unit];
             private _randomValue = _unit getVariable [QGVAR(c_randomTimer), GVAR(defaultRandomTimer)];
             private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
             private _time = if (_isRandom) then {
