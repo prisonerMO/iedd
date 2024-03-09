@@ -142,10 +142,15 @@
 
 [QGVAR(timer), {
 	params ["_object"];
+	private _timerObj = if (typeOf _object == QGVAR(Charge)) then {
+		_object getVariable QGVAR(unit);
+	} else {
+		_object
+	};
 	private _time = _object getVariable [QGVAR(timerValue),0];
 	private _endTime = _time + time;
 	private _sound = createSoundSource [QGVAR(timerSound) , getPosATL _object, [], 0]; // starts alarm
-	_sound attachTo [_object,[0,0,0]];
+	_sound attachTo [_timerObj,[0,0,0]];
 	TRACE_1("Timer CBAevent:",_this);
 	[_object,_endTime,_sound] call FUNC(timer);
 }] call CBA_fnc_addEventHandler;
