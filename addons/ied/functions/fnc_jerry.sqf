@@ -142,13 +142,3 @@ if (!isServer) exitWith {};
     ] call CBA_fnc_waitUntilAndExecute;
 },[_bombObj],0.1] call CBA_fnc_waitAndExecute;
 true;
-
-
-
-
-
-
-
-
-
-    
