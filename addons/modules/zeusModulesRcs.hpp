@@ -49,7 +49,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(4.4));
+                    h = QUOTE(H_PART(5.5));
                     class controls {
                         class GVAR(typeL): RscText {
                             idc = -1;
@@ -69,7 +69,6 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.7};                           
                             onLBSelChanged = QUOTE(_this call FUNC(onSelVarChanged));
-
                             class Items {
                                 class 1 {
                                     data = QEGVAR(ied,CanisterPlastic);
@@ -118,6 +117,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                                 };
                             };
                         };
+
                         class GVAR(variationL): GVAR(typeL) {
                             text = CSTRING(Zeus_Variation);
                             tooltip = CSTRING(Zeus_Variation_Tooltip);
@@ -158,6 +158,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                                 };
                             };
                         };
+
                         class GVAR(sizeL): GVAR(typeL) {
                             text = CSTRING(Zeus_Size);
                             tooltip = CSTRING(Zeus_Size_Tooltip);
@@ -195,18 +196,49 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                                 };
                             };
                         };
+
+                        class GVAR(dudL): GVAR(typeL) {
+                            text = CSTRING(Zeus_Dud_Category);
+                            tooltip = ECSTRING(ied,Dud_Tooltip);
+                            y = QUOTE(H_PART(3.3));
+                        };
                         class GVAR(dudSlider): RscXSliderH {
-                            text = ECSTRING(ied,Dud); 
-                            tooltip = ECSTRING(ied,Dud_Tooltip); 
+                            text = ECSTRING(ied,Dud);
                             idc = 52523;
                             x = QUOTE(W_PART(10.1));
                             y = QUOTE(H_PART(3.3));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));                            
                         };
-                        class GVAR(dudL): GVAR(typeL) {                       
-                            text = CSTRING(Zeus_Dud_Category);
-                            y = QUOTE(H_PART(3.3));
+
+
+                        class GVAR(timerL): GVAR(typeL) {
+                            text = CSTRING(Zeus_Timer);
+                            tooltip = CSTRING(Timer_Tooltip);
+                            y = QUOTE(H_PART(4.4));
+                        };
+                        class GVAR(timer): RscCombo {
+                            idc = 52524;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(4.4));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                            colorBackground[] = {0, 0, 0, 0.7};
+                            class Items {
+                                class 1	{
+                                    text = ECSTRING(ied,Name_Disabled);	
+                                    value = 0;                                                                        
+                                    default = 1;
+                                };
+                                class 2	{
+                                    text = ECSTRING(ied,Name_Enabled); 
+                                    value = 1;
+                                };
+                                class 3	{
+                                    text = ECSTRING(ied,Name_Random); 
+                                    value = 2;
+                                };				
+                            };
                         };
                     };
                 };

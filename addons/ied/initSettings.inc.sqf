@@ -161,6 +161,169 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+/* IED Default values */
+[
+    QGVAR(defaultVariation), 
+    "LIST",     
+    [CSTRING(DefaultVariation),CSTRING(DefaultVariation_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0,1,2,3,4,5],
+        [CSTRING(Variation_1),CSTRING(Variation_2),CSTRING(Variation_3),CSTRING(Variation_4),CSTRING(Variation_5),CSTRING(Name_Random)],
+        5
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultSize), 
+    "LIST",     
+    [CSTRING(DefaultSize),CSTRING(DefaultSize_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0,1,2,3,4],
+        [CSTRING(Name_Small),CSTRING(Name_Medium),CSTRING(Name_Large),CSTRING(Name_Huge),CSTRING(Name_Random)],
+        2
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultDirection), 
+    "LIST",     
+    [CSTRING(DefaultDirection),CSTRING(DefaultDirection_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [false, true], 
+        [CSTRING(Name_Disabled),CSTRING(Name_Enabled)], 
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultDecals), 
+    "LIST",     
+    [CSTRING(DefaultDecals),CSTRING(DefaultDecals_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [false, true], 
+        [CSTRING(Name_Disabled),CSTRING(Name_Enabled)], 
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultDud),
+    "SLIDER",
+    [CSTRING(DefaultDud),CSTRING(DefaultDud_Description)],
+	[localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [0, 1, 0.2, 0, true],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultFake),
+    "SLIDER",
+    [CSTRING(DefaultFake),CSTRING(DefaultFake_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [0, 1, 0.25, 0, true],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultColor), 
+    "LIST",     
+    [CSTRING(DefaultColor),CSTRING(DefaultColor_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        ["green","Blue","red","White","random"], 
+        [CSTRING(Name_Green),CSTRING(Name_Blue),CSTRING(Name_Red),CSTRING(Name_White),CSTRING(Name_Random)],
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultTimer), 
+    "LIST",     
+    [CSTRING(Timer),CSTRING(DefaultTimer_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0, 1, 2], 
+        [CSTRING(Name_Disabled),CSTRING(Name_Enabled),CSTRING(Name_Random)], 
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultTimerValue),
+    "TIME",
+    [CSTRING(TimerValue),CSTRING(DefaultTimerValue_Description)],
+	[localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [1, 300, 120],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultRandomTimer), 
+    "LIST",     
+    [CSTRING(RandomTimer),CSTRING(DefaultRandomTimer_Description)],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [
+        [0, 1, 2], 
+        [CSTRING(Name_Disabled),CSTRING(Name_Enabled),CSTRING(Name_Random)], 
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultTimerMin),
+    "TIME",
+    [CSTRING(RandomTimerMin),CSTRING(DefaultTimerMin_Description)],
+	[localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [1, 300, 60],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultTimerMax),
+    "TIME",
+    [CSTRING(RandomTimerMax),CSTRING(DefaultTimerMax_Description)],
+	[localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [1, 300, 150],
+    1
+] call CBA_fnc_addSetting;
+
 #ifdef ENABLE_IEDD_DEBUG
     [
         QEGVAR(equipment,debug),

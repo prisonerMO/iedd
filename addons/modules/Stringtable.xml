@@ -98,6 +98,18 @@
 				<Original>Set color of fuel canister.</Original>
 				<English>Set color of fuel canister.</English>
 			</Key>
+			<Key ID="STR_iedd_modules_Timer_Category">
+				<Original>COUNTDOWN TIMER</Original>
+				<English>COUNTDOWN TIMER</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Timer">
+				<Original>Add timer to IEDs</Original>
+				<English>Add timer to IEDs</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Timer_Tooltip">
+				<Original>Add countdown timer to IED. Time values from addon options will be used.</Original>
+				<English>Add countdown timer to IED. Time values from addon options will be used.</English>
+			</Key>
 		</Container>
 		<Container name="IEDD Zeus Modules">							
 			<Key ID="STR_iedd_modules_Zeus_Place_Ied">
@@ -141,7 +153,10 @@
 				<Original>Select size of explosion.</Original>
 				<English>Select size of explosion.</English>
 			</Key>
-
+			<Key ID="STR_iedd_modules_Zeus_Timer">
+				<Original>COUNTDOWN TIMER</Original>
+				<English>COUNTDOWN TIMER</English>
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Dud_Category">
 				<Original>CHANCE OF DUD (%)</Original>
 				<English>CHANCE OF DUD (%)</English>

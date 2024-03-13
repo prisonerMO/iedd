@@ -22,8 +22,16 @@
 				<Original>Bomb shortcircuit sound 4</Original>
 				<English>Bomb shortcircuit sound 4</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Sound_Peep1">
+				<Original>Watch peep sound 1</Original>
+				<English>Watch peep sound 1</English>
+			</Key>
 		</Container>
 		<Container name="IEDs Display and Attribues">
+			<Key ID="STR_iedd_ied_IED_Category">
+				<Original>IED settings</Original>
+				<English>IED settings</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Barrel_DisplayName">
 				<Original>Plastic Barrel</Original>
 				<English>Plastic Barrel</English>
@@ -136,6 +144,50 @@
 				<Original>Set size of explosion (huge excluded from random).</Original>
 				<English>Set size of explosion (huge excluded from random).</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Timer_Category">
+				<Original>Countdown timer settings</Original>
+				<English>Countdown timer settings</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Timer">
+				<Original>Countdown timer</Original>
+				<English>Countdown timer</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Timer_Tooltip">
+				<Original>Add countdown timer to IED.</Original>
+				<English>Add countdown timer to IED.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_TimerValue">
+				<Original>Countdown time</Original>
+				<English>Countdown time</English>
+			</Key>
+			<Key ID="STR_iedd_ied_TimerValue_Tooltip">
+				<Original>Set countdown time in seconds</Original>
+				<English>Set countdown time in seconds.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimer">
+				<Original>Random countdown time</Original>
+				<English>Random countdown time</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimer_Tooltip">
+				<Original>Set random countdown time for timer. If enabled, countdown time above, will be disabled.</Original>
+				<English>Set random countdown time for timer. If enabled, countdown time above, will be disabled.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimerMin">
+				<Original>Min. time for random</Original>
+				<English>Min. time for random</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimerMin_Tooltip">
+				<Original>Set minimum time for random.</Original>
+				<English>Set minimum time for random.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimerMax">
+				<Original>Max. time for random</Original>
+				<English>Max. time for random</English>
+			</Key>
+			<Key ID="STR_iedd_ied_RandomTimerMax_Tooltip">
+				<Original>Set maximum time for random.</Original>
+				<English>Set maximum time for random.</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Name_Small">
 				<Original>Small</Original>
 				<English>Small</English>
@@ -163,6 +215,14 @@
 			<Key ID="STR_iedd_ied_Name_Cut">
 				<Original>Cut</Original>
 				<English>Cut</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Name_Disabled">
+				<Original>Disabled</Original>
+				<English>Disabled</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Name_Enabled">
+				<Original>Enabled</Original>
+				<English>Enabled</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Decals">
 				<Original>Random ground sign</Original>
@@ -369,24 +429,24 @@
 				<English>Just keep talking and nobody explodes-mode</English>
 			</Key>
 			<Key ID="STR_iedd_ied_IsBlockedRange_Description">
-				<Original> IEDD Notebook can't be opened near IEDs</Original>
-				<English> IEDD Notebook can't be opened near IEDs</English>
+				<Original> IEDD Notebook can't be opened near IEDs.</Original>
+				<English> IEDD Notebook can't be opened near IEDs.</English>
 			</Key>			
 			<Key ID="STR_iedd_ied_AddNotebook">
 				<Original>Add IEDD Notebook to EODs/Explosive specialists</Original>
 				<English>Add IEDD Notebook to EODs/Explosive specialists</English>
 			</Key>
 			<Key ID="STR_iedd_ied_AddNotebook_Description">
-				<Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start</Original>
-				<English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start</English>
+				<Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</Original>
+				<English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</English>
 			</Key>		
 			<Key ID="STR_iedd_ied_AddDefusalKit">
 				<Original>Add Defusal Kit to EODs/Explosive specialists</Original>
 				<English>Add Defusal Kit to EODs/Explosive specialists</English>
 			</Key>
 			<Key ID="STR_iedd_ied_AddDefusalKit_Description">
-				<Original>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start</Original>
-				<English>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start</English>
+				<Original>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</Original>
+				<English>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</English>
 			</Key>						
 			<Key ID="STR_iedd_ied_IsEod">
 				<Original>Require EOD/Explosive Specialist</Original>
@@ -403,6 +463,82 @@
 			<Key ID="STR_iedd_ied_IsDefusalKit_Description">
 				<Original>Player must have defusal kit to disarm IEDs.</Original>
 				<English>Player must have defusal kit to disarm IEDs.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultVariation">
+				<Original>Variations</Original>
+				<English>Variations</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultVariation_Description">
+				<Original>Set IED variation (if not defined somewhere else).</Original>
+				<English>Set IED variation (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultSize">
+				<Original>Explosion sizes</Original>
+				<English>Explosion sizes</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultSize_Description">
+				<Original>Set explosion size (if not defined somewhere else).</Original>
+				<English>Set explosion size (if not defined somewhere else).</English>
+			</Key>		
+			<Key ID="STR_iedd_ied_DefaultDirection">
+				<Original>Random direction</Original>
+				<English>Random direction</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDirection_Description">
+				<Original>Set random direction for IEDs (if not defined somewhere else).</Original>
+				<English>Set random direction for IEDs (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDecals">
+				<Original>Random ground signs</Original>
+				<English>Random ground signs</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDecals_Description">
+				<Original>Add random ground signs under IEDs (if not defined somewhere else).</Original>
+				<English>Add random ground signs under IEDs (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultFake">
+				<Original>Chance of fake</Original>
+				<English>Chance of fake</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultFake_Description">
+				<Original>Set probability of IEDs being fakes (if not defined somewhere else).</Original>
+				<English>Set probability of IEDs being fakes (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDud">
+				<Original>Chance of dud</Original>
+				<English>Chance of dud</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultDud_Description">
+				<Original>Set probability of IEDs being duds (if not defined somewhere else).</Original>
+				<English>Set probability of IEDs being duds (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultColor">
+				<Original>Color (Fuel canisters only)</Original>
+				<English>Color (Fuel canisters only)</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultColor_Description">
+				<Original>Set color of fuel canisters (if not defined somewhere else).</Original>
+				<English>Set color of fuel canisters (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultTimer_Description">
+				<Original>Add countdown timer to IEDs (if not defined somewhere else).</Original>
+				<English>Add countdown timer to IEDs (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultTimerValue_Description">
+				<Original>Set countdown time (if not defined somewhere else).</Original>
+				<English>Set countdown time (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultRandomTimer_Description">
+				<Original>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</Original>
+				<English>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultTimerMin_Description">
+				<Original>Minimum value for random time (if not defined somewhere else).</Original>
+				<English>Minimum value for random time (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultTimerMax_Description">
+				<Original>Maximum value for random time (if not defined somewhere else).</Original>
+				<English>Maximum value for random time (if not defined somewhere else).</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Notebook Dev Settings">							
