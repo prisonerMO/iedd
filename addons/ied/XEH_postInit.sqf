@@ -148,7 +148,7 @@
 		_object
 	};
 	private _time = _object getVariable [QGVAR(timerValue),GVAR(defaultTimerValue)];
-	private _endTime = _time + serverTime;
+	private _endTime = _time + time;
 	private _sound = createSoundSource [QGVAR(timerSound) , getPosATL _object, [], 0]; // starts alarm
 	_sound attachTo [_timerObj,[0,0,0]];
 	TRACE_1("Timer CBAevent:",_this);
@@ -216,7 +216,7 @@
 if (isServer) then {
 
 	[{
-		serverTime > 10 && !isNil QGVAR(bombs)},		
+		time > 10 && !isNil QGVAR(bombs)},		
 	{
 		INFO_1("Detect event called [Time: %1]",time);
 		call FUNC(iedCheck);
