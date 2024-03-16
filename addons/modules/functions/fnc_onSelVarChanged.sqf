@@ -7,7 +7,7 @@ private _typeCtrl = _display displayCtrl 52520;
 private _typeNum = lbCurSel _typeCtrl;
 private _type = _typeCtrl lbData _typeNum;
 
-_variations = getNumber (configFile >> "CfgVehicles" >> _type >> "Attributes" >> "iedd_ied_variation" >> "defaultValue");
+_variations = 5;
 
 private _varCtrl = _display displayCtrl 52521;
 lbClear	_varCtrl;
