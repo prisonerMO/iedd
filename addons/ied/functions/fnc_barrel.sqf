@@ -103,12 +103,12 @@ if (!isServer) exitWith {};
     _bombObj setVariable [QGVAR(wires), _wires, true];
     _bombObj setVariable [QGVAR(bomb), true, true];
     _bombObj setVariable [QGVAR(variation), _variation, true];
+    _bombObj setVariable [QGVAR(timer),_isTimer, true];
 
     if (_isTimer) then {
         private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
         _watch attachTo [_bombObj, [0.105,0.075,0.158]];
         _watch setVectorDirAndUp [[-0.40,0.882948,0],[0.882948,0.469472,0.1]];
-        _bombObj setVariable [QGVAR(timer),_isTimer, true];
         private _randomValue = _bombObj getVariable [QGVAR(randomTimer), GVAR(defaultRandomTimer)];
         private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
         TRACE_2("Timer",_isTimer,_isRandom);
