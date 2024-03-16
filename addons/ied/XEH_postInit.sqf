@@ -40,7 +40,8 @@
 						sleep 1.7;
 					};
 				}; 
-				private _cutTime = if ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist") then {GVAR(wireCutTimeEOD)} else {GVAR(wireCutTime)};
+				private _cutTime = [iedd_ied_wireCutTime, iedd_ied_wireCutTimeEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+				TRACE_1("Cut Time",_cutTime);
 				[
 					_cutTime,
 					[_actionParams,_player],
@@ -88,14 +89,14 @@
 
 [QGVAR(disarmAction), {
 	params ["_bombObj"];
-	_action = ["IEDD_DisarmMenu",localize LSTRING(Disarm_DisplayName),"",{},{true}] call ace_interact_menu_fnc_createAction;
+	_action = ["IEDD_DisarmMenu",localize LSTRING(Disarm_DisplayName),"",{},{[_player] call FUNC(canDisarm)}] call ace_interact_menu_fnc_createAction;
 	[_bombObj, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(dudEffect), {
 	params ["_bombObj"];
-		_bombObj call FUNC(dudWires);
-		[_bombObj] spawn {
+	_bombObj call FUNC(dudWires);
+	[_bombObj] spawn {
 		params ["_bombObj"];
 		private _sound = format ["iedd_ied_dud%1", floor (random 4)];
 		_bombObj say3D _sound;
@@ -137,6 +138,21 @@
 [QGVAR(explosion), {
 	params ["_target"];
 	_this call FUNC(bomb);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(timer), {
+	params ["_object"];
+	private _timerObj = if (typeOf _object == QGVAR(Charge)) then {
+		_object getVariable [QGVAR(unit),_object];
+	} else {
+		_object
+	};
+	private _time = _object getVariable [QGVAR(timerValue),GVAR(defaultTimerValue)];
+	private _endTime = _time + time;
+	private _sound = createSoundSource [QGVAR(timerSound) , getPosATL _object, [], 0]; // starts alarm
+	_sound attachTo [_timerObj,[0,0,0]];
+	TRACE_1("Timer CBAevent:",_this);
+	[_object,_endTime,_sound] call FUNC(timer);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(add), {
@@ -189,6 +205,11 @@
 }] call CBA_fnc_addEventHandler;
 
 ["forceWalk", false, [QGVAR(charge)]] call ace_common_statusEffect_addType;
+
+[QGVAR(defused), {
+    params ["_unit", "_object"];
+	TRACE_2("Defused: ",_unit,_object);
+}] call CBA_fnc_addEventHandler;
 
 //["ace_captiveStatusChanged", {_this call FUNC(handleHancuffed)}] call CBA_fnc_addEventHandler; //TODO ace isEscortin EH or this.
 

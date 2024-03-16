@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 params ["_bombObj"];
 if (isNil {_bombObj getVariable QGVAR(bomb)}) exitWith {};
-private _possiblity = _bombObj getVariable [QGVAR(dud),0];
+private _possiblity = _bombObj getVariable [QGVAR(dud), GVAR(defaultDud)];
 if (_possiblity > random 1 || GVAR(isDuds)) then {
 	_bombObj setVariable [QGVAR(bomb),nil,true];
 	[QGVAR(dudEffect),[_bombObj]] call CBA_fnc_globalEvent;

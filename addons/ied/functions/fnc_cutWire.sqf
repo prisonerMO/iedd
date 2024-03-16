@@ -1,10 +1,7 @@
 #include "script_component.hpp"
 params ["_player","_wire","_bombObj", "_order"];
-private _failChance = if ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist") then {
-    GVAR(failChanceEOD);
-} else {
-	GVAR(failChance);
-};
+private _failChance = [iedd_ied_failChance, iedd_ied_failChanceEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+TRACE_1("FailChance",_failChance);
 private _chance = random 1;
 if (_chance < _failChance) exitWith {
 	private _exploseChance = random 1;
@@ -19,9 +16,15 @@ deleteVehicle _wire;
 		isNull (_this select 0)
 	},
  	{
-		params ["_wire","_bombObj","_order"];
+		params ["_wire","_bombObj","_order","_player"];
 		private _wires = _bombObj getVariable [QGVAR(wires),[]];
 		private _count = count (_wires select {!isNull _x});
+		private _isTimer = _bombObj getVariable [QGVAR(timer), false];
+		diag_log [_wires,_count,_isTimer,_order];
+		if (_isTimer && {
+			_count == (count _wires) -1}) then {
+			[QGVAR(timer), [_bombObj]] call CBA_fnc_serverEvent;
+		};
 		if (_count isEqualTo _order) then {
 			if (_count isEqualTo 0) then {
 				_bombObj setVariable [QGVAR(bomb), nil, true];
@@ -35,12 +38,13 @@ deleteVehicle _wire;
 					[QGVAR(detachAction), [_bombObj]] call CBA_fnc_globalEventJIP;
 					[_unit] call FUNC(removeEvents);
 				};
+				[QGVAR(defused), [_player, _bombObj]] call CBA_fnc_globalEvent;
 			};
 		} else {
 			[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
 		};
 	}, 
-	[_wire,_bombObj,_order]
+	[_wire,_bombObj,_order,_player]
 ] call CBA_fnc_waitUntilAndExecute;
 
 

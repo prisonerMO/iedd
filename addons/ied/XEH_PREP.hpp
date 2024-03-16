@@ -21,4 +21,5 @@ PREP(jerry);
 PREP(metal);
 PREP(removeEvents);
 PREP(setAttributes);
+PREP(timer);
 
