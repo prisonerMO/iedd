@@ -1,5 +1,3 @@
-#include "script_component.hpp"
-
 [
     "Object",
     [ECSTRING(ied,Dud),ECSTRING(iedd,Dud_Tooltip)],
