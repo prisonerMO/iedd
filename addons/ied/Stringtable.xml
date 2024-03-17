@@ -260,6 +260,14 @@
 				<Original>Color</Original>
 				<English>Color</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Distance">
+				<Original>distance</Original>
+				<English>Distance</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Distance_Tooltip">
+				<Original>Distance tooltip.</Original>
+				<English>Distance tooltip.</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Color_Tooltip">
 				<Original>Set color of fuel canister.</Original>
 				<English>Set color of fuel canister.</English>
