@@ -210,7 +210,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));                            
                         };
-
+                        //TODO DISTANCE 1-30 setup
 
                         class GVAR(timerL): GVAR(typeL) {
                             text = CSTRING(Zeus_Timer);
