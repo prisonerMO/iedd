@@ -145,6 +145,8 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			property = QGVAR(distance);
 			expression = "_this setVariable ['%s',_value];";
 			control = QGVAR(distanceSlider);
+			typeName = "NUMBER";
+			defaultValue = "0";
 		};
 		/**********TIMER SETTINGS ********/
 		class GVAR(timer_SubCategory) {

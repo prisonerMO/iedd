@@ -35,7 +35,7 @@ class Cfg3DEN {
             private _slider = _ctrlGroup controlsGroupCtrl 100;\
             private _edit = _ctrlGroup controlsGroupCtrl 101;\
             _slider sliderSetPosition _value;\
-            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 's';";
+            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';";
             attributeSave = "params [""_ctrlGroup""];\
             sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
             onLoad = "params [""_ctrlGroup""];\
