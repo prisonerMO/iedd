@@ -49,7 +49,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(5.5));
+                    h = QUOTE(H_PART(6.6));
                     class controls {
                         class GVAR(typeL): RscText {
                             idc = -1;
@@ -210,17 +210,30 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));                            
                         };
-                        //TODO DISTANCE 1-30 setup
+                         class GVAR(distanceL): GVAR(typeL) {
+                            text = CSTRING(Zeus_Distance_Category);
+                            tooltip = ECSTRING(ied,Distance_Tooltip);
+                            y = QUOTE(H_PART(4.4));
+                        };
+                        class GVAR(distanceSlider): RscXSliderH {
+                            sliderRange[] = {0, 30};
+                            text = ECSTRING(ied,Distance);
+                            idc = 52524;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(4.4));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));                            
+                        };
 
                         class GVAR(timerL): GVAR(typeL) {
                             text = CSTRING(Zeus_Timer);
                             tooltip = CSTRING(Timer_Tooltip);
-                            y = QUOTE(H_PART(4.4));
+                            y = QUOTE(H_PART(5.5));
                         };
                         class GVAR(timer): RscCombo {
-                            idc = 52524;
+                            idc = 52525;
                             x = QUOTE(W_PART(10.1));
-                            y = QUOTE(H_PART(4.4));
+                            y = QUOTE(H_PART(5.5));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.7};
