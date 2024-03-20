@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="IEDD">
+	<Package name="Compat ZEN">
+		<Container name="IED Compat ZEN">
+			<Key ID="STR_iedd_compat_zen_ZEN">
+				<Original>ZEN</Original>
+				<English>ZEN</English>
+			</Key>
+		</Container>
+		<Container name="Compat">
+			<Key ID="STR_iedd_compat_zen_Compat">
+				<Original>Compat</Original>
+				<English>Compat</English>
+			</Key>		
+		</Container>
+	</Package>
+</Project>
