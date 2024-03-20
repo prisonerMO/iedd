@@ -1,5 +1,21 @@
 [
     "Object",
+    [ECSTRING(ied,Distance),ECSTRING(ied,Distance_Tooltip)],
+    "zen_attributes_slider",
+    [0, 30, 1, false,{format ["%1%2", round(_this),"m"]}],
+    {
+        [QGVAR(setData),[_entity,"dist",round(_value)]] call CBA_fnc_serverEvent;
+    },
+    {
+        [_entity,"dist"] call FUNC(getData);
+    },
+    {
+        alive _entity && {typeOf _entity in IEDD_CLASSES}
+    }
+] call zen_attributes_fnc_addAttribute;
+
+[
+    "Object",
     [ECSTRING(ied,Dud),ECSTRING(iedd,Dud_Tooltip)],
     "zen_attributes_slider",
     [0, 1, 0.1, true],

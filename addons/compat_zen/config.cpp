@@ -15,6 +15,7 @@ class CfgPatches
 		requiredAddons[] =
 		{
 			"zen_main",
+			"zen_attributes",
 			"zen_context_actions",
 			"ace_interaction",
 			"ace_zeus",
