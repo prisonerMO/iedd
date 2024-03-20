@@ -53,7 +53,8 @@ if (!isServer) exitWith {};
         _bombObj setVariable [QGVAR(movable),true];
     };
 
-    private _distance = [GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt;
+    private _isDistance = _bombObj getVariable [QGVAR(distance), 0];
+    private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
     TRACE_1("bombObj",_distance);
 
