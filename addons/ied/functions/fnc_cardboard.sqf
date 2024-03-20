@@ -49,7 +49,9 @@ if (!isServer) exitWith {};
     if (_variation > 4) then {
         _variation = floor (random 5);
     };
-    private _distance = [GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt;
+    
+    private _isDistance = _bombObj getVariable [QGVAR(distance), 0];
+    private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
 
     private _wireSet = IEDD_CDVARS select _variation;

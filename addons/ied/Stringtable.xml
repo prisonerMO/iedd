@@ -260,6 +260,14 @@
 				<Original>Color</Original>
 				<English>Color</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Distance">
+				<Original>Activation distance</Original>
+				<English>Activation distance</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Distance_Tooltip">
+				<Original>If the value is under 1m, random distance value from addon options will be used.</Original>
+				<English>If the value is under 1m, random distance value from addon options will be used.</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Color_Tooltip">
 				<Original>Set color of fuel canister.</Original>
 				<English>Set color of fuel canister.</English>

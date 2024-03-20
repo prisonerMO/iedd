@@ -1,4 +1,4 @@
-name = "IEDD Notebook ZEN 0.0.0";
+name = "IEDD Notebook 0.0.0";
 picture = "x\iedd\addons\models\preview\notebook.paa";
 actionName = "GitHub";
 action = "https://github.com/prisonerMO/iedd";

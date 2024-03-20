@@ -153,6 +153,10 @@
 				<Original>Select size of explosion.</Original>
 				<English>Select size of explosion.</English>
 			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Distance_Category">
+				<Original>ACTIVATION DISTANCE</Original>
+				<English>ACTIVATION DISTANCE</English>
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Timer">
 				<Original>COUNTDOWN TIMER</Original>
 				<English>COUNTDOWN TIMER</English>

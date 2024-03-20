@@ -139,6 +139,15 @@ class Land_CanisterPlastic_F;
 			control = "Slider";
 			defaultValue = QGVAR(defaultFake);
 		};
+		class GVAR(distance) {
+			displayName = CSTRING(Distance);
+			tooltip = CSTRING(Distance_Tooltip);
+			property = QGVAR(distance);
+			expression = "_this setVariable ['%s',_value];";
+			control = QGVAR(distanceSlider);
+			typeName = "NUMBER";
+			defaultValue = "0";
+		};
 		/**********TIMER SETTINGS ********/
 		class GVAR(timer_SubCategory) {
 			data = "AttributeSystemSubcategory";
