@@ -68,9 +68,14 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 					value = 4;
 				};
 				class 6 {
+					name = CSTRING(Name_X);
+					value = 6;
+				};
+				class 7 {
 					name = CSTRING(Name_Random);
 					value = 5;
-				}; 				
+				};
+							
 			};
 		};
 		class GVAR(size) {

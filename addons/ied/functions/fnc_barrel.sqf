@@ -45,9 +45,10 @@ if (!isServer) exitWith {};
         [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
     };
 
-    if (_variation > 4) then {
-        _variation = floor (random 5);
+    if (_variation == 5) then {
+        _variation = selectRandom [0,1,2,3,4];
     };
+    
     if (_variation == 4) then {
         _bombObj setVariable [QGVAR(movable),true];
     };
@@ -56,8 +57,12 @@ if (!isServer) exitWith {};
     private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
 
-    private _wireSet = IEDD_BARRELVARS select _variation;
-
+    private _wireSet = if (_variation == 6) then {
+            [6] call FUNC(variationx);
+        } else {
+            IEDD_BARRELVARS select _variation;
+        };
+    diag_log format ["Barrel function _WireSet: %1",_wireSet];
     private _battery1 = createSimpleObject ["Land_BatteryPack_01_battery_black_F",[0,0,0]];
     _battery1 attachTo 	[_bombObj,[0.174,0.006,0.148]];
     _battery1 setVectorDirAndUp [[-0.417,0.909,0.001],[-0.908,-0.417,-0.032]];
@@ -87,7 +92,7 @@ if (!isServer) exitWith {};
         [[0.134,-0.049,0.156],[[0.999,-0.032,-0.003],[-0.032,-0.991,0.13]]],    // 3 wire
         [[0.167,-0.058,0.118],[[-0.098,0.121,0.988],[-0.397,-0.915,0.072]]],    // 4 wire
         [[0.14,-0.059,0.151],[[-0.379,0.926,-0.005],[-0.896,-0.365,0.252]]],    // 5 wire
-        [[0.078,-0.181,0.157],[[-0.907,-0.405,0.112],[0.323,-0.501,0.803]]],    // 6 wire (long)
+        [[0.078,-0.181,0.157],[[-0.907,-0.65,0.112],[0.323,-0.401,0.803]]],    // 6 wire (long)
         [[0.122,-0.065,0.12],[[-0.024,-0.037,-0.999],[0.541,0.84,-0.044]]]      // 7 wire (long)
     ];
 

@@ -136,6 +136,10 @@
 				<Original>Random</Original>
 				<English>Random</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Name_X">
+				<Original>Variation X</Original>
+				<English>Variation X</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Size">
 				<Original>Explosion size</Original>
 				<English>Explosion size</English>
