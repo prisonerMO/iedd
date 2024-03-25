@@ -41,25 +41,43 @@
 					};
 				}; 
 				private _cutTime = [iedd_ied_wireCutTime, iedd_ied_wireCutTimeEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+				if (_cutTime < 1) then {
+					_cutTime = 1;
+				};
 				TRACE_1("Cut Time",_cutTime);
+				private _failChance = [GVAR(failChance), GVAR(failChanceEOD)] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+				private _isFail = random 1 < _failChance;
+				private _failTime = time + (_cutTime - 1);
+				TRACE_3("FailChance:",_failChance,_isFail,_failTime);
 				[
 					_cutTime,
 					[_actionParams,_player],
 					{                         
 						params ["_actionParams","_player"];                              
-						_this #0 #0 params ["_wire", "_bombObj", "_order"];
+						_this #0 #0 params ["_wire", "_bombObj", "_order","_isFail"];
 						_this #0 #1 params ["_player"];
 						[_player,_wire, _bombObj, _order] call FUNC(cutWire);        
 					},
 					{
-						params ["_actionParams","_player"];
+						params ["_actionParams","_player"];   
+						if (!isNil QGVAR(failSound)) then {
+							GVAR(failSound) = nil;
+						};
 					},
 					"Working...",
-					{true},
+					{		
+						params ["_actionParams","_player"]; 				
+						_this #0 #0 params ["", "", "","_isFail","_failTime"];
+						if (_isFail && time > _failTime && isNil QGVAR(failSound)) then {
+							//ToDo playsound shishihsi
+						} else {
+							true;
+						};
+					},
 					["isNotSwimming"]
 				] call ace_common_fnc_progressBar; 
 			};
-			private _iedSubAction = [_color, localize LSTRING(Name_Cut) + toLower _wireColor, "", _statement, _condition,{},[_wire, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+			private _iedSubAction = [_color, localize LSTRING(Name_Cut) + toLower _wireColor, "", _statement, _condition,{},[_wire, _bombObj, _order,_isFail,_failTime], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
 			[_bombObj, 0, ["ACE_MainActions", "IEDD_DisarmMenu"], _iedSubAction] call ace_interact_menu_fnc_addActionToObject;
 			sleep 0.1;
 		};
