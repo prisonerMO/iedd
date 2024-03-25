@@ -57,8 +57,9 @@ if (!isServer) exitWith {};
     private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
 
-    private _wireSet = if (_variation == 6) then {
-            [6] call FUNC(variationx);
+    private _wireSet = if (_variation == 6) then {        
+            _bombObj setVariable [QGVAR(movable),selectRandom [false,true]];
+            [6] call FUNC(variationx);            
         } else {
             IEDD_BARRELVARS select _variation;
         };
