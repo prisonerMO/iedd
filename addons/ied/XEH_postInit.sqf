@@ -60,8 +60,18 @@
 					},
 					{
 						params ["_actionParams","_player"];   
+						_this #0 #0 params ["", "", "","_isFail"];
+						if (_isFail) exitWith {
+							private _exploseChance = random 1;
+							if (isNil QGVAR(failSound)) then {							
+								[QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;								
+							};
+							if (_exploseChance < GVAR(failExploseChance)) then {
+								[{[QGVAR(explosion), [(_this select 0)]] call CBA_fnc_serverEvent;}, _bombObj, 1] call CBA_fnc_waitAndExecute;					
+							};
+						};
 						if (!isNil QGVAR(failSound)) then {
-							GVAR(failSound) = nil;
+							[{GVAR(failSound) = nil },1] call CBA_fnc_waitAndExecute;
 						};
 					},
 					"Working...",
@@ -69,7 +79,7 @@
 						params ["_actionParams","_player"]; 				
 						_this #0 #0 params ["", "", "","_isFail","_failTime"];
 						if (_isFail && time > _failTime && isNil QGVAR(failSound)) then {
-							//ToDo playsound shishihsi
+							GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_player]] call CBA_fnc_globalEvent;
 						} else {
 							true;
 						};
