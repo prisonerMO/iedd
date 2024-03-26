@@ -81,6 +81,7 @@
 					{		
 						params ["_actionParams","_elapsedTime", "_totalTime"];
 						_actionParams #0 params ["", "_bombObj","","_isFail"];
+						
 						if (_isFail && _elapsedTime > _totalTime-1 && !GVAR(fail)) then {
 							GVAR(fail) = true;			
 							[QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
