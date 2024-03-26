@@ -65,23 +65,17 @@
 							GVAR(fail) = true;
 							[QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;						
 						};
-						if (_isFail) then {
-							private _exploseChance = random 1;
-							if (_exploseChance < GVAR(failExploseChance)) then {
-								[{
-									GVAR(fail) = false;
-									[QGVAR(explosion), _this] call CBA_fnc_serverEvent;
-								},[_bombObj],1] call CBA_fnc_waitAndExecute;				
-							} else {
-								[{
-									GVAR(fail) = false;
-								},[],1] call CBA_fnc_waitAndExecute;
+						[{
+							params ["_isFail","_bombObj"];
+							if (_isFail) then {
+								private _exploseChance = random 1;
+								if (_exploseChance < GVAR(failExploseChance)) then {
+									[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
+								};
 							};
-						} else {
-							[{
-								GVAR(fail) = false;
-							},[],1] call CBA_fnc_waitAndExecute;
-						};
+							GVAR(fail) = false;
+						},[_isFail,_bombObj],1] call CBA_fnc_waitAndExecute;
+						
 					},
 					"Working...",
 					{		
@@ -166,17 +160,6 @@
 [QGVAR(sound), {
     params ["_sound", "_source"];
         _source say3D _sound;
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(fail), {
-    params ["_sound", "_source"];
-	if (GVAR(fail)) then {
-		[{GVAR(fail) = false},1] call CBA_fnc_waitAndExecute;
-	} else {
-		GVAR(fail) = true;
-        _source say3D _sound;
-		[{GVAR(fail) = false},1] call CBA_fnc_waitAndExecute;
-	};		
 }] call CBA_fnc_addEventHandler;
 							
 [QGVAR(decals),{
