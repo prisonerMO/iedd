@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 params ["_player"];
-if (!isNil QGVAR(failSound)) exitWith { 
+if (GVAR(fail)) exitWith { 
 	false;
 };
 if (GVAR(isEOD) &&

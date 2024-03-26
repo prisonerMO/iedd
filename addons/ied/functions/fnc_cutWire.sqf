@@ -1,8 +1,8 @@
 #include "script_component.hpp"
 params ["_player","_wire","_bombObj", "_order","_isFail"];
 if (_isFail) exitWith {
-	if (!isNil QGVAR(failSound)) then {
-		GVAR(failSound) = nil;
+	if (GVAR(fail)) then {
+		GVAR(fail) = false;
 	};
 	private _exploseChance = random 1;
 	if (_exploseChance < GVAR(failExploseChance)) then {

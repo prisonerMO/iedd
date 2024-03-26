@@ -47,57 +47,49 @@
 				TRACE_1("Cut Time",_cutTime);
 				private _failChance = [GVAR(failChance), GVAR(failChanceEOD)] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
 				private _isFail = random 1 < _failChance;
-				private _failTime = time + (_cutTime - 1.1);
-				_actionParams append [_isFail,_failTime];
-				TRACE_3("FailChance:",_failChance,_isFail,_failTime);				
+				_actionParams append [_isFail];
+				TRACE_2("FailChance:",_failChance,_isFail);	
 				[
 					_cutTime,
 					[_actionParams,_player],
 					{                         
 						params ["_actionParams","_player"];                              
-						_this #0 #0 params ["_wire", "_bombObj","_order","_isFail"];
-						_this #0 #1 params ["_player"];
-						[_player,_wire, _bombObj, _order] call FUNC(cutWire);        
+						_actionParams #0 params ["_wire", "_bombObj","_order","_isFail"];
+						_actionParams #1 params ["_player"];
+						[_player,_wire, _bombObj, _order,_isFail] call FUNC(cutWire);        
 					},
 					{
 						params ["_actionParams","_player"];   
-						_this #0 #0 params ["", "_bombObj", "","_isFail"];
+						_actionParams #0 params ["", "_bombObj", "","_isFail"];
+						if (!GVAR(fail)) then {
+							GVAR(fail) = true;
+							[QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;						
+						};
 						if (_isFail) then {
 							private _exploseChance = random 1;
-							diag_log [_exploseChance,GVAR(failExploseChance)];
 							if (_exploseChance < GVAR(failExploseChance)) then {
-								if (!isNil QGVAR(failSound)) then {
-									[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
-								} else {
-									GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
-								};
 								[{
-									GVAR(failSound) = nil;
+									GVAR(fail) = false;
 									[QGVAR(explosion), _this] call CBA_fnc_serverEvent;
 								},[_bombObj],1] call CBA_fnc_waitAndExecute;				
 							} else {
-								if (!isNil QGVAR(failSound)) then {
-									[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
-								} else {
-									GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
-									[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
-								};
-							}
-						} else {
-							if (!isNil QGVAR(failSound)) then {
-								[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
-							} else {
-								GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
-								[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
+								[{
+									GVAR(fail) = false;
+								},[],1] call CBA_fnc_waitAndExecute;
 							};
+						} else {
+							[{
+								GVAR(fail) = false;
+							},[],1] call CBA_fnc_waitAndExecute;
 						};
 					},
 					"Working...",
 					{		
-						params ["_actionParams","_player"]; 				
-						_this #0 #0 params ["","_bombObj","","_isFail","_failTime"];
-						if (_isFail && time > _failTime && isNil QGVAR(failSound)) then {
-							GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent; // HOW TO SET FAIL <- Next frame? somethingshit?
+						params ["_actionParams","_elapsedTime", "_totalTime"];
+						_actionParams #0 params ["", "_bombObj","","_isFail"];
+						if (_isFail && _elapsedTime > _totalTime-1 && !GVAR(fail)) then {
+							GVAR(fail) = true;			
+							[QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
 						};
 						true;						
 					},
@@ -176,6 +168,17 @@
         _source say3D _sound;
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(fail), {
+    params ["_sound", "_source"];
+	if (GVAR(fail)) then {
+		[{GVAR(fail) = false},1] call CBA_fnc_waitAndExecute;
+	} else {
+		GVAR(fail) = true;
+        _source say3D _sound;
+		[{GVAR(fail) = false},1] call CBA_fnc_waitAndExecute;
+	};		
+}] call CBA_fnc_addEventHandler;
+							
 [QGVAR(decals),{
 	_this call FUNC(decals);
 }] call CBA_fnc_addEventHandler;
@@ -274,3 +277,5 @@ if (!hasInterface) exitWith {};
 	params ["_player"];
 	[_player] call FUNC(addItems);
 },true] call CBA_fnc_addPlayerEventHandler;
+
+GVAR(fail) = false;
