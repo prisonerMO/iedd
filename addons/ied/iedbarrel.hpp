@@ -32,6 +32,7 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 	ace_cargo_noRename = 1;
 	ace_cargo_blockUnloadCarry = 0;
 	iedd_ied_default = "Land_BarrelEmpty_F";
+	iedd_ied_varCount = 6;
 	class Attributes {
 		class GVAR(ied_SubCategory) {
 			data = "AttributeSystemSubcategory";
@@ -68,12 +69,12 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 					value = 4;
 				};
 				class 6 {
-					name = CSTRING(Name_X);
-					value = 6;
+					name = CSTRING(Variation_X);
+					value = 5;
 				};
 				class 7 {
 					name = CSTRING(Name_Random);
-					value = 5;
+					value = 6;
 				};
 							
 			};

@@ -7,7 +7,7 @@ private _typeCtrl = _display displayCtrl 52520;
 private _typeNum = lbCurSel _typeCtrl;
 private _type = _typeCtrl lbData _typeNum;
 
-_variations = 5;
+_variations = getNumber (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_varCount");;
 
 private _varCtrl = _display displayCtrl 52521;
 lbClear	_varCtrl;

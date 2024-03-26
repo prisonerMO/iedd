@@ -136,13 +136,13 @@
 				<Original>Variation 5</Original>
 				<English>Variation 5</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Variation_X">
+				<Original>Variation X</Original>
+				<English>Variation X</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Name_Random">
 				<Original>Random</Original>
 				<English>Random</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_X">
-				<Original>Variation X</Original>
-				<English>Variation X</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Size">
 				<Original>Explosion size</Original>

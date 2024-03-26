@@ -39,7 +39,7 @@
 						[_player] call ace_weaponselect_fnc_putWeaponAway;
 						sleep 1.7;
 					};
-				}; 
+				};
 				private _cutTime = [iedd_ied_wireCutTime, iedd_ied_wireCutTimeEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
 				if (_cutTime < 1) then {
 					_cutTime = 1;
@@ -47,47 +47,64 @@
 				TRACE_1("Cut Time",_cutTime);
 				private _failChance = [GVAR(failChance), GVAR(failChanceEOD)] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
 				private _isFail = random 1 < _failChance;
-				private _failTime = time + (_cutTime - 1);
-				TRACE_3("FailChance:",_failChance,_isFail,_failTime);
+				private _failTime = time + (_cutTime - 1.1);
+				_actionParams append [_isFail,_failTime];
+				TRACE_3("FailChance:",_failChance,_isFail,_failTime);				
 				[
 					_cutTime,
 					[_actionParams,_player],
 					{                         
 						params ["_actionParams","_player"];                              
-						_this #0 #0 params ["_wire", "_bombObj", "_order","_isFail"];
+						_this #0 #0 params ["_wire", "_bombObj","_order","_isFail"];
 						_this #0 #1 params ["_player"];
 						[_player,_wire, _bombObj, _order] call FUNC(cutWire);        
 					},
 					{
 						params ["_actionParams","_player"];   
-						_this #0 #0 params ["", "", "","_isFail"];
-						if (_isFail) exitWith {
+						_this #0 #0 params ["", "_bombObj", "","_isFail"];
+						if (_isFail) then {
 							private _exploseChance = random 1;
-							if (isNil QGVAR(failSound)) then {							
-								[QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;								
-							};
+							diag_log [_exploseChance,GVAR(failExploseChance)];
 							if (_exploseChance < GVAR(failExploseChance)) then {
-								[{[QGVAR(explosion), [(_this select 0)]] call CBA_fnc_serverEvent;}, _bombObj, 1] call CBA_fnc_waitAndExecute;					
+								if (!isNil QGVAR(failSound)) then {
+									[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
+								} else {
+									GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
+								};
+								[{
+									GVAR(failSound) = nil;
+									[QGVAR(explosion), _this] call CBA_fnc_serverEvent;
+								},[_bombObj],1] call CBA_fnc_waitAndExecute;				
+							} else {
+								if (!isNil QGVAR(failSound)) then {
+									[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
+								} else {
+									GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
+									[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
+								};
+							}
+						} else {
+							if (!isNil QGVAR(failSound)) then {
+								[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
+							} else {
+								GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
+								[{GVAR(failSound) = nil},1] call CBA_fnc_waitAndExecute;
 							};
-						};
-						if (!isNil QGVAR(failSound)) then {
-							[{GVAR(failSound) = nil },1] call CBA_fnc_waitAndExecute;
 						};
 					},
 					"Working...",
 					{		
 						params ["_actionParams","_player"]; 				
-						_this #0 #0 params ["", "", "","_isFail","_failTime"];
+						_this #0 #0 params ["","_bombObj","","_isFail","_failTime"];
 						if (_isFail && time > _failTime && isNil QGVAR(failSound)) then {
-							GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_player]] call CBA_fnc_globalEvent;
-						} else {
-							true;
+							GVAR(failSound) = [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent; // HOW TO SET FAIL <- Next frame? somethingshit?
 						};
+						true;						
 					},
 					["isNotSwimming"]
 				] call ace_common_fnc_progressBar; 
 			};
-			private _iedSubAction = [_color, localize LSTRING(Name_Cut) + toLower _wireColor, "", _statement, _condition,{},[_wire, _bombObj, _order,_isFail,_failTime], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+			private _iedSubAction = [_color, localize LSTRING(Name_Cut) + toLower _wireColor, "", _statement, _condition,{},[_wire, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
 			[_bombObj, 0, ["ACE_MainActions", "IEDD_DisarmMenu"], _iedSubAction] call ace_interact_menu_fnc_addActionToObject;
 			sleep 0.1;
 		};
