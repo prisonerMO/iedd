@@ -45,9 +45,10 @@ if (!isServer) exitWith {};
         [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
     };
 
-    if (_variation > 4) then {
-        _variation = floor (random 5);
+    if (_variation == 6) then {
+        _variation = selectRandom [0,1,2,3,4,5];
     };
+    
     if (_variation == 4) then {
         _bombObj setVariable [QGVAR(movable),true];
     };
@@ -56,7 +57,13 @@ if (!isServer) exitWith {};
     private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
 
-    private _wireSet = IEDD_BARRELVARS select _variation;
+    private _wireSet = if (_variation == 5) then 
+    {        
+        _bombObj setVariable [QGVAR(movable),selectRandom [false,true]];
+        [6] call FUNC(variationx);            
+    } else {
+        IEDD_BARRELVARS select _variation;
+    };
 
     private _battery1 = createSimpleObject ["Land_BatteryPack_01_battery_black_F",[0,0,0]];
     _battery1 attachTo 	[_bombObj,[0.174,0.006,0.148]];

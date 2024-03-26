@@ -153,6 +153,10 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                                     text = ECSTRING(ied,Variation_5);
                                 };
                                 class 6 {
+                                    name = ECSTRING(ied,Variation_X);
+                                    value = 5;
+                                };
+                                class 7 {
                                     text = ECSTRING(ied,Name_Random);                               
                                     default = 1;
                                 };

@@ -39,23 +39,60 @@
 						[_player] call ace_weaponselect_fnc_putWeaponAway;
 						sleep 1.7;
 					};
-				}; 
+				};
 				private _cutTime = [iedd_ied_wireCutTime, iedd_ied_wireCutTimeEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+				if (_cutTime < 1) then {
+					_cutTime = 1;
+				};
 				TRACE_1("Cut Time",_cutTime);
+				private _failChance = [GVAR(failChance), GVAR(failChanceEOD)] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+				private _isFail = random 1 < _failChance;
+				_actionParams append [_isFail];
+				TRACE_2("FailChance:",_failChance,_isFail);	
 				[
 					_cutTime,
 					[_actionParams,_player],
 					{                         
 						params ["_actionParams","_player"];                              
-						_this #0 #0 params ["_wire", "_bombObj", "_order"];
-						_this #0 #1 params ["_player"];
-						[_player,_wire, _bombObj, _order] call FUNC(cutWire);        
+						_actionParams #0 params ["_wire", "_bombObj","_order","_isFail"];
+						_actionParams #1 params ["_player"];
+						[_player,_wire, _bombObj, _order,_isFail] call FUNC(cutWire);        
 					},
 					{
-						params ["_actionParams","_player"];
+						params ["_actionParams","_player"];   
+						_actionParams #0 params ["", "_bombObj", "","_isFail"];
+						if (!GVAR(fail)) then {
+							GVAR(fail) = true;
+							[QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;						
+						};
+						if (_isFail) then {
+							private _exploseChance = random 1;
+							if (_exploseChance < GVAR(failExploseChance)) then {
+								[{
+									GVAR(fail) = false;
+									[QGVAR(explosion), _this] call CBA_fnc_serverEvent;
+								},[_bombObj],1] call CBA_fnc_waitAndExecute;				
+							} else {
+								[{
+									GVAR(fail) = false;
+								},[],1] call CBA_fnc_waitAndExecute;
+							};
+						} else {
+							[{
+								GVAR(fail) = false;
+							},[],1] call CBA_fnc_waitAndExecute;
+						};
 					},
 					"Working...",
-					{true},
+					{		
+						params ["_actionParams","_elapsedTime", "_totalTime"];
+						_actionParams #0 params ["", "_bombObj","","_isFail"];
+						if (_isFail && _elapsedTime > _totalTime-1 && !GVAR(fail)) then {
+							GVAR(fail) = true;			
+							[QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
+						};
+						true;						
+					},
 					["isNotSwimming"]
 				] call ace_common_fnc_progressBar; 
 			};
@@ -131,6 +168,17 @@
         _source say3D _sound;
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(fail), {
+    params ["_sound", "_source"];
+	if (GVAR(fail)) then {
+		[{GVAR(fail) = false},1] call CBA_fnc_waitAndExecute;
+	} else {
+		GVAR(fail) = true;
+        _source say3D _sound;
+		[{GVAR(fail) = false},1] call CBA_fnc_waitAndExecute;
+	};		
+}] call CBA_fnc_addEventHandler;
+							
 [QGVAR(decals),{
 	_this call FUNC(decals);
 }] call CBA_fnc_addEventHandler;
@@ -229,3 +277,5 @@ if (!hasInterface) exitWith {};
 	params ["_player"];
 	[_player] call FUNC(addItems);
 },true] call CBA_fnc_addPlayerEventHandler;
+
+GVAR(fail) = false;
