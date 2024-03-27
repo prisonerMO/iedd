@@ -12,6 +12,7 @@ class CfgPatches {
 		VERSION_CONFIG;
 	};
 };
+#include "CfgSettings.hpp"
 #include "CfgEditorCategories.hpp"
 #include "CfgVehicleClasses.hpp"
 #include "CfgEden.hpp"
