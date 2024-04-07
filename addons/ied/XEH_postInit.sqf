@@ -20,12 +20,11 @@
 			private _s = _r select _i;
 			private _wire = _wires #_s;
 			private _order = _wireSet #1 #_s;
-			//private _text = _wire getVariable [QGVAR(text),""];
 			private _color = (_wireSet #0 #_s);
 			private _wireColor = if (_s < 5) then {
 				localize format ["$STR_iedd_ied_Name_%1",_color];
 			} else {
-				format ["%1 %2",localize (format ["$STR_iedd_ied_Name_%1",_color]),_text];
+				format ["%1 %2",_text,localize (format ["$STR_iedd_ied_Name_%1",_color])];
 			};			
 			private _condition = {  
 				params ["_target", "_player", "_actionParams"];
