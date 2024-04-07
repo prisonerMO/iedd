@@ -23,9 +23,9 @@
 			//private _text = _wire getVariable [QGVAR(text),""];
 			private _color = (_wireSet #0 #_s);
 			private _wireColor = if (_s < 5) then {
-				toLower (localize format ["$STR_iedd_ied_Name_%1",_color]);
+				localize format ["$STR_iedd_ied_Name_%1",_color];
 			} else {
-				format ["%1 %2",toLower (localize (format ["$STR_iedd_ied_Name_%1",_color])),_text];
+				format ["%1 %2",localize (format ["$STR_iedd_ied_Name_%1",_color]),_text];
 			};			
 			private _condition = {  
 				params ["_target", "_player", "_actionParams"];
@@ -61,7 +61,7 @@
 					["isNotSwimming"]
 				] call ace_common_fnc_progressBar; 
 			};
-			private _iedSubAction = [_color, format ["%1 %2", localize LSTRING(Name_Cut),_wireColor], "", _statement, _condition,{},[_wire, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+			private _iedSubAction = [_color, format ["%1 %2", localize LSTRING(Name_Cut),toLower _wireColor], "", _statement, _condition,{},[_wire, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
 			[_bombObj, 0, ["ACE_MainActions", "IEDD_DisarmMenu"], _iedSubAction] call ace_interact_menu_fnc_addActionToObject;
 			sleep 0.1;
 		};
