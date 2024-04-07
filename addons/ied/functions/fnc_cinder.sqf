@@ -93,10 +93,6 @@ if (!isServer) exitWith {};
         _x setVectorDirAndUp ((_subObjPosAndDir #_forEachIndex) #1);
     } forEach _wires;
 
-    {
-        _x setVariable [QGVAR(text)," ("+localize LSTRING(Name_Long)+")",true];
-    } forEach [_subObj5, _subObj6];
-
     _bombObj setVariable [QGVAR(wires),_wires,true];
     _bombObj setVariable [QGVAR(bomb),true,true];
     _bombObj setVariable [QGVAR(variation),_variation,true];    
@@ -130,7 +126,8 @@ if (!isServer) exitWith {};
             if (_decals) then {
                 [_bombObj] call FUNC(decals);
             };
-            [QGVAR(defuseAction), [_bombObj, _wireSet]] call CBA_fnc_globalEventJIP;
+            private _text = format ["(%1)",localize LSTRING(Name_Long)];
+            [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;  
         },
         [_bombObj,_decals, _setDir, _wireSet],
