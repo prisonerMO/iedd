@@ -100,9 +100,6 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
             _x attachTo [_bombObj,(_subObjPosAndDir select _forEachIndex) select 0];
             _x setVectorDirAndUp ((_subObjPosAndDir select _forEachIndex) select 1);
         } forEach _wires;
-        {
-            _x setVariable [QGVAR(text)," ("+localize LSTRING(Name_Short)+")",true];
-        } forEach [_subObj5, _subObj6];
 
         _bombObj setVariable [QGVAR(wires), _wires, true];
         _bombObj setVariable [QGVAR(bomb), true, true];
@@ -131,7 +128,9 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
             {     
                 params ["_bombObj", "_wireSet"];
                 [QGVAR(disarmAction), [_bombObj]] call CBA_fnc_globalEventJIP;
-                [QGVAR(defuseAction), [_bombObj, _wireSet]] call CBA_fnc_globalEventJIP; 
+                private _text = localize LSTRING(Name_Short);
+                [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
+                [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;  
             },
             [_bombObj,_wireSet],
             1

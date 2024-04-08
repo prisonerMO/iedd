@@ -103,10 +103,6 @@ if (!isServer) exitWith {};
         _x setVectorDirAndUp ((_subObjPosAndDir select _forEachIndex) select 1);
     } forEach _wires;
 
-    {
-        _x setVariable [QGVAR(text)," ("+localize LSTRING(Name_Long)+")",true];
-    } forEach [_subObj5, _subObj6];
-
     _bombObj setVariable [QGVAR(wires), _wires,true];
     _bombObj setVariable [QGVAR(bomb), true, true];
     _bombObj setVariable [QGVAR(variation),_variation,true];    
@@ -143,8 +139,9 @@ if (!isServer) exitWith {};
             if (_color != "green") then {
                 _bombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]   
             };
-            [QGVAR(defuseAction), [_bombObj, _wireSet]] call CBA_fnc_globalEventJIP;
-            [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;  
+            private _text = localize LSTRING(Name_Long);
+            [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
+            [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;    
         },
         [_bombObj,_decals, _setDir,_wireSet,_color],
         1

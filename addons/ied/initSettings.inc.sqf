@@ -170,7 +170,7 @@
     [
         [0,1,2,3,4,5,6],
         [CSTRING(Variation_1),CSTRING(Variation_2),CSTRING(Variation_3),CSTRING(Variation_4),CSTRING(Variation_5),CSTRING(Variation_X),CSTRING(Name_Random)],
-        5
+        6
     ],
     true,
     {},
