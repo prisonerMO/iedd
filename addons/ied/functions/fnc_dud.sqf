@@ -1,7 +1,6 @@
 #include "script_component.hpp"
-//This function added to CBA_event, not in use currenlty
 params ["_bombObj"];
-//_bombObj call FUNC(dudWires);
+_bombObj call FUNC(dudWires);
 [_bombObj] spawn {
 	params ["_bombObj"];
 	private _sound = format ["iedd_ied_dud%1", floor (random 4)];
