@@ -7,6 +7,8 @@ PREP(canDisarm);
 PREP(canister);
 PREP(cinder);
 PREP(cutWire);
+PREP(defuseAction);
+PREP(disarmAction);
 PREP(decals);
 PREP(deleted);
 PREP(dud);
