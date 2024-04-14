@@ -388,7 +388,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                     w = QUOTE(W_PART(26));
                     h = QUOTE(H_PART(6.6));
                     class controls {
-                        class GVAR(variationL): GVAR(typeL) {
+                        class GVAR(variationL): RscText {
                             text = CSTRING(Zeus_Variation);
                             tooltip = CSTRING(Zeus_Variation_Tooltip);
                             x = 0;
@@ -431,7 +431,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                                 };
                             };
                         };
-                        class GVAR(sizeL): GVAR(typeL) {
+                        class GVAR(sizeL): GVAR(variationL) {
                             text = CSTRING(Zeus_Size);
                             tooltip = CSTRING(Zeus_Size_Tooltip);
                             y = QUOTE(H_PART(1.1));
@@ -465,7 +465,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                             };
                         };
 
-                        class GVAR(dudL): GVAR(typeL) {
+                        class GVAR(dudL): GVAR(variationL) {
                             text = CSTRING(Zeus_Dud_Category);
                             tooltip = ECSTRING(ied,Dud_Tooltip);
                             y = QUOTE(H_PART(2.2));
@@ -478,7 +478,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));                            
                         };
-                        class GVAR(timerL): GVAR(typeL) {
+                        class GVAR(timerL): GVAR(variationL) {
                             text = CSTRING(Zeus_Timer);
                             tooltip = CSTRING(Timer_Tooltip);
                             y = QUOTE(H_PART(3.3));
@@ -505,57 +505,56 @@ class GVAR(RscCharge): RscDisplayAttributes {
                                     value = 2;
                                 };				
                             };
-
-                            class GVAR(handcuffedL): GVAR(typeL) {
-                                text = ECSTRING(ied,isHandcuffed_DisplayName);
-                                tooltip = ECSTRING(ied,isHandcuffed_Description);
-                                y = QUOTE(H_PART(4.4));
-                            };
-                            class GVAR(isHandcuffed):RscCombo {
-                                idc = 62525;
-                                x = QUOTE(W_PART(10.1));
-                                y = QUOTE(H_PART(4.4));
-                                w = QUOTE(W_PART(15.9));
-                                h = QUOTE(H_PART(1));
-                                colorBackground[] = {0, 0, 0, 0.7};
-                                class Items {
-                                    class 1	{
-                                        text = ECSTRING(ied,Name_Disabled);	
-                                        value = 0;                                                                        
-                                        default = 1;
-                                    };
-                                    class 2	{
-                                        text = ECSTRING(ied,Name_Enabled); 
-                                        value = 1;
-                                    };
+                        };
+                        class GVAR(handcuffedL): GVAR(variationL) {
+                            text = ECSTRING(ied,isHandcuffed_DisplayName);
+                            tooltip = ECSTRING(ied,isHandcuffed_Description);
+                            y = QUOTE(H_PART(4.4));
+                        };
+                        class GVAR(isHandcuffed):RscCombo {
+                            idc = 62525;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(4.4));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                            colorBackground[] = {0, 0, 0, 0.7};
+                            class Items {
+                                class 1	{
+                                    text = ECSTRING(ied,Name_Disabled);	
+                                    value = 0;                                                                        
+                                    default = 1;
                                 };
-                            };
-
-                            class GVAR(surrenderedL): GVAR(typeL) {
-                                text = ECSTRING(ied,isSurrendered_DisplayName);
-                                tooltip = ECSTRING(ied,isSurrendered_Description);
-                                y = QUOTE(H_PART(5.5));
-                            };
-                            class GVAR(isSurrendered):RscCombo {
-                                idc = 62526;
-                                x = QUOTE(W_PART(10.1));
-                                y = QUOTE(H_PART(5.5));
-                                w = QUOTE(W_PART(15.9));
-                                h = QUOTE(H_PART(1));
-                                colorBackground[] = {0, 0, 0, 0.7};
-                                class Items {
-                                    class 1	{
-                                        text = ECSTRING(ied,Name_Disabled);	
-                                        value = 0;                                                                        
-                                        default = 1;
-                                    };
-                                    class 2	{
-                                        text = ECSTRING(ied,Name_Enabled); 
-                                        value = 1;
-                                    };
+                                class 2	{
+                                    text = ECSTRING(ied,Name_Enabled); 
+                                    value = 1;
                                 };
                             };
                         };
+
+                        class GVAR(surrenderedL): GVAR(variationL) {
+                            text = ECSTRING(ied,isSurrendered_DisplayName);
+                            tooltip = ECSTRING(ied,isSurrendered_Description);
+                            y = QUOTE(H_PART(5.5));
+                        };
+                        class GVAR(isSurrendered):RscCombo {
+                            idc = 62526;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(5.5));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                            colorBackground[] = {0, 0, 0, 0.7};
+                            class Items {
+                                class 1	{
+                                    text = ECSTRING(ied,Name_Disabled);	
+                                    value = 0;                                                                        
+                                    default = 1;
+                                };
+                                class 2	{
+                                    text = ECSTRING(ied,Name_Enabled); 
+                                    value = 1;
+                                };
+                            };
+                        };                        
                     };
                 };
             };

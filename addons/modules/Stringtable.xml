@@ -127,6 +127,10 @@
 			<Key ID="STR_iedd_modules_Zeus_Explode">
 				<Original>Explode IED</Original>
 				<English>Explode IED</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Charge">
+				<Original>Attach ied vest</Original>
+				<English>Attach ied vest</English>
 			</Key>											
 			<Key ID="STR_iedd_modules_Zeus_Type">
 				<Original>IED TYPE</Original>
