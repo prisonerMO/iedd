@@ -22,7 +22,8 @@ class CfgPatches {
             QGVAR(ieds),
 			QGVAR(decals),
             QGVAR(activate),
-            QGVAR(explode)
+            QGVAR(explode),
+            QGVAR(charge)
         };
  };
 
