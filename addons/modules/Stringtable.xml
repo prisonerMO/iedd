@@ -172,7 +172,19 @@
 			<Key ID="STR_iedd_modules_Zeus_Sign_Category">
 				<Original>GROUND SIGN TYPE</Original>
 				<English>GROUND SIGN TYPE</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_TimerValue_Category">
+				<Original>TIMER VALUE</Original>
+				<English>TIMER VALUE</English>
 			</Key>	
+			<Key ID="STR_iedd_modules_Zeus_Handcuffed_Category">
+				<Original>UNIT HANDCUFFED</Original>
+				<English>UNIT HANDCUFFED</English>
+			</Key>	
+			<Key ID="STR_iedd_modules_Zeus_Surrendered_Category">
+				<Original>UNIT SURRENDERED</Original>
+				<English>UNIT SURRENDERED</English>
+			</Key>		
 			<Key ID="STR_iedd_modules_Zeus_Sign_Category_Tooltip">
 				<Original>Select type of ground sign.</Original>
 				<English>Select type of ground sign.</English>

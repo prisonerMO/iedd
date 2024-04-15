@@ -36,14 +36,26 @@ private _fnc_sliderMove = {
     _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider * 100),"%"];
 };
 
-{
-    private _slider = _display displayCtrl _x;
-    _slider sliderSetRange [0, 1];
-    _slider sliderSetSpeed [0.01,0.1];
-    _slider sliderSetPosition 0;
-    _slider ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderMove];
-    _slider call _fnc_sliderMove;
-} forEach [62523];
+private _slider = _display displayCtrl 62523;
+_slider sliderSetRange [0, 1];
+_slider sliderSetSpeed [0.01,0.1];
+_slider sliderSetPosition 0;
+_slider ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderMove];
+_slider call _fnc_sliderMove;
+
+//Specific on-load stuff:
+private _fnc_sliderValueMove = {
+    params ["_slider"];
+    private _idc = ctrlIDC _slider; // IDCs ∈ [62526]
+    _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider),"s"];
+};
+
+private _sliderValue = _display displayCtrl 62525;
+//_slider sliderSetRange [0, 0.3];
+_sliderValue sliderSetSpeed [1,1];
+_sliderValue sliderSetPosition iedd_ied_defaultTimerValue; //CBA GET DEFAULT VALUE?
+_sliderValue ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
+_sliderValue call _fnc_sliderValueMove;
 
 private _fnc_onUnload = {
     private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
@@ -67,27 +79,32 @@ private _fnc_onConfirm = {
     if (_size > 2) then {
         _size = selectRandom [0,1,2];
     };
+    private _dud = sliderPosition (_display displayCtrl 62523);
     private _timerCtrl = _display displayCtrl 62524;
     private _timer = lbCurSel _timerCtrl;
-    private _posOfSlider = sliderPosition (_display displayCtrl 62523);
-    private _dud = _posOfSlider;
-
-    private _handCtrl = _display displayCtrl 62525;
-    private _isHandcuffed = lbCurSel _handCtrl;
-    private _surrenderCtrl = _display displayCtrl 62526;
-    private _isSurrender = lbCurSel _surrenderCtrl;
+    private _value = sliderPosition (_display displayCtrl 62525);
+    private _handCtrl = _display displayCtrl 62526;
+    private _isHandcuffed = [false,true] select lbCurSel _handCtrl;
+    private _surrenderCtrl = _display displayCtrl 62527;
+    private _isSurrender = [false,true] select lbCurSel _surrenderCtrl;
     
     _unit setVariable ["iedd_ied_c_variation",_variation,true];
     _unit setVariable ["iedd_ied_c_dud",_dud,true];
     _unit setVariable ["iedd_ied_c_size",_size,true];
-    _unit setVariable ["iedd_ied_c_timer",_timer,true]; // using CBA Defaults to timer countdown time
+    _unit setVariable ["iedd_ied_c_timer",_timer,true];
+    _unit setVariable ["iedd_ied_c_timerValue",_value,true];
     [_unit,true] call EFUNC(ied,charge); 
     _unit setVariable ["iedd_ied_isCharge",true,true];
 
-    diag_log [_variation,_dud,_size,_timer,_isHandcuffed,_isSurrender];
-    //HERE HANDCUFFED/ SURRENDER see how it goes. 
-    // something if (surrender) then {unit surrender}; <-- check that unit is not surrender already
-    // if (_hand && !_surrender) then {unit handcuff}; <-- check that unit is not handcuffed already
+    diag_log [_isHandcuffed,_isSurrender];
+    private _captive = (_unit getVariable ["ace_captives_isHandcuffed", false]);
+    if (_isHandcuffed && !_captive) then {
+         ["ace_captives_setHandcuffed", [_unit, !_captive], _unit] call CBA_fnc_targetEvent;
+    };
+    private _surrender = (_unit getVariable ["ace_captives_isSurrendered", false]);
+    if (!_isHandcuffed && _isSurrender && !_surrender) then {
+        ["ace_captives_setSurrendered", [_unit, !_surrender], _unit] call CBA_fnc_targetEvent;
+    };
 };
 
 _display displayAddEventHandler ["unload", _fnc_onUnload];

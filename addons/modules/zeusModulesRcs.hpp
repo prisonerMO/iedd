@@ -49,7 +49,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(6.6));
+                    h = QUOTE(H_PART(7.7));
                     class controls {
                         class GVAR(typeL): RscText {
                             idc = -1;
@@ -257,6 +257,20 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                                 };				
                             };
                         };
+                        class GVAR(TimerValueL): GVAR(typeL) {
+                            text = CSTRING(Zeus_TimerValue_Category);
+                            tooltip = ECSTRING(ied,Timer_Tooltip);
+                            y = QUOTE(H_PART(6.6));
+                        };
+                        class GVAR(TimerValueSlider): RscXSliderH {
+                            sliderRange[] = {0, 300};
+                            text = ECSTRING(ied,Timer);
+                            idc = 52526;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(6.6));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));                            
+                        };
                     };
                 };
             };
@@ -386,7 +400,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(6.6));
+                    h = QUOTE(H_PART(7.7));
                     class controls {
                         class GVAR(variationL): RscText {
                             text = CSTRING(Zeus_Variation);
@@ -506,15 +520,29 @@ class GVAR(RscCharge): RscDisplayAttributes {
                                 };				
                             };
                         };
-                        class GVAR(handcuffedL): GVAR(variationL) {
-                            text = ECSTRING(ied,isHandcuffed_DisplayName);
-                            tooltip = ECSTRING(ied,isHandcuffed_Description);
+                        class GVAR(timerValueL): GVAR(variationL) {
+                            text = CSTRING(Zeus_TimerValue_Category);
+                            tooltip = ECSTRING(ied,Timer_Tooltip);
                             y = QUOTE(H_PART(4.4));
                         };
-                        class GVAR(isHandcuffed):RscCombo {
+                        class GVAR(timerValueSlider): RscXSliderH {
+                            sliderRange[] = {0, 300};
+                            text = ECSTRING(ied,Timer);
                             idc = 62525;
                             x = QUOTE(W_PART(10.1));
                             y = QUOTE(H_PART(4.4));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));                            
+                        };
+                        class GVAR(handcuffedL): GVAR(variationL) {
+                            text = CSTRING(Zeus_Handcuffed_Category);
+                            tooltip = ECSTRING(ied,isHandcuffed_Description);
+                            y = QUOTE(H_PART(5.5));
+                        };
+                        class GVAR(handcuffed):RscCombo {
+                            idc = 62526;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(5.5));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.7};
@@ -532,14 +560,14 @@ class GVAR(RscCharge): RscDisplayAttributes {
                         };
 
                         class GVAR(surrenderedL): GVAR(variationL) {
-                            text = ECSTRING(ied,isSurrendered_DisplayName);
+                            text = CSTRING(Zeus_Surrendered_Category);
                             tooltip = ECSTRING(ied,isSurrendered_Description);
-                            y = QUOTE(H_PART(5.5));
+                            y = QUOTE(H_PART(6.6));
                         };
-                        class GVAR(isSurrendered):RscCombo {
-                            idc = 62526;
+                        class GVAR(surrendered):RscCombo {
+                            idc = 62527;
                             x = QUOTE(W_PART(10.1));
-                            y = QUOTE(H_PART(5.5));
+                            y = QUOTE(H_PART(6.6));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.7};
