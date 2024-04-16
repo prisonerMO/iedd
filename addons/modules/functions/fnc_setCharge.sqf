@@ -105,6 +105,12 @@ private _fnc_onConfirm = {
     if (!_isHandcuffed && _isSurrender && !_surrender) then {
         ["ace_captives_setSurrendered", [_unit, !_surrender], _unit] call CBA_fnc_targetEvent;
     };
+    _vest = vest _unit;
+    if (_vest != "") then {
+        removeVest _unit;
+    };
+    removeAllWeapons _unit;
+
 };
 
 _display displayAddEventHandler ["unload", _fnc_onUnload];

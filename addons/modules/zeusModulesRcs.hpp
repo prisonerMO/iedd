@@ -36,7 +36,7 @@ class RscDisplayAttributes {
 };
 
 class GVAR(RcsIeds): RscDisplayAttributes {
-    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RcsIeds))] call FUNC(attributes); GVAR(variations) = 5);
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RcsIeds))] call FUNC(attributes));
     onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RcsIeds))] call FUNC(attributes));
     class Controls: Controls {
         class Background: Background {};
@@ -153,11 +153,12 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                                     text = ECSTRING(ied,Variation_5);
                                 };
                                 class 6 {
-                                    name = ECSTRING(ied,Variation_X);
+                                    text = ECSTRING(ied,Variation_X);
                                     value = 5;
                                 };
                                 class 7 {
-                                    text = ECSTRING(ied,Name_Random);                               
+                                    text = ECSTRING(ied,Name_Random);
+                                    value = 6;                              
                                     default = 1;
                                 };
                             };
@@ -219,6 +220,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                             tooltip = ECSTRING(ied,Distance_Tooltip);
                             y = QUOTE(H_PART(4.4));
                         };
+
                         class GVAR(distanceSlider): RscXSliderH {
                             sliderRange[] = {0, 30};
                             text = ECSTRING(ied,Distance);
@@ -257,9 +259,10 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                                 };				
                             };
                         };
+
                         class GVAR(TimerValueL): GVAR(typeL) {
                             text = CSTRING(Zeus_TimerValue_Category);
-                            tooltip = ECSTRING(ied,Timer_Tooltip);
+                            tooltip = CSTRING(Zeus_TimerValue_Tooltip);
                             y = QUOTE(H_PART(6.6));
                         };
                         class GVAR(TimerValueSlider): RscXSliderH {
@@ -403,6 +406,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                     h = QUOTE(H_PART(7.7));
                     class controls {
                         class GVAR(variationL): RscText {
+                            idc = -1;
                             text = CSTRING(Zeus_Variation);
                             tooltip = CSTRING(Zeus_Variation_Tooltip);
                             x = 0;
@@ -522,7 +526,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                         };
                         class GVAR(timerValueL): GVAR(variationL) {
                             text = CSTRING(Zeus_TimerValue_Category);
-                            tooltip = ECSTRING(ied,Timer_Tooltip);
+                            tooltip = CSTRING(Zeus_TimerValue_Tooltip);
                             y = QUOTE(H_PART(4.4));
                         };
                         class GVAR(timerValueSlider): RscXSliderH {
@@ -534,6 +538,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));                            
                         };
+
                         class GVAR(handcuffedL): GVAR(variationL) {
                             text = CSTRING(Zeus_Handcuffed_Category);
                             tooltip = ECSTRING(ied,isHandcuffed_Description);

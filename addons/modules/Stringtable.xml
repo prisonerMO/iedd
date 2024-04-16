@@ -129,8 +129,8 @@
 				<English>Explode IED</English>
 			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Charge">
-				<Original>Attach ied vest</Original>
-				<English>Attach ied vest</English>
+				<Original>Add Vest</Original>
+				<English>Add Vest</English>
 			</Key>											
 			<Key ID="STR_iedd_modules_Zeus_Type">
 				<Original>IED TYPE</Original>
@@ -165,6 +165,10 @@
 				<Original>COUNTDOWN TIMER</Original>
 				<English>COUNTDOWN TIMER</English>
 			</Key>
+			<Key ID="STR_iedd_modules_Zeus_TimerValue_Tooltip">
+				<Original> Set time for countdown timer.</Original>
+				<English> Set time for countdown timer.</English>
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Dud_Category">
 				<Original>CHANCE OF DUD (%)</Original>
 				<English>CHANCE OF DUD (%)</English>
@@ -174,8 +178,8 @@
 				<English>GROUND SIGN TYPE</English>
 			</Key>
 			<Key ID="STR_iedd_modules_Zeus_TimerValue_Category">
-				<Original>TIMER VALUE</Original>
-				<English>TIMER VALUE</English>
+				<Original>COUNTDOWN TIME</Original>
+				<English>COUNTDOWN TIME</English>
 			</Key>	
 			<Key ID="STR_iedd_modules_Zeus_Handcuffed_Category">
 				<Original>UNIT HANDCUFFED</Original>

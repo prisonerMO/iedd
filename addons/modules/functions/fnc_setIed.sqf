@@ -70,7 +70,7 @@ private _fnc_onConfirm = {
     private _type = _typeCtrl lbData _typeNum;
     private _varCtrl = _display displayCtrl 52521;
     private _variation = lbCurSel _varCtrl;
-    if (_variation > GVAR(variations)-1) then {
+    if (_variation > 5) then {
         _variation = floor (random GVAR(variations));
     };
     private _sizeCtrl = _display displayCtrl 52522;
