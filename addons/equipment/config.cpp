@@ -18,7 +18,8 @@ class CfgPatches {
 		requiredAddons[] = {
             "A3_Characters_F",
             "A3_Supplies_F_Exp_Ammoboxes",
-			"ace_main"
+			"ace_main",
+			"iedd_main"
         };
 		url = "https://community.bistudio.com/wiki";
 		VERSION_CONFIG;

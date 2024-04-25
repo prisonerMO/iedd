@@ -11,7 +11,8 @@ class CfgPatches {
 		requiredAddons[] = {
 			"3den",
 			"A3_Ui_F",
-			"ace_interaction"
+			"ace_interaction",
+			"iedd_main"
         };
 		url = "https://community.bistudio.com/wiki";
 		VERSION_CONFIG;
