@@ -11,5 +11,5 @@ for "_i" from 0 to _count do {
 };
 _order = [];
 _order resize _count+1;
-_order = _order apply {0};
-[_colors,_order];
+_final = _order apply {0};
+[_colors,_final];
