@@ -96,7 +96,7 @@ private _fnc_onConfirm = {
     [QGVAR(addIeddVest), [_unit,true] ] call CBA_fnc_serverEvent;
     _unit setVariable ["iedd_ied_isCharge",true,true];
 
-    diag_log [_isHandcuffed,_isSurrender];
+    TRACE_2("isHandcuffed or isSurrender",_isHandcuffed,_isSurrender);
     private _captive = (_unit getVariable ["ace_captives_isHandcuffed", false]);
     if (_isHandcuffed && !_captive) then {
          ["ace_captives_setHandcuffed", [_unit, !_captive], _unit] call CBA_fnc_targetEvent;
