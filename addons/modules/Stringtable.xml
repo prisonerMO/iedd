@@ -127,6 +127,10 @@
 			<Key ID="STR_iedd_modules_Zeus_Explode">
 				<Original>Explode IED</Original>
 				<English>Explode IED</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Charge">
+				<Original>Add bomb vest</Original>
+				<English>Add bomb vest</English>
 			</Key>											
 			<Key ID="STR_iedd_modules_Zeus_Type">
 				<Original>IED TYPE</Original>
@@ -161,6 +165,10 @@
 				<Original>COUNTDOWN TIMER</Original>
 				<English>COUNTDOWN TIMER</English>
 			</Key>
+			<Key ID="STR_iedd_modules_Zeus_TimerValue_Tooltip">
+				<Original> Set time for countdown timer.</Original>
+				<English> Set time for countdown timer.</English>
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Dud_Category">
 				<Original>CHANCE OF DUD (%)</Original>
 				<English>CHANCE OF DUD (%)</English>
@@ -168,7 +176,19 @@
 			<Key ID="STR_iedd_modules_Zeus_Sign_Category">
 				<Original>GROUND SIGN TYPE</Original>
 				<English>GROUND SIGN TYPE</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_TimerValue_Category">
+				<Original>COUNTDOWN TIME</Original>
+				<English>COUNTDOWN TIME</English>
 			</Key>	
+			<Key ID="STR_iedd_modules_Zeus_Handcuffed_Category">
+				<Original>UNIT HANDCUFFED</Original>
+				<English>UNIT HANDCUFFED</English>
+			</Key>	
+			<Key ID="STR_iedd_modules_Zeus_Surrendered_Category">
+				<Original>UNIT SURRENDERED</Original>
+				<English>UNIT SURRENDERED</English>
+			</Key>		
 			<Key ID="STR_iedd_modules_Zeus_Sign_Category_Tooltip">
 				<Original>Select type of ground sign.</Original>
 				<English>Select type of ground sign.</English>

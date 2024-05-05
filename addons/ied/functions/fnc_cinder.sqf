@@ -46,15 +46,21 @@ if (!isServer) exitWith {};
         [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
     };
 
-    if (_variation > 4) then {
-        _variation = floor (random 5);
+    if (_variation == 6) then {
+        _variation = selectRandom [0,1,2,3,4,5];
     };
-    
+
     private _isDistance = _bombObj getVariable [QGVAR(distance), 0];
     private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
 
-    private _wireSet = IEDD_CINDERVARS select _variation;
+    private _wireSet = if (_variation == 5) then 
+    {        
+        _bombObj setVariable [QGVAR(movable),selectRandom [false,true]];
+        [6] call FUNC(variationx);            
+    } else {
+        IEDD_CINDERVARS select _variation;
+    };
 
     private _gasCan1 = createSimpleObject ["Land_GasCanister_F",[0,0,0]];
     _gasCan1 attachTo 	[_bombObj,[-0.002,0.08,-0.053]];
@@ -128,7 +134,7 @@ if (!isServer) exitWith {};
             };
             private _text = localize LSTRING(Name_Long);
             [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
-            [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;  
+            [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;
         },
         [_bombObj,_decals, _setDir, _wireSet],
         1

@@ -46,9 +46,10 @@ if (!isServer) exitWith {};
         [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
     };
 
-    if (_variation > 4) then {
-        _variation = floor (random 5);
+    if (_variation == 6) then {
+        _variation = selectRandom [0,1,2,3,4,5];
     };
+    
     if (_variation == 0) then {
         _bombObj setVariable [QGVAR(movable),true];
     };
@@ -56,9 +57,14 @@ if (!isServer) exitWith {};
     private _isDistance = _bombObj getVariable [QGVAR(distance), 0];
     private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
-    TRACE_1("bombObj",_distance);
 
-    private _wireSet = IEDD_CANVARS select _variation;
+    private _wireSet = if (_variation == 5) then 
+    {        
+        _bombObj setVariable [QGVAR(movable),selectRandom [false,true]];
+        [6] call FUNC(variationx);            
+    } else {
+        IEDD_CANVARS select _variation;
+    };
 
     private _box  = createSimpleObject ["\a3\Weapons_F_Enoch\Items\ChemicalDetector_01_F.p3d", [0,0,0]];
     _box attachTo [_bombObj,[0.09,0.206,-0.133]];
@@ -121,7 +127,7 @@ if (!isServer) exitWith {};
             };               
             if (_decals) then {
                 [_bombObj] call FUNC(decals);
-            };            
+            };
             private _text = localize LSTRING(Name_Long);
             [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;        

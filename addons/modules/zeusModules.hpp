@@ -28,3 +28,14 @@ class GVAR(explode):GVAR(activate) {
 	function = QFUNC(moduleExplode);
 	displayName = CSTRING(Zeus_Explode);
 };
+
+class GVAR(charge):ace_zeus_moduleBase {
+	curatorCanAttach = 1;
+	scope = 1;
+	scopecurator = 2;
+	category = QGVAR(ieds);
+	_generalMacro = QGVAR(charge);
+	displayName = CSTRING(Zeus_Charge);
+	icon = QPATHTOF(UI\moduleicon.paa);
+    curatorInfoType = QGVAR(RscCharge);
+};

@@ -127,7 +127,7 @@ switch _mode do {
 						_bombObj setVariable [QEGVAR(ied,color),"random"];
 					};					
 					_size = selectRandom [0,1,2];
-					_bombObj setVariable [QEGVAR(ied,variation),5];
+					_bombObj setVariable [QEGVAR(ied,variation),6];
 					_bombObj setVariable [QEGVAR(ied,decals),_signs];
 					_bombObj setVariable [QEGVAR(ied,dir),true];
 					_bombObj setVariable [QEGVAR(ied,fake),0]; // Override CBA settings default value
