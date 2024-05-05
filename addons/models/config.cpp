@@ -73,7 +73,8 @@ class CfgPatches
 		weapons[] = {};
 		requiredVersion = REQUIRED_VERSION;
 		requiredAddons[] = {
-			"A3_Data_F"
+			"A3_Data_F",
+			"iedd_main"
 		};
 		VERSION_CONFIG;
 	};

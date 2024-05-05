@@ -12,7 +12,8 @@ class CfgPatches {
 		requiredAddons[] = {
             "A3_Modules_F",
             "A3_Modules_F_Curator",
-			"ace_zeus"
+			"ace_zeus",
+            "iedd_main"
         };
 		url = "https://community.bistudio.com/wiki";
         VERSION_CONFIG;
@@ -22,7 +23,8 @@ class CfgPatches {
             QGVAR(ieds),
 			QGVAR(decals),
             QGVAR(activate),
-            QGVAR(explode)
+            QGVAR(explode),
+            QGVAR(charge)
         };
  };
 

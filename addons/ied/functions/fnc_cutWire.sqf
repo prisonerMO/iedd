@@ -1,9 +1,9 @@
 #include "script_component.hpp"
-params ["_player","_wire","_bombObj", "_order"];
-private _failChance = [iedd_ied_failChance, iedd_ied_failChanceEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
-TRACE_1("FailChance",_failChance);
-private _chance = random 1;
-if (_chance < _failChance) exitWith {
+params ["_player","_wire","_bombObj", "_order","_isFail"];
+if (_isFail) exitWith {
+	if (GVAR(fail)) then {
+		GVAR(fail) = false;
+	};
 	private _exploseChance = random 1;
 	if (_exploseChance < GVAR(failExploseChance)) then {
 		[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
