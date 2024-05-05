@@ -93,7 +93,7 @@ private _fnc_onConfirm = {
     _unit setVariable ["iedd_ied_c_size",_size,true];
     _unit setVariable ["iedd_ied_c_timer",_timer,true];
     _unit setVariable ["iedd_ied_c_timerValue",_value,true];
-    [_unit,true] call EFUNC(ied,charge); 
+    [QGVAR(addIeddVest), [_unit,true] ] call CBA_fnc_serverEvent;
     _unit setVariable ["iedd_ied_isCharge",true,true];
 
     diag_log [_isHandcuffed,_isSurrender];

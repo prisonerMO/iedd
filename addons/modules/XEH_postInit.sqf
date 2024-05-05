@@ -5,4 +5,6 @@
 	_target call _event;
 }] call CBA_fnc_addEventHandler;
 
-
+[QGVAR(addIeddVest), {
+	_this call EFUNC(ied,charge);
+}] call CBA_fnc_addEventHandler;
