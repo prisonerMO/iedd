@@ -105,7 +105,7 @@
 	TRACE_2("Defused: ",_unit,_object);
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(local), {
+[QGVAR(addLocal), {
 	params ["_unit"];
 	private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
 	if (_killedEhId != -1) then {

@@ -35,12 +35,17 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         */
 
         //Currenlty raise event there where _unit is local
-        [QGVAR(local), [_unit], _unit] call CBA_fnc_targetEvent;
+        [QGVAR(addLocal), [_unit], _unit] call CBA_fnc_targetEvent;
         //if locality change add event on new machine
         _unit addEventHandler ["Local", {
             params ["_entity","_isLocal"];
             if (_isLocal) then {
                  [QGVAR(local), [_entity], _entity] call CBA_fnc_targetEvent;
+            } else {
+                private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
+                if (_killedEhId != -1) then {
+                    _unit removeEventHandler ["Killed", _killedEhId];
+                };
             };
         }];
         private _getInManEhId = _unit getVariable [QGVAR(GetInManEhId), -1];
