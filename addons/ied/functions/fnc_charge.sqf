@@ -40,7 +40,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         _unit addEventHandler ["Local", {
             params ["_entity","_isLocal"];
             if (_isLocal) then {
-                 [QGVAR(local), [_entity], _entity] call CBA_fnc_targetEvent;
+                 [QGVAR(addLocal), [_entity], _entity] call CBA_fnc_targetEvent;
             } else {
                 private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
                 if (_killedEhId != -1) then {
