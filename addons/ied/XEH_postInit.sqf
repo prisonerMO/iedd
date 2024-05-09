@@ -115,7 +115,7 @@
 		TRACE_1("Called Killed",_this);
 		_this call FUNC(handleKilled);
 	}];
-	_unit setVariable [QGVAR(KilledEhId), _killedEhId,true]; // need to be global?
+	_unit setVariable [QGVAR(KilledEhId), _killedEhId]; // need to be global? - NO
 }] call CBA_fnc_addEventHandler;
 
 //["ace_captiveStatusChanged", {_this call FUNC(handleHancuffed)}] call CBA_fnc_addEventHandler; //TODO ace isEscortin EH or this.
