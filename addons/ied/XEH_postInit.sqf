@@ -105,6 +105,19 @@
 	TRACE_2("Defused: ",_unit,_object);
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(local), {
+	params ["_unit"];
+	private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
+	if (_killedEhId != -1) then {
+		_unit removeEventHandler ["Killed", _killedEhId];
+	};
+	_killedEhId = _unit addEventHandler ["Killed", {
+		TRACE_1("Called Killed",_this);
+		_this call FUNC(handleKilled);
+	}];
+	_unit setVariable [QGVAR(KilledEhId), _killedEhId,true]; // need to be global?
+}] call CBA_fnc_addEventHandler;
+
 //["ace_captiveStatusChanged", {_this call FUNC(handleHancuffed)}] call CBA_fnc_addEventHandler; //TODO ace isEscortin EH or this.
 
 if (isServer) then {
