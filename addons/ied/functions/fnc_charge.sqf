@@ -17,12 +17,31 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         TRACE_1("Bomb vest unit",_this);
         // TODO CHECK THIS 
         [_unit, "forceWalk", QGVAR(charge), true] call ace_common_fnc_statusEffect_set;
-        private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
-        if (_killedEhId != -1) then {
-            _unit removeEventHandler ["Killed", _killedEhId];
+        /*
+        if (!local _unit) then {
+            //raise killed EH there where _unit local ?
+
+        } else {            
+            private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
+            if (_killedEhId != -1) then {
+                _unit removeEventHandler ["Killed", _killedEhId];
+            };
+            _killedEhId = _unit addEventHandler ["Killed", {
+                TRACE_1("Called Killed",_this);
+                _this call FUNC(handleKilled);
+            }];
+            _unit setVariable [QGVAR(KilledEhId), _killedEhId,true]; // need to be global?
         };
-        _killedEhId = _unit addEventHandler ["Killed", {
-            [_this select 0] call FUNC(handleKilled);
+        */
+
+        //Currenlty raise event there where _unit is local
+        [QGVAR(local), [_unit], _unit] call CBA_fnc_targetEvent;
+        //if locality change add event on new machine
+        _unit addEventHandler ["Local", {
+            params ["_entity","_isLocal"];
+            if (_isLocal) then {
+                 [QGVAR(local), [_unit], _unit] call CBA_fnc_targetEvent;
+            };
         }];
         private _getInManEhId = _unit getVariable [QGVAR(GetInManEhId), -1];
         if (_getInManEhId != -1) then {
@@ -31,21 +50,18 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         _getInManEhId = _unit addEventHandler ["GetInMan", {
             _this call FUNC(handleGetInMan);
         }];
-        _unit setVariable [QGVAR(KilledEhId), _killedEhId,true]; // need to be global?
         _unit setVariable [QGVAR(GetInManEhId), _getInManEhId,true]; // need to be global?
+        TRACE_2("IED Bomb Vest EHs:",_unit getVariable QGVAR(KilledEhId),_unit getVariable QGVAR(GetInManEhId));
 
         private _expl1 = createSimpleObject [QGVAR(Charge), [0,0,0]];
         _expl1 attachTo [_unit, [-0.15, 0.13, 0.15], "Pelvis"];
-        _expl1 setVectorDirAndUp [[-0.707107,-0.707107,0],[0.707107,-0.707107,0]];
-        
+        _expl1 setVectorDirAndUp [[-0.707107,-0.707107,0],[0.707107,-0.707107,0]];        
         private _expl3 = createSimpleObject [QGVAR(Charge), [0,0,0]];
         _expl3 attachTo [_unit, [0.15, 0.13, 0.15], "Pelvis"];
         _expl3 setVectorDirAndUp [[-0.707107,0.707107,0],[-0.707107,-0.707107,0]];
-
         private _bombObj = QGVAR(Charge) createVehicle position _unit;
         _bombObj attachTo [_unit , [0, 0.2, 0.15], "Pelvis"];
         _bombObj setVectorDirAndUp [[-1,0,0],[-0,-1,0]];
-
 		private _box  = createSimpleObject ["\a3\Weapons_F_Enoch\Items\ChemicalDetector_01_F.p3d", [0,0,0]];
 		_box attachTo [_bombObj,[0,0,0]];
 		_box setVectorDirAndUp [[0,0,1],[-1,0,0]];
@@ -57,8 +73,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
 
         _bombObj setVariable [QGVAR(size),_size,true];
-        _bombObj setVariable [QGVAR(dud),_dud,true];
-        
+        _bombObj setVariable [QGVAR(dud),_dud,true];        
         {
             _x addEventHandler ["Deleted", {(_this select 0) call FUNC(deleted)}];
         } forEach [_unit, _bombObj];
@@ -66,7 +81,6 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         if (_variation > 4) then {
             _variation = floor (random 5);
         };
-
         TRACE_4("IED Bomb Vest:",_bombObj,_variation,_bombObj getVariable QGVAR(size),_bombObj getVariable QGVAR(dud));
         if (GVAR(isDetectable)) then {
             private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
@@ -74,9 +88,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
             ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
             [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
         };
-
         private _wireSet = IEDD_CHARGE select _variation;
-
         private _subObj0 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#0), [0,0,0]]; // 0 wire			
         private _subObj1 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#1), [0,0,0]]; // 1 wire	
         private _subObj2 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#2), [0,0,0]]; // 2 wire	
@@ -122,18 +134,9 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
             };
             _bombObj setVariable [QGVAR(timerValue),_time];
         };
-
-        [
-            {speed (_this select 0) == 0},
-            {     
-                params ["_bombObj", "_wireSet"];
-                [QGVAR(disarmAction), [_bombObj]] call CBA_fnc_globalEventJIP;
-                private _text = localize LSTRING(Name_Short);
-                [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP; 
-            },
-            [_bombObj,_wireSet],
-            1
-        ] call CBA_fnc_waitUntilAndExecute;
+        [QGVAR(disarmAction), [_bombObj]] call CBA_fnc_globalEventJIP;
+        private _text = localize LSTRING(Name_Short);
+        [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP; 
     },
     [_unit],
     0.5

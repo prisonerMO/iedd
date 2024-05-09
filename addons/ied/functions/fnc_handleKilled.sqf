@@ -12,7 +12,8 @@ if (_killedEhId != -1) then {
     {
         private _charge = _x;
         private _isBomb = _charge getVariable [QGVAR(bomb),false];
-        if (_isBomb) then {
+        TRACE_1("is Bomb",_isBomb);
+        if (_isBomb) then {           
             [QGVAR(explosion), [_charge]] call CBA_fnc_serverEvent;
         } else {
             deleteVehicle _charge;

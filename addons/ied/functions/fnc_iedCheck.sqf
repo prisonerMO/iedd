@@ -9,7 +9,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 			_objectsToRemove pushBack _object;
 		};
 		private _distance = _object getVariable [QGVAR(dist),10];
-		TRACE_2("Object distance",_object,_distance);
+		//TRACE_2("Object distance",_object,_distance);
 		private _var = _object getVariable [QGVAR(movable),false];
 		if (!_var) then {   
 			if (speed _object > 5 || !isNull attachedTo _object) then {
@@ -53,7 +53,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 	GVAR(bombs) = GVAR(bombs) - _objectsToRemove;
 	_checkTime = 0.5;	
 };
-TRACE_3("Current objects",count GVAR(bombs),time,_checkTime);
+//TRACE_3("Current objects",count GVAR(bombs),time,_checkTime);
 [FUNC(iedCheck), [], _checkTime] call CBA_fnc_waitAndExecute;
 
 
