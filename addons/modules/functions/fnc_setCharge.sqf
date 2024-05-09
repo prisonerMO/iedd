@@ -93,7 +93,7 @@ private _fnc_onConfirm = {
     _unit setVariable ["iedd_ied_c_size",_size,true];
     _unit setVariable ["iedd_ied_c_timer",_timer,true];
     _unit setVariable ["iedd_ied_c_timerValue",_value,true];
-    [QGVAR(addIeddVest), [_unit,true] ] call CBA_fnc_serverEvent;
+    [QGVAR(addBombVest), [_unit,true]] call CBA_fnc_serverEvent;
     _unit setVariable ["iedd_ied_isCharge",true,true];
 
     TRACE_2("isHandcuffed or isSurrender",_isHandcuffed,_isSurrender);
