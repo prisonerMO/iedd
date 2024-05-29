@@ -15,8 +15,6 @@ if (_killedEhId != -1) then {
         TRACE_1("is Bomb",_isBomb);
         if (_isBomb) then {           
             [QGVAR(explosion), [_charge]] call CBA_fnc_serverEvent;
-        } else {
-            deleteVehicle _charge;
         };
     } forEach _charges;
 };
