@@ -56,9 +56,9 @@ if (!isServer) exitWith {};
 
     if (_variation > 5) then {
         If (_variation isEqualTo 6) then {
-            _variation = selectRandom [0,1,2,3,4];
-        } else {
             _variation = selectRandom [0,1,2,3,4,5];
+        } else {
+            _variation = selectRandom [0,1,2,3,4];
         };
     };
     
