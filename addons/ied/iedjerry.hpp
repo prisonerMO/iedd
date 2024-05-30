@@ -66,7 +66,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 				class 5 {
 					name = CSTRING(Name_Random);
 					value = "random";
-				}; 
+				};
 			};
 		};
 		class GVAR(variation) {
@@ -105,6 +105,11 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 				class 7 {
 					name = CSTRING(Name_Random);
 					value = 6;
+				};
+				class 8 {
+					name = CSTRING(Name_Random_ExcludeX);
+					tooltip = CSTRING(Name_Random_ExcludeX_Tooltip);
+					value = 7;
 				};
 							
 			};

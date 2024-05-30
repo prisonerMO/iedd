@@ -161,11 +161,12 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
-/* IED Default values */
+/*** IED Default values ***/
+/*IED Default Variation*/
 [
     QGVAR(defaultVariation), 
-    "LIST",     
-    [CSTRING(DefaultVariation),CSTRING(DefaultVariation_Description)],
+    "LIST",
+    [LSTRING(DefaultVariation),format ["%1\n%2", LLSTRING(DefaultVariation_Description), LLSTRING(ExtraDescription)]],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
         [0,1,2,3,4,5,6],
@@ -178,10 +179,23 @@
 
 ] call CBA_fnc_addSetting;
 
+/*Variation X Spawn prob % if random selected*/
+[
+    QGVAR(defaultVarX),
+    "SLIDER",
+    [LSTRING(DefaultVarX),format ["%1\n%2", LLSTRING(DefaultVarX_Description), LLSTRING(ExtraDescription)]],
+    [localize "STR_iedd_main_Category_Main","IED Default Values"],
+    [0, 1, 0.25, 0, true],
+    true,
+    {},
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+/*IED Default Size*/
 [
     QGVAR(defaultSize), 
     "LIST",     
-    [CSTRING(DefaultSize),CSTRING(DefaultSize_Description)],
+    [LSTRING(DefaultSize),format ["%1\n%2", LLSTRING(DefaultSize_Description), LLSTRING(ExtraDescription)]],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
         [0,1,2,3,4],
@@ -194,6 +208,7 @@
 
 ] call CBA_fnc_addSetting;
 
+/*IED Default Direction BOOLEAN*/
 [
     QGVAR(defaultDirection), 
     "LIST",     
@@ -210,6 +225,7 @@
 
 ] call CBA_fnc_addSetting;
 
+/*IED Default Decals BOOLEAN*/
 [
     QGVAR(defaultDecals), 
     "LIST",     
@@ -226,6 +242,7 @@
 
 ] call CBA_fnc_addSetting;
 
+/*IED Default Dud Prob %*/
 [
     QGVAR(defaultDud),
     "SLIDER",
@@ -238,6 +255,7 @@
 
 ] call CBA_fnc_addSetting;
 
+/*IED Default Fake Prob %*/
 [
     QGVAR(defaultFake),
     "SLIDER",
@@ -250,6 +268,7 @@
 
 ] call CBA_fnc_addSetting;
 
+/*IED Canister Default Color*/
 [
     QGVAR(defaultColor), 
     "LIST",     
@@ -266,6 +285,7 @@
 
 ] call CBA_fnc_addSetting;
 
+/*IED Timer Default BOOLEAN*/
 [
     QGVAR(defaultTimer), 
     "LIST",     
@@ -282,6 +302,7 @@
 
 ] call CBA_fnc_addSetting;
 
+/*IED Timer Countdown Time*/
 [
     QGVAR(defaultTimerValue),
     "TIME",
@@ -291,6 +312,7 @@
     1
 ] call CBA_fnc_addSetting;
 
+/*IED Timer Is Actived BOOLEAN*/
 [
     QGVAR(defaultRandomTimer), 
     "LIST",     
@@ -306,6 +328,7 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+/*IED Timer Min Range*/
 [
     QGVAR(defaultTimerMin),
     "TIME",
@@ -315,6 +338,7 @@
     1
 ] call CBA_fnc_addSetting;
 
+/*IED Timer Max Range*/
 [
     QGVAR(defaultTimerMax),
     "TIME",
