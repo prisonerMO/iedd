@@ -13,9 +13,9 @@ if (_possiblity > random 1 || GVAR(isDuds)) then {
 	};
 } else {
 	private _pos = _bombObj modelToWorld [0,0,0];
-	private _size = _bombObj getVariable [QGVAR(size), 2];
-	if (_size > 3) then {
-		_size = floor (random 3);		
+	private _size = _bombObj getVariable [QGVAR(size), 3];
+	if (_size > 4) then {
+		_size = floor (random 4);		
 	};
 	private _type =  selectRandom (IEDD_BOMB_SIZE select _size);
 	if (typeOf _bombObj == QGVAR(Charge)) then {
