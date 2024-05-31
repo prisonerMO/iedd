@@ -20,7 +20,7 @@ exclude = [
 [hemtt.config]
 preset = "Hemtt"
 
-[hemtt.launch]
+[hemtt.launch.default]
 workshop = [
     "450814997", # CBA_A3
     "463939057", # ace
