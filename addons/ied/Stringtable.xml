@@ -200,6 +200,10 @@
 				<Original>Set maximum time for random.</Original>
 				<English>Set maximum time for random.</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Name_Tiny">
+				<Original>Tiny</Original>
+				<English>Tiny</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Name_Small">
 				<Original>Small</Original>
 				<English>Small</English>
