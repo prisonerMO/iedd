@@ -184,8 +184,8 @@
     [CSTRING(DefaultSize),CSTRING(DefaultSize_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
-        [0,1,2,3,4],
-        [CSTRING(Name_Small),CSTRING(Name_Medium),CSTRING(Name_Large),CSTRING(Name_Huge),CSTRING(Name_Random)],
+        [0,1,2,3,4,5],
+        [CSTRING(Name_Tiny),CSTRING(Name_Small),CSTRING(Name_Medium),CSTRING(Name_Large),CSTRING(Name_Huge),CSTRING(Name_Random)],
         2
     ],
     true,
