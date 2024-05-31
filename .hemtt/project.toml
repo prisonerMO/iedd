@@ -24,4 +24,6 @@ preset = "Hemtt"
 workshop = [
     "450814997", # CBA_A3
     "463939057", # ace
+    "1779063631", # Zeus Enhanced
+    "2018593688", # Zeus Enhanced - ACE Compatibility
 ]
