@@ -8,6 +8,11 @@ class GVAR(ieds):ace_zeus_moduleBase {
 	displayName = CSTRING(Zeus_Place_Ied);
 	icon = QPATHTOF(UI\moduleicon.paa);
 };
+class GVAR(trainingieds):GVAR(ieds) {
+	_generalMacro = QGVAR(trainingieds);
+	curatorInfoType = QGVAR(RcsTrainingIeds);
+	displayName = CSTRING(Zeus_Place_Training_Ied);
+};
 class GVAR(decals):GVAR(ieds) {
 	_generalMacro = QGVAR(decals);
 	curatorInfoType = QGVAR(RcsDecals);
