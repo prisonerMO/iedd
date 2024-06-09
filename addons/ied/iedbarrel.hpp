@@ -240,3 +240,39 @@ class GVAR(Barrel_Grey):GVAR(Barrel) {
 	model = "\A3\Structures_F_EPB\Items\Vessels\BarrelEmpty_grey_F.p3d";
 	iedd_ied_default = "Land_BarrelEmpty_grey_F";
 };
+class GVAR(Training_Barrel):GVAR(Barrel) {
+	displayName = CSTRING(Training_Barrel_DisplayName);
+	editorSubcategory = "IEDD_TRAINING_IEDS";
+	class ACE_Actions : ACE_Actions {
+		class ACE_MainActions : ACE_MainActions {
+			displayName = "$STR_ace_interaction_MainAction";
+			selection = "";
+			distance = 2;
+			condition = "true";
+			class IEDD_ResetMenu {
+				exceptions[] = {"isNotSwimming"};
+				displayName = CSTRING(Reset_DisplayName); 
+				condition = QUOTE(true);
+				statement = " ";
+			};
+		};
+	};
+};
+class GVAR(Training_Barrel_Grey):GVAR(Barrel_Grey) {
+	displayName = CSTRING(Training_BarrelGrey_DisplayName);
+	editorSubcategory = "IEDD_TRAINING_IEDS";
+	class ACE_Actions : ACE_Actions {
+		class ACE_MainActions : ACE_MainActions {
+			displayName = "$STR_ace_interaction_MainAction";
+			selection = "";
+			distance = 2;
+			condition = "true";
+			class IEDD_ResetMenu {
+				exceptions[] = {"isNotSwimming"};
+				displayName = CSTRING(Reset_DisplayName); 
+				condition = QUOTE(true);
+				statement = " ";
+			};
+		};
+	};
+};

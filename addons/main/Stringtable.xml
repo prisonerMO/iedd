@@ -13,6 +13,10 @@
 			<Original>IEDs</Original>
 			<English>IEDs</English>
 		</Key>
+		<Key ID="STR_iedd_main_Category_Training_IEDs">
+			<Original>Training IEDs</Original>
+			<English>Training IEDs</English>
+		</Key>
 		<Key ID="STR_iedd_main_Category_Items">
 			<Original>Items</Original>
 			<English>Items</English>
