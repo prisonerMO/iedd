@@ -254,7 +254,7 @@ class GVAR(Training_Metal):GVAR(Metal) {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Reset_DisplayName); 
 				condition = QUOTE(true);
-				statement = " ";
+				statement = QUOTE(_this call FUNC(resetAction));
 			};
 		};
 	};
@@ -272,7 +272,7 @@ class GVAR(Training_Metal_English):GVAR(Metal_English) {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Reset_DisplayName); 
 				condition = QUOTE(true);
-				statement = " ";
+				statement = QUOTE(_this call FUNC(resetAction));
 			};
 		};
 	};
