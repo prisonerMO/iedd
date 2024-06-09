@@ -141,20 +141,12 @@
 				<English>Chance of variation X</English>
 			</Key>
 			<Key ID="STR_iedd_ied_VarX_Tooltip">
-				<Original>Set probability of variation X being spawned if random variation selected</Original>
-				<English>Set probability of variation X being spawned if random variation selected.</English>
+				<Original>Set probability of variation X being spawned, if random variation is selected above.</Original>
+				<English>Set probability of variation X being spawned, if random variation is selected above.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Name_Random">
 				<Original>Random</Original>
 				<English>Random</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Random_ExcludeX">
-				<Original>Random (Ex. Variation X)</Original>
-				<English>Random (Ex. Variation X)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Random_ExcludeX_Tooltip">
-				<Original>Excludes variation X being spawned</Original>
-				<English>Excludes variation X being spawned</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Size">
 				<Original>Explosion size</Original>
@@ -497,16 +489,16 @@
 				<English>Variations</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultVariation_Description">
-				<Original>Set IED variation</Original>
-				<English>Set IED variation</English>
+				<Original>Set IED variation (if not defined somewhere else).</Original>
+				<English>Set IED variation (if not defined somewhere else).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultSize">
 				<Original>Explosion sizes</Original>
 				<English>Explosion sizes</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultSize_Description">
-				<Original>Set explosion size</Original>
-				<English>Set explosion size</English>
+				<Original>Set explosion size (if not defined somewhere else).</Original>
+				<English>Set explosion size (if not defined somewhere else).</English>
 			</Key>		
 			<Key ID="STR_iedd_ied_DefaultDirection">
 				<Original>Random direction</Original>
@@ -573,20 +565,8 @@
 				<English>Chance of variation X</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultVarX_Description">
-				<Original>Set probability of variation X being spawned if random variation selected</Original>
-				<English>Set probability of variation X being spawned if random variation selected</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultIsVarX">
-				<Original>Exclude variation X</Original>
-				<English>Exclude variation X</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultIsVarX_Description">
-				<Original>Exclude variation X being spawned if random variation selected (if not defined somewhere else).</Original>
-				<English>Exclude variation X being spawned if random variation selected (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ExtraDescription">
-				<Original>(if not defined somewhere else)</Original>
-				<English>(if not defined somewhere else)</English>
+				<Original>Set probability of variation X being spawned, if random variation is selected (if not defined somewhere else).</Original>
+				<English>Set probability of variation X being spawned, if random variation is selected (if not defined somewhere else).</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Notebook Dev Settings">							
