@@ -15,6 +15,10 @@ class CfgEditorSubcategories
 	{
 		displayName = CSTRING(Category_IEDs); // Name visible in the list
 	};
+	class IEDD_TRAINING_IEDS
+	{
+		displayName = CSTRING(Category_Training_IEDs);
+	};
 	class IEDD_ITEMS
 	{
 		displayName = CSTRING(Category_Items);

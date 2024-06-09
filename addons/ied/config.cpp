@@ -13,7 +13,15 @@ class CfgPatches {
 			QGVAR(CanisterFuel),
 			QGVAR(Metal),
 			QGVAR(Metal_English),
-			QGVAR(Charge)
+			QGVAR(Charge),
+			QGVAR(Training_Barrel),
+			QGVAR(Training_Barrel_Grey),
+			QGVAR(Training_CanisterPlastic),
+			QGVAR(Training_Cardboard),
+			QGVAR(Training_Cinder),
+			QGVAR(Training_CanisterFuel),
+			QGVAR(Training_Metal),
+			QGVAR(Training_Metal_English),
 		};
 		weapons[] = {};
 		requiredVersion = REQUIRED_VERSION;

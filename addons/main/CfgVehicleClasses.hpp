@@ -8,6 +8,10 @@ class CfgVehicleClasses
 	{
 		displayName = CSTRING(Category_Items);
 	};
+	class IEDD_TRAINING_IEDS
+	{
+		displayName = CSTRING(Category_Training_IEDs);
+	};
 	class IEDD_GROUNDWIRES
 	{
 		displayName = CSTRING(Category_GroundWires);
