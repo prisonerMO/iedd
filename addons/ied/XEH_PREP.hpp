@@ -26,5 +26,11 @@ PREP(removeEvents);
 PREP(resetAction);
 PREP(setAttributes);
 PREP(timer);
+PREP(trainingbarrel);
+PREP(trainingcanister);
+PREP(trainingcardboard);
+PREP(trainingcinder);
+PREP(trainingjerry);
+PREP(trainingmetal);
 PREP(variationx);
 
