@@ -21,7 +21,6 @@ class CfgPatches {
 	class GVAR(ieds): ADDON {
         units[] = {
             QGVAR(ieds),
-            QGVAR(trainingieds),
 			QGVAR(decals),
             QGVAR(activate),
             QGVAR(explode),

@@ -111,11 +111,7 @@
 				<English>Add countdown timer to IED. Time values from addon options will be used.</English>
 			</Key>
 		</Container>
-		<Container name="IEDD Zeus Modules">
-			<Key ID="STR_iedd_modules_Zeus_Place_Training_Ied">
-				<Original>Place Training IED</Original>
-				<English>Place Training IED</English>
-			</Key>
+		<Container name="IEDD Zeus Modules">							
 			<Key ID="STR_iedd_modules_Zeus_Place_Ied">
 				<Original>Place IED</Original>
 				<English>Place IED</English>
