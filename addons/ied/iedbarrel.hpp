@@ -253,7 +253,7 @@ class GVAR(Training_Barrel):GVAR(Barrel) {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Reset_DisplayName); 
 				condition = QUOTE(true);
-				statement = " ";
+				statement = QUOTE(_this call FUNC(resetAction));
 			};
 		};
 	};
@@ -271,7 +271,7 @@ class GVAR(Training_Barrel_Grey):GVAR(Barrel_Grey) {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Reset_DisplayName); 
 				condition = QUOTE(true);
-				statement = " ";
+				statement = QUOTE(_this call FUNC(resetAction));
 			};
 		};
 	};

@@ -247,7 +247,7 @@ class GVAR(Training_Cardboard):GVAR(Cardboard) {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Reset_DisplayName); 
 				condition = QUOTE(true);
-				statement = " ";
+				statement = QUOTE(_this call FUNC(resetAction));
 			};
 		};
 	};

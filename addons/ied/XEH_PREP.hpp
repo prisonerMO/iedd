@@ -23,6 +23,7 @@ PREP(iedCheck);
 PREP(jerry);
 PREP(metal);
 PREP(removeEvents);
+PREP(resetAction);
 PREP(setAttributes);
 PREP(timer);
 PREP(variationx);

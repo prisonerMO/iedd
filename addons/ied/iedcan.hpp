@@ -247,7 +247,7 @@ class GVAR(Training_CanisterPlastic):GVAR(CanisterPlastic) {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Reset_DisplayName); 
 				condition = QUOTE(true);
-				statement = " ";
+				statement = QUOTE(_this call FUNC(resetAction));
 			};
 		};
 	};
