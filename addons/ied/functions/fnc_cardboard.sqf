@@ -48,7 +48,7 @@ if (!isServer) exitWith {};
 
     if (_variation isEqualTo 6) then {
         private _includeVarX = _bombObj getVariable [QGVAR(varX), GVAR(defaultVarX)]; //if 0% , Variation X will be excluded from Random
-        If (_excludeVarX > random 1) then {
+        If (_includeVarX > random 1) then {
             _variation = selectRandom [0,1,2,3,4,5];
         } else {
             _variation = selectRandom [0,1,2,3,4];
