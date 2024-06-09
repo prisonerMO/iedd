@@ -105,14 +105,16 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 				class 7 {
 					name = CSTRING(Name_Random);
 					value = 6;
-				};
-				class 8 {
-					name = CSTRING(Name_Random_ExcludeX);
-					tooltip = CSTRING(Name_Random_ExcludeX_Tooltip);
-					value = 7;
-				};
-							
+				};							
 			};
+		};
+		class GVAR(varX) {
+			displayName = CSTRING(VarX);
+			tooltip = CSTRING(VarX_Tooltip);
+			property = QGVAR(varX);
+			expression = "_this setVariable ['%s',_value];";
+			control = "Slider";
+			defaultValue = QGVAR(defaultVarX);
 		};
 		class GVAR(size) {
 			displayName = CSTRING(Size);
