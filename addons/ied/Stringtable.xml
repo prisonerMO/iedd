@@ -435,7 +435,16 @@
 			<Key ID="STR_iedd_ied_FailExploseChance_Description">
 				<Original>% of activate IED after failed wire cut.</Original>
 				<English>% of activate IED after failed wire cut.</English>
-			</Key>						
+			</Key>
+			</Key>
+			<Key ID="STR_iedd_ied_WrongWireCutExplodeChance">
+				<Original>Chance to activate IED after cutting wrong wire</Original>
+				<English>Chance to activate IED after cutting wrong wire</English>
+			</Key>
+			<Key ID="STR_iedd_ied_WrongWireCutExplodeChance_Description">
+				<Original>% of activate IED after cutting wrong wire</Original>
+				<English>% of activate IED after cutting wrong wire</English>
+			</Key>
 			<Key ID="STR_iedd_ied_IsBlockedRange">
 				<Original>Just keep talking and nobody explodes-mode</Original>
 				<English>Just keep talking and nobody explodes-mode</English>

@@ -40,7 +40,10 @@ deleteVehicle _wire;
 				[QGVAR(defused), [_player, _bombObj]] call CBA_fnc_globalEvent;
 			};
 		} else {
-			[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
+			private _explodeChance = random 1;
+			if (_explodeChance < GVAR(wrongWireCutExplodeChance)) then {
+				[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
+			};
 		};
 	}, 
 	[_wire,_bombObj,_order,_player]

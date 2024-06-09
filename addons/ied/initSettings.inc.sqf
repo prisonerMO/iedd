@@ -107,6 +107,15 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(wrongWireCutExplodeChance),
+    "SLIDER",
+    [CSTRING(WrongWireCutExplodeChance),CSTRING(WrongWireCutExplodeChance_Description)],
+	[localize "STR_iedd_main_Category_Main","IEDs"],
+    [0, 1, 1.0, 0, true],
+    1
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(isBlockedRange),
     "CHECKBOX",	
     [CSTRING(IsBlockedRange),CSTRING(IsBlockedRange_Description)],
