@@ -2,6 +2,7 @@
 params ["_bombObj"];
 if (isNil {_bombObj getVariable QGVAR(bomb)}) exitWith {};
 private _possiblity = _bombObj getVariable [QGVAR(dud), GVAR(defaultDud)];
+private _isTraining = _bombObj getVariable [QGVAR(training), false];
 if (_possiblity > random 1 || GVAR(isDuds)) then {
 	_bombObj setVariable [QGVAR(bomb),nil,true];
 	[QGVAR(dudEffect),[_bombObj]] call CBA_fnc_globalEvent;
@@ -11,6 +12,23 @@ if (_possiblity > random 1 || GVAR(isDuds)) then {
 		private _object = _attachedObjects select _index;
 		deleteVehicle _object;
 	};
+};
+if (_isTraining) then {
+	private _type = IEDD_TRAINING_BOMB;
+	private _pos = _bombObj modelToWorld [0,0,0];
+	[
+		{
+			params ["_bombObj","",""];
+			!isNull _bombObj;
+		}, 
+		{
+			params ["_bombObj","_pos","_type"];
+			_bomb = createVehicle [_type, [_pos #0, _pos #1, 0.05], [], 0, "CAN_COLLIDE"];
+			[QGVAR(hideObject),[_bomb,true]] call CBA_fnc_globalEvent;
+			_bomb setDamage 1;
+		}, 
+		[_bombObj,_pos,_type]
+	] call CBA_fnc_waitUntilAndExecute;
 } else {
 	if (typeOf _bombObj == QGVAR(Charge)) then {
 		detach _bombObj;
