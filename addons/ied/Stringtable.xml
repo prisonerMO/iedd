@@ -565,8 +565,8 @@
 				<English>Chance of variation X</English>
 			</Key>
 			<Key ID="STR_iedd_ied_DefaultVarX_Description">
-				<Original>Set probability of variation X being spawned, if random variation is selected (if not defined somewhere else).</Original>
-				<English>Set probability of variation X being spawned, if random variation is selected (if not defined somewhere else).</English>
+				<Original>Set probability of variation X being spawned, if random variation is selected above (if not defined somewhere else).</Original>
+				<English>Set probability of variation X being spawned, if random variation is selected above (if not defined somewhere else).</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Notebook Dev Settings">							

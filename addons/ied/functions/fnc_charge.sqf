@@ -123,7 +123,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
             _bombObj setVariable [QGVAR(timerValue),_time];
         };
         [QGVAR(disarmAction), [_bombObj]] call CBA_fnc_globalEventJIP;
-        private _text = localize LSTRING(Name_Short);
+        private _text = LLSTRING(Name_Short);
         [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP; 
     },
     [_unit],
