@@ -437,13 +437,13 @@
 				<English>% of activate IED after failed wire cut.</English>
 			</Key>
 			</Key>
-			<Key ID="STR_iedd_ied_WrongWireCutExplodeChance">
-				<Original>Chance to activate IED after cutting wrong wire</Original>
-				<English>Chance to activate IED after cutting wrong wire</English>
+			<Key ID="STR_iedd_ied_IgnoreWireCutOrder">
+				<Original>Ignore wire cut order</Original>
+				<English>Ignore wire cut order</English>
 			</Key>
-			<Key ID="STR_iedd_ied_WrongWireCutExplodeChance_Description">
-				<Original>% of activate IED after cutting wrong wire</Original>
-				<English>% of activate IED after cutting wrong wire</English>
+			<Key ID="STR_iedd_ied_IgnoreWireCutOrder_Description">
+				<Original>IEDs do not explode on cutting the wrong wire.</Original>
+				<Original>IEDs do not explode on cutting the wrong wire.</Original>
 			</Key>
 			<Key ID="STR_iedd_ied_IsBlockedRange">
 				<Original>Just keep talking and nobody explodes-mode</Original>

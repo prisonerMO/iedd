@@ -107,12 +107,14 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(wrongWireCutExplodeChance),
-    "SLIDER",
-    [CSTRING(WrongWireCutExplodeChance),CSTRING(WrongWireCutExplodeChance_Description)],
+    QGVAR(ignoreWireCutOrder),
+    "CHECKBOX",
+    [CSTRING(IgnoreWireCutOrder),CSTRING(IgnoreWireCutOrder_Description)],
 	[localize "STR_iedd_main_Category_Main","IEDs"],
-    [0, 1, 1.0, 0, true],
-    1
+    false,
+    true,
+    {},
+    true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
 [
