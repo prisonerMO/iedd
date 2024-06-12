@@ -94,7 +94,7 @@ _this spawn {
             }, _this, _checkTime] call CBA_fnc_waitAndExecute;
         };
 
-        private _iedSubAction = [_color, format ["%1 %2", localize LSTRING(Name_Cut),toLower _wireColor], "", _statement, _condition,{},[_wire, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+        private _iedSubAction = [_color, format ["%1 %2", LLSTRING(Name_Cut),toLower _wireColor], "", _statement, _condition,{},[_wire, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
         [_bombObj, 0, ["ACE_MainActions", "IEDD_DisarmMenu"], _iedSubAction] call ace_interact_menu_fnc_addActionToObject;
         sleep 0.1;
     };

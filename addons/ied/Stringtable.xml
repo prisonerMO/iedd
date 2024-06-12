@@ -136,6 +136,14 @@
 				<Original>Variation X</Original>
 				<English>Variation X</English>
 			</Key>
+			<Key ID="STR_iedd_ied_VarX">
+				<Original>Chance of variation X</Original>
+				<English>Chance of variation X</English>
+			</Key>
+			<Key ID="STR_iedd_ied_VarX_Tooltip">
+				<Original>Set probability of variation X being spawned, if random variation is selected above.</Original>
+				<English>Set probability of variation X being spawned, if random variation is selected above.</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Name_Random">
 				<Original>Random</Original>
 				<English>Random</English>
@@ -551,6 +559,14 @@
 			<Key ID="STR_iedd_ied_DefaultTimerMax_Description">
 				<Original>Maximum value for random time (if not defined somewhere else).</Original>
 				<English>Maximum value for random time (if not defined somewhere else).</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultVarX">
+				<Original>Chance of variation X</Original>
+				<English>Chance of variation X</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DefaultVarX_Description">
+				<Original>Set probability of variation X being spawned, if random variation is selected above (if not defined somewhere else).</Original>
+				<English>Set probability of variation X being spawned, if random variation is selected above (if not defined somewhere else).</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Notebook Dev Settings">							
