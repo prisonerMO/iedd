@@ -79,6 +79,14 @@ class GVAR(Metal):Land_GarbageBarrel_01_F {
 							
 			};
 		};
+		class GVAR(varX) {
+			displayName = CSTRING(VarX);
+			tooltip = CSTRING(VarX_Tooltip);
+			property = QGVAR(varX);
+			expression = "_this setVariable ['%s',_value];";
+			control = "Slider";
+			defaultValue = QGVAR(defaultVarX);
+		};
 		class GVAR(size) {
 			displayName = CSTRING(Size);
 			tooltip = CSTRING(Size_Tooltip);

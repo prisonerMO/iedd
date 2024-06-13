@@ -92,12 +92,12 @@
     } forEach _charges;
 	[_object] call FUNC(removeEvents);
 }] call CBA_fnc_addEventHandler;
-
+/* NOT IN USE, can be used on unit who have charge vest
 ["ace_unconscious", {
 	params ["_unit", "_isUnconscious"];
 	_this call FUNC(handleUnconscious);
 }] call CBA_fnc_addEventHandler;
-
+*/
 ["forceWalk", false, [QGVAR(charge)]] call ace_common_statusEffect_addType;
 
 [QGVAR(defused), {
