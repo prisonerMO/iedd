@@ -39,7 +39,7 @@ The project is entirely **open-source** and all contributions are welcome. Feel 
 - Zeus interaction (WINDOWS-key by default) to Activate or Explode multiple, Zeus selected, IEDs at the same time.
 - Addon option to add IEDD Notebook to player(s) with EOD/Explosive specialist trait.
 - Addon option to add Defusal Kit to player(s) with EOD/Explosive specialist trait.
-- Vanille mine detector to IEDD Notebook equipment box.
+- Vanilla mine detector to IEDD Notebook equipment box.
 - Possibility to change wire cutting time for EODs/Explosive Specialists.
 - Possibility to change wire cutting time for other units.
 - IEDs are detectable also with vanilla mine detector.
@@ -50,29 +50,28 @@ The project is entirely **open-source** and all contributions are welcome. Feel 
 - Adjustable wire cut failure option for other units.
 - Adjustable possibility for activate IED after failed wire cut.
 - "Just keep talking and nobody explodes-mode" = IEDD Notebook can't be opened near IEDs.
-- Bomb vest (found under units attributes). Target with bomb vest can be escorted and unlike other IEDs in the mod, this doesn’t activate by moving/running near. Drive carefully! (max. 45km/h)
+- Bomb vest (found under units attributes). Target with bomb vest can be escorted and unlike other IEDs in the mod, this doesn't activate by moving/running near. Drive carefully! (max. 45km/h)
 
 ***and more coming...***
 
 ## Getting started
 
-IEDD Notebook requires [Arma 3][arma3-link-steam], the latest version of [CBA A3][mod-cba-url-ws] and 
-the latest version of [ACE3][mod-ace-url-ws].
-- You can use this mods [published version][mod-iedd-url-ws] simply by subscribing it from Steam Workshop and activating it in Arma3 Launcher.
-- If you want to compile your own version you can clone this source and use [HEMTT][hemmt-releases-link] to compile it.
+IEDD Notebook requires [Arma 3][arma3-link-steam], the latest version of [CBA A3][mod-cba-url-ws] and the latest version of [ACE3][mod-ace-url-ws].
+- You can use this mod [published version][mod-iedd-url-ws] simply by subscribing it from Steam Workshop and activating it in Arma3 Launcher.
+- If you want to compile your own version you can clone this source and use [HEMTT][hemtt-releases-link] to compile it.
 
 ## Contributing
 
-You can help out with the ongoing development by looking for potential bugs in our code base, or by contributing new features. 
-We are always welcoming new pull requests containing bug fixes, refactors and new features. 
-We have a list of tasks and bugs on our issue tracker on Github. 
+You can help out with the ongoing development by looking for potential bugs in our code base, or by contributing new features.
+We are always welcoming new pull requests containing bug fixes, refactors and new features.
+We have a list of tasks and bugs on our issue tracker on GitHub.
 Please comment on issues if you want to contribute with, to avoid duplicating effort.
 
 
 ### Submitting issues
 
-Head over to the [Issues][mod-iedd-url-git-issues] and press the “New Issue” button in the top right corner. 
-Fill out the issue template. Add a link (gist or pastebin) to the client and/or server RPT file. 
+Head over to the [Issues][mod-iedd-url-git-issues] and press the “New Issue” button in the top right corner.
+Fill out the issue template. Add a link (gist or pastebin) to the client and/or server RPT file.
 An instruction to find your RPT files can be found from [BI Studio wiki][bistudio-link-crashfiles].
 
 
@@ -98,5 +97,5 @@ IEDD Notebook is licensed under the <a href="LICENSE.txt">GNU General Public Lic
 [mod-ace-url-git]: https://github.com/acemod/ACE3
 [mod-ace-url-ws]: https://steamcommunity.com/workshop/filedetails/?id=463939057
 [mod-iedd-url-ws]: https://steamcommunity.com/workshop/filedetails/?id=3048818056
-[hemmt-releases-link]: https://github.com/BrettMayson/HEMTT/releases
+[hemtt-releases-link]: https://github.com/BrettMayson/HEMTT/releases
 [mod-iedd-url-git-issues]: https://github.com/prisonerMO/iedd/issues

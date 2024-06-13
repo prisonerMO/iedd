@@ -4,7 +4,7 @@ class CfgVehicles {
     class Box_NATO_Equip_F;
 	class GVAR(Box):Box_NATO_Equip_F {
 		author = "prisoner";
-		displayName = CSTRING(EquimentBox_displayName);
+		displayName = CSTRING(EquipmentBox_displayName);
 		editorCategory = "IEDD_MAINCATEGORY"; 
 		editorSubcategory = "IEDD_EQUIPMENT";	
 		vehicleClass = "IEDD_EQUIPMENT";

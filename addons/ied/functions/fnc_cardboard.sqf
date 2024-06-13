@@ -46,8 +46,13 @@ if (!isServer) exitWith {};
         [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
     };
 
-    if (_variation == 6) then {
-        _variation = selectRandom [0,1,2,3,4,5];
+    if (_variation isEqualTo 6) then {
+        private _includeVarX = _bombObj getVariable [QGVAR(varX), GVAR(defaultVarX)]; //if 0% , Variation X will be excluded from Random
+        If (_includeVarX > random 1) then {
+            _variation = selectRandom [0,1,2,3,4,5];
+        } else {
+            _variation = selectRandom [0,1,2,3,4];
+        };
     };
     
     private _isDistance = _bombObj getVariable [QGVAR(distance), 0];
@@ -135,7 +140,7 @@ if (!isServer) exitWith {};
             if (_decals) then {
                 [_bombObj] call FUNC(decals);
             };
-            private _text = localize LSTRING(Name_Long);
+            private _text = LLSTRING(Name_Long);
             [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;   
         },
