@@ -129,6 +129,8 @@
 	["ammo_Missile_Cruise_01"]\
 ]
 
+#define IEDD_TRAINING_BOMB QGVAR(Training_IED_Ammo)
+
 #define IEDD_DECALS [\
 	"Land_Decal_RoadEdge_Dirt_03_F",\
 	"Land_Garbage_square3_F",\

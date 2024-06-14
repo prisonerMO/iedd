@@ -59,4 +59,44 @@ class Extended_InitPost_EventHandlers {
            serverInit = QUOTE(_this call FUNC(metal));
         };
     };
+    class GVAR(Training_CanisterPlastic) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(trainingcanister));
+        };
+    };
+    class GVAR(Training_CanisterFuel) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(trainingjerry));
+        };
+    };
+    class GVAR(Training_Cardboard) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(trainingcardboard));
+        };
+    };
+    class GVAR(Training_Cinder) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(trainingcinder));
+        };
+    };
+    class GVAR(Training_Barrel) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(trainingbarrel));
+        };
+    };
+    class GVAR(Training_Barrel_Grey) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(trainingbarrel));
+        };
+    };
+    class GVAR(Training_Metal) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(trainingmetal));
+        };
+    };
+    class GVAR(Training_Metal_English) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(trainingmetal));
+        };
+    };
 };
