@@ -78,6 +78,14 @@ class GVAR(CanisterPlastic):Land_CanisterPlastic_F {
 							
 			};
 		};
+		class GVAR(varX) {
+			displayName = CSTRING(VarX);
+			tooltip = CSTRING(VarX_Tooltip);
+			property = QGVAR(varX);
+			expression = "_this setVariable ['%s',_value];";
+			control = "Slider";
+			defaultValue = QGVAR(defaultVarX);
+		};
 		class GVAR(size) {
 			displayName = CSTRING(Size);
 			tooltip = CSTRING(Size_Tooltip);
@@ -88,26 +96,29 @@ class GVAR(CanisterPlastic):Land_CanisterPlastic_F {
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Name_Small);	
+					name = CSTRING(Name_Tiny);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Name_Medium); 
+					name = CSTRING(Name_Small);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Name_Large); 
+					name = CSTRING(Name_Medium);
 					value = 2;
 				};
-				class 4 {
-					name = CSTRING(Name_Huge);
+				class 4	{
+					name = CSTRING(Name_Large);
 					value = 3;
-				}; 							
+				};
 				class 5 {
-					name = CSTRING(Name_Random);
+					name = CSTRING(Name_Huge);
 					value = 4;
+				};
+				class 6 {
+					name = CSTRING(Name_Random);
+					value = 5;
 				}; 
-				
 			};
 		};
 		class GVAR(decals) {

@@ -30,16 +30,22 @@ if (_isTraining) then {
 		[_bombObj,_pos,_type]
 	] call CBA_fnc_waitUntilAndExecute;
 } else {
-	if (typeOf _bombObj == QGVAR(Charge)) then {
-		detach _bombObj;
-	};
 	private _pos = _bombObj modelToWorld [0,0,0];
-	private _size = _bombObj getVariable [QGVAR(size), 2];
-	if (_size > 3) then {
-		_size = floor (random 3);		
+	private _size = _bombObj getVariable [QGVAR(size), 3];
+	if (_size > 4) then {
+		_size = floor (random 4);		
 	};
 	private _type =  selectRandom (IEDD_BOMB_SIZE select _size);
-	deleteVehicle _bombObj;
+	if (typeOf _bombObj == QGVAR(Charge)) then {
+		private _unit = attachedTo _bombObj;		
+		private _attachedObjects = attachedObjects _unit;
+		private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
+		{
+			deleteVehicle _x;
+		} forEach _charges;
+	} else {		
+		deleteVehicle _bombObj;
+	};
 	[
 		{
 			params ["_bombObj","",""];

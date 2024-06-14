@@ -6,7 +6,7 @@ GVAR(animEH) = ace_player AddEventHandler ["AnimChanged", {
 	params ["_unit", "_anim"];
 	if (_anim == "asswpercmrunsnonwnondf") then {
 		private _display = uiNamespace getVariable 'iedd_display';
-		_display displayRemoveEventHandler ["keyDown",GVAR(escEH)];
+		_display displayRemoveEventHandler ["KeyDown",GVAR(escEH)];
 		[QGVAR(sound), [QGVAR(close),player]] call CBA_fnc_globalEvent; // close sound
 		ace_player removeEventHandler ["AnimChanged", GVAR(animEH)];
 		closeDialog 1;
@@ -18,14 +18,14 @@ GVAR(escEH) =  (_this #0) displayAddEventHandler ['KeyDown', {
 	private _handled = false;
 	if (_key == 1) then {
 		[QGVAR(sound), [QGVAR(close),player]] call CBA_fnc_globalEvent; // close sound
-		_display displayRemoveEventHandler ["keyDown",GVAR(escEH)];
+		_display displayRemoveEventHandler ["KeyDown",GVAR(escEH)];
 		ace_player removeEventHandler ["AnimChanged", GVAR(animEH)];
 	};
 	if (_key in (actionKeys 'ShowMap')) then {
 		[QGVAR(sound), [QGVAR(close),player]] call CBA_fnc_globalEvent; // close sound
 		closeDialog 1;
 		openMap true;
-		_display displayRemoveEventHandler ["keyDown",GVAR(escEH)];
+		_display displayRemoveEventHandler ["KeyDown",GVAR(escEH)];
 		ace_player removeEventHandler ["AnimChanged", GVAR(animEH)];
 		_handled = true;
 	};
@@ -34,7 +34,7 @@ GVAR(escEH) =  (_this #0) displayAddEventHandler ['KeyDown', {
 			[QGVAR(sound), [QGVAR(close),player]] call CBA_fnc_globalEvent; // close sound
 			closeDialog 1;
 			ace_player action ["nvGoggles", ace_player];
-			_display displayRemoveEventHandler ["keyDown",GVAR(escEH)];
+			_display displayRemoveEventHandler ["KeyDown",GVAR(escEH)];
 			ace_player removeEventHandler ["AnimChanged", GVAR(animEH)];
 			_handled = true;
 		};

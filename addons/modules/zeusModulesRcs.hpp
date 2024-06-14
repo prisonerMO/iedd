@@ -179,25 +179,29 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                             
                             class Items {
                                 class 1 {
-                                    text = ECSTRING(ied,Name_Small);
+                                    text = ECSTRING(ied,Name_Tiny);
                                     value = 0;
                                 };
                                 class 2 {
-                                    text = ECSTRING(ied,Name_Medium);
+                                    text = ECSTRING(ied,Name_Small);
                                     value = 1;
                                 };
                                 class 3 {
-                                    text = ECSTRING(ied,Name_Large);
+                                    text = ECSTRING(ied,Name_Medium);
                                     value = 2;
-                                    default = 1;                                                                      
                                 };
                                 class 4 {
-                                    text = ECSTRING(ied,Name_Huge);
+                                    text = ECSTRING(ied,Name_Large);
                                     value = 3;
+                                    default = 1;
                                 };
                                 class 5 {
-                                    text = ECSTRING(ied,Name_Random);                                
-                                    value = 4;                                
+                                    text = ECSTRING(ied,Name_Huge);
+                                    value = 4;
+                                };
+                                class 6 {
+                                    text = ECSTRING(ied,Name_Random);
+                                    value = 5;
                                 };
                             };
                         };
@@ -464,21 +468,25 @@ class GVAR(RscCharge): RscDisplayAttributes {
                             
                             class Items {
                                 class 1 {
-                                    text = ECSTRING(ied,Name_Small);
+                                    text = ECSTRING(ied,Name_Tiny);
                                     value = 0;
                                 };
                                 class 2 {
-                                    text = ECSTRING(ied,Name_Medium);
+                                    text = ECSTRING(ied,Name_Small);
                                     value = 1;
                                 };
                                 class 3 {
-                                    text = ECSTRING(ied,Name_Large);
+                                    text = ECSTRING(ied,Name_Medium);
                                     value = 2;
-                                    default = 1;                                                                      
                                 };
                                 class 4 {
+                                    text = ECSTRING(ied,Name_Large);
+                                    value = 3;
+                                    default = 1;                                                                      
+                                };
+                                class 5 {
                                     text = ECSTRING(ied,Name_Random);                                
-                                    value = 3;                                
+                                    value = 4;                                
                                 };
                             };
                         };

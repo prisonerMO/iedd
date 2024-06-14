@@ -5,7 +5,7 @@ private _display = ctrlParent _control;
 private _ctrlButtonOK = _display displayCtrl 1; //IDC_OK
 private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
 
-_control ctrlRemoveAllEventHandlers "setFocus";
+_control ctrlRemoveAllEventHandlers "SetFocus";
 
 //Specific on-load stuff:
 private _fnc_sliderMove = {
@@ -99,5 +99,5 @@ private _fnc_onConfirm = {
 
 };
 
-_display displayAddEventHandler ["unload", _fnc_onUnload];
-_ctrlButtonOK ctrlAddEventHandler ["buttonclick", _fnc_onConfirm];
+_display displayAddEventHandler ["Unload", _fnc_onUnload];
+_ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
