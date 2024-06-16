@@ -17,6 +17,7 @@ deleteVehicle _wire;
 	},
  	{
 		params ["_wire","_bombObj","_order","_player"];
+		TRACE_2("Cut",_this,GVAR(ignoreWireCutOrder));
 		private _wires = _bombObj getVariable [QGVAR(wires),[]];
 		private _count = count (_wires select {!isNull _x});
 		private _isTimer = _bombObj getVariable [QGVAR(timer), false];
@@ -30,7 +31,7 @@ deleteVehicle _wire;
 				_defused = true;
 			};
 		} else {
-			if (GVAR(ignoreWireCutOrder) == false) then {
+			if (!GVAR(ignoreWireCutOrder)) then {
 				[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
 				true; // when the bomb explodes => return
 			};
