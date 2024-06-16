@@ -507,7 +507,7 @@
 			</Key>
 			<Key ID="STR_iedd_ied_IgnoreWireCutOrder_Description">
 				<Original>IEDs do not explode on cutting the wrong wire.</Original>
-				<Original>IEDs do not explode on cutting the wrong wire.</Original>
+				<English>IEDs do not explode on cutting the wrong wire.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_IsBlockedRange">
 				<Original>Just keep talking and nobody explodes-mode</Original>
