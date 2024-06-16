@@ -107,6 +107,17 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(ignoreWireCutOrder),
+    "CHECKBOX",
+    [CSTRING(IgnoreWireCutOrder),CSTRING(IgnoreWireCutOrder_Description)],
+	[localize "STR_iedd_main_Category_Main","IEDs"],
+    false,
+    true,
+    {},
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(isBlockedRange),
     "CHECKBOX",	
     [LSTRING(IsBlockedRange), LSTRING(IsBlockedRange_Description)],
