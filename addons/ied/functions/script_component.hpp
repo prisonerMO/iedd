@@ -122,7 +122,7 @@
 ]
 
 #define IEDD_BOMB_SIZE [\
-	["IEDD_TINY_AMMO","IEDD_TINY_AMMO","IEDD_TINY_AMMO"],\
+	["iedd_ied_Tiny_Ammo"],\
 	["M_AT","Missile_AA_03_F","M_Vorona_HE"],\
 	["ammo_Missile_rim162","ammo_Missile_AMRAAM_D","M_Zephyr"],\
 	["Bo_Mk82_MI08","Bomb_03_F"],\

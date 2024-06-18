@@ -26,7 +26,7 @@ class CfgAmmo {
 		/*
 		*/
 	};
-	class IEDD_TINY_AMMO: R_PG32V_F {
+	class GVAR(Tiny_Ammo): R_PG32V_F {
 		author = AUTHOR;
 		hit = 3;
 		indirectHit = 2;
