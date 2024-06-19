@@ -72,7 +72,6 @@ private _fnc_onConfirm = {
     private _variation = lbCurSel _varCtrl; 
     private _varData = "getText (_x >> 'name') isEqualTo localize 'STR_iedd_ied_Name_Random'" configClasses (configFile >> "CfgVehicles" >> _type >> "Attributes" >> "iedd_ied_variation" >> "Values") apply {getNumber (_x >> 'value')};
     private _random = _varData select 0;
-    diag_log format ["_data: %1, _number: %2,_variation: %3",_data,_random,_variation];
     if (_variation == _random) then {
         _variation = floor (random _random);
     };
