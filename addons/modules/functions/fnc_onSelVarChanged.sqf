@@ -9,17 +9,10 @@ private _type = _typeCtrl lbData _typeNum;
 private _varCtrl = _display displayCtrl 52521;
 lbClear	_varCtrl;
 
-for "_i" from 0 to 4 do {   
-    _addList = "Variation "+ str (_i+1);
-    _varCtrl lbAdd _addList;
-    _varCtrl lbSetValue [_i, _i]; 
-};
-_addList = "Variation X";
-_varCtrl lbAdd _addList;
-_varCtrl lbSetValue [5, 5];
-
-_addList = "Random";
-_varCtrl lbAdd _addList;
-_varCtrl lbSetValue [6, 6];
-
-//GVAR(variations) = _variations;
+private _data = "true" configClasses (configFile >> "CfgVehicles" >> _type >> "Attributes" >> "iedd_ied_variation" >> "Values");
+{
+    private _name = getText (_x >> "name");
+    private _value = getNumber (_x >> "value");
+    _varCtrl lbAdd _name;
+    _varCtrl lbSetValue [_forEachIndex, _value];
+} forEach _data;
