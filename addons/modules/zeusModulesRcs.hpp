@@ -288,7 +288,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
 };
 
 class GVAR(RcsDecals): RscDisplayAttributes {
-    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RcsDecals))] call FUNC(attributes); GVAR(variations) = 5);
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RcsDecals))] call FUNC(attributes));
     onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RcsDecals))] call FUNC(attributes));
     class Controls: Controls {
         class Background: Background {};
