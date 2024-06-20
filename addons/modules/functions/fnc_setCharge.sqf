@@ -71,8 +71,8 @@ private _fnc_onConfirm = {
     private _unit = attachedTo _logic;
     private _varCtrl = _display displayCtrl 62521;
     private _variation = lbCurSel _varCtrl;
-    if (_variation > GVAR(variations)-1) then {
-        _variation = floor (random GVAR(variations));
+    if (_variation > 5) then {
+        _variation = floor (random 5);
     };
     private _sizeCtrl = _display displayCtrl 62522;
     private _size = lbCurSel _sizeCtrl;
