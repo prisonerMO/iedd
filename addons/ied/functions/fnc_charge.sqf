@@ -1,6 +1,6 @@
 //  CHARGE
 #include "script_component.hpp"
-params ["_unit","_actived"];
+params ["_unit","_activated"];
 TRACE_1("Charge call",_this);
 if (is3DEN) exitWith {
     private _value = (_unit get3DENAttribute QGVAR(isSurrendered)) select 0;
