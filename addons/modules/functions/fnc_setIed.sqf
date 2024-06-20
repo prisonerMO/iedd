@@ -71,7 +71,7 @@ private _fnc_onConfirm = {
     private _varCtrl = _display displayCtrl 52521;
     private _variation = lbCurSel _varCtrl;
     if (_variation > 5) then {
-        _variation = floor (random GVAR(variations));
+        _variation = floor (random 5);
     };
     private _sizeCtrl = _display displayCtrl 52522;
     private _size = lbCurSel _sizeCtrl;
