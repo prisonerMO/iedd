@@ -387,7 +387,15 @@
 			<Key ID="STR_iedd_ied_Detach_DisplayName">
 				<Original>Detach bombs</Original>
 				<English>Detach bombs</English>
-			</Key>											
+			</Key>
+			<Key ID="STR_iedd_ied_Random_DisplayName">
+				<Original>Random variation</Original>
+				<English>Random variation</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Keep_DisplayName">
+				<Original>Keep variation</Original>
+				<English>Keep variation</English>
+			</Key>								
 		</Container>	
 		<Container name="IEDD Explosives">
 			<Key ID="STR_iedd_ied_Charge_DisplayName">
