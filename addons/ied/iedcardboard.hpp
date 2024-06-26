@@ -12,7 +12,7 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			displayName = "$STR_ace_interaction_MainAction";
 			selection = "";
 			distance = 2;
-			condition = "true";
+			condition = QUOTE(true);
 			class IEDD_DisarmMenu {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Disarm_DisplayName);
@@ -253,12 +253,12 @@ class GVAR(Training_Cardboard):GVAR(Cardboard) {
 			displayName = "$STR_ace_interaction_MainAction";
 			selection = "";
 			distance = 2;
-			condition = "true";
+			condition = QUOTE(true);
 			class IEDD_ResetMenu {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Reset_DisplayName); 
 				condition = QUOTE(true);
-				statement = QUOTE(_this call FUNC(resetAction));
+				insertChildren = QUOTE(_this call FUNC(getTrainingActions));
 			};
 		};
 	};
