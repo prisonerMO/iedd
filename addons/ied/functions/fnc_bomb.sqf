@@ -55,8 +55,9 @@ if (_isTraining) then {
 		{
 			params ["_bombObj","_pos","_type"];
 			_bomb = createVehicle [_type, [_pos #0, _pos #1, 0.05], [], 0, "CAN_COLLIDE"];
-			[QGVAR(hideObject),[_bomb,true]] call CBA_fnc_globalEvent;
-			_bomb setDamage 1;
+			//[QGVAR(hideObject),[_bomb,true]] call CBA_fnc_globalEvent;
+			//_bomb setDamage 1;
+			triggerAmmo _bomb;
 		}, 
 		[_bombObj,_pos,_type]
 	] call CBA_fnc_waitUntilAndExecute;
