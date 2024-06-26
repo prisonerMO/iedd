@@ -59,44 +59,45 @@ class Extended_InitPost_EventHandlers {
            serverInit = QUOTE(_this call FUNC(metal));
         };
     };
+
     class GVAR(Training_CanisterPlastic) {
         class ADDON {
-           serverInit = QUOTE(_this call FUNC(trainingcanister));
+           serverInit = QUOTE((_this select 0) setVariable [ARR_2(QQGVAR(training),true)];(_this select 0) setVariable [ARR_2(QQGVAR(decals),false)]; _this call FUNC(canister));
         };
     };
     class GVAR(Training_CanisterFuel) {
         class ADDON {
-           serverInit = QUOTE(_this call FUNC(trainingjerry));
+           serverInit = QUOTE((_this select 0) setVariable [ARR_2(QQGVAR(training),true)];(_this select 0) setVariable [ARR_2(QQGVAR(decals),false)]; _this call FUNC(jerry));
         };
     };
     class GVAR(Training_Cardboard) {
         class ADDON {
-           serverInit = QUOTE(_this call FUNC(trainingcardboard));
+           serverInit = QUOTE((_this select 0) setVariable [ARR_2(QQGVAR(training),true)];(_this select 0) setVariable [ARR_2(QQGVAR(decals),false)]; _this call FUNC(cardboard));
         };
     };
     class GVAR(Training_Cinder) {
         class ADDON {
-           serverInit = QUOTE(_this call FUNC(trainingcinder));
+           serverInit = QUOTE((_this select 0) setVariable [ARR_2(QQGVAR(training),true)];(_this select 0) setVariable [ARR_2(QQGVAR(decals),false)]; _this call FUNC(cinder));
         };
     };
     class GVAR(Training_Barrel) {
         class ADDON {
-           serverInit = QUOTE(_this call FUNC(trainingbarrel));
+           serverInit = QUOTE((_this select 0) setVariable [ARR_2(QQGVAR(training),true)];(_this select 0) setVariable [ARR_2(QQGVAR(decals),false)]; _this call FUNC(barrel));
         };
     };
     class GVAR(Training_Barrel_Grey) {
         class ADDON {
-           serverInit = QUOTE(_this call FUNC(trainingbarrel));
+          serverInit = QUOTE((_this select 0) setVariable [ARR_2(QQGVAR(training),true)];(_this select 0) setVariable [ARR_2(QQGVAR(decals),false)]; _this call FUNC(barrel));
         };
     };
     class GVAR(Training_Metal) {
         class ADDON {
-           serverInit = QUOTE(_this call FUNC(trainingmetal));
+           serverInit = QUOTE((_this select 0) setVariable [ARR_2(QQGVAR(training),true)];(_this select 0) setVariable [ARR_2(QQGVAR(decals),false)]; _this call FUNC(metal));
         };
     };
     class GVAR(Training_Metal_English) {
         class ADDON {
-           serverInit = QUOTE(_this call FUNC(trainingmetal));
+          serverInit = QUOTE((_this select 0) setVariable [ARR_2(QQGVAR(training),true)];(_this select 0) setVariable [ARR_2(QQGVAR(decals),false)]; _this call FUNC(metal));
         };
     };
 };
