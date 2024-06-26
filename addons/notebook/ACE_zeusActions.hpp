@@ -5,7 +5,7 @@ class ACE_ZeusActions {
         condition = QUOTE(!isNull findDisplay 312);
 		class GVAR(notebook) {
 			displayName = CSTRING(Action_Open);
-            condition = "true";
+            condition = QUOTE(true);
 			statement = QUOTE(createDialog QQGVAR(display));
 		};
 		class GVAR(activate) {
