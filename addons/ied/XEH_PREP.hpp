@@ -27,5 +27,6 @@ PREP(removeEvents);
 PREP(resetAction);
 PREP(setAttributes);
 PREP(timer);
+PREP(training);
 PREP(variationx);
 

@@ -22,8 +22,6 @@ deleteVehicle _bombObj;
     {
         params ["_bombObj","_pos","_type","_variation","_dir","_vectorDirAndUp"];
         _bombObj = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
-        _bombObj setVariable [QGVAR(dir), false, true];
-        _bombObj setVariable [QGVAR(fake), 0, true];
         _bombObj setVariable [QGVAR(variation), _variation, true];
         _bombObj setDir _dir;    
         _bombObj setVectorDirAndUp _vectorDirAndUp;

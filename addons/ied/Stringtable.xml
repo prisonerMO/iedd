@@ -377,8 +377,8 @@
 		</Container>
 		<Container name="IEDD Interaction Menu">
 			<Key ID="STR_iedd_ied_Reset_DisplayName">
-				<Original>Reset</Original>
-				<English>Reset</English>
+				<Original>Rearm</Original>
+				<English>Rearm</English>
 			</Key>											
 			<Key ID="STR_iedd_ied_Disarm_DisplayName">
 				<Original>Disarm</Original>
