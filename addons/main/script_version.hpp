@@ -1,5 +1,5 @@
 #define MAJOR 1
-#define MINOR 5
-#define PATCHLVL 3
-#define BUILD 20
-/*Build 21to next release.*/
+#define MINOR 6
+#define PATCHLVL 0
+#define BUILD 21
+/*Build 22 to next release.*/

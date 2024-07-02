@@ -13,7 +13,7 @@ class GVAR(Metal):Land_GarbageBarrel_01_F {
 			position = "[0,0,0.5]";
 			displayName = "$STR_ace_interaction_MainAction";
 			distance = 2;
-			condition = "true";
+			condition = QUOTE(true);
 			class IEDD_DisarmMenu {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Disarm_DisplayName);								
@@ -97,26 +97,29 @@ class GVAR(Metal):Land_GarbageBarrel_01_F {
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Name_Small);	
+					name = CSTRING(Name_Tiny);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Name_Medium); 
+					name = CSTRING(Name_Small);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Name_Large); 
+					name = CSTRING(Name_Medium);
 					value = 2;
 				};
-				class 4 {
-					name = CSTRING(Name_Huge);
+				class 4	{
+					name = CSTRING(Name_Large);
 					value = 3;
-				}; 							
+				};
 				class 5 {
-					name = CSTRING(Name_Random);
+					name = CSTRING(Name_Huge);
 					value = 4;
+				};
+				class 6 {
+					name = CSTRING(Name_Random);
+					value = 5;
 				}; 
-				
 			};
 		};
 		class GVAR(decals) {
@@ -248,4 +251,40 @@ class GVAR(Metal_English):GVAR(Metal) {
 	editorPreview = "\A3\EditorPreviews_F_Argo\Data\CfgVehicles\Land_GarbageBarrel_01_english_F.jpg";
 	model = "\A3\Structures_F_Argo\Civilian\Garbage\GarbageBarrel_01_english_F.p3d";
 	iedd_ied_default = "Land_GarbageBarrel_01_english_F";
+};
+class GVAR(Training_Metal):GVAR(Metal) {
+	displayName = CSTRING(Training_MetalBarrel_DisplayName);
+	editorSubcategory = "IEDD_TRAINING_IEDS";
+	class ACE_Actions : ACE_Actions {
+		class ACE_MainActions : ACE_MainActions {
+			displayName = "$STR_ace_interaction_MainAction";
+			selection = "";
+			distance = 2;
+			condition = QUOTE(true);
+			class IEDD_ResetMenu {
+				exceptions[] = {"isNotSwimming"};
+				displayName = CSTRING(Reset_DisplayName); 
+				condition = QUOTE(true);
+				insertChildren = QUOTE(_this call FUNC(getTrainingActions));
+			};
+		};
+	};
+};
+class GVAR(Training_Metal_English):GVAR(Metal_English) {
+	displayName = CSTRING(Training_MetalBarrelEnglish_DisplayName);
+	editorSubcategory = "IEDD_TRAINING_IEDS";
+	class ACE_Actions : ACE_Actions {
+		class ACE_MainActions : ACE_MainActions {
+			displayName = "$STR_ace_interaction_MainAction";
+			selection = "";
+			distance = 2;
+			condition = QUOTE(true);
+			class IEDD_ResetMenu {
+				exceptions[] = {"isNotSwimming"};
+				displayName = CSTRING(Reset_DisplayName); 
+				condition = QUOTE(true);
+				insertChildren = QUOTE(_this call FUNC(getTrainingActions));
+			};
+		};
+	};
 };
