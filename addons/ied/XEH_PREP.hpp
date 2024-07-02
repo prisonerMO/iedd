@@ -16,6 +16,7 @@ PREP(disarmAction);
 PREP(dud);
 PREP(dudWires);
 PREP(explosion);
+PREP(getTrainingActions);
 PREP(handleGetInMan);
 PREP(handleKilled);
 PREP(handleUnconscious);
@@ -23,7 +24,9 @@ PREP(iedCheck);
 PREP(jerry);
 PREP(metal);
 PREP(removeEvents);
+PREP(resetAction);
 PREP(setAttributes);
 PREP(timer);
+PREP(training);
 PREP(variationx);
 

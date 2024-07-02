@@ -71,13 +71,13 @@ private _fnc_onConfirm = {
     private _unit = attachedTo _logic;
     private _varCtrl = _display displayCtrl 62521;
     private _variation = lbCurSel _varCtrl;
-    if (_variation > 5) then {
+    if (_variation > 4) then {
         _variation = floor (random 5);
     };
     private _sizeCtrl = _display displayCtrl 62522;
     private _size = lbCurSel _sizeCtrl;
-    if (_size > 2) then {
-        _size = selectRandom [0,1,2];
+    if (_size > 3) then {
+        _size = selectRandom [0,1,2,3];
     };
     private _dud = sliderPosition (_display displayCtrl 62523);
     private _timerCtrl = _display displayCtrl 62524;

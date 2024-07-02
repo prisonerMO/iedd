@@ -85,7 +85,7 @@ class CfgVehicles {
 				icon = "\a3\ui_f\data\igui\cfg\actions\take_ca.paa";
 				distance = 2;
 				position = "";
-				condition = "true";
+				condition = QUOTE(true);
 				statement = QUOTE([ARR_2(_player,_target)] call EFUNC(notebook,pick));  
 			}; 
 		};

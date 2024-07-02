@@ -36,49 +36,97 @@
 				<Original>Plastic Barrel</Original>
 				<English>Plastic Barrel</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Training_Barrel_DisplayName">
+				<Original>Training IED Plastic Barrel</Original>
+				<English>Training IED Plastic Barrel</English>
+			</Key>
 			<Key ID="STR_iedd_ied_BarrelGrey_DisplayName">
 				<Original>Plastic Barrel (Grey)</Original>
 				<English>Plastic Barrel (Grey)</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Training_BarrelGrey_DisplayName">
+				<Original>Training IED Plastic Barrel (Grey)</Original>
+				<English>Training IED Plastic Barrel (Grey)</English>
 			</Key>
 			<Key ID="STR_iedd_ied_PlasticCanister_DisplayName">
 				<Original>Plastic Canister</Original>
 				<English>Plastic Canister</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Training_PlasticCanister_DisplayName">
+				<Original>Training IED Plastic Canister</Original>
+				<English>Training IED Plastic Canister</English>
+			</Key>
 			<Key ID="STR_iedd_ied_Cardboard_DisplayName">
 				<Original>Cardboard Box</Original>
 				<English>Cardboard Box</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Training_Cardboard_DisplayName">
+				<Original>Training IED Cardboard Box</Original>
+				<English>Training IED Cardboard Box</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Cinder_DisplayName">
 				<Original>Cinder Block</Original>
 				<English>Cinder Block</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Training_Cinder_DisplayName">
+				<Original>Training IED Cinder Block</Original>
+				<English>Training IED Cinder Block</English>
+			</Key>
 			<Key ID="STR_iedd_ied_FuelCanister_DisplayName">
 				<Original>Fuel Canister</Original>
 				<English>Fuel Canister</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Training_FuelCanister_DisplayName">
+				<Original>Training IED Fuel Canister</Original>
+				<English>Training IED Fuel Canister</English>
 			</Key>
 			<Key ID="STR_iedd_ied_FuelCanister_Green">
 				<Original>Fuel Canister (Green)</Original>
 				<English>Fuel Canister (Green)</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Training_FuelCanister_Green">
+				<Original>Training IED Fuel Canister (Green)</Original>
+				<English>Training IED Fuel Canister (Green)</English>
+			</Key>
 			<Key ID="STR_iedd_ied_FuelCanister_Blue">
 				<Original>Fuel Canister (Blue)</Original>
 				<English>Fuel Canister (Blue)</English>
-			</Key>													
+			</Key>
+			<Key ID="STR_iedd_ied_Training_FuelCanister_Blue">
+				<Original>Training IED Fuel Canister (Blue)</Original>
+				<English>Training IED Fuel Canister (Blue)</English>
+			</Key>
 			<Key ID="STR_iedd_ied_FuelCanister_Red">
 				<Original>Fuel Canister (Red)</Original>
 				<English>Fuel Canister (Red)</English>
-			</Key>		
+			</Key>
+			<Key ID="STR_iedd_ied_Training_FuelCanister_Red">
+				<Original>Training IED Fuel Canister (Red)</Original>
+				<English>Training IED Fuel Canister (Red)</English>
+			</Key>
 			<Key ID="STR_iedd_ied_FuelCanister_White">
 				<Original>Fuel Canister (White)</Original>
 				<English>Fuel Canister (White)</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Training_FuelCanister_White">
+				<Original>Training IED Fuel Canister (White)</Original>
+				<English>Training IED Fuel Canister (White)</English>
 			</Key>
 			<Key ID="STR_iedd_ied_MetalBarrel_DisplayName">
 				<Original>Metal Barrel</Original>
 				<English>Metal Barrel</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Training_MetalBarrel_DisplayName">
+				<Original>Training IED Metal Barrel</Original>
+				<English>Training IED Metal Barrel</English>
+			</Key>
 			<Key ID="STR_iedd_ied_MetalBarrelEnglish_DisplayName">
 				<Original>Metal Barrel (English)</Original>
 				<English>Metal Barrel (English)</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Training_MetalBarrelEnglish_DisplayName">
+				<Original>Training IED Metal Barrel (English)</Original>
+				<English>Training IED Metal Barrel (English)</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Name_Green">
 				<Original>Green</Original>
@@ -199,6 +247,10 @@
 			<Key ID="STR_iedd_ied_RandomTimerMax_Tooltip">
 				<Original>Set maximum time for random.</Original>
 				<English>Set maximum time for random.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Name_Tiny">
+				<Original>Tiny</Original>
+				<English>Tiny</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Name_Small">
 				<Original>Small</Original>
@@ -323,7 +375,11 @@
 				<English>Unit Status Settings</English>
 			</Key>			
 		</Container>
-		<Container name="IEDD Interaction Menu">											
+		<Container name="IEDD Interaction Menu">
+			<Key ID="STR_iedd_ied_Reset_DisplayName">
+				<Original>Rearm</Original>
+				<English>Rearm</English>
+			</Key>											
 			<Key ID="STR_iedd_ied_Disarm_DisplayName">
 				<Original>Disarm</Original>
 				<English>Disarm</English>
@@ -331,7 +387,15 @@
 			<Key ID="STR_iedd_ied_Detach_DisplayName">
 				<Original>Detach bombs</Original>
 				<English>Detach bombs</English>
-			</Key>											
+			</Key>
+			<Key ID="STR_iedd_ied_Random_DisplayName">
+				<Original>Random variation</Original>
+				<English>Random variation</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Keep_DisplayName">
+				<Original>Keep variation</Original>
+				<English>Keep variation</English>
+			</Key>								
 		</Container>	
 		<Container name="IEDD Explosives">
 			<Key ID="STR_iedd_ied_Charge_DisplayName">
@@ -443,7 +507,16 @@
 			<Key ID="STR_iedd_ied_FailExploseChance_Description">
 				<Original>% of activate IED after failed wire cut.</Original>
 				<English>% of activate IED after failed wire cut.</English>
-			</Key>						
+			</Key>
+			</Key>
+			<Key ID="STR_iedd_ied_IgnoreWireCutOrder">
+				<Original>Ignore wire cut order</Original>
+				<English>Ignore wire cut order</English>
+			</Key>
+			<Key ID="STR_iedd_ied_IgnoreWireCutOrder_Description">
+				<Original>IEDs do not explode on cutting the wrong wire.</Original>
+				<English>IEDs do not explode on cutting the wrong wire.</English>
+			</Key>
 			<Key ID="STR_iedd_ied_IsBlockedRange">
 				<Original>Just keep talking and nobody explodes-mode</Original>
 				<English>Just keep talking and nobody explodes-mode</English>

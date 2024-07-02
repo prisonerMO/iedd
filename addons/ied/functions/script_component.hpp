@@ -122,11 +122,14 @@
 ]
 
 #define IEDD_BOMB_SIZE [\
+	["iedd_ied_Tiny_Ammo"],\
 	["M_AT","Missile_AA_03_F","M_Vorona_HE"],\
 	["ammo_Missile_rim162","ammo_Missile_AMRAAM_D","M_Zephyr"],\
 	["Bo_Mk82_MI08","Bomb_03_F"],\
 	["ammo_Missile_Cruise_01"]\
 ]
+
+#define IEDD_TRAINING_BOMB QGVAR(Training_IED_Ammo)
 
 #define IEDD_DECALS [\
 	"Land_Decal_RoadEdge_Dirt_03_F",\
