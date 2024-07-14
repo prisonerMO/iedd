@@ -2,61 +2,7 @@
 
 class Cfg3DEN {
     class Attributes {
-        class Slider;
-        class GVAR(timeSlider): Slider {
-            attributeLoad = "params [""_ctrlGroup""];\
-            private _slider = _ctrlGroup controlsGroupCtrl 100;\
-            private _edit = _ctrlGroup controlsGroupCtrl 101;\
-            _slider sliderSetPosition _value;\
-            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 's';";
-            attributeSave = "params [""_ctrlGroup""];\
-            sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
-            onLoad = "params [""_ctrlGroup""];\
-            private _slider = _ctrlGroup controlsGroupCtrl 100;\
-            private _edit = _ctrlGroup controlsGroupCtrl 101;\
-            _slider sliderSetSpeed [1, 1, 1];\
-            _slider sliderSetRange [0, 300];\
-            _slider ctrlAddEventHandler [""SliderPosChanged"", {\
-                params [""_slider""];\
-                private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
-                private _value = sliderPosition _slider;\
-                _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 's';\
-            }];\
-            _edit ctrlAddEventHandler [""KillFocus"", {\
-                params [""_edit""];\
-                private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
-                private _value = ((parseNumber ctrlText _edit) min 0) max 300;\
-                _slider sliderSetPosition _value;\
-                _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 's';\
-            }];";
-        };
-        class GVAR(distanceSlider): Slider {
-            attributeLoad = "params [""_ctrlGroup""];\
-            private _slider = _ctrlGroup controlsGroupCtrl 100;\
-            private _edit = _ctrlGroup controlsGroupCtrl 101;\
-            _slider sliderSetPosition _value;\
-            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';";
-            attributeSave = "params [""_ctrlGroup""];\
-            sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
-            onLoad = "params [""_ctrlGroup""];\
-            private _slider = _ctrlGroup controlsGroupCtrl 100;\
-            private _edit = _ctrlGroup controlsGroupCtrl 101;\
-            _slider sliderSetSpeed [1, 1, 1];\
-            _slider sliderSetRange [0, 30];\
-            _slider ctrlAddEventHandler [""SliderPosChanged"", {\
-                params [""_slider""];\
-                private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
-                private _value = sliderPosition _slider;\
-                _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';\
-            }];\
-            _edit ctrlAddEventHandler [""KillFocus"", {\
-                params [""_edit""];\
-                private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
-                private _value = ((parseNumber ctrlText _edit) min 0) max 30;\
-                _slider sliderSetPosition _value;\
-                _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';\
-            }];";
-        };
+        #include "controls.hpp"
     };
     class object {
         class AttributeCategories {
@@ -69,14 +15,24 @@ class Cfg3DEN {
                     };
                     class GVAR(isCharge) {
                         property = QGVAR(isCharge);
-                        control = "CheckboxState";
+                        control = QGVAR(isCharge);
                         displayName = CSTRING(isCharge_DisplayName);
                         tooltip = CSTRING(isCharge_Description);
                         expression = QUOTE(if (_value) then {[ARR_2(_this,true)] call FUNC(charge);_this setVariable [ARR_3(QQGVAR(isCharge),_value,true)]});
                         typeName = "BOOL";
                         condition = "objectControllable";
                         defaultValue = "(false)";
-                    };                    
+                    };
+                    class GVAR(isSuicide) {
+                        property = QGVAR(isSuicide);
+                        control = QGVAR(isSuicide);
+                        displayName = "TEST";
+                        tooltip = "TEST TOOL";
+                        expression = QUOTE(if (_value) then {diag_log _this;_this setVariable [ARR_3(QQGVAR(isSuicide),_value,true)]});
+                        typeName = "BOOL";
+                        condition = "objectControllable";
+                        defaultValue = "(false)";                    
+                    };                 
                     class GVAR(Charge_Settings) {
                         data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
                         control = "SubCategory";
@@ -170,7 +126,7 @@ class Cfg3DEN {
                     };
                     class GVAR(isHandcuffed) {
                         property = QGVAR(isHandcuffed);
-                        control = "Checkbox";
+                        control = QGVAR(isHandcuffed);
                         displayName = CSTRING(isHandcuffed_DisplayName);
                         tooltip = CSTRING(isHandcuffed_Description);
                         expression = QUOTE([ARR_4(_this,_value,'ace_isHandcuffed',QQGVAR(isHandcuffed))] call FUNC(setAttributes));
@@ -180,7 +136,7 @@ class Cfg3DEN {
                     };
                     class GVAR(isSurrendered) {
                         property = QGVAR(isSurrendered);
-                        control = "Checkbox";
+                        control = QGVAR(isSurrendered);
                         displayName = CSTRING(isSurrendered_DisplayName);
                         tooltip = CSTRING(isSurrendered_Description);
                         expression = QUOTE([ARR_4(_this,_value,'ace_isSurrendered',QQGVAR(isSurrendered))] call FUNC(setAttributes));
@@ -198,7 +154,7 @@ class Cfg3DEN {
                         displayName = CSTRING(Timer);
                         tooltip = CSTRING(Timer_Tooltip);
                         property = QGVAR(c_timer);
-                        control = "Combo";
+                        control = QGVAR(c_timer);
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timer),_value,true)]);
                         defaultValue = QGVAR(defaultTimer);		
                         typeName = "NUMBER";
@@ -232,7 +188,7 @@ class Cfg3DEN {
                         displayName = CSTRING(RandomTimer);
                         tooltip = CSTRING(RandomTimer_Tooltip);
                         property = QGVAR(c_randomTimer);
-                        control = "Combo";
+                        control = QGVAR(c_timer);
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimer),_value,true)]);
                         defaultValue = QGVAR(defaultRandomTimer);	
                         typeName = "NUMBER";
