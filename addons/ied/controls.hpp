@@ -70,19 +70,12 @@ class GVAR(distanceSlider): Slider {
         _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';\
     }];";
 };
-class GVAR(distanceActiveSlider): Slider {
-    attributeLoad = "params [""_ctrlGroup""];\
-    private _slider = _ctrlGroup controlsGroupCtrl 100;\
-    private _edit = _ctrlGroup controlsGroupCtrl 101;\
-    _slider sliderSetPosition _value;\
-    _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';";
-    attributeSave = "params [""_ctrlGroup""];\
-    sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
+class GVAR(distanceActivate): GVAR(distanceSlider) {
     onLoad = "params [""_ctrlGroup""];\
     private _slider = _ctrlGroup controlsGroupCtrl 100;\
     private _edit = _ctrlGroup controlsGroupCtrl 101;\
     _slider sliderSetSpeed [1, 1, 1];\
-    _slider sliderSetRange [0, 500];\
+    _slider sliderSetRange [0, 1000];\
     _slider ctrlAddEventHandler [""SliderPosChanged"", {\
         params [""_slider""];\
         private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
@@ -92,7 +85,27 @@ class GVAR(distanceActiveSlider): Slider {
     _edit ctrlAddEventHandler [""KillFocus"", {\
         params [""_edit""];\
         private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
-        private _value = ((parseNumber ctrlText _edit) min 0) max 500;\
+        private _value = ((parseNumber ctrlText _edit) min 0) max 1000;\
+        _slider sliderSetPosition _value;\
+        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';\
+    }];";
+};
+class GVAR(distanceExplosion): GVAR(distanceSlider) {
+    onLoad = "params [""_ctrlGroup""];\
+    private _slider = _ctrlGroup controlsGroupCtrl 100;\
+    private _edit = _ctrlGroup controlsGroupCtrl 101;\
+    _slider sliderSetSpeed [1, 1, 1];\
+    _slider sliderSetRange [0, 50];\
+    _slider ctrlAddEventHandler [""SliderPosChanged"", {\
+        params [""_slider""];\
+        private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
+        private _value = sliderPosition _slider;\
+        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';\
+    }];\
+    _edit ctrlAddEventHandler [""KillFocus"", {\
+        params [""_edit""];\
+        private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
+        private _value = ((parseNumber ctrlText _edit) min 0) max 50;\
         _slider sliderSetPosition _value;\
         _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';\
     }];";
@@ -197,3 +210,4 @@ class GVAR(isSuicide): Checkbox {
         };
     };
 };
+class GVAR(distDMS): Checkbox {};

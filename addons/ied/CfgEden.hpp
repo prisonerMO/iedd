@@ -26,8 +26,8 @@ class Cfg3DEN {
                     class GVAR(isSuicide) {
                         property = QGVAR(isSuicide);
                         control = QGVAR(isSuicide);
-                        displayName = "SUICIDE DUDE";
-                        tooltip = "TEST TOOL";
+                        displayName = CSTRING(isSuicide_DisplayName);
+                        tooltip = CSTRING(isSuicide_Description);
                         expression = QUOTE(if (_value) then {diag_log _this;_this setVariable [ARR_3(QQGVAR(isSuicide),_value,true)]});
                         typeName = "BOOL";
                         condition = "objectControllable";
@@ -123,27 +123,39 @@ class Cfg3DEN {
                     class GVAR(Suicide_Status) {
                         data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
                         control = "SubCategory";
-                        displayName = "SUICIDE DISTANCE"; // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+                        displayName = CSTRING(Suicide_Settings_DisplayName); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
                     };
                     class GVAR(explosive) {
-                        displayName = "DISTANCE TO EXPLO";
-                        tooltip = "DISTANCE TO EXPLO DESC";
+                        displayName = CSTRING(DistanceExplosion);
+                        tooltip = CSTRING(DistanceExplosion_Tooltip);
                         property = QGVAR(explosive);
                         expression = "_this setVariable ['%s',_value];";
-                        control = QGVAR(distanceSlider);
+                        control = QGVAR(distanceExplosion);
                         typeName = "NUMBER";
+                        condition = "objectControllable";
                         defaultValue = "0";
                         enable = 0;
                     };
                     class GVAR(activate) {
-                        displayName =  "DISTANCE TO ACTIVE";
-                        tooltip = "DISTANCE TO ACTIVE DESC";
+                        displayName = CSTRING(DistanceActivate);
+                        tooltip = CSTRING(DistanceActivate_Tooltip);
                         property = QGVAR(activate);
                         expression = "_this setVariable ['%s',_value];";
-                        control = QGVAR(distanceActiveSlider);
+                        control = QGVAR(distanceActivate);
                         typeName = "NUMBER";
+                        condition = "objectControllable";
                         defaultValue = "0";
                         enable = 0;
+                    };
+                    class GVAR(isDeadManSwitch) {
+                        property = QGVAR(isDeadManSwitch);
+                        control = QGVAR(distDMS);
+                        displayName = CSTRING(isDeadManSwitch_DisplayName);
+                        tooltip = CSTRING(isDeadManSwitch_Description);
+                        expression = "_this setVariable ['%s',_value];";
+                        typeName = "BOOL";
+                        condition = "objectControllable";
+                        defaultValue = "(false)";
                     };
 
                     /*UNIT STATUS*/
