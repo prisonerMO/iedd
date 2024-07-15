@@ -28,7 +28,7 @@ class Cfg3DEN {
                         control = QGVAR(isSuicide);
                         displayName = CSTRING(isSuicide_DisplayName);
                         tooltip = CSTRING(isSuicide_Description);
-                        expression = QUOTE(if (_value) then {diag_log _this;_this setVariable [ARR_3(QQGVAR(isSuicide),_value,true)]});
+                        expression = QUOTE(if (_value) then {_this setVariable [ARR_3(QQGVAR(isSuicide),_value,true)]});
                         typeName = "BOOL";
                         condition = "objectControllable";
                         defaultValue = "(false)";

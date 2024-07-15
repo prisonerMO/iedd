@@ -175,11 +175,15 @@ class GVAR(isSuicide): Checkbox {
                     _x ctrlenable _state;\
                     _x ctrlsetfade _fade;\
                     _x ctrlcommit 0;\
+                    private _type = (allcontrols _x) select 1;\
+                    if (!_state && ctrltype _type == 77) then {\
+                        _type cbSetChecked false;\
+                    };\
                 } else {\
                     _x ctrlenable !_state;\
                     _x ctrlsetfade ([0.75,0] select !_state);\
                     _x ctrlcommit 0;\
-                };
+                };\
             } foreach _controls-_isCharge;";
             onLoad = "\
             _this spawn {\
@@ -200,11 +204,11 @@ class GVAR(isSuicide): Checkbox {
                         _x ctrlenable _state;\
                         _x ctrlsetfade _fade;\
                         _x ctrlcommit 0;\
-                    } else {
+                    } else {\
                         _x ctrlenable !_state;\
                         _x ctrlsetfade ([0.75,0] select !_state);\
                         _x ctrlcommit 0;\
-                    };
+                    };\
                 } foreach _controls-_isCharge;\
             };";
         };
