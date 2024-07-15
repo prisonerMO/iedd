@@ -26,6 +26,7 @@ PREP(metal);
 PREP(removeEvents);
 PREP(resetAction);
 PREP(setAttributes);
+PREP(suicide);
 PREP(timer);
 PREP(training);
 PREP(variationx);
