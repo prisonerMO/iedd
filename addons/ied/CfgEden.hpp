@@ -140,7 +140,7 @@ class Cfg3DEN {
                         tooltip = "DISTANCE TO ACTIVE DESC";
                         property = QGVAR(activate);
                         expression = "_this setVariable ['%s',_value];";
-                        control = QGVAR(distanceSlider);
+                        control = QGVAR(distanceActiveSlider);
                         typeName = "NUMBER";
                         defaultValue = "0";
                         enable = 0;
