@@ -119,6 +119,34 @@ class Cfg3DEN {
                         condition = "objectControllable";
                         defaultValue = 0;
                     };
+                    /* SUICIDE SETTINGS */
+                    class GVAR(Suicide_Status) {
+                        data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
+                        control = "SubCategory";
+                        displayName = "SUICIDE DISTANCE"; // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+                    };
+                    class GVAR(explosive) {
+                        displayName = "DISTANCE TO EXPLO";
+                        tooltip = "DISTANCE TO EXPLO DESC";
+                        property = QGVAR(explosive);
+                        expression = "_this setVariable ['%s',_value];";
+                        control = QGVAR(distanceSlider);
+                        typeName = "NUMBER";
+                        defaultValue = "0";
+                        enable = 0;
+                    };
+                    class GVAR(activate) {
+                        displayName =  "DISTANCE TO ACTIVE";
+                        tooltip = "DISTANCE TO ACTIVE DESC";
+                        property = QGVAR(activate);
+                        expression = "_this setVariable ['%s',_value];";
+                        control = QGVAR(distanceSlider);
+                        typeName = "NUMBER";
+                        defaultValue = "0";
+                        enable = 0;
+                    };
+
+                    /*UNIT STATUS*/
                     class GVAR(Charge_Status) {
                         data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
                         control = "SubCategory";
