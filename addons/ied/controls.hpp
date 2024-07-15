@@ -6,7 +6,13 @@ class Checkbox: Title
         class Value;
     };
 };
-class CheckboxState;
+class CheckboxState: Checkbox
+{
+    class Controls {
+        class Title;
+        class Value;
+    };
+};
 class Slider;
 class Combo;
 class GVAR(timeSlider): Slider {
@@ -68,13 +74,17 @@ class GVAR(distanceSlider): Slider {
 
 class GVAR(isHandcuffed): Checkbox {};
 class GVAR(isSurrendered): Checkbox {};
-class GVAR(isCharge):CheckboxState {};
+class GVAR(isCharge):CheckboxState {
+    //attributeLoad = "		_checked = switch (true) do {			case (_value isequaltype 0): {([false,true] select (_value max 0 min 1))};			case (_value isequaltype ''): {([false,true] select ((parsenumber _value) max 0 min 1))};			default {_value};		};		(_this controlsGroupCtrl 100) cbsetchecked _checked;	";
+	idc = 2020;
+};
 class GVAR(c_timer): Combo {};
 class GVAR(isSuicide): Checkbox {
     class Controls: Controls {
         class Title: Title{};
         class Value: Value
-        {
+        /*{
+
             onCheckedChanged= "_ctrlCheckbox = _this select 0;\
                 _state = [true,false] select (cbChecked _ctrlCheckbox);\
                 _fade = [0.75,0] select _state;\
@@ -93,7 +103,7 @@ class GVAR(isSuicide): Checkbox {
             _ctrlCheckboxDisabled ctrlshow !_state;\
         };\
     } foreach (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
-    };*/
+    };
             onLoad="_this spawn {\
         disableserialization;\
         _ctrlCheckbox = _this select 0;\
@@ -104,7 +114,7 @@ class GVAR(isSuicide): Checkbox {
             diag_log format [""onLOAD %1"", (allcontrols (ctrlparent _ctrlCheckbox))];\
             }";/*\
         {\
-            diag_log format [""onLoad %1"",_x];\  
+            diag_log format [""onLoad %1"",_x];\
             if (ctrlclassname _x == 'iedd_ied_isCharge') then {\
                 _x ctrlenable _state;\
                 _x ctrlsetfade _fade;\
@@ -115,7 +125,58 @@ class GVAR(isSuicide): Checkbox {
                 _ctrlCheckboxDisabled ctrlshow !_state;\
             };\
         } foreach (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
-    };";*/
+    };";
+        };
+        \
+        */
+        {
+            onCheckedChanged = "\
+            _ctrlCheckbox = _this select 0;\
+			_state = [true,false] select (cbChecked _ctrlCheckbox);\
+			_fade = [0.75,0] select _state;\
+            _ctrlGroup = ctrlParentControlsGroup ctrlParentControlsGroup _ctrlCheckbox;\
+            _all = (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
+            _controls = _all select {ctrlclassname _x find [""iedd_ied"", 0] == 0};\
+            _isCharge = _controls select {ctrlclassname _x == ""iedd_ied_isCharge""};\
+            _isChargeCtrl =_isCharge select 0;\
+            diag_log format [""%1"",_controls];\
+            {\
+                _ctrlclassname = ctrlclassname _x;\
+                if (_ctrlclassname find [""iedd_ied"", 0] == 0) then {\
+                    _x ctrlenable _state;\
+                    _x ctrlsetfade _fade;\
+                    _x ctrlcommit 0;\
+                } else {
+                    _x ctrlenable !_state;\
+                    _x ctrlsetfade [0.75,0] select !_state;\
+                    _x ctrlcommit 0;\
+                };
+            } foreach _controls-_isCharge;";
+            onLoad = "\
+            _this spawn {\
+                disableserialization;\
+                _ctrlCheckbox = _this select 0;\
+				_state = [true,false] select (cbChecked _ctrlCheckbox);\
+				_fade = [0.75,0] select _state;\
+                _ctrlGroup = ctrlParentControlsGroup ctrlParentControlsGroup _ctrlCheckbox;\
+                _display = ctrlparent _ctrlCheckbox;\
+                _allcontrols = (allcontrols _display - [ctrlParentControlsGroup _ctrlCheckbox]);\
+                _isCharge = _allcontrols select {ctrlclassname _x == ""iedd_ied_isCharge""};\
+                _isChargeGroup = _isCharge select 0;\
+                _is = _display displayCtrl 2020;\
+                _isChargeCtrl = (allcontrols _isChargeGroup) select 1;\
+                _isChargeChecked =  cbChecked _isChargeCtrl;\
+                diag_log format [""isCheck %1, name: %2  _displays %3, chargeControl %4, cb %5"",(_isChargeChecked), (_isCharge select 0), _display,ctrlChecked _is, cbchecked _is];\
+                if !(_isChargeChecked) exitWith {diag_log ""exitWithSHIT""};\
+                {\
+                    _ctrlclassname = ctrlclassname _x;\
+                    if (_ctrlclassname != ""iedd_ied_isCharge"" && _ctrlclassname find [""iedd_ied"", 0] == 0) then {\
+                        _x ctrlenable _state;\
+                        _x ctrlsetfade _fade;\
+                        _x ctrlcommit 0;\
+                    };\
+                } foreach _allcontrols-_isCharge;\
+            };";
         };
     };
 };

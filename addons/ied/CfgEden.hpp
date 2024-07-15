@@ -26,13 +26,13 @@ class Cfg3DEN {
                     class GVAR(isSuicide) {
                         property = QGVAR(isSuicide);
                         control = QGVAR(isSuicide);
-                        displayName = "TEST";
+                        displayName = "SUICIDE DUDE";
                         tooltip = "TEST TOOL";
                         expression = QUOTE(if (_value) then {diag_log _this;_this setVariable [ARR_3(QQGVAR(isSuicide),_value,true)]});
                         typeName = "BOOL";
                         condition = "objectControllable";
-                        defaultValue = "(false)";                    
-                    };                 
+                        defaultValue = "(false)";
+                    };
                     class GVAR(Charge_Settings) {
                         data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
                         control = "SubCategory";
@@ -49,31 +49,31 @@ class Cfg3DEN {
                         condition = "objectControllable";
                         class Values {
                             class 1	{
-                                name = CSTRING(Variation_1);	
+                                name = CSTRING(Variation_1);
                                 value = 0;
-                            }; 
+                            };
                             class 2	{
-                                name = CSTRING(Variation_2); 
+                                name = CSTRING(Variation_2);
                                 value = 1;
                             };
                             class 3	{
-                                name = CSTRING(Variation_3); 
+                                name = CSTRING(Variation_3);
                                 value = 2;
                             };
                             class 4	{
-                                name = CSTRING(Variation_4);	
+                                name = CSTRING(Variation_4);
                                 value = 3;
                             };
                             class 5	{
-                                name = CSTRING(Variation_5);	
+                                name = CSTRING(Variation_5);
                                 value = 4;
                             };
                             class 6 {
                                 name = CSTRING(Name_Random);
                                 value = 5;
-                            }; 				
+                            };
                         };
-                    };	
+                    };
                     class GVAR(c_size) {
                         displayName = CSTRING(Size);
                         tooltip = CSTRING(Size_Tooltip);
@@ -107,7 +107,7 @@ class Cfg3DEN {
                             class 6 {
                                 name = CSTRING(Name_Random);
                                 value = 5;
-                            }; 
+                            };
                         };
                     };
                     class GVAR(c_dud) {
@@ -156,21 +156,21 @@ class Cfg3DEN {
                         property = QGVAR(c_timer);
                         control = QGVAR(c_timer);
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timer),_value,true)]);
-                        defaultValue = QGVAR(defaultTimer);		
+                        defaultValue = QGVAR(defaultTimer);
                         typeName = "NUMBER";
                         class Values {
                             class 1	{
-                                name = CSTRING(Name_Disabled);	
+                                name = CSTRING(Name_Disabled);
                                 value = 0;
-                            }; 
+                            };
                             class 2	{
-                                name = CSTRING(Name_Enabled); 
+                                name = CSTRING(Name_Enabled);
                                 value = 1;
                             };
                             class 3	{
-                                name = CSTRING(Name_Random); 
+                                name = CSTRING(Name_Random);
                                 value = 2;
-                            };				
+                            };
                         };
                         condition = "objectControllable";
                     };
@@ -180,9 +180,9 @@ class Cfg3DEN {
                         property = QGVAR(c_timerValue);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timerValue),_value,true)]);
-                        defaultValue = QGVAR(defaultTimerValue);	
+                        defaultValue = QGVAR(defaultTimerValue);
                         typeName = "NUMBER";
-                        condition = "objectControllable";	
+                        condition = "objectControllable";
                     };
                     class GVAR(c_randomTimer) {
                         displayName = CSTRING(RandomTimer);
@@ -190,23 +190,23 @@ class Cfg3DEN {
                         property = QGVAR(c_randomTimer);
                         control = QGVAR(c_timer);
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimer),_value,true)]);
-                        defaultValue = QGVAR(defaultRandomTimer);	
+                        defaultValue = QGVAR(defaultRandomTimer);
                         typeName = "NUMBER";
                         class Values {
                             class 1	{
-                                name = CSTRING(Name_Disabled);	
+                                name = CSTRING(Name_Disabled);
                                 value = 0;
-                            }; 
+                            };
                             class 2	{
-                                name = CSTRING(Name_Enabled); 
+                                name = CSTRING(Name_Enabled);
                                 value = 1;
                             };
                             class 3	{
-                                name = CSTRING(Name_Random); 
+                                name = CSTRING(Name_Random);
                                 value = 2;
-                            };				
-                        };	
-                        condition = "objectControllable";	
+                            };
+                        };
+                        condition = "objectControllable";
                     };
                     class GVAR(c_randomTimerMin) {
                         displayName = CSTRING(RandomTimerMin);
@@ -214,9 +214,9 @@ class Cfg3DEN {
                         property = QGVAR(c_randomTimerMin);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimerMin),_value,true)]);
-                        defaultValue = QGVAR(defaultTimerMin);	
+                        defaultValue = QGVAR(defaultTimerMin);
                         typeName = "NUMBER";
-                        condition = "objectControllable";	
+                        condition = "objectControllable";
                     };
                     class GVAR(c_randomTimerMax) {
                         displayName = CSTRING(RandomTimerMax);
@@ -224,10 +224,10 @@ class Cfg3DEN {
                         property = QGVAR(c_randomTimerMax);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimerMax),_value,true)]);
-                        defaultValue = QGVAR(defaultTimerMax);	
+                        defaultValue = QGVAR(defaultTimerMax);
                         typeName = "NUMBER";
                         condition = "objectControllable";
-                    };                
+                    };
                 };
             };
         };
