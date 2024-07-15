@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 private _checkTime = 5;
-if (GVAR(bombs) isNotEqualTo []) then {				
+if (GVAR(bombs) isNotEqualTo []) then {
 	private _players = call BIS_fnc_listPlayers;
 	private _objectsToRemove = [];
 	{
@@ -11,7 +11,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 		private _distance = _object getVariable [QGVAR(dist),10];
 		//TRACE_2("Object distance",_object,_distance);
 		private _var = _object getVariable [QGVAR(movable),false];
-		if (!_var) then {   
+		if (!_var) then {
 			if (speed _object > 5 || !isNull attachedTo _object) then {
 				[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
 				_objectsToRemove pushBack _object;
@@ -25,7 +25,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 			};
 		};
 		if (GVAR(plrCheck)) then {
-			private _nearPlrs = _players select {;;(_object distance _x) < _distance};					
+			private _nearPlrs = _players select {;;(_object distance _x) < _distance};
 			if (_nearPlrs isNotEqualTo []) then {
 				{
 					_nearPlr = _x;
@@ -51,7 +51,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 		};
 	} forEach GVAR(bombs);
 	GVAR(bombs) = GVAR(bombs) - _objectsToRemove;
-	_checkTime = 0.5;	
+	_checkTime = 0.5;
 };
 //TRACE_3("Current objects",count GVAR(bombs),time,_checkTime);
 [FUNC(iedCheck), [], _checkTime] call CBA_fnc_waitAndExecute;
