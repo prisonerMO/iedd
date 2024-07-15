@@ -1,7 +1,7 @@
 
 [
     QGVAR(isDuds),
-    "CHECKBOX",	
+    "CHECKBOX",
     [LSTRING(IsDuds), LSTRING(IsDuds_Description)],
     [localize "STR_iedd_main_Category_Main","IEDs"],
     false,
@@ -30,7 +30,7 @@
 
 [
     QGVAR(plrCheck),
-    "CHECKBOX",	
+    "CHECKBOX",
     [LSTRING(PlrCheck), LSTRING(PlrCheck_Description)],
     [localize "STR_iedd_main_Category_Main","IEDs"],
     true,
@@ -41,7 +41,7 @@
 
 [
     QGVAR(vehCheck),
-    "CHECKBOX",	
+    "CHECKBOX",
     [LSTRING(VehCheck), LSTRING(VehCheck_Description)],
     [localize "STR_iedd_main_Category_Main","IEDs"],
     true,
@@ -52,7 +52,7 @@
 
 [
     QGVAR(isDetectable),
-    "CHECKBOX",	
+    "CHECKBOX",
     [LSTRING(IsDetectable), LSTRING(IsDetectable_Description)],
     [localize "STR_iedd_main_Category_Main","IEDs"],
     true,
@@ -119,7 +119,7 @@
 
 [
     QGVAR(isBlockedRange),
-    "CHECKBOX",	
+    "CHECKBOX",
     [LSTRING(IsBlockedRange), LSTRING(IsBlockedRange_Description)],
     [localize "STR_iedd_main_Category_Main","IEDs"],
     false,
@@ -171,11 +171,49 @@
     {},
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
+/**SUICIDE */
+[
+    QGVAR(expMinRange),
+    "SLIDER",
+    [LSTRING(ExpMinRange), LSTRING(ExpMinRange_Description)],
+    [localize "STR_iedd_main_Category_Main","IEDs"],
+    [1, 50, 10, 0],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(expMaxRange),
+    "SLIDER",
+    [LSTRING(ExpMaxRange), LSTRING(ExpMaxRange_Description)],
+    [localize "STR_iedd_main_Category_Main","IEDs"],
+    [1, 50, 40, 0],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(actMinRange),
+    "SLIDER",
+    [LSTRING(ActMinRange), LSTRING(ActMinRange_Description)],
+    [localize "STR_iedd_main_Category_Main","IEDs"],
+    [1, 1000, 400, 0],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(actMaxRange),
+    "SLIDER",
+    [LSTRING(ActMaxRange), LSTRING(ActMaxRange_Description)],
+    [localize "STR_iedd_main_Category_Main","IEDs"],
+    [1, 1000, 800, 0],
+    1
+] call CBA_fnc_addSetting;
+
+
 
 /*** IED Default values ***/
 /*IED Default Variation*/
 [
-    QGVAR(defaultVariation), 
+    QGVAR(defaultVariation),
     "LIST",
     [LSTRING(DefaultVariation), LSTRING(DefaultVariation_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
@@ -204,8 +242,8 @@
 
 /*IED Default Size*/
 [
-    QGVAR(defaultSize), 
-    "LIST",     
+    QGVAR(defaultSize),
+    "LIST",
     [LSTRING(DefaultSize), LSTRING(DefaultSize_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
@@ -221,13 +259,13 @@
 
 /*IED Default Direction BOOLEAN*/
 [
-    QGVAR(defaultDirection), 
-    "LIST",     
+    QGVAR(defaultDirection),
+    "LIST",
     [LSTRING(DefaultDirection), LSTRING(DefaultDirection_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
-        [false, true], 
-        [LSTRING(Name_Disabled), LSTRING(Name_Enabled)], 
+        [false, true],
+        [LSTRING(Name_Disabled), LSTRING(Name_Enabled)],
         0
     ],
     true,
@@ -238,13 +276,13 @@
 
 /*IED Default Decals BOOLEAN*/
 [
-    QGVAR(defaultDecals), 
-    "LIST",     
+    QGVAR(defaultDecals),
+    "LIST",
     [LSTRING(DefaultDecals), LSTRING(DefaultDecals_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
-        [false, true], 
-        [LSTRING(Name_Disabled), LSTRING(Name_Enabled)], 
+        [false, true],
+        [LSTRING(Name_Disabled), LSTRING(Name_Enabled)],
         0
     ],
     true,
@@ -281,12 +319,12 @@
 
 /*IED Canister Default Color*/
 [
-    QGVAR(defaultColor), 
-    "LIST",     
+    QGVAR(defaultColor),
+    "LIST",
     [LSTRING(DefaultColor), LSTRING(DefaultColor_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
-        ["green","Blue","red","White","random"], 
+        ["green","Blue","red","White","random"],
         [LSTRING(Name_Green), LSTRING(Name_Blue), LSTRING(Name_Red), LSTRING(Name_White), LSTRING(Name_Random)],
         0
     ],
@@ -298,13 +336,13 @@
 
 /*IED Timer Default BOOLEAN*/
 [
-    QGVAR(defaultTimer), 
-    "LIST",     
+    QGVAR(defaultTimer),
+    "LIST",
     [LSTRING(Timer), LSTRING(DefaultTimer_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
-        [0, 1, 2], 
-        [LSTRING(Name_Disabled), LSTRING(Name_Enabled), LSTRING(Name_Random)], 
+        [0, 1, 2],
+        [LSTRING(Name_Disabled), LSTRING(Name_Enabled), LSTRING(Name_Random)],
         0
     ],
     true,
@@ -320,18 +358,18 @@
     [LSTRING(TimerValue), LSTRING(DefaultTimerValue_Description)],
 	[localize "STR_iedd_main_Category_Main","IED Default Values"],
     [1, 300, 120],
-    1
+    2
 ] call CBA_fnc_addSetting;
 
 /*IED Timer Is Actived BOOLEAN*/
 [
-    QGVAR(defaultRandomTimer), 
-    "LIST",     
+    QGVAR(defaultRandomTimer),
+    "LIST",
     [LSTRING(RandomTimer), LSTRING(DefaultRandomTimer_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
-        [0, 1, 2], 
-        [LSTRING(Name_Disabled), LSTRING(Name_Enabled), LSTRING(Name_Random)], 
+        [0, 1, 2],
+        [LSTRING(Name_Disabled), LSTRING(Name_Enabled), LSTRING(Name_Random)],
         0
     ],
     true,
@@ -346,7 +384,7 @@
     [LSTRING(RandomTimerMin), LSTRING(DefaultTimerMin_Description)],
 	[localize "STR_iedd_main_Category_Main","IED Default Values"],
     [1, 300, 60],
-    1
+    2
 ] call CBA_fnc_addSetting;
 
 /*IED Timer Max Range*/
@@ -356,9 +394,10 @@
     [LSTRING(RandomTimerMax), LSTRING(DefaultTimerMax_Description)],
 	[localize "STR_iedd_main_Category_Main","IED Default Values"],
     [1, 300, 150],
-    1
+    2
 ] call CBA_fnc_addSetting;
 
+/*IED DEBUG*/
 #ifdef ENABLE_IEDD_DEBUG
     [
         QEGVAR(equipment,debug),
