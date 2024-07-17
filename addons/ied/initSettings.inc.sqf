@@ -176,7 +176,7 @@
     QGVAR(expMinRange),
     "SLIDER",
     [LSTRING(ExpMinRange), LSTRING(ExpMinRange_Description)],
-    [localize "STR_iedd_main_Category_Main","IEDs"],
+    [localize "STR_iedd_main_Category_Main","Suicide Bomber"],
     [1, 50, 10, 0],
     1
 ] call CBA_fnc_addSetting;
@@ -185,8 +185,8 @@
     QGVAR(expMaxRange),
     "SLIDER",
     [LSTRING(ExpMaxRange), LSTRING(ExpMaxRange_Description)],
-    [localize "STR_iedd_main_Category_Main","IEDs"],
-    [1, 50, 40, 0],
+    [localize "STR_iedd_main_Category_Main","Suicide Bomber"],
+    [1, 50, 20, 0],
     1
 ] call CBA_fnc_addSetting;
 
@@ -194,8 +194,8 @@
     QGVAR(actMinRange),
     "SLIDER",
     [LSTRING(ActMinRange), LSTRING(ActMinRange_Description)],
-    [localize "STR_iedd_main_Category_Main","IEDs"],
-    [1, 1000, 400, 0],
+    [localize "STR_iedd_main_Category_Main","Suicide Bomber"],
+    [1, 1000, 300, 0],
     1
 ] call CBA_fnc_addSetting;
 
@@ -203,8 +203,8 @@
     QGVAR(actMaxRange),
     "SLIDER",
     [LSTRING(ActMaxRange), LSTRING(ActMaxRange_Description)],
-    [localize "STR_iedd_main_Category_Main","IEDs"],
-    [1, 1000, 800, 0],
+    [localize "STR_iedd_main_Category_Main","Suicide Bomber"],
+    [1, 1000, 500, 0],
     1
 ] call CBA_fnc_addSetting;
 

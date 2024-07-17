@@ -461,8 +461,8 @@
 				<English>Dud IEDs</English>
 			</Key>
 			<Key ID="STR_iedd_ied_IsDuds_Description">
-				<Original>All IEDs are duds. Training purposes for example</Original>
-				<English>All IEDs are duds. Training purposes for example</English>
+				<Original>All IEDs are duds. Training purposes for example.</Original>
+				<English>All IEDs are duds. Training purposes for example.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_WireCutTimeEOD">
 				<Original>Wire cutting time for EODs/Explosive Specialists</Original>
@@ -521,36 +521,36 @@
 				<English>Maximum distance to IED where player will activate it.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_ExpMinRange">
-				<Original>Explo min range</Original>
-				<English>Explo min range</English>
+				<Original>Minimum exploding distance</Original>
+				<English>Minimum exploding distance</English>
 			</Key>
 			<Key ID="STR_iedd_ied_ExpMinRange_Description">
-				<Original>Minimum distance to suicide bomber where player will activate it.</Original>
-				<English>Minimum distance to suicide bomber where player will activate it.</English>
+				<Original>Minimum distance to player when suicide bomber will explode. </Original>
+				<English>Minimum distance to player when suicide bomber will explode. </English>
 			</Key>
 			<Key ID="STR_iedd_ied_ExpMaxRange">
-				<Original>Explo max range</Original>
-				<English>Explo max range</English>
+				<Original>Maximum exploding distance</Original>
+				<English>Maximum exploding distance</English>
 			</Key>
 			<Key ID="STR_iedd_ied_ExpMaxRange_Description">
-				<Original>Maximum distance to suicide bomber where player will activate it.</Original>
-				<English>Maximum distance to suicide bomber where player will activate it.</English>
+				<Original>Maximum distance to player when suicide bomber will explode.</Original>
+				<English>Maximum distance to player when suicide bomber will explode.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_ActMinRange">
-				<Original>Minimum approaching distance</Original>
-				<English>Minimum pproaching distance</English>
+				<Original>Minimum approach distance</Original>
+				<English>Minimum approach distance</English>
 			</Key>
 			<Key ID="STR_iedd_ied_ActMinRange_Description">
-				<Original>Minimum distance to player when suicide bomber starts approaching.</Original>
-				<English>Minimum distance to player when suicide bomber starts approaching.</English>
+				<Original>Minimum distance to suicide bomber when it starts to approach player.</Original>
+				<English>Minimum distance to suicide bomber when it starts to approach player.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_ActMaxRange">
-				<Original>Maximum approaching distance</Original>
-				<English>Maximum approaching distance</English>
+				<Original>Maximum approach distance </Original>
+				<English>Maximum approach distance </English>
 			</Key>
 			<Key ID="STR_iedd_ied_ActMaxRange_Description">
-				<Original>Maximum distance to player when suicide bomber starts approaching.</Original>
-				<English>Maximum distance to player when suicide bomber starts approaching.</English>
+				<Original>Maximum distance to suicide bomber when it starts to approach player.</Original>
+				<English>Maximum distance to suicide bomber when it starts to approach player.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_FailChanceEOD">
 				<Original>Chance to fail wire cut for EODs/Explosive Specialists</Original>
@@ -582,8 +582,8 @@
 				<English>Ignore wire cut order</English>
 			</Key>
 			<Key ID="STR_iedd_ied_IgnoreWireCutOrder_Description">
-				<Original>IEDs do not explode on cutting the wrong wire.</Original>
-				<English>IEDs do not explode on cutting the wrong wire.</English>
+				<Original>IEDs do not explode when wrong wire is cut.</Original>
+				<English>IEDs do not explode when wrong wire is cut.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_IsBlockedRange">
 				<Original>Just keep talking and nobody explodes-mode</Original>
