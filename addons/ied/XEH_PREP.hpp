@@ -27,6 +27,7 @@ PREP(removeEvents);
 PREP(resetAction);
 PREP(setAttributes);
 PREP(suicide);
+PREP(suicideAct);
 PREP(timer);
 PREP(training);
 PREP(variationx);
