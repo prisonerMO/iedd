@@ -13,7 +13,7 @@
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(disarmAction), {
-	_this call FUNC(disarmAction);	
+	_this call FUNC(disarmAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(dudEffect), {
@@ -24,7 +24,7 @@
     params ["_sound", "_source"];
     _source say3D _sound;
 }] call CBA_fnc_addEventHandler;
-							
+
 [QGVAR(decals),{
 	_this call FUNC(decals);
 }] call CBA_fnc_addEventHandler;
@@ -64,7 +64,7 @@
     params ["_object", "_value"];
 		if (!isNull _object) then {
 			_object hideObject _value;
-		};        
+		};
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(updateBombList), {
@@ -75,9 +75,8 @@
 [QGVAR(detachCharges), {
     params ["_object"];
 	private _attachedObjects = attachedObjects _object;
-	private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
-	if (_index == -1) exitWith {};
-	private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
+	private _charges = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
+	if (_charges == -1) exitWith {};
 	private _positions = [[-0.45,0.225,0.0],[0,0.45,0.0],[0.45,0.225,0.0]];
 	private _pos = getPosATL _object;
     {
@@ -123,7 +122,7 @@
 if (isServer) then {
 
 	[{
-		time > 10 && !isNil QGVAR(bombs)},		
+		time > 10 && !isNil QGVAR(bombs)},
 	{
 		INFO_1("Detect event called [Time: %1]",time);
 		call FUNC(iedCheck);
