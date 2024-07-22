@@ -125,10 +125,10 @@ class Cfg3DEN {
                         control = "SubCategory";
                         displayName = CSTRING(Suicide_Settings_DisplayName); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
                     };
-                    class GVAR(explosive) {
+                    class GVAR(expDistance) {
                         displayName = CSTRING(DistanceExplosion);
                         tooltip = CSTRING(DistanceExplosion_Tooltip);
-                        property = QGVAR(explosive);
+                        property = QGVAR(expDistance);
                         expression = "_this setVariable ['%s',_value];";
                         control = QGVAR(distanceExplosion);
                         typeName = "NUMBER";
@@ -136,10 +136,10 @@ class Cfg3DEN {
                         defaultValue = "0";
                         enable = 0;
                     };
-                    class GVAR(activate) {
+                    class GVAR(actDistance) {
                         displayName = CSTRING(DistanceActivate);
                         tooltip = CSTRING(DistanceActivate_Tooltip);
-                        property = QGVAR(activate);
+                        property = QGVAR(actDistance);
                         expression = "_this setVariable ['%s',_value];";
                         control = QGVAR(distanceActivate);
                         typeName = "NUMBER";

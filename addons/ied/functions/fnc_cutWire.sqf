@@ -42,18 +42,18 @@ deleteVehicle _wire;
 		if (_defused) then {
 			_bombObj setVariable [QGVAR(bomb), nil, true];
 			private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge_Ammo)};
-			if (_index isNotEqualTo -1) then {
+			if (_index > -1) then {
 				private _object = _attachedObjects select _index;
 				deleteVehicle _object;
 			};
 			if (typeOf _bombObj == QGVAR(Charge)) then {
-				private _unit = attachedTo _bombObj;				
+				private _unit = attachedTo _bombObj;
 				[QGVAR(detachAction), [_bombObj]] call CBA_fnc_globalEventJIP;
 				[_unit] call FUNC(removeEvents);
 			};
 			[QGVAR(defused), [_player, _bombObj]] call CBA_fnc_globalEvent;
 		};
-	}, 
+	},
 	[_wire,_bombObj,_order,_player]
 ] call CBA_fnc_waitUntilAndExecute;
 

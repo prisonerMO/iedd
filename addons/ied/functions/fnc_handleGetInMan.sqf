@@ -12,8 +12,9 @@ if (_idPFH != -1) then {
     _unit setVariable [QGVAR(getInManPH),_idPFH];
     if (speed _vehicle > 45) then {
         private _attachedObjects = attachedObjects _unit;
-        private _charges = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
-        if (_charges > -1) then {
+        private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
+        if (_index > -1) then {
+            private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
             {
                 private _charge = _x;
                 private _isBomb = _charge getVariable [QGVAR(bomb),false];
@@ -37,8 +38,9 @@ if (_getOutStatus == -1) then {
             [_idPFH] call CBA_fnc_removePerFrameHandler;
         };
         private _attachedObjects = attachedObjects _unit;
-        private _charges = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
-        if (_charges > -1) then {
+        private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
+        if (_index > -1) then {
+            private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
             {
                 private _charge = _x;
                 private _attachedParts = attachedObjects _charge;
@@ -58,8 +60,9 @@ if (_getOutStatus == -1) then {
 };
 
 private _attachedObjects = attachedObjects _unit;
-private _charges = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
-if (_charges > -1) then {
+private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
+if (_index > -1) then {
+    private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
     {
         private _charge = _x;
         private _attachedParts = attachedObjects _charge;

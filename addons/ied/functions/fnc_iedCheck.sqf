@@ -41,7 +41,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 		if (GVAR(vehCheck)) then {
 			private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]);
 			if (_nearVehicles isNotEqualTo []) then {
-				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} != -1) && {(speed _x > 8 || speed _x < -8)}};
+				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
 				if (_index > -1) then {
 					[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
 					_objectsToRemove pushBack _object;
