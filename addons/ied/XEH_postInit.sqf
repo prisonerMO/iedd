@@ -54,7 +54,7 @@
 	if !(_item in (items _unit)) then {
     	private _container = [uniformContainer _unit, vestContainer _unit, backpackContainer _unit];
 		private _index = _container findIf {_x canAdd _item};
-		if (_index != -1) then {
+		if (_index > -1) then {
 			_container select _index addItemCargoGlobal [_item, 1];
 		};
 	};
@@ -75,20 +75,22 @@
 [QGVAR(detachCharges), {
     params ["_object"];
 	private _attachedObjects = attachedObjects _object;
-	private _charges = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
-	if (_charges == -1) exitWith {};
-	private _positions = [[-0.45,0.225,0.0],[0,0.45,0.0],[0.45,0.225,0.0]];
-	private _pos = getPosATL _object;
-    {
-        private _charge = _x;
-        deleteVehicle _charge;
-		private _holder = createVehicle ["groundweaponholder", _pos, [], 0, "CAN_COLLIDE"];
-		_holder addMagazineCargoGlobal  ["DemoCharge_Remote_Mag",1];
-		_holder setPosWorld (_object modelToWorldWorld (_positions select _forEachIndex)); //TODO Pickup action for bombs.
-		_memPos = getPosATL _holder;
-		_holder setDir (random 359);
-		_holder setPosATL [_memPos select 0, _memPos select 1, 0];
-    } forEach _charges;
+	private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
+	if (_index > -1) then {
+		private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
+		private _positions = [[-0.45,0.225,0.0],[0,0.45,0.0],[0.45,0.225,0.0]];
+		private _pos = getPosATL _object;
+		{
+			private _charge = _x;
+			deleteVehicle _charge;
+			private _holder = createVehicle ["groundweaponholder", _pos, [], 0, "CAN_COLLIDE"];
+			_holder addMagazineCargoGlobal  ["DemoCharge_Remote_Mag",1];
+			_holder setPosWorld (_object modelToWorldWorld (_positions select _forEachIndex)); //TODO Pickup action for bombs.
+			_memPos = getPosATL _holder;
+			_holder setDir (random 359);
+			_holder setPosATL [_memPos select 0, _memPos select 1, 0];
+		} forEach _charges;
+	};
 	[_object] call FUNC(removeEvents);
 }] call CBA_fnc_addEventHandler;
 /* NOT IN USE, can be used on unit who have charge vest
