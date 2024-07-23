@@ -67,7 +67,17 @@ if (_args isEqualTo []) then {
 	}, 1, [_unit, _target, _expDist]] call CBA_fnc_addPerFrameHandler;
 	_unit setVariable [QGVAR(actPfhID),_actPfhID];
 };
-//some motha fucking waypoint shit
+
+switch true do {
+	case (_distance < 50) : {systemChat "under 50"};
+	case (_distance < 100) : {systemChat "under 100"};
+	case (_distance < 150) : {systemChat "under 150"};
+	case (_distance < 200) : {systemChat "under 200"};
+	case (_distance < 300) : {systemChat "under 300"};
+	case (_distance < 500) : {systemChat "under 500"};
+	default { systemChat "Ei tÃ¤Ã¤ toimi silleen ku pitÃ¤s"};
+};
+
 private _targetPos = getPosATL _target;
 private _pos = [[_targetPos, 30, 30, 45, false]] call CBA_fnc_randPosArea; //position = [[[x,y,z], a, b, angle, isRectangle]]
 private _args = [_group, _pos, _behaviour, _combat, _speed, _formation, _onComplete, _timeout];
@@ -85,32 +95,6 @@ if ((_pos isEqualTo []) || {isNull _group}) exitWith {ERROR_2("Bad Input [_pos: 
 private _statements = [QUOTE([ARR_1(((group this) getVariable QQGVAR(suicideAct)) call FUNC(suicideAct))])];
 diag_log (_statements);
 
-/* IF needed more stuff to _onComplete action
-	_statements append [
- 		"deleteWaypoint [group this, currentWaypoint (group this)]",
-        "[group this] call CBA_fnc_searchNearby"
-	];*/
-/*
-_behaviour =
-	switch (_distance) do {
-	case < 100: {systemChat "habla"};
-
-};
-_combat = switch (_distance) do {
-	case < 100: {systemChat "habla"};
-_speed = switch (_distance) do {
-	case < 100: {systemChat "habla"};
-_formation = switch (_distance) do {
-	case < 100: {systemChat "habla"};
-
-switch (_distance) do {
-	_behaviour =
-    _combat =
-    _speed =
-    _formation =
-}
-*/
-// Inject the statement in this order to ensure valid syntax
 _statements pushBack _onComplete;
 _onComplete = _statements joinString ";";
 
