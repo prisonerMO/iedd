@@ -121,6 +121,12 @@
 
 //["ace_captiveStatusChanged", {_this call FUNC(handleHancuffed)}] call CBA_fnc_addEventHandler; //TODO ace isEscortin EH or this.
 
+[QGVAR(addRemovePFH), {
+	params ["_unit","_state"];
+	TRACE_1("Called addRemovePFH",_this);
+	_this call FUNC(addRemovePFH);
+}] call CBA_fnc_addEventHandler;
+
 if (isServer) then {
 
 	[{
