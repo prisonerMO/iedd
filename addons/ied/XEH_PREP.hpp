@@ -1,5 +1,6 @@
 
 PREP(addItems);
+PREP(addRemovePFH);
 PREP(barrel);
 PREP(bomb);
 PREP(canDisarm);
@@ -23,6 +24,7 @@ PREP(handleUnconscious);
 PREP(iedCheck);
 PREP(jerry);
 PREP(metal);
+PREP(moveCheck);
 PREP(removeEvents);
 PREP(resetAction);
 PREP(setAttributes);
