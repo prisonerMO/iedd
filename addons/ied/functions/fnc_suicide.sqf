@@ -45,6 +45,5 @@ diag_log format ["activate: %1, explosion: %2, isDeadManSwitch: %3",_actDist, _e
 		[_unit,_nearPlrs,_expDist,_actDist] call FUNC(suicideAct);
         [_pfhID] call CBA_fnc_removePerFrameHandler;
     };
-    diag_log _this;
 }, 5, [_unit,_expDist,_actDist]] call CBA_fnc_addPerFrameHandler;
 

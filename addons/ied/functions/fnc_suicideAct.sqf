@@ -27,42 +27,58 @@ if (_actDist * 1.5 < _distance) exitWith {
 	_unit call FUNC(suicide);
 };
 
-private _a = 40;
-private _b = 40;
-private _angle = 45;
+private _a = 50;
+private _b = 50;
+private _angle = 90;
 private _next = 0;
 private _prev = 0;
 
 switch true do {
 	case (_distance < DISTANCE_1) : {
-		[QGVAR(addRemovePFH), {[_unit,true]}] call CBA_fnc_localEvent;
+		[QGVAR(addRemovePFH), [_unit,true]] call CBA_fnc_localEvent;
+		_a = DISTANCE_0;
+		_b = DISTANCE_0;
+		IEDDSETPARAMS(_a,_b,0,"CARELESS","RED","FULL","COLUMN",1)
 		_next = DISTANCE_0;
 		_prev = DISTANCE_2;
 		systemChat "under 50"
 	};
 	case (_distance < DISTANCE_2) : {
+		_a = DISTANCE_2/10;
+		_b = DISTANCE_2/10;
+		IEDDSETPARAMS(_a,_b,10,"CARELESS","RED","FULL","COLUMN",2)
 		_next = DISTANCE_1;
 		_prev = DISTANCE_3;
 		systemChat "under 100"};
 	case (_distance < DISTANCE_3) : {
+		_a = DISTANCE_3/10;
+		_b = DISTANCE_3/10;
+		IEDDSETPARAMS(_a,_b,15,"CARELESS","RED","FULL","COLUMN",3)
 		_next = DISTANCE_2;
 		_prev = DISTANCE_4;
 		systemChat "under 150"};
 	case (_distance < DISTANCE_4) : {
+		_a = DISTANCE_4/10;
+		_b = DISTANCE_4/10;
+		IEDDSETPARAMS(_a,_b,25,"CARELESS","RED","FULL","COLUMN",4)
 		_next = DISTANCE_3;
 		_prev = DISTANCE_5;
 		systemChat "under 200"};
 	case (_distance < DISTANCE_5) : {
+		_a = DISTANCE_5/10;
+		_b = DISTANCE_5/10;
+		IEDDSETPARAMS(_a,_b,30,"CARELESS","RED","FULL","COLUMN",5)
 		_next = DISTANCE_4;
 		_prev = DISTANCE_6;
 		systemChat "under 300"};
 	case (_distance < DISTANCE_6) :	{
-		IEDDSETPARAMS(35,35,30,"CARELESS","RED","FULL","COLUMN",5)
-		diag_log [_a,_b,_angle,_behaviour,_combat,_speed,_formation,_timeout];
+		_a = DISTANCE_6/10;
+		_b = DISTANCE_6/10;
+		IEDDSETPARAMS(_a,_b,45,"CARELESS","RED","FULL","COLUMN",6)
 		_next = DISTANCE_5;
 		_prev = _actDist;
 	};
-	default { systemChat "Ei tÃ¤Ã¤ toimi silleen ku pitÃ¤s"};
+	default { systemChat "This doenst work like i want"};
 };
 
 private _targetPos = getPosATL _target;
@@ -73,7 +89,7 @@ private _args = [_group, _pos, _behaviour, _combat, _speed, _formation, _onCompl
 private _act = [_unit, _target, _expDist, _actDist, _args]; diag_log (_act);
 _group setVariable [QGVAR(suicideAct), _act];
 
-private _statements = [QUOTE([ARR_1(((group this) getVariable QQGVAR(suicideAct)) call FUNC(suicideAct))])]; diag_log (_statements);
+private _statements = [QUOTE([ARR_1(((group this) getVariable QQGVAR(suicideAct)) call FUNC(suicideAct))])];
 _statements pushBack _onComplete;
 _onComplete = _statements joinString ";";
 
@@ -96,9 +112,10 @@ private _wp =
     _timeout,
     5
 ] call CBA_fnc_addWaypoint;
-_unit setVariable [(suicideWp), _wp];
 
-[_unit,_target,_wp,(_timeout*2),_next,_prev] call FUNC(moveCheck);
+
+_unit setVariable [QGVAR(suicideWP), _wp];
+[_unit,_target,(_wp select 1),5,_next,_prev] call FUNC(moveCheck);
 
 
 

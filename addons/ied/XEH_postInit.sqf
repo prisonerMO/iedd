@@ -124,6 +124,7 @@
 [QGVAR(addRemovePFH), {
 	params ["_unit","_state"];
 	TRACE_1("Called addRemovePFH",_this);
+	diag_log format ["addRemovePFH: %1", _this];
 	_this call FUNC(addRemovePFH);
 }] call CBA_fnc_addEventHandler;
 
