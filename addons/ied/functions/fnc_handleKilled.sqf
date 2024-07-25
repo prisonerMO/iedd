@@ -14,7 +14,8 @@ if (_killedEhId != -1) then {
             private _isBomb = _charge getVariable [QGVAR(bomb),false];
             TRACE_1("is Bomb",_isBomb);
             if (_isBomb) then {
-                [QGVAR(explosion), [_charge]] call CBA_fnc_serverEvent;
+                [{[QGVAR(explosion), _this] call CBA_fnc_serverEvent;}, [_charge], 0.5] call CBA_fnc_waitAndExecute;
+
             };
         } forEach _charges;
     };
