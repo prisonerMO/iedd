@@ -38,7 +38,7 @@ switch true do {
 		[QGVAR(addRemovePFH), [_unit,true]] call CBA_fnc_localEvent;
 		_a = DISTANCE_0;
 		_b = DISTANCE_0;
-		IEDDSETPARAMS(_a,_b,0,"CARELESS","RED","FULL","COLUMN",1)
+		IEDDSETPARAMS(_a,_b,0,"CARELESS","RED","FULL","VEE",1)
 		_next = DISTANCE_0;
 		_prev = DISTANCE_2;
 		systemChat "under 50"
@@ -46,35 +46,35 @@ switch true do {
 	case (_distance < DISTANCE_2) : {
 		_a = DISTANCE_2/10;
 		_b = DISTANCE_2/10;
-		IEDDSETPARAMS(_a,_b,10,"CARELESS","RED","FULL","COLUMN",2)
+		IEDDSETPARAMS(_a,_b,10,"CARELESS","YELLOW","FULL","VEE",2)
 		_next = DISTANCE_1;
 		_prev = DISTANCE_3;
 		systemChat "under 100"};
 	case (_distance < DISTANCE_3) : {
 		_a = DISTANCE_3/10;
 		_b = DISTANCE_3/10;
-		IEDDSETPARAMS(_a,_b,15,"CARELESS","RED","FULL","COLUMN",3)
+		IEDDSETPARAMS(_a,_b,15,"STEALTH","WHITE","FULL","DIAMOND",3)
 		_next = DISTANCE_2;
 		_prev = DISTANCE_4;
 		systemChat "under 150"};
 	case (_distance < DISTANCE_4) : {
 		_a = DISTANCE_4/10;
 		_b = DISTANCE_4/10;
-		IEDDSETPARAMS(_a,_b,25,"CARELESS","RED","FULL","COLUMN",4)
+		IEDDSETPARAMS(_a,_b,25,"STEALTH","GREEN","FULL","DIAMOND",4)
 		_next = DISTANCE_3;
 		_prev = DISTANCE_5;
 		systemChat "under 200"};
 	case (_distance < DISTANCE_5) : {
 		_a = DISTANCE_5/10;
 		_b = DISTANCE_5/10;
-		IEDDSETPARAMS(_a,_b,30,"CARELESS","RED","FULL","COLUMN",5)
+		IEDDSETPARAMS(_a,_b,30,"SAFE","BLUE","NORMAL","COLUMN",5)
 		_next = DISTANCE_4;
 		_prev = DISTANCE_6;
 		systemChat "under 300"};
 	case (_distance < DISTANCE_6) :	{
 		_a = DISTANCE_6/10;
 		_b = DISTANCE_6/10;
-		IEDDSETPARAMS(_a,_b,45,"CARELESS","RED","FULL","COLUMN",6)
+		IEDDSETPARAMS(_a,_b,45,"SAFE","NO CHANGE","NORMAL","COLUMN",6)
 		_next = DISTANCE_5;
 		_prev = _actDist;
 	};
