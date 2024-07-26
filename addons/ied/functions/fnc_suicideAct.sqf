@@ -25,6 +25,7 @@ private _loseDist = _actDist * 1.5;
 if (_loseDist < _distance) exitWith {
 	[QGVAR(addRemovePFH), {[_unit,false]}] call CBA_fnc_localEvent;
 	//setup movepoints  some how
+        _unit setVariable [QGVAR(suicideWP), nil];
 	_unit call FUNC(suicide);
 };
 
@@ -116,7 +117,7 @@ private _wp =
 
 
 _unit setVariable [QGVAR(suicideWP), _wp];
-[_unit,_target,(_wp select 1),5,_next,_prev,_loseDist] call FUNC(moveCheck);
+[_unit,_target,(_wp select 1),5,_next,_prev] call FUNC(moveCheck);
 
 
 
