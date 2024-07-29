@@ -6,10 +6,10 @@ if (isNil "_actDist") then {
 	_actDist = if (_getAct> 0) then {_getAct} else {[GVAR(actMinRange), GVAR(actMaxRange)] call BIS_fnc_randomInt};
 	_unit setVariable [QGVAR(actDist), _actDist];
 };
-diag_log format ["activate: %1, explosion: %2",_actDist];
+diag_log format ["activate: %1",_actDist];
 [{
     params ["_args", "_pfhID"];
-    _args params ["_unit","_actDist","_isDeadManSwitch"];
+    _args params ["_unit","_actDist"];
 	private _players = call BIS_fnc_listPlayers select {alive _x};
 	private _nearPlrs = _players select {;;(_unit distance _x) < _actDist};
     if (_nearPlrs isNotEqualTo []) exitWith { //actDist reached then call move stuff

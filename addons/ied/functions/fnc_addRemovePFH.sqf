@@ -13,7 +13,7 @@ if (_state) then {
 	};
 	private _target = _unit getVariable [QGVAR(target),objNull];
 	_actPfhID = [{
-		params ["_args", "_pfhID"];
+		params ["_args","_pfhID"];
 		_args params ["_unit","_target","_expDist"];
 		if (!alive _target) exitWith {
 			_unit setVariable [QGVAR(target),objNull];

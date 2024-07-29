@@ -27,7 +27,6 @@ if (!alive _target) then {
 	};
 };
 _unit setVariable [QGVAR(target),_target];
-
 private _distance = _unit distance _target;
 private _loseDist = _actDist * 1.5;
 if (_loseDist < _distance || isNull _target) exitWith {
@@ -97,7 +96,14 @@ switch true do {
 		_next = DISTANCE_5;
 		_prev = _actDist;
 	};
-	default { systemChat "This doenst work like i want"};
+	default {
+		[QGVAR(addRemovePFH), [_unit,false]] call CBA_fnc_localEvent;
+		_a = DISTANCE_6/7;
+		_b = DISTANCE_6/7;
+		IEDDSETPARAMS(_a,_b,50,"SAFE","NO CHANGE","NORMAL","COLUMN",6)
+		_next = DISTANCE_6;
+		_prev = _actDist;
+	};
 };
 
 private _targetPos = getPosATL _target;
@@ -105,7 +111,7 @@ private _pos = [[_targetPos, _a, _b, _angle, false]] call CBA_fnc_randPosArea; /
 if ((_pos isEqualTo []) || {isNull _group}) exitWith {ERROR_2("Bad Input [_pos: %1][_group: %2]",_pos,_group);};
 
 private _args = [_group, _pos, _behaviour, _combat, _speed, _formation, _onComplete, _timeout];
-private _act = [_unit, _target, _expDist, _actDist, _args]; diag_log (_act);
+private _act = [_unit, _target, _actDist, _args]; diag_log (_act);
 _group setVariable [QGVAR(suicideAct), _act];
 
 private _statements = [QUOTE([ARR_1(((group this) getVariable QQGVAR(suicideAct)) call FUNC(suicideAct))])];
@@ -117,8 +123,7 @@ _onComplete = _statements joinString ";";
 	_x enableAI "PATH";
 } forEach units _group;
 
-private _wp =
-[
+private _wp = [
     _group,
     _pos,
     -1,
@@ -132,9 +137,8 @@ private _wp =
     5
 ] call CBA_fnc_addWaypoint;
 
-
 _unit setVariable [QGVAR(suicideWP), _wp];
-[_unit,_target,(_wp select 1),5,_next,_prev] call FUNC(moveCheck);
+[_unit,_target,_wp,5,_next,_prev] call FUNC(moveCheck);
 true
 
 
