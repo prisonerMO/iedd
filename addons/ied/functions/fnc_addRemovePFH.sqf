@@ -1,19 +1,23 @@
 #include "script_component.hpp"
-params ["_unit","_state"];
-private _actPFHID = unit getVariable [QGVAR(actPFHID),-1];
+params ["_unit","_state","_actPFHID"];
+private _actPFHID = _unit getVariable [QGVAR(actPFHID),-1];
+if (_actPFHID > -1) then {
+	[_actPFHID] call CBA_fnc_removePerFrameHandler;
+};
 if (_state) then {
+	private _expDist = _unit getVariable QGVAR(expDist);
+	if (isNil "_expDist") then {
+		private _getExp = _unit getVariable [QGVAR(explosionDist), 0];
+		_expDist = if (_getExp > 0) then {_getExp} else {[GVAR(expMinRange), GVAR(expMaxRange)] call BIS_fnc_randomInt};
+		_unit setVariable [QGVAR(expDist), _expDist];
+	};
+	private _target = _unit getVariable [QGVAR(target),objNull];
 	_actPfhID = [{
 		params ["_args", "_pfhID"];
 		_args params ["_unit","_target","_expDist"];
-		if (!alive _target) then {
-			_grp = group _target select {alive _x};
-			_target = if (_grp isNotEqualTo []) then {
-				selectRandom _grp;
-			} else {
-				objNull;
-			};
-		};
-		if (isNull _target) exitWith {
+		if (!alive _target) exitWith {
+			_unit setVariable [QGVAR(target),objNull];
+			_unit setVariable [QGVAR(actPFHID),-1];
 			[_pfhID] call CBA_fnc_removePerFrameHandler;
 		};
 		if (_unit distance _target < _expDist) exitWith { //EXP Dist reached then Explosion
@@ -35,8 +39,4 @@ if (_state) then {
 		diag_log format ["suicideAct PFEH: %1",_this];
 	}, 1, [_unit, _target, _expDist]] call CBA_fnc_addPerFrameHandler;
 	_unit setVariable [QGVAR(actPFHID),_actPFHID];
-} else {
-	if (_actPFHID > 0) then {
-		[_pfhID] call CBA_fnc_removePerFrameHandler;
-	};
 };

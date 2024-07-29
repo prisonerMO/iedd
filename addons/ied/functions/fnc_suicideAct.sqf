@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-params ["_unit","_targetUnits","_expDist","_actDist",["_args",[]]];
+params ["_unit","_targetUnits","_actDist",["_args",[]]];
 _args params [
 	["_group", objNull, [objNull,grpNull]],
     ["_pos", [0, 0, 0], []],
@@ -11,21 +11,33 @@ _args params [
     ["_timeout", [0, 0, 0], [[]], 3]
 ];
 diag_log format ["suicideAct: %1",_this];
-
 private _group = _unit call CBA_fnc_getGroup; // use group or unit?
-if !(local _group) exitWith {};
 private _target = if (_targetUnits isEqualType []) then
 	{
 		selectRandom _targetUnits;
 	} else {
 		_targetUnits;
 	};
+if (!alive _target) then {
+	_grp = group _target select {alive _x};
+	_target = if (_grp isNotEqualTo []) then {
+		selectRandom _grp;
+	} else {
+		objNull;
+	};
+};
+_unit setVariable [QGVAR(target),_target];
+
 private _distance = _unit distance _target;
 private _loseDist = _actDist * 1.5;
-if (_loseDist < _distance) exitWith {
-	[QGVAR(addRemovePFH), {[_unit,false]}] call CBA_fnc_localEvent;
+if (_loseDist < _distance || isNull _target) exitWith {
+	[QGVAR(addRemovePFH), [_unit,false]] call CBA_fnc_localEvent;
 	//setup movepoints  some how
-        _unit setVariable [QGVAR(suicideWP), nil];
+	[_group] call CBA_fnc_clearWaypoints;
+	{
+		_x enableAI "PATH";
+	} forEach units _group;
+    _unit setVariable [QGVAR(suicideWP), nil];
 	_unit call FUNC(suicide);
 };
 
@@ -46,6 +58,7 @@ switch true do {
 		systemChat "under 50"
 	};
 	case (_distance < DISTANCE_2) : {
+		[QGVAR(addRemovePFH), [_unit,false]] call CBA_fnc_localEvent;
 		_a = DISTANCE_2/10;
 		_b = DISTANCE_2/10;
 		IEDDSETPARAMS(_a,_b,10,"CARELESS","YELLOW","FULL","VEE",2)
@@ -53,6 +66,7 @@ switch true do {
 		_prev = DISTANCE_3;
 		systemChat "under 100"};
 	case (_distance < DISTANCE_3) : {
+		[QGVAR(addRemovePFH), [_unit,false]] call CBA_fnc_localEvent;
 		_a = DISTANCE_3/10;
 		_b = DISTANCE_3/10;
 		IEDDSETPARAMS(_a,_b,15,"STEALTH","WHITE","FULL","DIAMOND",3)
@@ -60,6 +74,7 @@ switch true do {
 		_prev = DISTANCE_4;
 		systemChat "under 150"};
 	case (_distance < DISTANCE_4) : {
+		[QGVAR(addRemovePFH), [_unit,false]] call CBA_fnc_localEvent;
 		_a = DISTANCE_4/10;
 		_b = DISTANCE_4/10;
 		IEDDSETPARAMS(_a,_b,25,"STEALTH","GREEN","FULL","DIAMOND",4)
@@ -67,6 +82,7 @@ switch true do {
 		_prev = DISTANCE_5;
 		systemChat "under 200"};
 	case (_distance < DISTANCE_5) : {
+		[QGVAR(addRemovePFH), [_unit,false]] call CBA_fnc_localEvent;
 		_a = DISTANCE_5/10;
 		_b = DISTANCE_5/10;
 		IEDDSETPARAMS(_a,_b,30,"SAFE","BLUE","NORMAL","COLUMN",5)
@@ -74,6 +90,7 @@ switch true do {
 		_prev = DISTANCE_6;
 		systemChat "under 300"};
 	case (_distance < DISTANCE_6) :	{
+		[QGVAR(addRemovePFH), [_unit,false]] call CBA_fnc_localEvent;
 		_a = DISTANCE_6/10;
 		_b = DISTANCE_6/10;
 		IEDDSETPARAMS(_a,_b,45,"SAFE","NO CHANGE","NORMAL","COLUMN",6)
@@ -118,6 +135,7 @@ private _wp =
 
 _unit setVariable [QGVAR(suicideWP), _wp];
 [_unit,_target,(_wp select 1),5,_next,_prev] call FUNC(moveCheck);
+true
 
 
 
