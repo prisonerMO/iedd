@@ -79,7 +79,7 @@ class Cfg3DEN {
                         tooltip = CSTRING(Size_Tooltip);
                         property = QGVAR(c_size);
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_size),_value,true)]);
-                        defaultValue = 0;
+                        defaultValue = 2;
                         control = "Combo";
                         typeName = "NUMBER";
                         condition = "objectControllable";
