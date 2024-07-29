@@ -7,12 +7,21 @@ if (isNil "_actDist") then {
 	_unit setVariable [QGVAR(actDist), _actDist];
 };
 diag_log format ["activate: %1",_actDist];
+private _hideOnStart = _unit getVariable [QGVAR(hideOnStart),false];
+if (_hideOnStart) then {
+	[_unit,true] call FUNC(hideCharges);
+	_unit setVariable [QGVAR(hide),true];
+};
 [{
     params ["_args", "_pfhID"];
     _args params ["_unit","_actDist"];
 	private _players = call BIS_fnc_listPlayers select {alive _x};
 	private _nearPlrs = _players select {;;(_unit distance _x) < _actDist};
     if (_nearPlrs isNotEqualTo []) exitWith { //actDist reached then call move stuff
+		private _isHide = _unit getVariable [QGVAR(hide),false];
+		if (_isHide) then {
+			[_unit,false] call FUNC(hideCharges);
+		};
 		[_unit,_nearPlrs,_actDist] call FUNC(suicideAct);
 		private _isDeadManSwitch = _unit getVariable GVAR(isDMS);
 		if (isNil "_isDeadManSwitch") then {

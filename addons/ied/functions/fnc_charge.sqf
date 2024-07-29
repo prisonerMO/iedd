@@ -30,7 +30,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 
         private _variation = _unit getVariable [QGVAR(c_variation),5];
         private _dud = _unit getVariable [QGVAR(c_dud),0];
-        private _size = _unit getVariable [QGVAR(c_size),0];
+        private _size = _unit getVariable [QGVAR(c_size),2];
         private _isSuicide = _unit getVariable [QGVAR(isSuicide),false];
 
         _bombObj setVariable [QGVAR(size),_size,true];
