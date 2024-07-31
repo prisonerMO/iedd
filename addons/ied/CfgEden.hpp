@@ -157,6 +157,16 @@ class Cfg3DEN {
                         condition = "objectControllable";
                         defaultValue = "(false)";
                     };
+                    class GVAR(hideOnStart) {
+                        property = QGVAR(hideOnStart);
+                        control = QGVAR(distDMS);
+                        displayName = CSTRING(hideOnStart_DisplayName);
+                        tooltip = CSTRING(hideOnStart_Description);
+                        expression = "_this setVariable ['%s',_value];";
+                        typeName = "BOOL";
+                        condition = "objectControllable";
+                        defaultValue = "(false)";
+                    };
 
                     /*UNIT STATUS*/
                     class GVAR(Charge_Status) {
