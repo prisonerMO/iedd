@@ -11,6 +11,11 @@ if (_hideOnStart) then {
 	[_unit,true] call FUNC(hideCharges);
 	_unit setVariable [QGVAR(hide),true];
 };
+private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
+if (_killedEhId != -1) then {
+	_unit removeEventHandler ["Killed", _killedEhId];
+	_unit setVariable [QGVAR(KilledEhId),-1];
+};
 TRACE_2("Distance, Hide",_actDist,_hideOnStart);
 [{
     params ["_args", "_pfhID"];

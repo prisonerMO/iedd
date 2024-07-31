@@ -2,14 +2,14 @@
 params ["_unit", "_role", "_vehicle", "_turret"];
 TRACE_1("HandleGetInMan Bomb Vest",_unit);
 // ensure event is only called once
-private _idPFH = _unit getVariable [QGVAR(getInManPH),-1];
+private _idPFH = _unit getVariable [QGVAR(GetInManEhId),-1];
 if (_idPFH != -1) then {
     [_idPFH] call CBA_fnc_removePerFrameHandler;
 };
 [{
     params ["_args", "_idPFH"];
     _args params ["_unit","_vehicle"];
-    _unit setVariable [QGVAR(getInManPH),_idPFH];
+    _unit setVariable [QGVAR(GetInManEhId),_idPFH];
     if (speed _vehicle > 45) then {
         private _attachedObjects = attachedObjects _unit;
         private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
@@ -33,7 +33,7 @@ if (_getOutStatus == -1) then {
     private _getOutManEH = _unit addEventHandler ["GetOutMan", {
         params ["_unit", "_role", "_vehicle", "_turret", "_isEject"];
         TRACE_1("GetOutManEH Bomb Vest",_this);
-        private _idPFH = _unit getVariable [QGVAR(getInManPH),-1];
+        private _idPFH = _unit getVariable [QGVAR(GetInManEhId),-1];
         if (_idPFH != -1) then {
             [_idPFH] call CBA_fnc_removePerFrameHandler;
         };
