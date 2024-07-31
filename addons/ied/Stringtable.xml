@@ -29,8 +29,8 @@
 		</Container>
 		<Container name="IEDs Display and Attribues">
 			<Key ID="STR_iedd_ied_IED_Category">
-				<Original>IED settings</Original>
-				<English>IED settings</English>
+				<Original>IED Settings</Original>
+				<English>IED Settings</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Barrel_DisplayName">
 				<Original>Plastic Barrel</Original>
@@ -205,8 +205,8 @@
 				<English>Set size of explosion (huge excluded from random).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Timer_Category">
-				<Original>Countdown timer settings</Original>
-				<English>Countdown timer settings</English>
+				<Original>Countdown Timer Settings</Original>
+				<English>Countdown Timer Settings</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Timer">
 				<Original>Countdown timer</Original>
@@ -409,6 +409,14 @@
 			<Key ID="STR_iedd_ied_isDeadManSwitch_Description">
 				<Original>If selected, suicide bomber will explode when killed or gets unconscious.</Original>
 				<English>If selected, suicide bomber will explode when killed or gets unconscious.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_HideOnStart_DisplayName">
+				<Original>Hide bomb vest when out of range</Original>
+				<English>Hide bomb vest when out of range</English>
+			</Key>
+			<Key ID="STR_iedd_ied_HideOnStart_Description">
+				<Original>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</Original>
+				<English>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Interaction Menu">
