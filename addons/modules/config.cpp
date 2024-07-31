@@ -24,7 +24,8 @@ class CfgPatches {
 			QGVAR(decals),
             QGVAR(activate),
             QGVAR(explode),
-            QGVAR(charge)
+            QGVAR(charge),
+            QGVAR(suicide)
         };
  };
 

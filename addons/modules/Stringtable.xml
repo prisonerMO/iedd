@@ -25,7 +25,7 @@
 			<Key ID="STR_iedd_modules_Fake_Category">
 				<Original>FAKE IEDS</Original>
 				<English>FAKE IEDS</English>
-			</Key>			
+			</Key>
 			<Key ID="STR_iedd_modules_FakeCount">
 				<Original>Number of IEDs</Original>
 				<English>Number of IEDs</English>
@@ -37,7 +37,7 @@
 			<Key ID="STR_iedd_modules_Signs_Category">
 				<Original>GROUND SIGNS</Original>
 				<English>GROUND SIGNS</English>
-			</Key>		
+			</Key>
 			<Key ID="STR_iedd_modules_Signs">
 				<Original>IED Ground Signs</Original>
 				<English>IED Ground Signs</English>
@@ -111,7 +111,7 @@
 				<English>Add countdown timer to IED. Time values from addon options will be used.</English>
 			</Key>
 		</Container>
-		<Container name="IEDD Zeus Modules">							
+		<Container name="IEDD Zeus Modules">
 			<Key ID="STR_iedd_modules_Zeus_Place_Ied">
 				<Original>Place IED</Original>
 				<English>Place IED</English>
@@ -119,7 +119,7 @@
 			<Key ID="STR_iedd_modules_Zeus_Sign">
 				<Original>Ground sign</Original>
 				<English>Ground sign</English>
-			</Key>											
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Active">
 				<Original>Activate IED</Original>
 				<English>Activate IED</English>
@@ -131,7 +131,11 @@
 			<Key ID="STR_iedd_modules_Zeus_Charge">
 				<Original>Add bomb vest</Original>
 				<English>Add bomb vest</English>
-			</Key>											
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Suicide">
+				<Original>Add suicide bomb vest</Original>
+				<English>Add suicide bomb vest</English>
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Type">
 				<Original>IED TYPE</Original>
 				<English>IED TYPE</English>
@@ -139,7 +143,7 @@
 			<Key ID="STR_iedd_modules_Zeus_Type_Tooltip">
 				<Original>Select type of IED.</Original>
 				<English>Select type of IED.</English>
-			</Key>																			
+			</Key>
 
 			<Key ID="STR_iedd_modules_Zeus_Variation">
 				<Original>IED VARIATION</Original>
@@ -172,7 +176,7 @@
 			<Key ID="STR_iedd_modules_Zeus_Dud_Category">
 				<Original>CHANCE OF DUD (%)</Original>
 				<English>CHANCE OF DUD (%)</English>
-			</Key>																																		
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Sign_Category">
 				<Original>GROUND SIGN TYPE</Original>
 				<English>GROUND SIGN TYPE</English>
@@ -180,15 +184,27 @@
 			<Key ID="STR_iedd_modules_Zeus_TimerValue_Category">
 				<Original>COUNTDOWN TIME</Original>
 				<English>COUNTDOWN TIME</English>
-			</Key>	
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Handcuffed_Category">
 				<Original>UNIT HANDCUFFED</Original>
 				<English>UNIT HANDCUFFED</English>
-			</Key>	
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Surrendered_Category">
 				<Original>UNIT SURRENDERED</Original>
 				<English>UNIT SURRENDERED</English>
-			</Key>		
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Act_Category">
+				<Original>ACTIVATION DISTANCE</Original>
+				<English>ACTIVATION DISTANCE</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Exp_Category">
+				<Original>EXPLOSION DISTANCE</Original>
+				<English>EXPLOSION DISTANCE</English>
+			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Dms_Category">
+				<Original>DEADMAN SWITCH</Original>
+				<English>DEADMAN SWITCH</English>
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Sign_Category_Tooltip">
 				<Original>Select type of ground sign.</Original>
 				<English>Select type of ground sign.</English>
@@ -200,7 +216,7 @@
 			<Key ID="STR_iedd_modules_Garbage_Large">
 				<Original>Garbage (Large)</Original>
 				<English>Garbage (Large)</English>
-			</Key>			
+			</Key>
 			<Key ID="STR_iedd_modules_Garbage_Line">
 				<Original>Garbage (Line)</Original>
 				<English>Garbage (Line)</English>
@@ -208,7 +224,7 @@
 			<Key ID="STR_iedd_modules_RoadDirt_1">
 				<Original>Road Dirt 1</Original>
 				<English>Road Dirt 1</English>
-			</Key>	
+			</Key>
 			<Key ID="STR_iedd_modules_RoadDirt_2">
 				<Original>Road Dirt 2</Original>
 				<English>Road Dirt 2</English>
@@ -224,11 +240,11 @@
 			<Key ID="STR_iedd_modules_RoadDirt_5">
 				<Original>Road Dirt 5</Original>
 				<English>Road Dirt 5</English>
-			</Key>	
+			</Key>
 			<Key ID="STR_iedd_modules_RoadDirt_6">
 				<Original>Road Dirt 6</Original>
 				<English>Road Dirt 6</English>
-			</Key>	
+			</Key>
 			<Key ID="STR_iedd_modules_RoadDirt_7">
 				<Original>Road Dirt 7</Original>
 				<English>Road Dirt 7</English>
@@ -236,7 +252,7 @@
 			<Key ID="STR_iedd_modules_Crack_1">
 				<Original>Road Crack 1</Original>
 				<English>Road Crack 1</English>
-			</Key>	
+			</Key>
 			<Key ID="STR_iedd_modules_Crack_2">
 				<Original>Road Crack 2</Original>
 				<English>Road Crack 2</English>
@@ -244,7 +260,7 @@
 			<Key ID="STR_iedd_modules_Crack_3">
 				<Original>Road Crack 3</Original>
 				<English>Road Crack 3</English>
-			</Key>	
+			</Key>
 			<Key ID="STR_iedd_modules_DirtRocks_1">
 				<Original>Dirt Rocks 1</Original>
 				<English>Dirt Rocks 1</English>
@@ -252,7 +268,7 @@
 			<Key ID="STR_iedd_modules_DirtRocks_2">
 				<Original>Dirt Rocks 2</Original>
 				<English>Dirt Rocks 2</English>
-			</Key>							
+			</Key>
 		</Container>
 	</Package>
 </Project>
