@@ -6,12 +6,12 @@ if (isNil "_actDist") then {
 	_actDist = if (_getAct> 0) then {_getAct} else {[GVAR(actMinRange), GVAR(actMaxRange)] call BIS_fnc_randomInt};
 	_unit setVariable [QGVAR(actDist), _actDist];
 };
-diag_log format ["activate: %1",_actDist];
 private _hideOnStart = _unit getVariable [QGVAR(hideOnStart),false];
 if (_hideOnStart) then {
 	[_unit,true] call FUNC(hideCharges);
 	_unit setVariable [QGVAR(hide),true];
 };
+TRACE_2("Distance, Hide",_actDist,_hideOnStart);
 [{
     params ["_args", "_pfhID"];
     _args params ["_unit","_actDist"];

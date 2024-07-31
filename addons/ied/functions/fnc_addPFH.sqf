@@ -31,6 +31,6 @@ _actPfhID = [{
 			} forEach _charges;
 		};
 	};
-	diag_log format ["suicideAct PFEH: %1",_this];
+	TRACE_1("suicideAct PFEH:",_this)
 }, 0.5, [_unit, _target, _expDist]] call CBA_fnc_addPerFrameHandler;
 _unit setVariable [QGVAR(actPFHID),_actPFHID];

@@ -5,16 +5,15 @@ if (isNil "_currentWp") exitWith{};
 private _currentTarget = _unit getVariable [QGVAR(target), objNull];
 private _args = ((group _unit) getVariable QGVAR(suicideAct));
 if (_target != _currentTarget) exitWith {
-	diag_log format ["target not current: %1",_currentTarget];
+	TRACE_1("Current Target",_currentTarget);
 	_args call FUNC(suicideAct);
 };
 private _distance = _unit distance _target;
 if ((_wp select 1) == (_currentWp select 1) && _next > 0) then {
+	TRACE_3("WP,Current,Next",_wp select 1,_currentWp select 1,_next);
 	if (_distance < _next || _distance > _prev) then {
-		diag_log format ["(_distance < _next || _distance > _prev: %1",_currentWp];
 		_args call FUNC(suicideAct);
 	} else {
-		diag_log format ["FUNC(moveCheck) %1, %2",_wp , _currentWp];
 		[{_this call FUNC(moveCheck)}, _this, _time] call CBA_fnc_waitAndExecute;
 	};
 };

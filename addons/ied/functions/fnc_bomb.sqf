@@ -35,7 +35,6 @@ if (_isTraining) then {
 		_pos set [2,0.05];
 		private _size = _bombObj getVariable [QGVAR(size), 3];
 		private _unit = objNull;
-		systemChat format ["Size of explosion: %1",_size];
 		if (_size > 4) then {
 			_size = floor (random 4);
 		};

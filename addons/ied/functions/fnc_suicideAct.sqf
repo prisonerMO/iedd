@@ -10,7 +10,7 @@ _args params [
     ["_onComplete", "", [""]],
     ["_timeout", [0, 0, 0], [[]], 3]
 ];
-diag_log format ["suicideAct: %1",_this];
+TRACE_1("params",_this);
 private _group = _unit call CBA_fnc_getGroup; // use group or unit?
 private _target = if (_targetUnits isEqualType []) then
 	{
@@ -60,7 +60,6 @@ switch true do {
 		IEDDSETPARAMS(_a,_b,0,"CARELESS","RED","FULL","VEE",1)
 		_next = DISTANCE_0;
 		_prev = DISTANCE_2;
-		systemChat "under 50"
 	};
 	case (_distance < DISTANCE_2) : {
 		if (_actPFHID > -1) then {
@@ -71,7 +70,7 @@ switch true do {
 		IEDDSETPARAMS(_a,_b,10,"CARELESS","YELLOW","FULL","VEE",2)
 		_next = DISTANCE_1;
 		_prev = DISTANCE_3;
-		systemChat "under 100"};
+	};
 	case (_distance < DISTANCE_3) : {
 		if (_actPFHID > -1) then {
 			[_actPFHID] call CBA_fnc_removePerFrameHandler;
@@ -81,7 +80,7 @@ switch true do {
 		IEDDSETPARAMS(_a,_b,15,"STEALTH","WHITE","FULL","DIAMOND",3)
 		_next = DISTANCE_2;
 		_prev = DISTANCE_4;
-		systemChat "under 150"};
+	};
 	case (_distance < DISTANCE_4) : {
 		if (_actPFHID > -1) then {
 			[_actPFHID] call CBA_fnc_removePerFrameHandler;
@@ -91,7 +90,7 @@ switch true do {
 		IEDDSETPARAMS(_a,_b,25,"STEALTH","GREEN","FULL","DIAMOND",4)
 		_next = DISTANCE_3;
 		_prev = DISTANCE_5;
-		systemChat "under 200"};
+	};
 	case (_distance < DISTANCE_5) : {
 		if (_actPFHID > -1) then {
 			[_actPFHID] call CBA_fnc_removePerFrameHandler;
@@ -101,7 +100,7 @@ switch true do {
 		IEDDSETPARAMS(_a,_b,30,"SAFE","BLUE","NORMAL","COLUMN",5)
 		_next = DISTANCE_4;
 		_prev = DISTANCE_6;
-		systemChat "under 300"};
+	};
 	case (_distance < DISTANCE_6) :	{
 		if (_actPFHID > -1) then {
 			[_actPFHID] call CBA_fnc_removePerFrameHandler;
@@ -129,7 +128,7 @@ private _pos = [[_targetPos, _a, _b, _angle, false]] call CBA_fnc_randPosArea; /
 if ((_pos isEqualTo []) || {isNull _group}) exitWith {ERROR_2("Bad Input [_pos: %1][_group: %2]",_pos,_group);};
 
 private _args = [_group, _pos, _behaviour, _combat, _speed, _formation, _onComplete, _timeout];
-private _act = [_unit, _target, _actDist, _args]; diag_log (_act);
+private _act = [_unit, _target, _actDist, _args]; TRACE_1("_act",_act);
 _group setVariable [QGVAR(suicideAct), _act];
 
 private _statements = [QUOTE([ARR_1(((group this) getVariable QQGVAR(suicideAct)) call FUNC(suicideAct))])];

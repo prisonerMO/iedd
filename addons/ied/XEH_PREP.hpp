@@ -1,6 +1,6 @@
 
 PREP(addItems);
-PREP(addRemovePFH);
+PREP(addPFH);
 PREP(barrel);
 PREP(bomb);
 PREP(canDisarm);
@@ -21,6 +21,7 @@ PREP(getTrainingActions);
 PREP(handleGetInMan);
 PREP(handleKilled);
 PREP(handleUnconscious);
+PREP(hideCharges);
 PREP(iedCheck);
 PREP(jerry);
 PREP(metal);
