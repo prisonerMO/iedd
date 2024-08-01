@@ -739,7 +739,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                         class GVAR(expSlider): RscXSliderH {
                             text = ECSTRING(ied,DistanceExplosion);
                             idc = 62525;
-                            sliderRange[] = {0, 25};
+                            sliderRange[] = {0, 50};
                             x = QUOTE(W_PART(10.1));
                             y = QUOTE(H_PART(4.4));
                             w = QUOTE(W_PART(15.9));
