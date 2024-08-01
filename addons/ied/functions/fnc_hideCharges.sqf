@@ -10,9 +10,11 @@ if (_index > -1) then {
         if (_attachedParts isNotEqualTo []) then {
             {
                 private _part = _x;
-                [QGVAR(hideObject),[_part,_state]] call CBA_fnc_globalEventJIP;
+                private _jipId = [QGVAR(hideObject),[_part,_state]] call CBA_fnc_globalEventJIP;
+                [_jipID, _part] call CBA_fnc_removeGlobalEventJIP;
             } forEach _attachedParts;
         };
-        [QGVAR(hideObject),[_charge,_state]] call CBA_fnc_globalEventJIP;
+        private _chargeJipId = [QGVAR(hideObject),[_charge,_state]] call CBA_fnc_globalEventJIP;
+        [_chargeJipId, _charge] call CBA_fnc_removeGlobalEventJIP;
     } forEach _charges;
 };

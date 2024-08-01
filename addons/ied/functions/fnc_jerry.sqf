@@ -3,8 +3,8 @@
 params [ "_bombObj"];
 if (is3DEN) exitWith {};
 if (!isServer) exitWith {};
-[{     
-    params ["_bombObj"]; 
+[{
+    params ["_bombObj"];
     private _variation = _bombObj getVariable [QGVAR(variation), GVAR(defaultVariation)];
     private _decals = _bombObj getVariable [QGVAR(decals), GVAR(defaultDecals)];
     private _setDir = _bombObj getVariable [QGVAR(dir), GVAR(defaultDirection)];
@@ -26,8 +26,8 @@ if (!isServer) exitWith {};
         private _bombPos = getPosATL _bombObj;
         if (!isNull _bombObj) then {
             deleteVehicle _bombObj;
-        };  
-        [{isNull (_this select 0)}, 
+        };
+        [{isNull (_this select 0)},
         {
             params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_color"];
             private  _fakeBombObj = createVehicle [_type, _bombPos, [], 0, "CAN_COLLIDE"];
@@ -42,7 +42,7 @@ if (!isServer) exitWith {};
                 [_fakeBombObj] call FUNC(decals);
             };
             if (_color != "green") then {
-                _fakeBombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]   
+                _fakeBombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]
             };
         }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_color]] call CBA_fnc_waitUntilAndExecute;
     };
@@ -50,8 +50,10 @@ if (!isServer) exitWith {};
     if (GVAR(isDetectable)) then {
         private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
         _mine attachTo [_bombObj, [0,0,0]];
-        ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
-        [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
+        private _jipId = ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
+        [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
+        _jipId = [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
+        [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
     };
 
     if (_variation isEqualTo 6) then {
@@ -62,7 +64,7 @@ if (!isServer) exitWith {};
             _variation = selectRandom [0,1,2,3,4];
         };
     };
-    
+
     if (_variation == 3) then {
         _bombObj setVariable [QGVAR(movable),true];
     };
@@ -71,10 +73,10 @@ if (!isServer) exitWith {};
     private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
 
-    private _wireSet = if (_variation == 5) then 
-    {        
+    private _wireSet = if (_variation == 5) then
+    {
         _bombObj setVariable [QGVAR(movable),selectRandom [false,true]];
-        [6] call FUNC(variationx);            
+        [6] call FUNC(variationx);
     } else {
         IEDD_JERRYVARS select _variation;
     };
@@ -83,9 +85,9 @@ if (!isServer) exitWith {};
     _box attachTo [_bombObj,[-0.102,-0.081,-0.160]];
     _box setVectorDirAndUp [[-0,1,-0],[-0.022,-0,-1]];
 
-    private _subObj0 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#0), [0,0,0]]; // 0 wire        	
-    private _subObj1 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#1), [0,0,0]]; // 1 wire    
-    private _subObj2 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#2), [0,0,0]]; // 2 wire    
+    private _subObj0 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#0), [0,0,0]]; // 0 wire
+    private _subObj1 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#1), [0,0,0]]; // 1 wire
+    private _subObj2 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#2), [0,0,0]]; // 2 wire
     private _subObj3 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#3), [0,0,0]]; // 3 wire
     private _subObj4 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#4), [0,0,0]]; // 4 wire
     private _subObj5 = createSimpleObject ["IEDD_WireC"+(_wireSet #0#5), [0,0,0]];      // 5 wire (long)
@@ -110,12 +112,12 @@ if (!isServer) exitWith {};
 
     _bombObj setVariable [QGVAR(wires), _wires,true];
     _bombObj setVariable [QGVAR(bomb), true, true];
-    _bombObj setVariable [QGVAR(variation),_variation,true];    
+    _bombObj setVariable [QGVAR(variation),_variation,true];
     _bombObj setVariable [QGVAR(timer),_isTimer, true];
 
     if (_isTimer) then {
         private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
-        _watch attachTo [_bombObj,[-0.13,-0.17,-0.15]];		
+        _watch attachTo [_bombObj,[-0.13,-0.17,-0.15]];
         _watch setVectorDirAndUp [[-0,-1,0],[-0,-0,1]];
         private _randomValue = _bombObj getVariable [QGVAR(randomTimer), GVAR(defaultRandomTimer)];
         private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
@@ -131,22 +133,23 @@ if (!isServer) exitWith {};
 
     [
         {speed (_this select 0) == 0},
-        {     
+        {
             params ["_bombObj","_decals", "_setDir", "_wireSet","_color"];
             if (_setDir) then {
                 private _bombPos = getPosATL _bombObj;
                 _bombObj setDir random 359;
                 _bombObj setPosATL _bombPos;
-            };               
+            };
             if (_decals) then {
                 [_bombObj] call FUNC(decals);
             };
             if (_color != "green") then {
-                _bombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]   
+                _bombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]
             };
             private _text = LLSTRING(Name_Long);
-            [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
-            [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;    
+            private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
+            [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
+            [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;
         },
         [_bombObj,_decals, _setDir,_wireSet,_color],
         1

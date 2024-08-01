@@ -46,8 +46,10 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         if (GVAR(isDetectable)) then {
             private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
             _mine attachTo [_bombObj, [0,0,0]];
-            ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
-            [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
+            private _jipId = ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
+            [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
+            _jipId = [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
+            [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
         };
         private _wireSet = IEDD_CHARGE select _variation;
         private _subObj0 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#0), [0,0,0]]; // 0 wire
@@ -78,9 +80,11 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         _bombObj setVariable [QGVAR(bomb), true, true];
         _bombObj setVariable [QGVAR(variation),_variation, true];
 
-        [QGVAR(disarmAction), [_bombObj]] call CBA_fnc_globalEventJIP;
+        private _jipIdAction = [QGVAR(disarmAction), [_bombObj]] call CBA_fnc_globalEventJIP;
+        [_jipIdAction, _bombObj] call CBA_fnc_removeGlobalEventJIP;
         private _text = LLSTRING(Name_Short);
-        [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
+        _jipIdActions = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
+        [_jipIdAction, _bombObj] call CBA_fnc_removeGlobalEventJIP;
 
         private _getInManEhId = _unit getVariable [QGVAR(GetInManEhId), -1];
         if (_getInManEhId != -1) then {
