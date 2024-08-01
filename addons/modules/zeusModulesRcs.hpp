@@ -767,10 +767,6 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                                     text = ECSTRING(ied,Name_Enabled);
                                     value = 1;
                                 };
-                                class 3	{
-                                    text = ECSTRING(ied,Name_Random);
-                                    value = 2;
-                                };
                             };
                         };
                     };

@@ -6,7 +6,7 @@ params ["_unit"];
 private _getInManEhId = _unit getVariable [QGVAR(GetInManEhId), -1];
 if (_getInManEhId != -1) then {
     _unit removeEventHandler ["GetInMan", _getInManEhId];
-    _unit setVariable [(GetInManEhId),-1];
+    _unit setVariable [QGVAR(GetInManEhId),-1];
 };
 
 private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];

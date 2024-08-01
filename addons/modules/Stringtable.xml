@@ -133,8 +133,8 @@
 				<English>Add bomb vest</English>
 			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Suicide">
-				<Original>Add suicide bomb vest</Original>
-				<English>Add suicide bomb vest</English>
+				<Original>Suicide bomber</Original>
+				<English>Suicide bomber</English>
 			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Type">
 				<Original>IED TYPE</Original>
@@ -146,8 +146,8 @@
 			</Key>
 
 			<Key ID="STR_iedd_modules_Zeus_Variation">
-				<Original>IED VARIATION</Original>
-				<English>IED VARIATION</English>
+				<Original>BOMB VARIATION</Original>
+				<English>BOMB VARIATION</English>
 			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Variation_Tooltip">
 				<Original>Select variation of IED.</Original>
@@ -202,8 +202,8 @@
 				<English>EXPLOSION DISTANCE</English>
 			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Dms_Category">
-				<Original>DEADMAN SWITCH</Original>
-				<English>DEADMAN SWITCH</English>
+				<Original>DEAD MAN SWITCH</Original>
+				<English>DEAD MAN SWITCH</English>
 			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Sign_Category_Tooltip">
 				<Original>Select type of ground sign.</Original>
