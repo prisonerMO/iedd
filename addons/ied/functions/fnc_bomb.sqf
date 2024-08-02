@@ -30,6 +30,17 @@ if (_isTraining) then {
 			private _object = _attachedObjects select _index;
 			deleteVehicle _object;
 		};
+		if (typeOf _bombObj == QGVAR(Charge)) then {
+			private _unit = attachedTo _bombObj;
+			if (alive _unit) then {
+				private _group = group _unit;
+				[_group] call CBA_fnc_clearWaypoints;
+				{
+					_x enableAI "PATH";
+				} forEach units _group;
+				[_unit, _unit, 200, 10, "MOVE", "AWARE", "GREEN", "LIMITED", "STAG COLUMN", "this call CBA_fnc_searchNearby", [3, 6, 9]] call CBA_fnc_taskPatrol;
+			};
+		};
 	} else {
 		private _pos = getPosATL _bombObj;
 		_pos set [2,0.05];
