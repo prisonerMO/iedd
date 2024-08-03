@@ -128,7 +128,7 @@
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(suicide), {
-	params ["_target"];
+	params ["_unit"];
 	_this call FUNC(suicide);
 }] call CBA_fnc_addEventHandler;
 
