@@ -40,7 +40,7 @@ if (_loseDist < _distance || isNull _target) exitWith {
 	{
 		_x enableAI "PATH";
 	} forEach units _group;
-	[_unit, _unit, 200, 10, "MOVE", "AWARE", "GREEN", "LIMITED", "STAG COLUMN", "this call CBA_fnc_searchNearby", [3, 6, 9]] call CBA_fnc_taskPatrol;
+	[_group, _group, 250, 5, "MOVE", "AWARE", "GREEN", "LIMITED", "STAG COLUMN","", [5, 6, 7]] call CBA_fnc_taskPatrol;
     _unit setVariable [QGVAR(suicideWP), nil];
 	_unit call FUNC(suicide);
 };

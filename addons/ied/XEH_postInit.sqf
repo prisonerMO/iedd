@@ -127,6 +127,11 @@
 	_this call FUNC(addPFH);
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(suicide), {
+	params ["_target"];
+	_this call FUNC(suicide);
+}] call CBA_fnc_addEventHandler;
+
 if (isServer) then {
 
 	[{

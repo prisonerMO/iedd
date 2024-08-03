@@ -133,7 +133,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
                 _bombObj setVariable [QGVAR(timerValue),_time];
             };
         } else {
-            [_unit] call FUNC(suicide);
+            [QGVAR(suicide), [_unit], _unit] call CBA_fnc_targetEvent;
         };
         TRACE_2("IED Bomb Vest EHs:",_unit getVariable QGVAR(KilledEhId),_unit getVariable QGVAR(GetInManEhId));
     },
