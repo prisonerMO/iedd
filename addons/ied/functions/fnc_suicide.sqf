@@ -7,7 +7,8 @@ if (isNil "_actDist") then {
 	_unit setVariable [QGVAR(actDist), _actDist];
 };
 private _hideOnStart = _unit getVariable [QGVAR(hideOnStart),false];
-if (_hideOnStart) then {
+private _isHide = _unit getVariable [QGVAR(hide),false];
+if (_hideOnStart && !_isHide) then {
 	[_unit,true] call FUNC(hideCharges);
 	_unit setVariable [QGVAR(hide),true];
 };

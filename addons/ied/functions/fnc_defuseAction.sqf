@@ -19,21 +19,21 @@ _this spawn {
             localize format ["$STR_iedd_ied_Name_%1",_color];
         } else {
             format ["%1 %2",_text,localize (format ["$STR_iedd_ied_Name_%1",_color])];
-        };	
+        };
 
-        private _condition = {  
+        private _condition = {
             params ["_target", "_player", "_actionParams"];
             _actionParams params ["_wire"];
             !isNull _wire;
         };
 
-        private _statement = {    
+        private _statement = {
             params ["_target", "_player", "_actionParams"];
             private _hasWpn = currentWeapon _player != "";
             private _checkTime = [0,1.8] select (_hasWpn);
             if (_hasWpn) then {
                 [_player] call ace_weaponselect_fnc_putWeaponAway;
-            };				
+            };
             [{
                 params ["_target", "_player", "_actionParams"];
                 private _cutTime = [iedd_ied_wireCutTime, iedd_ied_wireCutTimeEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
@@ -45,26 +45,26 @@ _this spawn {
                 private _isFail = random 1 < _failChance;
                 private _isFailTime = _cutTime / 10;
                 _actionParams append [_isFail,_isFailTime];
-                TRACE_2("FailChance:",_failChance,_isFail);	
+                TRACE_2("FailChance:",_failChance,_isFail);
                 [
                     _cutTime,
                     [_actionParams,_player],
-                    {                         
-                        params ["_actionParams","_player"];                              
+                    {
+                        params ["_actionParams","_player"];
                         _actionParams #0 params ["_wire", "_bombObj","_order","_isFail"];
                         _actionParams #1 params ["_player"];
-                        [_player,_wire, _bombObj, _order,_isFail] call FUNC(cutWire);        
+                        [_player,_wire, _bombObj, _order,_isFail] call FUNC(cutWire);
                     },
                     {
-                        params ["_actionParams","_player"];   
+                        params ["_actionParams","_player"];
                         _actionParams #0 params ["", "_bombObj", "","_isFail"];
                         if (GVAR(fail)) then {
                             GVAR(fail) = false;
                         };
-                        /*
+                        /* NOT IN USE , -> CANCEL CHANCE EXPLODE?
                         if (!GVAR(fail)) then {
                             GVAR(fail) = true;
-                            [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;						
+                            [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
                         };
                         [{
                             params ["_isFail","_bombObj"];
@@ -79,15 +79,15 @@ _this spawn {
                         */
                     },
                     "Working...",
-                    {		
+                    {
                         params ["_actionParams","_elapsedTime", "_totalTime"];
                         _actionParams #0 params ["", "_bombObj","","_isFail","_isFailTime"];
-                        
+
                         if (_isFail && _elapsedTime > _isFailTime && !GVAR(fail)) then {
-                            GVAR(fail) = true;			
+                            GVAR(fail) = true;
                             [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
                         };
-                        true;						
+                        true;
                     },
                     ["isNotSwimming"]
                 ] call ace_common_fnc_progressBar;

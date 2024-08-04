@@ -11,6 +11,12 @@ _args params [
     ["_timeout", [0, 0, 0], [[]], 3]
 ];
 TRACE_1("params",_this);
+/*
+if (!local _unit) then {
+	[QGVAR(suicide), [_unit], _unit] call CBA_fnc_targetEvent; //if locality change?
+}
+*/
+
 private _group = _unit call CBA_fnc_getGroup; // use group or unit?
 private _target = if (_targetUnits isEqualType []) then
 	{
@@ -31,7 +37,7 @@ private _distance = _unit distance _target;
 private _loseDist = _actDist * 1.5;
 private _actPFHID = _unit getVariable [QGVAR(actPFHID),-1];
 
-if (_loseDist < _distance || isNull _target) exitWith {
+if (_loseDist < _distance || isNull _target) exitWith { //Or here if !local ->
 	if (_actPFHID > -1) then {
 		[_actPFHID] call CBA_fnc_removePerFrameHandler;
 	};
