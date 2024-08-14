@@ -1,23 +1,23 @@
 #include "script_component.hpp"
 
 {
-	[_x, "Explosion", {_this call FUNC(explosion)}, true, [], true] call CBA_fnc_addClassEventHandler;
+	[_x, "Explosion", {call FUNC(explosion)}, true, [], true] call CBA_fnc_addClassEventHandler;
 } forEach IEDD_CLASSES;
 
 [QGVAR(defuseAction), {
-	_this call FUNC(defuseAction);
+	call FUNC(defuseAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(detachAction), {
-	_this call FUNC(detachAction);
+	call FUNC(detachAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(disarmAction), {
-	_this call FUNC(disarmAction);
+	call FUNC(disarmAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(dudEffect), {
-	_this call FUNC(dud);
+	call FUNC(dud);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(sound), {
@@ -26,12 +26,12 @@
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(decals),{
-	_this call FUNC(decals);
+	call FUNC(decals);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(explosion), {
 	params ["_target"];
-	_this call FUNC(bomb);
+	call FUNC(bomb);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(timer), {
@@ -96,7 +96,7 @@
 /* NOT IN USE, can be used on unit who have charge vest
 ["ace_unconscious", {
 	params ["_unit", "_isUnconscious"];
-	_this call FUNC(handleUnconscious);
+	call FUNC(handleUnconscious);
 }] call CBA_fnc_addEventHandler;
 */
 ["forceWalk", false, [QGVAR(charge)]] call ace_common_statusEffect_addType;
@@ -114,22 +114,22 @@
 	};
 	_killedEhId = _unit addEventHandler ["Killed", {
 		TRACE_1("Called Killed",_this);
-		_this call FUNC(handleKilled);
+		call FUNC(handleKilled);
 	}];
 	_unit setVariable [QGVAR(KilledEhId), _killedEhId]; // need to be global? - NO
 }] call CBA_fnc_addEventHandler;
 
-//["ace_captiveStatusChanged", {_this call FUNC(handleHancuffed)}] call CBA_fnc_addEventHandler; //TODO ace isEscortin EH or this.
+//["ace_captiveStatusChanged", {call FUNC(handleHancuffed)}] call CBA_fnc_addEventHandler; //TODO ace isEscortin EH or this.
 
 [QGVAR(addPFH), {
 	params ["_unit"];
 	TRACE_1("Called addRemovePFH",_this);
-	_this call FUNC(addPFH);
+	call FUNC(addPFH);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(suicide), {
 	params ["_unit"];
-	_this call FUNC(suicide);
+	call FUNC(suicide);
 }] call CBA_fnc_addEventHandler;
 
 if (isServer) then {
