@@ -2,7 +2,7 @@
 class CfgPatches {
 	class ADDON {
 		author = AUTHOR;
-		authors[] = AUTHORS;
+		authors[] = {"Prisoner","Lion"};
 		name = COMPONENT_NAME;
 		units[] = {
             QGVAR(multi)
