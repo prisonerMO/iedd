@@ -30,7 +30,7 @@ if (!isServer) exitWith {};
         [{isNull (_this select 0)},
         {
             params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_color"];
-            private  _fakeBombObj = createVehicle [_type, _bombPos, [], 0, "CAN_COLLIDE"];
+            private  _fakeBombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
             if (_setDir) then {
                 _fakeBombObj setDir random 359;
             } else {

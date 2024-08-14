@@ -21,7 +21,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         private _expl3 = createSimpleObject [QGVAR(Charge), [0,0,0]];
         _expl3 attachTo [_unit, [0.15, 0.13, -0.18], "spine3",true];
         _expl3 setVectorDirAndUp [[-0.707107,0.707107,0],[-0.707107,-0.707107,0]];
-        private _bombObj = QGVAR(Charge) createVehicle position _unit;
+        private _bombObj = QGVAR(Charge) createVehicle [0,0,0];
         _bombObj attachTo [_unit , [0, 0.2, -0.18], "spine3",true];
         _bombObj setVectorDirAndUp [[-1,0,0],[-0,-1,0]];
 		private _box  = createSimpleObject ["\a3\Weapons_F_Enoch\Items\ChemicalDetector_01_F.p3d", [0,0,0]];
