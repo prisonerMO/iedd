@@ -122,7 +122,8 @@ switch _mode do {
 					};
 					if (_roadPos isEqualTo [0,0,0]) exitWith {};
 					private _iedPos = [_roadPos #0,_roadPos #1+(selectRandom [random [6,8,10], random [-6,-8,-10]]),0];
-					_bombObj = _type createVehicle _iedPos;
+					_bombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
+					_bombObj setPosATL _iedPos;
 					if (_type == QEGVAR(ied,CanisterFuel)) then {
 						_bombObj setVariable [QEGVAR(ied,color),"random"];
 					};
@@ -189,7 +190,7 @@ switch _mode do {
 					};
 					if (_roadPos isEqualTo [0,0]) exitWith {};
 						private _fakePos = [_roadPos #0,_roadPos #1+(selectRandom [random [5,7,9], random [-5,-7,-9]]), 0];
-						_bombObj = createVehicle [_type, _fakePos, [], 0, "CAN_COLLIDE"];
+						_bombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
 						_bombObj setDir random 359;
 						_bombObj setPosATL _fakePos;
 					if (_type == "Land_CanisterFuel_F") then {
