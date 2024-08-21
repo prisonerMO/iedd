@@ -115,7 +115,6 @@ class GVAR(distanceExplosion): GVAR(distanceSlider) {
 class GVAR(isHandcuffed): Checkbox {};
 class GVAR(isSurrendered): Checkbox {};
 class GVAR(isCharge):CheckboxState {
-    idc = 2020;
     class Controls: Controls
     {
         class Title: Title{};
