@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-params ["_unit","_targetUnits","_actDist",["_args",[]]];
+params ["_unit","_target","_actDist",["_args",[]]];
 _args params [
 	["_group", objNull, [objNull,grpNull]],
     ["_pos", [0, 0, 0], []],
@@ -18,20 +18,18 @@ if (!local _unit) then {
 */
 
 private _group = _unit call CBA_fnc_getGroup; // use group or unit?
-private _target = if (_targetUnits isEqualType []) then
-	{
-		selectRandom _targetUnits;
-	} else {
-		_targetUnits;
-	};
+diag_log format ["target unittype %1",_target];
+
 if (!alive _target) then {
-	_grp = group _target select {alive _x};
-	_target = if (_grp isNotEqualTo []) then {
-		selectRandom _grp;
+	private _targetSide = _unit getVariable [QGVAR(targetSide),sideEmpty];
+	private _units = _unit nearEntities ["CaManBase", _actDist/2] select {alive _x && side _x == _targetSide};
+	_target = if (_units isNotEqualTo []) then {
+		selectRandom _units;
 	} else {
 		objNull;
 	};
 };
+TRACE_1("Target",_target);
 _unit setVariable [QGVAR(target),_target];
 private _distance = _unit distance _target;
 private _loseDist = _actDist * 1.5;
@@ -146,6 +144,8 @@ _onComplete = _statements joinString ";";
 {
 	_x enableAI "PATH";
 } forEach units _group;
+
+diag_log [_group,_pos,-1,"MOVE",_behaviour,_combat,_speed,_formation,_onComplete,_timeout,5];
 
 private _wp = [
     _group,

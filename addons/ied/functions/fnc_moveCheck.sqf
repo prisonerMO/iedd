@@ -1,5 +1,6 @@
 #include "script_component.hpp"
 params ["_unit","_target","_wp","_time","_next","_prev"];
+TRACE_1("Move Check",_this);
 private _currentWp = _unit getVariable [QGVAR(suicideWP),nil];
 if (isNil "_currentWp") exitWith{};
 private _currentTarget = _unit getVariable [QGVAR(target), objNull];

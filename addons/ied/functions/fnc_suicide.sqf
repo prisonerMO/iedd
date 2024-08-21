@@ -28,7 +28,10 @@ TRACE_2("Distance, Hide",_actDist,_hideOnStart);
 		if (_isHide) then {
 			[_unit,false] call FUNC(hideCharges);
 		};
-		[_unit,_nearPlrs,_actDist] call FUNC(suicideAct);
+		private _target = selectRandom _nearPlrs;
+		private _targetSide = side _target;
+		_unit setVariable [QGVAR(targetSide),_targetSide];
+		[_unit,_target,_actDist] call FUNC(suicideAct);
 		private _isDeadManSwitch = _unit getVariable QGVAR(isDMS);
 		if (isNil "_isDeadManSwitch") then {
 			_isDeadManSwitch = _unit getVariable [QGVAR(isDeadManSwitch),false];

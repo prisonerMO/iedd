@@ -93,12 +93,16 @@
 	};
 	[_object] call FUNC(removeEvents);
 }] call CBA_fnc_addEventHandler;
-/* NOT IN USE, can be used on unit who have charge vest
+
 ["ace_unconscious", {
 	params ["_unit", "_isUnconscious"];
-	call FUNC(handleUnconscious);
+	if (!local _unit) exitWith {};
+	private _isDeadManSwitch = _unit getVariable [QGVAR(isDeadManSwitch),false];
+	if (_isDeadManSwitch) then {
+		call FUNC(handleUnconscious);
+	};
 }] call CBA_fnc_addEventHandler;
-*/
+
 ["forceWalk", false, [QGVAR(charge)]] call ace_common_statusEffect_addType;
 
 [QGVAR(defused), {
@@ -129,6 +133,19 @@
 
 [QGVAR(suicide), {
 	params ["_unit"];
+	private _group = group _unit;
+	private _side = side _group;
+	if (_side != civilian) then {
+		private _suicideGrp = createGroup [civilian, deleteWhenEmpty];
+		[_unit] joinSilent _suicideGrp;
+	} else {
+		if (count units _group > 1) then {
+			[_unit] joinSilent [grpNull];
+		};
+	};
+	{
+		_unit disableAi _x;
+	} forEach ["AUTOCOMBAT","COVER","FSM"];
 	call FUNC(suicide);
 }] call CBA_fnc_addEventHandler;
 
