@@ -18,12 +18,12 @@ if !(_unit isKindOf "CAManBase") exitWith {
 	deleteVehicle _logic;
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
-if (!alive _unit) exitWith {    
+if (!alive _unit) exitWith {
 	_message = "Unit is not alive";
 	deleteVehicle _logic;
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
-if (_unit getVariable ["iedd_ied_isCharge",false]) exitWith {    
+if (_unit getVariable ["iedd_ied_isCharge",false]) exitWith {
 	_message = "Unit have IED vest already";
 	deleteVehicle _logic;
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
@@ -87,7 +87,7 @@ private _fnc_onConfirm = {
     private _isHandcuffed = [false,true] select lbCurSel _handCtrl;
     private _surrenderCtrl = _display displayCtrl 62527;
     private _isSurrender = [false,true] select lbCurSel _surrenderCtrl;
-    
+
     _unit setVariable ["iedd_ied_c_variation",_variation,true];
     _unit setVariable ["iedd_ied_c_dud",_dud,true];
     _unit setVariable ["iedd_ied_c_size",_size,true];
@@ -105,12 +105,7 @@ private _fnc_onConfirm = {
     if (!_isHandcuffed && _isSurrender && !_surrender) then {
         ["ace_captives_setSurrendered", [_unit, !_surrender], _unit] call CBA_fnc_targetEvent;
     };
-    _vest = vest _unit;
-    if (_vest != "") then {
-        removeVest _unit;
-    };
-    removeAllWeapons _unit;
-
+    [QGVAR(remove), [_unit], _unit] call CBA_fnc_targetEvent;
 };
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];

@@ -100,15 +100,11 @@ private _fnc_onConfirm = {
     _unit setVariable ["iedd_ied_expDist",_exp,true];
     _unit setVariable ["iedd_ied_isDMS",_isDMS,true];
     TRACE_6("Module Suicide",_variation,_dud,_size,_act,_exp,_isDMS);
-    diag_log [_variation,_dud,_size_act,_exp,_isDMS];
+    diag_log [_variation,_dud,_size,_act,_exp,_isDMS];
 
     [QGVAR(addBombVest), [_unit,true]] call CBA_fnc_serverEvent;
     _unit setVariable ["iedd_ied_isCharge",true,true];
-    _vest = vest _unit;
-    if (_vest != "") then {
-        removeVest _unit;
-    };
-    removeAllWeapons _unit;
+    [QGVAR(remove), [_unit], _unit] call CBA_fnc_targetEvent;
 };
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];
