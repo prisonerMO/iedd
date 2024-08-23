@@ -90,7 +90,7 @@ private _fnc_onConfirm = {
     private _act = sliderPosition (_display displayCtrl 62524);
     private _exp = sliderPosition (_display displayCtrl 62525);
     private _dmsCtrl = _display displayCtrl 62526;
-    private _isDMS = [false,true] select lbCurSel _dmsCtrl;
+    private _isDms = [false,true] select lbCurSel _dmsCtrl;
 
     _unit setVariable ["iedd_ied_isSuicide",true,true];
     _unit setVariable ["iedd_ied_c_variation",_variation,true];
@@ -98,10 +98,8 @@ private _fnc_onConfirm = {
     _unit setVariable ["iedd_ied_c_size",_size,true];
     _unit setVariable ["iedd_ied_actDist",_act,true];
     _unit setVariable ["iedd_ied_expDist",_exp,true];
-    _unit setVariable ["iedd_ied_isDMS",_isDMS,true];
-    TRACE_6("Module Suicide",_variation,_dud,_size,_act,_exp,_isDMS);
-    diag_log [_variation,_dud,_size,_act,_exp,_isDMS];
-
+    _unit setVariable ["iedd_ied_isDeadManSwitch",_isDms,true];
+    TRACE_6("Module Suicide",_variation,_dud,_size,_act,_exp,_isDms);
     [QGVAR(addBombVest), [_unit,true]] call CBA_fnc_serverEvent;
     _unit setVariable ["iedd_ied_isCharge",true,true];
     [QGVAR(remove), [_unit], _unit] call CBA_fnc_targetEvent;
