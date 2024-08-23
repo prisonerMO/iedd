@@ -136,7 +136,7 @@
 	private _group = group _unit;
 	private _side = side _group;
 	if (_side != civilian) then {
-		private _suicideGrp = createGroup [civilian, deleteWhenEmpty];
+		private _suicideGrp = createGroup [civilian, true];
 		[_unit] joinSilent _suicideGrp;
 	} else {
 		if (count units _group > 1) then {
@@ -146,6 +146,11 @@
 	{
 		_unit disableAi _x;
 	} forEach ["AUTOCOMBAT","COVER","FSM"];
+	call FUNC(suicide);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(suicideAct), {
+	params ["_unit"];
 	call FUNC(suicide);
 }] call CBA_fnc_addEventHandler;
 

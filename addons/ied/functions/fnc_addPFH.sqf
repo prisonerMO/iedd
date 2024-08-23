@@ -2,17 +2,17 @@
 params ["_unit","_state"];
 private _expDist = _unit getVariable QGVAR(expDist);
 if (isNil "_expDist") then {
-	private _getExp = _unit getVariable [QGVAR(explosionDist), 0];
+	private _getExp = _unit getVariable [QGVAR(expDist), 0];
 	_expDist = if (_getExp > 0) then {_getExp} else {[GVAR(expMinRange), GVAR(expMaxRange)] call BIS_fnc_randomInt};
-	_unit setVariable [QGVAR(expDist), _expDist];
+	_unit setVariable [QGVAR(expDist), _expDist,true];
 };
 private _target = _unit getVariable [QGVAR(target),objNull];
 _actPfhID = [{
 	params ["_args","_pfhID"];
 	_args params ["_unit","_target","_expDist"];
 	if (!alive _target) exitWith {
-		_unit setVariable [QGVAR(target),objNull];
-		_unit setVariable [QGVAR(actPFHID),-1];
+		_unit setVariable [QGVAR(target),objNull,true];
+		_unit setVariable [QGVAR(actPFHID),-1,true];
 		[_pfhID] call CBA_fnc_removePerFrameHandler;
 	};
 	if (_unit distance _target < _expDist) exitWith { //EXP Dist reached then Explosion

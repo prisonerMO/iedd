@@ -32,13 +32,17 @@ if (_isTraining) then {
 		};
 		if (typeOf _bombObj == QGVAR(Charge)) then {
 			private _unit = attachedTo _bombObj;
-			if (alive _unit) then {
-				private _group = group _unit;
-				[_group] call CBA_fnc_clearWaypoints;
-				{
-					_x enableAI "PATH";
-				} forEach units _group;
-				[_unit, _unit, 250, 5, "MOVE", "AWARE", "GREEN", "LIMITED", "STAG COLUMN", "", [5, 6, 7]] call CBA_fnc_taskPatrol;
+			private _isSuicide = _unit getVariable [QGVAR(isSuicide),false];
+			if (_isSuicide) then {
+				_unit setVariable [QGVAR(suicideWP), nil,true];
+				if (alive _unit) then {
+					private _group = group _unit;
+					[_group] call CBA_fnc_clearWaypoints;
+					{
+						_x enableAI "PATH";
+					} forEach units _group;
+					[_unit, _unit, 250, 5, "MOVE", "AWARE", "GREEN", "LIMITED", "STAG COLUMN", "", [5, 6, 7]] call CBA_fnc_taskPatrol;
+				};
 			};
 		};
 	} else {
@@ -60,9 +64,6 @@ if (_isTraining) then {
 				{
 					deleteVehicle _x;
 				} forEach _charges;
-/*				if (alive _unit) then {
-					_unit setDamage 1;
-				};*/
 			};
 		} else {
 			deleteVehicle _bombObj;
@@ -78,8 +79,14 @@ if (_isTraining) then {
 				//[QGVAR(hideObject),[_bomb,true]] call CBA_fnc_globalEvent;
 				//_bomb setDamage 1;
 				triggerAmmo _bomb;
+				if (!isNull _unit) then {
+					[{
+						params ["_unit"];
+						if (alive _unit) then {_unit setDamage 1};
+					},[_unit], 0.2] call CBA_fnc_waitAndExecute;
+				};
 			},
-			[_bombObj,_pos,_type]
+			[_bombObj,_pos,_type,_unit]
 		] call CBA_fnc_waitUntilAndExecute;
 	};
 };

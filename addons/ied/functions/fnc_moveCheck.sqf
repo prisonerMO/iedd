@@ -1,8 +1,14 @@
 #include "script_component.hpp"
 params ["_unit","_target","_wp","_time","_next","_prev"];
 TRACE_1("Move Check",_this);
+diag_log ["move check",_this,time];
+if (!local _unit) exitWith {
+	private _args = ((group _unit) getVariable QGVAR(suicideAct));
+	[QGVAR(suicideAct), _args, _unit] call CBA_fnc_targetEvent; //if locality change?; //if locality change?
+};
 private _currentWp = _unit getVariable [QGVAR(suicideWP),nil];
 if (isNil "_currentWp") exitWith{};
+if (!alive _unit) exitWith {};
 private _currentTarget = _unit getVariable [QGVAR(target), objNull];
 private _args = ((group _unit) getVariable QGVAR(suicideAct));
 if (_target != _currentTarget) exitWith {
