@@ -38,10 +38,8 @@ if (_isTraining) then {
 				if (alive _unit) then {
 					private _group = group _unit;
 					[_group] call CBA_fnc_clearWaypoints;
-					{
-						_x enableAI "PATH";
-					} forEach units _group;
-					[_unit, _unit, 250, 5, "MOVE", "AWARE", "GREEN", "LIMITED", "STAG COLUMN", "", [5, 6, 7]] call CBA_fnc_taskPatrol;
+					_unit enableAI "PATH";
+					[_group, _group, 250, 5, "MOVE", "AWARE", "GREEN", "NORMAL", "STAG COLUMN", "", [5, 6, 7]] call CBA_fnc_taskPatrol;
 				};
 			};
 		};
