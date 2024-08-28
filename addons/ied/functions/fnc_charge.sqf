@@ -24,14 +24,17 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         private _bombObj = QGVAR(Charge) createVehicle [0,0,0];
         _bombObj attachTo [_unit , [0, 0.2, -0.18], "spine3",true];
         _bombObj setVectorDirAndUp [[-1,0,0],[-0,-1,0]];
-		private _box  = createSimpleObject ["\a3\Weapons_F_Enoch\Items\ChemicalDetector_01_F.p3d", [0,0,0]];
-		_box attachTo [_bombObj,[0,0,0]];
+        private _isSuicide = _unit getVariable [QGVAR(isSuicide),false];
+        private _boxType = ["\a3\Weapons_F_Enoch\Items\ChemicalDetector_01_F.p3d","\a3\Weapons_F_Enoch\Items\ChemicalDetector_01_cover_tan_F.p3d"] select _isSuicide;
+		private _boxPos = [[0,0,0],[0,0,-0.021]] select _isSuicide;
+        private _box  = createSimpleObject [_boxType, [0,0,0]];
+		_box attachTo [_bombObj,_boxPos];
 		_box setVectorDirAndUp [[0,0,1],[-1,0,0]];
 
         private _variation = _unit getVariable [QGVAR(c_variation),5];
         private _dud = _unit getVariable [QGVAR(c_dud),0];
         private _size = _unit getVariable [QGVAR(c_size),2];
-        private _isSuicide = _unit getVariable [QGVAR(isSuicide),false];
+
 
         _bombObj setVariable [QGVAR(size),_size,true];
         _bombObj setVariable [QGVAR(dud),_dud,true];
