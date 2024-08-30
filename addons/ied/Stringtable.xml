@@ -367,8 +367,8 @@
 				<English>Suicide bomber</English>
 			</Key>
 			<Key ID="STR_iedd_ied_isSuicide_Description">
-				<Original>If selected, suicide bomber will explode when killed or gets unconscious.</Original>
-				<English>If selected, suicide bomber will explode when killed or gets unconscious.</English>
+				<Original>Defines if unit is suicide bomber.</Original>
+				<English>Defines if unit is suicide bomber.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_ChargeDud_Tooltip">
 				<Original>Set probability of bomb vest being dud.</Original>
