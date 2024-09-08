@@ -23,7 +23,8 @@ if (_isTraining) then {
 } else {
 	private _possiblity = _bombObj getVariable [QGVAR(dud), GVAR(defaultDud)];
 	if (_possiblity > random 1 || GVAR(isDuds)) then {
-		[QGVAR(dudEffect),[_bombObj]] call CBA_fnc_globalEvent;
+		private _sound = format ["iedd_ied_dud%1", floor (random 4)];
+		[QGVAR(dudEffect),[_bombObj,_sound]] call CBA_fnc_globalEvent;
 		private _attachedObjects = attachedObjects _bombObj;
 		private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge_Ammo)};
 		if (_index > -1) then {

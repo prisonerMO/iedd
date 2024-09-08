@@ -43,7 +43,7 @@
 	};
 	private _time = _object getVariable [QGVAR(timerValue),GVAR(defaultTimerValue)];
 	private _endTime = _time + time;
-	private _sound = createSoundSource [QGVAR(timerSound) , getPosATL _object, [], 0]; // starts alarm
+	private _sound = createSoundSource [QGVAR(timerSound) , [0,0,0], [], 0]; // starts alarm
 	_sound attachTo [_timerObj,[0,0,0]];
 	TRACE_1("Timer CBAevent:",_this);
 	[_object,_endTime,_sound] call FUNC(timer);

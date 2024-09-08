@@ -1,4 +1,4 @@
-/* NOT IN USE 
+/* NOT IN USE
 #include "script_component.hpp"
 
 {
@@ -6,14 +6,14 @@
 } forEach IEDD_CLASSES;
 
 GVAR(bombs) = [];
-[{time > 10 && !isNil QGVAR(bombs)},		
+[{time > 10 && !isNil QGVAR(bombs)},
 	{
 		INFO_1("Detect event called [Time: %1]",time);
-		[0.1] spawn {
+		[0.1] spaw {
 			params ["_checkPeriod"];
 			while {true} do
 			{
-				if (GVAR(bombs) isNotEqualTo []) then {				
+				if (GVAR(bombs) isNotEqualTo []) then {
 
 					private _players = call BIS_fnc_listPlayers;
 					private _objectsToRemove = [];
@@ -24,7 +24,7 @@ GVAR(bombs) = [];
 						};
 						private _distance = _object getVariable [QGVAR(dist),10];
 						private _var = _object getVariable [QGVAR(movable),false];
-						if (!_var) then {   
+						if (!_var) then {
 							if (speed _object > 5 || !isNull attachedTo _object) then {
 								[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
 								_objectsToRemove pushBack _object;
@@ -36,7 +36,7 @@ GVAR(bombs) = [];
 							};
 						};
 						if (GVAR(plrCheck)) then {
-							private _nearPlrs = _players select {;;(_object distance _x) < _distance};					
+							private _nearPlrs = _players select {;;(_object distance _x) < _distance};
 							if (_nearPlrs isNotEqualTo []) then {
 								{
 									_nearPlr = _x;
@@ -67,8 +67,8 @@ GVAR(bombs) = [];
 			};
 		};
 	},
-	[], 
-	15, 
+	[],
+	15,
 	{}
 ] call CBA_fnc_waitUntilAndExecute;*/
 
