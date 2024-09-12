@@ -8,7 +8,7 @@ switch _mode do {
 	case "init": {
 		if (is3DEN) exitWith {};
 		if (!isServer) exitWith {};
-		_logic hideobject true;
+		_logic hideObject true;
 		private _isActivated = _input param [1,true,[true]]; // True when the module was activated, false when it is deactivated
 		if (_isActivated) then {
 			private _isRectangle = (_logic getVariable "objectarea") #3;
@@ -16,7 +16,7 @@ switch _mode do {
 			_size params ["_a","_b"];
 			private _iedArea = if !(_isRectangle) then
 				{
-					Pi * _a/2 * _b/2;
+					pi * _a/2 * _b/2;
 				} else {
 					_a * _b;
 				};
@@ -49,7 +49,7 @@ switch _mode do {
 					_sizeOf params ["_c","_d"];
 					_areaOf = if (markerShape _x == "ELLIPSE") then
 					{
-						Pi * _c/2 * _d/2;
+						pi * _c/2 * _d/2;
 					} else {
 						_c * _d;
 					};

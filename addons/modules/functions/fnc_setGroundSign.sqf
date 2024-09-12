@@ -17,7 +17,7 @@ private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
 	private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
 	private _signPos = _logic modelToWorld [0,0,0];
-    private _display = ctrlparent _ctrlButtonOK;
+    private _display = ctrlParent _ctrlButtonOK;
     if (isNull _display) exitWith {};
     private _typeCtrl = _display displayCtrl 52620;
     private _typeNum = lbCurSel _typeCtrl;

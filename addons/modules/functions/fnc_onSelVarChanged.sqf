@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 params ["_control", "_curSel"];
 
-if (_curSel < 0) exitwith {};
+if (_curSel < 0) exitWith {};
 private _display = ctrlParent _control;
 private _typeCtrl = _display displayCtrl 52520;
 private _typeNum = lbCurSel _typeCtrl;
