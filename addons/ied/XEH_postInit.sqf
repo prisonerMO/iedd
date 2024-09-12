@@ -144,7 +144,7 @@
 		};
 	};
 	{
-		_unit disableAi _x;
+		_unit disableAI _x;
 	} forEach ["AUTOCOMBAT","COVER","FSM"];
 	call FUNC(suicide);
 }] call CBA_fnc_addEventHandler;
