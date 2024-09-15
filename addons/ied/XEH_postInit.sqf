@@ -5,18 +5,22 @@
 } forEach IEDD_CLASSES;
 
 [QGVAR(defuseAction), {
+	if (!hasInterface) exitWith {};
 	call FUNC(defuseAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(detachAction), {
+	if (!hasInterface) exitWith {};
 	call FUNC(detachAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(disarmAction), {
+	if (!hasInterface) exitWith {};
 	call FUNC(disarmAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(dudEffect), {
+	if (!hasInterface) exitWith {};
 	call FUNC(dud);
 }] call CBA_fnc_addEventHandler;
 
