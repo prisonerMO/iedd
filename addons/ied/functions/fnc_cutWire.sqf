@@ -26,8 +26,8 @@ deleteVehicle _wire;
 			_count == (count _wires) -1}) then {
 			[QGVAR(timer), [_bombObj]] call CBA_fnc_serverEvent;
 		};
-		if (_count isEqualTo _order) then { // check for wrong wire cut
-			if (_count isEqualTo 0) then { // all wires cut in order => bomb is defused
+		if (_count == _order) then { // check for wrong wire cut
+			if (_count == 0) then { // all wires cut in order => bomb is defused
 				_defused = true;
 			};
 		} else {
@@ -35,7 +35,7 @@ deleteVehicle _wire;
 				[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;
 				true; // when the bomb explodes => return
 			};
-			if (_count isEqualTo 0) then { // all wires cut with ignored order => bomb is defused
+			if (_count == 0) then { // all wires cut with ignored order => bomb is defused
 				_defused = true;
 			};
 		};

@@ -11,6 +11,7 @@ if (!isServer) exitWith {};
     private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];
     private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
     private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
+    TRACE_6("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer);
     if (_isFake > random 1) exitWith {
         private _type = getText (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_default");
         private _dir = getDir _bombObj;
@@ -47,7 +48,7 @@ if (!isServer) exitWith {};
         [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
     };
 
-    if (_variation isEqualTo 6) then {
+    if (_variation == 6) then {
         private _includeVarX = _bombObj getVariable [QGVAR(varX), GVAR(defaultVarX)]; //if 0% , Variation X will be excluded from Random
         if (_includeVarX > random 1) then {
             _variation = selectRandom [0,1,2,3,4,5];
@@ -136,8 +137,10 @@ if (!isServer) exitWith {};
         _bombObj setVariable [QGVAR(timerValue), _time];
     };
 
-    [
-        {speed (_this select 0) == 0},
+    [{
+        [{
+            speed (_this select 0) == 0
+        },
         {
             params ["_bombObj","_decals", "_setDir", "_wireSet"];
             if (_setDir) then {
@@ -148,15 +151,13 @@ if (!isServer) exitWith {};
             if (_decals) then {
                 [_bombObj] call FUNC(decals);
             };
-            private _text = LLSTRING(Name_Long);
+            private _text = localize LSTRING(Name_Long);
             private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
-            [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;
+            [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;
+        }, _this] call CBA_fnc_waitUntilAndExecute;
+    }, [_bombObj, _decals, _setDir, _wireSet], 1] call CBA_fnc_waitAndExecute;
 
-        },
-        [_bombObj, _decals, _setDir, _wireSet],
-        1
-    ] call CBA_fnc_waitUntilAndExecute;
 },[_bombObj],0.1] call CBA_fnc_waitAndExecute;
 true;
 

@@ -48,7 +48,7 @@ if (!isServer) exitWith {};
         [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
     };
 
-    if (_variation isEqualTo 6) then {
+    if (_variation == 6) then {
         private _includeVarX = _bombObj getVariable [QGVAR(varX), GVAR(defaultVarX)]; //if 0% , Variation X will be excluded from Random
         if (_includeVarX > random 1) then {
             _variation = selectRandom [0,1,2,3,4,5];
@@ -122,11 +122,12 @@ if (!isServer) exitWith {};
         _bombObj setVariable [QGVAR(timerValue),_time];
     };
 
-    [
-        {speed (_this select 0) == 0},
+    [{
+        [{
+            speed (_this select 0) == 0
+        },
         {
             params ["_bombObj","_decals", "_setDir", "_wireSet"];
-
             if (_setDir) then {
                 private _bombPos = getPosATL _bombObj;
                 _bombObj setDir random 359;
@@ -135,14 +136,13 @@ if (!isServer) exitWith {};
             if (_decals) then {
                 [_bombObj] call FUNC(decals);
             };
-            private _text = LLSTRING(Name_Long);
+            private _text = localize LSTRING(Name_Long);
             private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
-            [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;
-        },
-        [_bombObj,_decals, _setDir, _wireSet],
-        1
-    ] call CBA_fnc_waitUntilAndExecute;
+            [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;
+        }, _this] call CBA_fnc_waitUntilAndExecute;
+    }, [_bombObj, _decals, _setDir, _wireSet], 1] call CBA_fnc_waitAndExecute;
+
 },[_bombObj],0.1] call CBA_fnc_waitAndExecute;
 true;
 

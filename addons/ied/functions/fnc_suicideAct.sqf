@@ -15,7 +15,6 @@ TRACE_1("params",_this);
 if (!local _unit) exitWith {
 	[QGVAR(suicideAct), _this, _unit] call CBA_fnc_targetEvent; //if locality change?
 };
-diag_log format ["target%1",_target];
 if (!alive _target) then {
 	private _targetSide = _unit getVariable [QGVAR(targetSide),sideEmpty];
 	private _units = _unit nearEntities ["CaManBase", _actDist/2] select {alive _x && side _x == _targetSide && !(objectParent _x isKindOf "Air")};
@@ -138,8 +137,6 @@ _onComplete = _statements joinString ";";
 
 [_group] call CBA_fnc_clearWaypoints;
 _unit enableAI "PATH";
-
-diag_log ["SUICIDEACT",time,_group,_pos,-1,"MOVE",_behaviour,_combat,_speed,_formation,_onComplete,_timeout,5];
 
 private _wp = [
     _group,
