@@ -63,13 +63,13 @@ private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
 	private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
 	private _pos = _logic modelToWorld [0,0,0];
-    private _display = ctrlparent _ctrlButtonOK;
+    private _display = ctrlParent _ctrlButtonOK;
     if (isNull _display) exitWith {};
     private _typeCtrl = _display displayCtrl 52520;
     private _typeNum = lbCurSel _typeCtrl;
     private _type = _typeCtrl lbData _typeNum;
     private _varCtrl = _display displayCtrl 52521;
-    private _variation = lbCurSel _varCtrl; 
+    private _variation = lbCurSel _varCtrl;
     private _varData = "getText (_x >> 'name') isEqualTo localize 'STR_iedd_ied_Name_Random'" configClasses (configFile >> "CfgVehicles" >> _type >> "Attributes" >> "iedd_ied_variation" >> "Values") apply {getNumber (_x >> 'value')};
     private _random = _varData select 0;
     if (_variation == _random) then {
@@ -82,7 +82,7 @@ private _fnc_onConfirm = {
     private _dud = sliderPosition (_display displayCtrl 52523);;
     private _dist = round(sliderPosition (_display displayCtrl 52524));
     private _value = round(sliderPosition (_display displayCtrl 52526));
-    private _bombObj = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];   
+    private _bombObj = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
     _bombObj setVariable ["iedd_ied_variation",_variation,true];
     _bombObj setVariable ["iedd_ied_dud",_dud,true];
     _bombObj setVariable ["iedd_ied_size",_size,true];

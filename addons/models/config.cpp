@@ -5,7 +5,7 @@ class CfgPatches
 	class ADDON
 	{
 		author = AUTHOR;
-		authors[] = AUTHORS;
+		authors[] = {"Prisoner","Lion","Antihilator"};
 		name = COMPONENT_NAME;
 		units[] = {
 			"IEDD_WireStraightRed",

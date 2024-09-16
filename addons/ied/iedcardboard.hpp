@@ -2,7 +2,9 @@ class Land_PaperBox_01_small_ransacked_brown_F;
 class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 	displayName = CSTRING(Cardboard_DisplayName);
 	author = AUTHOR;
-	editorCategory = "IEDD_MAINCATEGORY"; 
+	simulation = "thingX";
+	destrType = "DestructNo";
+	editorCategory = "IEDD_MAINCATEGORY";
 	editorSubcategory = "IEDD_IEDS";
 	class EventHandlers {
 		class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
@@ -48,23 +50,23 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Variation_1);	
+					name = CSTRING(Variation_1);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Variation_2); 
+					name = CSTRING(Variation_2);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Variation_3); 
+					name = CSTRING(Variation_3);
 					value = 2;
 				};
 				class 4	{
-					name = CSTRING(Variation_4);	
+					name = CSTRING(Variation_4);
 					value = 3;
 				};
 				class 5	{
-					name = CSTRING(Variation_5);	
+					name = CSTRING(Variation_5);
 					value = 4;
 				};
 				class 6 {
@@ -75,7 +77,7 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 					name = CSTRING(Name_Random);
 					value = 6;
 				};
-							
+
 			};
 		};
 		class GVAR(varX) {
@@ -118,7 +120,7 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 				class 6 {
 					name = CSTRING(Name_Random);
 					value = 5;
-				}; 
+				};
 			};
 		};
 		class GVAR(decals) {
@@ -127,7 +129,7 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			property = QGVAR(decals);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultDecals);		
+			defaultValue = QGVAR(defaultDecals);
 			typeName = "BOOL";
 		};
 		class GVAR(dir) {
@@ -146,7 +148,7 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			expression = "_this setVariable ['%s',_value];";
 			control = "Slider";
 			defaultValue = QGVAR(defaultDud);
-		};		
+		};
 		class GVAR(fake) {
 			displayName = CSTRING(Fake);
 			tooltip = CSTRING(Fake_Tooltip);
@@ -176,21 +178,21 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			property = QGVAR(timer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimer);	
+			defaultValue = QGVAR(defaultTimer);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Name_Disabled);	
+					name = CSTRING(Name_Disabled);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Name_Enabled); 
+					name = CSTRING(Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Name_Random); 
+					name = CSTRING(Name_Random);
 					value = 2;
-				};				
+				};
 			};
 		};
 		class GVAR(timerValue) {
@@ -199,8 +201,8 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			property = QGVAR(timerValue);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimerValue);		
-			typeName = "NUMBER";	
+			defaultValue = QGVAR(defaultTimerValue);
+			typeName = "NUMBER";
 		};
 		class GVAR(randomTimer) {
 			displayName = CSTRING(RandomTimer);
@@ -208,22 +210,22 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			property = QGVAR(randomTimer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultRandomTimer);	
+			defaultValue = QGVAR(defaultRandomTimer);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Name_Disabled);	
+					name = CSTRING(Name_Disabled);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Name_Enabled); 
+					name = CSTRING(Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Name_Random); 
+					name = CSTRING(Name_Random);
 					value = 2;
-				};				
-			};		
+				};
+			};
 		};
 		class GVAR(randomTimerMin) {
 			displayName = CSTRING(RandomTimerMin);
@@ -231,8 +233,8 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			property = QGVAR(randomTimerMin);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimerMin);	
-			typeName = "NUMBER";	
+			defaultValue = QGVAR(defaultTimerMin);
+			typeName = "NUMBER";
 		};
 		class GVAR(randomTimerMax) {
 			displayName = CSTRING(RandomTimerMax);
@@ -240,9 +242,9 @@ class GVAR(Cardboard): Land_PaperBox_01_small_ransacked_brown_F {
 			property = QGVAR(randomTimerMax);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimerMax);	
+			defaultValue = QGVAR(defaultTimerMax);
 			typeName = "NUMBER";
-		};				
+		};
 	};
 };
 class GVAR(Training_Cardboard):GVAR(Cardboard) {
@@ -256,7 +258,7 @@ class GVAR(Training_Cardboard):GVAR(Cardboard) {
 			condition = QUOTE(true);
 			class IEDD_ResetMenu {
 				exceptions[] = {"isNotSwimming"};
-				displayName = CSTRING(Reset_DisplayName); 
+				displayName = CSTRING(Reset_DisplayName);
 				condition = QUOTE(true);
 				insertChildren = QUOTE(_this call FUNC(getTrainingActions));
 			};

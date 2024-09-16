@@ -157,3 +157,22 @@
     "Land_GarbageBarrel_01_F",\
     "Land_BarrelEmpty_F"\
 ]
+
+
+#define IEDDSETPARAMS(AREAA,AREAB,ANGLE,BEHAVIOUR,COMBAT,SPEED,FORMATION,TIMEOUT)\
+_a=AREAA;\
+_b=AREAB;\
+_angle=ANGLE;\
+_behaviour=BEHAVIOUR;\
+_combat=COMBAT;\
+_speed=SPEED;\
+_formation=FORMATION;\
+_timeout=[TIMEOUT-2,TIMEOUT,TIMEOUT+1];
+
+#define DISTANCE_0	0
+#define DISTANCE_1	55
+#define DISTANCE_2	100
+#define DISTANCE_3	150
+#define DISTANCE_4	200
+#define DISTANCE_5	300
+#define DISTANCE_6	500

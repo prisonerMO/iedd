@@ -46,16 +46,23 @@ _slider call _fnc_sliderMove;
 //Specific on-load stuff:
 private _fnc_sliderValueMove = {
     params ["_slider"];
-    private _idc = ctrlIDC _slider; // IDCs ∈ [62526]
-    _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider),"s"];
+    private _idc = ctrlIDC _slider; // IDCs ∈ [62524,62525]
+    _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider),"m"];
 };
 
-private _sliderValue = _display displayCtrl 62525;
+private _sliderAct = _display displayCtrl 62524;
 //_slider sliderSetRange [0, 0.3];
-_sliderValue sliderSetSpeed [1,1];
-_sliderValue sliderSetPosition iedd_ied_defaultTimerValue; //CBA GET DEFAULT VALUE?
-_sliderValue ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
-_sliderValue call _fnc_sliderValueMove;
+_sliderAct sliderSetSpeed [1,1];
+_sliderAct sliderSetPosition 300; //CBA GET DEFAULT VALUE?
+_sliderAct ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
+_sliderAct call _fnc_sliderValueMove;
+
+private _sliderExp = _display displayCtrl 62525;
+//_slider sliderSetRange [0, 0.3];
+_sliderExp sliderSetSpeed [1,1];
+_sliderExp  sliderSetPosition 15; //CBA GET DEFAULT VALUE?
+_sliderExp  ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
+_sliderExp call _fnc_sliderValueMove;
 
 private _fnc_onUnload = {
     private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
@@ -80,31 +87,21 @@ private _fnc_onConfirm = {
         _size = selectRandom [0,1,2,3];
     };
     private _dud = sliderPosition (_display displayCtrl 62523);
-    private _timerCtrl = _display displayCtrl 62524;
-    private _timer = lbCurSel _timerCtrl;
-    private _value = sliderPosition (_display displayCtrl 62525);
-    private _handCtrl = _display displayCtrl 62526;
-    private _isHandcuffed = [false,true] select lbCurSel _handCtrl;
-    private _surrenderCtrl = _display displayCtrl 62527;
-    private _isSurrender = [false,true] select lbCurSel _surrenderCtrl;
+    private _act = sliderPosition (_display displayCtrl 62524);
+    private _exp = sliderPosition (_display displayCtrl 62525);
+    private _dmsCtrl = _display displayCtrl 62526;
+    private _isDms = [false,true] select lbCurSel _dmsCtrl;
 
+    _unit setVariable ["iedd_ied_isSuicide",true,true];
     _unit setVariable ["iedd_ied_c_variation",_variation,true];
     _unit setVariable ["iedd_ied_c_dud",_dud,true];
     _unit setVariable ["iedd_ied_c_size",_size,true];
-    _unit setVariable ["iedd_ied_c_timer",_timer,true];
-    _unit setVariable ["iedd_ied_c_timerValue",_value,true];
+    _unit setVariable ["iedd_ied_actDist",_act,true];
+    _unit setVariable ["iedd_ied_expDist",_exp,true];
+    _unit setVariable ["iedd_ied_isDeadManSwitch",_isDms,true];
+    TRACE_6("Module Suicide",_variation,_dud,_size,_act,_exp,_isDms);
     [QGVAR(addBombVest), [_unit,true]] call CBA_fnc_serverEvent;
     _unit setVariable ["iedd_ied_isCharge",true,true];
-
-    TRACE_2("isHandcuffed or isSurrender",_isHandcuffed,_isSurrender);
-    private _captive = (_unit getVariable ["ace_captives_isHandcuffed", false]);
-    if (_isHandcuffed && !_captive) then {
-         ["ace_captives_setHandcuffed", [_unit, !_captive], _unit] call CBA_fnc_targetEvent;
-    };
-    private _surrender = (_unit getVariable ["ace_captives_isSurrendered", false]);
-    if (!_isHandcuffed && _isSurrender && !_surrender) then {
-        ["ace_captives_setSurrendered", [_unit, !_surrender], _unit] call CBA_fnc_targetEvent;
-    };
     [QGVAR(remove), [_unit], _unit] call CBA_fnc_targetEvent;
 };
 

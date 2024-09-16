@@ -2,7 +2,7 @@
 params ["_display"];
 
 [QGVAR(sound), [QGVAR(open),player]] call CBA_fnc_globalEvent; // open
-GVAR(animEH) = ace_player AddEventHandler ["AnimChanged", {
+GVAR(animEH) = ace_player addEventHandler ["AnimChanged", {
 	params ["_unit", "_anim"];
 	if (_anim == "asswpercmrunsnonwnondf") then {
 		private _display = uiNamespace getVariable 'iedd_display';
@@ -42,8 +42,8 @@ GVAR(escEH) =  (_this #0) displayAddEventHandler ['KeyDown', {
 	_handled;
 }];
 
-if (isNil QGVAR(pages)) then { 
-	GVAR(pages) = createHashMap; 
+if (isNil QGVAR(pages)) then {
+	GVAR(pages) = createHashMap;
 };
 private _var = GVAR(pages) getOrDefault ["iedd_tab", "home", true];
 private _current = GVAR(pages) getOrDefault [_var, 0, true];
