@@ -39,3 +39,9 @@ class GVAR(charge):ace_zeus_moduleBase {
 	icon = QPATHTOF(UI\moduleicon.paa);
     curatorInfoType = QGVAR(RscCharge);
 };
+
+class GVAR(suicide):GVAR(charge) {
+	_generalMacro = QGVAR(suicide);
+	displayName = CSTRING(Zeus_Suicide);
+    curatorInfoType = QGVAR(RscSuicide);
+};

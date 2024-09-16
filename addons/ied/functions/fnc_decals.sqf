@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 params ["_pos",["_type",selectRandom IEDD_DECALS]];
 
-private _decalPos = 
+private _decalPos =
 if (_pos isEqualType []) then {
     _pos;
 } else {

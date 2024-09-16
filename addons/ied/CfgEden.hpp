@@ -2,61 +2,7 @@
 
 class Cfg3DEN {
     class Attributes {
-        class Slider;
-        class GVAR(timeSlider): Slider {
-            attributeLoad = "params [""_ctrlGroup""];\
-            private _slider = _ctrlGroup controlsGroupCtrl 100;\
-            private _edit = _ctrlGroup controlsGroupCtrl 101;\
-            _slider sliderSetPosition _value;\
-            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 's';";
-            attributeSave = "params [""_ctrlGroup""];\
-            sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
-            onLoad = "params [""_ctrlGroup""];\
-            private _slider = _ctrlGroup controlsGroupCtrl 100;\
-            private _edit = _ctrlGroup controlsGroupCtrl 101;\
-            _slider sliderSetSpeed [1, 1, 1];\
-            _slider sliderSetRange [0, 300];\
-            _slider ctrlAddEventHandler [""SliderPosChanged"", {\
-                params [""_slider""];\
-                private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
-                private _value = sliderPosition _slider;\
-                _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 's';\
-            }];\
-            _edit ctrlAddEventHandler [""KillFocus"", {\
-                params [""_edit""];\
-                private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
-                private _value = ((parseNumber ctrlText _edit) min 0) max 300;\
-                _slider sliderSetPosition _value;\
-                _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 's';\
-            }];";
-        };
-        class GVAR(distanceSlider): Slider {
-            attributeLoad = "params [""_ctrlGroup""];\
-            private _slider = _ctrlGroup controlsGroupCtrl 100;\
-            private _edit = _ctrlGroup controlsGroupCtrl 101;\
-            _slider sliderSetPosition _value;\
-            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';";
-            attributeSave = "params [""_ctrlGroup""];\
-            sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
-            onLoad = "params [""_ctrlGroup""];\
-            private _slider = _ctrlGroup controlsGroupCtrl 100;\
-            private _edit = _ctrlGroup controlsGroupCtrl 101;\
-            _slider sliderSetSpeed [1, 1, 1];\
-            _slider sliderSetRange [0, 30];\
-            _slider ctrlAddEventHandler [""SliderPosChanged"", {\
-                params [""_slider""];\
-                private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
-                private _value = sliderPosition _slider;\
-                _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';\
-            }];\
-            _edit ctrlAddEventHandler [""KillFocus"", {\
-                params [""_edit""];\
-                private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
-                private _value = ((parseNumber ctrlText _edit) min 0) max 30;\
-                _slider sliderSetPosition _value;\
-                _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'm';\
-            }];";
-        };
+        #include "controls.hpp"
     };
     class object {
         class AttributeCategories {
@@ -69,14 +15,24 @@ class Cfg3DEN {
                     };
                     class GVAR(isCharge) {
                         property = QGVAR(isCharge);
-                        control = "CheckboxState";
+                        control = QGVAR(isCharge);
                         displayName = CSTRING(isCharge_DisplayName);
                         tooltip = CSTRING(isCharge_Description);
                         expression = QUOTE(if (_value) then {[ARR_2(_this,true)] call FUNC(charge);_this setVariable [ARR_3(QQGVAR(isCharge),_value,true)]});
                         typeName = "BOOL";
                         condition = "objectControllable";
                         defaultValue = "(false)";
-                    };                    
+                    };
+                    class GVAR(isSuicide) {
+                        property = QGVAR(isSuicide);
+                        control = QGVAR(isSuicide);
+                        displayName = CSTRING(isSuicide_DisplayName);
+                        tooltip = CSTRING(isSuicide_Description);
+                        expression = QUOTE(if (_value) then {_this setVariable [ARR_3(QQGVAR(isSuicide),_value,true)]});
+                        typeName = "BOOL";
+                        condition = "objectControllable";
+                        defaultValue = "(false)";
+                    };
                     class GVAR(Charge_Settings) {
                         data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
                         control = "SubCategory";
@@ -93,37 +49,37 @@ class Cfg3DEN {
                         condition = "objectControllable";
                         class Values {
                             class 1	{
-                                name = CSTRING(Variation_1);	
+                                name = CSTRING(Variation_1);
                                 value = 0;
-                            }; 
+                            };
                             class 2	{
-                                name = CSTRING(Variation_2); 
+                                name = CSTRING(Variation_2);
                                 value = 1;
                             };
                             class 3	{
-                                name = CSTRING(Variation_3); 
+                                name = CSTRING(Variation_3);
                                 value = 2;
                             };
                             class 4	{
-                                name = CSTRING(Variation_4);	
+                                name = CSTRING(Variation_4);
                                 value = 3;
                             };
                             class 5	{
-                                name = CSTRING(Variation_5);	
+                                name = CSTRING(Variation_5);
                                 value = 4;
                             };
                             class 6 {
                                 name = CSTRING(Name_Random);
                                 value = 5;
-                            }; 				
+                            };
                         };
-                    };	
+                    };
                     class GVAR(c_size) {
                         displayName = CSTRING(Size);
                         tooltip = CSTRING(Size_Tooltip);
                         property = QGVAR(c_size);
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_size),_value,true)]);
-                        defaultValue = 0;
+                        defaultValue = 2;
                         control = "Combo";
                         typeName = "NUMBER";
                         condition = "objectControllable";
@@ -151,7 +107,7 @@ class Cfg3DEN {
                             class 6 {
                                 name = CSTRING(Name_Random);
                                 value = 5;
-                            }; 
+                            };
                         };
                     };
                     class GVAR(c_dud) {
@@ -163,6 +119,56 @@ class Cfg3DEN {
                         condition = "objectControllable";
                         defaultValue = 0;
                     };
+                    /* SUICIDE SETTINGS */
+                    class GVAR(Suicide_Status) {
+                        data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
+                        control = "SubCategory";
+                        displayName = CSTRING(Suicide_Settings_DisplayName); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+                    };
+                    class GVAR(expDist) {
+                        displayName = CSTRING(DistanceExplosion);
+                        tooltip = CSTRING(DistanceExplosion_Tooltip);
+                        property = QGVAR(expDist);
+                        expression = "_this setVariable ['%s',_value];";
+                        control = QGVAR(distanceExplosion);
+                        typeName = "NUMBER";
+                        condition = "objectControllable";
+                        defaultValue = "0";
+                        enable = 0;
+                    };
+                    class GVAR(actDist) {
+                        displayName = CSTRING(DistanceActivate);
+                        tooltip = CSTRING(DistanceActivate_Tooltip);
+                        property = QGVAR(actDist);
+                        expression = "_this setVariable ['%s',_value];";
+                        control = QGVAR(distanceActivate);
+                        typeName = "NUMBER";
+                        condition = "objectControllable";
+                        defaultValue = "0";
+                        enable = 0;
+                    };
+                    class GVAR(isDeadManSwitch) {
+                        property = QGVAR(isDeadManSwitch);
+                        control = QGVAR(distDMS);
+                        displayName = CSTRING(isDeadManSwitch_DisplayName);
+                        tooltip = CSTRING(isDeadManSwitch_Description);
+                        expression = "_this setVariable ['%s',_value];";
+                        typeName = "BOOL";
+                        condition = "objectControllable";
+                        defaultValue = "(false)";
+                    };
+                    class GVAR(hideOnStart) {
+                        property = QGVAR(hideOnStart);
+                        control = QGVAR(distDMS);
+                        displayName = CSTRING(hideOnStart_DisplayName);
+                        tooltip = CSTRING(hideOnStart_Description);
+                        expression = "_this setVariable ['%s',_value];";
+                        typeName = "BOOL";
+                        condition = "objectControllable";
+                        defaultValue = "(false)";
+                    };
+
+                    /*UNIT STATUS*/
                     class GVAR(Charge_Status) {
                         data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
                         control = "SubCategory";
@@ -170,7 +176,7 @@ class Cfg3DEN {
                     };
                     class GVAR(isHandcuffed) {
                         property = QGVAR(isHandcuffed);
-                        control = "Checkbox";
+                        control = QGVAR(isHandcuffed);
                         displayName = CSTRING(isHandcuffed_DisplayName);
                         tooltip = CSTRING(isHandcuffed_Description);
                         expression = QUOTE([ARR_4(_this,_value,'ace_isHandcuffed',QQGVAR(isHandcuffed))] call FUNC(setAttributes));
@@ -180,7 +186,7 @@ class Cfg3DEN {
                     };
                     class GVAR(isSurrendered) {
                         property = QGVAR(isSurrendered);
-                        control = "Checkbox";
+                        control = QGVAR(isSurrendered);
                         displayName = CSTRING(isSurrendered_DisplayName);
                         tooltip = CSTRING(isSurrendered_Description);
                         expression = QUOTE([ARR_4(_this,_value,'ace_isSurrendered',QQGVAR(isSurrendered))] call FUNC(setAttributes));
@@ -198,23 +204,23 @@ class Cfg3DEN {
                         displayName = CSTRING(Timer);
                         tooltip = CSTRING(Timer_Tooltip);
                         property = QGVAR(c_timer);
-                        control = "Combo";
+                        control = QGVAR(c_timer);
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timer),_value,true)]);
-                        defaultValue = QGVAR(defaultTimer);		
+                        defaultValue = QGVAR(defaultTimer);
                         typeName = "NUMBER";
                         class Values {
                             class 1	{
-                                name = CSTRING(Name_Disabled);	
+                                name = CSTRING(Name_Disabled);
                                 value = 0;
-                            }; 
+                            };
                             class 2	{
-                                name = CSTRING(Name_Enabled); 
+                                name = CSTRING(Name_Enabled);
                                 value = 1;
                             };
                             class 3	{
-                                name = CSTRING(Name_Random); 
+                                name = CSTRING(Name_Random);
                                 value = 2;
-                            };				
+                            };
                         };
                         condition = "objectControllable";
                     };
@@ -224,33 +230,33 @@ class Cfg3DEN {
                         property = QGVAR(c_timerValue);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_timerValue),_value,true)]);
-                        defaultValue = QGVAR(defaultTimerValue);	
+                        defaultValue = QGVAR(defaultTimerValue);
                         typeName = "NUMBER";
-                        condition = "objectControllable";	
+                        condition = "objectControllable";
                     };
                     class GVAR(c_randomTimer) {
                         displayName = CSTRING(RandomTimer);
                         tooltip = CSTRING(RandomTimer_Tooltip);
                         property = QGVAR(c_randomTimer);
-                        control = "Combo";
+                        control = QGVAR(c_timer);
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimer),_value,true)]);
-                        defaultValue = QGVAR(defaultRandomTimer);	
+                        defaultValue = QGVAR(defaultRandomTimer);
                         typeName = "NUMBER";
                         class Values {
                             class 1	{
-                                name = CSTRING(Name_Disabled);	
+                                name = CSTRING(Name_Disabled);
                                 value = 0;
-                            }; 
+                            };
                             class 2	{
-                                name = CSTRING(Name_Enabled); 
+                                name = CSTRING(Name_Enabled);
                                 value = 1;
                             };
                             class 3	{
-                                name = CSTRING(Name_Random); 
+                                name = CSTRING(Name_Random);
                                 value = 2;
-                            };				
-                        };	
-                        condition = "objectControllable";	
+                            };
+                        };
+                        condition = "objectControllable";
                     };
                     class GVAR(c_randomTimerMin) {
                         displayName = CSTRING(RandomTimerMin);
@@ -258,9 +264,9 @@ class Cfg3DEN {
                         property = QGVAR(c_randomTimerMin);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimerMin),_value,true)]);
-                        defaultValue = QGVAR(defaultTimerMin);	
+                        defaultValue = QGVAR(defaultTimerMin);
                         typeName = "NUMBER";
-                        condition = "objectControllable";	
+                        condition = "objectControllable";
                     };
                     class GVAR(c_randomTimerMax) {
                         displayName = CSTRING(RandomTimerMax);
@@ -268,10 +274,10 @@ class Cfg3DEN {
                         property = QGVAR(c_randomTimerMax);
                         control = QGVAR(timeSlider); // TODO time_slider min - max
                         expression = QUOTE(_this setVariable [ARR_3(QQGVAR(c_randomTimerMax),_value,true)]);
-                        defaultValue = QGVAR(defaultTimerMax);	
+                        defaultValue = QGVAR(defaultTimerMax);
                         typeName = "NUMBER";
                         condition = "objectControllable";
-                    };                
+                    };
                 };
             };
         };

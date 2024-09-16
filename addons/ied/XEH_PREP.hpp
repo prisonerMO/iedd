@@ -1,5 +1,6 @@
 
 PREP(addItems);
+PREP(addPFH);
 PREP(barrel);
 PREP(bomb);
 PREP(canDisarm);
@@ -20,13 +21,16 @@ PREP(getTrainingActions);
 PREP(handleGetInMan);
 PREP(handleKilled);
 PREP(handleUnconscious);
+PREP(hideCharges);
 PREP(iedCheck);
 PREP(jerry);
 PREP(metal);
+PREP(moveCheck);
 PREP(removeEvents);
 PREP(resetAction);
 PREP(setAttributes);
+PREP(suicide);
+PREP(suicideAct);
 PREP(timer);
 PREP(training);
 PREP(variationx);
-

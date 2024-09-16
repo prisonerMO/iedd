@@ -3,15 +3,15 @@
 params ["_bombObj"];
 if (is3DEN) exitWith {};
 if (!isServer) exitWith {};
-[{     
-    params ["_bombObj"]; 
+[{
+    params ["_bombObj"];
     private _variation = _bombObj getVariable [QGVAR(variation), GVAR(defaultVariation)];
     private _decals = _bombObj getVariable [QGVAR(decals), GVAR(defaultDecals)];
     private _setDir = _bombObj getVariable [QGVAR(dir), GVAR(defaultDirection)];
     private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];
     private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
     private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
-
+    TRACE_6("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer);
     if (_isFake > random 1) exitWith {
         private _type = getText (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_default");
         private _dir = getDir _bombObj;
@@ -21,11 +21,11 @@ if (!isServer) exitWith {};
         private _bombPos = getPosATL _bombObj;
         if (!isNull _bombObj) then {
             deleteVehicle _bombObj;
-        };  
-        [{isNull (_this select 0)}, 
+        };
+        [{isNull (_this select 0)},
         {
             params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp"];
-            private  _fakeBombObj = createVehicle [_type, _bombPos, [], 0, "CAN_COLLIDE"];
+            private  _fakeBombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
             if (_setDir) then {
                 _fakeBombObj setDir random 359;
             } else {
@@ -42,27 +42,29 @@ if (!isServer) exitWith {};
     if (GVAR(isDetectable)) then {
         private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
         _mine attachTo [_bombObj, [0,0,0]];
-        ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
-        [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
+        private _jipId = ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
+        [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
+        _jipId = [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
+        [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
     };
 
-    if (_variation isEqualTo 6) then {
+    if (_variation == 6) then {
         private _includeVarX = _bombObj getVariable [QGVAR(varX), GVAR(defaultVarX)]; //if 0% , Variation X will be excluded from Random
-        If (_includeVarX > random 1) then {
+        if (_includeVarX > random 1) then {
             _variation = selectRandom [0,1,2,3,4,5];
         } else {
             _variation = selectRandom [0,1,2,3,4];
         };
     };
-    
+
     private _isDistance = _bombObj getVariable [QGVAR(distance), 0];
     private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
 
-    private _wireSet = if (_variation == 5) then 
-    {        
+    private _wireSet = if (_variation == 5) then
+    {
         _bombObj setVariable [QGVAR(movable),selectRandom [false,true]];
-        [6] call FUNC(variationx);            
+        [6] call FUNC(variationx);
     } else {
         IEDD_CDVARS select _variation;
     };
@@ -80,9 +82,9 @@ if (!isServer) exitWith {};
     _cyl2 attachTo [_bombObj,[0.022,-0.11,-0.13]];
     _cyl2 setVectorDirAndUp [[0.999,-0.045,-0.01],[0.01,0.002,1]];
 
-    private _subObj0 = createSimpleObject ["IEDD_WireSmall"+(_wireSet #0#0), [0,0,0]];           
-    private _subObj1 = createSimpleObject ["IEDD_WireL"+(_wireSet #0#1), [0,0,0]];  
-    private _subObj2 = createSimpleObject ["IEDD_WireSmall"+(_wireSet #0#2), [0,0,0]];   
+    private _subObj0 = createSimpleObject ["IEDD_WireSmall"+(_wireSet #0#0), [0,0,0]];
+    private _subObj1 = createSimpleObject ["IEDD_WireL"+(_wireSet #0#1), [0,0,0]];
+    private _subObj2 = createSimpleObject ["IEDD_WireSmall"+(_wireSet #0#2), [0,0,0]];
     private _subObj3 = createSimpleObject ["IEDD_WireL"+(_wireSet #0#3), [0,0,0]];
     private _subObj4 = createSimpleObject ["IEDD_WireL"+(_wireSet #0#4), [0,0,0]];
     private _subObj5 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#5), [0,0,0]];
@@ -108,7 +110,7 @@ if (!isServer) exitWith {};
 
     _bombObj setVariable [QGVAR(wires),_wires,true];
     _bombObj setVariable [QGVAR(bomb),true,true];
-    _bombObj setVariable [QGVAR(variation),_variation,true];    
+    _bombObj setVariable [QGVAR(variation),_variation,true];
     _bombObj setVariable [QGVAR(timer),_isTimer, true];
 
 
@@ -128,25 +130,27 @@ if (!isServer) exitWith {};
         _bombObj setVariable [QGVAR(timerValue),_time];
     };
 
-    [
-        {speed (_this select 0) == 0},
-        {     
+    [{
+        [{
+            speed (_this select 0) == 0
+        },
+        {
             params ["_bombObj","_decals", "_setDir", "_wireSet"];
-            if (_setDir) then {           
+            if (_setDir) then {
                 private _bombPos = getPosATL _bombObj;
                 _bombObj setDir random 359;
                 _bombObj setPosATL _bombPos;
-            };               
+            };
             if (_decals) then {
                 [_bombObj] call FUNC(decals);
             };
-            private _text = LLSTRING(Name_Long);
-            [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
-            [QGVAR(updateBombList),[_bombObj]] call CBA_fnc_serverEvent;   
-        },
-        [_bombObj,_decals, _setDir, _wireSet],
-        1
-    ] call CBA_fnc_waitUntilAndExecute;
+            private _text = localize LSTRING(Name_Long);
+            private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
+            [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
+            [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;
+        }, _this] call CBA_fnc_waitUntilAndExecute;
+    }, [_bombObj, _decals, _setDir, _wireSet], 1] call CBA_fnc_waitAndExecute;
+
 },[_bombObj],0.1] call CBA_fnc_waitAndExecute;
 true;
 
@@ -157,4 +161,4 @@ true;
 
 
 
-    
+

@@ -4,6 +4,6 @@ params ["_unit", "_item"];
 [{
     params ["_unit", "_item"];
    	deleteVehicle _item;
-	_unit additem QEGVAR(item,notebook);
+	_unit addItem QEGVAR(item,notebook);
 }, [_unit, _item], 1.5] call CBA_fnc_waitAndExecute;
 

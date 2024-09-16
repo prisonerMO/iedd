@@ -29,8 +29,8 @@
 		</Container>
 		<Container name="IEDs Display and Attribues">
 			<Key ID="STR_iedd_ied_IED_Category">
-				<Original>IED settings</Original>
-				<English>IED settings</English>
+				<Original>IED Settings</Original>
+				<English>IED Settings</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Barrel_DisplayName">
 				<Original>Plastic Barrel</Original>
@@ -163,19 +163,19 @@
 			<Key ID="STR_iedd_ied_Variation_1">
 				<Original>Variation 1</Original>
 				<English>Variation 1</English>
-			</Key>			
+			</Key>
 			<Key ID="STR_iedd_ied_Variation_2">
 				<Original>Variation 2</Original>
 				<English>Variation 2</English>
-			</Key>			
+			</Key>
 			<Key ID="STR_iedd_ied_Variation_3">
 				<Original>Variation 3</Original>
 				<English>Variation 3</English>
-			</Key>			
+			</Key>
 			<Key ID="STR_iedd_ied_Variation_4">
 				<Original>Variation 4</Original>
 				<English>Variation 4</English>
-			</Key>			
+			</Key>
 			<Key ID="STR_iedd_ied_Variation_5">
 				<Original>Variation 5</Original>
 				<English>Variation 5</English>
@@ -205,8 +205,8 @@
 				<English>Set size of explosion (huge excluded from random).</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Timer_Category">
-				<Original>Countdown timer settings</Original>
-				<English>Countdown timer settings</English>
+				<Original>Countdown Timer Settings</Original>
+				<English>Countdown Timer Settings</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Timer">
 				<Original>Countdown timer</Original>
@@ -336,6 +336,22 @@
 				<Original>Set color of fuel canister.</Original>
 				<English>Set color of fuel canister.</English>
 			</Key>
+			<Key ID="STR_iedd_ied_DistanceActivate">
+				<Original>Suicide bomber activation distance</Original>
+				<English>Suicide bomber activation distance</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DistanceActivate_Tooltip">
+				<Original>Distance to player when suicide bomber starts approaching. If the value is under 1m, random distance value from addon options will be used.</Original>
+				<English>Distance to player when suicide bomber starts approaching. If the value is under 1m, random distance value from addon options will be used.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DistanceExplosion">
+				<Original>Explosion activation distance</Original>
+				<English>Explosion activation distance</English>
+			</Key>
+			<Key ID="STR_iedd_ied_DistanceExplosion_Tooltip">
+				<Original>Distance to player when suicide bomber will explode. If the value is under 1m, random distance value from addon options will be used.</Original>
+				<English>Distance to player when suicide bomber will explode. If the value is under 1m, random distance value from addon options will be used.</English>
+			</Key>
 		</Container>
 		<Container name="IEDD Options Charge">
 			<Key ID="STR_iedd_ied_isCharge_DisplayName">
@@ -343,8 +359,16 @@
 				<English>Add bomb vest</English>
 			</Key>
 			<Key ID="STR_iedd_ied_isCharge_Description">
-				<Original>Add bomb vest on this unit</Original>
-				<English>Add bomb vest on this unit</English>
+				<Original>Add bomb vest on this unit.</Original>
+				<English>Add bomb vest on this unit.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_isSuicide_DisplayName">
+				<Original>Suicide bomber</Original>
+				<English>Suicide bomber</English>
+			</Key>
+			<Key ID="STR_iedd_ied_isSuicide_Description">
+				<Original>Defines if unit is suicide bomber.</Original>
+				<English>Defines if unit is suicide bomber.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_ChargeDud_Tooltip">
 				<Original>Set probability of bomb vest being dud.</Original>
@@ -373,13 +397,33 @@
 			<Key ID="STR_iedd_ied_Charge_Status_DisplayName">
 				<Original>Unit Status Settings</Original>
 				<English>Unit Status Settings</English>
-			</Key>			
+			</Key>
+			<Key ID="STR_iedd_ied_Suicide_Settings_DisplayName">
+				<Original>Suicide Bomber Settings</Original>
+				<English>Suicide Bomber Settings</English>
+			</Key>
+			<Key ID="STR_iedd_ied_isDeadManSwitch_DisplayName">
+				<Original>Dead man switch</Original>
+				<English>Dead man switch</English>
+			</Key>
+			<Key ID="STR_iedd_ied_isDeadManSwitch_Description">
+				<Original>If selected, suicide bomber will explode when killed or gets unconscious.</Original>
+				<English>If selected, suicide bomber will explode when killed or gets unconscious.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_HideOnStart_DisplayName">
+				<Original>Hide bomb vest when out of range</Original>
+				<English>Hide bomb vest when out of range</English>
+			</Key>
+			<Key ID="STR_iedd_ied_HideOnStart_Description">
+				<Original>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</Original>
+				<English>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</English>
+			</Key>
 		</Container>
 		<Container name="IEDD Interaction Menu">
 			<Key ID="STR_iedd_ied_Reset_DisplayName">
 				<Original>Rearm</Original>
 				<English>Rearm</English>
-			</Key>											
+			</Key>
 			<Key ID="STR_iedd_ied_Disarm_DisplayName">
 				<Original>Disarm</Original>
 				<English>Disarm</English>
@@ -395,8 +439,8 @@
 			<Key ID="STR_iedd_ied_Keep_DisplayName">
 				<Original>Keep variation</Original>
 				<English>Keep variation</English>
-			</Key>								
-		</Container>	
+			</Key>
+		</Container>
 		<Container name="IEDD Explosives">
 			<Key ID="STR_iedd_ied_Charge_DisplayName">
 				<Original>IED Charge</Original>
@@ -405,7 +449,7 @@
 			<Key ID="STR_iedd_ied_Charge_Mag_DisplayName">
 				<Original>IED Magazine</Original>
 				<English>IED Magazine</English>
-			</Key>											
+			</Key>
 			<Key ID="STR_iedd_ied_Charge_Mag_Desc">
 				<Original>IED Magazine Description</Original>
 				<English>IED Magazine Description</English>
@@ -417,17 +461,17 @@
 			<Key ID="STR_iedd_ied_Charge_Ammo_DisplayName">
 				<Original>IED Ammo</Original>
 				<English>IED Ammo</English>
-			</Key>												
+			</Key>
 		</Container>
-		<Container name="IEDD Notebook Settings">							
+		<Container name="IEDD Notebook Settings">
 			<Key ID="STR_iedd_ied_IsDuds">
 				<Original>Dud IEDs</Original>
 				<English>Dud IEDs</English>
 			</Key>
 			<Key ID="STR_iedd_ied_IsDuds_Description">
-				<Original>All IEDs are duds. Training purposes for example</Original>
-				<English>All IEDs are duds. Training purposes for example</English>
-			</Key>											
+				<Original>All IEDs are duds. Training purposes for example.</Original>
+				<English>All IEDs are duds. Training purposes for example.</English>
+			</Key>
 			<Key ID="STR_iedd_ied_WireCutTimeEOD">
 				<Original>Wire cutting time for EODs/Explosive Specialists</Original>
 				<English>Wire cutting time for EODs/Explosive Specialists</English>
@@ -435,7 +479,7 @@
 			<Key ID="STR_iedd_ied_WireCutTimeEOD_Description">
 				<Original>How long it takes to cut one wire. Min 1s, max 30s.</Original>
 				<English>How long it takes to cut one wire. Min 1s, max 30s.</English>
-			</Key>											
+			</Key>
 			<Key ID="STR_iedd_ied_WireCutTime">
 				<Original>Wire cutting time for other units</Original>
 				<English>Wire cutting time for other units</English>
@@ -443,7 +487,7 @@
 			<Key ID="STR_iedd_ied_WireCutTime_Description">
 				<Original>How long it takes to cut one wire. Min 1s, max 30s.</Original>
 				<English>How long it takes to cut one wire. Min 1s, max 30s.</English>
-			</Key>																			
+			</Key>
 			<Key ID="STR_iedd_ied_PlrCheck">
 				<Original>Player activates IEDs on foot</Original>
 				<English>Player activates IEDs on foot</English>
@@ -451,23 +495,23 @@
 			<Key ID="STR_iedd_ied_PlrCheck_Description">
 				<Original>Controls if IEDs can be activated by players on foot.</Original>
 				<English>Controls if IEDs can be activated by players on foot.</English>
-			</Key>														
+			</Key>
 			<Key ID="STR_iedd_ied_VehCheck">
 				<Original>Player activates IEDs in vehicle</Original>
 				<English>Player activates IEDs in vehicle</English>
-			</Key>			
+			</Key>
 			<Key ID="STR_iedd_ied_VehCheck_Description">
 				<Original>Controls if IEDs can be activated by players in vehicle.</Original>
 				<English>Controls if IEDs can be activated by players in vehicle.</English>
-			</Key>	
+			</Key>
 			<Key ID="STR_iedd_ied_IsDetectable">
 				<Original>IEDs are detectable with mine detectors</Original>
 				<English>IEDs are detectable with mine detectors</English>
-			</Key>			
+			</Key>
 			<Key ID="STR_iedd_ied_IsDetectable_Description">
 				<Original>Controls if IEDs are detectable with mine detectors.</Original>
 				<English>Controls if IEDs are detectable with mine detectors.</English>
-			</Key>																																	
+			</Key>
 			<Key ID="STR_iedd_ied_MinRange">
 				<Original>Minimum activation distance for IEDs</Original>
 				<English>Minimum activation distance for IEDs</English>
@@ -475,7 +519,7 @@
 			<Key ID="STR_iedd_ied_MinRange_Description">
 				<Original>Minimum distance to IED where player will activate it.</Original>
 				<English>Minimum distance to IED where player will activate it.</English>
-			</Key>								
+			</Key>
 			<Key ID="STR_iedd_ied_MaxRange">
 				<Original>Maximum activation distance for IEDs</Original>
 				<English>Maximum activation distance for IEDs</English>
@@ -484,6 +528,38 @@
 				<Original>Maximum distance to IED where player will activate it.</Original>
 				<English>Maximum distance to IED where player will activate it.</English>
 			</Key>
+			<Key ID="STR_iedd_ied_ExpMinRange">
+				<Original>Minimum exploding distance</Original>
+				<English>Minimum exploding distance</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ExpMinRange_Description">
+				<Original>Minimum distance to player when suicide bomber will explode. </Original>
+				<English>Minimum distance to player when suicide bomber will explode. </English>
+			</Key>
+			<Key ID="STR_iedd_ied_ExpMaxRange">
+				<Original>Maximum exploding distance</Original>
+				<English>Maximum exploding distance</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ExpMaxRange_Description">
+				<Original>Maximum distance to player when suicide bomber will explode.</Original>
+				<English>Maximum distance to player when suicide bomber will explode.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ActMinRange">
+				<Original>Minimum approach distance</Original>
+				<English>Minimum approach distance</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ActMinRange_Description">
+				<Original>Minimum distance to suicide bomber when it starts to approach player.</Original>
+				<English>Minimum distance to suicide bomber when it starts to approach player.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_ActMaxRange">
+				<Original>Maximum approach distance </Original>
+				<English>Maximum approach distance </English>
+			</Key>
+			<Key ID="STR_iedd_ied_ActMaxRange_Description">
+				<Original>Maximum distance to suicide bomber when it starts to approach player.</Original>
+				<English>Maximum distance to suicide bomber when it starts to approach player.</English>
+			</Key>
 			<Key ID="STR_iedd_ied_FailChanceEOD">
 				<Original>Chance to fail wire cut for EODs/Explosive Specialists</Original>
 				<English>Chance to fail wire cut for EODs/Explosive Specialists</English>
@@ -491,7 +567,7 @@
 			<Key ID="STR_iedd_ied_FailChanceEOD_Description">
 				<Original>% of wire cut failing chance.</Original>
 				<English>% of wire cut failing chance.</English>
-			</Key>										
+			</Key>
 			<Key ID="STR_iedd_ied_FailChance">
 				<Original>Chance to fail wire cut for other units</Original>
 				<English>Chance to fail wire cut for other units</English>
@@ -499,7 +575,7 @@
 			<Key ID="STR_iedd_ied_FailChance_Description">
 				<Original>% of wire cut failing chance.</Original>
 				<English>% of wire cut failing chance.</English>
-			</Key>																	
+			</Key>
 			<Key ID="STR_iedd_ied_FailExploseChance">
 				<Original>Chance to activate IED after failed wire cut</Original>
 				<English>Chance to activate IED after failed wire cut</English>
@@ -514,8 +590,8 @@
 				<English>Ignore wire cut order</English>
 			</Key>
 			<Key ID="STR_iedd_ied_IgnoreWireCutOrder_Description">
-				<Original>IEDs do not explode on cutting the wrong wire.</Original>
-				<English>IEDs do not explode on cutting the wrong wire.</English>
+				<Original>IEDs do not explode when wrong wire is cut.</Original>
+				<English>IEDs do not explode when wrong wire is cut.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_IsBlockedRange">
 				<Original>Just keep talking and nobody explodes-mode</Original>
@@ -524,7 +600,7 @@
 			<Key ID="STR_iedd_ied_IsBlockedRange_Description">
 				<Original> IEDD Notebook can't be opened near IEDs.</Original>
 				<English> IEDD Notebook can't be opened near IEDs.</English>
-			</Key>			
+			</Key>
 			<Key ID="STR_iedd_ied_AddNotebook">
 				<Original>Add IEDD Notebook to EODs/Explosive specialists</Original>
 				<English>Add IEDD Notebook to EODs/Explosive specialists</English>
@@ -532,7 +608,7 @@
 			<Key ID="STR_iedd_ied_AddNotebook_Description">
 				<Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</Original>
 				<English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</English>
-			</Key>		
+			</Key>
 			<Key ID="STR_iedd_ied_AddDefusalKit">
 				<Original>Add Defusal Kit to EODs/Explosive specialists</Original>
 				<English>Add Defusal Kit to EODs/Explosive specialists</English>
@@ -540,7 +616,7 @@
 			<Key ID="STR_iedd_ied_AddDefusalKit_Description">
 				<Original>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</Original>
 				<English>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</English>
-			</Key>						
+			</Key>
 			<Key ID="STR_iedd_ied_IsEod">
 				<Original>Require EOD/Explosive Specialist</Original>
 				<English>Require EOD/Explosive Specialist</English>
@@ -572,7 +648,7 @@
 			<Key ID="STR_iedd_ied_DefaultSize_Description">
 				<Original>Set explosion size (if not defined somewhere else).</Original>
 				<English>Set explosion size (if not defined somewhere else).</English>
-			</Key>		
+			</Key>
 			<Key ID="STR_iedd_ied_DefaultDirection">
 				<Original>Random direction</Original>
 				<English>Random direction</English>
@@ -642,7 +718,7 @@
 				<English>Set probability of variation X being spawned, if random variation is selected above (if not defined somewhere else).</English>
 			</Key>
 		</Container>
-		<Container name="IEDD Notebook Dev Settings">							
+		<Container name="IEDD Notebook Dev Settings">
 			<Key ID="STR_iedd_ied_EquipmentDebug">
 				<Original>Enable Equipment addon debug</Original>
 				<English>Enable Equipment addon debug</English>
@@ -690,7 +766,7 @@
 			<Key ID="STR_iedd_ied_NotebookDebug_Description">
 				<Original>Enable Notebook addon debug</Original>
 				<English>Enable Notebook addon debug</English>
-			</Key>			
+			</Key>
 		</Container>
 	</Package>
 </Project>
