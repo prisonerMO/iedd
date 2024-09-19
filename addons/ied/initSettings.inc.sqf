@@ -208,6 +208,16 @@
     1
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(exclZeus),
+    "CHECKBOX",
+    [LSTRING(SidesZeus), LSTRING(SidesZeus_Description)],
+    [localize "STR_iedd_main_Category_Main","Suicide Bomber"],
+    true,
+    true,
+    {},
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
 
 
 /*** IED Default values ***/
