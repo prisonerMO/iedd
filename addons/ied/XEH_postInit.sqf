@@ -150,6 +150,7 @@
 	{
 		_unit disableAI _x;
 	} forEach ["AUTOCOMBAT","COVER","FSM"];
+	_unit setVariable [QGVAR(suicideSide),_side];
 	call FUNC(suicide);
 }] call CBA_fnc_addEventHandler;
 
