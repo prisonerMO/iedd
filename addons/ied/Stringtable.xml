@@ -423,8 +423,8 @@
 				<English>Actived by side</English>
 			</Key>
 			<Key ID="STR_iedd_ied_Sides_Description">
-				<Original>Actived by side DEST</Original>
-				<English>Actived by side DEST</English>
+				<Original>Select activation side(s) for suicide bomber.</Original>
+				<English>Select activation side(s) for suicide bomber.</English>
 			</Key>
 		</Container>
 		<Container name="IEDD Interaction Menu">
@@ -573,8 +573,8 @@
 				<English>Suicide bomber actived by Zeus</English>
 			</Key>
 			<Key ID="STR_iedd_ied_SidesZeus_Description">
-				<Original>Suicide bomber actived by Zeus DEST</Original>
-				<English>Suicide bomber actived by Zeus DEST</English>
+				<Original>If selected, unit of Zeus will activate suicide bombers.</Original>
+				<English>If selected, unit of Zeus will activate suicide bombers.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_FailChanceEOD">
 				<Original>Chance to fail wire cut for EODs/Explosive Specialists</Original>

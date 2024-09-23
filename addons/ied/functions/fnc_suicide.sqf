@@ -27,7 +27,7 @@ if (_actSides findIf {_x > -1} != -1) then {
 		if (_x > -1) then {
 			_sides pushBackUnique (_x call BIS_fnc_sideType);
 			//_dump pushBack _forEachIndex;
-		};		
+		};
 	} forEach _actSides;
 	//_sides deleteAt _dump;2.18
 } else {
@@ -40,14 +40,14 @@ diag_log format ["unit: %1, unit sides to check: %2",_unit, _sides];
 	private _getPlayers = call CBA_fnc_players select {
 		alive _x && {
 			side group _x in _sides && {
-				!(objectParent _x isKindOf "Air") 
+				!(objectParent _x isKindOf "Air")
 			}
 		}
 	};
-	private _players = if (GVAR(exclZeus)) then {
-		_getPlayers select {isNull getAssignedCuratorLogic _x};
+	private _players = if (GVAR(includeZeus)) then {
+		_getPlayers //will include all players + zeus
 	} else {
-		_getPlayers
+		_getPlayers select {isNull getAssignedCuratorLogic _x}; // will exclude zeus from players
 	};
 	diag_log format ["[%1] Suicide Check Players: %2",_unit,_players];
 	private _nearPlrs = _players select {;;(_unit distance _x) < _actDist};

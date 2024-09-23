@@ -209,11 +209,11 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(exclZeus),
+    QGVAR(includeZeus),
     "CHECKBOX",
     [LSTRING(SidesZeus), LSTRING(SidesZeus_Description)],
     [localize "STR_iedd_main_Category_Main","Suicide Bomber"],
-    true,
+    false,
     true,
     {},
     false // Needs mission restart

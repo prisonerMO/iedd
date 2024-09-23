@@ -770,7 +770,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                             };
                         };
                         class GVAR(sideL): GVAR(variationL) {
-                            displayName = CSTRING(Zeus_Sides_Category);
+                            text = CSTRING(Zeus_Sides_Category);
                             tooltip = ECSTRING(ied,Sides_Description);
                             y = QUOTE(H_PART(6.6));
                         };
