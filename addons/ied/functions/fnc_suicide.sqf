@@ -51,6 +51,8 @@ diag_log format ["unit: %1, unit sides to check: %2",_unit, _sides];
 	};
 	diag_log format ["[%1] Suicide Check Players: %2",_unit,_players];
 	private _nearPlrs = _players select {;;(_unit distance _x) < _actDist};
+	/*private _isRemote = _nearPlrs select {isRemoteControlling _x && {side group (remoteControlled _x) == _side}};
+	TO-DO get zeus excluded if remote controlling and "own" side in _sides,	maybe will taken to use, maybe not*/
     if (_nearPlrs isNotEqualTo []) exitWith { //actDist reached then call move stuff
 		private _isHide = _unit getVariable [QGVAR(hide),false];
 		if (_isHide) then {
