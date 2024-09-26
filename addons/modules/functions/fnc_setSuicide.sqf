@@ -64,6 +64,14 @@ _sliderExp  sliderSetPosition 15; //CBA GET DEFAULT VALUE?
 _sliderExp  ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
 _sliderExp call _fnc_sliderValueMove;
 
+private _side = (side group _unit) call BIS_fnc_sideID;
+{
+    private _sideCtrl = _display displayCtrl _x;
+    if (_side != _forEachIndex) then {
+        _sideCtrl cbSetChecked true;
+    }
+} forEach [62528,62527,62529,62530];
+
 private _fnc_onUnload = {
     private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
     if (isNull _logic) exitWith {};

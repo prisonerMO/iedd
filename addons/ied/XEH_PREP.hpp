@@ -34,3 +34,4 @@ PREP(suicideAct);
 PREP(timer);
 PREP(training);
 PREP(variationx);
+PREP(sides_onAttributeLoad);

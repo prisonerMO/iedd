@@ -183,9 +183,8 @@ class Cfg3DEN {
                         displayName = CSTRING(Sides_DisplayName);
                         tooltip = CSTRING(Sides_Description);
                         condition = "objectControllable";
-                        defaultValue = "-1";
-                        expression = "_this setVariable ['%s',_value]";
-                        typeName="BOOL";
+                        defaultValue = "(side group _this) call BIS_fnc_sideID";
+                        expression = "_this setVariable ['%s',_value];";
                     };
                     /*UNIT STATUS*/
                     class GVAR(Charge_Status) {

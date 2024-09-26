@@ -222,17 +222,7 @@ class GVAR(isSuicide): Checkbox {
 };
 class GVAR(distDMS): Checkbox {};
 class GVAR(distSides): Checkbox {
-    attributeLoad = "for '_i' from 100 to 103 do {\
- 		if (_value param [_i - 100, -1] > -1) then {\
-			    (_this controlsGroupCtrl _i) cbSetChecked true;\
-			};\
-		};";
-    /*
-	_this controlsGroupCtrl 100 ctrlEnable (getNumber (_config >> 'disableEast') != 1);\
-	_this controlsGroupCtrl 101 ctrlEnable (getNumber (_config >> 'disableWest') != 1);\
-	_this controlsGroupCtrl 102 ctrlEnable (getNumber (_config >> 'disableIndependent') != 1);\
-	_this controlsGroupCtrl 103 ctrlEnable (getNumber (_config >> 'disableCivilian') != 1)";
-    */
+    attributeLoad = "[_this, _value] call iedd_ied_fnc_sides_onAttributeLoad";
 	attributeSave = "[\
         [-1, 0] select (cbChecked (_this controlsGroupCtrl 100)),\
         [-1, 1] select (cbChecked (_this controlsGroupCtrl 101)),\
@@ -242,7 +232,7 @@ class GVAR(distSides): Checkbox {
     class Controls: Controls {
         class Title: Title{};       
         class EastV: ctrlCheckbox
-		{
+		{            
             idc = 100;
             y = QUOTE(GRID_Y_POS);
             x = QUOTE((ATTRIBUTE_TW + ATTRIBUTE_W * 1/30) * GRID_W);
