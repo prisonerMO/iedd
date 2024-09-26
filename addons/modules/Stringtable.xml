@@ -205,6 +205,10 @@
 				<Original>DEAD MAN SWITCH</Original>
 				<English>DEAD MAN SWITCH</English>
 			</Key>
+			<Key ID="STR_iedd_modules_Zeus_Sides_Category">
+				<Original>ACTIVED BY SIDE</Original>
+				<English>ACTIVED BY SIDE</English>
+			</Key>
 			<Key ID="STR_iedd_modules_Zeus_Sign_Category_Tooltip">
 				<Original>Select type of ground sign.</Original>
 				<English>Select type of ground sign.</English>

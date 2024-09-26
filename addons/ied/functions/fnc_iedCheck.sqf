@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 private _checkTime = 5;
 if (GVAR(bombs) isNotEqualTo []) then {
-	private _players = call BIS_fnc_listPlayers;
+	private _players = call CBA_fnc_players;
 	private _objectsToRemove = [];
 	{
 		private _object = _x;

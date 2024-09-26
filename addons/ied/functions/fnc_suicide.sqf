@@ -18,12 +18,42 @@ if (_killedEhId != -1) then {
 	_unit setVariable [QGVAR(KilledEhId),-1,true];
 };
 TRACE_2("Distance, Hide",_actDist,_hideOnStart);
+private _side = _unit getVariable QGVAR(suicideSide);
+private _actSides = _unit getVariable [QGVAR(sides),[-1]];
+private _sides = [];
+if (_actSides findIf {_x > -1} != -1) then {
+	{
+		//private _dump = [];2.18
+		if (_x > -1) then {
+			_sides pushBackUnique (_x call BIS_fnc_sideType);
+			//_dump pushBack _forEachIndex;
+		};
+	} forEach _actSides;
+	//_sides deleteAt _dump;2.18
+} else {
+	_sides = [east,west,resistance,civilian] - [_side];
+};
+diag_log format ["unit: %1, unit sides to check: %2",_unit, _sides];
 [{
     params ["_args", "_pfhID"];
-    _args params ["_unit","_actDist"];
-	private _players = call BIS_fnc_listPlayers select {alive _x && !(objectParent _x isKindOf "Air")};
+    _args params ["_unit","_sides","_actDist"];
+	private _getPlayers = call CBA_fnc_players select {
+		alive _x && {
+			side group _x in _sides && {
+				!(objectParent _x isKindOf "Air")
+			}
+		}
+	};
+	private _players = if (GVAR(includeZeus)) then {
+		_getPlayers; //will include all players + zeus
+	} else {
+		_getPlayers select {isNull getAssignedCuratorLogic _x}; // will exclude zeus from players
+	};
+	diag_log format ["[%1] Suicide Check Players: %2",_unit,_players];
 	private _nearPlrs = _players select {;;(_unit distance _x) < _actDist};
-    if (_nearPlrs isNotEqualTo []) exitWith { //actDist reached then call move stuff
+	/*private _isRemote = _nearPlrs select {isRemoteControlling _x && {side group (remoteControlled _x) == _side}};
+	TO-DO get zeus excluded if remote controlling and "own" side in _sides,	maybe will taken to use, maybe not*/
+    if (_nearPlrs isNotEqualTo []) exitWith { // actDist reached then call move stuff
 		private _isHide = _unit getVariable [QGVAR(hide),false];
 		if (_isHide) then {
 			[_unit,false] call FUNC(hideCharges);
@@ -54,5 +84,4 @@ TRACE_2("Distance, Hide",_actDist,_hideOnStart);
 		[_unit,_target,_actDist] call FUNC(suicideAct);
         [_pfhID] call CBA_fnc_removePerFrameHandler;
     };
-}, 5, [_unit,_actDist]] call CBA_fnc_addPerFrameHandler;
-
+}, 5, [_unit,_sides,_actDist]] call CBA_fnc_addPerFrameHandler;
