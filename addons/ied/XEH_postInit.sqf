@@ -20,7 +20,6 @@
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(dudEffect), {
-	if (!hasInterface) exitWith {};
 	call FUNC(dud);
 }] call CBA_fnc_addEventHandler;
 
@@ -29,7 +28,7 @@
     _source say3D _sound;
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(decals),{
+[QGVAR(decals), {
 	call FUNC(decals);
 }] call CBA_fnc_addEventHandler;
 
