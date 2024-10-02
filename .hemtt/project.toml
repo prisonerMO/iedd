@@ -5,25 +5,13 @@ mainprefix = "x"
 
 [files]
 include = [
-    "mod.cpp"
+    "mod.cpp",
+    "README*.md",
+    "AUTHORS.txt",
+    "LICENSE",
 ]
 
 [version]
 git_hash = 0
 
-[asc]
-enabled = true
-exclude = [
-    ".inc.sqf"
-]
 
-[hemtt.config]
-preset = "Hemtt"
-
-[hemtt.launch.default]
-workshop = [
-    "450814997", # CBA_A3
-    "463939057", # ace
-    "1779063631", # Zeus Enhanced
-]
-mission="0000_IEDD_NOTEBOOK_TEST.Stratis"

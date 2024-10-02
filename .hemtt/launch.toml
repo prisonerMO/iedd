@@ -1,0 +1,6 @@
+[default]
+workshop = [
+    "450814997", # CBA_A3
+    "463939057", # ace
+]
+mission="0000_IEDD_NOTEBOOK_TEST.Stratis"
