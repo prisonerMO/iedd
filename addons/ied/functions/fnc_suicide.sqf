@@ -1,9 +1,10 @@
+//#define DEBUG_ENABLED_IED
 #include "script_component.hpp"
 params ["_unit"];
 private _actDist = _unit getVariable QGVAR(actDist);
 if (isNil "_actDist") then {
 	private _getAct = _unit getVariable [QGVAR(actDist),0];
-	_actDist = if (_getAct> 0) then {_getAct} else {[GVAR(actMinRange), GVAR(actMaxRange)] call BIS_fnc_randomInt};
+	_actDist = if (_getAct > 0) then {_getAct} else {[GVAR(actMinRange), GVAR(actMaxRange)] call BIS_fnc_randomInt};
 	_unit setVariable [QGVAR(actDist), _actDist,true];
 };
 private _hideOnStart = _unit getVariable [QGVAR(hideOnStart),false];
@@ -17,7 +18,7 @@ if (_killedEhId != -1) then {
 	_unit removeEventHandler ["Killed", _killedEhId];
 	_unit setVariable [QGVAR(KilledEhId),-1,true];
 };
-TRACE_2("Distance, Hide",_actDist,_hideOnStart);
+TRACE_3("Suicide:",_unit,_actDist,_hideOnStart);
 private _side = _unit getVariable QGVAR(suicideSide);
 private _actSides = _unit getVariable [QGVAR(sides),[-1]];
 private _sides = [];
@@ -33,7 +34,6 @@ if (_actSides findIf {_x > -1} != -1) then {
 } else {
 	_sides = [east,west,resistance,civilian] - [_side];
 };
-diag_log format ["unit: %1, unit sides to check: %2",_unit, _sides];
 [{
     params ["_args", "_pfhID"];
     _args params ["_unit","_sides","_actDist"];
@@ -49,7 +49,7 @@ diag_log format ["unit: %1, unit sides to check: %2",_unit, _sides];
 	} else {
 		_getPlayers select {isNull getAssignedCuratorLogic _x}; // will exclude zeus from players
 	};
-	diag_log format ["[%1] Suicide Check Players: %2",_unit,_players];
+	TRACE_3("actPFH",_unit,_players,_actDist);
 	private _nearPlrs = _players select {;;(_unit distance _x) < _actDist};
 	/*private _isRemote = _nearPlrs select {isRemoteControlling _x && {side group (remoteControlled _x) == _side}};
 	TO-DO get zeus excluded if remote controlling and "own" side in _sides,	maybe will taken to use, maybe not*/
@@ -59,7 +59,7 @@ diag_log format ["unit: %1, unit sides to check: %2",_unit, _sides];
 			[_unit,false] call FUNC(hideCharges);
 		};
 		private _target = selectRandom _nearPlrs;
-		private _targetSide = side _target;
+		private _targetSide = side group _target;
 		_unit setVariable [QGVAR(targetSide),_targetSide];
 		private _isDeadManSwitch = _unit getVariable QGVAR(isDeadManSwitch);
 		if (isNil "_isDeadManSwitch") then {
@@ -83,5 +83,6 @@ diag_log format ["unit: %1, unit sides to check: %2",_unit, _sides];
 		};
 		[_unit,_target,_actDist] call FUNC(suicideAct);
         [_pfhID] call CBA_fnc_removePerFrameHandler;
+		TRACE_5("Exit PFH",_unit,_target,_targetSide,_actDist,_isDeadManSwitch);
     };
 }, 5, [_unit,_sides,_actDist]] call CBA_fnc_addPerFrameHandler;
