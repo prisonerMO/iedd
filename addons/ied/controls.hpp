@@ -1,4 +1,11 @@
-class Title;
+class Default; //Empty template with pre-defined width and single line height
+class Title: Default
+{
+    class Controls
+    {
+        class Title;
+    };
+};
 class Checkbox: Title
 {
     class Controls {
@@ -114,7 +121,7 @@ class GVAR(distanceExplosion): GVAR(distanceSlider) {
 
 class GVAR(isHandcuffed): Checkbox {};
 class GVAR(isSurrendered): Checkbox {};
-class GVAR(isCharge):CheckboxState {
+class GVAR(isCharge): CheckboxState {
     class Controls: Controls
     {
         class Title: Title{};
@@ -158,7 +165,7 @@ class GVAR(isCharge):CheckboxState {
 class GVAR(c_timer): Combo {};
 class GVAR(isSuicide): Checkbox {
     class Controls: Controls {
-        class Title: Title{};
+        class Title: Title {};
         class Value: Value
         {
             onCheckedChanged = "\
@@ -214,3 +221,82 @@ class GVAR(isSuicide): Checkbox {
     };
 };
 class GVAR(distDMS): Checkbox {};
+class GVAR(distSides): Checkbox {
+    attributeLoad = "[_this, _value] call iedd_ied_fnc_sides_onAttributeLoad";
+	attributeSave = "[\
+        [-1, 0] select (cbChecked (_this controlsGroupCtrl 100)),\
+        [-1, 1] select (cbChecked (_this controlsGroupCtrl 101)),\
+        [-1, 2] select (cbChecked (_this controlsGroupCtrl 102)),\
+        [-1, 3] select (cbChecked (_this controlsGroupCtrl 103))];";
+    h = QUOTE(GRID_H_POS);
+    class Controls: Controls {
+        class Title: Title{};
+        class EastV: ctrlCheckbox
+		{
+            idc = 100;
+            y = QUOTE(GRID_Y_POS);
+            x = QUOTE((ATTRIBUTE_TW + ATTRIBUTE_W * 1/30) * GRID_W);
+            w = QUOTE(GRID_W_POS);
+            h = QUOTE(GRID_H_POS);
+            textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+            textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+            textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+            textureFocusedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+            textureHoverChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+            textureHoverUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+            texturePressedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+            texturePressedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+            textureDisabledChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+            textureDisabledUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+            tooltip="$STR_EAST";
+		};
+        class WestV: EastV
+		{
+            idc = 101;
+			x=QUOTE((ATTRIBUTE_TW + ATTRIBUTE_W * 1/4) * GRID_W);
+            textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+            textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+            textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+            textureFocusedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+            textureHoverChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+            textureHoverUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+            texturePressedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+            texturePressedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+            textureDisabledChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+            textureDisabledUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+            tooltip="$STR_WEST";
+		};
+        class GuerV: EastV
+		{
+            idc = 102;
+            x=QUOTE((ATTRIBUTE_TW + ATTRIBUTE_W * 2/4) * GRID_W);
+            textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+            textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+            textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+            textureFocusedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+            textureHoverChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+            textureHoverUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+            texturePressedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+            texturePressedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+            textureDisabledChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+            textureDisabledUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+            tooltip="$STR_Guerrila";
+		};
+        class CivV: EastV
+		{
+            idc = 103;
+            x=QUOTE((ATTRIBUTE_TW + ATTRIBUTE_W * 3/4) * GRID_W);
+            textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+            textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+            textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+            textureFocusedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+            textureHoverChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+            textureHoverUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+            texturePressedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+            texturePressedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+            textureDisabledChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+            textureDisabledUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+            tooltip="$STR_Civilian";
+		};
+    };
+};

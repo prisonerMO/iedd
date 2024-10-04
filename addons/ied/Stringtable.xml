@@ -418,6 +418,14 @@
 				<Original>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</Original>
 				<English>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</English>
 			</Key>
+			<Key ID="STR_iedd_ied_Sides_DisplayName">
+				<Original>Actived by side</Original>
+				<English>Actived by side</English>
+			</Key>
+			<Key ID="STR_iedd_ied_Sides_Description">
+				<Original>Select activation side(s) for suicide bomber.</Original>
+				<English>Select activation side(s) for suicide bomber.</English>
+			</Key>
 		</Container>
 		<Container name="IEDD Interaction Menu">
 			<Key ID="STR_iedd_ied_Reset_DisplayName">
@@ -559,6 +567,14 @@
 			<Key ID="STR_iedd_ied_ActMaxRange_Description">
 				<Original>Maximum distance to suicide bomber when it starts to approach player.</Original>
 				<English>Maximum distance to suicide bomber when it starts to approach player.</English>
+			</Key>
+			<Key ID="STR_iedd_ied_SidesZeus">
+				<Original>Suicide bomber actived by Zeus</Original>
+				<English>Suicide bomber actived by Zeus</English>
+			</Key>
+			<Key ID="STR_iedd_ied_SidesZeus_Description">
+				<Original>If selected, unit of Zeus will activate suicide bombers.</Original>
+				<English>If selected, unit of Zeus will activate suicide bombers.</English>
 			</Key>
 			<Key ID="STR_iedd_ied_FailChanceEOD">
 				<Original>Chance to fail wire cut for EODs/Explosive Specialists</Original>

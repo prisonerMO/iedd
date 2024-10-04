@@ -620,7 +620,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(6.6));
+                    h = QUOTE(H_PART(9.1));
                     class controls {
                         class GVAR(variationL): RscText {
                             idc = -1;
@@ -768,6 +768,75 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                                     value = 1;
                                 };
                             };
+                        };
+                        class GVAR(sideL): GVAR(variationL) {
+                            text = CSTRING(Zeus_Sides_Category);
+                            tooltip = ECSTRING(ied,Sides_Description);
+                            y = QUOTE(H_PART(6.6));
+                        };
+                        class GVAR(blufor):RscCheckBox {
+                            idc = 62527;
+                            x = QUOTE(W_PART(11.5));
+                            y = QUOTE(H_PART(6.6));
+                            w = QUOTE(W_PART(2.5));
+                            h = QUOTE(H_PART(2.5));
+                            textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+                            textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+                            textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+                            textureFocusedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+                            textureHoverChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+                            textureHoverUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+                            texturePressedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+                            texturePressedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+                            textureDisabledChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
+                            textureDisabledUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
+                            tooltip="$STR_WEST";
+
+                        };
+                        class GVAR(opfor):GVAR(blufor) {
+                            idc = 62528;
+                            x = QUOTE(W_PART(14.5));
+                            textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+                            textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+                            textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+                            textureFocusedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+                            textureHoverChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+                            textureHoverUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+                            texturePressedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+                            texturePressedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+                            textureDisabledChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
+                            textureDisabledUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_east_ca.paa";
+                            tooltip="$STR_EAST";
+                        };
+                        class GVAR(guer):GVAR(blufor) {
+                            idc = 62529;
+                            x = QUOTE(W_PART(17.1));
+                            textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+                            textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+                            textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+                            textureFocusedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+                            textureHoverChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+                            textureHoverUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+                            texturePressedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+                            texturePressedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+                            textureDisabledChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
+                            textureDisabledUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
+                            tooltip="$STR_Guerrila";
+                        };
+                        class GVAR(civ):GVAR(blufor) {
+                            idc = 62530;
+                            x = QUOTE(W_PART(19.7));
+                            textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+                            textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+                            textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+                            textureFocusedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+                            textureHoverChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+                            textureHoverUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+                            texturePressedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+                            texturePressedUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+                            textureDisabledChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
+                            textureDisabledUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
+                            tooltip="$STR_Civilian";
                         };
                     };
                 };

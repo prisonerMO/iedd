@@ -1,12 +1,14 @@
 name = "IEDD Notebook"
 prefix = "iedd"
 author = "PRION - Team"
-files = [
-    "mod.cpp"
-]
 
-keyname = "{{prefix}}_{{version}}"
-signame = "{{prefix}}_{{version}}"
+[files]
+include = [
+    "mod.cpp",
+    "README*.md",
+    "AUTHORS.txt",
+    "LICENSE",
+]
 
 releasebuild = [
     "@zip iedd_{{semver.major}}.{{semver.minor}}.{{semver.patch}}"
