@@ -35,6 +35,7 @@ if (_actSides findIf {_x > -1} != -1) then {
 	_sides = [east,west,resistance,civilian] - [_side];
 };
 [{
+	params ["_unit","_sides","_actDist"];
 	[{
 		params ["_args", "_pfhID"];
 		_args params ["_unit","_sides","_actDist"];
