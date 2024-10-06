@@ -10,6 +10,10 @@ private _target = _unit getVariable [QGVAR(target),objNull];
 _actPfhID = [{
 	params ["_args","_pfhID"];
 	_args params ["_unit","_target","_expDist"];
+	if (!alive _unit) exitWith {
+		_unit setVariable [QGVAR(actPFHID),-1,true];
+		[_pfhID] call CBA_fnc_removePerFrameHandler;
+	};
 	if (!alive _target) exitWith {
 		_unit setVariable [QGVAR(target),objNull,true];
 		_unit setVariable [QGVAR(actPFHID),-1,true];

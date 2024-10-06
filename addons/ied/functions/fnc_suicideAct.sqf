@@ -11,9 +11,11 @@ _args params [
     ["_timeout", [0, 0, 0], [[]], 3]
 ];
 TRACE_1("params",_this);
-
 if (!local _unit) exitWith {
 	[QGVAR(suicideAct), _this, _unit] call CBA_fnc_targetEvent; //if locality change?
+};
+if (!alive _unit) then {
+	[group _unit] call CBA_fnc_clearWaypoints;
 };
 if (!alive _target) then {
 	private _targetSide = _unit getVariable [QGVAR(targetSide),sideEmpty];
