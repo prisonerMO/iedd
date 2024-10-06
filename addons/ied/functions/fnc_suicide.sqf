@@ -13,11 +13,12 @@ if (_hideOnStart && !_isHide) then {
 	[_unit,true] call FUNC(hideCharges);
 	_unit setVariable [QGVAR(hide),true];
 };
+/*
 private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
 if (_killedEhId != -1) then {
 	_unit removeEventHandler ["Killed", _killedEhId];
 	_unit setVariable [QGVAR(KilledEhId),-1,true];
-};
+};*/
 TRACE_3("Suicide:",_unit,_actDist,_hideOnStart);
 private _side = _unit getVariable QGVAR(suicideSide);
 private _actSides = _unit getVariable [QGVAR(sides),[-1]];
@@ -39,6 +40,9 @@ if (_actSides findIf {_x > -1} != -1) then {
 	[{
 		params ["_args", "_pfhID"];
 		_args params ["_unit","_sides","_actDist"];
+		if (!alive _unit) exitWith {
+			_unit setVariable [QGVAR(isSuicide),false,true];
+		};
 		private _getPlayers = call CBA_fnc_players select {
 			alive _x && {
 				side group _x in _sides && {

@@ -35,6 +35,7 @@ if (_isTraining) then {
 			private _unit = attachedTo _bombObj;
 			private _isSuicide = _unit getVariable [QGVAR(isSuicide),false];
 			if (_isSuicide) then {
+				_unit setVariable [QGVAR(isSuicide),true,true];
 				_unit setVariable [QGVAR(suicideWP), nil,true];
 				if (alive _unit) then {
 					private _group = group _unit;

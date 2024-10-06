@@ -100,9 +100,11 @@
 ["ace_unconscious", {
 	params ["_unit", "_isUnconscious"];
 	if (!local _unit) exitWith {};
-	private _isDeadManSwitch = _unit getVariable [QGVAR(isDeadManSwitch),false];
-	if (_isDeadManSwitch) then {
-		call FUNC(handleUnconscious);
+	if (_isUnconscious) then {
+		private _isSuicide = _unit getVariable [QGVAR(isSuicide),false];
+		if (_isSuicide) then {
+			call FUNC(handleUnconscious);
+		};
 	};
 }] call CBA_fnc_addEventHandler;
 
