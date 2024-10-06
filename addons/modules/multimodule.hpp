@@ -19,7 +19,7 @@ class Logic;
 	};
 
 class GVAR(multi): Module_F {
-	is3DEN = 1;	
+	is3DEN = 1;
 	scope = 2;
 	function = QFUNC(multi);
 	functionPriority = 25;
@@ -31,7 +31,7 @@ class GVAR(multi): Module_F {
 	isGlobal = 1;
 	displayName = CSTRING(Multi_DisplayName);
 	icon = QPATHTOF(UI\moduleicon.paa);
-	
+
 	class AttributeValues {
 		size3[]={500,500,-1};
 		isRectangle=0;
@@ -63,7 +63,7 @@ class GVAR(multi): Module_F {
 			displayName = ECSTRING(ied,FuelCanister_DisplayName);
 			tooltip = CSTRING(Type_Tooltip);
 			defaultValue = 1;
-		};		
+		};
 		class EGVAR(ied,Cardboard):Checkbox {
 			property = QGVAR(Cardboard);
 			displayName = ECSTRING(ied,Cardboard_DisplayName);
@@ -81,7 +81,7 @@ class GVAR(multi): Module_F {
 			displayName = ECSTRING(ied,Barrel_DisplayName);
 			tooltip = CSTRING(Type_Tooltip);
 			defaultValue = 1;
-		};		
+		};
 		class EGVAR(ied,Metal):Checkbox {
 			property = QGVAR(Metal);
 			displayName = ECSTRING(ied,MetalBarrel_DisplayName);
@@ -96,7 +96,7 @@ class GVAR(multi): Module_F {
 			typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
 			defaultValue = 2;
 		};
-		
+
 /************ FAKE IED ***********************/
 		class GVAR(fakeIeds_SubCategory) {
 			data = "AttributeSystemSubcategory";
@@ -114,7 +114,7 @@ class GVAR(multi): Module_F {
 			displayName = ECSTRING(ied,FuelCanister_DisplayName);
 			tooltip = CSTRING(Type_Tooltip);
 			defaultValue = 1;
-		};		
+		};
 		class Land_PaperBox_01_small_ransacked_brown_F:Checkbox {
 			property = QGVAR(PaperBox_01_small_ransacked_brown_F);
 			displayName = ECSTRING(ied,Cardboard_DisplayName);
@@ -132,7 +132,7 @@ class GVAR(multi): Module_F {
 			displayName = ECSTRING(ied,Barrel_DisplayName);
 			tooltip = CSTRING(Type_Tooltip);
 			defaultValue = 1;
-		};		
+		};
 		class Land_BarrelEmpty_F:Checkbox {
 			property = QGVAR(BarrelEmpty_F);
 			displayName = ECSTRING(ied,MetalBarrel_DisplayName);
@@ -152,7 +152,7 @@ class GVAR(multi): Module_F {
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
 			displayName = CSTRING(Signs_Category);
-		};	
+		};
 		class GVAR(signs):Checkbox {
 			property = QGVAR(signs);
 			displayName = CSTRING(Signs);
@@ -184,7 +184,7 @@ class GVAR(multi): Module_F {
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
 			displayName = CSTRING(Dud_Category);
-		};	
+		};
 		class GVAR(dud):Combo {
 			property = QGVAR(dud);
 			displayName = CSTRING(Dud);
@@ -197,29 +197,29 @@ class GVAR(multi): Module_F {
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
 			displayName = CSTRING(Timer_Category);
-		};	
+		};
 		class GVAR(timer) {
 			displayName = CSTRING(Timer);
 			tooltip = CSTRING(Timer_Tooltip);
 			property = QGVAR(timer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QEGVAR(ied,defaultTimer);		
+			defaultValue = QEGVAR(ied,defaultTimer);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = ECSTRING(ied,Name_Disabled);	
+					name = ECSTRING(ied,Name_Disabled);
 					value = 0;
 					default = 1;
 				};
 				class 2	{
-					name = ECSTRING(ied,Name_Enabled); 
+					name = ECSTRING(ied,Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = ECSTRING(ied,Name_Random); 
+					name = ECSTRING(ied,Name_Random);
 					value = 2;
-				};				
+				};
 			};
 		};
 		/* USING CBA DEFAULTS TIMER VALUES ON COUNTDOWN TIME
@@ -229,8 +229,8 @@ class GVAR(multi): Module_F {
 			property = QGVAR(timerValue);
 			control = EQGVAR(ied,timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QEGVAR(ied,defaultTimerValue);		
-			typeName = "NUMBER";	
+			defaultValue = QEGVAR(ied,defaultTimerValue);
+			typeName = "NUMBER";
 		};
 		class GVAR(randomTimer) {
 			displayName = ECSTRING(ied,RandomTimer);
@@ -238,22 +238,22 @@ class GVAR(multi): Module_F {
 			property = QGVAR(randomTimer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QEGVAR(ied,defaultRandomTimer);	
+			defaultValue = QEGVAR(ied,defaultRandomTimer);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = ECSTRING(ied,Name_Disabled);	
+					name = ECSTRING(ied,Name_Disabled);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = ECSTRING(ied,Name_Enabled); 
+					name = ECSTRING(ied,Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = ECSTRING(ied,Name_Random); 
+					name = ECSTRING(ied,Name_Random);
 					value = 2;
-				};				
-			};		
+				};
+			};
 		};
 		class GVAR(randomTimerMin) {
 			displayName = ECSTRING(ied,RandomTimerMin);
@@ -261,8 +261,8 @@ class GVAR(multi): Module_F {
 			property = QGVAR(randomTimerMin);
 			control = QEGVAR(ied,timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QEGVAR(ied,defaultTimerMin);	
-			typeName = "NUMBER";	
+			defaultValue = QEGVAR(ied,defaultTimerMin);
+			typeName = "NUMBER";
 		};
 		class GVAR(randomTimerMax) {
 			displayName = ECSTRING(ied,RandomTimerMax);
@@ -270,7 +270,7 @@ class GVAR(multi): Module_F {
 			property = QGVAR(randomTimerMax);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QEGVAR(ied,defaultTimerMax);	
+			defaultValue = QEGVAR(ied,defaultTimerMax);
 			typeName = "NUMBER";
 		};*/
 /************ BLACKLIST ***********************/
@@ -278,7 +278,7 @@ class GVAR(multi): Module_F {
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
 			displayName = CSTRING(Blacklist_Category);
-		};	
+		};
 		class GVAR(black):Default {
 			property = QGVAR(black);
 			control = "Edit";
