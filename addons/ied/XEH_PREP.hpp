@@ -29,6 +29,7 @@ PREP(moveCheck);
 PREP(removeEvents);
 PREP(resetAction);
 PREP(setAttributes);
+PREP(sides_onAttributeLoad);
 PREP(suicide);
 PREP(suicideAct);
 PREP(timer);

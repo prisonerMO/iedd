@@ -43,7 +43,12 @@
                 private _failChance = [GVAR(failChance), GVAR(failChanceEOD)] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
                 private _isFail = random 1 < _failChance;
                 private _isFailTime = _cutTime / 10;
-                _actionParams append [_isFail,_isFailTime];
+                if (count _actionParams < 4) then {
+                    _actionParams append [_isFail,_isFailTime];
+                } else {
+                    _actionParams set [3,_isFail];
+                    _actionParams set [4,_isFailTime];
+                };      
                 TRACE_2("FailChance:",_failChance,_isFail);
                 [
                     _cutTime,

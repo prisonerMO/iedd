@@ -5,9 +5,11 @@ if (!local _unit) exitWith {
 	private _args = ((group _unit) getVariable QGVAR(suicideAct));
 	[QGVAR(suicideAct), _args, _unit] call CBA_fnc_targetEvent; //if locality change?; //if locality change?
 };
+if (!alive _unit) exitWith {
+	[group _unit] call CBA_fnc_clearWaypoints;
+};
 private _currentWp = _unit getVariable [QGVAR(suicideWP),nil];
 if (isNil "_currentWp") exitWith{};
-if (!alive _unit) exitWith {};
 private _currentTarget = _unit getVariable [QGVAR(target), objNull];
 private _args = ((group _unit) getVariable QGVAR(suicideAct));
 if (_target != _currentTarget) exitWith {

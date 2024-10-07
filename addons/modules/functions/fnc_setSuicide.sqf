@@ -64,6 +64,14 @@ _sliderExp  sliderSetPosition 15; //CBA GET DEFAULT VALUE?
 _sliderExp  ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
 _sliderExp call _fnc_sliderValueMove;
 
+private _side = (side group _unit) call BIS_fnc_sideID;
+{
+    private _sideCtrl = _display displayCtrl _x;
+    if (_side != _forEachIndex) then {
+        _sideCtrl cbSetChecked true;
+    }
+} forEach [62528,62527,62529,62530];
+
 private _fnc_onUnload = {
     private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
     if (isNull _logic) exitWith {};
@@ -91,15 +99,21 @@ private _fnc_onConfirm = {
     private _exp = sliderPosition (_display displayCtrl 62525);
     private _dmsCtrl = _display displayCtrl 62526;
     private _isDms = [false,true] select lbCurSel _dmsCtrl;
-
+    private _sides = [
+        [-1, 0] select (cbChecked (_display displayCtrl 62527)),
+        [-1, 1] select (cbChecked (_display displayCtrl 62528)),
+        [-1, 2] select (cbChecked (_display displayCtrl 62529)),
+        [-1, 3] select (cbChecked (_display displayCtrl 62530))
+    ];
     _unit setVariable ["iedd_ied_isSuicide",true,true];
     _unit setVariable ["iedd_ied_c_variation",_variation,true];
     _unit setVariable ["iedd_ied_c_dud",_dud,true];
     _unit setVariable ["iedd_ied_c_size",_size,true];
     _unit setVariable ["iedd_ied_actDist",_act,true];
     _unit setVariable ["iedd_ied_expDist",_exp,true];
+    _unit setVariable ["iedd_ied_sides",_sides,true];
     _unit setVariable ["iedd_ied_isDeadManSwitch",_isDms,true];
-    TRACE_6("Module Suicide",_variation,_dud,_size,_act,_exp,_isDms);
+    TRACE_7("Module Suicide",_variation,_dud,_size,_act,_exp,_isDms,_sides);
     [QGVAR(addBombVest), [_unit,true]] call CBA_fnc_serverEvent;
     _unit setVariable ["iedd_ied_isCharge",true,true];
     [QGVAR(remove), [_unit], _unit] call CBA_fnc_targetEvent;

@@ -20,7 +20,6 @@
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(dudEffect), {
-	if (!hasInterface) exitWith {};
 	call FUNC(dud);
 }] call CBA_fnc_addEventHandler;
 
@@ -29,7 +28,7 @@
     _source say3D _sound;
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(decals),{
+[QGVAR(decals), {
 	call FUNC(decals);
 }] call CBA_fnc_addEventHandler;
 
@@ -101,9 +100,11 @@
 ["ace_unconscious", {
 	params ["_unit", "_isUnconscious"];
 	if (!local _unit) exitWith {};
-	private _isDeadManSwitch = _unit getVariable [QGVAR(isDeadManSwitch),false];
-	if (_isDeadManSwitch) then {
-		call FUNC(handleUnconscious);
+	if (_isUnconscious) then {
+		private _isSuicide = _unit getVariable [QGVAR(isSuicide),false];
+		if (_isSuicide) then {
+			call FUNC(handleUnconscious);
+		};
 	};
 }] call CBA_fnc_addEventHandler;
 
@@ -150,6 +151,7 @@
 	{
 		_unit disableAI _x;
 	} forEach ["AUTOCOMBAT","COVER","FSM"];
+	_unit setVariable [QGVAR(suicideSide),_side];
 	call FUNC(suicide);
 }] call CBA_fnc_addEventHandler;
 

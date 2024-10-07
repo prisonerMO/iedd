@@ -1,5 +1,15 @@
-#define DEFAULT_ISCHARGEVEST ((_this get3DENAttribute 'iedd_ied_isCharge') select 0)
-
+#define pixelScale 0.50
+#define ATTRIBUTE_TW	    48
+#define ATTRIBUTE_W		    82
+#define ATTRIBUTE_Y_VALUE   0.80
+#define ATTRIBUTE_H_VALUE   15
+#define GRID_W (pixelW * pixelGrid * pixelScale)
+#define GRID_H (pixelH * pixelGrid * pixelScale)
+#define GRID_Y_POS (GRID_H * ATTRIBUTE_Y_VALUE)
+#define GRID_H_POS (GRID_H * ATTRIBUTE_H_VALUE)
+#define GRID_W_POS (GRID_H * ATTRIBUTE_H_VALUE)
+class ctrlCheckbox;
+//class ctrlStaticPictureKeepAspect;
 class Cfg3DEN {
     class Attributes {
         #include "controls.hpp"
@@ -167,7 +177,15 @@ class Cfg3DEN {
                         condition = "objectControllable";
                         defaultValue = "(false)";
                     };
-
+                    class GVAR(sides) {
+                        property = QGVAR(sides);
+                        control = QGVAR(distSides);
+                        displayName = CSTRING(Sides_DisplayName);
+                        tooltip = CSTRING(Sides_Description);
+                        condition = "objectControllable";
+                        defaultValue = "(side group _this) call BIS_fnc_sideID";
+                        expression = "_this setVariable ['%s',_value];";
+                    };
                     /*UNIT STATUS*/
                     class GVAR(Charge_Status) {
                         data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
