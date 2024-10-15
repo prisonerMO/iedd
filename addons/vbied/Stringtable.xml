@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="IEDD">
+	<Package name="vbied">
+		<Container name="IEDD VBIED Module">
+			<Key ID="STR_iedd_vbied_Vbied_DisplayName">
+				<Original>VBIED</Original>
+				<English>VBIED</English>
+			</Key>
+		</Container>
+		<Container name="IEDD VBIED Rest">
+		</Container>
+	</Package>
+</Project>
