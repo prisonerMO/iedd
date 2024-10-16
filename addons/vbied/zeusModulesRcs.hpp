@@ -44,7 +44,7 @@ class GVAR(RcsVbied): RscDisplayAttributes {
         class Content: Content {
             class Controls {
                 class GVAR(scroll): RscControlsGroupNoScrollbars {
-                    onSetFocus = QUOTE(_this call FUNC(setVbied));
+                    onSetFocus = QUOTE(_this call FUNC(moduleZeus));
                     idc = 95440; //IEDD
                     x = 0;
                     y = 0;

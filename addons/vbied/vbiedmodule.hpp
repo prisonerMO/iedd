@@ -5,7 +5,6 @@ class Module_F: Logic
 	{
 		class Units;
 	};
-	class ModuleDescription;
 	class AttributesBase
 	{
 		class Default;
@@ -16,12 +15,16 @@ class Module_F: Logic
 		class ModuleDescription;
 		class Units;
 	};
+
+	class ModuleDescription {
+		class AnyVehicle;
+	};
 };
 
 class GVAR(edenModule): Module_F {
 	is3DEN = 1;
 	scope = 2;
-	function = QFUNC(edenModule);
+	function = QFUNC(moduleEden);
 	functionPriority = 25;
 	isSingular = 1;
 	vehicleClass = "Modules";
@@ -43,16 +46,21 @@ class GVAR(edenModule): Module_F {
             defaultValue = 1;
         };
     };
-	class ModuleDescription: ModuleDescription {};
-/*	class Arguments: ArgumentsBaseUnits	{
-		class Units: Units{};
-		class CheckTest
+
+	class ModuleDescription : ModuleDescription{};
+	/*{
+		description = "Short module description";	// Short description, will be formatted as structured text
+		sync[] = { "AllVehicles"};				// Array of synced entities (can contain base classes)
+		class AnyVehicle
 		{
-			displayName = "CheckTest";
-			description = "";
-			typeName = "NUMBER";
-			defaultValue = 1;
+			description = "Short description";
+			displayName = "Any Vehicle";	// Custom name
+			icon = "iconMan";					// Custom icon (can be file path or CfgVehicleIcons entry)
+			position = 1;	// Position is taken into effect
+			direction = 1;	// Direction is taken into effect
+			optional = 1;	// Synced entity is optional
+			duplicate = 1;	// Multiple entities of this type can be synced
+			synced[] = {"AnyVehicle" };
 		};
-	};
-*/
+	};*/
 };
