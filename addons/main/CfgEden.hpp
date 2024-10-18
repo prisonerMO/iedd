@@ -6,8 +6,14 @@ class Cfg3DEN {
                 collapsed = 1;
                 class Attributes {};
             };
+            class iedd_vbied_attributes {
+                displayName = "VEHICLE IMPROVED IED";
+                collapsed = 1;
+                class Attributes {};
+            };
         };
     };
+
 
     class Group {
         class AttributeCategories {
