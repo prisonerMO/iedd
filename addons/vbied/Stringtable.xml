@@ -7,7 +7,85 @@
 				<English>VBIED</English>
 			</Key>
 		</Container>
-		<Container name="IEDD VBIED Rest">
+		<Container name="IEDD VBIED Sub Categories">
+			<Key ID="STR_iedd_vbied_NonAllowed_Desc">
+				<Original>THIS IS NOT ALLOWED YOU LITTLE SHIT! THIS IS NOT ALLOWED YOU LITTLE SHIT! THIS IS NOT ALLOWED YOU LITTLE SHIT! THIS IS NOT ALLOWED YOU LITTLE SHIT! THIS IS NOT ALLOWED YOU LITTLE SHIT!</Original>
+				<English>THIS IS NOT ALLOWED YOU LITTLE SHIT! THIS IS NOT ALLOWED YOU LITTLE SHIT! THIS IS NOT ALLOWED YOU LITTLE SHIT! THIS IS NOT ALLOWED YOU LITTLE SHIT! THIS IS NOT ALLOWED YOU LITTLE SHIT!</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_Allowed_Desc">
+				<Original>VEHICLE IMPOROVED SETTINGS 	VEHICLE IMPOROVED SETTINGS 	VEHICLE IMPOROVED SETTINGS</Original>
+				<English>VEHICLE IMPOROVED SETTINGS 	VEHICLE IMPOROVED SETTINGS 	VEHICLE IMPOROVED SETTINGS</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_PositionSub">
+				<Original>VBIED POSITION</Original>
+				<English>VBIED POSITION</English>
+			</Key>
+		</Container>
+		<Container name="IEDD VBIED Others">
+			<Key ID="STR_iedd_vbied_Position_DisplayName">
+				<Original>Position of vbied</Original>
+				<English>Position of vbied</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_Position_Tooltip">
+				<Original>Position of vbied TOOLTIP</Original>
+				<English>Position of vbied TOOLTIP</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_Position_1">
+				<Original>Position 1</Original>
+				<English>Position 1</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_Position_2">
+				<Original>Position 2</Original>
+				<English>Position 2</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_Position_3">
+				<Original>Position 3</Original>
+				<English>Position 3</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_Position_4">
+				<Original>Position 4</Original>
+				<English>Position 4</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_Position_5">
+				<Original>Position 5</Original>
+				<English>Position 5</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_Position_6">
+				<Original>Position 6</Original>
+				<English>Position 6</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_User_Defined">
+				<Original>User Defined Position</Original>
+				<English>User Defined Position</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_User_Defined_Tooltip">
+				<Original>User Defined Position Tooltip</Original>
+				<English>User Defined Position Tooltip</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_User_Defined_Pos">
+				<Original>Position</Original>
+				<English>Position</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_User_Defined_Pos_Tooltip">
+				<Original>Position Tooltip</Original>
+				<English>Position Tooltip</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_User_Defined_Dir">
+				<Original>Vector Direction</Original>
+				<English>Vector Direction</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_User_Defined_Dir_Tooltip">
+				<Original>Vector Direction Tooltip</Original>
+				<English>Vector Direction Tooltip</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_User_Defined_Up">
+				<Original>Vector Up</Original>
+				<English>Vector Up</English>
+			</Key>
+			<Key ID="STR_iedd_vbied_User_Defined_Up_Tooltip">
+				<Original>Vector Up Tooltip</Original>
+				<English>Vector Up Tooltip</English>
+			</Key>
 		</Container>
 	</Package>
 </Project>
