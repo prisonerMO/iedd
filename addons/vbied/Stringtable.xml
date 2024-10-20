@@ -62,7 +62,7 @@
 				<Original>User Defined Position Tooltip</Original>
 				<English>User Defined Position Tooltip</English>
 			</Key>
-			<Key ID="STR_iedd_vbied_User_Defined_Pos">
+			<Key ID="STR_iedd_vbied_Defined_Pos">
 				<Original>Position</Original>
 				<English>Position</English>
 			</Key>
@@ -70,19 +70,19 @@
 				<Original>Position Tooltip</Original>
 				<English>Position Tooltip</English>
 			</Key>
-			<Key ID="STR_iedd_vbied_User_Defined_Dir">
+			<Key ID="STR_iedd_vbied_Defined_Dir">
 				<Original>Vector Direction</Original>
 				<English>Vector Direction</English>
 			</Key>
-			<Key ID="STR_iedd_vbied_User_Defined_Dir_Tooltip">
+			<Key ID="STR_iedd_vbied_Defined_Dir_Tooltip">
 				<Original>Vector Direction Tooltip</Original>
 				<English>Vector Direction Tooltip</English>
 			</Key>
-			<Key ID="STR_iedd_vbied_User_Defined_Up">
+			<Key ID="STR_iedd_vbied_Defined_Up">
 				<Original>Vector Up</Original>
 				<English>Vector Up</English>
 			</Key>
-			<Key ID="STR_iedd_vbied_User_Defined_Up_Tooltip">
+			<Key ID="STR_iedd_vbied_Defined_Up_Tooltip">
 				<Original>Vector Up Tooltip</Original>
 				<English>Vector Up Tooltip</English>
 			</Key>

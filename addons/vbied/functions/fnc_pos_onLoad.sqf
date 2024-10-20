@@ -3,6 +3,12 @@ params ["_control"];
 diag_log format ["combo ON LOAD %1", _this];
 private _ctrlCombo = _control controlsGroupCtrl 100;
 diag_log ["CtrlCombo: %1",_ctrlCombo];
+
+private _name = "NEW DEFINED POSITION";
+_ctrlCombo lbAdd _name;
+_ctrlCombo lbSetTooltip [0,"USER DEFINED POSITION"];
+_ctrlCombo lbSetCurSel 0;
+
 private _model = GVAR(preDefined) get "model";
 private _index = _model select 0;
 if (_index != -1) then {
@@ -14,12 +20,6 @@ if (_index != -1) then {
 		_ctrlCombo lbSetTooltip [_i,"PRE DEFINED "+_posName];
 		_ctrlCombo lbSetCurSel _i;
 	};
-} else {
-	private _count = -1;
 };
 
-private _userDefine = _count + 1;
-private _name = "USER DEFINED POSITION";
-_ctrlCombo lbAdd _name;
-_ctrlCombo lbSetTooltip [_userDefine,"USER DEFINED POSITION"];
-_ctrlCombo lbSetCurSel _userDefine;
+//HERE GET USER DEFINED LIST!

@@ -32,7 +32,7 @@ switch _mode do {
 				size
 				distances?
 			*/
-			[_vehicle,_pos] call FUNC(setVbied);
+			//[_vehicle,_pos] call FUNC(setVbied);
 
 		};
 	};

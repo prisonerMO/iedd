@@ -43,7 +43,7 @@ class Cfg3DEN {
                         control = "CheckboxState";
                         displayName = "IS VBIED";
                         tooltip = "IS VBIED IS";
-                        expression = QUOTE(if (_value) then {_this setVariable [ARR_3(QQGVAR(isVbied),_value,true)]});
+                        expression = QUOTE(if (_value) then {[ARR_2(_this,true)] call FUNC(setVbied);_this setVariable [ARR_3(QQGVAR(isVbied),_value,true)]});
                         typeName = "BOOL";
                         condition = "objectVehicle";
                         defaultValue = "(false)";
@@ -159,37 +159,47 @@ class Cfg3DEN {
                         condition = "objectVehicle";
                         unique = 0;
                     };
-                    class GVAR(userDefinedPos) {
-                        displayName = CSTRING(User_Defined_Pos);
-                        tooltip = CSTRING(User_Defined_Pos_Tooltip);
-                        property = QGVAR(userDefinedPos);
+                    class GVAR(pos) {
+                        displayName = CSTRING(Defined_Pos);
+                        tooltip = CSTRING(Defined_Pos_Tooltip);
+                        property = QGVAR(pos);
                         control = QGVAR(UserDefined);
-                        expression = "_this setVariable ['%s',_value];";
-                        defaultValue = "['pos'] call iedd_vbied_fnc_posDefault";
+                        expression = "_this setVariable ['%s', _value];";
+                        defaultValue = "[0.0,0.0,0.0]";//"['pos'] call iedd_vbied_fnc_posDefault";
                         unique = 0;
                         condition = "objectVehicle";
                         validate = "none";
                         typeName = "ARRAY";
                     };
-                    class GVAR(userDefinedDir) {
-                        displayName = CSTRING(User_Defined_Dir);
-                        tooltip = CSTRING(User_Defined_Dir_Tooltip);
-                        property = QGVAR(userDefinedDir);
+                    /*
+                    class GVAR(pos)
+					{
+						data = QGVAR(pos);
+						control = QGVAR(UserDefined);
+						displayName = CSTRING(Defined_Pos);
+                        tooltip = CSTRING(Defined_Pos_Tooltip);
+						validate = "none";
+                        typeName = "ARRAY";
+					};*/
+                    class GVAR(dir) {
+                        displayName = CSTRING(Defined_Dir);
+                        tooltip = CSTRING(Defined_Dir_Tooltip);
+                        property = QGVAR(dir);
                         control = QGVAR(UserDefined);
-                        expression = "_this setVariable ['%s',_value];";
-                        defaultValue = "['dir'] call iedd_vbied_fnc_posDefault";
+                        expression = "_this setVariable ['%s', _value];";
+                        defaultValue = "[0.0,0.0,0.0]";//"['dir'] call iedd_vbied_fnc_posDefault";
                         unique = 0;
                         condition = "objectVehicle";
                         validate = "none";
                         typeName = "ARRAY";
                     };
-                    class GVAR(userDefinedUp) {
-                        displayName = CSTRING(User_Defined_Up);
-                        tooltip = CSTRING(User_Defined_Up_Tooltip);
-                        property = QGVAR(userDefinedUp);
+                    class GVAR(up) {
+                        displayName = CSTRING(Defined_Up);
+                        tooltip = CSTRING(Defined_Up_Tooltip);
+                        property = QGVAR(up);
                         control = QGVAR(UserDefined);
-                        expression = "_this setVariable ['%s',_value];";
-                        defaultValue = "['up'] call iedd_vbied_fnc_posDefault";
+                        expression = "_this setVariable ['%s', _value];";
+                        defaultValue = "[0.0,0.0,0.0]";//"['up'] call iedd_vbied_fnc_posDefault";
                         unique = 0;
                         condition = "objectVehicle";
                         validate = "none";
