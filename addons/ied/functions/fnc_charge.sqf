@@ -142,8 +142,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         };
         TRACE_2("IED Bomb Vest EHs:",_unit getVariable QGVAR(KilledEhId),_unit getVariable QGVAR(GetInManEhId));
     },
-    [_unit],
-    0.5
+    [_unit]
 ] call CBA_fnc_waitUntilAndExecute;
 
 true;
