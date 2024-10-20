@@ -10,6 +10,8 @@ class ctrlCheckbox;
 class ctrlControlsGroup;
 class ctrlStatic;
 class ctrlEdit;
+class ctrlCombo;
+class ctrlButton;
 //class ctrlStaticPictureKeepAspect;
 class Cfg3DEN {
     class Attributes {
@@ -19,6 +21,7 @@ class Cfg3DEN {
         class AttributeCategories {
             class iedd_vbied_attributes {
                 class Attributes {
+                    /*
                     class GVAR(subAllowed)
                     {
                         property = QGVAR(subAllowed);
@@ -27,7 +30,25 @@ class Cfg3DEN {
                         GVAR(allowed) = CSTRING(Allowed_Desc);
                         defaultValue = "_this call iedd_vbied_fnc_allowedDefault";
                         condition = "objectVehicle";
+                    };*/
+                    class GVAR(vbiedSub) {
+                        property = QGVAR(vbiedSub);
+                        control = QGVAR(SubVbied);
+                        displayName = "IS VBIED";
+                        defaultValue = "_this call iedd_vbied_fnc_modelDefault";
+                        condition = "objectVehicle";
                     };
+                    class GVAR(isVbied) {
+                        property = QGVAR(isVbied);
+                        control = "CheckboxState";
+                        displayName = "IS VBIED";
+                        tooltip = "IS VBIED IS";
+                        expression = QUOTE(if (_value) then {_this setVariable [ARR_3(QQGVAR(isVbied),_value,true)]});
+                        typeName = "BOOL";
+                        condition = "objectVehicle";
+                        defaultValue = "(false)";
+                    };
+                    /** VBIED VARIATION (SETTINGS) **/
                     class GVAR(variationSub) {
                         data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
                         control = QGVAR(Sub);
@@ -69,6 +90,59 @@ class Cfg3DEN {
                             };
                         };
                     };
+                    class GVAR(size) {
+                        displayName = ECSTRING(Ied,Size);
+                        tooltip = ECSTRING(Ied,Size_Tooltip);
+                        property = QGVAR(size);
+                        expression = "_this setVariable ['%s',_value];";
+                        defaultValue = "2";
+                        control = "Combo";
+                        typeName = "NUMBER";
+                        class Values {
+                            class 1	{
+                                name = ECSTRING(Ied,Name_Tiny);
+                                value = 0;
+                            };
+                            class 2	{
+                                name = ECSTRING(Ied,Name_Small);
+                                value = 1;
+                            };
+                            class 3	{
+                                name = ECSTRING(Ied,Name_Medium);
+                                value = 2;
+                            };
+                            class 4	{
+                                name = CSTRING(Name_Large);
+                                value = 3;
+                            };
+                            class 5 {
+                                name = ECSTRING(Ied,Name_Huge);
+                                value = 4;
+                            };
+                            class 6 {
+                                name = ECSTRING(Ied,Name_Random);
+                                value = 5;
+                            };
+                        };
+                    };
+                    class GVAR(dud) {
+                        displayName = ECSTRING(Ied,Dud);
+                        tooltip = ECSTRING(Ied,Dud_Tooltip);
+                        property = QGVAR(dud);
+                        expression = "_this setVariable ['%s',_value];";
+                        control = "Slider";
+                        defaultValue = "0.15";
+                    };
+                    class GVAR(distance) {
+                        displayName = ECSTRING(Ied,Distance);
+                        tooltip = ECSTRING(Ied,Distance_Tooltip);
+                        property = QGVAR(distance);
+                        expression = "_this setVariable ['%s',_value];";
+                        control = QEGVAR(ied,distanceSlider);
+                        typeName = "NUMBER";
+                        defaultValue = "0";
+                    };
+                    /** VBIED POSITION **/
                     class GVAR(positionSub) {
                         data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
                         control = QGVAR(Sub);
@@ -83,64 +157,76 @@ class Cfg3DEN {
                         defaultValue = 0;
                         typeName = "NUMBER";
                         condition = "objectVehicle";
-                        class Values {
-                            class 1	{
-                                name = CSTRING(Position_1);
-                                value = 0;
-                            };
-                            class 2	{
-                                name = CSTRING(Position_2);
-                                value = 1;
-                            };
-                            class 3	{
-                                name = CSTRING(Position_3);
-                                value = 2;
-                            };
-                            class 4	{
-                                name = CSTRING(Position_4);
-                                value = 3;
-                            };
-                            class 5	{
-                                name = CSTRING(Position_5);
-                                value = 4;
-                            };
-                            class 6 {
-                                name = CSTRING(Position_6);
-                                value = 5;
-                            };
-                            class 7 {
-                                name = CSTRING(User_Defined);
-                                value = 6;
-                            };
-                        };
+                        unique = 0;
                     };
                     class GVAR(userDefinedPos) {
-                        control = QGVAR(UserDefined);
                         displayName = CSTRING(User_Defined_Pos);
-                        tooltip = CSTRING(Position_User_Defined_Tooltip);
+                        tooltip = CSTRING(User_Defined_Pos_Tooltip);
                         property = QGVAR(userDefinedPos);
-                        expression = "systemChat str _this";
+                        control = QGVAR(UserDefined);
+                        expression = "_this setVariable ['%s',_value];";
+                        defaultValue = "['pos'] call iedd_vbied_fnc_posDefault";
+                        unique = 0;
                         condition = "objectVehicle";
-                        valitade = "number";
+                        validate = "none";
+                        typeName = "ARRAY";
                     };
                     class GVAR(userDefinedDir) {
-                        control = QGVAR(UserDefined);
                         displayName = CSTRING(User_Defined_Dir);
                         tooltip = CSTRING(User_Defined_Dir_Tooltip);
                         property = QGVAR(userDefinedDir);
-                        expression = "systemChat str _this";
+                        control = QGVAR(UserDefined);
+                        expression = "_this setVariable ['%s',_value];";
+                        defaultValue = "['dir'] call iedd_vbied_fnc_posDefault";
+                        unique = 0;
                         condition = "objectVehicle";
-                        valitade = "number";
+                        validate = "none";
+                        typeName = "ARRAY";
                     };
                     class GVAR(userDefinedUp) {
-                        control = QGVAR(UserDefined);
                         displayName = CSTRING(User_Defined_Up);
-                        tooltip = CSTRING(User_Defined_Dir_Up_Tooltip);
+                        tooltip = CSTRING(User_Defined_Up_Tooltip);
                         property = QGVAR(userDefinedUp);
-                        expression = "systemChat str _this";
+                        control = QGVAR(UserDefined);
+                        expression = "_this setVariable ['%s',_value];";
+                        defaultValue = "['up'] call iedd_vbied_fnc_posDefault";
+                        unique = 0;
                         condition = "objectVehicle";
-                        valitade = "number";
+                        validate = "none";
+                        typeName = "ARRAY";
                     };
+                    class GVAR(saveDelete) {
+                        displayName = "SAVE USER DEFINED POS";
+                        property = QGVAR(saveDelete);
+                        control = QGVAR(saveDelete);
+                        condition = "objectVehicle";
+                    };
+                    /*
+                    class GVAR(testCombo) {
+                        displayName = "Test Combo"; // Name assigned to UI control class Title
+						tooltip = "Test Combo"; // Tooltip assigned to UI control class Title
+						property = "TestCombo"; // Unique config property name saved in SQM
+						control = QGVAR(testCombo); // UI control base class displayed in Edit Attributes window, points to Cfg3DEN >> Attributes
+
+						// Expression called when applying the attribute in Eden and at the scenario start
+						// Entity is passed as _this, value is passed as _value, property name is passed as _property
+						// %s is replaced by attribute config name. It can be used only once in the expression
+						// In MP scenario, the expression is called only on server.
+						expression = "_this setVariable [%s,_value];";
+
+						// Expression called when custom property is undefined yet (i.e., when setting the attribute for the first time)
+						// Entity is passed as _this
+						// Returned value is the default value
+						// Used when no value is returned, or when it's of other type than NUMBER, STRING or ARRAY
+						// Custom attributes of logic entities (e.g., modules) are saved always, even when they have default value
+						defaultValue = "1";
+
+						//--- Optional properties
+						unique = 0; // When 1, only one entity of the type can have the value in the mission (used for example for variable names or player control)
+						validate = "none"; // Validate the value before saving. Can be "none", "expression", "condition", "number" or "variable"
+						condition = "objectVehicle"; // Condition for attribute to appear (see the table below)
+						typeName = "STRING"; // Defines data type of saved value, can be STRING, NUMBER or BOOL. Used only when control is "Combo", "Edit" or their variants
+                    };*/
                 };
             };
         };

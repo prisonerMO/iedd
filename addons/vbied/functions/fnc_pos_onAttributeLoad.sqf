@@ -1,4 +1,14 @@
 #include "..\script_component.hpp"
+params ["_control","_config","_value"];
+diag_log format ["Pos ATTIBUTETELOADD this_ %1", _this];
+private _ctrlCombo = _control controlsGroupCtrl 100;
+diag_log ["CtrlCombo: %1",_ctrlCombo];
+private _name = "Test Test Pos";
+_ctrlCombo lbAdd _name;
+_ctrlCombo lbSetTooltip [0,"USER DEFINED POS X"];
+_ctrlCombo lbSetCurSel 0;
+
+/*
 _this spawn {
 	params ["_control","_config","_value"];
 	disableSerialization;
@@ -13,3 +23,4 @@ _this spawn {
 		_x ctrlCommit 0;
 	} forEach _controls-[_control];
 };
+*/

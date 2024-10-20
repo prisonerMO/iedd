@@ -1,18 +1,22 @@
 class Default; // Empty template with pre-defined width and single line height
 class Title: Default
 {
-    class Controls
-    {
+    class Controls {
         class Title;
     };
 };
-class Checkbox: Title
+class Combo: Title
 {
-    class Controls {
+    class Controls: Controls
+    {
         class Title;
         class Value;
     };
 };
+class Edit;
+class EditXYZ;
+class SubCategory;
+class Checkbox;
 class SubCategoryNoHeader1: Default
 {
     class Controls
@@ -28,22 +32,131 @@ class SubCategoryNoHeader1: Default
         };
     };
 };
-class Combo;
-class SubCategory;
-class Edit;
 
-class GVAR(Checkbox): Checkbox {
+class GVAR(Checkbox): Checkbox {};
+class GVAR(Combo): Combo {};
+class GVAR(PosCombo): Combo {
+    onLoad = "_this call iedd_vbied_fnc_pos_onLoad";
+   // attributeLoad = "[_this, _config, _value] call iedd_vbied_fnc_pos_onAttributeLoad";
     class Controls: Controls {
         class Title: Title {};
-        class Value: Value {};
+        class Value: Value {
+            onLBselChanged = "_this call iedd_vbied_fnc_pos_onLBSelChanged";
+        };
+    };
+};
+class GVAR(Sub): SubCategory {};
+class GVAR(SubVbied): SubCategory {
+    attributeLoad = "[_this, _config, _value] call iedd_vbied_fnc_model_onAttributeLoad";
+};
+class GVAR(UserDefined): EditXYZ {};
+class GVAR(SaveDelete): Title
+{
+    //onLoad = "diag_log format ['onLoad SAVEDEL %1', _this]";
+    //attributeLoad = "diag_log format ['onLoadAttribute SAVEDEL %1', _this]";
+    //attributeSave = "diag_log format ['onSaveAttribute SAVEDEL %1', _this]";
+    h = QUOTE((2.5 * GRID_H) + CTRL_H(1));
+    class Controls
+    {
+        class Title: Title{};
+        class Save: ctrlButton
+        {
+            idc = -1;
+            text = "SAVE";
+            onButtonClick = "diag_log format ['button SAVE %1', _this]";
+            x = QUOTE(ATTRIBUTE_TITLE_W * GRID_W);
+            w = QUOTE(ATTRIBUTE_CONTENT_H * GRID_W * 3);
+            h = QUOTE(ATTRIBUTE_CONTENT_H * GRID_H);
+        };
+        class Delete: Save
+        {
+            text = "DELETE";
+            onButtonClick = "diag_log format ['button DELETE %1', _this]";
+            x = QUOTE((ATTRIBUTE_TITLE_W + 	ATTRIBUTE_CONTENT_W * (1/3) + ATTRIBUTE_CONTENT_H) * GRID_W);
+        };
     };
 };
 
-class GVAR(Combo): Combo {};
-class GVAR(PosCombo): Combo {
-    onLBListSelChanged = "call iedd_vbied_fnc_pos_onLBListSelChanged";
+/*
+class GVAR(testCombo) : Title
+{
+    // Expression called when the control is loaded, used to apply the value
+    // Passed params are: _this - control, _value - saved value
+    attributeLoad = "[_this, _config, _value] call iedd_vbied_fnc_pos_onAttributeLoad";
+    // Expression called when attributes window is closed and changes confirmed. Used to save the value.
+    // Passed param: _this - control
+    attributeSave =    "_ctrl = (_this controlsGroupCtrl 100); _ctrl lbData (lbCurSel _ctrl);";
+
+    // List of controls, structure is the same as with any other controls group
+    // Static items
+    class Controls {
+        class Title: Title{}; // Inherit existing title control. Text of any control with class Title will be changed to attribute displayName
+        class Value: ctrlCombo
+        {
+            idc = 100;
+
+            // Static items
+            class Items
+            {
+                class TEXT_1
+                {
+                    text = "TEXT_1";
+                    data = "1";
+                    default = 0;
+                };
+                class TEXT_2
+                {
+                    text = "TEXT_2";
+                    data = "2";
+                };
+            };
+            class ItemsConfig
+            {
+                path[] = {"CfgTestCombo"}; // Path to config container
+                localConfig = 1; // 1 to search local Description.ext as well
+                // Name of the property which will be used for item text
+                propertyText = "title";
+                // Name of the property which will be used for data
+                propertyData = "data";
+            };
+        };
+    };
 };
-class GVAR(Sub): SubCategory {};
+*/
+/*
+class GVAR(SubModel): SubCategoryNoHeader1
+{
+    //onLoad = "_this call iedd_vbied_fnc_onLoad";
+    attributeLoad = "[_this, _config, _value] call iedd_vbied_fnc_model_onAttributeLoad";
+    attributeSave = "";
+    h = QUOTE((2.5 * GRID_H) + CTRL_H(1));
+    class Controls: Controls
+    {
+        class Group: Group
+        {
+            h = QUOTE(CTRL_H(1));
+            class Controls: Controls
+            {
+                class Title: ctrlStatic
+                {
+                    h = QUOTE(CTRL_H(1));
+                };
+                class DescriptionDeco: DescriptionDeco
+                {
+                    h = QUOTE(CTRL_H(1));
+                };
+                class Description: Description
+                {
+                    h = QUOTE(CTRL_H(1));
+                };
+            };
+        };
+    };
+};
+*/
+//JOHONKIN ONLOAD DEFAUL VALUE TYPE OF VEHICLE
+// GET SET JA SEMMOSTA PASKAA
+/*
 class GVAR(SubAllowed): SubCategoryNoHeader1
 {
     //onLoad = "_this call iedd_vbied_fnc_onLoad";
@@ -76,10 +189,14 @@ class GVAR(SubAllowed): SubCategoryNoHeader1
         };
     };
 };
+*/
+
+/*
 class GVAR(UserDefined): Title
 {
-    attributeLoad = "_this call iedd_vbied_fnc_userDefined_onAttributeLoad";
-    attributeSave = "_this call iedd_vbied_fnc_userDefined_onAttributeSave";
+    idc = 100;
+    attributeLoad = "[_this,_value] call iedd_vbied_fnc_userDefined_onAttributeLoad";
+    attributeSave = "[_this,_value] call iedd_vbied_fnc_userDefined_onAttributeSave";
     class Controls: Controls
     {
         class Title: Title {};
@@ -127,3 +244,4 @@ class GVAR(UserDefined): Title
         };
     };
 };
+*/

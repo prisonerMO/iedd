@@ -6,8 +6,10 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-if (isServer) then {
-	GVAR(posAndDir) = createHashMapFromArray VBIED_POS_AND_DIR;
-};
-
+if (isNil QGVAR(userDefined)) then {GVAR(userDefined) = createHashMap}; //TODO PROFILE NAMESPACE SETUP
+if (isNil QGVAR(preDefined)) then {GVAR(preDefined) = createHashMap};
+{
+	_x call FUNC(preDefined);
+} forEach VBIED_POS_AND_DIR;
+diag_log GVAR(preDefined);
 ADDON = true;
