@@ -2,15 +2,23 @@
 params ["_control", "_lbCurSel"];
 private _ctrlGrp = ctrlParentControlsGroup ctrlParentControlsGroup _control;
 private _all = allControls _ctrlGrp;
-private _a = _all select {ctrlClassName _x == "iedd_vbied_SubAllowed"};
-//private _ad =
+private _ctrls = _all select {ctrlClassName _x == "iedd_vbied_UserDefined"};
+if (_lbCurSel == 0) exitWith {
+	{
+		for "_i" from 101 to 103 do {
+			private _ctrl = _x;
+			private _textCtrl = _ctrl controlsGroupCtrl _i;
+			_textCtrl ctrlSetText format ["%1", _lbCurSel];
+		};
+	} forEach _ctrls;
+};
 private _model = GVAR(preDefined) get "model";
 private _index = _model select 0;
 if (_index != -1) exitWith {
 	private _data = GVAR(preDefined) get _index;
 	private _p = ["pos","dir","up"];
 	private _s = _data get (format ["Position%1",_lbCurSel]);
-	private _ctrls = _all select {ctrlClassName _x == "iedd_vbied_UserDefined"};
+	//private _ctrls = _all select {ctrlClassName _x == "iedd_vbied_UserDefined"};
 	{
 		private _ctrl = _x;
 		private _d = _p select _forEachIndex;
