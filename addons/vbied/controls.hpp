@@ -35,13 +35,27 @@ class SubCategoryNoHeader1: Default
 
 class GVAR(Checkbox): Checkbox {};
 class GVAR(Combo): Combo {};
-class GVAR(PosCombo): Combo {
-    onLoad = "_this call iedd_vbied_fnc_pos_onLoad";
-   // attributeLoad = "[_this, _config, _value] call iedd_vbied_fnc_pos_onAttributeLoad";
+class GVAR(PosCombo): Title {
+    //onLoad = "_this call iedd_vbied_fnc_pos_onLoad";
+    attributeLoad = "_this call iedd_vbied_fnc_pos_onAttributeLoad";
+    attributeSave = "_this call iedd_vbied_fnc_pos_onAttributeSave";
     class Controls: Controls {
         class Title: Title {};
-        class Value: Value {
+        class Value: ctrlCombo {
+            idc = 100;
             onLBselChanged = "_this call iedd_vbied_fnc_pos_onLBSelChanged";
+            x = QUOTE(ATTRIBUTE_TITLE_W * GRID_W);
+            w = QUOTE(ATTRIBUTE_CONTENT_W * GRID_W);
+            h = QUOTE(CTRL_DEFAULT_H);
+            class Items
+            {
+                class TEXT_1
+                {
+                    text = "NEW DEFINED POSITION";
+                    tooltip = "USER DEFINED POSITION";
+                    default = 1;
+                };
+            };
         };
     };
 };
@@ -76,7 +90,35 @@ class GVAR(SaveDelete): Title
         };
     };
 };
-
+/*
+class GVAR(PosCombo): Title {
+    onLoad = "_this call iedd_vbied_fnc_pos_onLoad";
+    attributeLoad = "";
+    //attributeLoad = "call iedd_vbied_fnc_pos_onAttributeLoad";
+    attributeSave = "call iedd_vbied_fnc_pos_onAttributeSave";
+    class Controls: Controls {
+        class Title: Title {};
+        class Value: ctrlCombo
+        {
+            idc = 100;
+            onLBselChanged = "_this call iedd_vbied_fnc_pos_onLBSelChanged";
+            x = QUOTE(ATTRIBUTE_TITLE_W * GRID_W);
+            w = QUOTE(ATTRIBUTE_CONTENT_W * GRID_W);
+            h = QUOTE(CTRL_DEFAULT_H);
+            class Items
+            {
+                class TEXT_1
+                {
+                    text = "NEW DEFINED POSITION";
+                    tooltip = "USER DEFINED POSITION";
+                    data = 1;
+                    default = 0;
+                };
+            };
+        };
+    };
+};
+*/
 /*
 class GVAR(testCombo) : Title
 {

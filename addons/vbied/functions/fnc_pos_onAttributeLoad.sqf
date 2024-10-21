@@ -1,26 +1,22 @@
 #include "..\script_component.hpp"
-params ["_control","_config","_value"];
-diag_log format ["Pos ATTIBUTETELOADD this_ %1", _this];
+params ["_control"];
 private _ctrlCombo = _control controlsGroupCtrl 100;
-diag_log ["CtrlCombo: %1",_ctrlCombo];
-private _name = "Test Test Pos";
-_ctrlCombo lbAdd _name;
-_ctrlCombo lbSetTooltip [0,"USER DEFINED POS X"];
-_ctrlCombo lbSetCurSel 0;
-
-/*
-_this spawn {
-	params ["_control","_config","_value"];
-	disableSerialization;
-	((_control controlsGroupCtrl 101) controlsGroupCtrl 102) ctrlSetStructuredText parseText ([getText (_config >> QGVAR(nonAllowed)), getText (_config >> QGVAR(allowed))] select _value);
-	private _ctrlGroup = ctrlParentControlsGroup ctrlParentControlsGroup _control;
-	private _all = allControls _ctrlGroup;
-	private _controls = _all select {ctrlClassName _x find ["iedd_vbied",0] == 0};
-	{
-		diag_log format ["%1",ctrlClassName _x];
-		_x ctrlEnable ([false,true] select _value);
-		_x ctrlSetFade ([0.75,0] select _value);
-		_x ctrlCommit 0;
-	} forEach _controls-[_control];
+diag_log format ["pos_onAttributeLOAD CtrlCombo: %1",_ctrlCombo];
+private _model = GVAR(preDefined) get "model";
+private _index = _model select 0;
+if (_index != -1) then {
+	private _data = GVAR(preDefined) get _index;
+	private _count = count _data;
+	for "_i" from 1 to _count do {
+		private _posName = format ["Position %1", _i];
+		_ctrlCombo lbAdd _posName;
+		_ctrlCombo lbSetTooltip [_i,"PRE DEFINED "+_posName];
+	};
 };
-*/
+
+//HERE GET USER DEFINED LIST!
+
+
+diag_log format ["pos_onAttributeLOAD CtrlCombo LBSETCUR: %1",lbCurSel _ctrlCombo];
+diag_log format ["pos_onAttributeLOAD: lbsize: %1",lbSize _ctrlCombo];
+

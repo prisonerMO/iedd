@@ -112,7 +112,7 @@ class Cfg3DEN {
                                 value = 2;
                             };
                             class 4	{
-                                name = CSTRING(Name_Large);
+                                name = ECSTRING(Ied,Name_Large);
                                 value = 3;
                             };
                             class 5 {

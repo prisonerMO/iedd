@@ -6,6 +6,7 @@ PREP(modelDefault);
 PREP(moduleEden);
 PREP(moduleZeus);
 PREP(pos_onAttributeLoad);
+PREP(pos_onAttributeSave);
 PREP(pos_onLBSelChanged);
 PREP(pos_onLoad);
 PREP(posDefault);

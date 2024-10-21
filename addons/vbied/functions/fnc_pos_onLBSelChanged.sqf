@@ -1,8 +1,9 @@
 #include "..\script_component.hpp"
-params ["_control", "_lbCurSel"];
-private _ctrlGrp = ctrlParentControlsGroup ctrlParentControlsGroup _control;
+params ["_ctrlCombo", "_lbCurSel"];
+private _ctrlGrp = ctrlParentControlsGroup ctrlParentControlsGroup _ctrlCombo;
 private _all = allControls _ctrlGrp;
 private _ctrls = _all select {ctrlClassName _x == "iedd_vbied_UserDefined"};
+diag_log format ["_lbChanged: %1", _this];
 if (_lbCurSel == 0) exitWith {
 	{
 		for "_i" from 101 to 103 do {
@@ -37,3 +38,5 @@ private _data = GVAR(userDefined) getOrDefault [_userModel, ""];
 if (_data != "") then {
 
 };
+
+_ctrlCombo lbData lbCurSel _ctrlCombo;
