@@ -17,26 +17,10 @@ class Edit;
 class EditXYZ;
 class SubCategory;
 class Checkbox;
-class SubCategoryNoHeader1: Default
-{
-    class Controls
-    {
-        class Group: ctrlControlsGroup
-        {
-            class Controls
-            {
-                class Title;
-                class DescriptionDeco;
-                class Description;
-            };
-        };
-    };
-};
-
 class GVAR(Checkbox): Checkbox {};
 class GVAR(Combo): Combo {};
 class GVAR(PosCombo): Title {
-    attributeLoad = "_this call iedd_vbied_fnc_pos_onAttributeLoad";
+    attributeLoad = "[_this,_value] call iedd_vbied_fnc_pos_onAttributeLoad";
     attributeSave = "_this call iedd_vbied_fnc_pos_onAttributeSave";
     class Controls: Controls {
         class Title: Title {};
