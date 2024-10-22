@@ -1,5 +1,6 @@
 #include "..\script_component.hpp"
-params ["_control"];
+params ["_control","_value"];
+diag_log ["format OnLOAD: %1",_this];
 private _ctrlCombo = _control controlsGroupCtrl 100;
 private _model = GVAR(preDefined) get "model";
 private _index = _model select 0;
@@ -23,8 +24,8 @@ if (_countUser > 0) then {
 		_ctrlCombo lbAdd _userName;
 		_ctrlCombo lbSetTooltip [_i+_count,"User PRE DEFINED "+_userName];
 	};
-}
-
+};
+_ctrlCombo lbSetCurSel _value;
 //diag_log format ["pos_onAttributeLOAD CtrlCombo LBSETCUR: %1",lbCurSel _ctrlCombo];
 //diag_log format ["pos_onAttributeLOAD: lbsize: %1",lbSize _ctrlCombo];
 

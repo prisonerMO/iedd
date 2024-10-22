@@ -1,4 +1,4 @@
-//#include "..\script_component.hpp"
+#include "..\script_component.hpp"
 params ["_ctrl"];
 diag_log format ["save_onButtonClick: %1", _this];
 private _ctrlGrp = ctrlParentControlsGroup ctrlParentControlsGroup _ctrl;
@@ -54,12 +54,3 @@ diag_log [_pos,_dir,_up];
 	};
 
 } forEach _combo;
-
-
-/*
-	[0,"Position1",[0.002,1.365,-1.22],[0,-1,0],[0,0,1]],\
-	[0,"Position2",[0.633,-0.385,-1.159],[0,-1,0],[0,0,-1]],\
-	[0,"Position3",[-0.417,-2.763,-0.9],[1,0,0],[0,1,0]],\
-	[1,"Position1",[0.102, 1.3225, -0.53],[1, 0.023, -0.002],[0.202, 0, 1]],\
-	[1,"Position2",[0.263, -1.203, -1.159],[-0, 0.0021, -1],[-0, -1, -0.001]],\
-	[1,"Position3",[0.387, -2.0763, -0.954],[-0.002, 1, 0.007], [1, 0.502, -0.206]]\
