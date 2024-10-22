@@ -1,19 +1,13 @@
-
-PREP(allowed_onAttributeLoad);
-PREP(allowedDefault);
+PREP(delete_onButtonClick);
 PREP(model_onAttributeLoad);
 PREP(modelDefault);
-PREP(moduleEden);
 PREP(moduleZeus);
 PREP(pos_onAttributeLoad);
 PREP(pos_onAttributeSave);
 PREP(pos_onLBSelChanged);
-PREP(pos_onLoad);
-PREP(posDefault);
 PREP(preDefined);
+PREP(save_onButtonClick);
 PREP(setVbied);
-PREP(userDefined_onAttributeLoad);
-PREP(userDefined_onAttributeSave);
 PREP(userDefined);
 
 

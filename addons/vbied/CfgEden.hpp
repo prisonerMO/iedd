@@ -12,7 +12,6 @@ class ctrlStatic;
 class ctrlEdit;
 class ctrlCombo;
 class ctrlButton;
-//class ctrlStaticPictureKeepAspect;
 class Cfg3DEN {
     class Attributes {
         #include "controls.hpp"
@@ -21,16 +20,6 @@ class Cfg3DEN {
         class AttributeCategories {
             class iedd_vbied_attributes {
                 class Attributes {
-                    /*
-                    class GVAR(subAllowed)
-                    {
-                        property = QGVAR(subAllowed);
-                        control = QGVAR(SubAllowed);
-                        GVAR(nonAllowed) = CSTRING(NonAllowed_Desc);
-                        GVAR(allowed) = CSTRING(Allowed_Desc);
-                        defaultValue = "_this call iedd_vbied_fnc_allowedDefault";
-                        condition = "objectVehicle";
-                    };*/
                     class GVAR(vbiedSub) {
                         property = QGVAR(vbiedSub);
                         control = QGVAR(SubVbied);
@@ -165,29 +154,19 @@ class Cfg3DEN {
                         property = QGVAR(pos);
                         control = QGVAR(UserDefined);
                         expression = "_this setVariable ['%s', _value];";
-                        defaultValue = "[0.0,0.0,0.0]";//"['pos'] call iedd_vbied_fnc_posDefault";
+                        defaultValue = "[0.0,0.0,0.0]";
                         unique = 0;
                         condition = "objectVehicle";
                         validate = "none";
                         typeName = "ARRAY";
                     };
-                    /*
-                    class GVAR(pos)
-					{
-						data = QGVAR(pos);
-						control = QGVAR(UserDefined);
-						displayName = CSTRING(Defined_Pos);
-                        tooltip = CSTRING(Defined_Pos_Tooltip);
-						validate = "none";
-                        typeName = "ARRAY";
-					};*/
                     class GVAR(dir) {
                         displayName = CSTRING(Defined_Dir);
                         tooltip = CSTRING(Defined_Dir_Tooltip);
                         property = QGVAR(dir);
                         control = QGVAR(UserDefined);
                         expression = "_this setVariable ['%s', _value];";
-                        defaultValue = "[0.0,0.0,0.0]";//"['dir'] call iedd_vbied_fnc_posDefault";
+                        defaultValue = "[0.0,0.0,0.0]";
                         unique = 0;
                         condition = "objectVehicle";
                         validate = "none";
@@ -199,7 +178,7 @@ class Cfg3DEN {
                         property = QGVAR(up);
                         control = QGVAR(UserDefined);
                         expression = "_this setVariable ['%s', _value];";
-                        defaultValue = "[0.0,0.0,0.0]";//"['up'] call iedd_vbied_fnc_posDefault";
+                        defaultValue = "[0.0,0.0,0.0]";
                         unique = 0;
                         condition = "objectVehicle";
                         validate = "none";
@@ -211,32 +190,6 @@ class Cfg3DEN {
                         control = QGVAR(saveDelete);
                         condition = "objectVehicle";
                     };
-                    /*
-                    class GVAR(testCombo) {
-                        displayName = "Test Combo"; // Name assigned to UI control class Title
-						tooltip = "Test Combo"; // Tooltip assigned to UI control class Title
-						property = "TestCombo"; // Unique config property name saved in SQM
-						control = QGVAR(testCombo); // UI control base class displayed in Edit Attributes window, points to Cfg3DEN >> Attributes
-
-						// Expression called when applying the attribute in Eden and at the scenario start
-						// Entity is passed as _this, value is passed as _value, property name is passed as _property
-						// %s is replaced by attribute config name. It can be used only once in the expression
-						// In MP scenario, the expression is called only on server.
-						expression = "_this setVariable [%s,_value];";
-
-						// Expression called when custom property is undefined yet (i.e., when setting the attribute for the first time)
-						// Entity is passed as _this
-						// Returned value is the default value
-						// Used when no value is returned, or when it's of other type than NUMBER, STRING or ARRAY
-						// Custom attributes of logic entities (e.g., modules) are saved always, even when they have default value
-						defaultValue = "1";
-
-						//--- Optional properties
-						unique = 0; // When 1, only one entity of the type can have the value in the mission (used for example for variable names or player control)
-						validate = "none"; // Validate the value before saving. Can be "none", "expression", "condition", "number" or "variable"
-						condition = "objectVehicle"; // Condition for attribute to appear (see the table below)
-						typeName = "STRING"; // Defines data type of saved value, can be STRING, NUMBER or BOOL. Used only when control is "Combo", "Edit" or their variants
-                    };*/
                 };
             };
         };

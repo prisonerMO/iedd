@@ -1,6 +1,5 @@
 class CBA_Extended_EventHandlers;
 class CfgVehicles {
-	#include "vbiedmodule.hpp"
     class ace_zeus_moduleBase;
     class GVAR(zeusModule):ace_zeus_moduleBase {
         scope = 1;
