@@ -20,6 +20,7 @@ class Checkbox;
 class GVAR(Checkbox): Checkbox {};
 class GVAR(Combo): Combo {};
 class GVAR(PosCombo): Title {
+    idc = 95441;
     attributeLoad = "[_this,_value] call iedd_vbied_fnc_pos_onAttributeLoad";
     attributeSave = "_this call iedd_vbied_fnc_pos_onAttributeSave";
     class Controls: Controls {
@@ -30,15 +31,6 @@ class GVAR(PosCombo): Title {
             x = QUOTE(ATTRIBUTE_TITLE_W * GRID_W);
             w = QUOTE(ATTRIBUTE_CONTENT_W * GRID_W);
             h = QUOTE(CTRL_DEFAULT_H);
-            class Items
-            {
-                class TEXT_1
-                {
-                    text = "NEW DEFINED POSITION";
-                    tooltip = "USER DEFINED POSITION";
-                    default = 1;
-                };
-            };
         };
     };
 };
@@ -73,3 +65,4 @@ class GVAR(SaveDelete): Title
         };
     };
 };
+class GVAR(Edit): Edit{};

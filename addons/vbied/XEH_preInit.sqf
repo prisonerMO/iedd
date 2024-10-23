@@ -11,7 +11,7 @@ GVAR(userDefined) = profileNamespace getVariable [QGVAR(userDefined), createHash
 if (isNil QGVAR(preDefined)) then {GVAR(preDefined) = createHashMap};
 {
 	_x call FUNC(preDefined);
-} forEach VBIED_POS_AND_DIR;
+} forEach VBIED_PREDEFINED;
 diag_log GVAR(preDefined);
 diag_log GVAR(userDefined);
 ADDON = true;

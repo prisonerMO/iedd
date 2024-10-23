@@ -87,6 +87,7 @@ class Cfg3DEN {
                         defaultValue = "2";
                         control = "Combo";
                         typeName = "NUMBER";
+                        condition = "objectVehicle";
                         class Values {
                             class 1	{
                                 name = ECSTRING(Ied,Name_Tiny);
@@ -121,6 +122,7 @@ class Cfg3DEN {
                         expression = "_this setVariable ['%s',_value];";
                         control = "Slider";
                         defaultValue = "0.15";
+                        condition = "objectVehicle";
                     };
                     class GVAR(distance) {
                         displayName = ECSTRING(Ied,Distance);
@@ -130,6 +132,7 @@ class Cfg3DEN {
                         control = QEGVAR(ied,distanceSlider);
                         typeName = "NUMBER";
                         defaultValue = "0";
+                        condition = "objectVehicle";
                     };
                     /** VBIED POSITION **/
                     class GVAR(positionSub) {
@@ -183,6 +186,14 @@ class Cfg3DEN {
                         condition = "objectVehicle";
                         validate = "none";
                         typeName = "ARRAY";
+                    };
+                    class GVAR(edit) {
+                        displayName = "NAME OF POSITION";
+                        property = QGVAR(edit);
+                        control = QGVAR(Edit);
+                        condition = "objectVehicle";
+                        defaultValue = "User Defined Position";
+                        typeName = "STRING";
                     };
                     class GVAR(saveDelete) {
                         displayName = "SAVE USER DEFINED POS";
