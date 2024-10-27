@@ -600,7 +600,6 @@
 				<Original>% of activate IED after failed wire cut.</Original>
 				<English>% of activate IED after failed wire cut.</English>
 			</Key>
-			</Key>
 			<Key ID="STR_iedd_ied_IgnoreWireCutOrder">
 				<Original>Ignore wire cut order</Original>
 				<English>Ignore wire cut order</English>
