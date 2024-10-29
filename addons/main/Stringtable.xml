@@ -1,62 +1,62 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="IEDD">
-	<Package name="Main">
-		<Key ID="STR_iedd_main_Category_Main">
-			<Original>IEDD Notebook</Original>
-			<English>IEDD Notebook</English>
-		</Key>
-		<Key ID="STR_iedd_main_Category_Equipment">
-			<Original>Equipment</Original>
-			<English>Equipment</English>
-		</Key>
-		<Key ID="STR_iedd_main_Category_IEDs">
-			<Original>IEDs</Original>
-			<English>IEDs</English>
-		</Key>
-		<Key ID="STR_iedd_main_Category_Training_IEDs">
-			<Original>Training IEDs</Original>
-			<English>Training IEDs</English>
-		</Key>
-		<Key ID="STR_iedd_main_Category_Items">
-			<Original>Items</Original>
-			<English>Items</English>
-		</Key>
-		<Key ID="STR_iedd_main_Category_Modules">
-			<Original>Modules</Original>
-			<English>Modules</English>
-		</Key>
-		<Key ID="STR_iedd_main_Category_Markers">
-			<Original>Markers</Original>
-			<English>Markers</English>
-		</Key>
-		<Key ID="STR_iedd_main_Category_GroundWires">
-			<Original>Ground Wires</Original>
-			<English>Ground Wires</English>
-		</Key>
-		<Key ID="STR_iedd_main_Category_SmallWires">
-			<Original>Small Wires</Original>
-			<English>Small Wires</English>
-		</Key>
-		<Key ID="STR_iedd_main_Category_Parts">
-			<Original>IEDD Parts</Original>
-			<English>IEDD Wires</English>
-	    </Key>
-		<Key ID="STR_iedd_main_Options">
+    <Package name="Main">
+        <Key ID="STR_iedd_main_Category_Equipment">
+            <Original>Equipment</Original>
+            <English>Equipment</English>
+        </Key>
+        <Key ID="STR_iedd_main_Category_GroundWires">
+            <Original>Ground Wires</Original>
+            <English>Ground Wires</English>
+        </Key>
+        <Key ID="STR_iedd_main_Category_IEDs">
+            <Original>IEDs</Original>
+            <English>IEDs</English>
+        </Key>
+        <Key ID="STR_iedd_main_Category_Items">
+            <Original>Items</Original>
+            <English>Items</English>
+        </Key>
+        <Key ID="STR_iedd_main_Category_Main">
+            <Original>IEDD Notebook</Original>
+            <English>IEDD Notebook</English>
+        </Key>
+        <Key ID="STR_iedd_main_Category_Markers">
+            <Original>Markers</Original>
+            <English>Markers</English>
+        </Key>
+        <Key ID="STR_iedd_main_Category_Modules">
+            <Original>Modules</Original>
+            <English>Modules</English>
+        </Key>
+        <Key ID="STR_iedd_main_Category_Parts">
+            <Original>IEDD Parts</Original>
+            <English>IEDD Wires</English>
+        </Key>
+        <Key ID="STR_iedd_main_Category_SmallWires">
+            <Original>Small Wires</Original>
+            <English>Small Wires</English>
+        </Key>
+        <Key ID="STR_iedd_main_Category_Training_IEDs">
+            <Original>Training IEDs</Original>
+            <English>Training IEDs</English>
+        </Key>
+        <Key ID="STR_iedd_main_Options">
             <English>IEDD Notebook Options</English>
-            <German>IEDD Notebook-Optionen</German>
-            <Spanish>Opciones IEDD Notebook</Spanish>
-            <Polish>Ustawienia IEDD Notebook</Polish>
             <Czech>IEDD Notebook Nastavení</Czech>
             <French>Options IEDD Notebook</French>
-            <Russian>IEDD Notebook Настройки</Russian>
-            <Portuguese>Opções do IEDD Notebook</Portuguese>
-            <Hungarian>IEDD Notebook Beállítások</Hungarian>
+            <Spanish>Opciones IEDD Notebook</Spanish>
             <Italian>Opzioni IEDD Notebook</Italian>
-            <Japanese>IEDD Notebook オプション</Japanese>
+            <Polish>Ustawienia IEDD Notebook</Polish>
+            <Portuguese>Opções do IEDD Notebook</Portuguese>
+            <Russian>IEDD Notebook Настройки</Russian>
+            <German>IEDD Notebook-Optionen</German>
             <Korean>IEDD Notebook 옵션</Korean>
+            <Japanese>IEDD Notebook オプション</Japanese>
             <Chinese>IEDD Notebook 設定選項</Chinese>
             <Chinesesimp>IEDD Notebook 设定选项</Chinesesimp>
             <Turkish>IEDD Notebook Ayarlar</Turkish>
+            <Hungarian>IEDD Notebook Beállítások</Hungarian>
         </Key>
-	</Package>
+    </Package>
 </Project>

@@ -1,83 +1,135 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="IEDD">
-	<Package name="vbied">
-		<Container name="IEDD VBIED Module">
-			<Key ID="STR_iedd_vbied_Vbied_DisplayName">
-				<Original>VBIED</Original>
-				<English>VBIED</English>
-			</Key>
-		</Container>
-		<Container name="IEDD VBIED Sub Categories">
-			<Key ID="STR_iedd_vbied_PositionSub">
-				<Original>VBIED POSITION</Original>
-				<English>VBIED POSITION</English>
-			</Key>
-		</Container>
-		<Container name="IEDD VBIED Others">
-			<Key ID="STR_iedd_vbied_Position_DisplayName">
-				<Original>Position of vbied</Original>
-				<English>Position of vbied</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Position_Tooltip">
-				<Original>Position of vbied TOOLTIP</Original>
-				<English>Position of vbied TOOLTIP</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Position_1">
-				<Original>Position 1</Original>
-				<English>Position 1</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Position_2">
-				<Original>Position 2</Original>
-				<English>Position 2</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Position_3">
-				<Original>Position 3</Original>
-				<English>Position 3</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Position_4">
-				<Original>Position 4</Original>
-				<English>Position 4</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Position_5">
-				<Original>Position 5</Original>
-				<English>Position 5</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Position_6">
-				<Original>Position 6</Original>
-				<English>Position 6</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_User_Defined">
-				<Original>User Defined Position</Original>
-				<English>User Defined Position</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_User_Defined_Tooltip">
-				<Original>User Defined Position Tooltip</Original>
-				<English>User Defined Position Tooltip</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Defined_Pos">
-				<Original>Position</Original>
-				<English>Position</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Defined_Pos_Tooltip">
-				<Original>Position Tooltip</Original>
-				<English>Position Tooltip</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Defined_Dir">
-				<Original>Vector Direction</Original>
-				<English>Vector Direction</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Defined_Dir_Tooltip">
-				<Original>Vector Direction Tooltip</Original>
-				<English>Vector Direction Tooltip</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Defined_Up">
-				<Original>Vector Up</Original>
-				<English>Vector Up</English>
-			</Key>
-			<Key ID="STR_iedd_vbied_Defined_Up_Tooltip">
-				<Original>Vector Up Tooltip</Original>
-				<English>Vector Up Tooltip</English>
-			</Key>
-		</Container>
-	</Package>
+    <Package name="vbied">
+        <Container name="IEDD VBIED Module">
+            <Key ID="STR_iedd_vbied_Vbied_DisplayName">
+                <Original>VBIED</Original>
+                <English>VBIED</English>
+            </Key>
+        </Container>
+        <Container name="IEDD VBIED Sub Categories">
+            <Key ID="STR_iedd_vbied_EHSSub">
+                <Original>HANDLERS</Original>
+                <English>HANDLERS</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_PositionSub">
+                <Original>VBIED POSITION</Original>
+                <English>VBIED POSITION</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_vbiedSub">
+                <Original>VBIED</Original>
+                <English>VBIED</English>
+            </Key>
+        </Container>
+        <Container name="IEDD VBIED Others">
+            <Key ID="STR_iedd_vbied_Defined_Dir">
+                <Original>Vector Direction</Original>
+                <English>Vector Direction</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Defined_Dir_Tooltip">
+                <Original>Vector Direction Tooltip</Original>
+                <English>Vector Direction Tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Defined_Name">
+                <Original>User Defined Position</Original>
+                <English>User Defined Position</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Defined_Name_Tooltip">
+                <Original>User Defined Position Tooltip</Original>
+                <English>User Defined Position Tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Defined_Pos">
+                <Original>Position</Original>
+                <English>Position</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Defined_Pos_Tooltip">
+                <Original>Position Tooltip</Original>
+                <English>Position Tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Defined_Up">
+                <Original>Vector Up</Original>
+                <English>Vector Up</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Defined_Up_Tooltip">
+                <Original>Vector Up Tooltip</Original>
+                <English>Vector Up Tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Delete">
+                <Original>DELETE</Original>
+                <English>DELETE</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_EngineOn">
+                <Original>Engine On</Original>
+                <English>Engine On</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_EngineOn_Tooltip">
+                <Original>Engine On Tooltip</Original>
+                <English>Engine On Tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_GetIn">
+                <Original>Get In</Original>
+                <English>Get In</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_GetIn_Tooltip">
+                <Original>Get In Tooltip</Original>
+                <English>Get In Tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Moving">
+                <Original>Moving</Original>
+                <English>Moving</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Moving_Tooltip">
+                <Original>Moving Tooltip</Original>
+                <English>Moving Tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Position_1">
+                <Original>Position 1</Original>
+                <English>Position 1</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Position_2">
+                <Original>Position 2</Original>
+                <English>Position 2</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Position_3">
+                <Original>Position 3</Original>
+                <English>Position 3</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Position_4">
+                <Original>Position 4</Original>
+                <English>Position 4</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Position_5">
+                <Original>Position 5</Original>
+                <English>Position 5</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Position_6">
+                <Original>Position 6</Original>
+                <English>Position 6</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Position_DisplayName">
+                <Original>Position of vbied</Original>
+                <English>Position of vbied</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Position_Tooltip">
+                <Original>Position of vbied TOOLTIP</Original>
+                <English>Position of vbied TOOLTIP</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Save">
+                <Original>SAVE</Original>
+                <English>SAVE</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_User_Defined">
+                <Original>User Defined Position</Original>
+                <English>User Defined Position</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_User_Defined_Tooltip">
+                <Original>User Defined Position Tooltip</Original>
+                <English>User Defined Position Tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_User_SaveDelete">
+                <Original>SAVE USER DEFINED POS</Original>
+                <English>SAVE USER DEFINED POS</English>
+            </Key>
+        </Container>
+    </Package>
 </Project>
