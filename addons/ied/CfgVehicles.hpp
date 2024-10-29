@@ -4,7 +4,6 @@ class CfgVehicles {
 	class GVAR(timerSound): Sound // class name to be used with createSoundSource
 	{
 		author = AUTHOR;
-		_generalMacro = QGVAR(timerSound);
 		sound = QGVAR(timer_SFX); // reference to CfgSFX class
 		displayName = "TODO";
 		scope = 0;
