@@ -1,12 +1,15 @@
 #include "../script_component.hpp"
 //[{
 params ["_target"];
+diag_log format ["DISARM CALLED %1", _this];
 private _actions = [];
 private _bombObj = attachedTo _target;
 if (isNull _bombObj) exitWith {_actions};
-private _wires = _bombObj getVariable [QGVAR(wires),[]];
-private _wireSet = _bombObj getVariable [QGVAR(_wireSet),[]];
-private _text = _bombObj getVariable [QGVAR(wires),[]];
+private _setup = _target getVariable [QGVAR(setup),[]];
+diag_log format ["DISARM _setup %1", _setup];
+private _wires = _setup get "wires";
+private _wireSet = _setup get "wireset";
+private _text = _setup get "text";
 private _countWires = count _wires-1;
 for "_i" from 0 to _countWires do {
     private _wire = _wires #_i;
@@ -40,12 +43,12 @@ for "_i" from 0 to _countWires do {
                 ["_isFail",false],
                 ["_isFailTime",0.1]
             ];
-            private _cutTime = [iedd_ied_wireCutTime, iedd_ied_wireCutTimeEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+            private _cutTime = [EGVAR(ied,wireCutTime), EGVAR(ied,wireCutTimeEOD)] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
             if (_cutTime < 1) then {
                 _cutTime = 1;
             };
             TRACE_1("params:",_this);
-            private _failChance = [GVAR(failChance), GVAR(failChanceEOD)] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
+            private _failChance = [EGVAR(ied,failChance), EGVAR(ied,failChanceEOD)] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
             private _isFail = random 1 < _failChance;
             private _isFailTime = _cutTime / 10;
             TRACE_3("Chance:",_cutTime,_failChance,_isFail);
@@ -58,13 +61,13 @@ for "_i" from 0 to _countWires do {
                     params ["_actionParams","_player"];
                     _actionParams #0 params ["_wire", "_bombObj","_order","_isFail"];
                     _actionParams #1 params ["_player"];
-                    [_player,_wire, _bombObj, _order,_isFail] call FUNC(cutWire);
+                    [_player,_wire, _bombObj, _order,_isFail] call EFUNC(ied,cutWire);
                 },
                 {
                     params ["_actionParams","_player"];
                     _actionParams #0 params ["", "_bombObj", "","_isFail"];
-                    if (GVAR(fail)) then {
-                        GVAR(fail) = false;
+                    if (EGVAR(ied,fail)) then {
+                        EGVAR(ied,fail) = false;
                     };
                     /* NOT IN USE , -> CANCEL CHANCE EXPLODE?
                     if (!GVAR(fail)) then {
@@ -89,8 +92,8 @@ for "_i" from 0 to _countWires do {
                     _actionParams #0 params ["", "_bombObj","","_isFail","_isFailTime"];
 
                     if (_isFail && _elapsedTime > _isFailTime && !GVAR(fail)) then {
-                        GVAR(fail) = true;
-                        [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
+                        EGVAR(ied,fail) = true;
+                        [QEGVAR(ied,sound), [QEGVAR(ied,fail1),_bombObj]] call CBA_fnc_globalEvent;
                     };
                     true;
                 },
@@ -98,8 +101,8 @@ for "_i" from 0 to _countWires do {
             ] call ace_common_fnc_progressBar;
         }, _this, _checkTime] call CBA_fnc_waitAndExecute;
     };
-    private _iedSubAction = [_color, format ["%1 %2", LLSTRING(Name_Cut),toLower _wireColor], "", _statement, _condition,{},[_wire, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
+    private _iedSubAction = [_color, format ["%1 %2",LELSTRING(ied,Name_Cut),toLower _wireColor], "", _statement, _condition,{},[_wire, _bombObj, _order], "", 2,[false,false,false,false,false],{}] call ace_interact_menu_fnc_createAction;
     _actions pushBack [_iedSubAction, [], _target];
 };
 
-_actions;
+_actions

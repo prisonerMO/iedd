@@ -46,16 +46,29 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 		];
 
 		{
-			_x attachTo [_bombObj,(_subObjPosAndDir select _forEachIndex) select 0];
+			_x attachTo [_box,(_subObjPosAndDir select _forEachIndex) select 0];
 			_x setVectorDirAndUp ((_subObjPosAndDir select _forEachIndex) select 1);
 		} forEach _wires;
 		/*
 		private _isDistance = _bombObj getVariable [QGVAR(distance), 0];
     	private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     	_bombObj setVariable [QGVAR(dist),_distance]; //-> ied,dist --> if iedCheck used
+
+		if (GVAR(isDetectable)) then {
+			private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
+			_mine attachTo [_bombObj, [0,0,0]];
+			private _jipId = ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
+			[_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
+			_jipId = [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
+			[_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
+    	};
+
 		*/
-		_bombObj setVariable [QGVAR(setup), createHashMapFromArray [["wires", _wires], ["variation", _variation], ["wireset", _wireSet]]];
-    	_bombObj setVariable [QGVAR(bomb), true, true];
+		private _text = [localize ELSTRING(ied,Name_Long),localize ELSTRING(ied,Name_Short)] select (_variation > 2); //Text setup if want just text
+		private _holder = QGVAR(holder) createVehicle [0,0,0];
+		_holder attachTo [_box, [0,0,0]];
+		_holder setVariable [QGVAR(setup), createHashMapFromArray [["wires", _wires], ["variation", _variation], ["wireset", _wireSet], ["text", _text]],true];
+    	_holder setVariable [QGVAR(bomb), true, true];
 
 	},
     [_vehicle]

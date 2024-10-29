@@ -1,4 +1,6 @@
 PREP(delete_onButtonClick);
+PREP(disarmActions);
+PREP(getChildrenActions);
 PREP(model_onAttributeLoad);
 PREP(modelDefault);
 PREP(moduleZeus);

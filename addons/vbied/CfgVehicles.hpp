@@ -5,7 +5,6 @@ class CfgVehicles {
         scope = 1;
         scopecurator = 2;
         category = QEGVAR(modules,ieds);
-        _generalMacro = QGVAR(zeusModule);
         curatorInfoType = QGVAR(RcsVbied);
         displayName = "VBIED";
         icon = QPATHTOEF(modules,UI\moduleicon.paa);
@@ -27,14 +26,18 @@ class CfgVehicles {
         destrType = "DestructNo";
     };
     class GVAR(holder): GVAR(helper) {
-        displayName = QGVAR(helper);
+        displayName = QGVAR(holder);
         class ACE_Actions {
             class ACE_MainActions {
+                displayName = "$STR_ace_interaction_MainAction";
+                selection = "";
+                distance = 2;
+                condition = QUOTE(true);
                 insertChildren = QUOTE(_this call FUNC(getChildrenActions));
                 class IEDD_DisarmMenu {
                     exceptions[] = {"isNotSwimming"};
-                    displayName = CSTRING(Disarm_DisplayName);
-                    condition = QUOTE([_player] call FUNC(canDisarm));
+                    displayName = ECSTRING(ied,Disarm_DisplayName);
+                    condition = QUOTE(true); //QUOTE([_player] call EFUNC(ied, canDisarm));
                     statement = "";
                     insertChildren = QUOTE(_this call FUNC(disarmActions));
 			    };

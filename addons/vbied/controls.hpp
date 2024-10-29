@@ -51,7 +51,7 @@ class GVAR(SaveDelete): Title
         class Save: ctrlButton
         {
             idc = -1;
-            text = "SAVE";
+            text = CSTRING(Save);
             onButtonClick = "_this call iedd_vbied_fnc_save_onButtonClick_local";
             x = QUOTE(ATTRIBUTE_TITLE_W * GRID_W);
             w = QUOTE(ATTRIBUTE_CONTENT_H * GRID_W * 3);
@@ -59,7 +59,7 @@ class GVAR(SaveDelete): Title
         };
         class Delete: Save
         {
-            text = "DELETE";
+            text = CSTRING(Delete);
             onButtonClick = "_this call iedd_vbied_fnc_delete_onButtonClick_local";
             x = QUOTE((ATTRIBUTE_TITLE_W + 	ATTRIBUTE_CONTENT_W * (1/3) + ATTRIBUTE_CONTENT_H) * GRID_W);
         };

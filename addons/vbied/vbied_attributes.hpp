@@ -1,0 +1,262 @@
+
+class iedd_vbied_attributes {
+    class Attributes {
+        class GVAR(vbiedSub) {
+            property = QGVAR(vbiedSub);
+            control = QGVAR(SubVbied);
+            displayName = CSTRING(vbiedSub);
+            defaultValue = "_this call iedd_vbied_fnc_modelDefault";
+            condition = "objectVehicle";
+        };
+        class GVAR(isVbied) {
+            property = QGVAR(isVbied);
+            control = "CheckboxState";
+            displayName = "IS VBIED";
+            tooltip = "IS VBIED IS";
+            expression = QUOTE(if (_value) then {[ARR_2(_this,true)] call FUNC(setVbied);_this setVariable [ARR_3(QQGVAR(isVbied),_value,true)]});
+            typeName = "BOOL";
+            condition = "objectVehicle";
+            defaultValue = "(false)";
+        };
+        // VBIED VARIATION (SETTINGS)
+        class GVAR(variationSub) {
+            data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
+            control = QGVAR(Sub);
+            displayName = ECSTRING(ied,IED_Category); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+        };
+        class GVAR(variation) {
+            property = QGVAR(variation);
+            control = QGVAR(Combo);
+            displayName = ECSTRING(Ied,Variation);
+            tooltip = ECSTRING(Ied,Variation_Tooltip);
+            expression = QUOTE(_this setVariable [ARR_3(QQGVAR(variation),_value,true)]);
+            defaultValue = 5;
+            typeName = "NUMBER";
+            condition = "objectVehicle";
+            class Values {
+                class 1	{
+                    name = ECSTRING(Ied,Variation_1);
+                    value = 0;
+                };
+                class 2	{
+                    name = ECSTRING(Ied,Variation_2);
+                    value = 1;
+                };
+                class 3	{
+                    name = ECSTRING(Ied,Variation_3);
+                    value = 2;
+                };
+                class 4	{
+                    name = ECSTRING(Ied,Variation_4);
+                    value = 3;
+                };
+                class 5	{
+                    name = ECSTRING(Ied,Variation_5);
+                    value = 4;
+                };
+                class 6 {
+                    name = ECSTRING(Ied,Name_Random);
+                    value = 5;
+                };
+            };
+        };
+        class GVAR(size) {
+            displayName = ECSTRING(Ied,Size);
+            tooltip = ECSTRING(Ied,Size_Tooltip);
+            property = QGVAR(size);
+            expression = "_this setVariable ['%s',_value];";
+            defaultValue = "2";
+            control = "Combo";
+            typeName = "NUMBER";
+            condition = "objectVehicle";
+            class Values {
+                class 1	{
+                    name = ECSTRING(Ied,Name_Tiny);
+                    value = 0;
+                };
+                class 2	{
+                    name = ECSTRING(Ied,Name_Small);
+                    value = 1;
+                };
+                class 3	{
+                    name = ECSTRING(Ied,Name_Medium);
+                    value = 2;
+                };
+                class 4	{
+                    name = ECSTRING(Ied,Name_Large);
+                    value = 3;
+                };
+                class 5 {
+                    name = ECSTRING(Ied,Name_Huge);
+                    value = 4;
+                };
+                class 6 {
+                    name = ECSTRING(Ied,Name_Random);
+                    value = 5;
+                };
+            };
+        };
+        class GVAR(dud) {
+            displayName = ECSTRING(Ied,Dud);
+            tooltip = ECSTRING(Ied,Dud_Tooltip);
+            property = QGVAR(dud);
+            expression = "_this setVariable ['%s',_value];";
+            control = "Slider";
+            defaultValue = "0.15";
+            condition = "objectVehicle";
+        };
+        class GVAR(distance) {
+            displayName = ECSTRING(Ied,Distance);
+            tooltip = ECSTRING(Ied,Distance_Tooltip);
+            property = QGVAR(distance);
+            expression = "_this setVariable ['%s',_value];";
+            control = QEGVAR(ied,distanceSlider);
+            typeName = "NUMBER";
+            defaultValue = "0";
+            condition = "objectVehicle";
+        };
+        // VBIED POSITION
+        class GVAR(positionSub) {
+            data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
+            control = QGVAR(Sub);
+            displayName = CSTRING(PositionSub); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+        };
+        class GVAR(position) {
+            control = QGVAR(PosCombo);
+            displayName = CSTRING(Position_DisplayName);
+            tooltip = CSTRING(Position_Tooltip);
+            property = QGVAR(position);
+            expression = QUOTE(_this setVariable [ARR_3(QQGVAR(variation),_value,true)]);
+            defaultValue = 0;
+            typeName = "NUMBER";
+            condition = "objectVehicle";
+            unique = 0;
+        };
+        class GVAR(pos) {
+            displayName = CSTRING(Defined_Pos);
+            tooltip = CSTRING(Defined_Pos_Tooltip);
+            property = QGVAR(pos);
+            control = QGVAR(UserDefined);
+            expression = "_this setVariable ['%s', _value];";
+            defaultValue = "[0.0,0.0,0.0]";
+            unique = 0;
+            condition = "objectVehicle";
+            validate = "none";
+            typeName = "ARRAY";
+        };
+        class GVAR(dir) {
+            displayName = CSTRING(Defined_Dir);
+            tooltip = CSTRING(Defined_Dir_Tooltip);
+            property = QGVAR(dir);
+            control = QGVAR(UserDefined);
+            expression = "_this setVariable ['%s', _value];";
+            defaultValue = "[0.0,0.0,0.0]";
+            unique = 0;
+            condition = "objectVehicle";
+            validate = "none";
+            typeName = "ARRAY";
+        };
+        class GVAR(up) {
+            displayName = CSTRING(Defined_Up);
+            tooltip = CSTRING(Defined_Up_Tooltip);
+            property = QGVAR(up);
+            control = QGVAR(UserDefined);
+            expression = "_this setVariable ['%s', _value];";
+            defaultValue = "[0.0,0.0,0.0]";
+            unique = 0;
+            condition = "objectVehicle";
+            validate = "none";
+            typeName = "ARRAY";
+        };
+        class GVAR(edit) {
+            displayName = CSTRING(Defined_Name);
+            tooltip = CSTRING(Defined_Name_ToolTip);
+            property = QGVAR(edit);
+            control = QGVAR(Edit);
+            condition = "objectVehicle";
+            defaultValue = "User Defined Position";
+            typeName = "STRING";
+        };
+        class GVAR(saveDelete) {
+            displayName = "SAVE USER DEFINED POS";
+            property = QGVAR(saveDelete);
+            control = QGVAR(saveDelete);
+            condition = "objectVehicle";
+        };
+        // EVENTHANDLERS
+        class GVAR(EHS) {
+            data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
+            control = QGVAR(Sub);
+            displayName = CSTRING(EHSSub); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+        };
+        class GVAR(engineOn) {
+			displayName = CSTRING(EngineOn);
+			tooltip = CSTRING(EngineOn_Tooltip);
+			property = QGVAR(engineOn);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QUOTE(false);//QGVAR(defaultEngineOn);
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = ECSTRING(ied,Name_Disabled);
+					value = 0;
+				};
+				class 2	{
+					name = ECSTRING(ied,Name_Enabled);
+					value = 1;
+				};
+				class 3	{
+					name = ECSTRING(ied,Name_Random);
+					value = 2;
+				};
+			};
+		};
+        class GVAR(getIn) {
+			displayName = CSTRING(GetIn);
+			tooltip = CSTRING(GetIn_Tooltip);
+			property = QGVAR(getIn);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QUOTE(false);//QGVAR(defaultGetIn);
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = ECSTRING(ied,Name_Disabled);
+					value = 0;
+				};
+				class 2	{
+					name = ECSTRING(ied,Name_Enabled);
+					value = 1;
+				};
+				class 3	{
+					name = ECSTRING(ied,Name_Random);
+					value = 2;
+				};
+			};
+		};
+        class GVAR(moving) {
+			displayName = CSTRING(Moving);
+			tooltip = CSTRING(Moving);
+			property = QGVAR(moving);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QUOTE(false);//QGVAR(defaultMoving);
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = ECSTRING(ied,Name_Disabled);
+					value = 0;
+				};
+				class 2	{
+					name = ECSTRING(ied,Name_Enabled);
+					value = 1;
+				};
+				class 3	{
+					name = ECSTRING(ied,Name_Random);
+					value = 2;
+				};
+			};
+		};
+    };
+};
