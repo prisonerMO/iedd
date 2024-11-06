@@ -27,87 +27,87 @@ class iedd_vbied_attributes {
         class GVAR(variation) {
             property = QGVAR(variation);
             control = QGVAR(Combo);
-            displayName = ECSTRING(Ied,Variation);
-            tooltip = ECSTRING(Ied,Variation_Tooltip);
-            expression = QUOTE(_this setVariable [ARR_3(QQGVAR(variation),_value,true)]);
-            defaultValue = 5;
+            displayName = ECSTRING(ied,Variation);
+            tooltip = ECSTRING(ied,Variation_Tooltip);            
+			expression = "_this setVariable ['%s',_value];";
+            defaultValue = QGVAR(defaultVariation);
             typeName = "NUMBER";
             condition = "objectVehicle";
             class Values {
                 class 1	{
-                    name = ECSTRING(Ied,Variation_1);
+                    name = ECSTRING(ied,Variation_1);
                     value = 0;
                 };
                 class 2	{
-                    name = ECSTRING(Ied,Variation_2);
+                    name = ECSTRING(ied,Variation_2);
                     value = 1;
                 };
                 class 3	{
-                    name = ECSTRING(Ied,Variation_3);
+                    name = ECSTRING(ied,Variation_3);
                     value = 2;
                 };
                 class 4	{
-                    name = ECSTRING(Ied,Variation_4);
+                    name = ECSTRING(ied,Variation_4);
                     value = 3;
                 };
                 class 5	{
-                    name = ECSTRING(Ied,Variation_5);
+                    name = ECSTRING(ied,Variation_5);
                     value = 4;
                 };
                 class 6 {
-                    name = ECSTRING(Ied,Name_Random);
+                    name = ECSTRING(ied,Name_Random);
                     value = 5;
                 };
             };
         };
         class GVAR(size) {
-            displayName = ECSTRING(Ied,Size);
-            tooltip = ECSTRING(Ied,Size_Tooltip);
+            displayName = ECSTRING(ied,Size);
+            tooltip = ECSTRING(ied,Size_Tooltip);
             property = QGVAR(size);
             expression = "_this setVariable ['%s',_value];";
-            defaultValue = "2";
+            defaultValue = QGVAR(defaultSize);
             control = "Combo";
             typeName = "NUMBER";
             condition = "objectVehicle";
             class Values {
                 class 1	{
-                    name = ECSTRING(Ied,Name_Tiny);
+                    name = ECSTRING(ied,Name_Tiny);
                     value = 0;
                 };
                 class 2	{
-                    name = ECSTRING(Ied,Name_Small);
+                    name = ECSTRING(ied,Name_Small);
                     value = 1;
                 };
                 class 3	{
-                    name = ECSTRING(Ied,Name_Medium);
+                    name = ECSTRING(ied,Name_Medium);
                     value = 2;
                 };
                 class 4	{
-                    name = ECSTRING(Ied,Name_Large);
+                    name = ECSTRING(ied,Name_Large);
                     value = 3;
                 };
                 class 5 {
-                    name = ECSTRING(Ied,Name_Huge);
+                    name = ECSTRING(ied,Name_Huge);
                     value = 4;
                 };
                 class 6 {
-                    name = ECSTRING(Ied,Name_Random);
+                    name = ECSTRING(ied,Name_Random);
                     value = 5;
                 };
             };
         };
         class GVAR(dud) {
-            displayName = ECSTRING(Ied,Dud);
-            tooltip = ECSTRING(Ied,Dud_Tooltip);
+            displayName = ECSTRING(ied,Dud);
+            tooltip = ECSTRING(ied,Dud_Tooltip);
             property = QGVAR(dud);
             expression = "_this setVariable ['%s',_value];";
             control = "Slider";
-            defaultValue = "0.15";
+            defaultValue = QGVAR(defaultDud);
             condition = "objectVehicle";
         };
         class GVAR(distance) {
-            displayName = ECSTRING(Ied,Distance);
-            tooltip = ECSTRING(Ied,Distance_Tooltip);
+            displayName = ECSTRING(ied,Distance);
+            tooltip = ECSTRING(ied,Distance_Tooltip);
             property = QGVAR(distance);
             expression = "_this setVariable ['%s',_value];";
             control = QEGVAR(ied,distanceSlider);
@@ -125,8 +125,8 @@ class iedd_vbied_attributes {
             control = QGVAR(PosCombo);
             displayName = CSTRING(Position_DisplayName);
             tooltip = CSTRING(Position_Tooltip);
-            property = QGVAR(position);
-            expression = QUOTE(_this setVariable [ARR_3(QQGVAR(variation),_value,true)]);
+            property = QGVAR(position);            
+			expression = "_this setVariable ['%s',_value];";
             defaultValue = 0;
             typeName = "NUMBER";
             condition = "objectVehicle";
@@ -195,7 +195,7 @@ class iedd_vbied_attributes {
 			property = QGVAR(engineOn);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QUOTE(false);//QGVAR(defaultEngineOn);
+			defaultValue = QGVAR(defaultEngineOn);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
@@ -218,7 +218,7 @@ class iedd_vbied_attributes {
 			property = QGVAR(getIn);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QUOTE(false);//QGVAR(defaultGetIn);
+			defaultValue = QGVAR(defaultGetIn);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
@@ -241,7 +241,7 @@ class iedd_vbied_attributes {
 			property = QGVAR(moving);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QUOTE(false);//QGVAR(defaultMoving);
+			defaultValue = QGVAR(defaultMoving);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
@@ -258,5 +258,14 @@ class iedd_vbied_attributes {
 				};
 			};
 		};
+        class GVAR(speed) {
+            displayName = CSTRING(Speed);
+            tooltip = CSTRING(Speed_ToolTip);
+            property = QGVAR(speed);
+            control = QGVAR(speedSlider);
+            condition = "objectVehicle";
+            defaultValue = QGVAR(defaultSpeed);
+            typeName = "NUMBER";
+        };
     };
 };

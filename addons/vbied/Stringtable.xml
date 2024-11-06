@@ -1,6 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="IEDD">
     <Package name="vbied">
+        <Container name="IEDD VBIED Settings">
+            <Key ID="STR_iedd_vbied_Main_Category">
+                <Original>IEDD Notebook VBIED</Original>
+                <English>IEDD Notebook VBIED</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_PlrCheck">
+                <Original>Player activates VBIEDs on foot</Original>
+                <English>Player activates VBIEDs on foot</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_PlrCheck_Description">
+                <Original>Controls if VBIEDs can be activated by players on foot.</Original>
+                <English>Controls if VBIEDs can be activated by players on foot.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_VehCheck">
+                <Original>Player activates VBIEDs in vehicle</Original>
+                <English>Player activates VBIEDs in vehicle</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_VehCheck_Description">
+                <Original>Controls if VBIEDs can be activated by players in vehicle.</Original>
+                <English>Controls if VBIEDs can be activated by players in vehicle.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_MaxRange">
+                <Original>Maximum activation distance for VBIEDs</Original>
+                <English>Maximum activation distance for VBIEDs</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_MaxRange_Description">
+                <Original>Maximum distance to VBIED where player will activate it.</Original>
+                <English>Maximum distance to VBIED where player will activate it.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_MinRange">
+                <Original>Minimum activation distance for VBIEDs</Original>
+                <English>Minimum activation distance for VBIEDs</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_MinRange_Description">
+                <Original>Minimum distance to VBIED where player will activate it.</Original>
+                <English>Minimum distance to VBIED where player will activate it.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultDud">
+                <Original>Chance of dud</Original>
+                <English>Chance of dud</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultDud_Description">
+                <Original>Set probability of VBIEDs being duds (if not defined somewhere else).</Original>
+                <English>Set probability of VBIEDs being duds (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_IsDetectable">
+                <Original>VBIEDs are detectable with mine detectors</Original>
+                <English>VBIEDs are detectable with mine detectors</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_IsDetectable_Description">
+                <Original>Controls if VBIEDs are detectable with mine detectors.</Original>
+                <English>Controls if VBIEDs are detectable with mine detectors.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultVariation">
+                <Original>Variations</Original>
+                <English>Variations</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultVariation_Description">
+                <Original>Set VBIED variation (if not defined somewhere else).</Original>
+                <English>Set VBIED variation (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultSize">
+                <Original>VBIED Default Size</Original>
+                <English>VBIED Default Size</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultSize_Description">
+                <Original>Set VBIED size (if not defined somewhere else).</Original>
+                <English>Set VBIED size (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultEngineOn">
+                <Original>DEFAULT VBIEDs when Engine On</Original>
+                <English>DEFAULT VBIEDs when Engine On</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultEngineOn_Description">
+                <Original>DEFAULT velue VBIEDs can be activated when vehicle engine goes on.</Original>
+                <English>DEFAULT value VBIEDs can be activated when vehicle engine goes on.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultGetIn">
+                <Original>DEFAULT value VBIEDs when player get in vehicle</Original>
+                <English>DEFAULT value VBIEDs when player get in vehicle</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultGetIn_Description">
+                <Original>DEFAULT value VBIEDs activated when player get in vehicle.</Original>
+                <English>DEFAULT value VBIEDs activated when player get in vehicle.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultMoving">
+                <Original>DEFAULT value VBIEDs vehicle Moving</Original>
+                <English>DEFAULT value VBIEDs vehicle Moving</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultMoving_Description">
+                <Original>DEFAULT value VBIEDs vehicle Moving DESC.</Original>
+                <English>DEFAULT value VBIEDs vehicle Moving DESC.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultSpeed">
+                <Original>DEFAULT value VBIEDs vehicle Moving Speed.</Original>
+                <English>DEFAULT value VBIEDs vehicle Moving Speed.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultSpeed_Description">
+                <Original>DEFAULT value VBIEDs vehicle Moving Speed DESC.</Original>
+                <English>DEFAULT value VBIEDs vehicle Moving Speed DESC.</English>
+            </Key>
+
+        </Container>
         <Container name="IEDD VBIED Module">
             <Key ID="STR_iedd_vbied_Vbied_DisplayName">
                 <Original>VBIED</Original>
@@ -58,6 +161,30 @@
                 <Original>DELETE</Original>
                 <English>DELETE</English>
             </Key>
+            <Key ID="STR_iedd_vbied_Position_DisplayName">
+                <Original>Position of vbied</Original>
+                <English>Position of vbied</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Position_Tooltip">
+                <Original>Position of vbied TOOLTIP</Original>
+                <English>Position of vbied TOOLTIP</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Save">
+                <Original>SAVE</Original>
+                <English>SAVE</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_User_Defined">
+                <Original>User Defined Position</Original>
+                <English>User Defined Position</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_User_Defined_Tooltip">
+                <Original>User Defined Position Tooltip</Original>
+                <English>User Defined Position Tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_User_SaveDelete">
+                <Original>SAVE USER DEFINED POS</Original>
+                <English>SAVE USER DEFINED POS</English>
+            </Key>
             <Key ID="STR_iedd_vbied_EngineOn">
                 <Original>Engine On</Original>
                 <English>Engine On</English>
@@ -82,53 +209,13 @@
                 <Original>Moving Tooltip</Original>
                 <English>Moving Tooltip</English>
             </Key>
-            <Key ID="STR_iedd_vbied_Position_1">
-                <Original>Position 1</Original>
-                <English>Position 1</English>
+            <Key ID="STR_iedd_vbied_Speed">
+                <Original>Activation Speed</Original>
+                <English>Activation Speed</English>
             </Key>
-            <Key ID="STR_iedd_vbied_Position_2">
-                <Original>Position 2</Original>
-                <English>Position 2</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_Position_3">
-                <Original>Position 3</Original>
-                <English>Position 3</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_Position_4">
-                <Original>Position 4</Original>
-                <English>Position 4</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_Position_5">
-                <Original>Position 5</Original>
-                <English>Position 5</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_Position_6">
-                <Original>Position 6</Original>
-                <English>Position 6</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_Position_DisplayName">
-                <Original>Position of vbied</Original>
-                <English>Position of vbied</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_Position_Tooltip">
-                <Original>Position of vbied TOOLTIP</Original>
-                <English>Position of vbied TOOLTIP</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_Save">
-                <Original>SAVE</Original>
-                <English>SAVE</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_User_Defined">
-                <Original>User Defined Position</Original>
-                <English>User Defined Position</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_User_Defined_Tooltip">
-                <Original>User Defined Position Tooltip</Original>
-                <English>User Defined Position Tooltip</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_User_SaveDelete">
-                <Original>SAVE USER DEFINED POS</Original>
-                <English>SAVE USER DEFINED POS</English>
+            <Key ID="STR_iedd_vbied_DefaultSpeed_Tooltip">
+                <Original>Plaplaa VBIEDs vehicle Moving Speed Tooltip.</Original>
+                <English>Plaplaa value VBIEDs vehicle Moving Speed Tooltip.</English>
             </Key>
         </Container>
     </Package>

@@ -14,4 +14,6 @@ if (isNil QGVAR(preDefined)) then {GVAR(preDefined) = createHashMap};
 } forEach VBIED_PREDEFINED;
 diag_log GVAR(preDefined);
 diag_log GVAR(userDefined);
+
+#include "initSettings.inc.sqf"
 ADDON = true;

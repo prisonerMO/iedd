@@ -1,4 +1,5 @@
 #include "../script_component.hpp"
+//currenlty not in use
 params ["_target","_player","_params"];
 diag_log format ["getChildrenActions CALLED %1", _this];
 private _actions = [];

@@ -1,5 +1,5 @@
 #include "../script_component.hpp"
-//[{
+//currenlty not in use
 params ["_target"];
 diag_log format ["DISARM CALLED %1", _this];
 private _actions = [];
