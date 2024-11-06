@@ -1,0 +1,55 @@
+#include "../script_component.hpp"
+private _checkTime = 5;
+if (GVAR(bombs) isNotEqualTo []) then {
+	private _players = call CBA_fnc_players;
+	private _objectsToRemove = [];
+	{
+		private _object = _x;
+		if (isNull _object || isNil {_object getVariable QEGVAR(ied,bomb)}) exitWith {
+			_objectsToRemove pushBack _object;
+		};
+		private _distance = _object getVariable [QGVAR(dist),10];
+		//TRACE_2("Object distance",_object,_distance);
+		private _move = _object getVariable [QGVAR(moving),false];
+		if (_move) then {
+			private _veh = attachedTo _object;
+			private _speed = _veh getVariable [QGVAR(speed),GVAR(defaultSpeed)];
+			if (speed _veh > _speed) then {
+				[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
+				_objectsToRemove pushBack _object;
+				continue;
+			};
+		};
+		if (GVAR(plrCheck)) then {
+			private _nearPlrs = _players select {;;(_object distance _x) < _distance};
+			if (_nearPlrs isNotEqualTo []) then {
+				{
+					_nearPlr = _x;
+					if (speed _nearPlr > 8) then
+					{
+						[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+						_objectsToRemove pushBack _object;
+						continue;
+					};
+				} forEach _nearPlrs;
+			};
+		};
+		if (GVAR(vehCheck)) then {
+			private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]); //DOES this return _veh = attachedTo _object?
+			if (_nearVehicles isNotEqualTo []) then {
+				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
+				if (_index > -1) then {
+					[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+					_objectsToRemove pushBack _object;
+					continue;
+				};
+			};
+		};
+	} forEach GVAR(bombs);
+	GVAR(bombs) = GVAR(bombs) - _objectsToRemove;
+	_checkTime = 0.5;
+};
+//TRACE_3("Current objects",count GVAR(bombs),time,_checkTime);
+[FUNC(vbiedCheck), [], _checkTime] call CBA_fnc_waitAndExecute;
+
+
