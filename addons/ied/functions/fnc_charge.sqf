@@ -81,7 +81,6 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 
         _bombObj setVariable [QGVAR(wires), _wires, true];
         _bombObj setVariable [QGVAR(bomb), true, true];
-        _bombObj setVariable [QGVAR(variation),_variation, true];
 
         private _jipIdAction = [QGVAR(disarmAction), [_bombObj]] call CBA_fnc_globalEventJIP;
         [_jipIdAction, _bombObj] call CBA_fnc_removeGlobalEventJIP;
