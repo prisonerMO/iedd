@@ -197,6 +197,7 @@ class iedd_vbied_attributes {
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultEngineOn);
 			typeName = "NUMBER";
+            condition = "objectVehicle";
 			class Values {
 				class 1	{
 					name = ECSTRING(ied,Name_Disabled);
@@ -220,6 +221,7 @@ class iedd_vbied_attributes {
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultGetIn);
 			typeName = "NUMBER";
+            condition = "objectVehicle";
 			class Values {
 				class 1	{
 					name = ECSTRING(ied,Name_Disabled);
@@ -243,6 +245,7 @@ class iedd_vbied_attributes {
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultMoving);
 			typeName = "NUMBER";
+            condition = "objectVehicle";
 			class Values {
 				class 1	{
 					name = ECSTRING(ied,Name_Disabled);
@@ -263,9 +266,9 @@ class iedd_vbied_attributes {
             tooltip = CSTRING(Speed_ToolTip);
             property = QGVAR(speed);
             control = QGVAR(speedSlider);
-            condition = "objectVehicle";
             defaultValue = QGVAR(defaultSpeed);
             typeName = "NUMBER";
+            condition = "objectVehicle";
         };
         /**********TIMER SETTINGS ********/
 		class GVAR(timerSub) {
@@ -281,6 +284,7 @@ class iedd_vbied_attributes {
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimer);
 			typeName = "NUMBER";
+            condition = "objectVehicle";
 			class Values {
 				class 1	{
 					name = ECSTRING(Ied,Name_Disabled);
@@ -304,6 +308,7 @@ class iedd_vbied_attributes {
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerValue);
 			typeName = "NUMBER";
+            condition = "objectVehicle";
 		};
 		class GVAR(randomTimer) {
 			displayName = ECSTRING(Ied,RandomTimer);
@@ -313,6 +318,7 @@ class iedd_vbied_attributes {
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultRandomTimer);
 			typeName = "NUMBER";
+            condition = "objectVehicle";
 			class Values {
 				class 1	{
 					name = ECSTRING(Ied,Name_Disabled);
@@ -336,6 +342,7 @@ class iedd_vbied_attributes {
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerMin);
 			typeName = "NUMBER";
+            condition = "objectVehicle";
 		};
 		class GVAR(randomTimerMax) {
 			displayName = ECSTRING(Ied,RandomTimerMax);
@@ -345,6 +352,7 @@ class iedd_vbied_attributes {
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerMax);
 			typeName = "NUMBER";
+            condition = "objectVehicle";
 		};
     };
 };

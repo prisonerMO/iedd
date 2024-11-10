@@ -59,7 +59,14 @@ class CfgVehicles {
                 selection = "";
                 distance = 2;
                 condition = QUOTE(true);
-                //insertChildren = QUOTE(_this call FUNC(getChildrenActions));
+                class IEDD_DisarmMenu {
+                    exceptions[] = {"isNotSwimming"};
+                    displayName = ECSTRING(Ied,Disarm_DisplayName);
+                    condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call EFUNC(ied,canDisarm)});
+                    //condition = QUOTE([_player] call EFUNC(ied,canDisarm));
+                    statement = "";
+                };
+                /*insertChildren = QUOTE(_this call FUNC(getChildrenActions));
                 class IEDD_DisarmMenu {
                     exceptions[] = {"isNotSwimming"};
                     displayName = ECSTRING(ied,Disarm_DisplayName);
@@ -67,7 +74,7 @@ class CfgVehicles {
                     statement = "";
                     insertChildren = QUOTE(_this call FUNC(disarmActions));
 			    };
-                /*TODO REMOVE BOMB FROM VEHICLE ACTION HERE?
+                TODO REMOVE BOMB FROM VEHICLE ACTION HERE?
                 class IEDD_DisarmMenu {
                     exceptions[] = {"isNotSwimming"};
                     displayName = ECSTRING(ied,Disarm_DisplayName);

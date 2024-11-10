@@ -57,9 +57,6 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 
 		private _isDistance = _vehicle getVariable [QGVAR(distance), 0];
     	private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
-    	_box setVariable [QGVAR(dist), _distance]; //-> vbied,dist --> if vbiedCheck used
-		_box setVariable [QGVAR(wires), _wires,true];
-		_box setVariable [QGVAR(bomb), true, true];
 
 		if (GVAR(isDetectable)) then {
 			private _mine = QEGVAR(ied,Charge_Ammo) createVehicle [0,0,0];
@@ -88,7 +85,9 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 			TRACE_1("time:",_time);
 			_box setVariable [QGVAR(timerValue), _time];
 		};
-
+		_box setVariable [QGVAR(dist), _distance]; //-> vbied,dist --> if vbiedCheck used
+		_box setVariable [QEGVAR(ied,wires), _wires,true];
+		_box setVariable [QEGVAR(ied,bomb), true, true];
 		private _text = localize ELSTRING(Ied,Name_Long);
 		private _jipId = [QEGVAR(ied,defuseAction), [_box, _wireSet,_text]] call CBA_fnc_globalEventJIP;
 		[_jipID, _box] call CBA_fnc_removeGlobalEventJIP;
@@ -122,7 +121,6 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
     	//_holder setVariable [QGVAR(bomb), true, true];
 		//_box setVariable [QGVAR(setup), createHashMapFromArray [["wires", _wires], ["variation", _variation], ["wireset", _wireSet], ["text", _text]],true];
     	//_box setVariable [QGVAR(bomb), true, true];
-
 	},
     [_vehicle]
 ] call CBA_fnc_waitUntilAndExecute;

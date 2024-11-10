@@ -13,6 +13,7 @@ class CfgPatches {
             "A3_Modules_F",
             "A3_Modules_F_Curator",
 			"ace_zeus",
+			"iedd_ied",
             "iedd_main",
             "iedd_modules"
         };

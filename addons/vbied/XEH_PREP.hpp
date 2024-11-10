@@ -1,6 +1,9 @@
 PREP(delete_onButtonClick);
 PREP(disarmActions);
-PREP(getChildrenActions);
+PREP(detachAction);
+PREP(handleEngineOn);
+PREP(handleGetIn);
+PREP(removeEvents);
 PREP(model_onAttributeLoad);
 PREP(modelDefault);
 PREP(moduleZeus);
