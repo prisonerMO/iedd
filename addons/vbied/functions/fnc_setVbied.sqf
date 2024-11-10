@@ -17,6 +17,8 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 		diag_log format ["ALL VARIABLES: %1", allVariables _vehicle select {_x find ["iedd_",0] == 0}];
 		diag_log format ["SetVbied: _var: %1, _dud: %2, _size: %3",_variation, _dud, _size];
 		diag_log format ["SetVbied: pos: %1, dir: %2, up: %3",_pos, _dir, _up ];
+		private _timerValue = _vehicle getVariable [QGVAR(timer), GVAR(defaultTimer)];
+		private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
 		if (_variation == 5) then {
 			_variation = selectRandom [0,1,2,3,4];
 		};
@@ -52,25 +54,67 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 			_x attachTo [_box,(_subObjPosAndDir select _forEachIndex) select 0];
 			_x setVectorDirAndUp ((_subObjPosAndDir select _forEachIndex) select 1);
 		} forEach _wires;
-		
+
 		private _isDistance = _vehicle getVariable [QGVAR(distance), 0];
     	private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     	_box setVariable [QGVAR(dist), _distance]; //-> vbied,dist --> if vbiedCheck used
 		_box setVariable [QGVAR(wires), _wires,true];
 		_box setVariable [QGVAR(bomb), true, true];
-		/*
+
 		if (GVAR(isDetectable)) then {
-			private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
-			_mine attachTo [_bombObj, [0,0,0]];
+			private _mine = QEGVAR(ied,Charge_Ammo) createVehicle [0,0,0];
+			_mine attachTo [_vehicle, _pos];
 			private _jipId = ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
 			[_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
-			_jipId = [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
+			_jipId = [QEGVAR(ied,hideObject), [_mine,true]] call CBA_fnc_globalEventJIP;
 			[_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
-    	};		*/
+    	};
+		if (_isTimer) then {
+			private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
+			_watch attachTo [_box, [0.03, -0.09, -0.0018]];
+			_watch setVectorDirAndUp [[-0,-1,0],[0,0,1]];
+			private _randomValue = _vehicle getVariable [QGVAR(randomTimer), GVAR(defaultRandomTimer)];
+			private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
+			TRACE_2("Timer",_isTimer,_isRandom);
+			private _time = if (_isRandom) then {
+				private _min = round (_vehicle getVariable [QGVAR(randomTimerMin),GVAR(defaultTimerMin)]);
+				private _max = round (_vehicle getVariable [QGVAR(randomTimerMax),GVAR(defaultTimerMax)]);
+				TRACE_2("min/max",_min,_max);
+				[_min, _max] call BIS_fnc_randomInt;
+			} else {
+				TRACE_1("Value",(_vehicle getVariable [ARR_2(QGVAR(timerValue),GVAR(defaultTimerValue))]));
+				round (_vehicle getVariable  [QGVAR(timerValue),GVAR(defaultTimerValue)]);
+			};
+			TRACE_1("time:",_time);
+			_box setVariable [QGVAR(timerValue), _time];
+		};
+
 		private _text = localize ELSTRING(Ied,Name_Long);
 		private _jipId = [QEGVAR(ied,defuseAction), [_box, _wireSet,_text]] call CBA_fnc_globalEventJIP;
 		[_jipID, _box] call CBA_fnc_removeGlobalEventJIP;
 
+
+		/*EVENTHANDLERS*/
+		private _getIn = _vehicle getVariable [QGVAR(getIn),GVAR(defaultGetIn)];
+		private _isGetIn = if (_getIn > 1) then {selectRandom [false,true]} else {[false,true] select _getIn};
+        if (_isGetIn) then {
+				private _getInEhId = _unit addEventHandler ["GetIn", {
+				call FUNC(handleGetIn);
+			}];
+			_vehicle setVariable [QGVAR(getInEhId), _getInEhId];
+		};
+        private _engigeOn = _vehicle getVariable [QGVAR(engineOn),GVAR(defaultEngineOn)];
+		private _isEngigeOn = if (_engigeOn > 1) then {selectRandom [false,true]} else {[false,true] select _engineOn};
+		if (_isEngigeOn) then {
+			private _engigeOnEhId = _vehicle addEventHandler ["Engine", {
+				call FUNC(handleEngineOn);
+			}];
+			_vehicle setVariable [QGVAR(engineOnEhId), _engigeOnEhId];
+		};
+		private _expEhId = _vehicle addEventHandler ["Explosion", {
+			call EFUNC(ied,explosion)
+		}];
+		_vehicle setVariable [QGVAR(expEhId), _expEhId];
 		//private _text = [localize ELSTRING(ied,Name_Long),localize ELSTRING(ied,Name_Short)] select (_variation > 2); //Text setup if want just text
 		//private _holder = QGVAR(holder) createVehicle [0,0,0];
 		//_holder attachTo [_box, [0,0,0]];
