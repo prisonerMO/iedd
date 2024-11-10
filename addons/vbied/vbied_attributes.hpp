@@ -28,7 +28,7 @@ class iedd_vbied_attributes {
             property = QGVAR(variation);
             control = QGVAR(Combo);
             displayName = ECSTRING(ied,Variation);
-            tooltip = ECSTRING(ied,Variation_Tooltip);            
+            tooltip = ECSTRING(ied,Variation_Tooltip);
 			expression = "_this setVariable ['%s',_value];";
             defaultValue = QGVAR(defaultVariation);
             typeName = "NUMBER";
@@ -125,7 +125,7 @@ class iedd_vbied_attributes {
             control = QGVAR(PosCombo);
             displayName = CSTRING(Position_DisplayName);
             tooltip = CSTRING(Position_Tooltip);
-            property = QGVAR(position);            
+            property = QGVAR(position);
 			expression = "_this setVariable ['%s',_value];";
             defaultValue = 0;
             typeName = "NUMBER";
@@ -267,5 +267,84 @@ class iedd_vbied_attributes {
             defaultValue = QGVAR(defaultSpeed);
             typeName = "NUMBER";
         };
+        /**********TIMER SETTINGS ********/
+		class GVAR(timerSub) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = ECSTRING(Ied,Timer_Category);
+		};
+		class GVAR(timer) {
+			displayName = ECSTRING(Ied,Timer);
+			tooltip = ECSTRING(Ied,Timer_Tooltip);
+			property = QGVAR(timer);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QGVAR(defaultTimer);
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = ECSTRING(Ied,Name_Disabled);
+					value = 0;
+				};
+				class 2	{
+					name = ECSTRING(Ied,Name_Enabled);
+					value = 1;
+				};
+				class 3	{
+					name = ECSTRING(Ied,Name_Random);
+					value = 2;
+				};
+			};
+		};
+		class GVAR(timerValue) {
+			displayName = ECSTRING(Ied,TimerValue);
+			tooltip = ECSTRING(Ied,TimerValue_Tooltip); //TODO
+			property = QGVAR(timerValue);
+			control = QEGVAR(ied,timeSlider); // TODO time_slider min - max
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QGVAR(defaultTimerValue);
+			typeName = "NUMBER";
+		};
+		class GVAR(randomTimer) {
+			displayName = ECSTRING(Ied,RandomTimer);
+			tooltip =ECSTRING(Ied,RandomTimer_Tooltip);
+			property = QGVAR(randomTimer);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QGVAR(defaultRandomTimer);
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = ECSTRING(Ied,Name_Disabled);
+					value = 0;
+				};
+				class 2	{
+					name = ECSTRING(Ied,Name_Enabled);
+					value = 1;
+				};
+				class 3	{
+					name = ECSTRING(Ied,Name_Random);
+					value = 2;
+				};
+			};
+		};
+		class GVAR(randomTimerMin) {
+			displayName = ECSTRING(Ied,RandomTimerMin);
+			tooltip = ECSTRING(Ied,RandomTimerMin_Tooltip);
+			property = QGVAR(randomTimerMin);
+			control = QEGVAR(ied,timeSlider); // TODO time_slider min - max
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QGVAR(defaultTimerMin);
+			typeName = "NUMBER";
+		};
+		class GVAR(randomTimerMax) {
+			displayName = ECSTRING(Ied,RandomTimerMax);
+			tooltip = ECSTRING(Ied,RandomTimerMax_Tooltip);
+			property = QGVAR(randomTimerMax);
+			control = QEGVAR(ied,timeSlider); // TODO time_slider min - max
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QGVAR(defaultTimerMax);
+			typeName = "NUMBER";
+		};
     };
 };

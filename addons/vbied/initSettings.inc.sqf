@@ -150,7 +150,7 @@
     {},
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
-/*
+
 //VBIED Timer Default BOOLEAN
 [
     QGVAR(defaultTimer),
@@ -213,4 +213,3 @@
     [1, 300, 150],
     2
 ] call CBA_fnc_addSetting;
-*/

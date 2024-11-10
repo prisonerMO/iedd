@@ -42,7 +42,7 @@ class CfgVehicles {
 		scope = 0;
 		scopeCurator = 0;
 		scopeArsenal = 0;
-		editorCategory = "IEDD_MAINCATEGORY"; 
+		editorCategory = "IEDD_MAINCATEGORY";
 		editorSubcategory = "IEDD_ITEMS";
 		vehicleClass = "IEDD_ITEMS";*/
 		displayName="VBIED Box";
@@ -68,7 +68,7 @@ class CfgVehicles {
                     insertChildren = QUOTE(_this call FUNC(disarmActions));
 			    };
                 /*TODO REMOVE BOMB FROM VEHICLE ACTION HERE?
-                class IEDD_DisarmMenu { 
+                class IEDD_DisarmMenu {
                     exceptions[] = {"isNotSwimming"};
                     displayName = ECSTRING(ied,Disarm_DisplayName);
                     condition = QUOTE([_player] call EFUNC(ied, canDisarm));
