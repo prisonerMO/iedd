@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 [{
     params ["_bombObj","_wireSet","_text"];
+    TRACE_1("DefuseAction:",_this);
     if (isNull _bombObj) exitWith {};
     private _wires = _bombObj getVariable [QGVAR(wires),[]];
     private _countWires = count _wires-1;
