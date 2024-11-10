@@ -46,11 +46,18 @@ deleteVehicle _wire;
 				private _object = _attachedObjects select _index;
 				deleteVehicle _object;
 			};
-			if (typeOf _bombObj == QGVAR(Charge)) then {
+			private _typeOf = typeOf _bombObj;
+			if (_typeOf == QGVAR(Charge)) then {
 				private _unit = attachedTo _bombObj;
 				private _jipId = [QGVAR(detachAction), [_bombObj]] call CBA_fnc_globalEventJIP;
             	[_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
 				[_unit] call FUNC(removeEvents);
+			};
+			if (_typeOf == QEGVAR(vbied,box)) then {
+				private _vehicle = attachedTo _bombObj;
+				[_vehicle] call EFUNC(vbied,removeEvents);
+				private _jipId = [QEGVAR(vbied,detachAction), [_bombObj,_vehicle]] call CBA_fnc_globalEventJIP;
+            	[_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
 			};
 			[QGVAR(defused), [_player, _bombObj]] call CBA_fnc_globalEvent;
 		};
