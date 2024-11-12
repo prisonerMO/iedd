@@ -59,48 +59,48 @@
                 <English>Variations</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultVariation_Description">
-                <Original>Set VBIED variation (if not defined somewhere else).</Original>
-                <English>Set VBIED variation (if not defined somewhere else).</English>
+                <Original>Set VBIED variations (if not defined somewhere else).</Original>
+                <English>Set VBIED variations (if not defined somewhere else).</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultSize">
-                <Original>VBIED Default Size</Original>
-                <English>VBIED Default Size</English>
+                <Original>Explosion size</Original>
+                <English>Explosion size</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultSize_Description">
-                <Original>Set VBIED size (if not defined somewhere else).</Original>
-                <English>Set VBIED size (if not defined somewhere else).</English>
+                <Original>Set explosion size for VBIEDs (if not defined somewhere else).</Original>
+                <English>Set explosion size for VBIEDs (if not defined somewhere else).</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultEngineOn">
-                <Original>DEFAULT VBIEDs when Engine On</Original>
-                <English>DEFAULT VBIEDs when Engine On</English>
+                <Original>Activate when starting engine</Original>
+                <English>Activate when starting engine</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultEngineOn_Description">
-                <Original>DEFAULT velue VBIEDs can be activated when vehicle engine goes on.</Original>
-                <English>DEFAULT value VBIEDs can be activated when vehicle engine goes on.</English>
+                <Original>VBIEDs will be activated when vehicle engine is started.</Original>
+                <English>VBIEDs will be activated when vehicle engine is started.</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultGetIn">
-                <Original>DEFAULT value VBIEDs when player get in vehicle</Original>
-                <English>DEFAULT value VBIEDs when player get in vehicle</English>
+                <Original>Activate when player gets in</Original>
+                <English>Activate when player gets in</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultGetIn_Description">
-                <Original>DEFAULT value VBIEDs activated when player get in vehicle.</Original>
-                <English>DEFAULT value VBIEDs activated when player get in vehicle.</English>
+                <Original>VBIEDs will be activated when player gets in vehicle.</Original>
+                <English>VBIEDs will be activated when player gets in vehicle.</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultMoving">
-                <Original>DEFAULT value VBIEDs vehicle Moving</Original>
-                <English>DEFAULT value VBIEDs vehicle Moving</English>
+                <Original>Activate when vehicle is moving</Original>
+                <English>Activate when vehicle is moving</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultMoving_Description">
-                <Original>DEFAULT value VBIEDs vehicle Moving DESC.</Original>
-                <English>DEFAULT value VBIEDs vehicle Moving DESC.</English>
+                <Original>VBIEDs will be activated when vehicle is moving.</Original>
+                <English>VBIEDs will be activated when vehicle is moving.</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultSpeed">
-                <Original>DEFAULT value VBIEDs vehicle Moving Speed.</Original>
-                <English>DEFAULT value VBIEDs vehicle Moving Speed.</English>
+                <Original>Activation speed</Original>
+                <English>Activation speed</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultSpeed_Description">
-                <Original>DEFAULT value VBIEDs vehicle Moving Speed DESC.</Original>
-                <English>DEFAULT value VBIEDs vehicle Moving Speed DESC.</English>
+                <Original>Speed of vehicle when VBIED will be activated.</Original>
+                <English>Speed of vehicle when VBIED will be activated.</English>
             </Key>
 
         </Container>
@@ -112,12 +112,12 @@
         </Container>
         <Container name="IEDD VBIED Sub Categories">
             <Key ID="STR_iedd_vbied_EHSSub">
-                <Original>HANDLERS</Original>
-                <English>HANDLERS</English>
+                <Original>Activation</Original>
+                <English>Activation</English>
             </Key>
             <Key ID="STR_iedd_vbied_PositionSub">
-                <Original>VBIED POSITION</Original>
-                <English>VBIED POSITION</English>
+                <Original>VBIED Position</Original>
+                <English>VBIED Position</English>
             </Key>
             <Key ID="STR_iedd_vbied_vbiedSub">
                 <Original>VBIED</Original>
@@ -126,16 +126,16 @@
         </Container>
         <Container name="IEDD VBIED Others">
             <Key ID="STR_iedd_vbied_Defined_Dir">
-                <Original>Vector Direction</Original>
-                <English>Vector Direction</English>
+                <Original>Vector direction</Original>
+                <English>Vector direction</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Dir_Tooltip">
                 <Original>Vector Direction Tooltip</Original>
                 <English>Vector Direction Tooltip</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Name">
-                <Original>User Defined Position</Original>
-                <English>User Defined Position</English>
+                <Original>User defined position</Original>
+                <English>User defined position</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Name_Tooltip">
                 <Original>User Defined Position Tooltip</Original>
@@ -150,8 +150,8 @@
                 <English>Position Tooltip</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Up">
-                <Original>Vector Up</Original>
-                <English>Vector Up</English>
+                <Original>Vector up</Original>
+                <English>Vector up</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Up_Tooltip">
                 <Original>Vector Up Tooltip</Original>
@@ -162,20 +162,20 @@
                 <English>DELETE</English>
             </Key>
             <Key ID="STR_iedd_vbied_Position_DisplayName">
-                <Original>Position of vbied</Original>
-                <English>Position of vbied</English>
+                <Original>Position of VBIED</Original>
+                <English>Position of VBIED</English>
             </Key>
             <Key ID="STR_iedd_vbied_Position_Tooltip">
-                <Original>Position of vbied TOOLTIP</Original>
-                <English>Position of vbied TOOLTIP</English>
+                <Original>Set predefined position of VBIED.</Original>
+                <English>Set predefined position of VBIED.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Save">
                 <Original>SAVE</Original>
                 <English>SAVE</English>
             </Key>
             <Key ID="STR_iedd_vbied_User_Defined">
-                <Original>User Defined Position</Original>
-                <English>User Defined Position</English>
+                <Original>User defined position</Original>
+                <English>User defined Position</English>
             </Key>
             <Key ID="STR_iedd_vbied_User_Defined_Tooltip">
                 <Original>User Defined Position Tooltip</Original>
@@ -186,36 +186,36 @@
                 <English>SAVE USER DEFINED POS</English>
             </Key>
             <Key ID="STR_iedd_vbied_EngineOn">
-                <Original>Engine On</Original>
-                <English>Engine On</English>
+                <Original>Engine on</Original>
+                <English>Engine on</English>
             </Key>
             <Key ID="STR_iedd_vbied_EngineOn_Tooltip">
-                <Original>Engine On Tooltip</Original>
-                <English>Engine On Tooltip</English>
+                <Original>VBIED will be activated when vehicle engine is started.</Original>
+                <English>VBIED will be activated when vehicle engine is started.</English>
             </Key>
             <Key ID="STR_iedd_vbied_GetIn">
-                <Original>Get In</Original>
-                <English>Get In</English>
+                <Original>Get in</Original>
+                <English>Get in</English>
             </Key>
             <Key ID="STR_iedd_vbied_GetIn_Tooltip">
-                <Original>Get In Tooltip</Original>
-                <English>Get In Tooltip</English>
+                <Original>VBIED will be activated when player gets in vehicle.</Original>
+                <English>VBIED will be activated when player gets in vehicle.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Moving">
-                <Original>Moving</Original>
-                <English>Moving</English>
+                <Original>Moving vehicle</Original>
+                <English>Moving vehicle</English>
             </Key>
             <Key ID="STR_iedd_vbied_Moving_Tooltip">
-                <Original>Moving Tooltip</Original>
-                <English>Moving Tooltip</English>
+                <Original>VBIED will be activated when vehicle is moving.</Original>
+                <English>VBIED will be activated when vehicle is moving.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Speed">
-                <Original>Activation Speed</Original>
-                <English>Activation Speed</English>
+                <Original>Activation speed</Original>
+                <English>Activation speed</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultSpeed_Tooltip">
-                <Original>Plaplaa VBIEDs vehicle Moving Speed Tooltip.</Original>
-                <English>Plaplaa value VBIEDs vehicle Moving Speed Tooltip.</English>
+                <Original>Speed of vehicle when VBIED will be activated.</Original>
+                <English>Speed of vehicle when VBIED will be activated.</English>
             </Key>
         </Container>
     </Package>
