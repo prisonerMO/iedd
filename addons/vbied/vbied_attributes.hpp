@@ -11,8 +11,8 @@ class iedd_vbied_attributes {
         class GVAR(isVbied) {
             property = QGVAR(isVbied);
             control = "CheckboxState";
-            displayName = "IS VBIED";
-            tooltip = "IS VBIED IS";
+            displayName = CSTRING(AddVbied);
+            tooltip = CSTRING(AddVbied_Tooltip);
             expression = QUOTE(if (_value) then {[ARR_2(_this,true)] call FUNC(setVbied);_this setVariable [ARR_3(QQGVAR(isVbied),_value,true)]});
             typeName = "BOOL";
             condition = "objectVehicle";
@@ -278,7 +278,7 @@ class iedd_vbied_attributes {
 		};
 		class GVAR(timer) {
 			displayName = ECSTRING(Ied,Timer);
-			tooltip = ECSTRING(Ied,Timer_Tooltip);
+			tooltip = CSTRING(Timer_Tooltip);
 			property = QGVAR(timer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";

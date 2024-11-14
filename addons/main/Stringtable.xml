@@ -58,5 +58,9 @@
             <Turkish>IEDD Notebook Ayarlar</Turkish>
             <Hungarian>IEDD Notebook Beállítások</Hungarian>
         </Key>
+        <Key ID="STR_iedd_main_VbiedOptions">
+            <Original>Vehicle-borne Improvised Explosive Device</Original>
+            <English>Vehicle-borne Improvised Explosive Device</English>
+        </Key>
     </Package>
 </Project>

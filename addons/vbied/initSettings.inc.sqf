@@ -155,7 +155,7 @@
 [
     QGVAR(defaultTimer),
     "LIST",
-    [ELSTRING(ied,Timer), ELSTRING(ied,DefaultTimer_Description)],
+    [ELSTRING(ied,Timer), LSTRING(DefaultTimer_Description)],
     [LSTRING(Main_Category),"VBIED Default Values"],
     [
         [0, 1, 2],

@@ -102,7 +102,10 @@
                 <Original>Speed of vehicle when VBIED will be activated.</Original>
                 <English>Speed of vehicle when VBIED will be activated.</English>
             </Key>
-
+            <Key ID="STR_iedd_vbied_DefaultTimer_Description">
+                <Original>Add countdown timer to VBIEDs (if not defined somewhere else).</Original>
+                <English>Add countdown timer to VBIEDs (if not defined somewhere else).</English>
+            </Key>
         </Container>
         <Container name="IEDD VBIED Module">
             <Key ID="STR_iedd_vbied_Vbied_DisplayName">
@@ -112,8 +115,8 @@
         </Container>
         <Container name="IEDD VBIED Sub Categories">
             <Key ID="STR_iedd_vbied_EHSSub">
-                <Original>Activation</Original>
-                <English>Activation</English>
+                <Original>Activation options</Original>
+                <English>Activation options</English>
             </Key>
             <Key ID="STR_iedd_vbied_PositionSub">
                 <Original>VBIED Position</Original>
@@ -125,13 +128,21 @@
             </Key>
         </Container>
         <Container name="IEDD VBIED Others">
+            <Key ID="STR_iedd_vbied_AddVbied">
+                <Original>Add VBIED</Original>
+                <English>Add VBIED</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_AddVbied_Tooltip">
+                <Original>Add VBIED to selected vehicle.</Original>
+                <English>Add VBIED to selected vehicle.</English>
+            </Key>
             <Key ID="STR_iedd_vbied_Defined_Dir">
                 <Original>Vector direction</Original>
                 <English>Vector direction</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Dir_Tooltip">
-                <Original>Vector Direction Tooltip</Original>
-                <English>Vector Direction Tooltip</English>
+                <Original>Set VBIEDs vectorDir values. Do not change values, if Position of VBIED (predefined position) is selected.</Original>
+                <English>Set VBIEDs vectorDir values. Do not change values, if Position of VBIED (predefined position) is selected.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Name">
                 <Original>User defined position</Original>
@@ -146,16 +157,16 @@
                 <English>Position</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Pos_Tooltip">
-                <Original>Position Tooltip</Original>
-                <English>Position Tooltip</English>
+                <Original>Set VBIEDs attachTo values. Do not change values, if Position of VBIED (predefined position) is selected.</Original>
+                <English>Set VBIEDs attachTo values. Do not change values, if Position of VBIED (predefined position) is selected.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Up">
                 <Original>Vector up</Original>
                 <English>Vector up</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Up_Tooltip">
-                <Original>Vector Up Tooltip</Original>
-                <English>Vector Up Tooltip</English>
+                <Original>Set VBIEDs vectorUp values. Do not change values, if Position of VBIED (predefined position) is selected.</Original>
+                <English>Set VBIEDs vectorUp values. Do not change values, if Position of VBIED (predefined position) is selected.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Delete">
                 <Original>DELETE</Original>
@@ -182,8 +193,8 @@
                 <English>User Defined Position Tooltip</English>
             </Key>
             <Key ID="STR_iedd_vbied_User_SaveDelete">
-                <Original>SAVE USER DEFINED POS</Original>
-                <English>SAVE USER DEFINED POS</English>
+                <Original>Save user defined position</Original>
+                <English>Save user defined position</English>
             </Key>
             <Key ID="STR_iedd_vbied_EngineOn">
                 <Original>Engine on</Original>
@@ -216,6 +227,10 @@
             <Key ID="STR_iedd_vbied_DefaultSpeed_Tooltip">
                 <Original>Speed of vehicle when VBIED will be activated.</Original>
                 <English>Speed of vehicle when VBIED will be activated.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Timer_Tooltip">
+                <Original>Add countdown timer to VBIED.</Original>
+                <English>Add countdown timer to VBIED.</English>
             </Key>
         </Container>
     </Package>

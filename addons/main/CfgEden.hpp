@@ -7,7 +7,7 @@ class Cfg3DEN {
                 class Attributes {};
             };
             class iedd_vbied_attributes {
-                displayName = "VEHICLE IMPROVED IED";
+                displayName = CSTRING(VbiedOptions);
                 collapsed = 1;
                 class Attributes {};
             };
