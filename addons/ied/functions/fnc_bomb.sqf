@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 params ["_bombObj"];
 if (isNil {_bombObj getVariable QGVAR(bomb)}) exitWith {};
-_bombObj setVariable [QGVAR(bomb),nil,true];
+_bombObj setVariable [QGVAR(bomb),false,true];
 private _isTraining = _bombObj getVariable [QGVAR(training), false];
 if (_isTraining) then {
 	private _type = IEDD_TRAINING_BOMB;
