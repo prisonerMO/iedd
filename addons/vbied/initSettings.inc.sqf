@@ -76,7 +76,7 @@
     [
         [0,1,2,3,4,5],
         [ELSTRING(ied,Name_Tiny),ELSTRING(ied,Name_Small),ELSTRING(ied,Name_Medium),ELSTRING(ied,Name_Large),ELSTRING(ied,Name_Huge),ELSTRING(ied,Name_Random)],
-        2
+        3
     ],
     true,
     {},

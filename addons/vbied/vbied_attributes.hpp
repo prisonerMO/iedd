@@ -28,7 +28,7 @@ class iedd_vbied_attributes {
             property = QGVAR(variation);
             control = QGVAR(Combo);
             displayName = ECSTRING(ied,Variation);
-            tooltip = ECSTRING(ied,Variation_Tooltip);
+            tooltip = CSTRING(Variation_Tooltip);
 			expression = "_this setVariable ['%s',_value];";
             defaultValue = QGVAR(defaultVariation);
             typeName = "NUMBER";
@@ -98,7 +98,7 @@ class iedd_vbied_attributes {
         };
         class GVAR(dud) {
             displayName = ECSTRING(ied,Dud);
-            tooltip = ECSTRING(ied,Dud_Tooltip);
+            tooltip = CSTRING(Dud_Tooltip);
             property = QGVAR(dud);
             expression = "_this setVariable ['%s',_value];";
             control = "Slider";

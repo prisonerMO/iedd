@@ -136,6 +136,14 @@
                 <Original>Add VBIED to selected vehicle.</Original>
                 <English>Add VBIED to selected vehicle.</English>
             </Key>
+            <Key ID="STR_iedd_vbied_Variation_Tooltip">
+                <Original>Set VBIED variation.</Original>
+                <English>Set VBIED variation.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Dud_Tooltip">
+                <Original>Set probability of VBIED being dud.</Original>
+                <English>Set probability of VBIED being dud.</English>
+            </Key>
             <Key ID="STR_iedd_vbied_Defined_Dir">
                 <Original>Vector direction</Original>
                 <English>Vector direction</English>
