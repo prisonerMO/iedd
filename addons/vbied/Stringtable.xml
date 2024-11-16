@@ -232,7 +232,7 @@
                 <Original>Activation speed</Original>
                 <English>Activation speed</English>
             </Key>
-            <Key ID="STR_iedd_vbied_DefaultSpeed_Tooltip">
+            <Key ID="STR_iedd_vbied_Speed_ToolTip">
                 <Original>Speed of vehicle when VBIED will be activated.</Original>
                 <English>Speed of vehicle when VBIED will be activated.</English>
             </Key>

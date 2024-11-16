@@ -127,7 +127,7 @@ class iedd_vbied_attributes {
             tooltip = CSTRING(Position_Tooltip);
             property = QGVAR(position);
 			expression = "_this setVariable ['%s',_value];";
-            defaultValue = 0;
+            defaultValue = "[0,1] select ((_this call iedd_vbied_fnc_modelDefault) select 0 > -1)";
             typeName = "NUMBER";
             condition = "objectVehicle";
             unique = 0;
@@ -239,7 +239,7 @@ class iedd_vbied_attributes {
 		};
         class GVAR(moving) {
 			displayName = CSTRING(Moving);
-			tooltip = CSTRING(Moving);
+			tooltip = CSTRING(Moving_Tooltip);
 			property = QGVAR(moving);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";

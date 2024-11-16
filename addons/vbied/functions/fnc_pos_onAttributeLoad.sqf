@@ -12,9 +12,11 @@ if (_count > 0) then {
 		private _posName = _data get _i get "text";
 		_ctrlCombo lbAdd _posName;
 		_ctrlCombo lbSetTooltip [_i+1,format ["PRE DEFINED Position %1",_i]];
+		//_ctrlCombo lbSetTooltip [_i,format ["PRE DEFINED Position %1",_i+1]];
 	};
 };
-
+//_ctrlCombo lbAdd "NEW USER POS";
+//_ctrlCombo lbSetTooltip [(lbSize _ctrlCombo)-1,"NEW USER POS"];
 /**HERE GET USER DEFINED LIST**/
 private _userModel = _model select 1;
 private _userData  = GVAR(userDefined) getOrDefault [_userModel,[]];
@@ -30,7 +32,8 @@ if (_countUser > 0) then {
 		_ctrlCombo lbSetValue [_id,_i];
 	};
 };
-_ctrlCombo lbSetCurSel _value;
+_ctrlCombo lbSetCurSel (parseNumber (_count > 0));
+//_ctrlCombo lbSetCurSel _value;
 //diag_log format ["pos_onAttributeLOAD CtrlCombo LBSETCUR: %1",lbCurSel _ctrlCombo];
 //diag_log format ["pos_onAttributeLOAD: lbsize: %1",lbSize _ctrlCombo];
 

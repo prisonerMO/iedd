@@ -54,7 +54,7 @@ if (_count > 4) then {
 	_ctrlCombo lbAdd _text;
 	_ctrlCombo lbSetTooltip [_setCur,"User Defined Position"];
 	_ctrlCombo lbSetValue [_setCur, _count];
-	[_model, _count, _pos, _dir, _up, _text] call GVAR(userDefined);
+	[_model, _count, _pos, _dir, _up, _text] call FUNC(userDefined);
 	_ctrlCombo lbSetCurSel _setCur;
 };
 
