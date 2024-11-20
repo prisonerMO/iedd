@@ -151,6 +151,21 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+//Default isDistance
+[
+    QGVAR(defaultIsDistance),
+    "LIST",
+    [LSTRING(IsDistance), LSTRING(DefaultIsDistance_Description)],
+    [LSTRING(Main_Category),"VBIED Default Values"],
+    [
+        [0, 1, 2],
+        [ELSTRING(ied,Name_Disabled), ELSTRING(ied,Name_Enabled), ELSTRING(ied,Name_Random)],
+        0
+    ],
+    true,
+    {},
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
 //VBIED Timer Default BOOLEAN
 [
     QGVAR(defaultTimer),

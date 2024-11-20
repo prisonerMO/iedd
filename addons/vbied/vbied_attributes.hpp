@@ -105,16 +105,6 @@ class iedd_vbied_attributes {
             defaultValue = QGVAR(defaultDud);
             condition = "objectVehicle";
         };
-        class GVAR(distance) {
-            displayName = ECSTRING(ied,Distance);
-            tooltip = ECSTRING(ied,Distance_Tooltip);
-            property = QGVAR(distance);
-            expression = "_this setVariable ['%s',_value];";
-            control = QEGVAR(ied,distanceSlider);
-            typeName = "NUMBER";
-            defaultValue = "0";
-            condition = "objectVehicle";
-        };
         // VBIED POSITION
         class GVAR(positionSub) {
             data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
@@ -131,6 +121,15 @@ class iedd_vbied_attributes {
             typeName = "NUMBER";
             condition = "objectVehicle";
             unique = 0;
+        };
+        class GVAR(edit) {
+            displayName = CSTRING(Defined_Name);
+            tooltip = CSTRING(Defined_Name_ToolTip);
+            property = QGVAR(edit);
+            control = QGVAR(Edit);
+            condition = "objectVehicle";
+            defaultValue = "User Defined Position";
+            typeName = "STRING";
         };
         class GVAR(pos) {
             displayName = CSTRING(Defined_Pos);
@@ -167,15 +166,6 @@ class iedd_vbied_attributes {
             condition = "objectVehicle";
             validate = "none";
             typeName = "ARRAY";
-        };
-        class GVAR(edit) {
-            displayName = CSTRING(Defined_Name);
-            tooltip = CSTRING(Defined_Name_ToolTip);
-            property = QGVAR(edit);
-            control = QGVAR(Edit);
-            condition = "objectVehicle";
-            defaultValue = "User Defined Position";
-            typeName = "STRING";
         };
         class GVAR(saveDelete) {
             displayName = "SAVE USER DEFINED POS";
@@ -268,6 +258,40 @@ class iedd_vbied_attributes {
             control = QGVAR(speedSlider);
             defaultValue = QGVAR(defaultSpeed);
             typeName = "NUMBER";
+            condition = "objectVehicle";
+        };
+        class GVAR(isDistance) {
+			displayName = CSTRING(isDistance);
+			tooltip = CSTRING(isDistance_Tooltip);
+			property = QGVAR(isDistance);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QGVAR(defaultIsDistance);
+			typeName = "NUMBER";
+            condition = "objectVehicle";
+			class Values {
+				class 1	{
+					name = ECSTRING(ied,Name_Disabled);
+					value = 0;
+				};
+				class 2	{
+					name = ECSTRING(ied,Name_Enabled);
+					value = 1;
+				};
+				class 3	{
+					name = ECSTRING(ied,Name_Random);
+					value = 2;
+				};
+			};
+		};
+        class GVAR(distance) {
+            displayName = ECSTRING(ied,Distance);
+            tooltip = ECSTRING(ied,Distance_Tooltip);
+            property = QGVAR(distance);
+            expression = "_this setVariable ['%s',_value];";
+            control = QEGVAR(ied,distanceSlider);
+            typeName = "NUMBER";
+            defaultValue = "0";
             condition = "objectVehicle";
         };
         /**********TIMER SETTINGS ********/

@@ -94,6 +94,14 @@
                 <Original>VBIEDs will be activated when vehicle is moving.</Original>
                 <English>VBIEDs will be activated when vehicle is moving.</English>
             </Key>
+            <Key ID="STR_iedd_vbied_DefaultIsDistance">
+                <Original>Is Distance Default</Original>
+                <English>Is Distance Default</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_DefaultIsDistance_Description">
+                <Original>IsDistance_Description.</Original>
+                <English>IsDistance_Description.</English>
+            </Key>
             <Key ID="STR_iedd_vbied_DefaultSpeed">
                 <Original>Activation speed</Original>
                 <English>Activation speed</English>
@@ -185,8 +193,8 @@
                 <English>Position of VBIED</English>
             </Key>
             <Key ID="STR_iedd_vbied_Position_Tooltip">
-                <Original>Set predefined position of VBIED.</Original>
-                <English>Set predefined position of VBIED.</English>
+                <Original>Set position of VBIED.</Original>
+                <English>Set position of VBIED.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Save">
                 <Original>SAVE</Original>
@@ -227,6 +235,14 @@
             <Key ID="STR_iedd_vbied_Moving_Tooltip">
                 <Original>VBIED will be activated when vehicle is moving.</Original>
                 <English>VBIED will be activated when vehicle is moving.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_IsDistance">
+                <Original>Is Distance</Original>
+                <English>Is Distance</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_IsDistance_Tooltip">
+                <Original>IsDistance_Tooltip.</Original>
+                <English>IsDistance_Tooltip.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Speed">
                 <Original>Activation speed</Original>

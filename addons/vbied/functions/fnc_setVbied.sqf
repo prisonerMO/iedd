@@ -123,4 +123,4 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
     	//_box setVariable [QGVAR(bomb), true, true];
 	},
     [_vehicle]
-] call CBA_fnc_waitUntilAndExecute;
+] call CBA_fnc_waitUntilAndExecute; //OR CBA_fnc_waitAndExecute 0.1 ???

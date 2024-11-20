@@ -3,6 +3,11 @@ params ["_ctrlCombo", "_lbCurSel"];
 private _ctrlGrp = ctrlParentControlsGroup ctrlParentControlsGroup _ctrlCombo;
 private _all = allControls _ctrlGrp;
 private _ctrls = _all select {ctrlClassName _x == "iedd_vbied_UserDefined"};
+if (_ctrls isEqualTo []) exitWith {
+	_this spawn {
+		_this call FUNC(pos_onLBSelChanged);
+	};
+};
 if (_lbCurSel == 0) exitWith {
 	{
 		for "_i" from 101 to 103 do {
