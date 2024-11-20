@@ -1,4 +1,6 @@
 #include "../script_component.hpp"
+//TRACE_1("VbiedCheck",_this);
+//NOT IN USE
 private _checkTime = 5;
 if (GVAR(bombs) isNotEqualTo []) then {
 	private _players = call CBA_fnc_players;

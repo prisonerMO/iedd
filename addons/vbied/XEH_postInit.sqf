@@ -12,3 +12,13 @@
 		_box setVectorDirAndUp [[0,0,1],[0,1,0]];
 	//[_object] call FUNC(removeEvents);
 }] call CBA_fnc_addEventHandler;
+
+if (isServer) then {
+	[{
+		time > 10 && !isNil QGVAR(bombs)},
+	{
+		INFO_1("Detect event called [Time: %1]",time);
+		//call FUNC(vbiedCheck); NOT IN USE
+	},
+	[]] call CBA_fnc_waitUntilAndExecute;
+};
