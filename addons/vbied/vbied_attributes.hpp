@@ -286,7 +286,7 @@ class iedd_vbied_attributes {
 		};
         class GVAR(distance) {
             displayName = ECSTRING(ied,Distance);
-            tooltip = ECSTRING(ied,Distance_Tooltip);
+            tooltip = CSTRING(Distance_Tooltip);
             property = QGVAR(distance);
             expression = "_this setVariable ['%s',_value];";
             control = QEGVAR(ied,distanceSlider);

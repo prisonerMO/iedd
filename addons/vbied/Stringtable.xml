@@ -83,8 +83,8 @@
                 <English>Activate when player gets in</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultGetIn_Description">
-                <Original>VBIEDs will be activated when player gets in vehicle.</Original>
-                <English>VBIEDs will be activated when player gets in vehicle.</English>
+                <Original>VBIED will be activated when someone gets in.</Original>
+                <English>VBIED will be activated when someone gets in.</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultMoving">
                 <Original>Activate when vehicle is moving</Original>
@@ -237,12 +237,12 @@
                 <English>VBIED will be activated when vehicle is moving.</English>
             </Key>
             <Key ID="STR_iedd_vbied_IsDistance">
-                <Original>Is Distance</Original>
-                <English>Is Distance</English>
+                <Original>Movement</Original>
+                <English>Movement</English>
             </Key>
             <Key ID="STR_iedd_vbied_IsDistance_Tooltip">
-                <Original>IsDistance_Tooltip.</Original>
-                <English>IsDistance_Tooltip.</English>
+                <Original>VBIED will be activated when moving nearby.</Original>
+                <English>VBIED will be activated when moving nearby.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Speed">
                 <Original>Activation speed</Original>
@@ -255,6 +255,10 @@
             <Key ID="STR_iedd_vbied_Timer_Tooltip">
                 <Original>Add countdown timer to VBIED.</Original>
                 <English>Add countdown timer to VBIED.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Distance_Tooltip">
+                <Original>Distance to player when VBIED will be activated. If the value is under 1m, random distance value from addon options will be used.</Original>
+                <English>Distance to player when VBIED will be activated. If the value is under 1m, random distance value from addon options will be used.</English>
             </Key>
         </Container>
     </Package>

@@ -7,7 +7,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 	private _objectsToRemove = [];
 	{
 		private _object = _x;
-		if (isNull _object || isNil {_object getVariable QEGVAR(ied,bomb)}) exitWith {
+		if (isNull _object || !(_object getVariable [QEGVAR(ied,bomb),false])) exitWith {
 			_objectsToRemove pushBack _object;
 		};
 		private _distance = _object getVariable [QGVAR(dist),10];

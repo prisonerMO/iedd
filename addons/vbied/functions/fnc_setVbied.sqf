@@ -5,6 +5,9 @@ if (is3DEN) exitWith {};
 if (!_activated) exitWith {TRACE_1("ExitWith _actived:",_activated)};
 if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 [{
+	!isNull (_this select 0)
+},
+{
 	params ["_vehicle"];
 	private _variation =_vehicle getVariable [QGVAR(variation),GVAR(defaultVariation)];
 	private _dud =_vehicle getVariable [QGVAR(dud),GVAR(defaultDud)];
@@ -122,6 +125,6 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	//_holder setVariable [QGVAR(bomb), true, true];
 	//_box setVariable [QGVAR(setup), createHashMapFromArray [["wires", _wires], ["variation", _variation], ["wireset", _wireSet], ["text", _text]],true];
 	//_box setVariable [QGVAR(bomb), true, true];
-}, [_vehicle], 0.1] call CBA_fnc_waitAndExecute;
-//OR    [{!isNull (_this select 0)},{params ["_vehicle"]; ..},[_vehicle]] call CBA_fnc_waitUntilAndExecute;
+},[_vehicle]] call CBA_fnc_waitUntilAndExecute;
+//OR --> [_vehicle], 0.1] call CBA_fnc_waitAndExecute;
 true;

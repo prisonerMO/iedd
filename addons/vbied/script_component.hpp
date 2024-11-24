@@ -12,12 +12,17 @@
 
 #include "\x\iedd\addons\main\script_macros.hpp"
 
-#define VAN 		0
-#define VAN_BOX 	1
-#define VAN_FUEL 	2
-#define KAMAZ 		3
-#define KAMAZ_FUEL 	4
-#define KAMAZ_BOX 	5
+#define VAN 			0
+#define VAN_BOX 		1
+#define VAN_FUEL 		2
+#define VAN_2 			3
+#define KAMAZ 			4
+#define KAMAZ_FUEL 		5
+#define KAMAZ_BOX 		6
+#define OFFROAD 		7
+#define OFFROAD_REP 	8
+#define OFFROAD_BOX 	9
+#define JEEP 			10
 
 #define VBIED_MODELS [\
 	[\
@@ -30,6 +35,9 @@
 		"van_01_fuel_f.p3d"\
 	],\
 	[\
+		"van_02_vehicle_f.p3d"\
+	],\
+	[\
 		"truck_02_transport_f.p3d",\
 		"truck_02_covered_f.p3d"\
 	],\
@@ -38,6 +46,18 @@
 	],\
 	[\
 		"truck_02_box_f.p3d"\
+	],\
+	[\
+		"offroad_01_unarmed_f.p3d"\
+	],\
+	[\
+		"offroad_01_repair_civ_f.p3d"\
+	],\
+	[\
+		"offroad_01_covered_f.p3d"\
+	],\
+	[\
+		"offroad_02_f"\
 	]\
 ]
 
@@ -54,6 +74,10 @@
 	[VAN_FUEL, 1, [0.34,-0.02,-1.12], [-1,0,0.5], [0,1,0], "Center"],\
 	[VAN_FUEL, 2, [0.39,-2.87,-0.9], [-1,0,0], [0,1,0], "Rear Right"],\
 	[VAN_FUEL, 3, [-0.424,-2.87,-0.9], [1,0,0], [0,1,0], "Rear Left"],\
+	[VAN_2, 1, [-0.65,3.325,-0.8], [1,0,0.5], [0,1,0], "Front left"],\
+	[VAN_2, 2, [0.65,3.325,-0.8], [-1,0,0.5], [0,1,0], "Front right"],\
+	[VAN_2, 3, [0.708,-1.15,-0.78], [-1,0,0], [0,1,0], "Rear right"],\
+	[VAN_2, 4, [-0.708,-1.15,-0.78], [1,0,0], [0,1,0], "Rear left"],\
 	[KAMAZ, 0, [-0.05,2.57,-1.457],	[0,-1,0], [0,0,1], "Front"],\
 	[KAMAZ, 1, [0.7,0.515,-1.3], [0,1,0], [0,0,1], "Center Right"],\
 	[KAMAZ, 2, [-0.6,0.375,-1.21], 	[0,1,0], [0,0,1], "Center Left"],\
@@ -65,7 +89,23 @@
 	[KAMAZ_BOX, 0, [-0.075,2.75,-1.49], [0,-1,0], [0,0,1], "Front"],\
 	[KAMAZ_BOX, 1, [0.6,0.7,-1.22], [0,1,0], [0,0,1], "Center Right"],\
 	[KAMAZ_BOX, 2, [-0.6,0.559,-1.25], [0,1,0], [0,0,1], "Center Left"],\
-	[KAMAZ_BOX, 3, [-0.029,-2.154,-1.35], [0,0,0], [0,0,0], "Rear"]\
+	[KAMAZ_BOX, 3, [-0.029,-2.154,-1.35], [0,0,0], [0,0,0], "Rear"],\
+	[OFFROAD, 0, [-0.282,2.01,-1.05],[1,0,0], [0,1,0], "Front left"],\
+	[OFFROAD, 1, [0.21,2.01,-1.05],[-1,0,0],[0,1,0], "Front right"],\
+	[OFFROAD, 2, [0.712,-0.7,-0.9],[-1,0,0.17],[0,1,0], "Center"],\
+	[OFFROAD, 3, [0,-2.217,-1.07],[0,1,0.35],[0.5,0,0], "Rear"],\
+	[OFFROAD_REP, 0, [-0.29,2.01,-1.07], [1,0,0], [0,1,0], "Front left"],\
+	[OFFROAD_REP, 1, [0.2,2.01,-1.07], [-1,0,0], [0,1,0], "Front right"],\
+	[OFFROAD_REP, 2, [0.701,-0.7,-0.9], [-1,0,0.17],[0,1,0], "Center"],\
+	[OFFROAD_REP, 3, [0,-2.217,-1.07], [0,1,0.35], [0.5,0,0], "Rear"],\
+	[OFFROAD_BOX, 0, [-0.282,2.15,-1.15], [1,0,0], [0,1,0], "Front left"],\
+	[OFFROAD_BOX, 1, [0.21,2.15,-1.15], [-1,0,0], [0,1,0], "Front right"],\
+	[OFFROAD_BOX, 2, [0.711,-0.55,-1], [-1,0,0.17], [0,1,0], "Center"],\
+	[OFFROAD_BOX, 3, [0,-2.052,-1.17], [0,1,0.35], [0.5,0,0], "Rear"],\
+	[JEEP, 1, [-0.485,1.8,-0.63], [1,0,0.15], [0,1,0], "Front left"],\
+	[JEEP, 2, [0.397,1.8,-0.63], [-1,0,0.15], [0,1,0], "Front right"],\
+	[JEEP, 3, [-0.665,-0.9,-0.585], [1,0,0], [0,1,0], "Rear left"],\
+	[JEEP, 4, [0.577,-0.9,-0.585], [-1,0,0], [0,1,0], "Rear right"]\
 ]
 
 #define VBIED_VARS [\
