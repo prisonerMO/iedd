@@ -16,9 +16,9 @@ if !(typeOf _unit in IEDD_CLASSES) exitWith {
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
-if (isNil {_unit getVariable QEGVAR(ied,bomb)}) then {
+if !(_unit getVariable [QEGVAR(ied,bomb),false]) then {
 	_unit setVariable [QEGVAR(ied,bomb), true, true];
 };
-_unit setVariable [QEGVAR(ied,dud),0,true];	
+_unit setVariable [QEGVAR(ied,dud),0,true];
 [QEGVAR(ied,explosion), [_unit]] call CBA_fnc_serverEvent;
 deleteVehicle _logic;
