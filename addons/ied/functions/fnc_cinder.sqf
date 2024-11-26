@@ -108,7 +108,6 @@ if (!isServer) exitWith {};
 
     _bombObj setVariable [QGVAR(wires),_wires,true];
     _bombObj setVariable [QGVAR(bomb),true,true];
-    _bombObj setVariable [QGVAR(variation),_variation,true];
     _bombObj setVariable [QGVAR(timer),_isTimer, true];
 
     if (_isTimer) then {

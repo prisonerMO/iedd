@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 params ["_bombObj"];
-if (isNil {_bombObj getVariable QGVAR(bomb)}) exitWith {};
+if !(_bombObj getVariable [QEGVAR(ied,bomb),false]) exitWith {};
 _bombObj setVariable [QGVAR(bomb),nil,true];
 private _isTraining = _bombObj getVariable [QGVAR(training), false];
 if (_isTraining) then {
@@ -48,7 +48,7 @@ if (_isTraining) then {
 	} else {
 		private _pos = getPosATL _bombObj;
 		_pos set [2,0.05];
-		private _size = _bombObj getVariable [QGVAR(size), 3];
+		private _size = _bombObj getVariable [QGVAR(size), GVAR(defaultSize)];
 		private _unit = objNull;
 		if (_size > 4) then {
 			_size = floor (random 4);
