@@ -235,7 +235,7 @@ class GVAR(distSides): Checkbox {
 		{
             idc = 100;
             y = QUOTE(GRID_Y_POS);
-            x = QUOTE((ATTRIBUTE_TW + ATTRIBUTE_W * 1/30) * GRID_W);
+            x = QUOTE((ATTRIBUTE_TITLE_W + ATTRIBUTE_CONTENT_W * 1/30) * GRID_W);
             w = QUOTE(GRID_W_POS);
             h = QUOTE(GRID_H_POS);
             textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa";
@@ -253,7 +253,7 @@ class GVAR(distSides): Checkbox {
         class WestV: EastV
 		{
             idc = 101;
-			x=QUOTE((ATTRIBUTE_TW + ATTRIBUTE_W * 1/4) * GRID_W);
+			x=QUOTE((ATTRIBUTE_TITLE_W + ATTRIBUTE_CONTENT_W * 1/4) * GRID_W);
             textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
             textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_west_ca.paa";
             textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa";
@@ -269,7 +269,7 @@ class GVAR(distSides): Checkbox {
         class GuerV: EastV
 		{
             idc = 102;
-            x=QUOTE((ATTRIBUTE_TW + ATTRIBUTE_W * 2/4) * GRID_W);
+            x=QUOTE((ATTRIBUTE_TITLE_W + ATTRIBUTE_CONTENT_W * 2/4) * GRID_W);
             textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
             textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_guer_ca.paa";
             textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa";
@@ -285,7 +285,7 @@ class GVAR(distSides): Checkbox {
         class CivV: EastV
 		{
             idc = 103;
-            x=QUOTE((ATTRIBUTE_TW + ATTRIBUTE_W * 3/4) * GRID_W);
+            x=QUOTE((ATTRIBUTE_TITLE_W + ATTRIBUTE_CONTENT_W * 3/4) * GRID_W);
             textureChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";
             textureUnchecked = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\side_civ_ca.paa";
             textureFocusedChecked = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa";

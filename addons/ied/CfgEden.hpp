@@ -1,10 +1,5 @@
-#define pixelScale 0.50
-#define ATTRIBUTE_TW	    48
-#define ATTRIBUTE_W		    82
 #define ATTRIBUTE_Y_VALUE   0.80
 #define ATTRIBUTE_H_VALUE   15
-#define GRID_W (pixelW * pixelGrid * pixelScale)
-#define GRID_H (pixelH * pixelGrid * pixelScale)
 #define GRID_Y_POS (GRID_H * ATTRIBUTE_Y_VALUE)
 #define GRID_H_POS (GRID_H * ATTRIBUTE_H_VALUE)
 #define GRID_W_POS (GRID_H * ATTRIBUTE_H_VALUE)

@@ -17,7 +17,7 @@ class GVAR(Metal):Land_GarbageBarrel_01_F {
 			class IEDD_DisarmMenu {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Disarm_DisplayName);								
-				condition = QUOTE(!isNil {_target getVariable QQGVAR(bomb)} && {[_player] call FUNC(canDisarm)});
+				condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call FUNC(canDisarm)});
 				statement = "";
 			};
 		};
