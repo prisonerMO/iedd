@@ -1,6 +1,5 @@
 #include "../script_component.hpp"
 //TRACE_1("VbiedCheck",_this);
-//NOT IN USE
 private _checkTime = 5;
 if (GVAR(bombs) isNotEqualTo []) then {
 	private _players = call CBA_fnc_players;
@@ -29,7 +28,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 					_nearPlr = _x;
 					if (speed _nearPlr > 8) then
 					{
-						[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+						[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
 						_objectsToRemove pushBack _object;
 						continue;
 					};
@@ -41,7 +40,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 			if (_nearVehicles isNotEqualTo []) then {
 				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
 				if (_index > -1) then {
-					[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+					[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
 					_objectsToRemove pushBack _object;
 					continue;
 				};

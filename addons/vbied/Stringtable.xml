@@ -209,8 +209,8 @@
                 <English>User Defined Position Tooltip</English>
             </Key>
             <Key ID="STR_iedd_vbied_User_SaveDelete">
-                <Original>Save user defined position</Original>
-                <English>Save user defined position</English>
+                <Original>Save user defined position.</Original>
+                <English>Save user defined position.</English>
             </Key>
             <Key ID="STR_iedd_vbied_EngineOn">
                 <Original>Engine on</Original>
@@ -241,8 +241,8 @@
                 <English>Movement</English>
             </Key>
             <Key ID="STR_iedd_vbied_IsDistance_Tooltip">
-                <Original>VBIED will be activated when moving nearby.</Original>
-                <English>VBIED will be activated when moving nearby.</English>
+                <Original>VBIED will be activated by moving player (speed more than 8km/h)</Original>
+                <English>VBIED will be activated by moving player (speed more than 8km/h)</English>
             </Key>
             <Key ID="STR_iedd_vbied_Speed">
                 <Original>Activation speed</Original>

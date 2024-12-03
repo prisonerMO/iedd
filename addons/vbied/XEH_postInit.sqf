@@ -18,7 +18,7 @@ if (isServer) then {
 		time > 10 && !isNil QGVAR(bombs)},
 	{
 		INFO_1("Detect event called [Time: %1]",time);
-		//call FUNC(vbiedCheck); NOT IN USE
+		call FUNC(vbiedCheck);
 	},
 	[]] call CBA_fnc_waitUntilAndExecute;
 };
