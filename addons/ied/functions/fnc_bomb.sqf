@@ -21,8 +21,8 @@ if (_isTraining) then {
 		[_bombObj,_pos,_type]
 	] call CBA_fnc_waitUntilAndExecute;
 } else {
-	private _possiblity = _bombObj getVariable [QGVAR(dud), GVAR(defaultDud)];
-	if (_possiblity > random 1 || GVAR(isDuds)) then {
+	private _possibility = _bombObj getVariable [QGVAR(dud), GVAR(defaultDud)];
+	if (_possibility > random 1 || GVAR(isDuds)) then {
 		private _sound = format ["iedd_ied_dud%1", floor (random 4)];
 		[QGVAR(dudEffect),[_bombObj,_sound]] call CBA_fnc_globalEvent;
 		private _attachedObjects = attachedObjects _bombObj;
@@ -48,13 +48,14 @@ if (_isTraining) then {
 	} else {
 		private _pos = getPosATL _bombObj;
 		_pos set [2,0.05];
-		private _size = _bombObj getVariable [QGVAR(size), 3];
+		private _size = _bombObj getVariable [QGVAR(size), GVAR(defaultSize)];
 		private _unit = objNull;
 		if (_size > 4) then {
 			_size = floor (random 4);
 		};
-		private _type =  selectRandom (IEDD_BOMB_SIZE select _size);
-		if (typeOf _bombObj == QGVAR(Charge)) then {
+		private _type =  selectRandom (IEDD_BOMB_SIZE select _size);¨
+		private _typeOf = typeOf _bombObj;
+		if (_typeOf == QGVAR(Charge)) then {
 			_unit = attachedTo _bombObj;
 			private _attachedObjects = attachedObjects _unit;
 			private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
@@ -68,13 +69,15 @@ if (_isTraining) then {
 		} else {
 			deleteVehicle _bombObj;
 		};
+		//TODO add correct position if vbied_box
+		/*Call bomb event*/
 		[
 			{
 				params ["_bombObj","",""];
 				isNull _bombObj;
 			},
 			{
-				params ["_bombObj","_pos","_type"];
+				params ["_bombObj","_pos","_type","_unit"];
 				_bomb = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
 				//[QGVAR(hideObject),[_bomb,true]] call CBA_fnc_globalEvent;
 				//_bomb setDamage 1;
@@ -83,7 +86,7 @@ if (_isTraining) then {
 					[{
 						params ["_unit"];
 						if (alive _unit) then {_unit setDamage 1};
-					},[_unit], 0.2] call CBA_fnc_waitAndExecute;
+					},[_unit], 0.15] call CBA_fnc_waitAndExecute;
 				};
 			},
 			[_bombObj,_pos,_type,_unit]
