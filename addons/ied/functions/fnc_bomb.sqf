@@ -53,7 +53,7 @@ if (_isTraining) then {
 		if (_size > 4) then {
 			_size = floor (random 4);
 		};
-		private _type =  selectRandom (IEDD_BOMB_SIZE select _size);¨
+		private _type =  selectRandom (IEDD_BOMB_SIZE select _size);
 		private _typeOf = typeOf _bombObj;
 		if (_typeOf == QGVAR(Charge)) then {
 			_unit = attachedTo _bombObj;
