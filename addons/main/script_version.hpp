@@ -1,8 +1,8 @@
 #define MAJOR 1
 #define MINOR 8
 #define PATCHLVL 0
-#define BUILD 24241126
+#define BUILD 25241126
 /******
-Build 24 to next release
-Current dev 1.8.0.24****
+Build 25 to next release
+Current dev 1.8.0.25****
 *******/
