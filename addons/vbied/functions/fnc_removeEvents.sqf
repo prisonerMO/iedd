@@ -1,5 +1,5 @@
 #include "../script_component.hpp"
-params ["_vehicle","_bombObj"];
+params ["_vehicle"];
 
 private _getIn = _vehicle getVariable [QGVAR(getIn), -1];
 if (_getIn != -1) then {

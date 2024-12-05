@@ -10,7 +10,6 @@ if (isServer) then {
 	GVAR(bombs) = [];
 };
 GVAR(userDefined) = profileNamespace getVariable [QGVAR(userDefined), createHashMap];
-//if (isNil QGVAR(userDefined)) then {GVAR(userDefined) = createHashMap}; //TODO PROFILE NAMESPACE SETUP
 if (isNil QGVAR(preDefined)) then {GVAR(preDefined) = createHashMap};
 {
 	_x call FUNC(preDefined);

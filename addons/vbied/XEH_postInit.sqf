@@ -1,18 +1,17 @@
 #include "script_component.hpp"
-
-["CBA_settingsInitialized", {
-	diag_log format ["AFSIHASFPHIPAOSFH %1", time];
-}] call CBA_fnc_addEventHandler;
-
+/* Detach box event, not in use
 [QGVAR(detachBox), {
-    params ["_box","_vehicle","_player"];
+    params ["_oldBox","_vehicle","_player"];
 		detach _box;
 		private _relpos = player getRelPos [1, 0];
-		_box setPosATL _pos;
-		_box setVectorDirAndUp [[0,0,1],[0,1,0]];
-	//[_object] call FUNC(removeEvents);
+		private _newBox = createVehicle [QGVAR(box), _relpos, [], 0, "CAN_COLLIDE"];
+		_newBox setPosATL _pos;
+		_newBox setVectorDirAndUp [[0,0,1],[0,1,0]];
+		//_box remove explosion event? or create dummy vehicle?
 }] call CBA_fnc_addEventHandler;
+*/
 
+/* Server events*/
 if (isServer) then {
 	[{
 		time > 10 && !isNil QGVAR(bombs)},

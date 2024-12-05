@@ -36,7 +36,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 			};
 		};
 		if (GVAR(vehCheck)) then {
-			private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]); //DOES this return _veh = attachedTo _object?
+			private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]) select {_x != attachedTo _object}; //DOES this return _veh = attachedTo _object?
 			if (_nearVehicles isNotEqualTo []) then {
 				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
 				if (_index > -1) then {

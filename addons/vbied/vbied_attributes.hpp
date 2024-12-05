@@ -20,9 +20,9 @@ class iedd_vbied_attributes {
         };
         // VBIED VARIATION (SETTINGS)
         class GVAR(variationSub) {
-            data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
+            data = "AttributeSystemSubcategory";
             control = QGVAR(Sub);
-            displayName = ECSTRING(ied,IED_Category); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+            displayName = ECSTRING(ied,IED_Category);
         };
         class GVAR(variation) {
             property = QGVAR(variation);
@@ -107,9 +107,9 @@ class iedd_vbied_attributes {
         };
         // VBIED POSITION
         class GVAR(positionSub) {
-            data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
+            data = "AttributeSystemSubcategory";
             control = QGVAR(Sub);
-            displayName = CSTRING(PositionSub); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+            displayName = CSTRING(PositionSub);
         };
         class GVAR(position) {
             control = QGVAR(PosCombo);
@@ -176,9 +176,9 @@ class iedd_vbied_attributes {
         };
         // EVENTHANDLERS
         class GVAR(EHS) {
-            data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
+            data = "AttributeSystemSubcategory";
             control = QGVAR(Sub);
-            displayName = CSTRING(EHSSub); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+            displayName = CSTRING(EHSSub);
         };
         class GVAR(engineOn) {
 			displayName = CSTRING(EngineOn);
@@ -327,9 +327,9 @@ class iedd_vbied_attributes {
 		};
 		class GVAR(timerValue) {
 			displayName = ECSTRING(Ied,TimerValue);
-			tooltip = ECSTRING(Ied,TimerValue_Tooltip); //TODO
+			tooltip = ECSTRING(Ied,TimerValue_Tooltip);
 			property = QGVAR(timerValue);
-			control = QEGVAR(ied,timeSlider); // TODO time_slider min - max
+			control = QEGVAR(ied,timeSlider);
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerValue);
 			typeName = "NUMBER";
@@ -363,7 +363,7 @@ class iedd_vbied_attributes {
 			displayName = ECSTRING(Ied,RandomTimerMin);
 			tooltip = ECSTRING(Ied,RandomTimerMin_Tooltip);
 			property = QGVAR(randomTimerMin);
-			control = QEGVAR(ied,timeSlider); // TODO time_slider min - max
+			control = QEGVAR(ied,timeSlider);
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerMin);
 			typeName = "NUMBER";
@@ -373,7 +373,7 @@ class iedd_vbied_attributes {
 			displayName = ECSTRING(Ied,RandomTimerMax);
 			tooltip = ECSTRING(Ied,RandomTimerMax_Tooltip);
 			property = QGVAR(randomTimerMax);
-			control = QEGVAR(ied,timeSlider); // TODO time_slider min - max
+			control = QEGVAR(ied,timeSlider);
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerMax);
 			typeName = "NUMBER";

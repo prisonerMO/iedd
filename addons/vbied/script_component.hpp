@@ -23,6 +23,10 @@
 #define OFFROAD_REP 	8
 #define OFFROAD_BOX 	9
 #define JEEP 			10
+#define HATCHBACK 		11
+#define KART 			12
+#define QUADBIKE 		13
+#define SUV 			14
 
 #define VBIED_MODELS [\
 	[\
@@ -105,7 +109,18 @@
 	[JEEP, 1, [-0.485,1.8,-0.63], [1,0,0.15], [0,1,0], "Front left"],\
 	[JEEP, 2, [0.397,1.8,-0.63], [-1,0,0.15], [0,1,0], "Front right"],\
 	[JEEP, 3, [-0.665,-0.9,-0.585], [1,0,0], [0,1,0], "Rear left"],\
-	[JEEP, 4, [0.577,-0.9,-0.585], [-1,0,0], [0,1,0], "Rear right"]\
+	[JEEP, 4, [0.577,-0.9,-0.585], [-1,0,0], [0,1,0], "Rear right"],\
+	[HATCHBACK,[0.07,1.85,-0.985], [0,0,1], [0,-1,0.5], "Front"],\
+	[HATCHBACK,[-0.35,-2.23,-0.945], [0,0,1], [1,0,0], "Rear left"],\
+	[HATCHBACK,[0.3,-2.23,-0.945], [0,0,1], [-1,0,0], "Rear right"],\
+	[KART, [-0.385,-0,-0.93], [-1,0,0], [0,1,0], "Center left"],\
+	[KART, [0.49,-0.079,-0.93], [1,0,0], [0,-1,0], "Center right"],\
+	[QUADBIKE, [-0.221,-0.2,-0.93], [1,0,0], [-1,0,1], "Center left"],\
+	[QUADBIKE, [0.2,-0.2,-0.93]], [-1,0,0], [-1,0,1], "Center right"],\
+	[SUV, [-0.15,1.7,-1.115], [0,0,1], [0,-1,0], "Front"],\
+	[SUV, [-0.45,-0.3,-1.018], [0,0,1], [1,0,0], "Center left"],\
+	[SUV, [0.45,-0.3,-1.018], [0,0,1], [-1,0,0], "Center right"],\
+	[SUV, [-0.221,-2.2,-1.1], [0,0,1], [0,1,0], "Rear"]\
 ]
 
 #define VBIED_VARS [\

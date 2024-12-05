@@ -86,9 +86,9 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	_box setVariable [QEGVAR(ied,wires), _wires,true];
 	_box setVariable [QEGVAR(ied,bomb), true, true];
 	_box setVariable [QEGVAR(ied,size), _size];
-	_box setVariable [GVAR(moving), _move];
+	_box setVariable [QGVAR(moving), _move];
 
-	/*SET DEFUSEACTION*/
+	/*Set defuseaction*/
 	private _text = localize ELSTRING(Ied,Name_Long);
 	private _jipId = [QEGVAR(ied,defuseAction), [_box, _wireSet,_text]] call CBA_fnc_globalEventJIP;
 	[_jipID, _box] call CBA_fnc_removeGlobalEventJIP;
@@ -117,7 +117,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	}];
 	_box setVariable [QGVAR(expEhId), _expEhId];
 
-	/*SET VBIEDCHECK*/
+	/*Set detectable if true*/
 	if (_isDetectable) then {
 		[QGVAR(updateBombList), [_box]] call CBA_fnc_serverEvent;
 	};

@@ -43,9 +43,6 @@ class GVAR(SubVbied): SubCategory {
 class GVAR(UserDefined): EditXYZ {};
 class GVAR(SaveDelete): Title
 {
-    //onLoad = "diag_log format ['onLoad SAVEDEL %1', _this]";
-    //attributeLoad = "diag_log format ['onLoadAttribute SAVEDEL %1', _this]";
-    //attributeSave = "diag_log format ['onSaveAttribute SAVEDEL %1', _this]";
     h = QUOTE((2.5 * GRID_H) + CTRL_H(1));
     class Controls
     {

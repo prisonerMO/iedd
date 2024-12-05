@@ -4,9 +4,7 @@ class CfgPatches {
 		author = AUTHOR;
 		authors[] = {"Prisoner","Lion"};
 		name = COMPONENT_NAME;
-		units[] = {
-            QGVAR(edenModule)
-        };
+		units[] = {};
 		weapons[] = {};
 		requiredVersion = REQUIRED_VERSION;
 		requiredAddons[] = {
