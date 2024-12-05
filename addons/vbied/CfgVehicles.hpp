@@ -1,14 +1,5 @@
 class CBA_Extended_EventHandlers;
 class CfgVehicles {
-    class ace_zeus_moduleBase;
-    class GVAR(zeusModule):ace_zeus_moduleBase {
-        scope = 1;
-        scopecurator = 2;
-        category = QEGVAR(modules,ieds);
-        curatorInfoType = QGVAR(RcsVbied);
-        displayName = "VBIED";
-        icon = QPATHTOEF(modules,UI\moduleicon.paa);
-    };
     class ThingX;
     class GVAR(helper): ThingX {
         displayName = QGVAR(helper); // not publicly visible, no stringtable needed
@@ -63,7 +54,6 @@ class CfgVehicles {
                     exceptions[] = {"isNotSwimming"};
                     displayName = ECSTRING(Ied,Disarm_DisplayName);
                     condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call EFUNC(ied,canDisarm)});
-                    //condition = QUOTE([_player] call EFUNC(ied,canDisarm));
                     statement = "";
                 };
                 /*insertChildren = QUOTE(_this call FUNC(getChildrenActions));
