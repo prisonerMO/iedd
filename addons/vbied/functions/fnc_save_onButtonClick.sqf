@@ -27,23 +27,16 @@ private _data = GVAR(userDefined) getOrDefault [_model,[]];
 private _count = count _data;
 
 if (_count > 4) then {
-	systemChat "SLOTS FULL DELETE CONTENT";
 	//TO-DO DISPLAY ERROR
-/*	_display = ctrlParent _ctrl;
-	if (!isNull _display ) then {
-		_display spawn {
-				[
-					"You sure you want to delete",
-					"Delete / Modify",
-					true,
-					false,
-					"",
-					_this
-			] call BIS_fnc_3DENShowMessage;;
-			//["Message","Title of the Message"] call BIS_fnc_3DENShowMessage;
-		};
-	};
-*/
+	_display = ctrlParent _ctrl;
+	[
+		LLSTRING(SaveError),
+		"Delete / Modify",
+		true,
+		false,
+		"",
+		_display
+	] call BIS_fnc_3DENShowMessage;
 } else {
 	private _text = if (ctrlText _editCtrl == "") then {
 		format ["User Position %1",_count+1];

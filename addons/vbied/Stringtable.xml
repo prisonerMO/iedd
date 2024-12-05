@@ -79,8 +79,8 @@
                 <English>VBIEDs will be activated when vehicle engine is started.</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultGetIn">
-                <Original>Activate when player gets in</Original>
-                <English>Activate when player gets in</English>
+                <Original>Activate when someone gets in</Original>
+                <English>Activate when someone gets in</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultGetIn_Description">
                 <Original>VBIED will be activated when someone gets in.</Original>
@@ -161,12 +161,12 @@
                 <English>Set VBIEDs vectorDir values. Do not change values, if Position of VBIED (predefined position) is selected.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Name">
-                <Original>User defined position</Original>
-                <English>User defined position</English>
+                <Original>Custom position name</Original>
+                <English>Custom position name</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Name_Tooltip">
-                <Original>User Defined Position Tooltip</Original>
-                <English>User Defined Position Tooltip</English>
+                <Original>Add name for custom position.</Original>
+                <English>Add name for custom position.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Defined_Pos">
                 <Original>Position</Original>
@@ -188,6 +188,10 @@
                 <Original>DELETE</Original>
                 <English>DELETE</English>
             </Key>
+            <Key ID="STR_iedd_vbied_Delete_Tooltip">
+                <Original>Delete selected custom position.</Original>
+                <English>Delete selected custom position.</English>
+            </Key>
             <Key ID="STR_iedd_vbied_Position_DisplayName">
                 <Original>Position of VBIED</Original>
                 <English>Position of VBIED</English>
@@ -199,6 +203,10 @@
             <Key ID="STR_iedd_vbied_Save">
                 <Original>SAVE</Original>
                 <English>SAVE</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_Save_Tooltip">
+                <Original>A maximum of five custom positions can be saved per vehicle model (.p3d). Named and saved positions will be added to the Position of VBIED list. If a sixth position is attempted to save, nothing will happen. Saved custom positions are stored in the 'iedd_vbied_userDefined' profileNameSpace, so the game can be restarted without affecting the saved positions.</Original>
+                <English>A maximum of five custom positions can be saved per vehicle model (.p3d). Named and saved positions will be added to the Position of VBIED list. If a sixth position is attempted to save, nothing will happen. Saved custom positions are stored in the 'iedd_vbied_userDefined' profileNameSpace, so the game can be restarted without affecting the saved positions.</English>
             </Key>
             <Key ID="STR_iedd_vbied_User_Defined">
                 <Original>User defined position</Original>
@@ -225,8 +233,8 @@
                 <English>Get in</English>
             </Key>
             <Key ID="STR_iedd_vbied_GetIn_Tooltip">
-                <Original>VBIED will be activated when player gets in vehicle.</Original>
-                <English>VBIED will be activated when player gets in vehicle.</English>
+                <Original>VBIED will be activated when someone gets in vehicle.</Original>
+                <English>VBIED will be activated when someone gets in vehicle.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Moving">
                 <Original>Moving vehicle</Original>
@@ -259,6 +267,34 @@
             <Key ID="STR_iedd_vbied_Distance_Tooltip">
                 <Original>Distance to player when VBIED will be activated. If the value is under 1m, random distance value from addon options will be used.</Original>
                 <English>Distance to player when VBIED will be activated. If the value is under 1m, random distance value from addon options will be used.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_PreDefinedPos_Tooltip">
+                <Original>Predefined position</Original>
+                <English>Predefined position</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_SaveDelete">
+                <Original>Save custom position</Original>
+                <English>Save custom position</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_SaveDelete_Tooltip">
+                <Original>Save or delete custom positions</Original>
+                <English>Save or delete custom positions</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_NewUserPos">
+                <Original>Custom position</Original>
+                <English>Custom position</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_NewUserPos_Tooltip">
+                <Original>If you want to make your own position for VBIED, choose this.</Original>
+                <English>If you want to make your own position for VBIED, choose this.</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_UserDefinedPos_Tooltip">
+                <Original>User custom position</Original>
+                <English>User custom position</English>
+            </Key>
+            <Key ID="STR_iedd_vbied_SaveError">
+                <Original>Save failed. Maximum amount of positions reached.</Original>
+                <English>Save failed. Maximum amount of positions reached.</English>
             </Key>
         </Container>
     </Package>

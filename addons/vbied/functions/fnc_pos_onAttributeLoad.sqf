@@ -1,8 +1,8 @@
 #include "..\script_component.hpp"
 params ["_control","_value"];
 private _ctrlCombo = _control controlsGroupCtrl 100;
-_ctrlCombo lbAdd "NEW USER POS";
-_ctrlCombo lbSetTooltip [0,"NEW USER POS"];
+_ctrlCombo lbAdd LLSTRING(NewUserPos);
+_ctrlCombo lbSetTooltip [0,LLSTRING(NewUserPos_Tooltip)];
 private _model = GVAR(preDefined) get "model";
 private _index = _model select 0;
 private _data = GVAR(preDefined) getOrDefault  [_index,[]];
@@ -11,7 +11,7 @@ if (_count > 0) then {
 	for "_i" from 0 to _count-1 do {
 		private _posName = _data get _i get "text";
 		_ctrlCombo lbAdd _posName;
-		_ctrlCombo lbSetTooltip [_i+1,format ["PRE DEFINED Position %1",_i]];
+		_ctrlCombo lbSetTooltip [_i+1,format [LLSTRING(PreDefinedPos_Tooltip)+" %1",_i+1]];
 		//_ctrlCombo lbSetTooltip [_i,format ["PRE DEFINED Position %1",_i+1]];
 	};
 };
@@ -28,7 +28,7 @@ if (_countUser > 0) then {
 		private _userName = _posData get "text";
 		private _id = _i+_count+1;
 		_ctrlCombo lbAdd _userName;
-		_ctrlCombo lbSetTooltip [_id,"User PRE DEFINED "+_userName];
+		_ctrlCombo lbSetTooltip [_id,format [LLSTRING(UserDefinedPos_Tooltip)+" %1",_i+1]];
 		_ctrlCombo lbSetValue [_id,_i];
 	};
 };

@@ -168,7 +168,8 @@ class iedd_vbied_attributes {
             typeName = "ARRAY";
         };
         class GVAR(saveDelete) {
-            displayName = "SAVE USER DEFINED POS";
+            displayName = CSTRING(SaveDelete);
+            tooltip = CSTRING(SaveDelete_Tooltip);
             property = QGVAR(saveDelete);
             control = QGVAR(saveDelete);
             condition = "objectVehicle";

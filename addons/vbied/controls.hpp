@@ -54,6 +54,7 @@ class GVAR(SaveDelete): Title
         {
             idc = -1;
             text = CSTRING(Save);
+            tooltip = CSTRING(Save_Tooltip);
             onButtonClick = "_this call iedd_vbied_fnc_save_onButtonClick";
             x = QUOTE(ATTRIBUTE_TITLE_W * GRID_W);
             w = QUOTE(ATTRIBUTE_CONTENT_H * GRID_W * 3);
@@ -62,6 +63,7 @@ class GVAR(SaveDelete): Title
         class Delete: Save
         {
             text = CSTRING(Delete);
+            tooltip = CSTRING(Delete_Tooltip);
             onButtonClick = "_this call iedd_vbied_fnc_delete_onButtonClick";
             x = QUOTE((ATTRIBUTE_TITLE_W + 	ATTRIBUTE_CONTENT_W * (1/3) + ATTRIBUTE_CONTENT_H) * GRID_W);
         };
