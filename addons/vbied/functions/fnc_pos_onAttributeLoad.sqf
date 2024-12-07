@@ -34,6 +34,4 @@ if (_countUser > 0) then {
 };
 //_ctrlCombo lbSetCurSel (parseNumber (_count > 0));
 _ctrlCombo lbSetCurSel _value;
-//diag_log format ["pos_onAttributeLOAD CtrlCombo LBSETCUR: %1",lbCurSel _ctrlCombo];
-//diag_log format ["pos_onAttributeLOAD: lbsize: %1",lbSize _ctrlCombo];
 

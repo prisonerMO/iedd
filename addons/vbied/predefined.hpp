@@ -10,7 +10,7 @@
 	["offroad_01_unarmed_f.p3d"],\
 	["offroad_01_repair_civ_f.p3d"],\
 	["offroad_01_covered_f.p3d"],\
-	["offroad_02_f"],\
+	["offroad_02_f.p3d"],\
     ["hatchback_01_f.p3d"],\
     ["kart_01_f.p3d"],\
     ["quadbike_01_f.p3d"],\
@@ -25,8 +25,8 @@
 #define KAMAZ_FUEL 		5
 #define KAMAZ_BOX 		6
 #define OFFROAD 		7
-#define OFFROAD_REP 	8
-#define OFFROAD_BOX     9
+#define OFF_REP 		8
+#define OFF_BOX    		9
 #define JEEP 			10
 #define HATCHBACK 		11
 #define KART 			12
@@ -66,14 +66,14 @@
 	[OFFROAD, 1, [0.21,2.01,-1.05],[-1,0,0],[0,1,0], "Front right"],\
 	[OFFROAD, 2, [0.712,-0.7,-0.9],[-1,0,0.17],[0,1,0], "Center"],\
 	[OFFROAD, 3, [0,-2.217,-1.07],[0,1,0.35],[0.5,0,0], "Rear"],\
-	[OFFROAD_REP, 0, [-0.29,2.01,-1.07], [1,0,0], [0,1,0], "Front left"],\
-	[OFFROAD_REP, 1, [0.2,2.01,-1.07], [-1,0,0], [0,1,0], "Front right"],\
-	[OFFROAD_REP, 2, [0.701,-0.7,-0.9], [-1,0,0.17],[0,1,0], "Center"],\
-	[OFFROAD_REP, 3, [0,-2.217,-1.07], [0,1,0.35], [0.5,0,0], "Rear"],\
-	[OFFROAD_BOX, 0, [-0.282,2.15,-1.15], [1,0,0], [0,1,0], "Front left"],\
-	[OFFROAD_BOX, 1, [0.21,2.15,-1.15], [-1,0,0], [0,1,0], "Front right"],\
-	[OFFROAD_BOX, 2, [0.711,-0.55,-1], [-1,0,0.17], [0,1,0], "Center"],\
-	[OFFROAD_BOX, 3, [0,-2.052,-1.17], [0,1,0.35], [0.5,0,0], "Rear"],\
+	[OFF_REP, 0, [-0.29,2.01,-1.07], [1,0,0], [0,1,0], "Front left"],\
+	[OFF_REP, 1, [0.2,2.01,-1.07], [-1,0,0], [0,1,0], "Front right"],\
+	[OFF_REP, 2, [0.701,-0.7,-0.9], [-1,0,0.17],[0,1,0], "Center"],\
+	[OFF_REP, 3, [0,-2.217,-1.07], [0,1,0.35], [0.5,0,0], "Rear"],\
+	[OFF_BOX, 0, [-0.282,2.15,-1.15], [1,0,0], [0,1,0], "Front left"],\
+	[OFF_BOX, 1, [0.21,2.15,-1.15], [-1,0,0], [0,1,0], "Front right"],\
+	[OFF_BOX, 2, [0.711,-0.55,-1], [-1,0,0.17], [0,1,0], "Center"],\
+	[OFF_BOX, 3, [0,-2.052,-1.17], [0,1,0.35], [0.5,0,0], "Rear"],\
 	[JEEP, 0, [-0.485,1.8,-0.63], [1,0,0.15], [0,1,0], "Front left"],\
 	[JEEP, 1, [0.397,1.8,-0.63], [-1,0,0.15], [0,1,0], "Front right"],\
 	[JEEP, 2, [-0.665,-0.9,-0.585], [1,0,0], [0,1,0], "Rear left"],\

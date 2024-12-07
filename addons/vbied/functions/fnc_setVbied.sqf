@@ -83,10 +83,11 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	};
 
 	_box setVariable [QGVAR(dist), _distance];
-	_box setVariable [QEGVAR(ied,wires), _wires,true];
+	_box setVariable [QGVAR(moving), _move];
+	_box setVariable [QEGVAR(ied,wires), _wires, true];
 	_box setVariable [QEGVAR(ied,bomb), true, true];
 	_box setVariable [QEGVAR(ied,size), _size];
-	_box setVariable [QGVAR(moving), _move];
+	_box setVariable [QEGVAR(ied,dud), _dud];
 
 	/*Set defuseaction*/
 	private _text = localize ELSTRING(Ied,Name_Long);
@@ -97,18 +98,25 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	private _getIn = _vehicle getVariable [QGVAR(getIn),GVAR(defaultGetIn)];
 	private _isGetIn = if (_getIn > 1) then {selectRandom [false,true]} else {[false,true] select _getIn};
 	if (_isGetIn) then {
-			private _getInEhId = _unit addEventHandler ["GetIn", {
-			call FUNC(handleGetIn);
+		private _getInEhId = _vehicle addEventHandler ["GetIn", {
+			params ["_vehicle", "_role", "_unit", "_turret"];
+			if (local _vehicle) then {
+				call FUNC(handleGetIn);
+			};
 		}];
 		_vehicle setVariable [QGVAR(getInEhId), _getInEhId];
 	};
-	private _engigeOn = _vehicle getVariable [QGVAR(engineOn),GVAR(defaultEngineOn)];
-	private _isEngigeOn = if (_engigeOn > 1) then {selectRandom [false,true]} else {[false,true] select _engineOn};
-	if (_isEngigeOn) then {
-		private _engigeOnEhId = _vehicle addEventHandler ["Engine", {
-			call FUNC(handleEngineOn);
+	private _engineOn = _vehicle getVariable [QGVAR(engineOn),GVAR(defaultEngineOn)];
+	private _isEngineOn = if (_engineOn > 1) then {selectRandom [false,true]} else {[false,true] select _engineOn};
+	diag_log format["_engineOn: %1, EngineOn: %2",_engineOn, _isEngineOn];
+	if (_isEngineOn) then {
+		private _engineOnEhId = _vehicle addEventHandler ["Engine", {
+			params ["_vehicle", "_engineState"];
+			if (local _vehicle) then {
+				call FUNC(handleEngineOn);
+			};
 		}];
-		_vehicle setVariable [QGVAR(engineOnEhId), _engigeOnEhId];
+		_vehicle setVariable [QGVAR(engineOnEhId), _engineOnEhId];
 	};
 
 	/*Set explosion event on bomb object*/

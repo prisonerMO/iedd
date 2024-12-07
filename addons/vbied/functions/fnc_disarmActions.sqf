@@ -1,12 +1,10 @@
 #include "../script_component.hpp"
 //currenlty not in use
 params ["_target"];
-diag_log format ["DISARM CALLED %1", _this];
 private _actions = [];
 private _bombObj = attachedTo _target;
 if (isNull _bombObj) exitWith {_actions};
 private _setup = _target getVariable [QGVAR(setup),[]];
-diag_log format ["DISARM _setup %1", _setup];
 private _wires = _setup get "wires";
 private _wireSet = _setup get "wireset";
 private _text = _setup get "text";

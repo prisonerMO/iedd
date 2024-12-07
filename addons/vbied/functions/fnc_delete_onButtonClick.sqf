@@ -1,6 +1,5 @@
 #include "..\script_component.hpp"
 params ["_ctrl"];
-diag_log format ["delete_onButtonClick: %1", _this];
 private _ctrlGrp = ctrlParentControlsGroup ctrlParentControlsGroup _ctrl;
 private _all = allControls _ctrlGrp;
 private _combo = _all select {ctrlClassName _x == "iedd_vbied_posCombo"};

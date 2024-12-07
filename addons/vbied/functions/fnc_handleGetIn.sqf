@@ -1,8 +1,14 @@
 #include "..\script_component.hpp"
 params ["_vehicle", "_role", "_unit", "_turret"];
+diag_log format["_vehicle: %1", _this];
 //if !(isPlayer _unit) exitWith {}; only if unit is player
-private _bombObj = attachedObjects _vehicle select {typeOf _x == QGVAR(box)};
-if (isNull _bombObj) exitWith {};
-private _isBomb = _bombObj getVariable [QEGVAR(ied,bomb), false];
-if (!_isBomb) exitWith {};
-[QEGVAR(ied,explosion), [_bombObj]] call CBA_fnc_serverEvent;
+private _attachedObjects = attachedObjects _vehicle;
+private _index = _attachedObjects findIf {typeOf _x == QGVAR(box)};
+if (_index > -1) then {
+	private _bombObj = _attachedObjects select _index;
+	if (isNull _bombObj) exitWith {};
+	private _isBomb = _bombObj getVariable [QEGVAR(ied,bomb), false];
+	diag_log format["_isBomb: %1", _isBomb];
+	if (!_isBomb) exitWith {};
+	[QEGVAR(ied,explosion), [_bombObj]] call CBA_fnc_serverEvent;
+};
