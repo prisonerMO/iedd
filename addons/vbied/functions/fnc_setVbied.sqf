@@ -12,6 +12,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	private _variation = _vehicle getVariable [QGVAR(variation),GVAR(defaultVariation)];
 	private _dud = _vehicle getVariable [QGVAR(dud),GVAR(defaultDud)];
 	private _move = _vehicle getVariable [QGVAR(moving),GVAR(defaultMoving)];
+	private _isMove = if (_move > 1) then {selectRandom [false,true]} else {[false,true] select _move};
 	private _size = _vehicle getVariable [QGVAR(size),GVAR(defaultSize)];
 	private _timerValue = _vehicle getVariable [QGVAR(timer), GVAR(defaultTimer)];
 	private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
@@ -83,7 +84,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	};
 
 	_box setVariable [QGVAR(dist), _distance];
-	_box setVariable [QGVAR(moving), _move];
+	_box setVariable [QGVAR(move), _isMove];
 	_box setVariable [QEGVAR(ied,wires), _wires, true];
 	_box setVariable [QEGVAR(ied,bomb), true, true];
 	_box setVariable [QEGVAR(ied,size), _size];
@@ -108,7 +109,6 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	};
 	private _engineOn = _vehicle getVariable [QGVAR(engineOn),GVAR(defaultEngineOn)];
 	private _isEngineOn = if (_engineOn > 1) then {selectRandom [false,true]} else {[false,true] select _engineOn};
-	diag_log format["_engineOn: %1, EngineOn: %2",_engineOn, _isEngineOn];
 	if (_isEngineOn) then {
 		private _engineOnEhId = _vehicle addEventHandler ["Engine", {
 			params ["_vehicle", "_engineState"];
@@ -125,10 +125,8 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	}];
 	_box setVariable [QGVAR(expEhId), _expEhId];
 
-	/*Set detectable if true*/
-	if (_isDetectable) then {
-		[QGVAR(updateBombList), [_box]] call CBA_fnc_serverEvent;
-	};
+	/*update bomblist*/
+	[QGVAR(updateBombList), [_box]] call CBA_fnc_serverEvent;
 
 },[_vehicle]] call CBA_fnc_waitUntilAndExecute;
 //OR --> [_vehicle], 0.1] call CBA_fnc_waitAndExecute;

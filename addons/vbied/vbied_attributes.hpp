@@ -180,30 +180,6 @@ class iedd_vbied_attributes {
             control = QGVAR(Sub);
             displayName = CSTRING(EHSSub);
         };
-        class GVAR(engineOn) {
-			displayName = CSTRING(EngineOn);
-			tooltip = CSTRING(EngineOn_Tooltip);
-			property = QGVAR(engineOn);
-			control = "Combo";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultEngineOn);
-			typeName = "NUMBER";
-            condition = "objectVehicle";
-			class Values {
-				class 1	{
-					name = ECSTRING(ied,Name_Disabled);
-					value = 0;
-				};
-				class 2	{
-					name = ECSTRING(ied,Name_Enabled);
-					value = 1;
-				};
-				class 3	{
-					name = ECSTRING(ied,Name_Random);
-					value = 2;
-				};
-			};
-		};
         class GVAR(getIn) {
 			displayName = CSTRING(GetIn);
 			tooltip = CSTRING(GetIn_Tooltip);
@@ -228,6 +204,31 @@ class iedd_vbied_attributes {
 				};
 			};
 		};
+        class GVAR(engineOn) {
+			displayName = CSTRING(EngineOn);
+			tooltip = CSTRING(EngineOn_Tooltip);
+			property = QGVAR(engineOn);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = QGVAR(defaultEngineOn);
+			typeName = "NUMBER";
+            condition = "objectVehicle";
+			class Values {
+				class 1	{
+					name = ECSTRING(ied,Name_Disabled);
+					value = 0;
+				};
+				class 2	{
+					name = ECSTRING(ied,Name_Enabled);
+					value = 1;
+				};
+				class 3	{
+					name = ECSTRING(ied,Name_Random);
+					value = 2;
+				};
+			};
+		};
+
         class GVAR(moving) {
 			displayName = CSTRING(Moving);
 			tooltip = CSTRING(Moving_Tooltip);
@@ -261,30 +262,7 @@ class iedd_vbied_attributes {
             typeName = "NUMBER";
             condition = "objectVehicle";
         };
-        class GVAR(isDistance) {
-			displayName = CSTRING(isDistance);
-			tooltip = CSTRING(isDistance_Tooltip);
-			property = QGVAR(isDistance);
-			control = "Combo";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultIsDistance);
-			typeName = "NUMBER";
-            condition = "objectVehicle";
-			class Values {
-				class 1	{
-					name = ECSTRING(ied,Name_Disabled);
-					value = 0;
-				};
-				class 2	{
-					name = ECSTRING(ied,Name_Enabled);
-					value = 1;
-				};
-				class 3	{
-					name = ECSTRING(ied,Name_Random);
-					value = 2;
-				};
-			};
-		};
+
         class GVAR(distance) {
             displayName = ECSTRING(ied,Distance);
             tooltip = CSTRING(Distance_Tooltip);

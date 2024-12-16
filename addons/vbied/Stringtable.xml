@@ -94,14 +94,6 @@
                 <Original>VBIEDs will be activated when vehicle is moving.</Original>
                 <English>VBIEDs will be activated when vehicle is moving.</English>
             </Key>
-            <Key ID="STR_iedd_vbied_DefaultIsDistance">
-                <Original>Is Distance Default</Original>
-                <English>Is Distance Default</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_DefaultIsDistance_Description">
-                <Original>IsDistance_Description.</Original>
-                <English>IsDistance_Description.</English>
-            </Key>
             <Key ID="STR_iedd_vbied_DefaultSpeed">
                 <Original>Activation speed</Original>
                 <English>Activation speed</English>
@@ -243,14 +235,6 @@
             <Key ID="STR_iedd_vbied_Moving_Tooltip">
                 <Original>VBIED will be activated when vehicle is moving.</Original>
                 <English>VBIED will be activated when vehicle is moving.</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_IsDistance">
-                <Original>Movement</Original>
-                <English>Movement</English>
-            </Key>
-            <Key ID="STR_iedd_vbied_IsDistance_Tooltip">
-                <Original>VBIED will be activated by moving player (speed more than 8km/h)</Original>
-                <English>VBIED will be activated by moving player (speed more than 8km/h)</English>
             </Key>
             <Key ID="STR_iedd_vbied_Speed">
                 <Original>Activation speed</Original>

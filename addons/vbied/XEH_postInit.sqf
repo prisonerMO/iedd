@@ -10,11 +10,15 @@
 		//_box remove explosion event? or create dummy vehicle?
 }] call CBA_fnc_addEventHandler;
 */
-
+[QGVAR(updateBombList), {
+	params ["_object"];
+	diag_log format["Update bomblist: %1",_object];
+	[{!isNil QGVAR(bombs)}, {GVAR(bombs) pushBackUnique (_this select 0);}, [_object]] call CBA_fnc_waitUntilAndExecute;
+}] call CBA_fnc_addEventHandler;
 /* Server events*/
 if (isServer) then {
 	[{
-		time > 10 && !isNil QGVAR(bombs)},
+		time > 1 && !isNil QGVAR(bombs)},
 	{
 		INFO_1("Detect event called [Time: %1]",time);
 		call FUNC(vbiedCheck);
