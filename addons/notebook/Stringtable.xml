@@ -130,6 +130,10 @@
                 <Original>Previous</Original>
                 <English>Previous</English>
             </Key>
+            <Key ID="STR_iedd_notebook_Vbied">
+                <Original>VBIED variations</Original>
+                <English>VBIED variations</English>
+            </Key>
         </Container>
     </Package>
 </Project>
