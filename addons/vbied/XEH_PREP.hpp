@@ -1,5 +1,6 @@
 PREP(delete_onButtonClick);
 PREP(disarmActions);
+PREP(deleted);
 PREP(detachAction);
 PREP(handleEngineOn);
 PREP(handleGetIn);

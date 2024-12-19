@@ -241,8 +241,8 @@
                 <English>Activation speed</English>
             </Key>
             <Key ID="STR_iedd_vbied_Speed_ToolTip">
-                <Original>Speed of vehicle when VBIED will be activated.</Original>
-                <English>Speed of vehicle when VBIED will be activated.</English>
+                <Original>Speed of this vehicle when VBIED will be activated.</Original>
+                <English>Speed of this vehicle when VBIED will be activated.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Timer_Tooltip">
                 <Original>Add countdown timer to VBIED.</Original>

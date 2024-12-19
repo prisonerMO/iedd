@@ -6,7 +6,7 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 if (isServer) then {
-	[QGVAR(box), "Deleted", {(_this select 0) call EFUNC(ied,deleted)}, true, [], true] call CBA_fnc_addClassEventHandler;
+	[QGVAR(box), "Deleted", {(_this select 0) call FUNC(deleted)}, true, [], true] call CBA_fnc_addClassEventHandler;
 	GVAR(bombs) = [];
 };
 GVAR(userDefined) = profileNamespace getVariable [QGVAR(userDefined), createHashMap];
