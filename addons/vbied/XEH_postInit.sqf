@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-/* Detach box event, not in use
+
 [QGVAR(detachBox), {
     params ["_oldBox","_vehicle","_player"];
 		detach _box;
@@ -9,11 +9,15 @@
 		_newBox setVectorDirAndUp [[0,0,1],[0,1,0]];
 		//_box remove explosion event? or create dummy vehicle?
 }] call CBA_fnc_addEventHandler;
-*/
+
 [QGVAR(updateBombList), {
 	params ["_object"];
 	diag_log format["Update bomblist: %1",_object];
 	[{!isNil QGVAR(bombs)}, {GVAR(bombs) pushBackUnique (_this select 0);}, [_object]] call CBA_fnc_waitUntilAndExecute;
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(events), {
+	call FUNC(removeEvents);
 }] call CBA_fnc_addEventHandler;
 /* Server events*/
 if (isServer) then {

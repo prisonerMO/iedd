@@ -12,7 +12,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 		private _distance = _object getVariable [QGVAR(dist),10];
 		//TRACE_2("Object distance",_object,_distance);
 		private _move = _object getVariable [QGVAR(move),false];
-		diag_log format["_object Move: %1",_move];
+		//diag_log format["_object Move: %1",_move];
 		private _veh = attachedTo _object;
 		if (_move) then {
 			private _speed = _veh getVariable [QGVAR(speed),GVAR(defaultSpeed)];
