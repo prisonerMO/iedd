@@ -51,11 +51,11 @@ deleteVehicle _wire;
 				private _unit = attachedTo _bombObj;
 				private _jipId = [QGVAR(detachAction), [_bombObj]] call CBA_fnc_globalEventJIP;
             	[_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
-				[_unit] call FUNC(removeEvents);
+				[QGVAR(events), [_unit]] call CBA_fnc_serverEvent;
 			};
 			if (_typeOf == QEGVAR(vbied,box)) then {
 				private _vehicle = attachedTo _bombObj;
-				[_vehicle] call EFUNC(vbied,removeEvents);
+				[QEGVAR(vbied,events), [_vehicle]] call CBA_fnc_serverEvent;
 				private _jipId = [QEGVAR(vbied,detachAction), [_bombObj,_vehicle]] call CBA_fnc_globalEventJIP;
             	[_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
 			};

@@ -160,6 +160,10 @@
 	call FUNC(suicide);
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(events), {
+	call FUNC(removeEvents);
+}] call CBA_fnc_addEventHandler;
+
 if (isServer) then {
 
 	[{
