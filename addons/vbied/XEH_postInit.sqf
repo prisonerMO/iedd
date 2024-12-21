@@ -1,13 +1,14 @@
 #include "script_component.hpp"
 
 [QGVAR(detachBox), {
-    params ["_oldBox","_vehicle","_player"];
+    params ["_box","_vehicle","_player"];
 		detach _box;
-		private _relpos = player getRelPos [1, 0];
+		private _relpos = _player getRelPos [1, 0];
 		private _newBox = createVehicle [QGVAR(box), _relpos, [], 0, "CAN_COLLIDE"];
 		_newBox setPosATL _pos;
 		_newBox setVectorDirAndUp [[0,0,1],[0,1,0]];
 		//_box remove explosion event? or create dummy vehicle?
+		//new position by using player, vehicle and box position TO-DO
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(updateBombList), {
@@ -19,6 +20,7 @@
 [QGVAR(events), {
 	call FUNC(removeEvents);
 }] call CBA_fnc_addEventHandler;
+
 /* Server events*/
 if (isServer) then {
 	[{
