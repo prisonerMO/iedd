@@ -257,6 +257,7 @@ class iedd_vbied_attributes {
             displayName = CSTRING(Speed);
             tooltip = CSTRING(Speed_ToolTip);
             property = QGVAR(speed);
+            expression = "_this setVariable ['%s',_value];";
             control = QGVAR(speedSlider);
             defaultValue = QGVAR(defaultSpeed);
             typeName = "NUMBER";
