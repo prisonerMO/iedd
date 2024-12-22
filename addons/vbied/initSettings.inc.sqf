@@ -96,20 +96,11 @@
     true // Needs mission restart
 
 ] call CBA_fnc_addSetting;
-
+/*VBIED Events Get In, Engine On, Vehicle Moving*/
 [
-    QGVAR(defaultSpeed),
-    "SLIDER",
-    [LSTRING(DefaultSpeed), LSTRING(DefaultSpeed_Description)],
-    [LSTRING(Main_Category),"VBIED Default Values"],
-    [1, 150, 45, 0],
-    1
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(defaultEngineOn),
+    QGVAR(defaultGetIn),
     "LIST",
-    [LSTRING(DefaultEngineOn), LSTRING(DefaultEngineOn_Description)],
+    [LSTRING(DefaultGetIn), LSTRING(DefaultGetIn_Description)],
     [LSTRING(Main_Category),"VBIED Default Values"],
     [
         [0, 1, 2],
@@ -122,9 +113,9 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(defaultGetIn),
+    QGVAR(defaultEngineOn),
     "LIST",
-    [LSTRING(DefaultGetIn), LSTRING(DefaultGetIn_Description)],
+    [LSTRING(DefaultEngineOn), LSTRING(DefaultEngineOn_Description)],
     [LSTRING(Main_Category),"VBIED Default Values"],
     [
         [0, 1, 2],
@@ -149,6 +140,15 @@
     true,
     {},
     true // Needs mission restart
+] call CBA_fnc_addSetting;
+/*VBIED Default Speed*/
+[
+    QGVAR(defaultSpeed),
+    "SLIDER",
+    [LSTRING(DefaultSpeed), LSTRING(DefaultSpeed_Description)],
+    [LSTRING(Main_Category),"VBIED Default Values"],
+    [1, 150, 45, 0],
+    1
 ] call CBA_fnc_addSetting;
 
 //VBIED Timer Default BOOLEAN

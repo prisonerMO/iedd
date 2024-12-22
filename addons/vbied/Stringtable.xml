@@ -233,8 +233,8 @@
                 <English>Moving vehicle</English>
             </Key>
             <Key ID="STR_iedd_vbied_Moving_Tooltip">
-                <Original>VBIED will be activated when vehicle is moving.</Original>
-                <English>VBIED will be activated when vehicle is moving.</English>
+                <Original>VBIED will be activated when this vehicle is moving (define speed below).</Original>
+                <English>VBIED will be activated when this vehicle is moving (define speed below).</English>
             </Key>
             <Key ID="STR_iedd_vbied_Speed">
                 <Original>Activation speed</Original>
