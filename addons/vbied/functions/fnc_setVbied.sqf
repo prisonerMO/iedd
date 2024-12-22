@@ -81,6 +81,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 		};
 		TRACE_1("time:",_time);
 		_box setVariable [QEGVAR(ied,timerValue), _time];
+		_box setVariable [QEGVAR(ied,timer),_isTimer,true];
 	};
 
 	_box setVariable [QGVAR(dist), _distance];
