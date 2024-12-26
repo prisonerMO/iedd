@@ -13,7 +13,6 @@
 
 [QGVAR(updateBombList), {
 	params ["_object"];
-	diag_log format["Update bomblist: %1",_object];
 	[{!isNil QGVAR(bombs)}, {GVAR(bombs) pushBackUnique (_this select 0);}, [_object]] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
 

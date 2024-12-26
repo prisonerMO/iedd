@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 params ["_bombObj","_endTime","_sound"];
 TRACE_5("IED Timer:",_bombObj,_endTime,_sound,time,_bombObj getVariable QGVAR(bomb));
-if (time > _endTime) exitWith {
+if (time > _endTime) exitWith {	
 	TRACE_1("Time > EndTime",_this);
 	deleteVehicle _sound;
 	[QGVAR(explosion), [_bombObj]] call CBA_fnc_serverEvent;

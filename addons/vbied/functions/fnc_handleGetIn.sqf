@@ -1,7 +1,6 @@
 #include "..\script_component.hpp"
 params ["_vehicle", "_role", "_unit", "_turret"];
 diag_log format["_vehicle: %1", _this];
-//if !(isPlayer _unit) exitWith {}; only if unit is player
 private _attachedObjects = attachedObjects _vehicle;
 private _index = _attachedObjects findIf {typeOf _x == QGVAR(box)};
 if (_index > -1) then {

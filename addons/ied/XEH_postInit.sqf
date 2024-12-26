@@ -39,15 +39,23 @@
 
 [QGVAR(timer), {
 	params ["_object"];
-	private _timerObj = if (typeOf _object == QGVAR(Charge)) then {
-		_object getVariable [QGVAR(unit),_object];
-	} else {
-		_object
+	private _type = typeOf _object;
+	private _timerObj = switch (_type) do {
+		case QGVAR(Charge): {
+			_object getVariable [QGVAR(unit),_object];
+		};
+		case QEGVAR(vbied,box): {
+			attachedTo _object;
+		};
+		default {
+			_object
+		};
 	};
+	private _pos = _timerObj getVariable [QEGVAR(vbied,pos),[0,0,0]];
 	private _time = _object getVariable [QGVAR(timerValue),GVAR(defaultTimerValue)];
 	private _endTime = _time + time;
 	private _sound = createSoundSource [QGVAR(timerSound) , [0,0,0], [], 0]; // starts alarm
-	_sound attachTo [_timerObj,[0,0,0]];
+	_sound attachTo [_timerObj,_pos];
 	TRACE_1("Timer CBAevent:",_this);
 	[_object,_endTime,_sound] call FUNC(timer);
 }] call CBA_fnc_addEventHandler;
