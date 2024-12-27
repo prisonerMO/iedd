@@ -41,6 +41,7 @@ deleteVehicle _wire;
 		};
 		if (_defused) then {
 			_bombObj setVariable [QGVAR(bomb), false, true];
+			private _attachedObjects = attachedObjects _bombObj;
 			private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge_Ammo)};
 			if (_index > -1) then {
 				private _object = _attachedObjects select _index;
