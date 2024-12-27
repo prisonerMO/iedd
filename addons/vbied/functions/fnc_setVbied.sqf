@@ -102,7 +102,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	if (_isGetIn) then {
 		private _getInEhId = _vehicle addEventHandler ["GetIn", {
 			params ["_vehicle", "_role", "_unit", "_turret"];
-			if (local _vehicle) then {
+			if (isServer) then {
 				call FUNC(handleGetIn);
 			};
 		}];
@@ -113,7 +113,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	if (_isEngineOn) then {
 		private _engineOnEhId = _vehicle addEventHandler ["Engine", {
 			params ["_vehicle", "_engineState"];
-			if (local _vehicle) then {
+			if (isServer && _engineState) then {
 				call FUNC(handleEngineOn);
 			};
 		}];
