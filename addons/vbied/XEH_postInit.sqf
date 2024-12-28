@@ -1,14 +1,26 @@
 #include "script_component.hpp"
 
+[QGVAR(detachAction), {
+	if (!hasInterface) exitWith {};
+	call FUNC(detachAction);
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(detachBox), {
     params ["_box","_vehicle","_player"];
 		detach _box;
-		private _relpos = _player getRelPos [1, 0];
-		private _newBox = createVehicle [QGVAR(box), _relpos, [], 0, "CAN_COLLIDE"];
-		_newBox setPosATL _pos;
-		_newBox setVectorDirAndUp [[0,0,1],[0,1,0]];
-		//_box remove explosion event? or create dummy vehicle?
-		//new position by using player, vehicle and box position TO-DO
+		private _pos = _player getRelPos [0.6, 0];
+		_box setPosATL _pos;
+		_box setDir (random 360);
+		_box setVectorDirAndUp [[0,0,-1],[0,1,0]];
+		/* EVENT with collision -> remove collision with box and vehicle?
+		[{
+			//params ["_box","_vehicle","_player"];
+			private _pos = _player getRelPos [0.6, 0];
+			_box setPosATL _pos;
+			_box setDir (random 360);
+			_box setVectorDirAndUp [[0,0,-1],[0,1,0]];
+		}, _this, 0.02] call CBA_fnc_waitAndExecute;
+		*/		
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(updateBombList), {

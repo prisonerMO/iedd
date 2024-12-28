@@ -280,6 +280,10 @@
                 <Original>Save failed. Maximum amount of positions reached.</Original>
                 <English>Save failed. Maximum amount of positions reached.</English>
             </Key>
+            <Key ID="STR_iedd_vbied_Detach_DisplayName">
+                <Original>Detach</Original>
+                <English>Detach</English>
+            </Key>
         </Container>
     </Package>
 </Project>
