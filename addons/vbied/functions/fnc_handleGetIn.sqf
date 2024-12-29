@@ -1,8 +1,8 @@
 #include "..\script_component.hpp"
 params ["_vehicle", "_role", "_unit", "_turret"];
-diag_log format["handleGetIn _vehicle: %1", _this];
 private _attachedObjects = attachedObjects _vehicle;
 private _index = _attachedObjects findIf {typeOf _x == QGVAR(box)};
+TRACE_3("GetIn State",_vehicle,_index,_unit);
 if (_index > -1) then {
 	private _bombObj = _attachedObjects select _index;
 	if (isNull _bombObj) exitWith {};

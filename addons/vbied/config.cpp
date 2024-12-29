@@ -18,12 +18,6 @@ class CfgPatches {
 		url = "https://community.bistudio.com/wiki";
         VERSION_CONFIG;
 	};
-	class GVAR(vbied): ADDON {
-        units[] = {
-            QGVAR(zeusModule)
-        };
- };
-
 };
 
 #include "CfgEventHandlers.hpp"
