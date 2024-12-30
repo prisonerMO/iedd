@@ -8,6 +8,7 @@ class CfgVehicles {
         model = "\A3\Weapons_f\empty";
         destrType = "DestructNo";
     };
+    /*NOT IN USE
     class GVAR(holder): GVAR(helper) {
         displayName = QGVAR(holder);
         class ACE_Actions {
@@ -26,7 +27,7 @@ class CfgVehicles {
 			    };
             };
         };
-    };
+    };*/
     class GVAR(box): GVAR(helper) {
         author=AUTHOR;
 		/*_generalMacro="";
@@ -56,23 +57,10 @@ class CfgVehicles {
                     condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call EFUNC(ied,canDisarm)});
                     statement = "";
                 };
-                /*insertChildren = QUOTE(_this call FUNC(getChildrenActions));
-                class IEDD_DisarmMenu {
-                    exceptions[] = {"isNotSwimming"};
-                    displayName = ECSTRING(ied,Disarm_DisplayName);
-                    condition = QUOTE([_player] call EFUNC(ied,canDisarm));
-                    statement = "";
-                    insertChildren = QUOTE(_this call FUNC(disarmActions));
-			    };
-                TODO REMOVE BOMB FROM VEHICLE ACTION HERE?
-                class IEDD_DisarmMenu {
-                    exceptions[] = {"isNotSwimming"};
-                    displayName = ECSTRING(ied,Disarm_DisplayName);
-                    condition = QUOTE([_player] call EFUNC(ied, canDisarm));
-                    statement = "";
-                    insertChildren = QUOTE(_this call FUNC(disarmActions));
-			    };*/
             };
+        };
+        class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
         };
     };
 };
