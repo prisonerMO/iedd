@@ -57,7 +57,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 
 	if (GVAR(isDetectable)) then {
 		private _mine = QEGVAR(ied,Charge_Ammo) createVehicle [0,0,0];
-		_mine attachTo [_vehicle, _pos];
+		_mine attachTo [_box, [0,0,0]];
 		private _jipId = ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
 		[_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
 		_jipId = [QEGVAR(ied,hideObject), [_mine,true]] call CBA_fnc_globalEventJIP;
