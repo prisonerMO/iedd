@@ -12,8 +12,7 @@ class CfgPatches {
             "A3_Modules_F_Curator",
 			"ace_zeus",
 			"iedd_ied",
-            "iedd_main",
-            "iedd_modules"
+            "iedd_main"
         };
 		url = "https://community.bistudio.com/wiki";
         VERSION_CONFIG;
