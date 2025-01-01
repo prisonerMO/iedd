@@ -39,16 +39,12 @@ class GVAR(suicide):GVAR(charge) {
 	displayName = CSTRING(Zeus_Suicide);
     curatorInfoType = QGVAR(RscSuicide);
 };
-/*Vbied modules
-class GVAR(vbied):ace_zeus_moduleBase {
-	scope = 1;
-	scopecurator = 2;
-	category = QGVAR(ieds);
+/*Vbied modules*/
+class GVAR(vbied):GVAR(charge) {
 	curatorInfoType = QGVAR(RcsVbied);
 	displayName = CSTRING(Zeus_Place_Vbied);
-	icon = QPATHTOF(UI\moduleicon.paa);
 };
-*/
+
 /*
 --> ACTIVE and EXPLODE (need maybe owns)
 class GVAR(vbiedExp):GVAR(activate) {

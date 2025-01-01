@@ -272,6 +272,34 @@
                 <Original>Select variation of IED.</Original>
                 <English>Select variation of IED.</English>
             </Key>
+            <Key ID="STR_iedd_modules_Zeus_Place_Vbied">
+                <Original>Add VBIED</Original>
+                <English>Add VBIED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Pos">
+                <Original>VBIED POSITION</Original>
+                <English>VBIED POSITION</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Pos_Tooltip">
+                <Original>Set position for VBIED.</Original>
+                <English>Set position for VBIED.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_GetIn">
+                <Original>GET IN</Original>
+                <English>GET IN</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_EngineOn">
+                <Original>ENGINE ON</Original>
+                <English>ENGINE ON</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Moving">
+                <Original>MOVING VEHICLE</Original>
+                <English>MOVING VEHICLE</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Speed">
+                <Original>MOVING SPEED</Original>
+                <English>MOVING SPEED</English>
+            </Key>
         </Container>
     </Package>
 </Project>

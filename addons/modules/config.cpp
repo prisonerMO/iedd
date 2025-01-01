@@ -26,8 +26,8 @@ class CfgPatches {
             QGVAR(activate),
             QGVAR(explode),
             QGVAR(charge),
-            QGVAR(suicide)/*,
-            QGVAR(vbied)*/
+            QGVAR(suicide),
+            QGVAR(vbied)
         };
  };
 
