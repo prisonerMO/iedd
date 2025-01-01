@@ -22,7 +22,6 @@ deleteVehicle _wire;
 		private _count = count (_wires select {!isNull _x});
 		private _isTimer = _bombObj getVariable [QGVAR(timer), false];
 		private _defused = false;
-		diag_log format ["Cut Wire:_timer: %1 %2",_isTimer,_isTimer in [true,1]];
 		if (_isTimer in [true,1] && {
 			_count == (count _wires) -1}) then {
 			[QGVAR(timer), [_bombObj]] call CBA_fnc_serverEvent;
