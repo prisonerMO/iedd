@@ -13,7 +13,7 @@ class iedd_vbied_attributes {
             control = "CheckboxState";
             displayName = CSTRING(AddVbied);
             tooltip = CSTRING(AddVbied_Tooltip);
-            expression = QUOTE(if (_value) then {[ARR_2(_this,true)] call FUNC(setVbied);_this setVariable [ARR_3(QQGVAR(isVbied),_value,true)]});
+            expression = QUOTE(if (_value) then {[ARR_2(_this,true)] call FUNC(prepData);});
             typeName = "BOOL";
             condition = "objectVehicle";
             defaultValue = "(false)";

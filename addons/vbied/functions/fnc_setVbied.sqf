@@ -1,35 +1,13 @@
 #include "..\script_component.hpp"
-params ["_vehicle","_activated"];
-TRACE_1("Charge call",_this);
-if (is3DEN) exitWith {};
-if (!_activated) exitWith {TRACE_1("ExitWith _actived:",_activated)};
-if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
+params ["_vehicle","_variation","_pos","_dir","_up","_dud","_size","_isTimer","_timerTime","_distance","_isGetIn","_isEngineOn","_isMove","_speed"];
+TRACE_1("SetVbied",_this);
 [{
-	!isNull (_this select 0)
-},
-{
-	params ["_vehicle"];
-	private _variation = _vehicle getVariable [QGVAR(variation),GVAR(defaultVariation)];
-	private _dud = _vehicle getVariable [QGVAR(dud),GVAR(defaultDud)];
-	private _move = _vehicle getVariable [QGVAR(moving),GVAR(defaultMoving)];
-	private _isMove = if (_move > 1) then {selectRandom [false,true]} else {[false,true] select _move};
-	private _size = _vehicle getVariable [QGVAR(size),GVAR(defaultSize)];
-	private _timerValue = _vehicle getVariable [QGVAR(timer), GVAR(defaultTimer)];
-	private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
-	private _isDistance = _vehicle getVariable [QGVAR(distance), 0];
-	private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
-	/*Get position and direction of bombobject*/
-	private _pos = _vehicle getVariable [QGVAR(pos),[0,0,0]];
-	private _dir = _vehicle getVariable [QGVAR(dir),[0,0,0]];
-	private _up = _vehicle getVariable [QGVAR(up),[0,0,0]];
-	/*Get wireset for VBIED*/
-	if (_variation == 5) then {
-		_variation = selectRandom [0,1,2,3,4];
-	};
+	params ["_vehicle","_variation","_pos","_dir","_up","_dud","_size","_isTimer","_timerTime","_isRandom","_distance","_isGetIn","_isEngineOn","_isMove","_speed"];
 	private _wireSet = VBIED_VARS select _variation;
 	private _box = QGVAR(box) createVehicle [0,0,0];
 	_box attachTo [_vehicle,_pos];
 	_box setVectorDirAndUp [_dir,_up];
+
 	private _subObj0 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#0), [0,0,0]]; // 0 wire
 	private _subObj1 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#1), [0,0,0]]; // 1 wire
 	private _subObj2 = createSimpleObject ["IEDD_WireCorner"+(_wireSet #0#2), [0,0,0]]; // 2 wire
@@ -62,13 +40,12 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 		[_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
 		_jipId = [QEGVAR(ied,hideObject), [_mine,true]] call CBA_fnc_globalEventJIP;
 		[_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
-	};
+	};	
+	
 	if (_isTimer) then {
 		private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
 		_watch attachTo [_box, [0.03, -0.09, -0.0018]];
 		_watch setVectorDirAndUp [[-0,-1,0],[0,0,1]];
-		private _randomValue = _vehicle getVariable [QGVAR(randomTimer), GVAR(defaultRandomTimer)];
-		private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
 		TRACE_2("Timer",_isTimer,_isRandom);
 		private _time = if (_isRandom) then {
 			private _min = round (_vehicle getVariable [QGVAR(randomTimerMin),GVAR(defaultTimerMin)]);
@@ -77,28 +54,27 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 			[_min, _max] call BIS_fnc_randomInt;
 		} else {
 			TRACE_1("Value",(_vehicle getVariable [ARR_2(QGVAR(timerValue),GVAR(defaultTimerValue))]));
-			round (_vehicle getVariable  [QGVAR(timerValue),GVAR(defaultTimerValue)]);
+			_timerTime
 		};
 		TRACE_1("time:",_time);
 		_box setVariable [QEGVAR(ied,timerValue), _time];
 		_box setVariable [QEGVAR(ied,timer),_isTimer,true];
 	};
-
+	
+	if (_isMove) then {
+		_box setVariable [QGVAR(speed), _speed];
+	};
 	_box setVariable [QGVAR(dist), _distance];
 	_box setVariable [QGVAR(move), _isMove];
 	_box setVariable [QEGVAR(ied,wires), _wires, true];
 	_box setVariable [QEGVAR(ied,bomb), true, true];
 	_box setVariable [QEGVAR(ied,size), _size];
 	_box setVariable [QEGVAR(ied,dud), _dud];
-
-	/*Set defuseaction*/
+	//Set defuseaction
 	private _text = localize ELSTRING(Ied,Name_Long);
 	private _jipId = [QEGVAR(ied,defuseAction), [_box, _wireSet,_text]] call CBA_fnc_globalEventJIP;
 	[_jipID, _box] call CBA_fnc_removeGlobalEventJIP;
-
-	/*Set eventhandlers on vehicle*/
-	private _getIn = _vehicle getVariable [QGVAR(getIn),GVAR(defaultGetIn)];
-	private _isGetIn = if (_getIn > 1) then {selectRandom [false,true]} else {[false,true] select _getIn};
+	//Set eventhandlers on vehicle
 	if (_isGetIn) then {
 		private _getInEhId = _vehicle addEventHandler ["GetIn", {
 			params ["_vehicle", "_role", "_unit", "_turret"];
@@ -108,8 +84,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 		}];
 		_vehicle setVariable [QGVAR(getInEhId), _getInEhId];
 	};
-	private _engineOn = _vehicle getVariable [QGVAR(engineOn),GVAR(defaultEngineOn)];
-	private _isEngineOn = if (_engineOn > 1) then {selectRandom [false,true]} else {[false,true] select _engineOn};
+	//private _engineOn = _vehicle getVariable [QGVAR(engineOn),GVAR(defaultEngineOn)];
 	if (_isEngineOn) then {
 		private _engineOnEhId = _vehicle addEventHandler ["Engine", {
 			params ["_vehicle", "_engineState"];
@@ -126,9 +101,9 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 	}];
 	_box setVariable [QGVAR(expEhId), _expEhId];
 
+	/*Set eventhandler on delete*/
+	_vehicle addEventHandler ["Deleted", {(_this select 0) call FUNC(deleted)}];
 	/*update bomblist*/
 	[QGVAR(updateBombList), [_box]] call CBA_fnc_serverEvent;
 
-},[_vehicle]] call CBA_fnc_waitUntilAndExecute;
-//OR --> [_vehicle], 0.1] call CBA_fnc_waitAndExecute;
-true;
+},_this, 0.1] call CBA_fnc_waitAndExecute;
