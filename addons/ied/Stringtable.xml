@@ -26,6 +26,10 @@
                 <Original>Wire cut sound 1</Original>
                 <English>Wire cut sound 1</English>
             </Key>
+            <Key ID="STR_iedd_ied_Sound_Fail1">
+                <Original>Fail sound 1</Original>
+                <English>Fail sound 1</English>
+            </Key>
         </Container>
         <Container name="IEDs Display and Attribues">
             <Key ID="STR_iedd_ied_BarrelGrey_DisplayName">
