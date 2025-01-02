@@ -45,7 +45,7 @@ class GVAR(RcsVbied): RscDisplayAttributes {
 
                         class GVAR(variationL): GVAR(posL) {
                             text = CSTRING(Zeus_Variation);
-                            tooltip = CSTRING(Zeus_Variation_Tooltip);
+                            tooltip = CSTRING(Zeus_Vbied_Var_Tooltip);
                             y = QUOTE(H_PART(1.1));
                         };
                         class GVAR(variation): RscCombo {

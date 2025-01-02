@@ -268,9 +268,13 @@
                 <Original>BOMB VARIATION</Original>
                 <English>BOMB VARIATION</English>
             </Key>
-            <Key ID="STR_iedd_modules_Zeus_Variation_Tooltip">
+            <Key ID="STR_iedd_modules_Zeus_Ied_Var_Tooltip">
                 <Original>Select variation of IED.</Original>
                 <English>Select variation of IED.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Vbied_Var_Tooltip">
+                <Original>Select variation of VBIED.</Original>
+                <English>Select variation of VBIED.</English>
             </Key>
             <Key ID="STR_iedd_modules_Zeus_Place_Vbied">
                 <Original>Add VBIED</Original>
