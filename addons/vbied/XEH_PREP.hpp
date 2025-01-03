@@ -14,6 +14,7 @@ PREP(preDefined);
 PREP(prepData);
 PREP(save_onButtonClick);
 PREP(setVbied);
+PREP(speed_onLoad);
 PREP(userDefined);
 PREP(vbiedCheck);
 

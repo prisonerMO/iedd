@@ -36,9 +36,10 @@ if (_index > -1) exitWith {
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
     _display closeDisplay 2;
 };
-private _type = getModelInfo _vehicle select 0;
-private _index = VBIED_MODELS findIf {_type in _x};
-EGVAR(vbied,preDefined) set ["model",[_index,_type]];
+private _model = getModelInfo _vehicle select 0;
+private _index = VBIED_MODELS findIf {_model in _x};
+private _type = typeOf _vehicle;
+EGVAR(vbied,preDefined) set ["model",[_index,_model,_type]];
 /*TODO - Check if vehicle have not predefined positions*/
 [{
     params ["_display","_logic"];
@@ -94,6 +95,10 @@ private _fnc_sliderSpeed = {
 private _sliderSpeed = _display displayCtrl 52528;
 _sliderSpeed sliderSetSpeed [1,1];
 _sliderSpeed sliderSetPosition iedd_vbied_defaultSpeed;
+private _model = iedd_vbied_preDefined get 'model';
+private _type = _model select 2;
+private _max = (getNumber (configFile >> "CfgVehicles" >> _type >> "maxSpeed")) max 50;
+_sliderSpeed sliderSetRange [1, _max];
 _sliderSpeed ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderSpeed];
 _sliderSpeed call _fnc_sliderSpeed;
 

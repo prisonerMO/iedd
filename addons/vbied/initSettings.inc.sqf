@@ -147,7 +147,7 @@
     "SLIDER",
     [LSTRING(DefaultSpeed), LSTRING(DefaultSpeed_Description)],
     [LSTRING(Main_Category),"VBIED Default Values"],
-    [1, 150, 45, 0],
+    [1, 50, 45, 0],
     1
 ] call CBA_fnc_addSetting;
 

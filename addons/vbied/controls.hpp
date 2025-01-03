@@ -75,23 +75,6 @@ class GVAR(speedSlider): Slider {
     _slider sliderSetPosition _value;\
     _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'km/h';";
     attributeSave = "params [""_ctrlGroup""];\
-    sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
-    onLoad = "params [""_ctrlGroup""];\
-    private _slider = _ctrlGroup controlsGroupCtrl 100;\
-    private _edit = _ctrlGroup controlsGroupCtrl 101;\
-    _slider sliderSetSpeed [1, 1, 1];\
-    _slider sliderSetRange [0, 150];\
-    _slider ctrlAddEventHandler [""SliderPosChanged"", {\
-        params [""_slider""];\
-        private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
-        private _value = sliderPosition _slider;\
-        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'km/h';\
-    }];\
-    _edit ctrlAddEventHandler [""KillFocus"", {\
-        params [""_edit""];\
-        private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
-        private _value = ((parseNumber ctrlText _edit) min 0) max 300;\
-        _slider sliderSetPosition _value;\
-        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'km/h';\
-    }];";
+    sliderPosition (_ctrlGroup controlsGroupCtrl 100);";
+    onLoad = "_this call iedd_vbied_fnc_speed_onLoad";
 };
