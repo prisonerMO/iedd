@@ -36,7 +36,7 @@ class GVAR(RcsVbied): RscDisplayAttributes {
                             class Items {
                                 /*TO-DO GET ALL VBIEDS POSITIONS*/
                                 class 0 {
-                                    value = -1;//TO DO ARRAY OF POS -> [X,Y,Z] VECTOR DIRUP [X,Y,Z] VECTOR DIRFORWARD [X,Y,Z];
+                                    value = -1;
                                     text = "THERE IS NO VBIED POSITIONS";
                                     default = 1;
                                 };
@@ -246,7 +246,7 @@ class GVAR(RcsVbied): RscDisplayAttributes {
                             y = QUOTE(H_PART(8.8));
                         };
                         class GVAR(speedSlider): RscXSliderH {
-                            sliderRange[] = {0, 150};
+                            sliderRange[] = {0, 50};
                             text = ECSTRING(vbied,Speed);
                             idc = 52528;
                             x = QUOTE(W_PART(10.1));
