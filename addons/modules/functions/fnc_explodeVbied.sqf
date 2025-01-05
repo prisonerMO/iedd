@@ -8,9 +8,7 @@ if (isNull _vehicle) exitWith {
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
 if (typeOf _vehicle == QEGVAR(vbied,box)) exitWith {
-	_vehicle setVariable [QEGVAR(ied,bomb), true, true];
-	_vehicle setVariable [QEGVAR(ied,dud),0];
-	[QEGVAR(ied,explosion), [_vehicle]] call CBA_fnc_serverEvent;
+	[QGVAR(explode), [_vehicle]] call CBA_fnc_serverEvent;
 	deleteVehicle _logic;
 };
 
@@ -33,9 +31,5 @@ if (_index == -1) exitWith {
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
 private _object = _attachedObjects select _index;
-if !(_object getVariable [QEGVAR(ied,bomb),false]) then {
-	_object setVariable [QEGVAR(ied,bomb), true, true];
-};
-_object setVariable [QEGVAR(ied,dud),0];
-[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
+[QGVAR(explode), [_object]] call CBA_fnc_serverEvent;
 deleteVehicle _logic;

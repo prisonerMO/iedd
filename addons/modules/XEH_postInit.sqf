@@ -43,3 +43,12 @@
         _bombObj setVariable ["iedd_ied_color",_color];
     };
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(explode), {
+	params ["_object"];
+    if !(_object getVariable [QEGVAR(ied,bomb),false]) then {
+        _object setVariable [QEGVAR(ied,bomb), true];
+    };
+    _object setVariable [QEGVAR(ied,dud),0];
+	_object call EFUNC(ied,bomb);
+}] call CBA_fnc_addEventHandler;
