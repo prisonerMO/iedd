@@ -45,14 +45,11 @@ class GVAR(vbied):GVAR(charge) {
 	displayName = CSTRING(Zeus_Place_Vbied);
 };
 
-/*
---> ACTIVE and EXPLODE (need maybe owns)
-class GVAR(vbiedExp):GVAR(activate) {
-	function = QFUNC(vbiedActivate);
+class GVAR(activateVbied):GVAR(activate) {
+	function = QFUNC(activateVbied);
 	displayName = CSTRING(Zeus_Vbied_Activate);
 };
-class GVAR(vbiedExp):GVAR(activate) {
-	function = QFUNC(vbiedExplode);
+class GVAR(explodeVbied):GVAR(activateVbied) {
+	function = QFUNC(explodeVbied);
 	displayName = CSTRING(Zeus_Vbied_Explode);
 };
-*/

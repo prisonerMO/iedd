@@ -1,5 +1,7 @@
 
 PREP(attributes);
+PREP(activateVbied);
+PREP(explodeVbied);
 PREP(multi);
 PREP(onSelVarChanged);
 PREP(setCharge);

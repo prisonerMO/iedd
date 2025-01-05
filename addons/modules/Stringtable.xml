@@ -304,6 +304,14 @@
                 <Original>MOVING SPEED</Original>
                 <English>MOVING SPEED</English>
             </Key>
+            <Key ID="STR_iedd_modules_Zeus_Vbied_Explode">
+                <Original>Explode VBIED</Original>
+                <English>Explode VBIED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Vbied_Activate">
+                <Original>Activate VBIED</Original>
+                <English>Activate VBIED</English>
+            </Key>
         </Container>
     </Package>
 </Project>
