@@ -11,5 +11,3 @@ if !(_bombObj getVariable [QEGVAR(ied,bomb),false]) exitWith {
 	deleteVehicle _sound;
 };
 [{_this call FUNC(timer);}, _this, 1] call CBA_fnc_waitAndExecute;
-
-

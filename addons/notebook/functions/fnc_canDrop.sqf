@@ -2,6 +2,3 @@
 params ["_player"];
 isTouchingGround _player &&
 {isNull objectParent _player}
-
-
-
