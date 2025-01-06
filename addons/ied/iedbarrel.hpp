@@ -1,11 +1,11 @@
 class Land_BarrelEmpty_F;
 class GVAR(Barrel):Land_BarrelEmpty_F {
-	displayName = CSTRING(Barrel_DisplayName); 
+	displayName = CSTRING(Barrel_DisplayName);
 	author = AUTHOR;
-	editorCategory = "IEDD_MAINCATEGORY"; 
+	editorCategory = "IEDD_MAINCATEGORY";
 	editorSubcategory = "IEDD_IEDS";
 	class EventHandlers {
-		class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};		
+		class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
 	};
 	class ACE_Actions {
 		class ACE_MainActions {
@@ -15,7 +15,7 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			condition = QUOTE(true);
 			class IEDD_DisarmMenu {
 				exceptions[] = {"isNotSwimming"};
-				displayName = CSTRING(Disarm_DisplayName); 
+				displayName = CSTRING(Disarm_DisplayName);
 				condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call FUNC(canDisarm)});
 				statement = "";
 			};
@@ -48,23 +48,23 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Variation_1);	
+					name = CSTRING(Variation_1);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Variation_2); 
+					name = CSTRING(Variation_2);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Variation_3); 
+					name = CSTRING(Variation_3);
 					value = 2;
 				};
 				class 4	{
-					name = CSTRING(Variation_4);	
+					name = CSTRING(Variation_4);
 					value = 3;
 				};
 				class 5	{
-					name = CSTRING(Variation_5);	
+					name = CSTRING(Variation_5);
 					value = 4;
 				};
 				class 6 {
@@ -75,7 +75,7 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 					name = CSTRING(Name_Random);
 					value = 6;
 				};
-							
+
 			};
 		};
 		class GVAR(varX) {
@@ -118,7 +118,7 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 				class 6 {
 					name = CSTRING(Name_Random);
 					value = 5;
-				}; 
+				};
 			};
 		};
 		class GVAR(decals) {
@@ -127,7 +127,7 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			property = QGVAR(decals);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultDecals);		
+			defaultValue = QGVAR(defaultDecals);
 			typeName = "BOOL";
 		};
 		class GVAR(dir) {
@@ -146,7 +146,7 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			expression = "_this setVariable ['%s',_value];";
 			control = "Slider";
 			defaultValue = QGVAR(defaultDud);
-		};		
+		};
 		class GVAR(fake) {
 			displayName = CSTRING(Fake);
 			tooltip = CSTRING(Fake_Tooltip);
@@ -176,21 +176,21 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			property = QGVAR(timer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimer);		
+			defaultValue = QGVAR(defaultTimer);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Name_Disabled);	
+					name = CSTRING(Name_Disabled);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Name_Enabled); 
+					name = CSTRING(Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Name_Random); 
+					name = CSTRING(Name_Random);
 					value = 2;
-				};				
+				};
 			};
 		};
 		class GVAR(timerValue) {
@@ -199,8 +199,8 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			property = QGVAR(timerValue);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimerValue);	
-			typeName = "NUMBER";	
+			defaultValue = QGVAR(defaultTimerValue);
+			typeName = "NUMBER";
 		};
 		class GVAR(randomTimer) {
 			displayName = CSTRING(RandomTimer);
@@ -208,22 +208,22 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			property = QGVAR(randomTimer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultRandomTimer);	
+			defaultValue = QGVAR(defaultRandomTimer);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Name_Disabled);	
+					name = CSTRING(Name_Disabled);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Name_Enabled); 
+					name = CSTRING(Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Name_Random); 
+					name = CSTRING(Name_Random);
 					value = 2;
-				};				
-			};	
+				};
+			};
 		};
 		class GVAR(randomTimerMin) {
 			displayName = CSTRING(RandomTimerMin);
@@ -231,8 +231,8 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			property = QGVAR(randomTimerMin);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimerMin);	
-			typeName = "NUMBER";	
+			defaultValue = QGVAR(defaultTimerMin);
+			typeName = "NUMBER";
 		};
 		class GVAR(randomTimerMax) {
 			displayName = CSTRING(RandomTimerMax);
@@ -240,13 +240,13 @@ class GVAR(Barrel):Land_BarrelEmpty_F {
 			property = QGVAR(randomTimerMax);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimerMax);	
+			defaultValue = QGVAR(defaultTimerMax);
 			typeName = "NUMBER";
-		};	
+		};
 	};
 };
 class GVAR(Barrel_Grey):GVAR(Barrel) {
-	displayName = CSTRING(BarrelGrey_DisplayName); 
+	displayName = CSTRING(BarrelGrey_DisplayName);
 	editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_BarrelEmpty_grey_F.jpg";
 	model = "\A3\Structures_F_EPB\Items\Vessels\BarrelEmpty_grey_F.p3d";
 	iedd_ied_default = "Land_BarrelEmpty_grey_F";
@@ -262,7 +262,7 @@ class GVAR(Training_Barrel):GVAR(Barrel) {
 			condition = QUOTE(true);
 			class IEDD_ResetMenu {
 				exceptions[] = {"isNotSwimming"};
-				displayName = CSTRING(Reset_DisplayName); 
+				displayName = CSTRING(Reset_DisplayName);
 				condition = QUOTE(true);
 				insertChildren = QUOTE(_this call FUNC(getTrainingActions));
 			};
@@ -280,7 +280,7 @@ class GVAR(Training_Barrel_Grey):GVAR(Barrel_Grey) {
 			condition = QUOTE(true);
 			class IEDD_ResetMenu {
 				exceptions[] = {"isNotSwimming"};
-				displayName = CSTRING(Reset_DisplayName); 
+				displayName = CSTRING(Reset_DisplayName);
 				condition = QUOTE(true);
 				insertChildren = QUOTE(_this call FUNC(getTrainingActions));
 			};

@@ -13,7 +13,8 @@ class CfgPatches {
             "A3_Modules_F",
             "A3_Modules_F_Curator",
 			"ace_zeus",
-            "iedd_main"
+            "iedd_main",
+            "iedd_vbied"
         };
 		url = "https://community.bistudio.com/wiki";
         VERSION_CONFIG;
@@ -25,42 +26,41 @@ class CfgPatches {
             QGVAR(activate),
             QGVAR(explode),
             QGVAR(charge),
-            QGVAR(suicide)
+            QGVAR(suicide),
+            QGVAR(vbied),
+            QGVAR(activateVbied),
+            QGVAR(explodeVbied)
         };
  };
 
 };
 class Cfg3DEN
 {
-    class Attributes // Attribute UI controls are placed in this pre-defined class
+    class Attributes
     {
-        // Base class templates
-        class Default; // Empty template with pre-defined width and single line height
+        class Default;
         class TitleWide: Default
         {
             class Controls
             {
                 class Title;
             };
-        }; // Template with full-width single line title and space for content below it
-
-        // Your attribute class
+        };
         class GVAR(subTitle): TitleWide
         {
-            // List of controls, structure is the same as with any other controls group
             class Controls: Controls
             {
                 class Title: Title
                 {
                     style = 2;
                     colorText[] = {1,1,1,0.4};
-                }; // Inherit existing title control. Text of any control with class Title will be changed to attribute displayName
+                };
             };
         };
     };
 };
 #include "CfgEventHandlers.hpp"
 #include "CfgFactionClasses.hpp"
-#include "zeusModulesRcs.hpp"
+#include "UI/zeusModulesRcs.hpp"
 #include "CfgVehicles.hpp"
 

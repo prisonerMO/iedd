@@ -6,8 +6,14 @@ class Cfg3DEN {
                 collapsed = 1;
                 class Attributes {};
             };
+            class iedd_vbied_attributes {
+                displayName = CSTRING(VbiedOptions);
+                collapsed = 1;
+                class Attributes {};
+            };
         };
     };
+
 
     class Group {
         class AttributeCategories {

@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 [{
     params ["_bombObj","_wireSet","_text"];
+    TRACE_1("DefuseAction:",_this);
     if (isNull _bombObj) exitWith {};
     private _wires = _bombObj getVariable [QGVAR(wires),[]];
     private _countWires = count _wires-1;
@@ -35,21 +36,24 @@
             };
             [{
                 params ["_target", "_player", "_actionParams"];
+                _actionParams params [
+                    "_wire",
+                    "_bombObj",
+                    "_order",
+                    ["_isFail",false],
+                    ["_isFailTime",0.1]
+                ];
                 private _cutTime = [iedd_ied_wireCutTime, iedd_ied_wireCutTimeEOD] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
                 if (_cutTime < 1) then {
                     _cutTime = 1;
                 };
-                TRACE_1("Cut Time",_cutTime);
+                TRACE_1("params:",_this);
                 private _failChance = [GVAR(failChance), GVAR(failChanceEOD)] select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
                 private _isFail = random 1 < _failChance;
                 private _isFailTime = _cutTime / 10;
-                if (count _actionParams < 4) then {
-                    _actionParams append [_isFail,_isFailTime];
-                } else {
-                    _actionParams set [3,_isFail];
-                    _actionParams set [4,_isFailTime];
-                };      
-                TRACE_2("FailChance:",_failChance,_isFail);
+                TRACE_3("Chance:",_cutTime,_failChance,_isFail);
+                _actionParams set [3,_isFail];
+                _actionParams set [4,_isFailTime];
                 [
                     _cutTime,
                     [_actionParams,_player],

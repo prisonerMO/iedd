@@ -3,7 +3,7 @@ params ["_bombObj"];
 private _ieddWires = _bombObj getVariable [QGVAR(wires),[]];
 if (_ieddWires isEqualTo []) exitWith {};
 private _type = typeOf _bombObj;
-if (_type == QGVAR(CanisterFuel)) exitWith { 
+if (_type == QGVAR(CanisterFuel)) exitWith {
 	{
 		if (!isNull _x) then  {
 			_x attachTo [_bombObj,(IEDD_DUDS_JERRY #_forEachIndex) #0];
@@ -35,7 +35,7 @@ if (_type == QGVAR(Cinder)) exitWith {
 		};
 	} forEach _ieddWires;
 };
-if (_type == QGVAR(Metal) || _type == QGVAR(Metal_English)) exitWith { 
+if (_type == QGVAR(Metal) || _type == QGVAR(Metal_English)) exitWith {
 	{
 		if (!isNull _x) then  {
 			_x attachTo [_bombObj,(IEDD_DUDS_METAL #_forEachIndex) #0];
@@ -57,6 +57,14 @@ if (_type == QGVAR(Charge)) exitWith {
 		if (!isNull _x) then  {
 			_x attachTo [_bombObj,(IEDD_DUDS_CHARGE #_forEachIndex) #0];
 			_x setVectorDirAndUp ((IEDD_DUDS_CHARGE #_forEachIndex) #1);
+		};
+	} forEach _ieddWires;
+};
+if (_type == QEGVAR(vbied,box)) exitWith {
+	{
+		if (!isNull _x) then  {
+			_x attachTo [_bombObj,(IEDD_DUDS_VBIED #_forEachIndex) #0];
+			_x setVectorDirAndUp ((IEDD_DUDS_VBIED #_forEachIndex) #1);
 		};
 	} forEach _ieddWires;
 };

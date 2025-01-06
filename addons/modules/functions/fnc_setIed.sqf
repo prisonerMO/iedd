@@ -82,6 +82,7 @@ private _fnc_onConfirm = {
     private _dud = sliderPosition (_display displayCtrl 52523);;
     private _dist = round(sliderPosition (_display displayCtrl 52524));
     private _value = round(sliderPosition (_display displayCtrl 52526));
+    /*MOVE TO SERVER EVENT REST OF
     private _bombObj = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
     _bombObj setVariable ["iedd_ied_variation",_variation,true];
     _bombObj setVariable ["iedd_ied_dud",_dud,true];
@@ -94,8 +95,8 @@ private _fnc_onConfirm = {
     if (_type == QEGVAR(ied,CanisterFuel)) then {
         private _color = ["green", "Blue", "red", "White"] select _typeNum-1;
         _bombObj setVariable ["iedd_ied_color",_color,true];
-    };
-
+    };*/
+    [QGVAR(createIed), [_type,_pos,_variation,_dud,_size,_timer,_value,_dist,_typeNum]] call CBA_fnc_serverEvent;
 };
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];

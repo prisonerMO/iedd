@@ -227,7 +227,7 @@ class GVAR(multi): Module_F {
 			displayName = ECSTRING(ied,TimerValue);
 			tooltip = ECSTRING(ied,TimerValue_Tooltip);
 			property = QGVAR(timerValue);
-			control = EQGVAR(ied,timeSlider); // TODO time_slider min - max
+			control = QEGVAR(ied,timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QEGVAR(ied,defaultTimerValue);
 			typeName = "NUMBER";

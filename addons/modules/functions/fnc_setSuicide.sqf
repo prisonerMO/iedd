@@ -12,21 +12,25 @@ private _message = "No unit selected";
 if (isNull _unit) exitWith {
     deleteVehicle _logic;
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 2;
 };
 if !(_unit isKindOf "CAManBase") exitWith {
 	_message = "Type of unit is not infantry";
 	deleteVehicle _logic;
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 2;
 };
 if (!alive _unit) exitWith {
 	_message = "Unit is not alive";
 	deleteVehicle _logic;
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 2;
 };
 if (_unit getVariable ["iedd_ied_isCharge",false]) exitWith {
 	_message = "Unit have IED vest already";
 	deleteVehicle _logic;
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 2;
 };
 
 //Specific on-load stuff:
