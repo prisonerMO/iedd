@@ -117,7 +117,6 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
 
             private _timerValue = _unit getVariable [QGVAR(c_timer), GVAR(defaultTimer)];
             private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
-            _bombObj setVariable [QGVAR(timer),_isTimer, true];
             if (_isTimer) then {
                 private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
                 _watch attachTo [_bombObj,[0.02,-0.095,0.028]];
@@ -133,6 +132,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
                     round (_unit getVariable  [QGVAR(c_timerValue),GVAR(defaultTimerValue)]);
                 };
                 _bombObj setVariable [QGVAR(timerValue),_time];
+                _bombObj setVariable [QGVAR(timer),_isTimer, true];
             };
         } else {
             //[_unit] call FUNC(suicide);
@@ -141,8 +141,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
         };
         TRACE_2("IED Bomb Vest EHs:",_unit getVariable QGVAR(KilledEhId),_unit getVariable QGVAR(GetInManEhId));
     },
-    [_unit],
-    0.5
+    [_unit]
 ] call CBA_fnc_waitUntilAndExecute;
 
 true;

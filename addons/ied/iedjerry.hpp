@@ -2,7 +2,7 @@ class Land_CanisterFuel_F;
 class GVAR(CanisterFuel):Land_CanisterFuel_F {
 	displayName = CSTRING(FuelCanister_DisplayName);
 	author = AUTHOR;
-	editorCategory = "IEDD_MAINCATEGORY"; 
+	editorCategory = "IEDD_MAINCATEGORY";
 	editorSubcategory = "IEDD_IEDS";
 	class EventHandlers {
 		class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
@@ -43,24 +43,24 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			tooltip = CSTRING(Color_Tooltip);
 			property = QGVAR(color);
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultColor);	
+			defaultValue = QGVAR(defaultColor);
 			control = "Combo";
 			typeName = "STRING";
 			class Values {
 				class 1	{
 					name = CSTRING(Name_Green);
 					value = "green";
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Name_Blue); 
+					name = CSTRING(Name_Blue);
 					value = "Blue";
 				};
 				class 3	{
-					name = CSTRING(Name_Red); 
+					name = CSTRING(Name_Red);
 					value = "red";
 				};
 				class 4	{
-					name = CSTRING(Name_White);	
+					name = CSTRING(Name_White);
 					value = "White";
 				};
 				class 5 {
@@ -79,23 +79,23 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Variation_1);	
+					name = CSTRING(Variation_1);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Variation_2); 
+					name = CSTRING(Variation_2);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Variation_3); 
+					name = CSTRING(Variation_3);
 					value = 2;
 				};
 				class 4	{
-					name = CSTRING(Variation_4);	
+					name = CSTRING(Variation_4);
 					value = 3;
 				};
 				class 5	{
-					name = CSTRING(Variation_5);	
+					name = CSTRING(Variation_5);
 					value = 4;
 				};
 				class 6 {
@@ -105,7 +105,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 				class 7 {
 					name = CSTRING(Name_Random);
 					value = 6;
-				};							
+				};
 			};
 		};
 		class GVAR(varX) {
@@ -148,7 +148,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 				class 6 {
 					name = CSTRING(Name_Random);
 					value = 5;
-				}; 
+				};
 			};
 		};
 		class GVAR(decals) {
@@ -157,7 +157,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(decals);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultDecals);		
+			defaultValue = QGVAR(defaultDecals);
 			typeName = "BOOL";
 		};
 		class GVAR(dir) {
@@ -176,7 +176,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			expression = "_this setVariable ['%s',_value];";
 			control = "Slider";
 			defaultValue = QGVAR(defaultDud);
-		};		
+		};
 		class GVAR(fake) {
 			displayName = CSTRING(Fake);
 			tooltip = CSTRING(Fake_Tooltip);
@@ -206,21 +206,21 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(timer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimer);			
+			defaultValue = QGVAR(defaultTimer);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Name_Disabled);	
+					name = CSTRING(Name_Disabled);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Name_Enabled); 
+					name = CSTRING(Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Name_Random); 
+					name = CSTRING(Name_Random);
 					value = 2;
-				};				
+				};
 			};
 		};
 		class GVAR(timerValue) {
@@ -229,8 +229,8 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(timerValue);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimerValue);	
-			typeName = "NUMBER";	
+			defaultValue = QGVAR(defaultTimerValue);
+			typeName = "NUMBER";
 		};
 		class GVAR(randomTimer) {
 			displayName = CSTRING(RandomTimer);
@@ -238,22 +238,22 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(randomTimer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultRandomTimer);	
+			defaultValue = QGVAR(defaultRandomTimer);
 			typeName = "NUMBER";
 			class Values {
 				class 1	{
-					name = CSTRING(Name_Disabled);	
+					name = CSTRING(Name_Disabled);
 					value = 0;
-				}; 
+				};
 				class 2	{
-					name = CSTRING(Name_Enabled); 
+					name = CSTRING(Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = CSTRING(Name_Random); 
+					name = CSTRING(Name_Random);
 					value = 2;
-				};				
-			};		
+				};
+			};
 		};
 		class GVAR(randomTimerMin) {
 			displayName = CSTRING(RandomTimerMin);
@@ -261,8 +261,8 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(randomTimerMin);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimerMin);	
-			typeName = "NUMBER";	
+			defaultValue = QGVAR(defaultTimerMin);
+			typeName = "NUMBER";
 		};
 		class GVAR(randomTimerMax) {
 			displayName = CSTRING(RandomTimerMax);
@@ -270,9 +270,9 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
 			property = QGVAR(randomTimerMax);
 			control = QGVAR(timeSlider); // TODO time_slider min - max
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = QGVAR(defaultTimerMax);	
+			defaultValue = QGVAR(defaultTimerMax);
 			typeName = "NUMBER";
-		};		
+		};
 	};
 };
 class GVAR(Training_CanisterFuel):GVAR(CanisterFuel) {
@@ -286,7 +286,7 @@ class GVAR(Training_CanisterFuel):GVAR(CanisterFuel) {
 			condition = QUOTE(true);
 			class IEDD_ResetMenu {
 				exceptions[] = {"isNotSwimming"};
-				displayName = CSTRING(Reset_DisplayName); 
+				displayName = CSTRING(Reset_DisplayName);
 				condition = QUOTE(true);
 				insertChildren = QUOTE(_this call FUNC(getTrainingActions));
 			};

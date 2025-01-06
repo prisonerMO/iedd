@@ -32,7 +32,6 @@ class GVAR(display) {
 		// ARROWS
 
 		class GVAR(prev): RscActiveText {
-
 			idc = 121;
 			style = 48;
 			text = QPATHTOF(images\brside\prev.paa);
@@ -48,7 +47,6 @@ class GVAR(display) {
 		};
 
 		class GVAR(next): RscActiveText {
-
 			idc = 122;
 			style = 48;
 			text = QPATHTOF(images\brside\next.paa);
@@ -66,7 +64,6 @@ class GVAR(display) {
 		// TABS
 		
 		class GVAR(home): RscActiveText {
-
 			idc = 201;
 			style = 48;
 			text = QPATHTOF(images\brside\h.paa);
@@ -82,7 +79,6 @@ class GVAR(display) {
 		};
 
 		class GVAR(info): RscActiveText {
-
 			idc = 202;
 			style = 48;
 			text = QPATHTOF(images\brside\i.paa);
@@ -98,7 +94,6 @@ class GVAR(display) {
 		};
 
 		class GVAR(about): RscActiveText {
-
 			idc = 203;
 			style = 48;
 			text = QPATHTOF(images\brside\a.paa);
@@ -114,7 +109,6 @@ class GVAR(display) {
 		};
 
 		class GVAR(can): RscActiveText {
-
 			idc = 204;
 			style = 48;
 			text = QPATHTOF(images\brside\1.paa);
@@ -130,7 +124,6 @@ class GVAR(display) {
 		};
 
 		class GVAR(jerry): RscActiveText {
-
 			idc = 205;
 			style = 48;
 			text = QPATHTOF(images\brside\2.paa);
@@ -146,7 +139,6 @@ class GVAR(display) {
 		};	
 
 		class GVAR(cardboard): RscActiveText {
-
 			idc = 206;
 			style = 48;
 			text = QPATHTOF(images\brside\3.paa);
@@ -162,7 +154,6 @@ class GVAR(display) {
 		};
 
 		class GVAR(cinder): RscActiveText {
-
 			idc = 207;
 			style = 48;
 			text = QPATHTOF(images\brside\4.paa);
@@ -178,7 +169,6 @@ class GVAR(display) {
 		};	
 
 		class GVAR(barrel): RscActiveText {
-
 			idc = 208;
 			style = 48;
 			text = QPATHTOF(images\brside\5.paa);
@@ -194,7 +184,6 @@ class GVAR(display) {
 		};
 
 		class GVAR(metal): RscActiveText {
-
 			idc = 209;
 			style = 48;
 			text = QPATHTOF(images\brside\6.paa);
@@ -210,7 +199,6 @@ class GVAR(display) {
 		};
 
 		class GVAR(charge): RscActiveText {
-
 			idc = 210;
 			style = 48;
 			text = QPATHTOF(images\brside\7.paa);
@@ -225,13 +213,12 @@ class GVAR(display) {
 			h = QUOTE(GUI_GRID_CENTER_H * 1.5);			
 		};
 
-		class GVAR(empty2): RscActiveText {
-
+		class GVAR(vbied): RscActiveText {
 			idc = 211;
 			style = 48;
 			text = QPATHTOF(images\brside\8.paa);
-			tooltip = CSTRING(Empty);
-			onButtonClick = QUOTE(['empty2'] call FUNC(tabs));
+			tooltip = CSTRING(Vbied);
+			onButtonClick = QUOTE(['vbied'] call FUNC(tabs));
 			color[] = {1,1,1,1};
 			colorActive[] = {0.2,0.2,0.2,0.2};
 			colorDisabled[] = {1,1,1,1};

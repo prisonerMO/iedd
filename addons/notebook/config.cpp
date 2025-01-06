@@ -22,5 +22,6 @@ class CfgPatches {
 #include "ACE_zeusActions.hpp"
 #include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"
-#include "UIDefines.hpp"
-#include "IEDDEdenMenu.hpp"
+#include "BaseControls.hpp"
+#include "Notebook.hpp"
+#include "EdenMenu.hpp"

@@ -1,788 +1,791 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="IEDD">
-	<Package name="ied">
-		<Container name="IED Sounds">
-			<Key ID="STR_iedd_ied_Sound_WireCut1">
-				<Original>Wire cut sound 1</Original>
-				<English>Wire cut sound 1</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Sound_Dud0">
-				<Original>Bomb shortcircuit sound 1</Original>
-				<English>Bomb shortcircuit sound 1</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Sound_Dud1">
-				<Original>Bomb shortcircuit sound 2</Original>
-				<English>Bomb shortcircuit sound 2</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Sound_Dud2">
-				<Original>Bomb shortcircuit sound 3</Original>
-				<English>Bomb shortcircuit sound 3</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Sound_Dud3">
-				<Original>Bomb shortcircuit sound 4</Original>
-				<English>Bomb shortcircuit sound 4</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Sound_Peep1">
-				<Original>Watch peep sound 1</Original>
-				<English>Watch peep sound 1</English>
-			</Key>
-		</Container>
-		<Container name="IEDs Display and Attribues">
-			<Key ID="STR_iedd_ied_IED_Category">
-				<Original>IED Settings</Original>
-				<English>IED Settings</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Barrel_DisplayName">
-				<Original>Plastic Barrel</Original>
-				<English>Plastic Barrel</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_Barrel_DisplayName">
-				<Original>Training IED Plastic Barrel</Original>
-				<English>Training IED Plastic Barrel</English>
-			</Key>
-			<Key ID="STR_iedd_ied_BarrelGrey_DisplayName">
-				<Original>Plastic Barrel (Grey)</Original>
-				<English>Plastic Barrel (Grey)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_BarrelGrey_DisplayName">
-				<Original>Training IED Plastic Barrel (Grey)</Original>
-				<English>Training IED Plastic Barrel (Grey)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_PlasticCanister_DisplayName">
-				<Original>Plastic Canister</Original>
-				<English>Plastic Canister</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_PlasticCanister_DisplayName">
-				<Original>Training IED Plastic Canister</Original>
-				<English>Training IED Plastic Canister</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Cardboard_DisplayName">
-				<Original>Cardboard Box</Original>
-				<English>Cardboard Box</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_Cardboard_DisplayName">
-				<Original>Training IED Cardboard Box</Original>
-				<English>Training IED Cardboard Box</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Cinder_DisplayName">
-				<Original>Cinder Block</Original>
-				<English>Cinder Block</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_Cinder_DisplayName">
-				<Original>Training IED Cinder Block</Original>
-				<English>Training IED Cinder Block</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FuelCanister_DisplayName">
-				<Original>Fuel Canister</Original>
-				<English>Fuel Canister</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_FuelCanister_DisplayName">
-				<Original>Training IED Fuel Canister</Original>
-				<English>Training IED Fuel Canister</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FuelCanister_Green">
-				<Original>Fuel Canister (Green)</Original>
-				<English>Fuel Canister (Green)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_FuelCanister_Green">
-				<Original>Training IED Fuel Canister (Green)</Original>
-				<English>Training IED Fuel Canister (Green)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FuelCanister_Blue">
-				<Original>Fuel Canister (Blue)</Original>
-				<English>Fuel Canister (Blue)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_FuelCanister_Blue">
-				<Original>Training IED Fuel Canister (Blue)</Original>
-				<English>Training IED Fuel Canister (Blue)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FuelCanister_Red">
-				<Original>Fuel Canister (Red)</Original>
-				<English>Fuel Canister (Red)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_FuelCanister_Red">
-				<Original>Training IED Fuel Canister (Red)</Original>
-				<English>Training IED Fuel Canister (Red)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FuelCanister_White">
-				<Original>Fuel Canister (White)</Original>
-				<English>Fuel Canister (White)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_FuelCanister_White">
-				<Original>Training IED Fuel Canister (White)</Original>
-				<English>Training IED Fuel Canister (White)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MetalBarrel_DisplayName">
-				<Original>Metal Barrel</Original>
-				<English>Metal Barrel</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_MetalBarrel_DisplayName">
-				<Original>Training IED Metal Barrel</Original>
-				<English>Training IED Metal Barrel</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MetalBarrelEnglish_DisplayName">
-				<Original>Metal Barrel (English)</Original>
-				<English>Metal Barrel (English)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Training_MetalBarrelEnglish_DisplayName">
-				<Original>Training IED Metal Barrel (English)</Original>
-				<English>Training IED Metal Barrel (English)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Green">
-				<Original>Green</Original>
-				<English>Green</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Blue">
-				<Original>Blue</Original>
-				<English>Blue</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Red">
-				<Original>Red</Original>
-				<English>Red</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_White">
-				<Original>White</Original>
-				<English>White</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Black">
-				<Original>Black</Original>
-				<English>Black</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Yellow">
-				<Original>Yellow</Original>
-				<English>Yellow</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Variation">
-				<Original>Variation</Original>
-				<English>Variation</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Variation_Tooltip">
-				<Original>Set IED variation.</Original>
-				<English>Set IED variation.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Variation_1">
-				<Original>Variation 1</Original>
-				<English>Variation 1</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Variation_2">
-				<Original>Variation 2</Original>
-				<English>Variation 2</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Variation_3">
-				<Original>Variation 3</Original>
-				<English>Variation 3</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Variation_4">
-				<Original>Variation 4</Original>
-				<English>Variation 4</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Variation_5">
-				<Original>Variation 5</Original>
-				<English>Variation 5</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Variation_X">
-				<Original>Variation X</Original>
-				<English>Variation X</English>
-			</Key>
-			<Key ID="STR_iedd_ied_VarX">
-				<Original>Chance of variation X</Original>
-				<English>Chance of variation X</English>
-			</Key>
-			<Key ID="STR_iedd_ied_VarX_Tooltip">
-				<Original>Set probability of variation X being spawned, if random variation is selected above.</Original>
-				<English>Set probability of variation X being spawned, if random variation is selected above.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Random">
-				<Original>Random</Original>
-				<English>Random</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Size">
-				<Original>Explosion size</Original>
-				<English>Explosion size</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Size_Tooltip">
-				<Original>Set size of explosion (huge excluded from random).</Original>
-				<English>Set size of explosion (huge excluded from random).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Timer_Category">
-				<Original>Countdown Timer Settings</Original>
-				<English>Countdown Timer Settings</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Timer">
-				<Original>Countdown timer</Original>
-				<English>Countdown timer</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Timer_Tooltip">
-				<Original>Add countdown timer to IED.</Original>
-				<English>Add countdown timer to IED.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_TimerValue">
-				<Original>Countdown time</Original>
-				<English>Countdown time</English>
-			</Key>
-			<Key ID="STR_iedd_ied_TimerValue_Tooltip">
-				<Original>Set countdown time in seconds</Original>
-				<English>Set countdown time in seconds.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_RandomTimer">
-				<Original>Random countdown time</Original>
-				<English>Random countdown time</English>
-			</Key>
-			<Key ID="STR_iedd_ied_RandomTimer_Tooltip">
-				<Original>Set random countdown time for timer. If enabled, countdown time above, will be disabled.</Original>
-				<English>Set random countdown time for timer. If enabled, countdown time above, will be disabled.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_RandomTimerMin">
-				<Original>Min. time for random</Original>
-				<English>Min. time for random</English>
-			</Key>
-			<Key ID="STR_iedd_ied_RandomTimerMin_Tooltip">
-				<Original>Set minimum time for random.</Original>
-				<English>Set minimum time for random.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_RandomTimerMax">
-				<Original>Max. time for random</Original>
-				<English>Max. time for random</English>
-			</Key>
-			<Key ID="STR_iedd_ied_RandomTimerMax_Tooltip">
-				<Original>Set maximum time for random.</Original>
-				<English>Set maximum time for random.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Tiny">
-				<Original>Tiny</Original>
-				<English>Tiny</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Small">
-				<Original>Small</Original>
-				<English>Small</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Medium">
-				<Original>Medium</Original>
-				<English>Medium</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Large">
-				<Original>Large</Original>
-				<English>Large</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Huge">
-				<Original>Huge</Original>
-				<English>Huge</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Long">
-				<Original>Long</Original>
-				<English>Long</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Short">
-				<Original>Short</Original>
-				<English>Short</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Cut">
-				<Original>Cut</Original>
-				<English>Cut</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Disabled">
-				<Original>Disabled</Original>
-				<English>Disabled</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Name_Enabled">
-				<Original>Enabled</Original>
-				<English>Enabled</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Decals">
-				<Original>Random ground sign</Original>
-				<English>Random ground sign</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Decals_Tooltip">
-				<Original>Random ground signs under the IED.</Original>
-				<English>Random ground signs under the IED.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Dir">
-				<Original>Random direction</Original>
-				<English>Random direction</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Dir_Tooltip">
-				<Original>Set random direction for the IED.</Original>
-				<English>Set random direction for the IED.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Dud">
-				<Original>Chance of dud (%)</Original>
-				<English>Chance of dud (%)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Dud_Tooltip">
-				<Original>Set probability of IED being dud.</Original>
-				<English>Set probability of IED being dud.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Fake">
-				<Original>Chance of fake (%)</Original>
-				<English>Chance of fake (%)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Fake_Tooltip">
-				<Original>Set probability of IED being fake.</Original>
-				<English>Set probability of IED being fake.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Color">
-				<Original>Color</Original>
-				<English>Color</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Distance">
-				<Original>Activation distance</Original>
-				<English>Activation distance</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Distance_Tooltip">
-				<Original>If the value is under 1m, random distance value from addon options will be used.</Original>
-				<English>If the value is under 1m, random distance value from addon options will be used.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Color_Tooltip">
-				<Original>Set color of fuel canister.</Original>
-				<English>Set color of fuel canister.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DistanceActivate">
-				<Original>Suicide bomber activation distance</Original>
-				<English>Suicide bomber activation distance</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DistanceActivate_Tooltip">
-				<Original>Distance to player when suicide bomber starts approaching. If the value is under 1m, random distance value from addon options will be used.</Original>
-				<English>Distance to player when suicide bomber starts approaching. If the value is under 1m, random distance value from addon options will be used.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DistanceExplosion">
-				<Original>Explosion activation distance</Original>
-				<English>Explosion activation distance</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DistanceExplosion_Tooltip">
-				<Original>Distance to player when suicide bomber will explode. If the value is under 1m, random distance value from addon options will be used.</Original>
-				<English>Distance to player when suicide bomber will explode. If the value is under 1m, random distance value from addon options will be used.</English>
-			</Key>
-		</Container>
-		<Container name="IEDD Options Charge">
-			<Key ID="STR_iedd_ied_isCharge_DisplayName">
-				<Original>Add bomb vest</Original>
-				<English>Add bomb vest</English>
-			</Key>
-			<Key ID="STR_iedd_ied_isCharge_Description">
-				<Original>Add bomb vest on this unit.</Original>
-				<English>Add bomb vest on this unit.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_isSuicide_DisplayName">
-				<Original>Suicide bomber</Original>
-				<English>Suicide bomber</English>
-			</Key>
-			<Key ID="STR_iedd_ied_isSuicide_Description">
-				<Original>Defines if unit is suicide bomber.</Original>
-				<English>Defines if unit is suicide bomber.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ChargeDud_Tooltip">
-				<Original>Set probability of bomb vest being dud.</Original>
-				<English>Set probability of bomb vest being dud.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_isHandcuffed_DisplayName">
-				<Original>Make unit handcuffed</Original>
-				<English>Make unit handcuffed</English>
-			</Key>
-			<Key ID="STR_iedd_ied_isHandcuffed_Description">
-				<Original>Check to make unit handcuffed (If surrender is also checked, this option will be selected).</Original>
-				<English>Check to make unit handcuffed (If surrender is also checked, this option will be selected).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_isSurrendered_DisplayName">
-				<Original>Make unit surrender</Original>
-				<English>Make unit surrender</English>
-			</Key>
-			<Key ID="STR_iedd_ied_isSurrendered_Description">
-				<Original>Check to make unit surrender (If handcuffed is also checked, that option will be selected).</Original>
-				<English>Check to make unit surrender (If handcuffed is also checked, that option will be selected).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Charge_Settings_DisplayName">
-				<Original>Bomb Vest Settings s</Original>
-				<English>Bomb Vest Settings </English>
-			</Key>
-			<Key ID="STR_iedd_ied_Charge_Status_DisplayName">
-				<Original>Unit Status Settings</Original>
-				<English>Unit Status Settings</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Suicide_Settings_DisplayName">
-				<Original>Suicide Bomber Settings</Original>
-				<English>Suicide Bomber Settings</English>
-			</Key>
-			<Key ID="STR_iedd_ied_isDeadManSwitch_DisplayName">
-				<Original>Dead man switch</Original>
-				<English>Dead man switch</English>
-			</Key>
-			<Key ID="STR_iedd_ied_isDeadManSwitch_Description">
-				<Original>If selected, suicide bomber will explode when killed or gets unconscious.</Original>
-				<English>If selected, suicide bomber will explode when killed or gets unconscious.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_HideOnStart_DisplayName">
-				<Original>Hide bomb vest when out of range</Original>
-				<English>Hide bomb vest when out of range</English>
-			</Key>
-			<Key ID="STR_iedd_ied_HideOnStart_Description">
-				<Original>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</Original>
-				<English>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Sides_DisplayName">
-				<Original>Actived by side</Original>
-				<English>Actived by side</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Sides_Description">
-				<Original>Select activation side(s) for suicide bomber.</Original>
-				<English>Select activation side(s) for suicide bomber.</English>
-			</Key>
-		</Container>
-		<Container name="IEDD Interaction Menu">
-			<Key ID="STR_iedd_ied_Reset_DisplayName">
-				<Original>Rearm</Original>
-				<English>Rearm</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Disarm_DisplayName">
-				<Original>Disarm</Original>
-				<English>Disarm</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Detach_DisplayName">
-				<Original>Detach bombs</Original>
-				<English>Detach bombs</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Random_DisplayName">
-				<Original>Random variation</Original>
-				<English>Random variation</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Keep_DisplayName">
-				<Original>Keep variation</Original>
-				<English>Keep variation</English>
-			</Key>
-		</Container>
-		<Container name="IEDD Explosives">
-			<Key ID="STR_iedd_ied_Charge_DisplayName">
-				<Original>IED Charge</Original>
-				<English>IED Charge</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Charge_Mag_DisplayName">
-				<Original>IED Magazine</Original>
-				<English>IED Magazine</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Charge_Mag_Desc">
-				<Original>IED Magazine Description</Original>
-				<English>IED Magazine Description</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Charge_Mag_LibDesc">
-				<Original>IED Magazine Lib Description</Original>
-				<English>IED Magazine Lib Description</English>
-			</Key>
-			<Key ID="STR_iedd_ied_Charge_Ammo_DisplayName">
-				<Original>IED Ammo</Original>
-				<English>IED Ammo</English>
-			</Key>
-		</Container>
-		<Container name="IEDD Notebook Settings">
-			<Key ID="STR_iedd_ied_IsDuds">
-				<Original>Dud IEDs</Original>
-				<English>Dud IEDs</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IsDuds_Description">
-				<Original>All IEDs are duds. Training purposes for example.</Original>
-				<English>All IEDs are duds. Training purposes for example.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_WireCutTimeEOD">
-				<Original>Wire cutting time for EODs/Explosive Specialists</Original>
-				<English>Wire cutting time for EODs/Explosive Specialists</English>
-			</Key>
-			<Key ID="STR_iedd_ied_WireCutTimeEOD_Description">
-				<Original>How long it takes to cut one wire. Min 1s, max 30s.</Original>
-				<English>How long it takes to cut one wire. Min 1s, max 30s.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_WireCutTime">
-				<Original>Wire cutting time for other units</Original>
-				<English>Wire cutting time for other units</English>
-			</Key>
-			<Key ID="STR_iedd_ied_WireCutTime_Description">
-				<Original>How long it takes to cut one wire. Min 1s, max 30s.</Original>
-				<English>How long it takes to cut one wire. Min 1s, max 30s.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_PlrCheck">
-				<Original>Player activates IEDs on foot</Original>
-				<English>Player activates IEDs on foot</English>
-			</Key>
-			<Key ID="STR_iedd_ied_PlrCheck_Description">
-				<Original>Controls if IEDs can be activated by players on foot.</Original>
-				<English>Controls if IEDs can be activated by players on foot.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_VehCheck">
-				<Original>Player activates IEDs in vehicle</Original>
-				<English>Player activates IEDs in vehicle</English>
-			</Key>
-			<Key ID="STR_iedd_ied_VehCheck_Description">
-				<Original>Controls if IEDs can be activated by players in vehicle.</Original>
-				<English>Controls if IEDs can be activated by players in vehicle.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IsDetectable">
-				<Original>IEDs are detectable with mine detectors</Original>
-				<English>IEDs are detectable with mine detectors</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IsDetectable_Description">
-				<Original>Controls if IEDs are detectable with mine detectors.</Original>
-				<English>Controls if IEDs are detectable with mine detectors.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MinRange">
-				<Original>Minimum activation distance for IEDs</Original>
-				<English>Minimum activation distance for IEDs</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MinRange_Description">
-				<Original>Minimum distance to IED where player will activate it.</Original>
-				<English>Minimum distance to IED where player will activate it.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MaxRange">
-				<Original>Maximum activation distance for IEDs</Original>
-				<English>Maximum activation distance for IEDs</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MaxRange_Description">
-				<Original>Maximum distance to IED where player will activate it.</Original>
-				<English>Maximum distance to IED where player will activate it.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ExpMinRange">
-				<Original>Minimum exploding distance</Original>
-				<English>Minimum exploding distance</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ExpMinRange_Description">
-				<Original>Minimum distance to player when suicide bomber will explode. </Original>
-				<English>Minimum distance to player when suicide bomber will explode. </English>
-			</Key>
-			<Key ID="STR_iedd_ied_ExpMaxRange">
-				<Original>Maximum exploding distance</Original>
-				<English>Maximum exploding distance</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ExpMaxRange_Description">
-				<Original>Maximum distance to player when suicide bomber will explode.</Original>
-				<English>Maximum distance to player when suicide bomber will explode.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ActMinRange">
-				<Original>Minimum approach distance</Original>
-				<English>Minimum approach distance</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ActMinRange_Description">
-				<Original>Minimum distance to suicide bomber when it starts to approach player.</Original>
-				<English>Minimum distance to suicide bomber when it starts to approach player.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ActMaxRange">
-				<Original>Maximum approach distance </Original>
-				<English>Maximum approach distance </English>
-			</Key>
-			<Key ID="STR_iedd_ied_ActMaxRange_Description">
-				<Original>Maximum distance to suicide bomber when it starts to approach player.</Original>
-				<English>Maximum distance to suicide bomber when it starts to approach player.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_SidesZeus">
-				<Original>Suicide bomber actived by Zeus</Original>
-				<English>Suicide bomber actived by Zeus</English>
-			</Key>
-			<Key ID="STR_iedd_ied_SidesZeus_Description">
-				<Original>If selected, unit of Zeus will activate suicide bombers.</Original>
-				<English>If selected, unit of Zeus will activate suicide bombers.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FailChanceEOD">
-				<Original>Chance to fail wire cut for EODs/Explosive Specialists</Original>
-				<English>Chance to fail wire cut for EODs/Explosive Specialists</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FailChanceEOD_Description">
-				<Original>% of wire cut failing chance.</Original>
-				<English>% of wire cut failing chance.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FailChance">
-				<Original>Chance to fail wire cut for other units</Original>
-				<English>Chance to fail wire cut for other units</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FailChance_Description">
-				<Original>% of wire cut failing chance.</Original>
-				<English>% of wire cut failing chance.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FailExploseChance">
-				<Original>Chance to activate IED after failed wire cut</Original>
-				<English>Chance to activate IED after failed wire cut</English>
-			</Key>
-			<Key ID="STR_iedd_ied_FailExploseChance_Description">
-				<Original>% of activate IED after failed wire cut.</Original>
-				<English>% of activate IED after failed wire cut.</English>
-			</Key>
-			</Key>
-			<Key ID="STR_iedd_ied_IgnoreWireCutOrder">
-				<Original>Ignore wire cut order</Original>
-				<English>Ignore wire cut order</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IgnoreWireCutOrder_Description">
-				<Original>IEDs do not explode when wrong wire is cut.</Original>
-				<English>IEDs do not explode when wrong wire is cut.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IsBlockedRange">
-				<Original>Just keep talking and nobody explodes-mode</Original>
-				<English>Just keep talking and nobody explodes-mode</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IsBlockedRange_Description">
-				<Original> IEDD Notebook can't be opened near IEDs.</Original>
-				<English> IEDD Notebook can't be opened near IEDs.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_AddNotebook">
-				<Original>Add IEDD Notebook to EODs/Explosive specialists</Original>
-				<English>Add IEDD Notebook to EODs/Explosive specialists</English>
-			</Key>
-			<Key ID="STR_iedd_ied_AddNotebook_Description">
-				<Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</Original>
-				<English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_AddDefusalKit">
-				<Original>Add Defusal Kit to EODs/Explosive specialists</Original>
-				<English>Add Defusal Kit to EODs/Explosive specialists</English>
-			</Key>
-			<Key ID="STR_iedd_ied_AddDefusalKit_Description">
-				<Original>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</Original>
-				<English>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IsEod">
-				<Original>Require EOD/Explosive Specialist</Original>
-				<English>Require EOD/Explosive Specialist</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IsEod_Description">
-				<Original>Player must be EOD and/or Explosive Specialist to interact with IEDs.</Original>
-				<English>Player must be EOD and/or Explosive Specialist to interact with IEDs.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IsDefusalKit">
-				<Original>Require Defusal Kit</Original>
-				<English>Require Defusal Kit</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IsDefusalKit_Description">
-				<Original>Player must have defusal kit to disarm IEDs.</Original>
-				<English>Player must have defusal kit to disarm IEDs.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultVariation">
-				<Original>Variations</Original>
-				<English>Variations</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultVariation_Description">
-				<Original>Set IED variation (if not defined somewhere else).</Original>
-				<English>Set IED variation (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultSize">
-				<Original>Explosion sizes</Original>
-				<English>Explosion sizes</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultSize_Description">
-				<Original>Set explosion size (if not defined somewhere else).</Original>
-				<English>Set explosion size (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultDirection">
-				<Original>Random direction</Original>
-				<English>Random direction</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultDirection_Description">
-				<Original>Set random direction for IEDs (if not defined somewhere else).</Original>
-				<English>Set random direction for IEDs (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultDecals">
-				<Original>Random ground signs</Original>
-				<English>Random ground signs</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultDecals_Description">
-				<Original>Add random ground signs under IEDs (if not defined somewhere else).</Original>
-				<English>Add random ground signs under IEDs (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultFake">
-				<Original>Chance of fake</Original>
-				<English>Chance of fake</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultFake_Description">
-				<Original>Set probability of IEDs being fakes (if not defined somewhere else).</Original>
-				<English>Set probability of IEDs being fakes (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultDud">
-				<Original>Chance of dud</Original>
-				<English>Chance of dud</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultDud_Description">
-				<Original>Set probability of IEDs being duds (if not defined somewhere else).</Original>
-				<English>Set probability of IEDs being duds (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultColor">
-				<Original>Color (Fuel canisters only)</Original>
-				<English>Color (Fuel canisters only)</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultColor_Description">
-				<Original>Set color of fuel canisters (if not defined somewhere else).</Original>
-				<English>Set color of fuel canisters (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultTimer_Description">
-				<Original>Add countdown timer to IEDs (if not defined somewhere else).</Original>
-				<English>Add countdown timer to IEDs (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultTimerValue_Description">
-				<Original>Set countdown time (if not defined somewhere else).</Original>
-				<English>Set countdown time (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultRandomTimer_Description">
-				<Original>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</Original>
-				<English>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultTimerMin_Description">
-				<Original>Minimum value for random time (if not defined somewhere else).</Original>
-				<English>Minimum value for random time (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultTimerMax_Description">
-				<Original>Maximum value for random time (if not defined somewhere else).</Original>
-				<English>Maximum value for random time (if not defined somewhere else).</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultVarX">
-				<Original>Chance of variation X</Original>
-				<English>Chance of variation X</English>
-			</Key>
-			<Key ID="STR_iedd_ied_DefaultVarX_Description">
-				<Original>Set probability of variation X being spawned, if random variation is selected above (if not defined somewhere else).</Original>
-				<English>Set probability of variation X being spawned, if random variation is selected above (if not defined somewhere else).</English>
-			</Key>
-		</Container>
-		<Container name="IEDD Notebook Dev Settings">
-			<Key ID="STR_iedd_ied_EquipmentDebug">
-				<Original>Enable Equipment addon debug</Original>
-				<English>Enable Equipment addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_EquipmentDebug_Description">
-				<Original>Enable Equipment addon debug</Original>
-				<English>Enable Equipment addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IedDebug">
-				<Original>Enable Ied addon debug</Original>
-				<English>Enable Ied addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_IedDebug_Description">
-				<Original>Enable Ied addon debug</Original>
-				<English>Enable Ied addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MainDebug">
-				<Original>Enable Main addon debug</Original>
-				<English>Enable Main addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_MainDebug_Description">
-				<Original>Enable Main addon debug</Original>
-				<English>Enable Main addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ModelsDebug">
-				<Original>Enable Models addon debug</Original>
-				<English>Enable Models addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ModelsDebug_Description">
-				<Original>Enable Models addon debug</Original>
-				<English>Enable Models addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ModulesDebug">
-				<Original>Enable Modules addon debug</Original>
-				<English>Enable Modules addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_ModulesDebug_Description">
-				<Original>Enable Modules addon debug</Original>
-				<English>Enable Modules addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_NotebookDebug">
-				<Original>Enable Notebook addon debug</Original>
-				<English>Enable Notebook addon debug</English>
-			</Key>
-			<Key ID="STR_iedd_ied_NotebookDebug_Description">
-				<Original>Enable Notebook addon debug</Original>
-				<English>Enable Notebook addon debug</English>
-			</Key>
-		</Container>
-	</Package>
+    <Package name="ied">
+        <Container name="IED Sounds">
+            <Key ID="STR_iedd_ied_Sound_Dud0">
+                <Original>Bomb shortcircuit sound 1</Original>
+                <English>Bomb shortcircuit sound 1</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Sound_Dud1">
+                <Original>Bomb shortcircuit sound 2</Original>
+                <English>Bomb shortcircuit sound 2</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Sound_Dud2">
+                <Original>Bomb shortcircuit sound 3</Original>
+                <English>Bomb shortcircuit sound 3</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Sound_Dud3">
+                <Original>Bomb shortcircuit sound 4</Original>
+                <English>Bomb shortcircuit sound 4</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Sound_Peep1">
+                <Original>Watch peep sound 1</Original>
+                <English>Watch peep sound 1</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Sound_WireCut1">
+                <Original>Wire cut sound 1</Original>
+                <English>Wire cut sound 1</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Sound_Fail1">
+                <Original>Fail sound 1</Original>
+                <English>Fail sound 1</English>
+            </Key>
+        </Container>
+        <Container name="IEDs Display and Attribues">
+            <Key ID="STR_iedd_ied_BarrelGrey_DisplayName">
+                <Original>Plastic Barrel (Grey)</Original>
+                <English>Plastic Barrel (Grey)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Barrel_DisplayName">
+                <Original>Plastic Barrel</Original>
+                <English>Plastic Barrel</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Cardboard_DisplayName">
+                <Original>Cardboard Box</Original>
+                <English>Cardboard Box</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Cinder_DisplayName">
+                <Original>Cinder Block</Original>
+                <English>Cinder Block</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Color">
+                <Original>Color</Original>
+                <English>Color</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Color_Tooltip">
+                <Original>Set color of fuel canister.</Original>
+                <English>Set color of fuel canister.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Decals">
+                <Original>Random ground sign</Original>
+                <English>Random ground sign</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Decals_Tooltip">
+                <Original>Random ground signs under the IED.</Original>
+                <English>Random ground signs under the IED.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Dir">
+                <Original>Random direction</Original>
+                <English>Random direction</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Dir_Tooltip">
+                <Original>Set random direction for the IED.</Original>
+                <English>Set random direction for the IED.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Distance">
+                <Original>Activation distance</Original>
+                <English>Activation distance</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DistanceActivate">
+                <Original>Suicide bomber activation distance</Original>
+                <English>Suicide bomber activation distance</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DistanceActivate_Tooltip">
+                <Original>Distance to player when suicide bomber starts approaching. If the value is under 1m, random distance value from addon options will be used.</Original>
+                <English>Distance to player when suicide bomber starts approaching. If the value is under 1m, random distance value from addon options will be used.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DistanceExplosion">
+                <Original>Explosion activation distance</Original>
+                <English>Explosion activation distance</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DistanceExplosion_Tooltip">
+                <Original>Distance to player when suicide bomber will explode. If the value is under 1m, random distance value from addon options will be used.</Original>
+                <English>Distance to player when suicide bomber will explode. If the value is under 1m, random distance value from addon options will be used.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Distance_Tooltip">
+                <Original>If the value is under 1m, random distance value from addon options will be used.</Original>
+                <English>If the value is under 1m, random distance value from addon options will be used.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Dud">
+                <Original>Chance of dud (%)</Original>
+                <English>Chance of dud (%)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Dud_Tooltip">
+                <Original>Set probability of IED being dud.</Original>
+                <English>Set probability of IED being dud.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Fake">
+                <Original>Chance of fake (%)</Original>
+                <English>Chance of fake (%)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Fake_Tooltip">
+                <Original>Set probability of IED being fake.</Original>
+                <English>Set probability of IED being fake.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FuelCanister_Blue">
+                <Original>Fuel Canister (Blue)</Original>
+                <English>Fuel Canister (Blue)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FuelCanister_DisplayName">
+                <Original>Fuel Canister</Original>
+                <English>Fuel Canister</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FuelCanister_Green">
+                <Original>Fuel Canister (Green)</Original>
+                <English>Fuel Canister (Green)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FuelCanister_Red">
+                <Original>Fuel Canister (Red)</Original>
+                <English>Fuel Canister (Red)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FuelCanister_White">
+                <Original>Fuel Canister (White)</Original>
+                <English>Fuel Canister (White)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IED_Category">
+                <Original>IED Settings</Original>
+                <English>IED Settings</English>
+            </Key>
+            <Key ID="STR_iedd_ied_MetalBarrelEnglish_DisplayName">
+                <Original>Metal Barrel (English)</Original>
+                <English>Metal Barrel (English)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_MetalBarrel_DisplayName">
+                <Original>Metal Barrel</Original>
+                <English>Metal Barrel</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Black">
+                <Original>Black</Original>
+                <English>Black</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Blue">
+                <Original>Blue</Original>
+                <English>Blue</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Cut">
+                <Original>Cut</Original>
+                <English>Cut</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Disabled">
+                <Original>Disabled</Original>
+                <English>Disabled</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Enabled">
+                <Original>Enabled</Original>
+                <English>Enabled</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Green">
+                <Original>Green</Original>
+                <English>Green</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Huge">
+                <Original>Huge</Original>
+                <English>Huge</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Large">
+                <Original>Large</Original>
+                <English>Large</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Long">
+                <Original>Long</Original>
+                <English>Long</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Medium">
+                <Original>Medium</Original>
+                <English>Medium</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Random">
+                <Original>Random</Original>
+                <English>Random</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Red">
+                <Original>Red</Original>
+                <English>Red</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Short">
+                <Original>Short</Original>
+                <English>Short</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Small">
+                <Original>Small</Original>
+                <English>Small</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Tiny">
+                <Original>Tiny</Original>
+                <English>Tiny</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_White">
+                <Original>White</Original>
+                <English>White</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Name_Yellow">
+                <Original>Yellow</Original>
+                <English>Yellow</English>
+            </Key>
+            <Key ID="STR_iedd_ied_PlasticCanister_DisplayName">
+                <Original>Plastic Canister</Original>
+                <English>Plastic Canister</English>
+            </Key>
+            <Key ID="STR_iedd_ied_RandomTimer">
+                <Original>Random countdown time</Original>
+                <English>Random countdown time</English>
+            </Key>
+            <Key ID="STR_iedd_ied_RandomTimerMax">
+                <Original>Max. time for random</Original>
+                <English>Max. time for random</English>
+            </Key>
+            <Key ID="STR_iedd_ied_RandomTimerMax_Tooltip">
+                <Original>Set maximum time for random.</Original>
+                <English>Set maximum time for random.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_RandomTimerMin">
+                <Original>Min. time for random</Original>
+                <English>Min. time for random</English>
+            </Key>
+            <Key ID="STR_iedd_ied_RandomTimerMin_Tooltip">
+                <Original>Set minimum time for random.</Original>
+                <English>Set minimum time for random.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_RandomTimer_Tooltip">
+                <Original>Set random countdown time for timer. If enabled, countdown time above, will be disabled.</Original>
+                <English>Set random countdown time for timer. If enabled, countdown time above, will be disabled.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Size">
+                <Original>Explosion size</Original>
+                <English>Explosion size</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Size_Tooltip">
+                <Original>Set size of explosion (huge excluded from random).</Original>
+                <English>Set size of explosion (huge excluded from random).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Timer">
+                <Original>Countdown timer</Original>
+                <English>Countdown timer</English>
+            </Key>
+            <Key ID="STR_iedd_ied_TimerValue">
+                <Original>Countdown time</Original>
+                <English>Countdown time</English>
+            </Key>
+            <Key ID="STR_iedd_ied_TimerValue_Tooltip">
+                <Original>Set countdown time in seconds</Original>
+                <English>Set countdown time in seconds.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Timer_Category">
+                <Original>Countdown Timer Settings</Original>
+                <English>Countdown Timer Settings</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Timer_Tooltip">
+                <Original>Add countdown timer to IED.</Original>
+                <English>Add countdown timer to IED.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_BarrelGrey_DisplayName">
+                <Original>Training IED Plastic Barrel (Grey)</Original>
+                <English>Training IED Plastic Barrel (Grey)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_Barrel_DisplayName">
+                <Original>Training IED Plastic Barrel</Original>
+                <English>Training IED Plastic Barrel</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_Cardboard_DisplayName">
+                <Original>Training IED Cardboard Box</Original>
+                <English>Training IED Cardboard Box</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_Cinder_DisplayName">
+                <Original>Training IED Cinder Block</Original>
+                <English>Training IED Cinder Block</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_FuelCanister_Blue">
+                <Original>Training IED Fuel Canister (Blue)</Original>
+                <English>Training IED Fuel Canister (Blue)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_FuelCanister_DisplayName">
+                <Original>Training IED Fuel Canister</Original>
+                <English>Training IED Fuel Canister</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_FuelCanister_Green">
+                <Original>Training IED Fuel Canister (Green)</Original>
+                <English>Training IED Fuel Canister (Green)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_FuelCanister_Red">
+                <Original>Training IED Fuel Canister (Red)</Original>
+                <English>Training IED Fuel Canister (Red)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_FuelCanister_White">
+                <Original>Training IED Fuel Canister (White)</Original>
+                <English>Training IED Fuel Canister (White)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_MetalBarrelEnglish_DisplayName">
+                <Original>Training IED Metal Barrel (English)</Original>
+                <English>Training IED Metal Barrel (English)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_MetalBarrel_DisplayName">
+                <Original>Training IED Metal Barrel</Original>
+                <English>Training IED Metal Barrel</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Training_PlasticCanister_DisplayName">
+                <Original>Training IED Plastic Canister</Original>
+                <English>Training IED Plastic Canister</English>
+            </Key>
+            <Key ID="STR_iedd_ied_VarX">
+                <Original>Chance of variation X</Original>
+                <English>Chance of variation X</English>
+            </Key>
+            <Key ID="STR_iedd_ied_VarX_Tooltip">
+                <Original>Set probability of variation X being spawned, if random variation is selected above.</Original>
+                <English>Set probability of variation X being spawned, if random variation is selected above.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Variation">
+                <Original>Variation</Original>
+                <English>Variation</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Variation_1">
+                <Original>Variation 1</Original>
+                <English>Variation 1</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Variation_2">
+                <Original>Variation 2</Original>
+                <English>Variation 2</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Variation_3">
+                <Original>Variation 3</Original>
+                <English>Variation 3</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Variation_4">
+                <Original>Variation 4</Original>
+                <English>Variation 4</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Variation_5">
+                <Original>Variation 5</Original>
+                <English>Variation 5</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Variation_Tooltip">
+                <Original>Set IED variation.</Original>
+                <English>Set IED variation.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Variation_X">
+                <Original>Variation X</Original>
+                <English>Variation X</English>
+            </Key>
+        </Container>
+        <Container name="IEDD Options Charge">
+            <Key ID="STR_iedd_ied_ChargeDud_Tooltip">
+                <Original>Set probability of bomb vest being dud.</Original>
+                <English>Set probability of bomb vest being dud.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Charge_Settings_DisplayName">
+                <Original>Bomb Vest Settings s</Original>
+                <English>Bomb Vest Settings</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Charge_Status_DisplayName">
+                <Original>Unit Status Settings</Original>
+                <English>Unit Status Settings</English>
+            </Key>
+            <Key ID="STR_iedd_ied_HideOnStart_Description">
+                <Original>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</Original>
+                <English>If selected, bomb vest will be hidden when unit is outside of suicide bomber activation distance.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_HideOnStart_DisplayName">
+                <Original>Hide bomb vest when out of range</Original>
+                <English>Hide bomb vest when out of range</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Sides_Description">
+                <Original>Select activation side(s) for suicide bomber.</Original>
+                <English>Select activation side(s) for suicide bomber.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Sides_DisplayName">
+                <Original>Actived by side</Original>
+                <English>Actived by side</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Suicide_Settings_DisplayName">
+                <Original>Suicide Bomber Settings</Original>
+                <English>Suicide Bomber Settings</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isCharge_Description">
+                <Original>Add bomb vest on this unit.</Original>
+                <English>Add bomb vest on this unit.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isCharge_DisplayName">
+                <Original>Add bomb vest</Original>
+                <English>Add bomb vest</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isDeadManSwitch_Description">
+                <Original>If selected, suicide bomber will explode when killed or gets unconscious.</Original>
+                <English>If selected, suicide bomber will explode when killed or gets unconscious.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isDeadManSwitch_DisplayName">
+                <Original>Dead man switch</Original>
+                <English>Dead man switch</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isHandcuffed_Description">
+                <Original>Check to make unit handcuffed (If surrender is also checked, this option will be selected).</Original>
+                <English>Check to make unit handcuffed (If surrender is also checked, this option will be selected).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isHandcuffed_DisplayName">
+                <Original>Make unit handcuffed</Original>
+                <English>Make unit handcuffed</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isSuicide_Description">
+                <Original>Defines if unit is suicide bomber.</Original>
+                <English>Defines if unit is suicide bomber.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isSuicide_DisplayName">
+                <Original>Suicide bomber</Original>
+                <English>Suicide bomber</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isSurrendered_Description">
+                <Original>Check to make unit surrender (If handcuffed is also checked, that option will be selected).</Original>
+                <English>Check to make unit surrender (If handcuffed is also checked, that option will be selected).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_isSurrendered_DisplayName">
+                <Original>Make unit surrender</Original>
+                <English>Make unit surrender</English>
+            </Key>
+        </Container>
+        <Container name="IEDD Interaction Menu">
+            <Key ID="STR_iedd_ied_Detach_DisplayName">
+                <Original>Detach bombs</Original>
+                <English>Detach bombs</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Disarm_DisplayName">
+                <Original>Disarm</Original>
+                <English>Disarm</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Keep_DisplayName">
+                <Original>Keep variation</Original>
+                <English>Keep variation</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Random_DisplayName">
+                <Original>Random variation</Original>
+                <English>Random variation</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Reset_DisplayName">
+                <Original>Rearm</Original>
+                <English>Rearm</English>
+            </Key>
+        </Container>
+        <Container name="IEDD Explosives">
+            <Key ID="STR_iedd_ied_Charge_Ammo_DisplayName">
+                <Original>IED Ammo</Original>
+                <English>IED Ammo</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Charge_DisplayName">
+                <Original>IED Charge</Original>
+                <English>IED Charge</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Charge_Mag_Desc">
+                <Original>IED Magazine Description</Original>
+                <English>IED Magazine Description</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Charge_Mag_DisplayName">
+                <Original>IED Magazine</Original>
+                <English>IED Magazine</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Charge_Mag_LibDesc">
+                <Original>IED Magazine Lib Description</Original>
+                <English>IED Magazine Lib Description</English>
+            </Key>
+        </Container>
+        <Container name="IEDD Notebook Settings">
+            <Key ID="STR_iedd_ied_ActMaxRange">
+                <Original>Maximum approach distance</Original>
+                <English>Maximum approach distance</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ActMaxRange_Description">
+                <Original>Maximum distance to suicide bomber when it starts to approach player.</Original>
+                <English>Maximum distance to suicide bomber when it starts to approach player.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ActMinRange">
+                <Original>Minimum approach distance</Original>
+                <English>Minimum approach distance</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ActMinRange_Description">
+                <Original>Minimum distance to suicide bomber when it starts to approach player.</Original>
+                <English>Minimum distance to suicide bomber when it starts to approach player.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_AddDefusalKit">
+                <Original>Add Defusal Kit to EODs/Explosive specialists</Original>
+                <English>Add Defusal Kit to EODs/Explosive specialists</English>
+            </Key>
+            <Key ID="STR_iedd_ied_AddDefusalKit_Description">
+                <Original>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</Original>
+                <English>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_AddNotebook">
+                <Original>Add IEDD Notebook to EODs/Explosive specialists</Original>
+                <English>Add IEDD Notebook to EODs/Explosive specialists</English>
+            </Key>
+            <Key ID="STR_iedd_ied_AddNotebook_Description">
+                <Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</Original>
+                <English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultColor">
+                <Original>Color (Fuel canisters only)</Original>
+                <English>Color (Fuel canisters only)</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultColor_Description">
+                <Original>Set color of fuel canisters (if not defined somewhere else).</Original>
+                <English>Set color of fuel canisters (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultDecals">
+                <Original>Random ground signs</Original>
+                <English>Random ground signs</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultDecals_Description">
+                <Original>Add random ground signs under IEDs (if not defined somewhere else).</Original>
+                <English>Add random ground signs under IEDs (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultDirection">
+                <Original>Random direction</Original>
+                <English>Random direction</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultDirection_Description">
+                <Original>Set random direction for IEDs (if not defined somewhere else).</Original>
+                <English>Set random direction for IEDs (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultDud">
+                <Original>Chance of dud</Original>
+                <English>Chance of dud</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultDud_Description">
+                <Original>Set probability of IEDs being duds (if not defined somewhere else).</Original>
+                <English>Set probability of IEDs being duds (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultFake">
+                <Original>Chance of fake</Original>
+                <English>Chance of fake</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultFake_Description">
+                <Original>Set probability of IEDs being fakes (if not defined somewhere else).</Original>
+                <English>Set probability of IEDs being fakes (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultRandomTimer_Description">
+                <Original>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</Original>
+                <English>Set random countdown time for timer (if not defined somewhere else). If enabled, countdown time above, will be disabled.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultSize">
+                <Original>Explosion sizes</Original>
+                <English>Explosion sizes</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultSize_Description">
+                <Original>Set explosion size (if not defined somewhere else).</Original>
+                <English>Set explosion size (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultTimerMax_Description">
+                <Original>Maximum value for random time (if not defined somewhere else).</Original>
+                <English>Maximum value for random time (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultTimerMin_Description">
+                <Original>Minimum value for random time (if not defined somewhere else).</Original>
+                <English>Minimum value for random time (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultTimerValue_Description">
+                <Original>Set countdown time (if not defined somewhere else).</Original>
+                <English>Set countdown time (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultTimer_Description">
+                <Original>Add countdown timer to IEDs (if not defined somewhere else).</Original>
+                <English>Add countdown timer to IEDs (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultVarX">
+                <Original>Chance of variation X</Original>
+                <English>Chance of variation X</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultVarX_Description">
+                <Original>Set probability of variation X being spawned, if random variation is selected above (if not defined somewhere else).</Original>
+                <English>Set probability of variation X being spawned, if random variation is selected above (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultVariation">
+                <Original>Variations</Original>
+                <English>Variations</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DefaultVariation_Description">
+                <Original>Set IED variation (if not defined somewhere else).</Original>
+                <English>Set IED variation (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ExpMaxRange">
+                <Original>Maximum exploding distance</Original>
+                <English>Maximum exploding distance</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ExpMaxRange_Description">
+                <Original>Maximum distance to player when suicide bomber will explode.</Original>
+                <English>Maximum distance to player when suicide bomber will explode.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ExpMinRange">
+                <Original>Minimum exploding distance</Original>
+                <English>Minimum exploding distance</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ExpMinRange_Description">
+                <Original>Minimum distance to player when suicide bomber will explode.</Original>
+                <English>Minimum distance to player when suicide bomber will explode.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FailChance">
+                <Original>Chance to fail wire cut for other units</Original>
+                <English>Chance to fail wire cut for other units</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FailChanceEOD">
+                <Original>Chance to fail wire cut for EODs/Explosive Specialists</Original>
+                <English>Chance to fail wire cut for EODs/Explosive Specialists</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FailChanceEOD_Description">
+                <Original>% of wire cut failing chance.</Original>
+                <English>% of wire cut failing chance.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FailChance_Description">
+                <Original>% of wire cut failing chance.</Original>
+                <English>% of wire cut failing chance.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FailExploseChance">
+                <Original>Chance to activate IED after failed wire cut</Original>
+                <English>Chance to activate IED after failed wire cut</English>
+            </Key>
+            <Key ID="STR_iedd_ied_FailExploseChance_Description">
+                <Original>% of activate IED after failed wire cut.</Original>
+                <English>% of activate IED after failed wire cut.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IgnoreWireCutOrder">
+                <Original>Ignore wire cut order</Original>
+                <English>Ignore wire cut order</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IgnoreWireCutOrder_Description">
+                <Original>IEDs do not explode when wrong wire is cut.</Original>
+                <English>IEDs do not explode when wrong wire is cut.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsBlockedRange">
+                <Original>Just keep talking and nobody explodes-mode</Original>
+                <English>Just keep talking and nobody explodes-mode</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsBlockedRange_Description">
+                <Original>IEDD Notebook can't be opened near IEDs.</Original>
+                <English>IEDD Notebook can't be opened near IEDs.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsDefusalKit">
+                <Original>Require Defusal Kit</Original>
+                <English>Require Defusal Kit</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsDefusalKit_Description">
+                <Original>Player must have defusal kit to disarm IEDs.</Original>
+                <English>Player must have defusal kit to disarm IEDs.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsDetectable">
+                <Original>IEDs are detectable with mine detectors</Original>
+                <English>IEDs are detectable with mine detectors</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsDetectable_Description">
+                <Original>Controls if IEDs are detectable with mine detectors.</Original>
+                <English>Controls if IEDs are detectable with mine detectors.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsDuds">
+                <Original>Dud IEDs</Original>
+                <English>Dud IEDs</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsDuds_Description">
+                <Original>All IEDs are duds. Training purposes for example.</Original>
+                <English>All IEDs are duds. Training purposes for example.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsEod">
+                <Original>Require EOD/Explosive Specialist</Original>
+                <English>Require EOD/Explosive Specialist</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsEod_Description">
+                <Original>Player must be EOD and/or Explosive Specialist to interact with IEDs.</Original>
+                <English>Player must be EOD and/or Explosive Specialist to interact with IEDs.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_MaxRange">
+                <Original>Maximum activation distance for IEDs</Original>
+                <English>Maximum activation distance for IEDs</English>
+            </Key>
+            <Key ID="STR_iedd_ied_MaxRange_Description">
+                <Original>Maximum distance to IED where player will activate it.</Original>
+                <English>Maximum distance to IED where player will activate it.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_MinRange">
+                <Original>Minimum activation distance for IEDs</Original>
+                <English>Minimum activation distance for IEDs</English>
+            </Key>
+            <Key ID="STR_iedd_ied_MinRange_Description">
+                <Original>Minimum distance to IED where player will activate it.</Original>
+                <English>Minimum distance to IED where player will activate it.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_PlrCheck">
+                <Original>Player activates IEDs on foot</Original>
+                <English>Player activates IEDs on foot</English>
+            </Key>
+            <Key ID="STR_iedd_ied_PlrCheck_Description">
+                <Original>Controls if IEDs can be activated by players on foot.</Original>
+                <English>Controls if IEDs can be activated by players on foot.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_SidesZeus">
+                <Original>Suicide bomber actived by Zeus</Original>
+                <English>Suicide bomber actived by Zeus</English>
+            </Key>
+            <Key ID="STR_iedd_ied_SidesZeus_Description">
+                <Original>If selected, unit of Zeus will activate suicide bombers.</Original>
+                <English>If selected, unit of Zeus will activate suicide bombers.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_VehCheck">
+                <Original>Player activates IEDs in vehicle</Original>
+                <English>Player activates IEDs in vehicle</English>
+            </Key>
+            <Key ID="STR_iedd_ied_VehCheck_Description">
+                <Original>Controls if IEDs can be activated by players in vehicle.</Original>
+                <English>Controls if IEDs can be activated by players in vehicle.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_WireCutTime">
+                <Original>Wire cutting time for other units</Original>
+                <English>Wire cutting time for other units</English>
+            </Key>
+            <Key ID="STR_iedd_ied_WireCutTimeEOD">
+                <Original>Wire cutting time for EODs/Explosive Specialists</Original>
+                <English>Wire cutting time for EODs/Explosive Specialists</English>
+            </Key>
+            <Key ID="STR_iedd_ied_WireCutTimeEOD_Description">
+                <Original>How long it takes to cut one wire. Min 1s, max 30s.</Original>
+                <English>How long it takes to cut one wire. Min 1s, max 30s.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_WireCutTime_Description">
+                <Original>How long it takes to cut one wire. Min 1s, max 30s.</Original>
+                <English>How long it takes to cut one wire. Min 1s, max 30s.</English>
+            </Key>
+        </Container>
+        <Container name="IEDD Notebook Dev Settings">
+            <Key ID="STR_iedd_ied_EquipmentDebug">
+                <Original>Enable Equipment addon debug</Original>
+                <English>Enable Equipment addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_EquipmentDebug_Description">
+                <Original>Enable Equipment addon debug</Original>
+                <English>Enable Equipment addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IedDebug">
+                <Original>Enable Ied addon debug</Original>
+                <English>Enable Ied addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IedDebug_Description">
+                <Original>Enable Ied addon debug</Original>
+                <English>Enable Ied addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_MainDebug">
+                <Original>Enable Main addon debug</Original>
+                <English>Enable Main addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_MainDebug_Description">
+                <Original>Enable Main addon debug</Original>
+                <English>Enable Main addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ModelsDebug">
+                <Original>Enable Models addon debug</Original>
+                <English>Enable Models addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ModelsDebug_Description">
+                <Original>Enable Models addon debug</Original>
+                <English>Enable Models addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ModulesDebug">
+                <Original>Enable Modules addon debug</Original>
+                <English>Enable Modules addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_ModulesDebug_Description">
+                <Original>Enable Modules addon debug</Original>
+                <English>Enable Modules addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_NotebookDebug">
+                <Original>Enable Notebook addon debug</Original>
+                <English>Enable Notebook addon debug</English>
+            </Key>
+            <Key ID="STR_iedd_ied_NotebookDebug_Description">
+                <Original>Enable Notebook addon debug</Original>
+                <English>Enable Notebook addon debug</English>
+            </Key>
+        </Container>
+    </Package>
 </Project>

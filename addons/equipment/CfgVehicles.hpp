@@ -58,12 +58,6 @@ class CfgVehicles {
 		editorCategory = "IEDD_MAINCATEGORY"; 
 		editorSubcategory = "IEDD_ITEMS";
 		vehicleClass = "IEDD_ITEMS";
-		class EventHandlers {
-			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
-		};
-		class ACE_Actions {
-			class ACE_MainActions;
-		};
 	};
 	class iedd_Item_Notebook: iedd_Item_Base {
 		type = 1;
@@ -75,12 +69,13 @@ class CfgVehicles {
 		model = QPATHTOEF(models,data\IEDD_notebook.p3d);
 		icon = QPATHTOEF(models,preview\notebook.paa); //Leave as is "iconObject_circle"
 		editorPreview = QPATHTOEF(models,preview\notebook.paa);
+		ace_dragging_canDrag = 0;
+		ace_dragging_canCarry = 0;
 		class TransportItems {
 			IEDD_ADDITEM(iedd_item_notebook,1);
-		};
-		
-		class ACE_Actions: ACE_Actions {
-			class ACE_MainActions : ACE_MainActions {
+		};	
+		class ACE_Actions {
+			class ACE_MainActions {
 				displayName = CSTRING(PickUp);
 				icon = "\a3\ui_f\data\igui\cfg\actions\take_ca.paa";
 				distance = 2;
@@ -89,7 +84,8 @@ class CfgVehicles {
 				statement = QUOTE([ARR_2(_player,_target)] call EFUNC(notebook,pick));  
 			}; 
 		};
-		ace_dragging_canDrag = 0;
-		ace_dragging_canCarry = 0;
+		class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+        };
 	};
 };
