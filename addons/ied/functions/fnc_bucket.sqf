@@ -57,10 +57,6 @@ if (!isServer) exitWith {};
         };
     };
 
-    if (_variation in [1,2,3]) then {
-        _bombObj setVariable [QGVAR(movable),true];
-    };
-
     private _isDistance = _bombObj getVariable [QGVAR(distance), 0];
     private _distance = if (_isDistance > 0) then {_isDistance} else {[GVAR(minRange), GVAR(maxRange)] call BIS_fnc_randomInt};
     _bombObj setVariable [QGVAR(dist),_distance];
@@ -108,6 +104,9 @@ if (!isServer) exitWith {};
 
     _bombObj setVariable [QGVAR(wires), _wires, true];
     _bombObj setVariable [QGVAR(bomb), true, true];
+    if (_variation in [1,2,3]) then {
+        _bombObj setVariable [QGVAR(movable),true];
+    };
 
     if (_isTimer) then {
         private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
