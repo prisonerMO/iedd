@@ -8,14 +8,14 @@ class Title: Default
 };
 class Checkbox: Title
 {
-    class Controls {
+    class Controls:Controls {
         class Title;
         class Value;
     };
 };
 class CheckboxState: Checkbox
 {
-    class Controls {
+    class Controls:Controls {
         class Title;
         class Value;
     };
