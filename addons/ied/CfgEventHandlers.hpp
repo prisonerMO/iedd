@@ -59,6 +59,11 @@ class Extended_InitPost_EventHandlers {
            serverInit = QUOTE(_this call FUNC(metal));
         };
     };
+    class GVAR(Bucket) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(bucket));
+        };
+    };
 
     class GVAR(Training_CanisterPlastic) {
         class ADDON {
