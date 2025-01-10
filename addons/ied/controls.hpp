@@ -8,14 +8,14 @@ class Title: Default
 };
 class Checkbox: Title
 {
-    class Controls {
+    class Controls:Controls {
         class Title;
         class Value;
     };
 };
 class CheckboxState: Checkbox
 {
-    class Controls {
+    class Controls:Controls {
         class Title;
         class Value;
     };
@@ -127,96 +127,18 @@ class GVAR(isCharge): CheckboxState {
         class Title: Title{};
         class Value: Value
         {
-            onCheckedChanged ="\
-            private _ctrlCheckbox = _this select 0;\
-            private _state = [false,true] select (cbChecked _ctrlCheckbox);\
-            private _fade = [0.75,0] select _state;\
-            private _ctrlGroup = ctrlParentControlsGroup ctrlParentControlsGroup _ctrlCheckbox;\
-            private _all = (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
-            {\
-                    if (ctrlParentControlsGroup _x == _ctrlGroup) then {\
-                        _x ctrlenable _state;\
-                        _x ctrlsetfade _fade;\
-                        _x ctrlcommit 0;\
-                    };\
-            } foreach _all;
-            if (_state) then {\
-                private _isSuicide = _all select {ctrlclassname _x == ""iedd_ied_isSuicide""};\
-                private _isSuicideGrp = allcontrols (_isSuicide select 0);\
-                private _isSuicideCtrl = _isSuicideGrp select 1;\
-                private _isState =  cbChecked _isSuicideCtrl;\
-                private _controls = _all select {""iedd_ied"" in ctrlclassname _x};
-                {\
-                    private _ctrlclassname = ctrlclassname _x;\
-                    if (""dist"" in _ctrlclassname) then {\
-                        _x ctrlenable _isState;\
-                        _x ctrlsetfade ([0.75,0] select _isState);\
-                        _x ctrlcommit 0;\
-                    } else {\
-                        _x ctrlenable !_isState;\
-                        _x ctrlsetfade ([0.75,0] select !_isState);\
-                        _x ctrlcommit 0;\
-                    };\
-                } forEach _controls - _isSuicide;\
-            };";
+            onCheckedChanged = QUOTE(call FUNC(onChargeChanged));   
         };
     };
 };
 class GVAR(c_timer): Combo {};
 class GVAR(isSuicide): Checkbox {
+    attributeLoad = "[_this, _value] call iedd_ied_fnc_onSuicideLoad";
     class Controls: Controls {
         class Title: Title {};
         class Value: Value
         {
-            onCheckedChanged = "\
-            private _ctrlCheckbox = _this select 0;\
-			private _state = [true,false] select (cbChecked _ctrlCheckbox);\
-			private _fade = [0.75,0] select _state;\
-            private _all = (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
-            private _controls = _all select {ctrlclassname _x find [""iedd_ied"", 0] == 0};\
-            private _isCharge = _controls select {ctrlclassname _x == ""iedd_ied_isCharge""};\
-            {\
-                private _ctrlclassname = ctrlclassname _x;\
-                if !(""dist"" in _ctrlclassname) then {\
-                    _x ctrlenable _state;\
-                    _x ctrlsetfade _fade;\
-                    _x ctrlcommit 0;\
-                    private _type = (allcontrols _x) select 1;\
-                    if (!_state && ctrltype _type == 77) then {\
-                        _type cbSetChecked false;\
-                    };\
-                } else {\
-                    _x ctrlenable !_state;\
-                    _x ctrlsetfade ([0.75,0] select !_state);\
-                    _x ctrlcommit 0;\
-                };\
-            } foreach _controls-_isCharge;";
-            onLoad = "\
-            _this spawn {\
-                disableserialization;\
-                private _ctrlCheckbox = _this select 0;\
-				private _state = [true,false] select (cbChecked _ctrlCheckbox);\
-				private _fade = [0.75,0] select _state;\
-                private _all = (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
-                private _controls = _all select {ctrlclassname _x find [""iedd_ied"", 0] == 0};\
-                private _isCharge = _controls select {ctrlclassname _x == ""iedd_ied_isCharge""};\
-                private _isChargeGroup = _isCharge select 0;\
-                private _isChargeCtrl = (allcontrols _isChargeGroup) select 1;\
-                private _isChargeChecked =  cbChecked _isChargeCtrl;\
-                if !(_isChargeChecked) exitWith {};\
-                {\
-                    private _ctrlclassname = ctrlclassname _x;\
-                    if !(""dist"" in _ctrlclassname) then {\
-                        _x ctrlenable _state;\
-                        _x ctrlsetfade _fade;\
-                        _x ctrlcommit 0;\
-                    } else {\
-                        _x ctrlenable !_state;\
-                        _x ctrlsetfade ([0.75,0] select !_state);\
-                        _x ctrlcommit 0;\
-                    };\
-                } foreach _controls-_isCharge;\
-            };";
+            onCheckedChanged = QUOTE(call FUNC(onSuicideChanged));
         };
     };
 };
