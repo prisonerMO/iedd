@@ -35,7 +35,7 @@
 /* Server events*/
 if (isServer) then {
 	[{
-		time > 1 && !isNil QGVAR(bombs)},
+		time > 10 && !isNil QGVAR(bombs)},
 	{
 		INFO_1("Detect event called [Time: %1]",time);
 		call FUNC(vbiedCheck);
