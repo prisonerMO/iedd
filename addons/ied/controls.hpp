@@ -133,12 +133,59 @@ class GVAR(isCharge): CheckboxState {
 };
 class GVAR(c_timer): Combo {};
 class GVAR(isSuicide): Checkbox {
-    attributeLoad = "[_this, _value] call iedd_ied_fnc_onSuicideLoad";
     class Controls: Controls {
         class Title: Title {};
         class Value: Value
         {
-            onCheckedChanged = QUOTE(call FUNC(onSuicideChanged));
+            onCheckedChanged = "\
+            private _ctrlCheckbox = _this select 0;\
+			private _state = [false,true] select (cbChecked _ctrlCheckbox);\
+			private _fade = [0.75,0] select _state;\
+            private _all = (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
+            private _controls = _all select {ctrlclassname _x find [""iedd_ied"", 0] == 0};\
+            private _isCharge = _controls select {ctrlclassname _x == ""iedd_ied_isCharge""};\
+            {\
+                private _ctrlclassname = ctrlclassname _x;\
+                if !(""dist"" in _ctrlclassname) then {\
+                    _x ctrlenable !_state;\
+                    _x ctrlsetfade ([0.75,0] select !_state);\
+                    _x ctrlcommit 0;\
+                    private _type = (allcontrols _x) select 1;\
+                    if (!_state && ctrltype _type == 77) then {\
+                        _type cbSetChecked false;\
+                    };\
+                } else {\
+                    _x ctrlenable !_state;\
+                    _x ctrlsetfade ([0.75,0] select !_state);\
+                    _x ctrlcommit 0;\
+                };\
+            } foreach _controls-_isCharge;";
+            onLoad = "\
+            _this spawn {\
+                disableserialization;\
+                private _ctrlCheckbox = _this select 0;\
+				private _state = [true,false] select (cbChecked _ctrlCheckbox);\
+				private _fade = [0.75,0] select _state;\
+                private _all = (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
+                private _controls = _all select {ctrlclassname _x find [""iedd_ied"", 0] == 0};\
+                private _isCharge = _controls select {ctrlclassname _x == ""iedd_ied_isCharge""};\
+                private _isChargeGroup = _isCharge select 0;\
+                private _isChargeCtrl = (allcontrols _isChargeGroup) select 1;\
+                private _isChargeChecked =  cbChecked _isChargeCtrl;\
+                if !(_isChargeChecked) exitWith {};\
+                {\
+                    private _ctrlclassname = ctrlclassname _x;\
+                    if !(""dist"" in _ctrlclassname) then {\
+                        _x ctrlenable _state;\
+                        _x ctrlsetfade _fade;\
+                        _x ctrlcommit 0;\
+                    } else {\
+                        _x ctrlenable !_state;\
+                        _x ctrlsetfade ([0.75,0] select !_state);\
+                        _x ctrlcommit 0;\
+                    };\
+                } foreach _controls-_isCharge;\
+            };";
         };
     };
 };

@@ -1,9 +1,6 @@
 #include "script_component.hpp"
 
-[QGVAR(detachAction), {
-	if (!hasInterface) exitWith {};
-	call FUNC(detachAction);
-}] call CBA_fnc_addEventHandler;
+[QGVAR(detachAction),LINKFUNC(detachAction)] call CBA_fnc_addEventHandler;
 
 [QGVAR(detachBox), {
     params ["_box","_vehicle","_player"];
@@ -28,9 +25,7 @@
 	[{!isNil QGVAR(bombs)}, {GVAR(bombs) pushBackUnique (_this select 0);}, [_object]] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(events), {
-	call FUNC(removeEvents);
-}] call CBA_fnc_addEventHandler;
+[QGVAR(events), LINKFUNC(removeEvents)] call CBA_fnc_addEventHandler;
 
 /* Server events*/
 if (isServer) then {

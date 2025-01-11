@@ -41,11 +41,11 @@ if (!isServer) exitWith {};
 
     if (GVAR(isDetectable)) then {
         private _mine = QGVAR(Charge_Ammo) createVehicle [0,0,0];
-            _mine attachTo [_bombObj, [0,0,0]];
-            private _jipId = ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
-            [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
-            _jipId = [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
-            [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
+        _mine attachTo [_bombObj, [0,0,0]];
+        private _jipId = ["ace_allowDefuse", [_mine,false]] call CBA_fnc_globalEventJIP;
+        [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
+        _jipId = [QGVAR(hideObject),[_mine,true]] call CBA_fnc_globalEventJIP;
+        [_jipID, _mine] call CBA_fnc_removeGlobalEventJIP;
     };
 
     if (_variation == 6) then {
