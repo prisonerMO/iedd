@@ -4,11 +4,12 @@ if (!hasInterface) exitWith {};
 ["IEDD Notebook", QGVAR(openNotebook), [LELSTRING(main,Category_Main), LELSTRING(main,Category_Main)], {
     // Conditions: specific
     if (!isNull findDisplay 312) exitWith {
-      createDialog QGVAR(display);
-      true
+        createDialog QGVAR(display);
+        true
     };
-    if (call FUNC(canOpen)) exitWith {call FUNC(open);
-    true
+    if (call FUNC(canOpen)) exitWith {
+        call FUNC(open);
+        true
     };
     
     false
