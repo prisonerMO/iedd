@@ -139,7 +139,7 @@ class GVAR(isSuicide): Checkbox {
         {
             onCheckedChanged = "\
             private _ctrlCheckbox = _this select 0;\
-			private _state = [false,true] select (cbChecked _ctrlCheckbox);\
+			private _state = [true,false] select (cbChecked _ctrlCheckbox);\
 			private _fade = [0.75,0] select _state;\
             private _all = (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
             private _controls = _all select {ctrlclassname _x find [""iedd_ied"", 0] == 0};\
@@ -147,8 +147,8 @@ class GVAR(isSuicide): Checkbox {
             {\
                 private _ctrlclassname = ctrlclassname _x;\
                 if !(""dist"" in _ctrlclassname) then {\
-                    _x ctrlenable !_state;\
-                    _x ctrlsetfade ([0.75,0] select !_state);\
+                    _x ctrlenable _state;\
+                    _x ctrlsetfade _fade;\
                     _x ctrlcommit 0;\
                     private _type = (allcontrols _x) select 1;\
                     if (!_state && ctrltype _type == 77) then {\
@@ -173,6 +173,7 @@ class GVAR(isSuicide): Checkbox {
                 private _isChargeCtrl = (allcontrols _isChargeGroup) select 1;\
                 private _isChargeChecked =  cbChecked _isChargeCtrl;\
                 if !(_isChargeChecked) exitWith {};\
+                sleep 0.1;\
                 {\
                     private _ctrlclassname = ctrlclassname _x;\
                     if !(""dist"" in _ctrlclassname) then {\
