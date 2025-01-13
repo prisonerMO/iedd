@@ -22,7 +22,7 @@ parameters = [
     "-limitFPS=144",
 ]
 executable = "arma3_x64"
-mission = "0001_IEDD_DEV.vr"
-#file_patching = false # Default: true
-#binarize = true # Default: false
-#rapify = false # Default: true
+mission = "0001_IEDD_DEV.Stratis"
+file_patching = false # Default: true
+binarize = true # Default: false
+rapify = false # Default: true
