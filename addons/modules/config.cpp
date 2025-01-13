@@ -61,6 +61,6 @@ class Cfg3DEN
 };
 #include "CfgEventHandlers.hpp"
 #include "CfgFactionClasses.hpp"
-#include "UI/zeusModulesRcs.hpp"
+#include "UI\zeusModulesRcs.hpp"
 #include "CfgVehicles.hpp"
 
