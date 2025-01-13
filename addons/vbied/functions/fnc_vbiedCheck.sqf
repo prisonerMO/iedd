@@ -17,7 +17,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 			private _speed = _object getVariable [QGVAR(speed),GVAR(defaultSpeed)];
 			if (speed _veh > _speed) then {
 				TRACE_1("Vbied Speed",_speed);
-				[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
+				_object call EFUNC(ied,bomb);
 				_objectsToRemove pushBack _object;
 				continue;
 			};
@@ -30,7 +30,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 					if (speed _nearPlr > 8) then
 					{
 						TRACE_2("Vbied plr",_nearPlr,speed _nearPlr);
-						[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
+						_object call EFUNC(ied,bomb);
 						_objectsToRemove pushBack _object;
 						continue;
 					};
@@ -44,7 +44,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
 				if (_index > -1) then {
 					TRACE_2("Vbied veh",_nearVehicles select _index,speed (_nearVehicles select _index));
-					[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
+					_object call EFUNC(ied,bomb);
 					_objectsToRemove pushBack _object;
 					continue;
 				};
@@ -56,5 +56,3 @@ if (GVAR(bombs) isNotEqualTo []) then {
 };
 TRACE_3("Current objects",count GVAR(bombs),time,_checkTime);
 [FUNC(vbiedCheck), [], _checkTime] call CBA_fnc_waitAndExecute;
-
-

@@ -13,13 +13,13 @@ if (GVAR(bombs) isNotEqualTo []) then {
 		private _var = _object getVariable [QGVAR(movable),false];
 		if (!_var) then {
 			if (speed _object > 5 || !isNull attachedTo _object) then {
-				[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+				_object call FUNC(bomb);
 				_objectsToRemove pushBack _object;
 				continue;
 			};
 		} else {
 			if (speed (attachedTo _object) > 45) then {
-				[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+				_object call FUNC(bomb);
 				_objectsToRemove pushBack _object;
 				continue;
 			};
@@ -31,7 +31,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 					_nearPlr = _x;
 					if (speed _nearPlr > 8) then
 					{
-						[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+						_object call FUNC(bomb);
 						_objectsToRemove pushBack _object;
 						continue;
 					};
@@ -43,7 +43,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
 			if (_nearVehicles isNotEqualTo []) then {
 				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
 				if (_index > -1) then {
-					[QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+					_object call FUNC(bomb);
 					_objectsToRemove pushBack _object;
 					continue;
 				};

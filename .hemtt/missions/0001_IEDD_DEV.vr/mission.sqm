@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={4577.1699,288.15262,4320.2896};
-		dir[]={-0.056021933,-0.72562838,0.68580401};
-		up[]={-0.059078306,0.68808615,0.72321969};
-		aside[]={0.99668115,6.9849193e-10,0.081416734};
+		dir[]={-0.056021955,-0.7256276,0.68580329};
+		up[]={-0.059078339,0.68808764,0.72321862};
+		aside[]={0.99668014,0,0.08141689};
 	};
 };
 binarizationWanted=0;
@@ -360,14 +360,49 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="iedd_ied_isCharge";
-							expression="if (_value) then {[_this, true] call iedd_ied_fnc_charge;_this setVariable [""iedd_ied_isCharge"", _value, true]}";
+							property="iedd_ied_sides";
+							expression="_this setVariable ['iedd_ied_sides',_value];";
 							class Value
 							{
 								class data
 								{
-									singleType="BOOL";
-									value=1;
+									singleType="ARRAY";
+									class value
+									{
+										items=4;
+										class Item0
+										{
+											class data
+											{
+												singleType="SCALAR";
+												value=0;
+											};
+										};
+										class Item1
+										{
+											class data
+											{
+												singleType="SCALAR";
+												value=1;
+											};
+										};
+										class Item2
+										{
+											class data
+											{
+												singleType="SCALAR";
+												value=2;
+											};
+										};
+										class Item3
+										{
+											class data
+											{
+												singleType="SCALAR";
+												value=-1;
+											};
+										};
+									};
 								};
 							};
 						};
@@ -438,49 +473,14 @@ class Mission
 						};
 						class Attribute6
 						{
-							property="iedd_ied_sides";
-							expression="_this setVariable ['iedd_ied_sides',_value];";
+							property="iedd_ied_isCharge";
+							expression="if (_value) then {[_this, true] call iedd_ied_fnc_charge;_this setVariable [""iedd_ied_isCharge"", _value, true]}";
 							class Value
 							{
 								class data
 								{
-									singleType="ARRAY";
-									class value
-									{
-										items=4;
-										class Item0
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=0;
-											};
-										};
-										class Item1
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=1;
-											};
-										};
-										class Item2
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=2;
-											};
-										};
-										class Item3
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=-1;
-											};
-										};
-									};
+									singleType="BOOL";
+									value=1;
 								};
 							};
 						};
