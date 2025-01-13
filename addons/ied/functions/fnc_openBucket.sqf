@@ -1,4 +1,5 @@
 #include "script_component.hpp"
 params ["_target", "_player", "_params"];
-//TO-DO add check if QGVAR(bomb) == true, then do may explose?
+private _isBomb = _target getVariable [QGVAR(bomb), false];
+diag_log format["IED: Opening bucket %1, is Bomb: %2", _target, _isBomb];
 _target animate ["bucketlid_hide", 1];
