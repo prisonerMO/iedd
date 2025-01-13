@@ -1,5 +1,6 @@
 #include "script_component.hpp"
 params ["_bombObj"];
+if (!hasInterface) exitWith {};
 private _object = attachedTo _bombObj;
 private _condition = {  
     params ["_target", "_player", "_actionParams"];

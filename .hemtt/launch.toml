@@ -4,3 +4,25 @@ workshop = [
     "463939057", # ace
 ]
 mission="0000_IEDD_NOTEBOOK_TEST.Stratis"
+
+[dev]
+extends = "default"
+workshop = [
+    "2369477168", # Advanced Developer Tools
+    "623475643", # 3den Echanted
+]
+parameters = [
+    "-name=prisoner",
+    "-hugePages",
+    "-noPause",
+    "-enableHT",
+    "-malloc=mimalloc_v217_20250103",
+    "-maxFileCacheSize=8192",
+    "-setThreadCharacteristics",
+    "-limitFPS=144",
+]
+executable = "arma3_x64"
+mission = "0001_IEDD_DEV.vr"
+#file_patching = false # Default: true
+#binarize = true # Default: false
+#rapify = false # Default: true

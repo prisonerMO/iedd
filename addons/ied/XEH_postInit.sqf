@@ -4,37 +4,21 @@
 	[_x, "Explosion", {call FUNC(explosion)}, true, [], true] call CBA_fnc_addClassEventHandler;
 } forEach IEDD_CLASSES;
 
-[QGVAR(defuseAction), {
-	if (!hasInterface) exitWith {};
-	call FUNC(defuseAction);
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(detachAction), {
-	if (!hasInterface) exitWith {};
-	call FUNC(detachAction);
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(disarmAction), {
-	if (!hasInterface) exitWith {};
-	call FUNC(disarmAction);
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(dudEffect), {
-	call FUNC(dud);
-}] call CBA_fnc_addEventHandler;
+/*IED functions*/
+[QGVAR(defuseAction), LINKFUNC(defuseAction)] call CBA_fnc_addEventHandler;
+[QGVAR(detachAction), LINKFUNC(detachAction)] call CBA_fnc_addEventHandler;
+[QGVAR(disarmAction), LINKFUNC(disarmAction)] call CBA_fnc_addEventHandler;
+[QGVAR(dudEffect), LINKFUNC(dud)] call CBA_fnc_addEventHandler;
+[QGVAR(decals), LINKFUNC(decals)] call CBA_fnc_addEventHandler;
+[QGVAR(explosion), LINKFUNC(bomb)] call CBA_fnc_addEventHandler;
+/*Suicide functions*/
+[QGVAR(addPFH), LINKFUNC(addPFH)] call CBA_fnc_addEventHandler;
+[QGVAR(suicideAct), LINKFUNC(suicide)] call CBA_fnc_addEventHandler;
+[QGVAR(events), LINKFUNC(removeEvents)] call CBA_fnc_addEventHandler;
 
 [QGVAR(sound), {
     params ["_sound", "_source"];
     _source say3D _sound;
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(decals), {
-	call FUNC(decals);
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(explosion), {
-	params ["_target"];
-	call FUNC(bomb);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(timer), {
@@ -138,12 +122,6 @@
 
 //["ace_captiveStatusChanged", {call FUNC(handleHancuffed)}] call CBA_fnc_addEventHandler; //TODO ace isEscortin EH or this.
 
-[QGVAR(addPFH), {
-	params ["_unit"];
-	TRACE_1("Called addRemovePFH",_this);
-	call FUNC(addPFH);
-}] call CBA_fnc_addEventHandler;
-
 [QGVAR(suicide), {
 	params ["_unit"];
 	private _group = group _unit;
@@ -163,30 +141,19 @@
 	call FUNC(suicide);
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(suicideAct), {
-	params ["_unit"];
-	call FUNC(suicide);
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(events), {
-	call FUNC(removeEvents);
-}] call CBA_fnc_addEventHandler;
-
 if (isServer) then {
 
 	[{
 		time > 10 && !isNil QGVAR(bombs)},
 	{
-		INFO_1("Detect event called [Time: %1]",time);
+		INFO_1("IED detect event called [Time: %1]",time);
 		call FUNC(iedCheck);
 	},
 	[]] call CBA_fnc_waitUntilAndExecute;
 };
 
 if (!hasInterface) exitWith {};
-["unit", {
-	params ["_player"];
-	[_player] call FUNC(addItems);
-},true] call CBA_fnc_addPlayerEventHandler;
+
+["unit", {[ACE_player] call FUNC(addItems)},true] call CBA_fnc_addPlayerEventHandler;
 
 GVAR(fail) = false;
