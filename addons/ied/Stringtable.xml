@@ -48,6 +48,10 @@
                 <Original>Cinder Block</Original>
                 <English>Cinder Block</English>
             </Key>
+            <Key ID="STR_iedd_ied_Bucket_DisplayName">
+                <Original>Plastic Bucket</Original>
+                <English>Plastic Bucket</English>
+            </Key>
             <Key ID="STR_iedd_ied_Color">
                 <Original>Color</Original>
                 <English>Color</English>
@@ -451,6 +455,14 @@
             <Key ID="STR_iedd_ied_Reset_DisplayName">
                 <Original>Rearm</Original>
                 <English>Rearm</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Action_Close">
+                <Original>Close Bucket</Original>
+                <English>Close Bucket</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Action_Open">
+                <Original>Open Bucket</Original>
+                <English>Open Bucket</English>
             </Key>
         </Container>
         <Container name="IEDD Explosives">
