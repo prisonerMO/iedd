@@ -22,12 +22,12 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			class GVAR(open) {
 				displayName = CSTRING(Action_Open);
 				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 0);
-				statement = QUOTE(call FUNC(openBucket));
+				statement = QUOTE(ARR_2([_target,1]) call FUNC(openCloseBucket));
 			};
 			class GVAR(close) {
 				displayName = CSTRING(Action_Close);
 				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 1);
-				statement = QUOTE(call FUNC(closeBucket));
+				statement = QUOTE(ARR_2([_target,0]) call FUNC(openCloseBucket));
 			};
 		};
 	};
