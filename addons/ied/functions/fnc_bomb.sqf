@@ -47,8 +47,8 @@ if (_isTraining) then {
 			};
 		};
 	} else {
-		private _pos = getPosATL _bombObj;
-		_pos vectorAdd [0,0,0.05];
+		private _bombPos = getPosATL _bombObj;
+		private _pos = _bombPos vectorAdd [0,0,0.05];
 		private _size = _bombObj getVariable [QGVAR(size), GVAR(defaultSize)];
 		private _unit = objNull;
 		if (_size > 4) then {
@@ -79,7 +79,7 @@ if (_isTraining) then {
 			},
 			{
 				params ["_bombObj","_pos","_type","_unit"];
-				_bomb = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
+				private _bomb = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
 				//[QGVAR(hideObject),[_bomb,true]] call CBA_fnc_globalEvent;
 				//_bomb setDamage 1;
 				triggerAmmo _bomb;

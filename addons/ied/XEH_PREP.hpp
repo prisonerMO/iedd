@@ -26,6 +26,7 @@ PREP(iedCheck);
 PREP(jerry);
 PREP(metal);
 PREP(moveCheck);
+PREP(onChargeChanged);
 PREP(removeEvents);
 PREP(resetAction);
 PREP(setAttributes);

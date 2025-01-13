@@ -1,5 +1,5 @@
 #include "..\script_component.hpp"
-params ["_vehicle","_variation","_pos","_dir","_up","_dud","_size","_isTimer","_timerTime","_distance","_isGetIn","_isEngineOn","_isMove","_speed"];
+params ["_vehicle","_variation","_pos","_dir","_up","_dud","_size","_isTimer","_timerTime","_isRandom","_distance","_isGetIn","_isEngineOn","_isMove","_speed"];
 TRACE_1("SetVbied",_this);
 [{
 	params ["_vehicle","_variation","_pos","_dir","_up","_dud","_size","_isTimer","_timerTime","_isRandom","_distance","_isGetIn","_isEngineOn","_isMove","_speed"];
