@@ -105,4 +105,9 @@ class Extended_InitPost_EventHandlers {
           serverInit = QUOTE(_this call FUNC(training));
         };
     };
+    class GVAR(Training_Bucket) {
+        class ADDON {
+           serverInit = QUOTE(_this call FUNC(training));
+        };
+    };
 };
