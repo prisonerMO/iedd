@@ -269,7 +269,7 @@ class iedd_vbied_attributes {
             tooltip = CSTRING(Distance_Tooltip);
             property = QGVAR(distance);
             expression = "_this setVariable ['%s',_value];";
-            control = QEGVAR(ied,distanceSlider);
+            control = QGVAR(distanceSlider);
             typeName = "NUMBER";
             defaultValue = "0";
             condition = "objectVehicle";
@@ -308,7 +308,7 @@ class iedd_vbied_attributes {
 			displayName = ECSTRING(Ied,TimerValue);
 			tooltip = ECSTRING(Ied,TimerValue_Tooltip);
 			property = QGVAR(timerValue);
-			control = QEGVAR(ied,timeSlider);
+			control = QGVAR(timeSlider);
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerValue);
 			typeName = "NUMBER";
@@ -342,7 +342,7 @@ class iedd_vbied_attributes {
 			displayName = ECSTRING(Ied,RandomTimerMin);
 			tooltip = ECSTRING(Ied,RandomTimerMin_Tooltip);
 			property = QGVAR(randomTimerMin);
-			control = QEGVAR(ied,timeSlider);
+			control = QGVAR(timeSlider);
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerMin);
 			typeName = "NUMBER";
@@ -352,7 +352,7 @@ class iedd_vbied_attributes {
 			displayName = ECSTRING(Ied,RandomTimerMax);
 			tooltip = ECSTRING(Ied,RandomTimerMax_Tooltip);
 			property = QGVAR(randomTimerMax);
-			control = QEGVAR(ied,timeSlider);
+			control = QGVAR(timeSlider);
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerMax);
 			typeName = "NUMBER";

@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+if (!hasInterface) exitWith {};
 [{
     params ["_bombObj","_wireSet","_text"];
     TRACE_1("DefuseAction:",_this);

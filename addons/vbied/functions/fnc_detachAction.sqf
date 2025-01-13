@@ -1,5 +1,6 @@
 #include "..\script_component.hpp"
 params ["_box","_vehicle"];
+if (!hasInterface) exitWith {};
 private _condition = {
     params ["_target", "_player", "_actionParams"];
     _actionParams params ["_box","_vehicle"];

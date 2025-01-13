@@ -70,3 +70,7 @@ class GVAR(speedSlider): Slider {
     sliderPosition (_ctrlGroup controlsGroupCtrl 100);";
     onLoad = "_this call iedd_vbied_fnc_speed_onLoad";
 };
+class EGVAR(ied,distanceSlider);
+class EGVAR(ied,timeSlider);
+class GVAR(distanceSlider):EGVAR(ied,distanceSlider) {};
+class GVAR(timeSlider):EGVAR(ied,timeSlider) {};

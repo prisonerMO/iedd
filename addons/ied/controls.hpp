@@ -127,38 +127,7 @@ class GVAR(isCharge): CheckboxState {
         class Title: Title{};
         class Value: Value
         {
-            onCheckedChanged ="\
-            private _ctrlCheckbox = _this select 0;\
-            private _state = [false,true] select (cbChecked _ctrlCheckbox);\
-            private _fade = [0.75,0] select _state;\
-            private _ctrlGroup = ctrlParentControlsGroup ctrlParentControlsGroup _ctrlCheckbox;\
-            private _all = (allcontrols (ctrlparent _ctrlCheckbox) - [ctrlParentControlsGroup _ctrlCheckbox]);\
-            {\
-                    if (ctrlParentControlsGroup _x == _ctrlGroup) then {\
-                        _x ctrlenable _state;\
-                        _x ctrlsetfade _fade;\
-                        _x ctrlcommit 0;\
-                    };\
-            } foreach _all;
-            if (_state) then {\
-                private _isSuicide = _all select {ctrlclassname _x == ""iedd_ied_isSuicide""};\
-                private _isSuicideGrp = allcontrols (_isSuicide select 0);\
-                private _isSuicideCtrl = _isSuicideGrp select 1;\
-                private _isState =  cbChecked _isSuicideCtrl;\
-                private _controls = _all select {""iedd_ied"" in ctrlclassname _x};
-                {\
-                    private _ctrlclassname = ctrlclassname _x;\
-                    if (""dist"" in _ctrlclassname) then {\
-                        _x ctrlenable _isState;\
-                        _x ctrlsetfade ([0.75,0] select _isState);\
-                        _x ctrlcommit 0;\
-                    } else {\
-                        _x ctrlenable !_isState;\
-                        _x ctrlsetfade ([0.75,0] select !_isState);\
-                        _x ctrlcommit 0;\
-                    };\
-                } forEach _controls - _isSuicide;\
-            };";
+            onCheckedChanged = QUOTE(call FUNC(onChargeChanged));   
         };
     };
 };
@@ -204,6 +173,7 @@ class GVAR(isSuicide): Checkbox {
                 private _isChargeCtrl = (allcontrols _isChargeGroup) select 1;\
                 private _isChargeChecked =  cbChecked _isChargeCtrl;\
                 if !(_isChargeChecked) exitWith {};\
+                sleep 0.1;\
                 {\
                     private _ctrlclassname = ctrlclassname _x;\
                     if !(""dist"" in _ctrlclassname) then {\
