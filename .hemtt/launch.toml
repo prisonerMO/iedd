@@ -22,7 +22,7 @@ parameters = [
     "-limitFPS=144",
 ]
 executable = "arma3_x64"
-mission = "0001_IEDD_DEV.Stratis"
+mission = "0001_IEDD_DEV.Stratis" #Need create mission file .hemtt/missions/0001_IEDD_DEV.Stratis/mission.sqm to use.
 file_patching = false # Default: true
 binarize = true # Default: false
 rapify = false # Default: true
