@@ -1,8 +1,37 @@
 #include "script_component.hpp"
 params ["_bombObj"];
 private _ieddWires = _bombObj getVariable [QGVAR(wires),[]];
-if (_ieddWires isEqualTo []) exitWith {};
+if (_ieddWires isEqualTo []) exitWith {
+	TRACE_1("No wires saved on object.",_bombObj);
+	diag_log format ["No wires saved on object. %1",_bombObj];
+};
 private _type = typeOf _bombObj;
+private _wires = switch (_type) do {
+	case QGVAR(CanisterFuel): {IEDD_DUDS_JERRY};
+	case QGVAR(CanisterPlastic): {IEDD_DUDS_CAN};
+	case QGVAR(Cardboard): {IEDD_DUDS_CARDBOARD};
+	case QGVAR(Cinder): {IEDD_DUDS_CINDER};
+	case QGVAR(Metal): {IEDD_DUDS_METAL};
+	case QGVAR(Metal_English): {IEDD_DUDS_METAL};
+	case QGVAR(Barrel): {IEDD_DUDS_BARREL};
+	case QGVAR(Barrel_Grey): {IEDD_DUDS_BARREL};
+	case QGVAR(Charge): {IEDD_DUDS_CHARGE};	
+	case QGVAR(Bucket): {IEDD_DUDS_VBIED};
+	case QEGVAR(vbied,box): {IEDD_DUDS_VBIED};
+	default {[]};
+};
+if (_wires isNotEqualTo []) then {
+	{
+		if (!isNull _x) then  {
+			_x attachTo [_bombObj,(_wires #_forEachIndex) #0];
+			_x setVectorDirAndUp ((_wires #_forEachIndex) #1);
+		};
+	} forEach _ieddWires;
+} else {
+	diag_log format ["No defined dud positions to wires. %1",_bombObj];
+	TRACE_1("No defined dud positions to wires.",_bombObj);
+};
+/*
 if (_type == QGVAR(CanisterFuel)) exitWith {
 	{
 		if (!isNull _x) then  {
@@ -68,3 +97,12 @@ if (_type == QEGVAR(vbied,box)) exitWith {
 		};
 	} forEach _ieddWires;
 };
+if (_type == QGVAR(Bucket)) exitWith {
+		{
+		if (!isNull _x) then  {
+			_x attachTo [_bombObj,(IEDD_DUDS_VBIED #_forEachIndex) #0];
+			_x setVectorDirAndUp ((IEDD_DUDS_VBIED #_forEachIndex) #1);
+		};
+	} forEach _ieddWires;
+}
+*/

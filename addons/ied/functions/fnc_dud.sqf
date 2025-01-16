@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 params ["_bombObj","_sound"];
 _bombObj call FUNC(dudWires);
+if (!hasInterface) exitWith {};
 _bombObj say3D _sound;
 private _pos = _bombObj modelToWorld [0,0,0.4];
 private _ps1 = "#particlesource" createVehicleLocal [0,0,0];
