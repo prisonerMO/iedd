@@ -11,6 +11,8 @@ if (!isServer) exitWith {};
     private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];
     private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
     private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
+    private _nonEOD = _bombObj getVariable [QGVAR(openClose), GVAR(defaultOpenClose)];
+    private _isEOD = _bombObj getVariable [QGVAR(openCloseEOD), GVAR(defaultOpenCloseEOD)];
     TRACE_6("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer);
     if (_isFake > random 1) exitWith {
         private _type = getText (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_default");
@@ -70,8 +72,8 @@ if (!isServer) exitWith {};
     };
 
     private _smallbox = createSimpleObject ["Land_BatteryPack_01_battery_black_F",[0,0,0]];
-    smallbox attachTo [bucket,[-0.03,-0.075,-0.155]];
-    smallbox setVectorDirAndUp [[1,-0,0],[0,0,1]];
+    _smallbox attachTo [_bombObj,[-0.03,-0.075,-0.155]];
+    _smallbox setVectorDirAndUp [[1,-0,0],[0,0,1]];
     private _battery = createSimpleObject ["Land_CarBattery_02_F",[0,0,0]];
     _battery attachTo [_bombObj,[-0.002,0.04,-0.074]];
     _battery setVectorDirAndUp [[1,-0.008,-0],[-0.008,-1,-0.001]];
@@ -87,13 +89,13 @@ if (!isServer) exitWith {};
 
     _subObjPosAndDir = [
         // Position                 VectorDirAndUp                  Description
-        [[-0.049,0.041,0.079],[[-0,-1,0.009],[0,0.009,1]]],        	// 1 wire
-        [[0.113,0.017,0.095],[[1,-0.005,-0],[-0.005,-1,-0.001]]],   // 2 wire
-        [[-0.02,-0.066,0.079],[[-1,0,0],[0,0,1]]],                  // 3 wire
-        [[0.015,-0.058,0.102],[[0.117,-0.993,0],[0,0,1]]],          // 4 wire
-        [[-0.006,-0.03,0.079],[[-0.092,-0.996,0],[0,0,1]]],         // 5 wire
-        [[0.002,-0.031,0.102],[[-0.169,-0.986,0],[0,0,1]]],         // 6 (long)
-        [[0.076,0.012,0.094],[[0,-1,-0.019],[1,0,0.012]]]          // 7 (long)
+        [[0.036,-0.049,-0.028], [[0,-1,0.009], [0,0.009,1]]],   // 1 wire
+        [[0.014,-0.043,-0.152], [[1,-0.005,0], [-0.005,-1,0.001]]],// 2 wire
+        [[-0.07,-0.037,-0.053], [[-1,0,0], [0,0,1]]],           // 3 wire  
+        [[-0.035,-0.04,-0.078], [[0.117,-0.993,0], [0,0,1]]],   // 4 wire                     
+        [[-0.054,-0.062,-0.071], [[-0.092,-0.986,0], [0,0,1]]], // 5 wire
+        [[-0.033,-0.061,-0.073], [[-0.169,-0.986,0], [0,0,1]]], // 6 (long)
+        [[0.009,-0.068,-0.188], [[0,-1,-0.019], [1,0,0.12]]]    // 7 (long)
     ];
 
     {
@@ -104,6 +106,7 @@ if (!isServer) exitWith {};
 
     _bombObj setVariable [QGVAR(wires), _wires, true];
     _bombObj setVariable [QGVAR(bomb), true, true];
+    _bombObj setVariable [QGVAR(lid), [_nonEOD,_isEOD], true];
     if (_variation in [1,2,3]) then {
         _bombObj setVariable [QGVAR(movable),true];
     };

@@ -360,6 +360,22 @@
                 <Original>Variation X</Original>
                 <English>Variation X</English>
             </Key>
+            <Key ID="STR_iedd_ied_openCloseEOD">
+                <Original>openCloseEOD</Original>
+                <English>openCloseEOD</English>
+            </Key>
+            <Key ID="STR_iedd_ied_openCloseEOD_Tooltip">
+                <Original>Open/Close EOD Chance Tooltip.</Original>
+                <English>Open/Close EOD Chance Tooltip.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_openClose">
+                <Original>openClose</Original>
+                <English>openClose</English>
+            </Key>
+            <Key ID="STR_iedd_ied_openClose_Tooltip">
+                <Original>Open/Close NON EOD Chance Tooltip.</Original>
+                <English>Open/Close NON EOD Chance Tooltip.</English>
+            </Key>
         </Container>
         <Container name="IEDD Options Charge">
             <Key ID="STR_iedd_ied_ChargeDud_Tooltip">
@@ -747,6 +763,14 @@
             <Key ID="STR_iedd_ied_WireCutTime_Description">
                 <Original>How long it takes to cut one wire. Min 1s, max 30s.</Original>
                 <English>How long it takes to cut one wire. Min 1s, max 30s.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_openClose_Description">
+                <Original>Open/Close DEFAULT NON EOD Chance Description.</Original>
+                <English>Open/Close DEFAULTNON EOD Chance Description.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_openClose_Description">
+                <Original>Open/Close DEFAULT NON EOD Chance Description.</Original>
+                <English>Open/Close DEFAULT NON EOD Chance Description.</English>
             </Key>
         </Container>
         <Container name="IEDD Notebook Dev Settings">

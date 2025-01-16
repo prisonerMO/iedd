@@ -22,12 +22,12 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			class GVAR(open) {
 				displayName = CSTRING(Action_Open);
 				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 0);
-				statement = QUOTE(ARR_2([_target,1]) call FUNC(openCloseBucket));
+				statement = QUOTE(ARR_3([_target,_player,1]) call FUNC(openCloseBucket));
 			};
 			class GVAR(close) {
 				displayName = CSTRING(Action_Close);
 				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 1);
-				statement = QUOTE(ARR_2([_target,0]) call FUNC(openCloseBucket));
+				statement = QUOTE(ARR_3([_target,_player,0]) call FUNC(openCloseBucket));
 			};
 		};
 	};
@@ -173,6 +173,23 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			control = QGVAR(distanceSlider);
 			typeName = "NUMBER";
 			defaultValue = "0";
+		};
+		/**********BUCKET OPEN / CLOSE ********/
+		class GVAR(openCloseEOD) {
+			displayName = CSTRING(openCloseEOD);
+			tooltip = CSTRING(openCloseEOD_Tooltip);
+			property = QGVAR(openCloseEOD);
+			expression = "_this setVariable ['%s',_value];";
+			control = "Slider";
+			defaultValue = QGVAR(defaultOpenCloseEOD);
+		};
+		class GVAR(openClose) {
+			displayName = CSTRING(openClose);
+			tooltip = CSTRING(openClose_Tooltip);
+			property = QGVAR(openClose);
+			expression = "_this setVariable ['%s',_value];";
+			control = "Slider";
+			defaultValue = QGVAR(defaultOpenClose);
 		};
 		/**********TIMER SETTINGS ********/
 		class GVAR(timer_SubCategory) {

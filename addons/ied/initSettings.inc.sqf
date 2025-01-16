@@ -219,6 +219,24 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(defaultOpenCloseEOD),
+    "SLIDER",
+    [LSTRING(OpenCloseEOD), LSTRING(OpenCloseEOD_Description)],
+	[localize "STR_iedd_main_Category_Main","IEDs"],
+    [0, 1, 0.05, 0, true],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(defaultOpenClose),
+    "SLIDER",
+    [LSTRING(OpenClose), LSTRING(OpenClose_Description)],
+    [localize "STR_iedd_main_Category_Main","IEDs"],
+    [0, 1, 0.30, 0, true],
+    1
+] call CBA_fnc_addSetting;
+
 
 /*** IED Default values ***/
 /*IED Default Variation*/
