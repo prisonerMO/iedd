@@ -1,5 +1,7 @@
 *.pbo
 .hemttout
+.hemtt/missions/*/*
+!iedd_bucket/.hemtt/missions/*/
 hemtt
 hemtt.exe
 *.biprivatekey
