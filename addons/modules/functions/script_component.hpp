@@ -8,7 +8,8 @@
 	"iedd_ied_Metal",\
 	"iedd_ied_Metal_English",\
 	"iedd_ied_Barrel",\
-	"iedd_ied_Barrel_Grey"\
+	"iedd_ied_Barrel_Grey",\
+	"iedd_ied_Bucket"\
 ]
 
 #define IEDD_DECALS [\
@@ -35,7 +36,9 @@
     "Land_PaperBox_01_small_ransacked_brown_F",\
     "Land_CinderBlock_01_F",\
     "Land_GarbageBarrel_01_F",\
-    "Land_BarrelEmpty_F"\
+    "Land_BarrelEmpty_F",\
+	"Land_CanisterPlastic_F",\
+	"Land_PlasticBucket_01_closed_F"\
 ]
 
 

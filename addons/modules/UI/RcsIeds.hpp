@@ -8,6 +8,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
             class Controls {
                 class GVAR(scroll): RscControlsGroupNoScrollbars {
                     onSetFocus = QUOTE(_this call FUNC(setIed));
+                    onLoad = QUOTE(call FUNC(onLoad));
                     idc = 52500;
                     x = 0;
                     y = 0;
@@ -77,6 +78,10 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                                 class 11 {
                                     data = QEGVAR(ied,Metal_English);
                                     text = ECSTRING(ied,MetalBarrelEnglish_DisplayName);
+                                };
+                                class 12 {
+                                    data = QEGVAR(ied,Bucket);
+                                    text = ECSTRING(ied,Bucket_DisplayName);
                                 };
                             };
                         };
@@ -238,6 +243,34 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                             idc = 52526;
                             x = QUOTE(W_PART(10.1));
                             y = QUOTE(H_PART(6.6));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                        };
+                        class GVAR(openCloseL): GVAR(typeL) {
+                            text = "openClose";
+                            tooltip = "openClose";
+                            y = QUOTE(H_PART(7.7));
+                        };
+                        class GVAR(openCloseSlider): RscXSliderH {
+                            text ="openClose";
+                            idc = 52527;
+                            colorDisable[] = {1,1,1,0.4};
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(7.7));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                        };
+                        class GVAR(openCloseEODL): GVAR(typeL) {
+                            text = "openCloseEOD";
+                            tooltip = "openCloseEOD";
+                            y = QUOTE(H_PART(8.8));
+                        };
+                        class GVAR(openCloseEODSlider): RscXSliderH {
+                            text = "openCloseEOD";
+                            idc = 52528;
+                            colorDisable[] = {1,1,1,0.4};
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(8.8));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
                         };

@@ -88,6 +88,12 @@ class GVAR(multi): Module_F {
 			tooltip = CSTRING(Type_Tooltip);
 			defaultValue = 1;
 		};
+		class EGVAR(ied,Bucket):Checkbox {
+			property = QGVAR(Bucket);
+			displayName = ECSTRING(ied,Bucket_DisplayName);
+			tooltip = CSTRING(Type_Tooltip);
+			defaultValue = 1;
+		};
 		class GVAR(count):Default {
 			property = QGVAR(count);
 			displayName = CSTRING(Count);
@@ -136,6 +142,12 @@ class GVAR(multi): Module_F {
 		class Land_BarrelEmpty_F:Checkbox {
 			property = QGVAR(BarrelEmpty_F);
 			displayName = ECSTRING(ied,MetalBarrel_DisplayName);
+			tooltip = CSTRING(Type_Tooltip);
+			defaultValue = 1;
+		};
+		class Land_PlasticBucket_01_closed_F:Checkbox {
+			property = QGVAR(Land_PlasticBucket_01_closed_F);
+			displayName = ECSTRING(ied,Bucket_DisplayName);
 			tooltip = CSTRING(Type_Tooltip);
 			defaultValue = 1;
 		};

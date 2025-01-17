@@ -49,8 +49,8 @@
                 <English>Cinder Block</English>
             </Key>
             <Key ID="STR_iedd_ied_Bucket_DisplayName">
-                <Original>Plastic Bucket</Original>
-                <English>Plastic Bucket</English>
+                <Original>Bucket</Original>
+                <English>Bucket</English>
             </Key>
             <Key ID="STR_iedd_ied_Color">
                 <Original>Color</Original>
@@ -361,20 +361,20 @@
                 <English>Variation X</English>
             </Key>
             <Key ID="STR_iedd_ied_openCloseEOD">
-                <Original>openCloseEOD</Original>
-                <English>openCloseEOD</English>
+                <Original>Lid activation (EODs)</Original>
+                <English>Lid activation (EODs)</English>
             </Key>
             <Key ID="STR_iedd_ied_openCloseEOD_Tooltip">
-                <Original>Open/Close EOD Chance Tooltip.</Original>
-                <English>Open/Close EOD Chance Tooltip.</English>
+                <Original>Probability of activating IED when opening or closing lid for EODs and explosive specialists.</Original>
+                <English>Probability of activating IED when opening or closing lid for EODs and explosive specialists.</English>
             </Key>
             <Key ID="STR_iedd_ied_openClose">
-                <Original>openClose</Original>
-                <English>openClose</English>
+                <Original>Lid activation (other units)</Original>
+                <English>Lid activation (other units)</English>
             </Key>
             <Key ID="STR_iedd_ied_openClose_Tooltip">
-                <Original>Open/Close NON EOD Chance Tooltip.</Original>
-                <English>Open/Close NON EOD Chance Tooltip.</English>
+                <Original>Probability of activating IED when opening or closing lid.</Original>
+                <English>Probability of activating IED when opening or closing lid.</English>
             </Key>
         </Container>
         <Container name="IEDD Options Charge">
@@ -473,12 +473,12 @@
                 <English>Rearm</English>
             </Key>
             <Key ID="STR_iedd_ied_Action_Close">
-                <Original>Close Bucket</Original>
-                <English>Close Bucket</English>
+                <Original>Close lid</Original>
+                <English>Close lid</English>
             </Key>
             <Key ID="STR_iedd_ied_Action_Open">
-                <Original>Open Bucket</Original>
-                <English>Open Bucket</English>
+                <Original>Open lid</Original>
+                <English>Open lid</English>
             </Key>
         </Container>
         <Container name="IEDD Explosives">
