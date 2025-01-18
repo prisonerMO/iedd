@@ -360,19 +360,19 @@
                 <Original>Variation X</Original>
                 <English>Variation X</English>
             </Key>
-            <Key ID="STR_iedd_ied_openCloseEOD">
+            <Key ID="STR_iedd_ied_OpenCloseEOD">
                 <Original>Lid activation (EODs)</Original>
                 <English>Lid activation (EODs)</English>
             </Key>
-            <Key ID="STR_iedd_ied_openCloseEOD_Tooltip">
+            <Key ID="STR_iedd_ied_OpenCloseEOD_Tooltip">
                 <Original>Probability of activating IED when opening or closing lid for EODs and explosive specialists.</Original>
                 <English>Probability of activating IED when opening or closing lid for EODs and explosive specialists.</English>
             </Key>
-            <Key ID="STR_iedd_ied_openClose">
+            <Key ID="STR_iedd_ied_OpenClose">
                 <Original>Lid activation (other units)</Original>
                 <English>Lid activation (other units)</English>
             </Key>
-            <Key ID="STR_iedd_ied_openClose_Tooltip">
+            <Key ID="STR_iedd_ied_OpenClose_Tooltip">
                 <Original>Probability of activating IED when opening or closing lid.</Original>
                 <English>Probability of activating IED when opening or closing lid.</English>
             </Key>
@@ -764,11 +764,11 @@
                 <Original>How long it takes to cut one wire. Min 1s, max 30s.</Original>
                 <English>How long it takes to cut one wire. Min 1s, max 30s.</English>
             </Key>
-            <Key ID="STR_iedd_ied_openClose_Description">
+            <Key ID="STR_iedd_ied_OpenClose_Description">
                 <Original>Open/Close DEFAULT NON EOD Chance Description.</Original>
                 <English>Open/Close DEFAULTNON EOD Chance Description.</English>
             </Key>
-            <Key ID="STR_iedd_ied_openClose_Description">
+            <Key ID="STR_iedd_ied_OpenClose_Description">
                 <Original>Open/Close DEFAULT NON EOD Chance Description.</Original>
                 <English>Open/Close DEFAULT NON EOD Chance Description.</English>
             </Key>

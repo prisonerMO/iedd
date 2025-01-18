@@ -176,16 +176,16 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 		};
 		/**********BUCKET OPEN / CLOSE ********/
 		class GVAR(openCloseEOD) {
-			displayName = CSTRING(openCloseEOD);
-			tooltip = CSTRING(openCloseEOD_Tooltip);
+			displayName = CSTRING(OpenCloseEOD);
+			tooltip = CSTRING(OpenCloseEOD_Tooltip);
 			property = QGVAR(openCloseEOD);
 			expression = "_this setVariable ['%s',_value];";
 			control = "Slider";
 			defaultValue = QGVAR(defaultOpenCloseEOD);
 		};
 		class GVAR(openClose) {
-			displayName = CSTRING(openClose);
-			tooltip = CSTRING(openClose_Tooltip);
+			displayName = CSTRING(OpenClose);
+			tooltip = CSTRING(OpenClose_Tooltip);
 			property = QGVAR(openClose);
 			expression = "_this setVariable ['%s',_value];";
 			control = "Slider";
