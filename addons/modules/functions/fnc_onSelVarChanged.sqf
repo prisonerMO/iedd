@@ -121,7 +121,3 @@ if (_state) then {
     ];
     _grpCtrl ctrlCommit 0;
 };
-diag_log format ["MACROS W_PART %1, %2, %3, %4, %5", W_PART(0), W_PART(1), W_PART(2), W_PART(3), W_PART(4)];
-diag_log format ["MACROS W_PART 0.1 %1, %2, %3, %4, %5", W_PART(0.1), W_PART(0.2), W_PART(0.3), W_PART(0.4), W_PART(0.5)];
-diag_log format ["MACROS H_PART %1, %2, %3, %4, %5", H_PART(0), H_PART(1), H_PART(2), H_PART(3), H_PART(4)];
-diag_log format ["MACROS H_PART 0.1 %1, %2, %3, %4, %5", H_PART(0.1), H_PART(0.2), H_PART(0.3), H_PART(0.4), H_PART(0.5)];
