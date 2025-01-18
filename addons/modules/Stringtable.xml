@@ -312,6 +312,14 @@
                 <Original>Activate VBIED</Original>
                 <English>Activate VBIED</English>
             </Key>
+            <Key ID="STR_iedd_modules_OpenClose">
+                <Original>LID ACTIVATION</Original>
+                <English>LID ACTIVATION</English>
+            </Key>
+            <Key ID="STR_iedd_modules_OpenCloseEOD">
+                <Original>LID ACTIVATION EOD</Original>
+                <English>LID ACTIVATION EOD</English>
+            </Key>
         </Container>
     </Package>
 </Project>

@@ -46,8 +46,8 @@ if (_state) then {
         (W_PART(10)),
         (H_PART(1))
     ];
-    _ocCtrl ctrlSetText "Open/Close";
-    _ocCtrl ctrlSetTooltip "Open/Close";
+    _ocCtrl ctrlSetText LLSTRING(OpenClose);
+    _ocCtrl ctrlSetTooltip LELSTRING(ied,OpenClose_Tooltip);
     _ocCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
     _ocCtrl ctrlCommit 0;
     private _ocSlider = _display ctrlCreate ["RscXSliderH", 52528, _grpCtrl];
@@ -57,7 +57,8 @@ if (_state) then {
         (W_PART(15.9)),
         (H_PART(1))
     ];
-    _ocSlider ctrlCommit 0;
+    _ocSlider ctrlCommit 0;    
+    _ocSlider call FUNC(sliderMove);
     private _oceCtrl = _display ctrlCreate ["RscText", 52529, _grpCtrl];
     _oceCtrl ctrlSetPosition [
         0,
@@ -65,8 +66,8 @@ if (_state) then {
         (W_PART(10)),
         (H_PART(1))
     ];
-    _oceCtrl ctrlSetText "Open/Close EOD";
-    _oceCtrl ctrlSetTooltip "Open/Close EOD";
+    _oceCtrl ctrlSetText LLSTRING(OpenCloseEOD);
+    _oceCtrl ctrlSetTooltip LELSTRING(ied,OpenCloseEOD_Tooltip);
     _oceCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
     _oceCtrl ctrlCommit 0;
     private _oceSlider = _display ctrlCreate ["RscXSliderH", 52530, _grpCtrl];
@@ -77,6 +78,7 @@ if (_state) then {
         (H_PART(1))
     ];
     _oceSlider ctrlCommit 0;
+    _oceSlider call FUNC(sliderMove);
     _ctrlOK ctrlSetPosition [W_PART(25.1667), H_PART(18.1125), W_PART(5), H_PART(1)];
     _ctrlOK ctrlCommit 0;
     _ctrlCancel ctrlSetPosition [W_PART(3.1667), H_PART(18.1125), W_PART(5), H_PART(1)];
