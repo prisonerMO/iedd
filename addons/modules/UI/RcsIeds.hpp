@@ -8,7 +8,6 @@ class GVAR(RcsIeds): RscDisplayAttributes {
             class Controls {
                 class GVAR(scroll): RscControlsGroupNoScrollbars {
                     onSetFocus = QUOTE(_this call FUNC(setIed));
-                    onLoad = QUOTE(call FUNC(onLoad));
                     idc = 52500;
                     x = 0;
                     y = 0;
@@ -245,7 +244,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                             y = QUOTE(H_PART(6.6));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
-                        };
+                        }; /*                       
                         class GVAR(openCloseL): GVAR(typeL) {
                             text = "openClose";
                             tooltip = "openClose";
@@ -273,7 +272,7 @@ class GVAR(RcsIeds): RscDisplayAttributes {
                             y = QUOTE(H_PART(8.8));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
-                        };
+                        };*/
                     };
                 };
             };

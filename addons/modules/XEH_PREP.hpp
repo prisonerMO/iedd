@@ -13,4 +13,3 @@ PREP(vbiedSelected);
 PREP(setData);
 PREP(moduleActivate);
 PREP(moduleExplode);
-PREP(onLoad);
