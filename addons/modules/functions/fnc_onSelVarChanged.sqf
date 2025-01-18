@@ -33,11 +33,11 @@ private _bgcolor = [[0, 0, 0, 0.2],[0, 0, 0, 0.5]] select _state;
 } forEach _ocCtrls;
 */
 if (_state) then {
-    _bgCtrl ctrlSetPosition [0.095,0.2795,0.81,0.441];
+    _bgCtrl ctrlSetPosition [W_PART(3.1667), H_PART(6.9875), W_PART(27), H_PART(11.025)];
     _bgCtrl ctrlCommit 0;
-    _titleCtrl ctrlSetPosition [0.095,0.2355,0.81,0.04];
+    _titleCtrl ctrlSetPosition [W_PART(3.1667), H_PART(5.8875), W_PART(27), H_PART(1)];
     _titleCtrl ctrlCommit 0;
-    _contCtrl ctrlSetPosition [0.11,0.2795,0.81,0.441];
+    _contCtrl ctrlSetPosition [W_PART(3.6667), H_PART(6.9875), W_PART(27), H_PART(11.025)];
     _contCtrl ctrlCommit 0;
     private _ocCtrl = _display ctrlCreate ["RscText", 52527, _grpCtrl];
     _ocCtrl ctrlSetPosition [
@@ -77,9 +77,9 @@ if (_state) then {
         (H_PART(1))
     ];
     _oceSlider ctrlCommit 0;
-    _ctrlOK ctrlSetPosition [0.755,0.7245,0.15,0.04];
+    _ctrlOK ctrlSetPosition [W_PART(25.1667), H_PART(18.1125), W_PART(5), H_PART(1)];
     _ctrlOK ctrlCommit 0;
-    _ctrlCancel ctrlSetPosition [0.095,0.7245,0.15,0.04];
+    _ctrlCancel ctrlSetPosition [W_PART(3.1667), H_PART(18.1125), W_PART(5), H_PART(1)];
     _ctrlCancel ctrlCommit 0;
     _grpCtrl ctrlSetPosition [
         0,
@@ -96,11 +96,11 @@ if (_state) then {
             ctrlDelete _ctrl;
         }; 
     };
-    _bgCtrl ctrlSetPosition [0.095,0.3235,0.81,0.353];
+    _bgCtrl ctrlSetPosition [W_PART(3.1667), H_PART(8.0875), W_PART(27), H_PART(8.825)];
     _bgCtrl ctrlCommit 0;
-    _titleCtrl ctrlSetPosition [0.095,0.2795,0.81,0.04];
+    _titleCtrl ctrlSetPosition [W_PART(3.1667), H_PART(6.9875), W_PART(27), H_PART(1)];
     _titleCtrl ctrlCommit 0;
-    _contCtrl ctrlSetPosition [0.11,0.3235,0.81,0.353];
+    _contCtrl ctrlSetPosition [W_PART(3.6667), H_PART(8.0875), W_PART(27), H_PART(8.825)];
     _contCtrl ctrlCommit 0;
     _grpCtrl ctrlSetPosition [
         0,
@@ -109,9 +109,9 @@ if (_state) then {
         (H_PART(7.7))
     ];
     _grpCtrl ctrlCommit 0.1;
-    _ctrlOK ctrlSetPosition [0.755,0.6805,0.15,0.04];
+    _ctrlOK ctrlSetPosition [W_PART(25.1667), H_PART(17.0125), W_PART(5), H_PART(1)];
     _ctrlOK ctrlCommit 0;
-    _ctrlCancel ctrlSetPosition [0.095,0.6805,0.15,0.04];
+    _ctrlCancel ctrlSetPosition [W_PART(3.1667), H_PART(17.0125), W_PART(5), H_PART(1)];
     _ctrlCancel ctrlCommit 0;
     _grpCtrl ctrlSetPosition [
         0,
@@ -121,3 +121,7 @@ if (_state) then {
     ];
     _grpCtrl ctrlCommit 0;
 };
+diag_log format ["MACROS W_PART %1, %2, %3, %4, %5", W_PART(0), W_PART(1), W_PART(2), W_PART(3), W_PART(4)];
+diag_log format ["MACROS W_PART 0.1 %1, %2, %3, %4, %5", W_PART(0.1), W_PART(0.2), W_PART(0.3), W_PART(0.4), W_PART(0.5)];
+diag_log format ["MACROS H_PART %1, %2, %3, %4, %5", H_PART(0), H_PART(1), H_PART(2), H_PART(3), H_PART(4)];
+diag_log format ["MACROS H_PART 0.1 %1, %2, %3, %4, %5", H_PART(0.1), H_PART(0.2), H_PART(0.3), H_PART(0.4), H_PART(0.5)];
