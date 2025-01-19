@@ -376,6 +376,14 @@
                 <Original>Probability of activating IED when opening or closing lid.</Original>
                 <English>Probability of activating IED when opening or closing lid.</English>
             </Key>
+            <Key ID="STR_iedd_ied_OpenCloseEOD_Description">
+                <Original> Probability of activating bucket IED when opening or closing lid for EODs and explosive specialists.</Original>
+                <English> Probability of activating bucket IED when opening or closing lid for EODs and explosive specialists.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_OpenClose_Description">
+                <Original>Probability of activating bucket IED when opening or closing lid.</Original>
+                <English>Probability of activating bucket IED when opening or closing lid.</English>
+            </Key>
         </Container>
         <Container name="IEDD Options Charge">
             <Key ID="STR_iedd_ied_ChargeDud_Tooltip">
@@ -765,12 +773,12 @@
                 <English>How long it takes to cut one wire. Min 1s, max 30s.</English>
             </Key>
             <Key ID="STR_iedd_ied_OpenClose_Description">
-                <Original>Open/Close DEFAULT NON EOD Chance Description.</Original>
-                <English>Open/Close DEFAULTNON EOD Chance Description.</English>
+                <Original>Open/Close DEFAULT NON EOD Chance Description (if not defined somewhere else).</Original>
+                <English>Open/Close DEFAULTNON EOD Chance Description (if not defined somewhere else).</English>
             </Key>
             <Key ID="STR_iedd_ied_OpenClose_Description">
-                <Original>Open/Close DEFAULT NON EOD Chance Description.</Original>
-                <English>Open/Close DEFAULT NON EOD Chance Description.</English>
+                <Original>Open/Close DEFAULT NON EOD Chance Description (if not defined somewhere else).</Original>
+                <English>Open/Close DEFAULT NON EOD Chance Description (if not defined somewhere else).</English>
             </Key>
         </Container>
         <Container name="IEDD Notebook Dev Settings">
