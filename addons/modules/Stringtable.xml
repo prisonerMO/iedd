@@ -313,12 +313,12 @@
                 <English>Activate VBIED</English>
             </Key>
             <Key ID="STR_iedd_modules_OpenClose">
-                <Original>LID ACTIVATION</Original>
-                <English>LID ACTIVATION</English>
+                <Original>LID ACTIVATION (OTHER UNITS)</Original>
+                <English>LID ACTIVATION (OTHER UNITS)</English>
             </Key>
             <Key ID="STR_iedd_modules_OpenCloseEOD">
-                <Original>LID ACTIVATION EOD</Original>
-                <English>LID ACTIVATION EOD</English>
+                <Original>LID ACTIVATION (EODS)</Original>
+                <English>LID ACTIVATION (EODS)</English>
             </Key>
         </Container>
     </Package>

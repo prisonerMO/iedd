@@ -38,7 +38,7 @@
     "Land_GarbageBarrel_01_F",\
     "Land_BarrelEmpty_F",\
 	"Land_CanisterPlastic_F",\
-	"Land_PlasticBucket_01_closed_F"\
+	"iedd_ied_Bucket_Fake"\
 ]
 
 
