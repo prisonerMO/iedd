@@ -13,7 +13,7 @@ class CfgAmmo {
 		timeToLive=4;
 		SmokeShellSoundLoop1[]=
 		{
-			"x\iedd\addons\ied\sounds\whistle",
+			"x\iedd\addons\ied\sounds\whistle.wss",
 			100,
 			1,
 			15

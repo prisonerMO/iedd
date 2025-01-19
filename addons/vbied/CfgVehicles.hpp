@@ -5,7 +5,7 @@ class CfgVehicles {
         displayName = QGVAR(helper); // not publicly visible, no stringtable needed
         scope = 1;
         scopeCurator = 1;
-        model = "\A3\Weapons_f\empty";
+        model = "\A3\Weapons_f\empty.p3d";
         destrType = "DestructNo";
     };
     /*NOT IN USE

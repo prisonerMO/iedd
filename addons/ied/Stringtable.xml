@@ -52,6 +52,10 @@
                 <Original>Bucket</Original>
                 <English>Bucket</English>
             </Key>
+            <Key ID="STR_iedd_ied_Bucket_Fake_DisplayName">
+                <Original>Plastic Bucket (Fake IED)</Original>
+                <English>Plastic Bucket (Fake IED)</English>
+            </Key>
             <Key ID="STR_iedd_ied_Color">
                 <Original>Color</Original>
                 <English>Color</English>

@@ -8,6 +8,7 @@ class CfgPatches {
 			QGVAR(Barrel),
 			QGVAR(Barrel_Grey),
 			QGVAR(Bucket),
+			QGVAR(Bucket_Fake),
 			QGVAR(CanisterPlastic),
 			QGVAR(Cardboard),
 			QGVAR(Cinder),

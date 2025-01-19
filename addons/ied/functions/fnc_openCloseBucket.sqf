@@ -8,11 +8,7 @@ if (_hasWpn) then {
 };
 [{
     params ["_target", "_player", "_state"];
-    private _isBomb = _target getVariable [QGVAR(bomb), false];
-    if (!_isBomb) exitWith {
-        _target animate ["bucketlid_hide", _state];
-    };
-    private _lid = _target getVariable [QGVAR(lid), 0];
+    private _lid = _target getVariable [QGVAR(lid), [0,0]];
     private _expChance = _lid select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
     TRACE_1("params:",_this);
     private _isExp = random 1 < _expChance;
