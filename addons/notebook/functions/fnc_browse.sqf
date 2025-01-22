@@ -6,9 +6,9 @@ private _sound = format [QPATHTOF(sounds\page%1.ogg), floor (random 4)];
 playSoundUI [_sound, 0.6,1];
 
 private _display = uiNamespace getVariable "iedd_display";
-private _ctrl = _display displayCtrl 120;
-private _arrowL = _display displayCtrl 121;
-private _arrowR = _display displayCtrl 122;
+private _ctrl = _display displayCtrl NOTEBOOK_IDC_BACK;
+private _arrowL = _display displayCtrl NOTEBOOK_IDC_PREV;
+private _arrowR = _display displayCtrl NOTEBOOK_IDC_NEXT;
 private _var = GVAR(pages) getOrDefault ["iedd_tab", "home", true];
 private _page = GVAR(pages) getOrDefault [_var, 0, true];
 private _current = _page+_selectDir;

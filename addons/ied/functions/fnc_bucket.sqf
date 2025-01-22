@@ -68,7 +68,7 @@ if (!isServer) exitWith {};
         _bombObj setVariable [QGVAR(movable),selectRandom [false,true]];
         [6] call FUNC(variationx);
     } else {
-        IEDD_BARRELVARS select _variation;
+        IEDD_BUCKET select _variation;
     };
 
     private _smallbox = createSimpleObject ["Land_BatteryPack_01_battery_black_F",[0,0,0]];

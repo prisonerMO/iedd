@@ -134,6 +134,10 @@
                 <Original>VBIED variations</Original>
                 <English>VBIED variations</English>
             </Key>
+            <Key ID="STR_iedd_notebook_Bucket">
+                <Original>Bucket variations</Original>
+                <English>Bucket variations</English>
+            </Key>
         </Container>
     </Package>
 </Project>

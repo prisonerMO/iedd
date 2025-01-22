@@ -1,12 +1,12 @@
 class GVAR(display) {
-	idd = -1;
+	idd = NOTEBOOK_IDC_DISPLAY;
 	movingEnable = 1;
 	onLoad = "uiNamespace setVariable ['iedd_display', _this #0]; [(_this #0)] call iedd_notebook_fnc_esc;";
 
 	// Background
 	class ControlsBackground {
 		class GVAR(bgImg): RscPicture {
-			idc = 110;
+			idc = NOTEBOOK_IDC_BG;
 			text = QPATHTOF(images\brside\back0.paa);
 			onLoad = "";
 			x = QUOTE(GUI_GRID_CENTER_X + -9.5 * GUI_GRID_CENTER_W);
@@ -20,7 +20,7 @@ class GVAR(display) {
 	class Controls {
 		
 		class GVAR(back): RscPicture {	
-			idc = 120;
+			idc = NOTEBOOK_IDC_BACK;
 			style = 48;
 			type = CT_STATIC;
 			x = QUOTE(GUI_GRID_CENTER_X + -9.5 * GUI_GRID_CENTER_W);
@@ -32,7 +32,7 @@ class GVAR(display) {
 		// ARROWS
 
 		class GVAR(prev): RscActiveText {
-			idc = 121;
+			idc = NOTEBOOK_IDC_PREV;
 			style = 48;
 			text = QPATHTOF(images\brside\prev.paa);
 			tooltip = CSTRING(Previous);
@@ -47,7 +47,7 @@ class GVAR(display) {
 		};
 
 		class GVAR(next): RscActiveText {
-			idc = 122;
+			idc = NOTEBOOK_IDC_NEXT;
 			style = 48;
 			text = QPATHTOF(images\brside\next.paa);
 			tooltip = CSTRING(Next);
@@ -64,7 +64,7 @@ class GVAR(display) {
 		// TABS
 		
 		class GVAR(home): RscActiveText {
-			idc = 201;
+			idc = NOTEBOOK_IDC_HOME;
 			style = 48;
 			text = QPATHTOF(images\brside\h.paa);
 			tooltip = CSTRING(Introduction);
@@ -79,7 +79,7 @@ class GVAR(display) {
 		};
 
 		class GVAR(info): RscActiveText {
-			idc = 202;
+			idc = NOTEBOOK_IDC_INFO;
 			style = 48;
 			text = QPATHTOF(images\brside\i.paa);
 			tooltip = CSTRING(Contents);
@@ -94,7 +94,7 @@ class GVAR(display) {
 		};
 
 		class GVAR(about): RscActiveText {
-			idc = 203;
+			idc = NOTEBOOK_IDC_ABOUT;
 			style = 48;
 			text = QPATHTOF(images\brside\a.paa);
 			tooltip = CSTRING(About);
@@ -109,7 +109,7 @@ class GVAR(display) {
 		};
 
 		class GVAR(can): RscActiveText {
-			idc = 204;
+			idc = NOTEBOOK_IDC_CAN;
 			style = 48;
 			text = QPATHTOF(images\brside\1.paa);
 			tooltip = CSTRING(PlasticCanister);
@@ -124,7 +124,7 @@ class GVAR(display) {
 		};
 
 		class GVAR(jerry): RscActiveText {
-			idc = 205;
+			idc = NOTEBOOK_IDC_JERRY;
 			style = 48;
 			text = QPATHTOF(images\brside\2.paa);
 			tooltip = CSTRING(FuelCanister);
@@ -139,7 +139,7 @@ class GVAR(display) {
 		};	
 
 		class GVAR(cardboard): RscActiveText {
-			idc = 206;
+			idc = NOTEBOOK_IDC_CD;
 			style = 48;
 			text = QPATHTOF(images\brside\3.paa);
 			tooltip = CSTRING(Cardboard);
@@ -154,7 +154,7 @@ class GVAR(display) {
 		};
 
 		class GVAR(cinder): RscActiveText {
-			idc = 207;
+			idc = NOTEBOOK_IDC_CINDER;
 			style = 48;
 			text = QPATHTOF(images\brside\4.paa);
 			tooltip = CSTRING(Cinder);
@@ -169,7 +169,7 @@ class GVAR(display) {
 		};	
 
 		class GVAR(barrel): RscActiveText {
-			idc = 208;
+			idc = NOTEBOOK_IDC_BARREL;
 			style = 48;
 			text = QPATHTOF(images\brside\5.paa);
 			tooltip = CSTRING(PlasticBarrel);
@@ -184,7 +184,7 @@ class GVAR(display) {
 		};
 
 		class GVAR(metal): RscActiveText {
-			idc = 209;
+			idc = NOTEBOOK_IDC_METAL;
 			style = 48;
 			text = QPATHTOF(images\brside\6.paa);
 			tooltip = CSTRING(MetalBarrel);
@@ -199,7 +199,7 @@ class GVAR(display) {
 		};
 
 		class GVAR(charge): RscActiveText {
-			idc = 210;
+			idc = NOTEBOOK_IDC_CHARGE ;
 			style = 48;
 			text = QPATHTOF(images\brside\7.paa);
 			tooltip = CSTRING(Charge);
@@ -214,7 +214,7 @@ class GVAR(display) {
 		};
 
 		class GVAR(vbied): RscActiveText {
-			idc = 211;
+			idc = NOTEBOOK_IDC_VBIED;
 			style = 48;
 			text = QPATHTOF(images\brside\8.paa);
 			tooltip = CSTRING(Vbied);
@@ -228,13 +228,12 @@ class GVAR(display) {
 			h = QUOTE(GUI_GRID_CENTER_H * 1.5);			
 		};
 
-		class GVAR(empty3): RscActiveText {
-
-			idc = 212;
+		class GVAR(bucket): RscActiveText {
+			idc = NOTEBOOK_IDC_BUCKET;
 			style = 48;
 			text = QPATHTOF(images\brside\9.paa);
-			tooltip = CSTRING(Empty);
-			onButtonClick = QUOTE(['empty3'] call FUNC(tabs));
+			tooltip = CSTRING(Bucket);
+			onButtonClick = QUOTE(['bucket'] call FUNC(tabs));
 			color[] = {1,1,1,1};
 			colorActive[] = {0.2,0.2,0.2,0.2};
 			colorDisabled[] = {1,1,1,1};
@@ -246,7 +245,7 @@ class GVAR(display) {
 
 		class GVAR(empty4): RscActiveText {
 
-			idc = 213;
+			idc = NOTEBOOK_IDC_EMPTY4;
 			style = 48;
 			text = QPATHTOF(images\brside\10.paa);
 			tooltip = CSTRING(Empty);
@@ -263,7 +262,7 @@ class GVAR(display) {
 
 		class GVAR(dict): RscActiveText {
 
-			idc = 214;
+			idc = NOTEBOOK_IDC_DICT;
 			style = 48;
 			text = QPATHTOF(images\brside\d.paa);
 			tooltip = CSTRING(Dictionary);
@@ -279,7 +278,7 @@ class GVAR(display) {
 
 		class GVAR(cred): RscActiveText {
 
-			idc = 215;
+			idc = NOTEBOOK_IDC_CRED;
 			style = 48;
 			text = QPATHTOF(images\brside\c.paa);
 			tooltip = CSTRING(Credits);

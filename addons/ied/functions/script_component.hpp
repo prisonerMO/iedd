@@ -43,6 +43,14 @@
 	[["Black","Blue","Red","Green","Yellow","Black","Red"],[6,4,3,2,1,5,0]]\
 ]
 
+#define IEDD_BUCKET [\
+	[["Yellow","Green","Red","Black","Blue","Black","Red"],[5,0,4,2,6,1,3]],\
+	[["Black","Yellow","Blue","Green","Red","Black","Red"],[0,4,3,1,2,5,6]],\
+	[["Yellow","Blue","Red","Black","Green","Black","Red"],[6,2,5,1,4,3,0]],\
+	[["Blue","Black","Green","Yellow","Red","Black","Red"],[0,4,5,3,6,2,1]],\
+	[["Green","Yellow","Black","Red","Blue","Black","Red"],[1,2,0,3,4,6,5]]\
+]
+
 #define IEDD_CHARGE [\
 	[["Green","Blue","Yellow","Black","Red","Black","Red"],[5,0,4,1,2,3,6]],\
 	[["Black","Blue","Yellow","Red","Green","Black","Red"],[2,4,5,6,1,3,0]],\

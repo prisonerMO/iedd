@@ -4,9 +4,9 @@ disableSerialization;
 private _sound = format [QPATHTOF(sounds\side%1.ogg), floor (random 3)];
 playSoundUI [_sound, 0.6,1];
 private _display = uiNamespace getVariable "iedd_display";
-private _ctrl = _display displayCtrl 120;
-private _arrowL = _display displayCtrl 121;
-private _arrowR = _display displayCtrl 122;
+private _ctrl = _display displayCtrl NOTEBOOK_IDC_BACK;
+private _arrowL = _display displayCtrl NOTEBOOK_IDC_PREV;
+private _arrowR = _display displayCtrl NOTEBOOK_IDC_NEXT;
 
 if (_current == 0) then {
 	_arrowL ctrlShow false;
