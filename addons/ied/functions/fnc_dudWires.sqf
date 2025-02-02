@@ -13,7 +13,7 @@ private _wires = switch (_type) do {
 	case QGVAR(Barrel): {IEDD_DUDS_BARREL};
 	case QGVAR(Barrel_Grey): {IEDD_DUDS_BARREL};
 	case QGVAR(Charge): {IEDD_DUDS_CHARGE};	
-	case QGVAR(Bucket): {IEDD_DUDS_VBIED};
+	case QGVAR(Bucket): {IEDD_DUDS_BUCKET};
 	case QEGVAR(vbied,box): {IEDD_DUDS_VBIED};
 	default {[]};
 };
