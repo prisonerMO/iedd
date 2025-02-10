@@ -28,7 +28,6 @@
 [QGVAR(createIed), {
 	params ["_type","_pos","_variation","_dud","_size","_timer","_value","_dist","_typeNum","_oc","_oce"];
     TRACE_1("IED Data:",_this);
-    diag_log format ["IED Data: %1",_this];
 	private _bombObj = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
     _bombObj setVariable ["iedd_ied_variation",_variation];
     _bombObj setVariable ["iedd_ied_dud",_dud];
