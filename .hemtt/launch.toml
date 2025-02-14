@@ -16,7 +16,7 @@ parameters = [
     "-hugePages",
     "-noPause",
     "-enableHT",
-    "-malloc=mimalloc_v217_20250103",
+    "-malloc=mimalloc_v219_20250213",
     "-maxFileCacheSize=8192",
     "-setThreadCharacteristics",
     "-limitFPS=144",
