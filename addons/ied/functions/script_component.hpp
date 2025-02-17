@@ -47,7 +47,7 @@
 	[["Yellow","Green","Red","Black","Blue","Black","Red"],[5,0,4,2,6,1,3]],\
 	[["Black","Yellow","Blue","Green","Red","Black","Red"],[0,4,3,1,2,5,6]],\
 	[["Yellow","Blue","Red","Black","Green","Black","Red"],[6,2,5,1,4,3,0]],\
-	[["Blue","Black","Green","Yellow","Red","Black","Red"],[0,4,5,3,6,2,1]],\
+	[["Blue","Black","Green","Yellow","Red","Black","Red"],[0,3,5,4,6,2,1]],\
 	[["Green","Yellow","Black","Red","Blue","Black","Red"],[1,2,0,3,4,6,5]]\
 ]
 
