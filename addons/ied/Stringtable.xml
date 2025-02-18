@@ -328,6 +328,10 @@
                 <Original>Training IED Plastic Canister</Original>
                 <English>Training IED Plastic Canister</English>
             </Key>
+            <Key ID="STR_iedd_ied_Training_Bucket_DisplayName">
+                <Original>Training IED Bucket</Original>
+                <English>Training IED Bucket</English>
+            </Key>
             <Key ID="STR_iedd_ied_VarX">
                 <Original>Chance of variation X</Original>
                 <English>Chance of variation X</English>
