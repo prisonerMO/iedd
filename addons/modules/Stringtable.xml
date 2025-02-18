@@ -11,8 +11,8 @@
                 <English>BLACKLIST</English>
             </Key>
             <Key ID="STR_iedd_modules_Blacklist_Tooltip">
-                <Original>Marker(s) where IEDs, fake IEDs and groud signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</Original>
-                <English>Marker(s) where IEDs, fake IEDs and groud signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</English>
+                <Original>Marker(s) where IEDs, fake IEDs and ground signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</Original>
+                <English>Marker(s) where IEDs, fake IEDs and ground signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</English>
             </Key>
             <Key ID="STR_iedd_modules_Color_Tooltip">
                 <Original>Set color of fuel canister.</Original>
