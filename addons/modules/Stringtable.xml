@@ -312,6 +312,10 @@
                 <Original>Activate VBIED</Original>
                 <English>Activate VBIED</English>
             </Key>
+            <Key ID="STR_iedd_modules_lidState">
+                <Original>LID STATE</Original>
+                <English>LID STATE</English>
+            </Key>
             <Key ID="STR_iedd_modules_OpenClose">
                 <Original>LID ACTIVATION (OTHER UNITS)</Original>
                 <English>LID ACTIVATION (OTHER UNITS)</English>
