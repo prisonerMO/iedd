@@ -22,6 +22,6 @@ if ((_wp select 1) == (_currentWp select 1) && _next > 0) then {
 	if (_distance < _next || _distance > _prev) then {
 		_args call FUNC(suicideAct);
 	} else {
-		[{_this call FUNC(moveCheck)}, _this, _time] call CBA_fnc_waitAndExecute;
+		[{call FUNC(moveCheck)}, _this, _time] call CBA_fnc_waitAndExecute;
 	};
 };

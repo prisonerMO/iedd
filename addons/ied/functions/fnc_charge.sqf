@@ -93,7 +93,7 @@ if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};
             _unit removeEventHandler ["GetInMan", _getInManEhId];
         };
         _getInManEhId = _unit addEventHandler ["GetInMan", {
-            _this call FUNC(handleGetInMan);
+            call FUNC(handleGetInMan);
         }];
         _unit setVariable [QGVAR(GetInManEhId), _getInManEhId,true]; // need to be global?
 

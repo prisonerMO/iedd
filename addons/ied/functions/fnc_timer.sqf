@@ -10,4 +10,4 @@ if !(_bombObj getVariable [QEGVAR(ied,bomb),false]) exitWith {
 	TRACE_1("Defused",_bombObj);
 	deleteVehicle _sound;
 };
-[{_this call FUNC(timer);}, _this, 1] call CBA_fnc_waitAndExecute;
+[{call FUNC(timer);}, _this, 1] call CBA_fnc_waitAndExecute;
