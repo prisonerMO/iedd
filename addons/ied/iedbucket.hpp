@@ -175,6 +175,29 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			defaultValue = "0";
 		};
 		/**********BUCKET OPEN / CLOSE ********/
+		class GVAR(lidState) {
+			displayName = CSTRING(LidState);
+			tooltip = CSTRING(LidState_Tooltip);
+			property = QGVAR(lidState);
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 0;
+			typeName = "NUMBER";
+			class Values {
+				class 1	{
+					name = CSTRING(LidClosed);
+					value = 0;
+				};
+				class 2	{
+					name = CSTRING(LidOpen);
+					value = 1;
+				};
+				class 3	{
+					name = CSTRING(Name_Random);
+					value = 2;
+				};
+			};
+		};
 		class GVAR(openCloseEOD) {
 			displayName = CSTRING(OpenCloseEOD);
 			tooltip = CSTRING(OpenCloseEOD_Tooltip);

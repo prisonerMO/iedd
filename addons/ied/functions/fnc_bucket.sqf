@@ -12,6 +12,8 @@ if (!isServer) exitWith {};
     private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
     private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
     private _nonEOD = _bombObj getVariable [QGVAR(openClose), GVAR(defaultOpenClose)];
+    private _lidStateValue = _bombObj getVariable [QGVAR(lidState), 0];
+    private _lidState = if (_timerValue > 1) then {selectRandom [0,1]} else {_lidStateValue};
     private _isEOD = _bombObj getVariable [QGVAR(openCloseEOD), GVAR(defaultOpenCloseEOD)];
     TRACE_6("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer);
     if (_isFake > random 1) exitWith {
@@ -26,7 +28,7 @@ if (!isServer) exitWith {};
         };
         [{isNull (_this select 0)},
         {
-            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp"];
+            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_lidState"];
             private  _fakeBombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
             if (_setDir) then {
                 _fakeBombObj setDir random 359;
@@ -38,7 +40,8 @@ if (!isServer) exitWith {};
             if (_decals) then {
                 [_fakeBombObj] call FUNC(decals);
             };
-        }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp]] call CBA_fnc_waitUntilAndExecute;
+            _bombObj animate ["bucketlid_hide", _lidState];
+        }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_lidState]] call CBA_fnc_waitUntilAndExecute;
     };
 
     if (GVAR(isDetectable)) then {
@@ -113,8 +116,8 @@ if (!isServer) exitWith {};
 
     if (_isTimer) then {
         private _watch = createSimpleObject ["a3\Weapons_F\Ammo\mag_watch.p3d",[0,0,0]];
-        _watch attachTo [_battery, [0.105,0.075,0.158]];
-        _watch setVectorDirAndUp [[-0.40,0.882948,0],[0.882948,0.469472,0.1]];
+        _watch attachTo [_bombObj, [-0, -0.085, -0.07]];
+        _watch setVectorDirAndUp [[-0,-1,0],[0,0,1]];
         private _randomValue = _bombObj getVariable [QGVAR(randomTimer), GVAR(defaultRandomTimer)];
         private _isRandom = if (_randomValue > 1) then {selectRandom [false,true]} else {[false,true] select _randomValue};
         TRACE_2("Timer",_isTimer,_isRandom);
@@ -137,7 +140,7 @@ if (!isServer) exitWith {};
             speed (_this select 0) == 0
         },
         {
-            params ["_bombObj","_decals", "_setDir", "_wireSet"];
+            params ["_bombObj","_decals", "_setDir", "_wireSet","_lidState"];
             if (_setDir) then {
                 private _bombPos = getPosATL _bombObj;
                 _bombObj setDir random 359;
@@ -150,8 +153,9 @@ if (!isServer) exitWith {};
             private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
             [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;
+            _bombObj animate ["bucketlid_hide", _lidState];
         }, _this] call CBA_fnc_waitUntilAndExecute;
-    }, [_bombObj, _decals, _setDir, _wireSet], 1] call CBA_fnc_waitAndExecute;
+    }, [_bombObj, _decals, _setDir, _wireSet,_lidState], 1] call CBA_fnc_waitAndExecute;
 
 },[_bombObj],0.1] call CBA_fnc_waitAndExecute;
 true;

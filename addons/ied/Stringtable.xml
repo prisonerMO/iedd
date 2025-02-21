@@ -372,6 +372,22 @@
                 <Original>Variation X</Original>
                 <English>Variation X</English>
             </Key>
+            <Key ID="STR_iedd_ied_LidState">
+                <Original>Lid state</Original>
+                <English>Lid state</English>
+            </Key>
+            <Key ID="STR_iedd_ied_LidState_Tooltip">
+                <Original>Lid state tooltip</Original>
+                <English>Lid state tooltip</English>
+            </Key>
+            <Key ID="STR_iedd_ied_LidClosed">
+                <Original>Closed</Original>
+                <English>Closed</English>
+            </Key>
+            <Key ID="STR_iedd_ied_LidOpen">
+                <Original>Open</Original>
+                <English>Open</English>
+            </Key>
             <Key ID="STR_iedd_ied_OpenCloseEOD">
                 <Original>Lid activation (EODs)</Original>
                 <English>Lid activation (EODs)</English>
