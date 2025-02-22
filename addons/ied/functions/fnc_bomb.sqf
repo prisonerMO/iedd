@@ -1,4 +1,25 @@
 #include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Bomb event
+ *
+ * Arguments:
+ * 0: Object <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_bombObj] call iedd_ied_fnc_bomb
+ *
+ * Public: No
+ */
+
+params [];
+TRACE_1("fnc_bomb",_this);
+
+
 params ["_bombObj"];
 if (!(_bombObj getVariable [QEGVAR(ied,bomb),false])) exitWith {};
 _bombObj setVariable [QGVAR(bomb),false,true];

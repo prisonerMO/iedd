@@ -1,10 +1,10 @@
 #include "script_component.hpp"
 /*
- * Author: Prisoner
+ * Author: Prisoner 
  * Adds IED wires and sets up various bomb-related properties.
  *
  * Arguments:
- * 0: Object (iedd IED prop) <OBJECT>
+ * 0: Object <OBJECT>
  *
  * Return Value:
  * True <BOOL>
