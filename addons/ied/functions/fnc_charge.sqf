@@ -1,7 +1,21 @@
-//  CHARGE
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Adds Charge bomb on unit and configures various bomb-related properties.
+ *
+ * Arguments:
+ * 0: Object <OBJECT> - The unit to modify.
+ *
+ * Return Value:
+ * True <BOOL> - Returns true if the setup was successful.
+ *
+ * Example:
+ * [_unit,true] call iedd_ied_fnc_charge;
+ *
+ * Public: No
+ */
 params ["_unit","_activated"];
-TRACE_1("Charge call",_this);
+TRACE_1("fnc_charge",_this);
 if (is3DEN) exitWith {
     private _value = (_unit get3DENAttribute QGVAR(isSurrendered)) select 0;
     [_unit,_value,"ace_isSurrendered",QGVAR(isSurrendered)] call FUNC(setAttributes);
