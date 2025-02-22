@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [ace_player,true] call iedd_ied_fnc_addPFH
+ * [bob,true] call iedd_ied_fnc_addPFH
  *
  * Public: No
  */

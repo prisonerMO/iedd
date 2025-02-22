@@ -1,16 +1,16 @@
 #include "script_component.hpp"
 /*
- * Author: Prisoner 
- * Adds IED wires and sets up various bomb-related properties.
+ * Author: Prisoner
+ * Adds IED wires and configures various bomb-related properties when using "iedd_ied_Barrel" or its child classes as an object.
  *
  * Arguments:
- * 0: Object <OBJECT>
+ * 0: Object <OBJECT> - The IED object to modify.
  *
  * Return Value:
- * True <BOOL>
+ * True <BOOL> - Returns true if the setup was successful.
  *
  * Example:
- * [_bombObj] call iedd_ied_fnc_barrel
+ * [_bombObj] call iedd_ied_fnc_barrel;
  *
  * Public: No
  */

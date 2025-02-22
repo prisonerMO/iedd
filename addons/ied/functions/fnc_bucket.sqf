@@ -1,6 +1,21 @@
-// BUCKET
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Adds IED wires and configures various bomb-related properties when using "iedd_ied_Bucket" or its child classes as an object.
+ *
+ * Arguments:
+ * 0: Object <OBJECT> - The IED object to modify.
+ *
+ * Return Value:
+ * True <BOOL> - Returns true if the setup was successful.
+ *
+ * Example:
+ * [_bombObj] call iedd_ied_fnc_bucket;
+ *
+ * Public: No
+ */
 params ["_bombObj"];
+TRACE_1("fnc_bucket",_this);
 if (is3DEN) exitWith {};
 if (!isServer) exitWith {};
 [{
