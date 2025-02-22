@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "..\script_component.hpp"
 /*
  * Author: Prisoner
  * Bomb event
@@ -15,12 +14,8 @@
  *
  * Public: No
  */
-
-params [];
-TRACE_1("fnc_bomb",_this);
-
-
 params ["_bombObj"];
+TRACE_1("fnc_bomb",_this);
 if (!(_bombObj getVariable [QEGVAR(ied,bomb),false])) exitWith {};
 _bombObj setVariable [QGVAR(bomb),false,true];
 private _isTraining = _bombObj getVariable [QGVAR(training), false];
