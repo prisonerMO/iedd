@@ -1,5 +1,24 @@
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Cuts the wire of an IED and triggers the bomb if the wire is cut in the wrong order.
+ *
+ * Arguments:
+ * 0: The player cutting the wire <OBJECT>
+ * 1: The wire to cut <OBJECT>
+ * 2: The IED object <OBJECT> 
+ * 3: The order of the wire to cut <SCALAR>
+ * 4: Wire cut is a fail <BOOL>
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_player,_wire,_bombObj,0,false] call iedd_ied_fnc_cutWire;
+ *
+ * Public: No
+ */
 params ["_player","_wire","_bombObj", "_order","_isFail"];
+TRACE_1("fnc_cutWire",_this);
 if (_isFail) exitWith {
 	if (GVAR(fail)) then {
 		GVAR(fail) = false;

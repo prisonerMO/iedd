@@ -1,5 +1,23 @@
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles the explosion near of an IED.
+ *
+ * Arguments:
+ * 0: The vehicle that is exploding <OBJECT>
+ * 1: The damage of the explosion <NUMBER>
+ * 2: The source of the explosion <OBJECT>
+ *
+ * Return Value:
+ * Boolean
+ *
+ * Example:
+ * [_vehicle, _damage, _source] call iedd_ied_fnc_explosion;
+ *
+ * Public: No
+ */
 params ["_vehicle", "_damage", "_source"];
+TRACE_1("fnc_explosion",_this);
 private _dis = false;
 if (typeOf _source == "GrenadeHand") exitWith {_dis};
 if ((_vehicle distance _source) < 10 && {!isNull _vehicle}) then {

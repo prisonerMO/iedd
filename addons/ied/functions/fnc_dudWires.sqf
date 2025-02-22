@@ -1,5 +1,21 @@
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Adds dud wires to an IED object.
+ *
+ * Arguments:
+ * 0: The IED object to add the dud wires to <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_bombObj] call iedd_ied_fnc_dudWires;
+ *
+ * Public: No
+ */
 params ["_bombObj"];
+TRACE_1("fnc_dudWires",_this);
 private _ieddWires = _bombObj getVariable [QGVAR(wires),[]];
 if (_ieddWires isEqualTo []) exitWith {TRACE_1("No wires saved on object.",_bombObj);};
 private _type = typeOf _bombObj;

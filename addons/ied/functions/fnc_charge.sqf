@@ -4,7 +4,7 @@
  * Adds Charge bomb on unit and configures various bomb-related properties.
  *
  * Arguments:
- * 0: Object <OBJECT> - The unit to modify.
+ * 0: The unit to modify <OBJECT>
  *
  * Return Value:
  * True <BOOL> - Returns true if the setup was successful.

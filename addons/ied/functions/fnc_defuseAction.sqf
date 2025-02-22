@@ -1,4 +1,20 @@
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Adds the defuse action to an IED object.
+ *
+ * Arguments:
+ * 0: The IED object to add the defuse action to <OBJECT>
+ * 1: The wire set to use <ARRAY of NUMBERS>
+ * 2: The text wire color + text <STRING> 
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_bombObj,_wireSet,"Long"] call iedd_ied_fnc_defuseAction;
+ *
+ * Public: No
+ */
 if (!hasInterface) exitWith {};
 [{
     params ["_bombObj","_wireSet","_text"];

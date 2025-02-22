@@ -4,7 +4,7 @@
  * Adds IED wires and configures various bomb-related properties when using "iedd_ied_Canister" or its child classes as an object.
  *
  * Arguments:
- * 0: Object <OBJECT> - The IED object to modify.
+ * 0: The IED object to modify <OBJECT>
  *
  * Return Value:
  * True <BOOL> - Returns true if the setup was successful.

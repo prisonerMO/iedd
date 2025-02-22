@@ -1,5 +1,21 @@
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Adds the detach action to an IED object.
+ *
+ * Arguments:
+ * 0: The IED object to add the detach action to <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_bombObj] call iedd_ied_fnc_detachAction;
+ *
+ * Public: No
+ */
 params ["_bombObj"];
+TRACE_1("fnc_detachAction",_this);
 if (!hasInterface) exitWith {};
 private _object = attachedTo _bombObj;
 private _condition = {  
