@@ -1,6 +1,21 @@
-// BARREL
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Adds IED wires and sets up various bomb-related properties.
+ *
+ * Arguments:
+ * 0: Object (iedd IED prop) <OBJECT>
+ *
+ * Return Value:
+ * True <BOOL>
+ *
+ * Example:
+ * [_bombObj] call iedd_ied_fnc_barrel
+ *
+ * Public: No
+ */
 params ["_bombObj"];
+TRACE_1("fnc_barrel",_this);
 if (is3DEN) exitWith {};
 if (!isServer) exitWith {};
 [{
