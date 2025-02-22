@@ -64,31 +64,10 @@ if (_state) then {
     _stateCombo lbSetCurSel 0;
     _stateCombo ctrlCommit 0;
 
-    private _ocCtrl = _display ctrlCreate ["RscText", 52529, _grpCtrl];
-    _ocCtrl ctrlSetPosition [
-        0,
-        (H_PART(8.8)),
-        (W_PART(10)),
-        (H_PART(1))
-    ];
-    _ocCtrl ctrlSetText LLSTRING(OpenClose);
-    _ocCtrl ctrlSetTooltip LELSTRING(ied,OpenClose_Tooltip);
-    _ocCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
-    _ocCtrl ctrlCommit 0;
-    private _ocSlider = _display ctrlCreate ["RscXSliderH", 52530, _grpCtrl];
-    _ocSlider ctrlSetPosition [
-        (W_PART(10.1)),
-        (H_PART(8.8)),
-        (W_PART(15.9)),
-        (H_PART(1))
-    ];
-    _ocSlider ctrlCommit 0;    
-    _ocSlider call FUNC(sliderMove);
-
-    private _oceCtrl = _display ctrlCreate ["RscText", 52531, _grpCtrl];
+    private _oceCtrl = _display ctrlCreate ["RscText", 52529, _grpCtrl];
     _oceCtrl ctrlSetPosition [
         0,
-        (H_PART(9.9)),
+        (H_PART(8.8)),
         (W_PART(10)),
         (H_PART(1))
     ];
@@ -96,15 +75,37 @@ if (_state) then {
     _oceCtrl ctrlSetTooltip LELSTRING(ied,OpenCloseEOD_Tooltip);
     _oceCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
     _oceCtrl ctrlCommit 0;
-    private _oceSlider = _display ctrlCreate ["RscXSliderH", 52532, _grpCtrl];
+    private _oceSlider = _display ctrlCreate ["RscXSliderH", 52530, _grpCtrl];
     _oceSlider ctrlSetPosition [
+        (W_PART(10.1)),
+        (H_PART(8.8)),
+        (W_PART(15.9)),
+        (H_PART(1))
+    ];
+    _oceSlider ctrlCommit 0;    
+    _oceSlider call FUNC(sliderMove);
+
+    private _ocCtrl = _display ctrlCreate ["RscText", 52531, _grpCtrl];
+    _ocCtrl ctrlSetPosition [
+        0,
+        (H_PART(9.9)),
+        (W_PART(10)),
+        (H_PART(1))
+    ];
+    _ocCtrl ctrlSetText LLSTRING(OpenClose);
+    _ocCtrl ctrlSetTooltip LELSTRING(ied,OpenClose_Tooltip);
+    _ocCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
+    _ocCtrl ctrlCommit 0;
+    private _ocSlider = _display ctrlCreate ["RscXSliderH", 52532, _grpCtrl];
+    _ocSlider ctrlSetPosition [
         (W_PART(10.1)),
         (H_PART(9.9)),
         (W_PART(15.9)),
         (H_PART(1))
     ];
-    _oceSlider ctrlCommit 0;
-    _oceSlider call FUNC(sliderMove);
+    _ocSlider ctrlCommit 0;
+    _ocSlider call FUNC(sliderMove);
+    
     _ctrlOK ctrlSetPosition [W_PART(25.1667), H_PART(19.2125), W_PART(5), H_PART(1)];
     _ctrlOK ctrlCommit 0;
     _ctrlCancel ctrlSetPosition [W_PART(3.1667), H_PART(19.2125), W_PART(5), H_PART(1)];

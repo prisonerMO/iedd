@@ -425,7 +425,7 @@
     2
 ] call CBA_fnc_addSetting;
 
-/*IED DEBUG*/
+/*IEDD DEBUG*/
 #ifdef ENABLE_IEDD_DEBUG
     [
         QEGVAR(equipment,debug),

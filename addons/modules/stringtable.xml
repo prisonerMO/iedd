@@ -14,10 +14,6 @@
                 <Original>Marker(s) where IEDs, fake IEDs and ground signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</Original>
                 <English>Marker(s) where IEDs, fake IEDs and ground signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</English>
             </Key>
-            <Key ID="STR_iedd_modules_Color_Tooltip">
-                <Original>Set color of fuel canister.</Original>
-                <English>Set color of fuel canister.</English>
-            </Key>
             <Key ID="STR_iedd_modules_Count">
                 <Original>Number of IEDs</Original>
                 <English>Number of IEDs</English>
@@ -144,6 +140,14 @@
                 <Original>Garbage (Small)</Original>
                 <English>Garbage (Small)</English>
             </Key>
+            <Key ID="STR_iedd_modules_OpenClose">
+                <Original>LID ACTIVATION (OTHER UNITS)</Original>
+                <English>LID ACTIVATION (OTHER UNITS)</English>
+            </Key>
+            <Key ID="STR_iedd_modules_OpenCloseEOD">
+                <Original>LID ACTIVATION (EODS)</Original>
+                <English>LID ACTIVATION (EODS)</English>
+            </Key>
             <Key ID="STR_iedd_modules_RoadDirt_1">
                 <Original>Road Dirt 1</Original>
                 <English>Road Dirt 1</English>
@@ -196,6 +200,10 @@
                 <Original>CHANCE OF DUD (%)</Original>
                 <English>CHANCE OF DUD (%)</English>
             </Key>
+            <Key ID="STR_iedd_modules_Zeus_EngineOn">
+                <Original>ENGINE ON</Original>
+                <English>ENGINE ON</English>
+            </Key>
             <Key ID="STR_iedd_modules_Zeus_Exp_Category">
                 <Original>EXPLOSION DISTANCE</Original>
                 <English>EXPLOSION DISTANCE</English>
@@ -204,13 +212,37 @@
                 <Original>Explode IED</Original>
                 <English>Explode IED</English>
             </Key>
+            <Key ID="STR_iedd_modules_Zeus_GetIn">
+                <Original>GET IN</Original>
+                <English>GET IN</English>
+            </Key>
             <Key ID="STR_iedd_modules_Zeus_Handcuffed_Category">
                 <Original>UNIT HANDCUFFED</Original>
                 <English>UNIT HANDCUFFED</English>
             </Key>
+            <Key ID="STR_iedd_modules_Zeus_Ied_Var_Tooltip">
+                <Original>Select variation of IED.</Original>
+                <English>Select variation of IED.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Moving">
+                <Original>MOVING VEHICLE</Original>
+                <English>MOVING VEHICLE</English>
+            </Key>
             <Key ID="STR_iedd_modules_Zeus_Place_Ied">
                 <Original>Place IED</Original>
                 <English>Place IED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Place_Vbied">
+                <Original>Add VBIED</Original>
+                <English>Add VBIED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Pos">
+                <Original>VBIED POSITION</Original>
+                <English>VBIED POSITION</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Pos_Tooltip">
+                <Original>Set position for VBIED.</Original>
+                <English>Set position for VBIED.</English>
             </Key>
             <Key ID="STR_iedd_modules_Zeus_Sides_Category">
                 <Original>ACTIVED BY SIDE</Original>
@@ -235,6 +267,10 @@
             <Key ID="STR_iedd_modules_Zeus_Size_Tooltip">
                 <Original>Select size of explosion.</Original>
                 <English>Select size of explosion.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_Speed">
+                <Original>MOVING SPEED</Original>
+                <English>MOVING SPEED</English>
             </Key>
             <Key ID="STR_iedd_modules_Zeus_Suicide">
                 <Original>Suicide bomber</Original>
@@ -268,61 +304,21 @@
                 <Original>BOMB VARIATION</Original>
                 <English>BOMB VARIATION</English>
             </Key>
-            <Key ID="STR_iedd_modules_Zeus_Ied_Var_Tooltip">
-                <Original>Select variation of IED.</Original>
-                <English>Select variation of IED.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Vbied_Var_Tooltip">
-                <Original>Select variation of VBIED.</Original>
-                <English>Select variation of VBIED.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Place_Vbied">
-                <Original>Add VBIED</Original>
-                <English>Add VBIED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Pos">
-                <Original>VBIED POSITION</Original>
-                <English>VBIED POSITION</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Pos_Tooltip">
-                <Original>Set position for VBIED.</Original>
-                <English>Set position for VBIED.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_GetIn">
-                <Original>GET IN</Original>
-                <English>GET IN</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_EngineOn">
-                <Original>ENGINE ON</Original>
-                <English>ENGINE ON</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Moving">
-                <Original>MOVING VEHICLE</Original>
-                <English>MOVING VEHICLE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Speed">
-                <Original>MOVING SPEED</Original>
-                <English>MOVING SPEED</English>
+            <Key ID="STR_iedd_modules_Zeus_Vbied_Activate">
+                <Original>Activate VBIED</Original>
+                <English>Activate VBIED</English>
             </Key>
             <Key ID="STR_iedd_modules_Zeus_Vbied_Explode">
                 <Original>Explode VBIED</Original>
                 <English>Explode VBIED</English>
             </Key>
-            <Key ID="STR_iedd_modules_Zeus_Vbied_Activate">
-                <Original>Activate VBIED</Original>
-                <English>Activate VBIED</English>
+            <Key ID="STR_iedd_modules_Zeus_Vbied_Var_Tooltip">
+                <Original>Select variation of VBIED.</Original>
+                <English>Select variation of VBIED.</English>
             </Key>
             <Key ID="STR_iedd_modules_lidState">
                 <Original>LID STATE</Original>
                 <English>LID STATE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_OpenClose">
-                <Original>LID ACTIVATION (OTHER UNITS)</Original>
-                <English>LID ACTIVATION (OTHER UNITS)</English>
-            </Key>
-            <Key ID="STR_iedd_modules_OpenCloseEOD">
-                <Original>LID ACTIVATION (EODS)</Original>
-                <English>LID ACTIVATION (EODS)</English>
             </Key>
         </Container>
     </Package>

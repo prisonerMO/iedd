@@ -26,7 +26,7 @@
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(createIed), {
-	params ["_type","_pos","_variation","_dud","_size","_timer","_value","_dist","_typeNum","_lidState","_oc","_oce"];
+	params ["_type","_pos","_variation","_dud","_size","_timer","_value","_dist","_typeNum","_lidState","_oce","_oc"];
     TRACE_1("IED Data:",_this);
 	private _bombObj = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
     _bombObj setVariable ["iedd_ied_variation",_variation];
@@ -43,9 +43,9 @@
         _bombObj setVariable ["iedd_ied_color",_color];
     };
     if (_type == QEGVAR(ied,Bucket)) then {
-        _bombObj setVariable ["iedd_ied_lidState",_lidState];
-        _bombObj setVariable ["iedd_ied_openClose",_oc];
+        _bombObj setVariable ["iedd_ied_lidState",_lidState];        
         _bombObj setVariable ["iedd_ied_openCloseEOD",_oce];
+        _bombObj setVariable ["iedd_ied_openClose",_oc];
     };
 }] call CBA_fnc_addEventHandler;
 

@@ -17,7 +17,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                         class GVAR(variationL): RscText {
                             idc = -1;
                             text = CSTRING(Zeus_Variation);
-                            tooltip = CSTRING(Zeus_Variation_Tooltip);
+                            tooltip = CSTRING(Zeus_Ied_Var_Tooltip);
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(10));

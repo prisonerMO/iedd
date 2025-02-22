@@ -147,7 +147,6 @@ class GVAR(RcsVbied): RscDisplayAttributes {
 
                         class GVAR(distanceSlider): RscXSliderH {
                             sliderRange[] = {0, 30};
-                            text = ECSTRING(vbied,Distance);
                             idc = 52524;
                             x = QUOTE(W_PART(10.1));
                             y = QUOTE(H_PART(4.4));
