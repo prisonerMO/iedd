@@ -36,3 +36,5 @@
     backpack = #BACKPACK; \
     count = COUNT; \
 }
+
+#include "script_classes.hpp"

@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 
 private _mode = param [0,"",[""]];
 private _input = param [1,[],[[]]];

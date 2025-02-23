@@ -2,7 +2,7 @@
 
 {
 	[_x, "Explosion", {call FUNC(explosion)}, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach IEDD_CLASSES;
+} forEach IEDD_BASE_CLASSES;
 
 /*IED functions*/
 [QGVAR(defuseAction), LINKFUNC(defuseAction)] call CBA_fnc_addEventHandler;

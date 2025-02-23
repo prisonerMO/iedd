@@ -159,24 +159,6 @@
 
 #define IEDD_TRAINING_BOMB QGVAR(Training_IED_Ammo)
 
-#define IEDD_DECALS [\
-	"Land_Decal_RoadEdge_Dirt_03_F",\
-	"Land_Garbage_square3_F",\
-	"Land_Garbage_square5_F",\
-	"Land_Garbage_line_F",\
-	"Land_dirt_road_rocks_04_F",\
-	"Land_dirt_road_rocks_01_F",\
-	"Land_Decal_RoadCrack_Grass_04_F",\
-	"Land_Decal_RoadCrack_Grass_05_F",\
-	"Land_Decal_RoadCrack_Grass_01_F",\
-	"Land_Decal_RoadEdge_Dirt_09_F",\
-	"Land_Decal_RoadEdge_Dirt_07_F",\
-	"Land_Decal_RoadEdge_Dirt_06_F",\
-	"Land_Decal_RoadEdge_Dirt_01_F",\
-	"Land_Decal_RoadEdge_Dirt_02_F",\
-	"Land_Decal_RoadEdge_Dirt_10_F"\
-]
-
 #define IEDDSETPARAMS(AREAA,AREAB,ANGLE,BEHAVIOUR,COMBAT,SPEED,FORMATION,TIMEOUT)\
 _a=AREAA;\
 _b=AREAB;\
