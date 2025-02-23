@@ -15,7 +15,7 @@ if (_hasWpn) then {
     private _lidSound = _isExp;
     private _openTime = 3;
     private _isExpTime = random(2)+1;
-    TRACE_3("Chances:",_isExp,_expChance,_isExpTime);
+    TRACE_4("Chances:",_isExp,_expChance,_isExpTime,_lidSound);
     _this set [3, _isExp];
     _this set [4, _isExpTime];
     _this set [5, _lidSound];
