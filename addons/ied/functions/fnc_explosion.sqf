@@ -4,9 +4,9 @@
  * Handles the explosion near of an IED.
  *
  * Arguments:
- * 0: The vehicle that is exploding <OBJECT>
- * 1: The damage of the explosion <NUMBER>
- * 2: The source of the explosion <OBJECT>
+ * 0: Vehicle <OBJECT>
+ * 1: Damage <NUMBER>
+ * 2: Source <OBJECT>
  *
  * Return Value:
  * Boolean

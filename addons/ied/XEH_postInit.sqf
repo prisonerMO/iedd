@@ -155,6 +155,4 @@ if (isServer) then {
 if (!hasInterface) exitWith {};
 
 ["unit", {[ACE_player] call FUNC(addItems)},true] call CBA_fnc_addPlayerEventHandler;
-
 GVAR(fail) = false;
-GVAR(lid) = false;

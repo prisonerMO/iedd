@@ -6,7 +6,8 @@
  * Arguments:
  * 0: The IED object to add the defuse action to <OBJECT>
  * 1: The wire set to use <ARRAY of NUMBERS>
- * 2: The text wire color + text <STRING> 
+ * 2: The text wire color + _text <STRING> 
+ *
  * Return Value:
  * None
  *

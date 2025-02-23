@@ -9,6 +9,7 @@
  * 2: The IED object <OBJECT> 
  * 3: The order of the wire to cut <SCALAR>
  * 4: Wire cut is a fail <BOOL>
+ *
  * Return Value:
  * None
  *

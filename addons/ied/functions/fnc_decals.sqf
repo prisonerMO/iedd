@@ -6,6 +6,7 @@
  * Arguments:
  * 0: The position to create the decal <ARRAY>
  * 1: The type of decal to create <STRING> 
+ *
  * Return Value:
  * None
  *
