@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_count"];
 private _colors = [];
 for "_i" from 0 to _count do {

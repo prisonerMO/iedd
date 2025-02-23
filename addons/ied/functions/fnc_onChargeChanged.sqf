@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_ctrlCheckbox"];
 TRACE_1("IEDD: onChargeChanged",_this);
 private _state = cbChecked _ctrlCheckbox;

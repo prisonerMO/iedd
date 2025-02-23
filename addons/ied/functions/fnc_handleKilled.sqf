@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_unit", "_killer", "_instigator", "_useEffects"];
 TRACE_1("HandleKilled Bomb Vest",_unit);
 // ensure event is only called once

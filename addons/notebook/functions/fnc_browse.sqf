@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_selectDir"];  // memDir direction (next or prev message)
 disableSerialization;
 

@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_unit"];
 
 [_unit, "forceWalk", QGVAR(charge), false] call ace_common_fnc_statusEffect_set;

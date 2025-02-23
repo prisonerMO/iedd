@@ -1,5 +1,5 @@
 //#define DEBUG_ENABLED_IED
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_unit"];
 private _actDist = _unit getVariable QGVAR(actDist);
 if (isNil "_actDist") then {

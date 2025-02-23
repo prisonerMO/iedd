@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params [["_var", "home"],["_current", 0]];
 disableSerialization;
 private _sound = format [QPATHTOF(sounds\side%1.ogg), floor (random 3)];

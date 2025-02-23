@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_ctrlGroup", "_value"];
 private _states = [0,1,2,3];
 if !(_value isEqualType []) then {

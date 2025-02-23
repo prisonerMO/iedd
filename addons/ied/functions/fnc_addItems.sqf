@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 /*
  * Author: Prisoner
  * Add items IEDD Notebook and Defusal Kit to the unit if settings is enabled

@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_bombObj","_useRandom"];
 private _pos = getPosATL _bombObj;
 private _type = typeOf _bombObj;

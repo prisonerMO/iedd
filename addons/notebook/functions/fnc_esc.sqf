@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_display"];
 
 [QGVAR(sound), [QGVAR(open),player]] call CBA_fnc_globalEvent; // open

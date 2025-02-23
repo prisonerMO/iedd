@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_target", "_player", "_state"];
 private _hasWpn = currentWeapon _player != "";
 private _checkTime = [0,1.8] select (_hasWpn);
@@ -8,7 +8,7 @@ if (_hasWpn) then {
 [{
     params ["_target", "_player", "_state"];
     private _text = ["Closing lid...", "Opening lid..."] select _state;
-    private _lid = _target getVariable [QGVAR(lid), [0,0]];
+    private _lid = _target getVariable [QGVAR(lid), [QGVAR(openCloseEOD), GVAR(defaultOpenCloseEOD)]];
     private _expChance = _lid select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
     TRACE_1("params:",_this);
     private _isExp = random 1 < _expChance;
@@ -27,9 +27,10 @@ if (_hasWpn) then {
             _actionParams #0 params ["_target", "_player", "_state"];
             _target animate ["bucketlid_hide", _state];
             private _isTimer = _target getVariable [QGVAR(timer), false];
-            if (_target getVariable [QGVAR(bomb), false] && {
+            if (alive _target && {
+                _target getVariable [QGVAR(bomb), false] && {
                 _state > 0 && {
-                (_isTimer in [true,1])}}) then {
+                (_isTimer in [true,1])}}}) then {
                 [QGVAR(timer), [_target]] call CBA_fnc_serverEvent;
                 _target setVariable [QGVAR(timer), false, true];
             };

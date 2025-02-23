@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 private _curatorSelected = curatorSelected select 0;
 if (_curatorSelected findIf {typeOf _x in IEDD_CLASSES} > -1) then {
 	private _zeusBombs = _curatorSelected select {typeOf _x in IEDD_CLASSES && _x getVariable [QEGVAR(ied,bomb),false]};

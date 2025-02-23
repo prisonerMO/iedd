@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 private _checkTime = 5;
 if (GVAR(bombs) isNotEqualTo []) then {
 	private _players = call CBA_fnc_players;

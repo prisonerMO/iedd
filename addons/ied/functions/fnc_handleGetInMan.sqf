@@ -1,4 +1,24 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles the GetInMan event for the bomb vest.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [bob] call iedd_ied_fnc_handleGetInMan
+ *
+ * Public: Yes
+ */
+
+params [];
+TRACE_1("fnc_handleGetInMan",_this);
+
+
 params ["_unit", "_role", "_vehicle", "_turret"];
 TRACE_1("HandleGetInMan Bomb Vest",_unit);
 // ensure event is only called once

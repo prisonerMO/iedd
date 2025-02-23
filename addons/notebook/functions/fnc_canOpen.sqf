@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 if (EGVAR(ied,isBlockedRange) && {
 	(ACE_player nearEntities [IEDD_CLASSES, 20]) isNotEqualTo []}) exitWith {
 	false;

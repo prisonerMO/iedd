@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 /*
  * Author: Prisoner
  * Add PerFrameHandler to the unit for checking if the unit is in the explosion range

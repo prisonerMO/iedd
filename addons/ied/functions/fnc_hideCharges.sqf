@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_unit","_state"];
 private _attachedObjects = attachedObjects _unit;
 private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};

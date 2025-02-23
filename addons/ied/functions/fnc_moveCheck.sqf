@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_unit","_target","_wp","_time","_next","_prev"];
 TRACE_1("Move Check",_this);
 if (!local _unit) exitWith {

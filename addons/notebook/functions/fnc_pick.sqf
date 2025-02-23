@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_unit", "_item"];
 [player, "PutDown"] call ace_common_fnc_doGesture;
 [{

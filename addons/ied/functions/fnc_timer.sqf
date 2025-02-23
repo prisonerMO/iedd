@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_bombObj","_endTime","_sound"];
 TRACE_5("IED Timer:",_bombObj,_endTime,_sound,time,_bombObj getVariable QGVAR(bomb));
 if (time > _endTime) exitWith {	

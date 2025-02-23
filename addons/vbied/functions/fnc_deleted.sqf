@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "..\script_component.hpp"
 params ["_entity"];
 private _vehicle = attachedTo _entity;
 if (!isNull _vehicle) then {

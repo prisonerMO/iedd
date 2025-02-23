@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_bombObj"];
 _bombObj setVariable [QGVAR(training),true,true];
 _bombObj setVariable [QGVAR(decals),false]; 

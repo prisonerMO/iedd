@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_control"];
 private _display = ctrlParent _control;
 private _ctrlButtonOK = _display displayCtrl 1;

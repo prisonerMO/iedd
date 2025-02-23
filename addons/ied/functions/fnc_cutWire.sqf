@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 /*
  * Author: Prisoner
  * Cuts the wire of an IED and triggers the bomb if the wire is cut in the wrong order.

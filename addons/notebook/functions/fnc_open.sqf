@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 private _isLowered = (weaponLowered ace_player || !isNull objectParent ACE_player);
 if (!_isLowered) then {
 	[ace_player] call ace_weaponselect_fnc_putWeaponAway;

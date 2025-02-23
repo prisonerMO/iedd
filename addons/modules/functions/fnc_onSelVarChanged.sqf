@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_control", "_curSel"];
 if (_curSel < 0) exitWith {};
 private _display = ctrlParent _control;

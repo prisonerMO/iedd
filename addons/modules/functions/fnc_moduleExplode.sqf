@@ -15,5 +15,6 @@ if !(typeOf _unit in IEDD_CLASSES) exitWith {
 	deleteVehicle _logic;
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
+
 [QGVAR(explode), [_unit]] call CBA_fnc_serverEvent;
 deleteVehicle _logic;

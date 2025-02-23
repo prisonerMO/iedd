@@ -177,16 +177,6 @@
 	"Land_Decal_RoadEdge_Dirt_10_F"\
 ]
 
-#define IEDD_FAKE_CLASSES [\
-    "Land_CanisterPlastic_F",\
-    "Land_CanisterFuel_F",\
-    "Land_PaperBox_01_small_ransacked_brown_F",\
-    "Land_CinderBlock_01_F",\
-    "Land_GarbageBarrel_01_F",\
-    "Land_BarrelEmpty_F"\
-]
-
-
 #define IEDDSETPARAMS(AREAA,AREAB,ANGLE,BEHAVIOUR,COMBAT,SPEED,FORMATION,TIMEOUT)\
 _a=AREAA;\
 _b=AREAB;\

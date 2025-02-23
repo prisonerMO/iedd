@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_unit","_value","_aceType","_type"];
 if (isServer && {is3DEN}) then {
     private _isChargeVest = (_unit get3DENAttribute QGVAR(isCharge)) select 0;

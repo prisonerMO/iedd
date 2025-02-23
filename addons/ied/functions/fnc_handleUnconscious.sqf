@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_unit","_status"];
 TRACE_1("Unconscius",_this);
 private _attachedObjects = attachedObjects _unit;

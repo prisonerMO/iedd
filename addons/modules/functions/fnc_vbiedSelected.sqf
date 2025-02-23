@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 params ["_control","_value"];
 TRACE_1("Selected",_this);
 private _display = ctrlParent _control;
