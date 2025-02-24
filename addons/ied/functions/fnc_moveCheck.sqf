@@ -1,4 +1,29 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Suicide bomber moving event //TO-DO description
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ * 1: Target <OBJECT>
+ * 2: Waypoint [Group, Waypoint Index] <ARRAY>
+ * 3: Wait Time <NUMBER>
+ * 4: Previus distance <NUMBER>
+ * 5: Next distance <NUMBER>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [bob, player, [group bob, 1], 5, 55, 150] call iedd_ied_fnc_moveCheck
+ *
+ * Public: No
+ */
+
+params [];
+TRACE_1("fnc_moveCheck",_this);
+
+
 params ["_unit","_target","_wp","_time","_next","_prev"];
 TRACE_1("Move Check",_this);
 if (!local _unit) exitWith {
