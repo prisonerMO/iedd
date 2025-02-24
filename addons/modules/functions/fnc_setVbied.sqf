@@ -1,5 +1,23 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Initalizes the "Set VBIED" Zeus module display.
+ *
+ * Arguments:
+ * 0: Control <CONTROL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [Control] call iedd_modules_fnc_setVbied
+ *
+ * Public: No
+ */
+
 params ["_control"];
+TRACE_1("fnc_setVbied",_this);
+
 //Generic Init:
 private _display = ctrlParent _control;
 private _ctrlButtonOK = _display displayCtrl 1; //IDC_OK

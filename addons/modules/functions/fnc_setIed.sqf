@@ -1,5 +1,23 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Intiliaze the "Place IED" Zeus module display.
+ *
+ * Arguments:
+ * 0: Control <CONTROL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [Control] call iedd_modules_fnc_setIed
+ *
+ * Public: No
+ */
+
 params ["_control"];
+TRACE_1("fnc_setIed",_this);
+
 private _display = ctrlParent _control;
 private _ctrlButtonOK = _display displayCtrl 1;
 private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];

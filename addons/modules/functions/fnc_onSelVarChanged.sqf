@@ -1,5 +1,24 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles the selection of the IED type and updates the variation list
+ *
+ * Arguments:
+ * 0: Control <CONTROL>
+ * 1: Current selection <NUMBER>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [CONTROL, 0] call iedd_fnc_onSelVarChanged
+ *
+ * Public: No
+ */
+
 params ["_control", "_curSel"];
+TRACE_1("fnc_onSelVarChanged",_this);
+
 if (_curSel < 0) exitWith {};
 private _display = ctrlParent _control;
 private _typeCtrl = _display displayCtrl 52520;

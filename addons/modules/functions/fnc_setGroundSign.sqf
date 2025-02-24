@@ -1,5 +1,23 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Intiliaze the "Place Ground Sign" Zeus module display
+ *
+ * Arguments:
+ * 0: Argument (optional, default: value) <OBJECT>
+ *
+ * Return Value:
+ * Return description <NONE>
+ *
+ * Example:
+ * [params] call PREFIX_modules_fnc_setGroundSign
+ *
+ * Public: No
+ */
+
 params ["_control"];
+TRACE_1("fnc_setGroundSign",_this);
+
 //Generic Init:
 private _display = ctrlParent _control;
 private _ctrlButtonOK = _display displayCtrl 1; //IDC_OK

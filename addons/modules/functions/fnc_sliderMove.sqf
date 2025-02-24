@@ -1,4 +1,23 @@
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handle control slider move event
+ *
+ * Arguments:
+ * 0: Slider <CONTROL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [Slider] call FUNC(sliderMove)
+ *
+ * Public: No
+ */
+
 params ["_slider"];
+TRACE_1("fnc_sliderMove",_this);
+
 private _fnc_sliderMove = {
     params ["_slider"];
     private _idc = ctrlIDC _slider; // IDCs ∈ [52523]

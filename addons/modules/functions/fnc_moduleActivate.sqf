@@ -1,5 +1,22 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Module function for activate IED
+ *
+ * Arguments:
+ * 0: Argument (optional, default: value) <OBJECT>
+ *
+ * Return Value:
+ * Return description <NONE>
+ *
+ * Example:
+ * [params] call PREFIX_modules_fnc_moduleActivate
+ *
+ * Public: No
+ */
+
 params ["_logic"];
+TRACE_1("fnc_moduleActivate",_this);
 
 if !(local _logic) exitWith {};
 
