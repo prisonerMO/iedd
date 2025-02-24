@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_bombObj"];
 TRACE_1("fnc_dudWires",_this);
+
 private _ieddWires = _bombObj getVariable [QGVAR(wires),[]];
 if (_ieddWires isEqualTo []) exitWith {TRACE_1("No wires saved on object.",_bombObj);};
 private _type = typeOf _bombObj;

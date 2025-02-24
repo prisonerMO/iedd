@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_count"];
 TRACE_1("fnc_variationx",_this);
+
 private _colors = [];
 for "_i" from 0 to _count do {
 	private _color = if (_i > 4) then {

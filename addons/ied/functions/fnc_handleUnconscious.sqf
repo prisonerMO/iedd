@@ -15,10 +15,11 @@
  *
  * Public: No
  */
+
 params ["_unit","_isUnconscious"];
 TRACE_1("fnc_handleUnconscious",_this);
-if (!local _unit || {!_isUnconscious}) exitWith {};
 
+if (!local _unit || {!_isUnconscious}) exitWith {}; //Douple check?
 private _attachedObjects = attachedObjects _unit;
 private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
 if (_index > -1) then {

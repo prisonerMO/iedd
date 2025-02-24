@@ -18,8 +18,10 @@
  *
  * Public: No
  */
+
 params ["_player","_wire","_bombObj", "_order","_isFail"];
 TRACE_1("fnc_cutWire",_this);
+
 if (_isFail) exitWith {
 	if (GVAR(fail)) then {
 		GVAR(fail) = false;

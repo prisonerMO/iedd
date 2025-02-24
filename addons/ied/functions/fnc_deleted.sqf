@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_entity"];
 TRACE_1("fnc_deleted",_this);
+
 private _attachedObjects = attachedObjects _entity;
 {
 	_object = _x;

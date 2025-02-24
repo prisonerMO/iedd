@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_unit","_activated"];
 TRACE_1("fnc_charge",_this);
+
 if (is3DEN) exitWith {
     private _value = (_unit get3DENAttribute QGVAR(isSurrendered)) select 0;
     [_unit,_value,"ace_isSurrendered",QGVAR(isSurrendered)] call FUNC(setAttributes);

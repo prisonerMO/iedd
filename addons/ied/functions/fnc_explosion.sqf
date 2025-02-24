@@ -16,8 +16,10 @@
  *
  * Public: No
  */
+
 params ["_vehicle", "_damage", "_source"];
 TRACE_1("fnc_explosion",_this);
+
 private _dis = false;
 if (typeOf _source == "GrenadeHand") exitWith {_dis};
 if ((_vehicle distance _source) < 10 && {!isNull _vehicle}) then {

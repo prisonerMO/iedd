@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_ctrlCheckbox"];
 TRACE_1("fnc_onChargeChanged",_this);
+
 private _state = cbChecked _ctrlCheckbox;
 private _fade = [0.75,0] select _state;
 private _ctrlGroup = ctrlParentControlsGroup ctrlParentControlsGroup _ctrlCheckbox;

@@ -16,9 +16,11 @@
  *
  * Public: No
  */
+
 params ["_bombObj","_endTime","_sound"];
 TRACE_1("fnc_timer",_this);
 TRACE_5("IED Timer:",_bombObj,_endTime,_sound,time,_bombObj getVariable QGVAR(bomb));
+
 if (time > _endTime) exitWith {	
 	TRACE_1("Time > EndTime",_this);
 	deleteVehicle _sound;

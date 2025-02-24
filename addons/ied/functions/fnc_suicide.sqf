@@ -14,8 +14,10 @@
  *
  * Public: Yes
  */
+
 params ["_unit"];
 TRACE_1("fnc_suicide",_this);
+
 private _actDist = _unit getVariable QGVAR(actDist);
 if (isNil "_actDist") then {
 	private _getAct = _unit getVariable [QGVAR(actDist),0];

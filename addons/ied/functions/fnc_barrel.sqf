@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_bombObj"];
 TRACE_1("fnc_barrel",_this);
+
 if (is3DEN) exitWith {};
 if (!isServer) exitWith {};
 [{

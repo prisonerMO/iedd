@@ -15,12 +15,9 @@
  * Public: Yes
  */
 
-params [];
-TRACE_1("fnc_handleGetInMan",_this);
-
-
 params ["_unit", "_role", "_vehicle", "_turret"];
 TRACE_1("HandleGetInMan Bomb Vest",_unit);
+
 // ensure event is only called once
 private _idPFH = _unit getVariable [QGVAR(GetInManEhId),-1];
 if (_idPFH != -1) then {

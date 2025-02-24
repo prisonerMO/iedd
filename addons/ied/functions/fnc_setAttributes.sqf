@@ -17,8 +17,10 @@
  *
  * Public: No
  */
+
 params ["_unit","_value","_aceType","_type"];
 TRACE_1("fnc_setAttributes",_this);
+
 if (isServer && {is3DEN}) then {
     private _isChargeVest = (_unit get3DENAttribute QGVAR(isCharge)) select 0;
     if (_isChargeVest) then {

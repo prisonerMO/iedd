@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_bombObj"];
 TRACE_1("fnc_training",_this);
+
 _bombObj setVariable [QGVAR(training),true,true];
 _bombObj setVariable [QGVAR(decals),false]; 
 _bombObj setVariable [QGVAR(fake),0,true];

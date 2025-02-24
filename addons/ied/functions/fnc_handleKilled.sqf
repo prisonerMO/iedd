@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_unit", "_killer", "_instigator", "_useEffects"];
 TRACE_1("fnc_handleKilled",_this);
+
 // ensure event is only called once
 private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
 if (_killedEhId != -1) then {

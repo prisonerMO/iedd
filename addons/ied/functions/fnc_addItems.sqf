@@ -16,6 +16,7 @@
  */
 params ["_unit"];
 TRACE_1("fnc_addItems",_this);
+
 if (GVAR(addNotebook) &&    
     {([_unit] call ace_common_fnc_isEOD || _unit getUnitTrait "explosiveSpecialist")}) then {
     	[QGVAR(add),[_unit,"iedd_item_notebook"]] call CBA_fnc_localEvent;

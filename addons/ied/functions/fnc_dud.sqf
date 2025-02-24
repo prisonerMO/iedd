@@ -15,8 +15,10 @@
  *
  * Public: No
  */
+
 params ["_bombObj","_sound"];
 TRACE_1("fnc_dud",_this);
+
 _bombObj call FUNC(dudWires);
 if (!hasInterface) exitWith {};
 _bombObj say3D _sound;

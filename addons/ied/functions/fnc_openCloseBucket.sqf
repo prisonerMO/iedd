@@ -16,8 +16,10 @@
  *
  * Public: No
  */
+
 params ["_target", "_player", "_state"];
 TRACE_1("fnc_openCloseBucket",_this);
+
 private _hasWpn = currentWeapon _player != "";
 private _checkTime = [0,1.8] select (_hasWpn);
 if (_hasWpn) then {

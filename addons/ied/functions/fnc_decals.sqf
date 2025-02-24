@@ -15,8 +15,10 @@
  *
  * Public: No
  */
+
 params ["_pos",["_type",selectRandom IEDD_DECALS]];
 TRACE_1("fnc_decals",_this);
+
 private _decalPos =
 if (_pos isEqualType []) then {
     _pos;

@@ -15,8 +15,10 @@
  *
  * Public: No
  */
+
 params ["_unit","_state"];
 TRACE_1("fnc_addPFH",_this);
+
 private _expDist = _unit getVariable QGVAR(expDist);
 if (isNil "_expDist") then {
 	private _getExp = _unit getVariable [QGVAR(expDist), 0];

@@ -19,8 +19,10 @@
  *
  * Public: No
  */
+
 params ["_unit","_target","_wp","_time","_next","_prev"];
 TRACE_1("Move Check",_this);
+
 if (!local _unit) exitWith {
 	private _args = ((group _unit) getVariable QGVAR(suicideAct));
 	[QGVAR(suicideAct), _args, _unit] call CBA_fnc_targetEvent; //if locality change?; //if locality change?

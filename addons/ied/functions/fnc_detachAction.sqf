@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_bombObj"];
 TRACE_1("fnc_detachAction",_this);
+
 if (!hasInterface) exitWith {};
 private _object = attachedTo _bombObj;
 private _condition = {  

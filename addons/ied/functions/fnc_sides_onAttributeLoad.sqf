@@ -15,8 +15,10 @@
  *
  * Public: No
  */
+
 params ["_ctrlGroup", "_value"];
 TRACE_1("fnc_sides_onAttributeLoad",_this);
+
 private _states = [0,1,2,3];
 if !(_value isEqualType []) then {
     _states set [_value,-1];

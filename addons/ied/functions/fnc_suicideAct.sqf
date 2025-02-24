@@ -17,8 +17,8 @@
  *
  * Public: No
  */
+
 params ["_unit","_target","_actDist",["_args",[]]];
-TRACE_1("fnc_suicideAct",_this);
 _args params [
 	["_group", objNull, [objNull,grpNull]],
     ["_pos", [0, 0, 0], []],
@@ -29,7 +29,8 @@ _args params [
     ["_onComplete", "", [""]],
     ["_timeout", [0, 0, 0], [[]], 3]
 ];
-TRACE_1("params",_this);
+TRACE_1("fnc_suicideAct",_this);
+
 if (!local _unit) exitWith {
 	[QGVAR(suicideAct), _this, _unit] call CBA_fnc_targetEvent; //if locality change?
 };

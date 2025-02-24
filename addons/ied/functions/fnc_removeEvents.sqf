@@ -14,8 +14,10 @@
  *
  * Public: No
  */
+
 params ["_unit"];
 TRACE_1("fnc_removeEvents",_this);
+
 [_unit, "forceWalk", QGVAR(charge), false] call ace_common_fnc_statusEffect_set;
 
 private _getInManEhId = _unit getVariable [QGVAR(GetInManEhId), -1];
