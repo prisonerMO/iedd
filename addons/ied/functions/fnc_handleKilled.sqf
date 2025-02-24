@@ -1,6 +1,21 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handle killed event on unit with charge vest
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [unit] call iedd_ied_fnc_handleKilled
+ *
+ * Public: No
+ */
 params ["_unit", "_killer", "_instigator", "_useEffects"];
-TRACE_1("HandleKilled Bomb Vest",_unit);
+TRACE_1("fnc_handleKilled",_this);
 // ensure event is only called once
 private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
 if (_killedEhId != -1) then {
