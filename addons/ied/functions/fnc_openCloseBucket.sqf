@@ -1,5 +1,23 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Open or close bucket lid
+ *
+ * Arguments:
+ * 0: Target <OBJECT>
+ * 1: Player <OBJECT>
+ * 2: State <BOOL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [target, player, true] call iedd_ied_fnc_openCloseBucket
+ *
+ * Public: No
+ */
 params ["_target", "_player", "_state"];
+TRACE_1("fnc_openCloseBucket",_this);
 private _hasWpn = currentWeapon _player != "";
 private _checkTime = [0,1.8] select (_hasWpn);
 if (_hasWpn) then {

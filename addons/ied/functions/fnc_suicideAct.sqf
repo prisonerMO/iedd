@@ -1,5 +1,24 @@
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles suicide unit actions
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ * 1: Target <OBJECT>
+ * 2: Distance <NUMBER>
+ * 3: Arguments <ARRAY> (Optinal)
+ *
+ * Return Value:
+ * True
+ *
+ * Example:
+ * [bob, player, 250] call iedd_ied_fnc_suicideAct
+ *
+ * Public: No
+ */
 params ["_unit","_target","_actDist",["_args",[]]];
+TRACE_1("fnc_suicideAct",_this);
 _args params [
 	["_group", objNull, [objNull,grpNull]],
     ["_pos", [0, 0, 0], []],

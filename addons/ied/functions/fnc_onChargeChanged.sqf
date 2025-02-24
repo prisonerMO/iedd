@@ -1,6 +1,21 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handle charge checkbox changed event
+ *
+ * Arguments:
+ * 0: Checkbox control <CONTROL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_ctrlCheckBox] iedd_ied_fnc_onChargeChanged
+ *
+ * Public: No
+ */
 params ["_ctrlCheckbox"];
-TRACE_1("IEDD: onChargeChanged",_this);
+TRACE_1("fnc_onChargeChanged",_this);
 private _state = cbChecked _ctrlCheckbox;
 private _fade = [0.75,0] select _state;
 private _ctrlGroup = ctrlParentControlsGroup ctrlParentControlsGroup _ctrlCheckbox;

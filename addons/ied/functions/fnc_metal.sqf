@@ -1,4 +1,4 @@
-#include "..\script_component.hpp"
+#include "script_component.hpp"
 /*
  * Author: Prisoner
  * Adds IED wires and configures various bomb-related properties when using "iedd_ied_Metal" or its child classes as an object.

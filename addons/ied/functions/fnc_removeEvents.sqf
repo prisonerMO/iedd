@@ -1,6 +1,21 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Remove events from unit
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_unit] call iedd_ied_fnc_removeEvents
+ *
+ * Public: No
+ */
 params ["_unit"];
-
+TRACE_1("fnc_removeEvents",_this);
 [_unit, "forceWalk", QGVAR(charge), false] call ace_common_fnc_statusEffect_set;
 
 private _getInManEhId = _unit getVariable [QGVAR(GetInManEhId), -1];

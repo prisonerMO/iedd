@@ -19,11 +19,6 @@
  *
  * Public: No
  */
-
-params [];
-TRACE_1("fnc_moveCheck",_this);
-
-
 params ["_unit","_target","_wp","_time","_next","_prev"];
 TRACE_1("Move Check",_this);
 if (!local _unit) exitWith {
