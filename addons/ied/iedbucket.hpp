@@ -16,7 +16,7 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			class IEDD_DisarmMenu {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Disarm_DisplayName);
-				condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call FUNC(canDisarm)});
+				condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call FUNC(canDisarm) && {_target animationPhase 'bucketlid_hide' == 1}});
 				statement = "";
 			};
 			class GVAR(open) {

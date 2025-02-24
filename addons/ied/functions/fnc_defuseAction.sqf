@@ -46,9 +46,6 @@ if (!hasInterface) exitWith {};
         private _condition = {
             params ["_target", "_player", "_actionParams"];
             _actionParams params ["_wire"];
-            if (typeOf _target == QGVAR(Bucket) && {_target animationPhase 'bucketlid_hide' == 0}) exitWith {
-                false
-            };
             !isNull _wire;
         };
 
