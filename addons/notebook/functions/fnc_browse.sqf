@@ -1,5 +1,23 @@
 #include "..\script_component.hpp"
-params ["_selectDir"];  // memDir direction (next or prev message)
+/*
+ * Author: Prisoner
+ * Browse through the notebook pages
+ *
+ * Arguments:
+ * 0: Number <NUMBER>
+ *
+ * Return Value:
+ * Return description <NONE>
+ *
+ * Example:
+ * [1] call iedd_notebook_fnc_browse
+ *
+ * Public: No
+ */
+
+params ["_selectDir"];
+TRACE_1("fnc_browse",_this);
+
 disableSerialization;
 
 private _sound = format [QPATHTOF(sounds\page%1.ogg), floor (random 4)];

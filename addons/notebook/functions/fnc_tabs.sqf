@@ -1,5 +1,24 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Change the notebook tabs
+ *
+ * Arguments:
+ * 0: Varition <STRING> (default: "home")
+ * 1: Current <NUMBER> (default: 0)
+ * 
+ * Return Value:
+ * None
+ *
+ * Example:
+ * ["info", 2] call iedd_notebook_fnc_tabs
+ *
+ * Public: No
+ */
+
 params [["_var", "home"],["_current", 0]];
+TRACE_1("fnc_tabs",_this);
+
 disableSerialization;
 private _sound = format [QPATHTOF(sounds\side%1.ogg), floor (random 3)];
 playSoundUI [_sound, 0.6,1];
