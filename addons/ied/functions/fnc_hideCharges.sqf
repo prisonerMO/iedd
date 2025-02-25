@@ -17,8 +17,9 @@
  */
 
 params ["_unit","_state"];
-private _attachedObjects = attachedObjects _unit;
+TRACE_1("fnc_hideCharges",_this);
 
+private _attachedObjects = attachedObjects _unit;
 private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
 if (_index > -1) then {
     private _charges = _attachedObjects select {typeOf _x == QGVAR(Charge)};
