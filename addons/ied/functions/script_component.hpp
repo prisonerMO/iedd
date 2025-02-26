@@ -43,6 +43,14 @@
 	[["Black","Blue","Red","Green","Yellow","Black","Red"],[6,4,3,2,1,5,0]]\
 ]
 
+#define IEDD_BUCKET [\
+	[["Yellow","Green","Red","Black","Blue","Black","Red"],[5,0,4,2,6,1,3]],\
+	[["Black","Yellow","Blue","Green","Red","Black","Red"],[0,4,3,1,2,5,6]],\
+	[["Yellow","Blue","Red","Black","Green","Black","Red"],[6,2,5,1,4,3,0]],\
+	[["Blue","Black","Green","Yellow","Red","Black","Red"],[0,3,5,4,6,2,1]],\
+	[["Green","Yellow","Black","Red","Blue","Black","Red"],[1,2,0,3,4,6,5]]\
+]
+
 #define IEDD_CHARGE [\
 	[["Green","Blue","Yellow","Black","Red","Black","Red"],[5,0,4,1,2,3,6]],\
 	[["Black","Blue","Yellow","Red","Green","Black","Red"],[2,4,5,6,1,3,0]],\
@@ -121,6 +129,16 @@
 	[[0.120,-0.093,0.073],[[-0,-4.64202,-0.739693],[0,1.939693,0.3]]]\
 ]
 
+#define IEDD_DUDS_BUCKET [\
+	[[0.042,-0.049,-0.021],[[0.5,-1,0.509],[0,0.009,1]]],\
+	[[0.034,-0.073,-0.152],[[1,0.995,0],[0.995,0,0.001]]],\
+	[[-0.07,-0.084,-0.033],[[-1.5,0,0],[0,1,1]]],\
+	[[-0.035,-0.03,-0.068],[[0.617,-0.993,0.5],[0,1,1]]],\
+	[[-0.038,-0.087,-0.071],[[-0.092,0.014,0],[0,0,2]]],\
+	[[-0.029,-0.061,-0.033],[[0.331,-0.486,1],[0,0.5,1]]],\
+	[[0.009,-0.068,-0.188],[[0,0,-0.019],[2,0,1.12]]]\
+]
+
 #define IEDD_DUDS_VBIED [\
 	[[0.071,-0.017,-0.1],[[0,0,-1],[-8,-1,0]]],\
 	[[0.04,-0.017,-0.1],[[-1,-1.1,-1],[-1,0,1]]],\
@@ -140,34 +158,6 @@
 ]
 
 #define IEDD_TRAINING_BOMB QGVAR(Training_IED_Ammo)
-
-#define IEDD_DECALS [\
-	"Land_Decal_RoadEdge_Dirt_03_F",\
-	"Land_Garbage_square3_F",\
-	"Land_Garbage_square5_F",\
-	"Land_Garbage_line_F",\
-	"Land_dirt_road_rocks_04_F",\
-	"Land_dirt_road_rocks_01_F",\
-	"Land_Decal_RoadCrack_Grass_04_F",\
-	"Land_Decal_RoadCrack_Grass_05_F",\
-	"Land_Decal_RoadCrack_Grass_01_F",\
-	"Land_Decal_RoadEdge_Dirt_09_F",\
-	"Land_Decal_RoadEdge_Dirt_07_F",\
-	"Land_Decal_RoadEdge_Dirt_06_F",\
-	"Land_Decal_RoadEdge_Dirt_01_F",\
-	"Land_Decal_RoadEdge_Dirt_02_F",\
-	"Land_Decal_RoadEdge_Dirt_10_F"\
-]
-
-#define IEDD_FAKE_CLASSES [\
-    "Land_CanisterPlastic_F",\
-    "Land_CanisterFuel_F",\
-    "Land_PaperBox_01_small_ransacked_brown_F",\
-    "Land_CinderBlock_01_F",\
-    "Land_GarbageBarrel_01_F",\
-    "Land_BarrelEmpty_F"\
-]
-
 
 #define IEDDSETPARAMS(AREAA,AREAB,ANGLE,BEHAVIOUR,COMBAT,SPEED,FORMATION,TIMEOUT)\
 _a=AREAA;\

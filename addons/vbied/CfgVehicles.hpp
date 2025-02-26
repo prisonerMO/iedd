@@ -5,7 +5,7 @@ class CfgVehicles {
         displayName = QGVAR(helper); // not publicly visible, no stringtable needed
         scope = 1;
         scopeCurator = 1;
-        model = "\A3\Weapons_f\empty";
+        model = "\A3\Weapons_f\empty.p3d";
         destrType = "DestructNo";
     };
     /*NOT IN USE
@@ -37,7 +37,7 @@ class CfgVehicles {
 		editorCategory = "IEDD_MAINCATEGORY";
 		editorSubcategory = "IEDD_ITEMS";
 		vehicleClass = "IEDD_ITEMS";*/
-		displayName="VBIED Box";
+		displayName=CSTRING(Box_DisplayName);
         //simulation = "thingX";
         //destrType = "DestructNo";
 		//picture="\A3\Weapons_F_Enoch\Items\data\ui\gear_ChemicalDetector_01_CA.paa";

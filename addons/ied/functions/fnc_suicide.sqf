@@ -1,6 +1,23 @@
-//#define DEBUG_ENABLED_IED
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handle suicide unit
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [Unit] call iedd_ied_fnc_suicide
+ *
+ * Public: Yes
+ */
+
 params ["_unit"];
+TRACE_1("fnc_suicide",_this);
+
 private _actDist = _unit getVariable QGVAR(actDist);
 if (isNil "_actDist") then {
 	private _getAct = _unit getVariable [QGVAR(actDist),0];

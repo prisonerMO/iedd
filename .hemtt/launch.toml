@@ -11,18 +11,14 @@ workshop = [
     "2369477168", # Advanced Developer Tools
     "623475643", # 3den Echanted
 ]
-parameters = [
-    "-name=prisoner",
+parameters = [ #modify dev launch as you like
+    "-name=prisoner", 
     "-hugePages",
     "-noPause",
-    "-enableHT",
-    "-malloc=mimalloc_v217_20250103",
+    "-malloc=mimalloc_v219_20250213",
     "-maxFileCacheSize=8192",
     "-setThreadCharacteristics",
     "-limitFPS=144",
 ]
-executable = "arma3_x64"
-mission = "0001_IEDD_DEV.vr"
-#file_patching = false # Default: true
-#binarize = true # Default: false
-#rapify = false # Default: true
+executable = "arma3profiling_x64"
+mission = "0001_IEDD_DEV.Stratis" #Need create mission file .hemtt/missions/0001_IEDD_DEV.Stratis/mission.sqm to use.

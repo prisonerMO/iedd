@@ -1,5 +1,22 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Module function for explode IED
+ *
+ * Arguments:
+ * 0: Logic <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [Logic] call iedd_modules_fnc_moduleExplode
+ *
+ * Public: No
+ */
+
 params ["_logic"];
+TRACE_1("fnc_moduleExplode",_this);
 
 if !(local _logic) exitWith {};
 
@@ -15,5 +32,6 @@ if !(typeOf _unit in IEDD_CLASSES) exitWith {
 	deleteVehicle _logic;
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
+
 [QGVAR(explode), [_unit]] call CBA_fnc_serverEvent;
 deleteVehicle _logic;

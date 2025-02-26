@@ -1,5 +1,23 @@
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Bomb event
+ *
+ * Arguments:
+ * 0: Object <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_bombObj] call iedd_ied_fnc_bomb
+ *
+ * Public: No
+ */
+
 params ["_bombObj"];
+TRACE_1("fnc_bomb",_this);
+
 if (!(_bombObj getVariable [QEGVAR(ied,bomb),false])) exitWith {};
 _bombObj setVariable [QGVAR(bomb),false,true];
 private _isTraining = _bombObj getVariable [QGVAR(training), false];
@@ -46,16 +64,18 @@ if (_isTraining) then {
 				};
 			};
 		};
-	} else {
-		private _bombPos = getPosATL _bombObj;
-		private _pos = _bombPos vectorAdd [0,0,0.05];
+	} else {		
+		private _typeOf = typeOf _bombObj;
+		private _pos = getPosATL _bombObj;
+		if (_typeOf != QEGVAR(vbied,box)) then {
+			_pos set [2, 0.05];
+		};
 		private _size = _bombObj getVariable [QGVAR(size), GVAR(defaultSize)];
 		private _unit = objNull;
 		if (_size > 4) then {
 			_size = floor (random 4);
 		};
 		private _type =  selectRandom (IEDD_BOMB_SIZE select _size);
-		private _typeOf = typeOf _bombObj;
 		if (_typeOf == QGVAR(Charge)) then {
 			_unit = attachedTo _bombObj;
 			private _attachedObjects = attachedObjects _unit;

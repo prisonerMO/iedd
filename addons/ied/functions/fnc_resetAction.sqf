@@ -1,5 +1,24 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Reset action on Training IED
+ *
+ * Arguments:
+ * 0: Bomb object <OBJECT>
+ * 1: Use random <BOOL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [bombObj, true] call iedd_ied_fnc_resetAction
+ *
+ * Public: No
+ */
+
 params ["_bombObj","_useRandom"];
+TRACE_1("fnc_resetAction",_this);
+
 private _pos = getPosATL _bombObj;
 private _type = typeOf _bombObj;
 private _varData = "getText (_x >> 'name') isEqualTo localize 'STR_iedd_ied_Name_Random'" configClasses (configFile >> "CfgVehicles" >> _type >> "Attributes" >> "iedd_ied_variation" >> "Values") apply {getNumber (_x >> 'value')};

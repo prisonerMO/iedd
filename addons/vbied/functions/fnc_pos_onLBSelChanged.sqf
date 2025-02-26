@@ -5,7 +5,7 @@ private _all = allControls _ctrlGrp;
 private _ctrls = _all select {ctrlClassName _x == "iedd_vbied_UserDefined"};
 if (_ctrls isEqualTo []) exitWith {
 	_this spawn {
-		_this call FUNC(pos_onLBSelChanged);
+		call FUNC(pos_onLBSelChanged);
 	};
 };
 if (_lbCurSel == 0) exitWith {

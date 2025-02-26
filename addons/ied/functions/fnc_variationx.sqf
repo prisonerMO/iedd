@@ -1,5 +1,23 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Generate random colors for wires (Varition X)
+ *
+ * Arguments:
+ * 0: Count <NUMBER>
+ *
+ * Return Value:
+ * [<ARRAY of STRING>, <ARRAY of NUMBER>]
+ *
+ * Example:
+ * [5] call iedd_ied_fnc_variationx
+ *
+ * Public: No
+ */
+
 params ["_count"];
+TRACE_1("fnc_variationx",_this);
+
 private _colors = [];
 for "_i" from 0 to _count do {
 	private _color = if (_i > 4) then {

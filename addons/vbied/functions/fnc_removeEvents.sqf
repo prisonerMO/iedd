@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "..\script_component.hpp"
 params ["_vehicle"];
 private _getInEhId = _vehicle getVariable [QGVAR(getInEhId), -1];
 if (_getInEhId > -1) then {

@@ -39,6 +39,11 @@ class CfgSounds {
         sound[] = {QPATHTOF(sounds\fail1.ogg),2, 1,100};
 		titles[] = {0, ""};
 	};
+	class GVAR(fail2) {
+		name = CSTRING(Sound_Fail2);
+        sound[] = {QPATHTOF(sounds\fail2.ogg),2, 1,100};
+		titles[] = {0, ""};
+	};
 };
 class CfgSFX
 {

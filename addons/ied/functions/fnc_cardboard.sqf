@@ -1,6 +1,23 @@
-//  CARDBOARD
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Adds IED wires and configures various bomb-related properties when using "iedd_ied_Cardboard" or its child classes as an object.
+ *
+ * Arguments:
+ * 0: The IED object to modify <OBJECT>
+ *
+ * Return Value:
+ * True <BOOL> - Returns true if the setup was successful.
+ *
+ * Example:
+ * [_bombObj] call iedd_ied_fnc_cardboard;
+ *
+ * Public: No
+ */
+
 params ["_bombObj"];
+TRACE_1("fnc_cardboard",_this);
+
 if (is3DEN) exitWith {};
 if (!isServer) exitWith {};
 [{

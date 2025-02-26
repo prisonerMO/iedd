@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="IEDD">
     <Package name="Notebook">
+        <Container name="Notebook Action Names">
+            <Key ID="STR_iedd_notebook_Action_Active">
+                <Original>Activate IED(s)</Original>
+                <English>Activate IED(s)</English>
+            </Key>
+            <Key ID="STR_iedd_notebook_Action_Drop">
+                <Original>Drop IEDD Notebook</Original>
+                <English>Drop IEDD Notebook</English>
+            </Key>
+            <Key ID="STR_iedd_notebook_Action_Explode">
+                <Original>Explode IED(s)</Original>
+                <English>Explode IED(s)</English>
+            </Key>
+            <Key ID="STR_iedd_notebook_Action_Menu">
+                <Original>IEDD Notebook Menu</Original>
+                <English>IEDD Notebook Menu</English>
+            </Key>
+            <Key ID="STR_iedd_notebook_Action_Open">
+                <Original>Open IEDD Notebook</Original>
+                <English>Open IEDD Notebook</English>
+            </Key>
+        </Container>
         <Container name="Notebook Sounds">
             <Key ID="STR_iedd_notebook_Sound_Close">
                 <Original>Sidetab sound 1</Original>
@@ -47,32 +69,14 @@
                 <English>Sidetab sound 4</English>
             </Key>
         </Container>
-        <Container name="Notebook Action Names">
-            <Key ID="STR_iedd_notebook_Action_Active">
-                <Original>Activate IED(s)</Original>
-                <English>Activate IED(s)</English>
-            </Key>
-            <Key ID="STR_iedd_notebook_Action_Drop">
-                <Original>Drop IEDD Notebook</Original>
-                <English>Drop IEDD Notebook</English>
-            </Key>
-            <Key ID="STR_iedd_notebook_Action_Explode">
-                <Original>Explode IED(s)</Original>
-                <English>Explode IED(s)</English>
-            </Key>
-            <Key ID="STR_iedd_notebook_Action_Menu">
-                <Original>IEDD Notebook Menu</Original>
-                <English>IEDD Notebook Menu</English>
-            </Key>
-            <Key ID="STR_iedd_notebook_Action_Open">
-                <Original>Open IEDD Notebook</Original>
-                <English>Open IEDD Notebook</English>
-            </Key>
-        </Container>
         <Container name="Notebook Tooltips">
             <Key ID="STR_iedd_notebook_About">
                 <Original>About IEDs</Original>
                 <English>About IEDs</English>
+            </Key>
+            <Key ID="STR_iedd_notebook_Bucket">
+                <Original>Bucket variations</Original>
+                <English>Bucket variations</English>
             </Key>
             <Key ID="STR_iedd_notebook_Cardboard">
                 <Original>Cardboard box variations</Original>

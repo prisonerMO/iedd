@@ -1,5 +1,22 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Module function for activate VBIED
+ *
+ * Arguments:
+ * 0: Logic <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [Logic] call iedd_modules_fnc_activateVbied
+ *
+ * Public: No
+ */
+
 params ["_logic"];
+TRACE_1("fnc_activateVbied",_this);
 
 if !(local _logic) exitWith {};
 
