@@ -1,5 +1,23 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles the delete on button click event
+ *
+ * Arguments:
+ * 0: Button <CONTROL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_button] call iedd_vbied_fnc_delete_onButtonClick;
+ *
+ * Public: No
+ */
+
 params ["_ctrl"];
+TRACE_1("fnc_delete_onButtonClick",_this);
+
 private _ctrlGrp = ctrlParentControlsGroup ctrlParentControlsGroup _ctrl;
 private _all = allControls _ctrlGrp;
 private _combo = _all select {ctrlClassName _x == "iedd_vbied_posCombo"};

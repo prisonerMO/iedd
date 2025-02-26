@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Prisoner
- * Deletes all attached objects to an entity.
+ * Handles deleted event. Deletes all attached objects to an entity.
  *
  * Arguments:
  * 0: The entity to delete the attached objects from <OBJECT> 
