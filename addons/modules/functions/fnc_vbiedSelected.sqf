@@ -1,6 +1,24 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles the selection of predefined and user defined positions for VBIEDs
+ *
+ * Arguments:
+ * 0: Control <CONTROL>
+ * 1: Value <NUMBER>
+ *
+ * Return Value:
+ * Set listbox control current selection
+ *
+ * Example:
+ * [CONTROL, 0] call PREFIX_modules_fnc_vbiedSelected
+ *
+ * Public: No
+ */
+
 params ["_control","_value"];
-TRACE_1("Selected",_this);
+TRACE_1("fnc_vbiedSelected",_this);
+
 private _display = ctrlParent _control;
 lbClear	_control;
 

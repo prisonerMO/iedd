@@ -1,6 +1,24 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Add PerFrameHandler to the unit for checking if the unit is in the explosion range
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ * 1: State <BOOL>
+
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [bob,true] call iedd_ied_fnc_addPFH
+ *
+ * Public: No
+ */
+
 params ["_unit","_state"];
-TRACE_1("Called addRemovePFH",_this);
+TRACE_1("fnc_addPFH",_this);
+
 private _expDist = _unit getVariable QGVAR(expDist);
 if (isNil "_expDist") then {
 	private _getExp = _unit getVariable [QGVAR(expDist), 0];

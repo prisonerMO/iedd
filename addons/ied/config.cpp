@@ -7,6 +7,8 @@ class CfgPatches {
 		units[] = {
 			QGVAR(Barrel),
 			QGVAR(Barrel_Grey),
+			QGVAR(Bucket),
+			QGVAR(Bucket_Fake),
 			QGVAR(CanisterPlastic),
 			QGVAR(Cardboard),
 			QGVAR(Cinder),
@@ -16,6 +18,7 @@ class CfgPatches {
 			QGVAR(Charge),
 			QGVAR(Training_Barrel),
 			QGVAR(Training_Barrel_Grey),
+			QGVAR(Training_Bucket),
 			QGVAR(Training_CanisterPlastic),
 			QGVAR(Training_Cardboard),
 			QGVAR(Training_Cinder),

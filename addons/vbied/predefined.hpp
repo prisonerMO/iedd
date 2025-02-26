@@ -1,23 +1,4 @@
 /** PRE DEFINED positions for VBIEDs **/
-#define VBIED_MODELS [\
-	["van_01_transport_f.p3d"],\
-	["van_01_box_f.p3d"],\
-	["van_01_fuel_f.p3d"],\
-	["van_02_vehicle_f.p3d"],\
-	["truck_02_transport_f.p3d","truck_02_covered_f.p3d"],\
-	["truck_02_fuel_f.p3d"],\
-	["truck_02_box_f.p3d"],\
-	["offroad_01_unarmed_f.p3d"],\
-	["offroad_01_repair_civ_f.p3d"],\
-	["offroad_01_covered_f.p3d"],\
-	["offroad_02_f.p3d"],\
-    ["hatchback_01_f.p3d"],\
-    ["kart_01_f.p3d"],\
-    ["quadbike_01_f.p3d"],\
-    ["suv_01_f.p3d"],\
-	["tractor_01_f.p3d"]\
-]
-
 #define VAN 			0
 #define VAN_BOX 		1
 #define VAN_FUEL 		2

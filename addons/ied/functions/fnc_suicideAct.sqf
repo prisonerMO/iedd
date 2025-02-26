@@ -1,4 +1,23 @@
 #include "script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles suicide unit actions
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ * 1: Target <OBJECT>
+ * 2: Distance <NUMBER>
+ * 3: Arguments <ARRAY> (Optinal)
+ *
+ * Return Value:
+ * True
+ *
+ * Example:
+ * [bob, player, 250] call iedd_ied_fnc_suicideAct
+ *
+ * Public: No
+ */
+
 params ["_unit","_target","_actDist",["_args",[]]];
 _args params [
 	["_group", objNull, [objNull,grpNull]],
@@ -10,7 +29,8 @@ _args params [
     ["_onComplete", "", [""]],
     ["_timeout", [0, 0, 0], [[]], 3]
 ];
-TRACE_1("params",_this);
+TRACE_1("fnc_suicideAct",_this);
+
 if (!local _unit) exitWith {
 	[QGVAR(suicideAct), _this, _unit] call CBA_fnc_targetEvent; //if locality change?
 };

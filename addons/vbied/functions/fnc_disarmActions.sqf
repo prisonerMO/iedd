@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "..\script_component.hpp"
 //currenlty not in use
 params ["_target"];
 private _actions = [];

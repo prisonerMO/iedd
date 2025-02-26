@@ -2,7 +2,7 @@
 
 {
 	[_x, "Explosion", {call FUNC(explosion)}, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach IEDD_CLASSES;
+} forEach IEDD_BASE_CLASSES;
 
 /*IED functions*/
 [QGVAR(defuseAction), LINKFUNC(defuseAction)] call CBA_fnc_addEventHandler;
@@ -155,5 +155,4 @@ if (isServer) then {
 if (!hasInterface) exitWith {};
 
 ["unit", {[ACE_player] call FUNC(addItems)},true] call CBA_fnc_addPlayerEventHandler;
-
 GVAR(fail) = false;

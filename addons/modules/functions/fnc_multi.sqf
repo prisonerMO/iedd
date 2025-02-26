@@ -1,4 +1,22 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Module function for IEDs and Fake IEDs
+ *
+ * Arguments:
+ * 0: Mode <STRING>
+ * 1: Logic <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * ["init",Logic] call iedd_modules_fnc_multi
+ *
+ * Public: No
+ */
+ 
+TRACE_1("fnc_multi",_this);
 
 private _mode = param [0,"",[""]];
 private _input = param [1,[],[[]]];

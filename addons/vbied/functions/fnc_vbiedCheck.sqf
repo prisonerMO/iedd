@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "..\script_component.hpp"
 //TRACE_1("VbiedCheck",_this);
 private _checkTime = 5;
 if (GVAR(bombs) isNotEqualTo []) then {

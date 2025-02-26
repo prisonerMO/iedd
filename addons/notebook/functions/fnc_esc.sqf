@@ -1,5 +1,22 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handle notebook display events
+ *
+ * Arguments:
+ * 0: Display <DISPLAY>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * ["iedd_notebook_display"] call iedd_notebook_fnc_esc
+ *
+ * Public: No
+ */
+
 params ["_display"];
+TRACE_1("fnc_esc",_this);
 
 [QGVAR(sound), [QGVAR(open),player]] call CBA_fnc_globalEvent; // open
 GVAR(animEH) = ace_player addEventHandler ["AnimChanged", {

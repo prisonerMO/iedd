@@ -1,6 +1,32 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Set VBIED position data
+ *
+ * Arguments:
+ * 0: Combo box control <CONTROL>
+ * 1: Value <NUMBER>
+ *
+ * Return Value:
+ * [<POSITION ARRAY>, <DIRECTION ARRAY>, <UP VECTOR ARRAY>]
+ *
+ * Structure:
+ * POSITION ARRAY: [X, Y, Z] (World position coordinates)
+ * DIRECTION ARRAY: [X, Y, Z] (Forward direction vector)
+ * UP VECTOR ARRAY: [X, Y, Z] (Upward direction vector)
+ *
+ * Example return:
+ * [[123.45, 678.90, 10.5], [0.98, 0.12, 0.0], [0.0, 0.0, 1.0]]
+ *
+ * Example:
+ * [ctrlCombo, 0] call iedd_modules_fnc_setData
+ *
+ * Public: No
+ */
+
 params ["_ctrlCombo","_value"];
-TRACE_1("setData",_this);
+TRACE_1("fnc_setData",_this);
+
 if (_value < 0) exitWith {[]};
 private _loc = _value;
 private _model = EGVAR(vbied,preDefined) get "model";

@@ -1,6 +1,23 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles the GetInMan event for the bomb vest.
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [bob] call iedd_ied_fnc_handleGetInMan
+ *
+ * Public: Yes
+ */
+
 params ["_unit", "_role", "_vehicle", "_turret"];
 TRACE_1("HandleGetInMan Bomb Vest",_unit);
+
 // ensure event is only called once
 private _idPFH = _unit getVariable [QGVAR(GetInManEhId),-1];
 if (_idPFH != -1) then {

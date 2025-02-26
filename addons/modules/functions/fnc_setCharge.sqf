@@ -1,6 +1,23 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Initializes the Charge Bomb Vest Zeus module display.
+ *
+ * Arguments:
+ * 0: Control <CONTROL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [Control] call iedd_modules_fnc_setCharge
+ *
+ * Public: No
+ */
+
 params ["_control"];
-//Generic Init:
+TRACE_1("fnc_setCharge",_this);
+
 private _display = ctrlParent _control;
 private _ctrlButtonOK = _display displayCtrl 1; //IDC_OK
 private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];

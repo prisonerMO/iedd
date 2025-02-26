@@ -9,6 +9,7 @@ class CfgVehicles {
 		scope = 0;
 	};
 	#include "iedbarrel.hpp"
+	#include "iedbucket.hpp"
 	#include "iedcan.hpp"
 	#include "iedcardboard.hpp"
 	#include "iedcinder.hpp"

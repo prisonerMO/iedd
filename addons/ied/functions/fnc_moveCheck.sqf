@@ -1,6 +1,28 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Suicide bomber moving event //TO-DO description
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ * 1: Target <OBJECT>
+ * 2: Waypoint [Group, Waypoint Index] <ARRAY>
+ * 3: Wait Time <NUMBER>
+ * 4: Previus distance <NUMBER>
+ * 5: Next distance <NUMBER>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [bob, player, [group bob, 1], 5, 55, 150] call iedd_ied_fnc_moveCheck
+ *
+ * Public: No
+ */
+
 params ["_unit","_target","_wp","_time","_next","_prev"];
 TRACE_1("Move Check",_this);
+
 if (!local _unit) exitWith {
 	private _args = ((group _unit) getVariable QGVAR(suicideAct));
 	[QGVAR(suicideAct), _args, _unit] call CBA_fnc_targetEvent; //if locality change?; //if locality change?
@@ -22,6 +44,6 @@ if ((_wp select 1) == (_currentWp select 1) && _next > 0) then {
 	if (_distance < _next || _distance > _prev) then {
 		_args call FUNC(suicideAct);
 	} else {
-		[{_this call FUNC(moveCheck)}, _this, _time] call CBA_fnc_waitAndExecute;
+		[{call FUNC(moveCheck)}, _this, _time] call CBA_fnc_waitAndExecute;
 	};
 };

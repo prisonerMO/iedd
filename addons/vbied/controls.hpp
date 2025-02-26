@@ -5,20 +5,12 @@ class Title: Default
         class Title;
     };
 };
-class Combo: Title
-{
-    class Controls: Controls
-    {
-        class Title;
-        class Value;
-    };
-};
+class Combo;
 class Edit;
 class EditXYZ;
 class SubCategory;
 class Checkbox;
 class Slider;
-
 class GVAR(Checkbox): Checkbox {};
 class GVAR(Combo): Combo {};
 class GVAR(PosCombo): Title {
