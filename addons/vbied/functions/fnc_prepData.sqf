@@ -1,6 +1,24 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Prepares the data for the VBIED.
+ *
+ * Arguments:
+ * 0: Vehicle <OBJECT>
+ * 1: Activated <BOOL>
+ *
+ * Return Value:
+ * True <BOOL> - Returns true if the setup was successful.
+ *
+ * Example:
+ * [_vehicle, true] call iedd_vbied_fnc_prepData;
+ *
+ * Public: No
+ */
+
 params ["_vehicle","_activated"];
-TRACE_1("VBIED prep data",_this);
+TRACE_1("fnc_prepData",_this);
+
 if (is3DEN) exitWith {};
 if (!_activated) exitWith {TRACE_1("ExitWith _actived:",_activated)};
 if (!isServer) exitWith {TRACE_1("ExitWith isServer:",isServer)};

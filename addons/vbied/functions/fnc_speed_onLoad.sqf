@@ -1,4 +1,23 @@
+#include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles speed slider on load event.
+ *
+ * Arguments:
+ * 0: Control group <CONTROL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_ctrlGroup] call iedd_vbied_fnc_speed_onLoad;
+ *
+ * Public: No
+ */
+ 
 params ["_ctrlGroup"];
+TRACE_1("fnc_speed_onLoad",_this);
+
 private _model = iedd_vbied_preDefined get 'model';
 private _type = _model select 2;
 private _max = (getNumber (configFile >> "CfgVehicles" >> _type >> "maxSpeed")) max 50;

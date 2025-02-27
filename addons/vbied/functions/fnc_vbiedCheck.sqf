@@ -1,5 +1,19 @@
-#include "..\script_component.hpp"
-//TRACE_1("VbiedCheck",_this);
+/*
+ * Author: Prisoner
+ * Check if VBIEDs are triggered by players or vehicles. Or if x vehicle is moving.
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * call iedd_vbied_fnc_vbiedCheck
+ *
+ * Public: No
+ */
+ 
 private _checkTime = 5;
 if (GVAR(bombs) isNotEqualTo []) then {
 	private _players = call CBA_fnc_players;

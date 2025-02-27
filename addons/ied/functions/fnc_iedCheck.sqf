@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Prisoner
- * Check if IEDs are triggered
+ * Check if IEDs are triggered by players or vehicles. Or if they are moved/ moving.
  *
  * Arguments:
  * None

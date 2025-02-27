@@ -1,5 +1,24 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles position on Control selection changed event.
+ *
+ * Arguments:
+ * 0: Control <CONTROL>
+ * 1: Current selection <NUMBER>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_control,_lbCurSel] call iedd_vbied_fnc_pos_onLBSelChanged;
+ *
+ * Public: No
+ */
+
 params ["_ctrlCombo", "_lbCurSel"];
+TRACE_1("fnc_pos_onLBSelChanged",_this);
+
 private _ctrlGrp = ctrlParentControlsGroup ctrlParentControlsGroup _ctrlCombo;
 private _all = allControls _ctrlGrp;
 private _ctrls = _all select {ctrlClassName _x == "iedd_vbied_UserDefined"};

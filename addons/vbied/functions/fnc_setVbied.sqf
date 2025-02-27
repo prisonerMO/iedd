@@ -1,4 +1,34 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Set the Vbied.
+ *
+ * Arguments:
+ * 0: Vehicle <OBJECT>
+ * 1: Variation <NUMBER>
+ * 2: Position <ARRAY of NUMBERS>
+ * 3: Direction <ARRAY of NUMBERS>
+ * 4: Up <ARRAY of NUMBERS>
+ * 5: Is dud <NUMBER>
+ * 6: Bomb size <NUMBER>
+ * 7: Is timer <BOOL>
+ * 8: Timer time <NUMBER>
+ * 9: Is random timer <BOOL>
+ * 10: Distance to activate VBIED <NUMBER>
+ * 11: Add get in event <BOOL>
+ * 12: Add get engine on event<BOOL>
+ * 13: Add check moving  <BOOL>
+ * 14: Speed <NUMBER>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_vehicle, _variation, _pos, _dir, _up, _dud, _size, _isTimer, _timerTime, _isRandom, _distance, _isGetIn, _isEngineOn, _isMove, _speed] call iedd_vbied_fnc_setVbied;
+ *
+ * Public: No
+ */
+
 params ["_vehicle","_variation","_pos","_dir","_up","_dud","_size","_isTimer","_timerTime","_isRandom","_distance","_isGetIn","_isEngineOn","_isMove","_speed"];
 TRACE_1("SetVbied",_this);
 [{

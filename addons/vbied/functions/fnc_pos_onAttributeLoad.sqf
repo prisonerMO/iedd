@@ -1,5 +1,24 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles position on attribute load event.
+ *
+ * Arguments:
+ * 0: Control <CONTROL>
+ * 1: Value <NUMBER>
+ *
+ * Return Value:
+ * Set current selection of the control.
+ *
+ * Example:
+ * [_control,_value] call iedd_vbied_fnc_pos_onAttributeLoad;
+ *
+ * Public: No
+ */
+
 params ["_control","_value"];
+TRACE_1("fnc_pos_onAttributeLoad",_this);
+
 private _ctrlCombo = _control controlsGroupCtrl 100;
 _ctrlCombo lbAdd LLSTRING(NewUserPos);
 _ctrlCombo lbSetTooltip [0,LLSTRING(NewUserPos_Tooltip)];

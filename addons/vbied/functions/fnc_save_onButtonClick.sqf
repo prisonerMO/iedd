@@ -1,5 +1,23 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Handles save on button click event.
+ *
+ * Arguments:
+ * 0: Control <CONTROL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_control] call iedd_vbied_fnc_save_onButtonClick;
+ *
+ * Public: No
+ */
+
 params ["_ctrl"];
+TRACE_1("fnc_save_onButtonClick",_this);
+
 private _ctrlGrp = ctrlParentControlsGroup ctrlParentControlsGroup _ctrl;
 private _all = allControls _ctrlGrp;
 private _ctrls = _all select {ctrlClassName _x == "iedd_vbied_UserDefined"};
