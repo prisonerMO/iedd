@@ -2,6 +2,9 @@
 #define COMPONENT_NAME "IEDD Vehicle-Borne Improvised Explosive Device"
 #include "\x\iedd\addons\main\script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
+
+//#define DISABLE_COMPILE_CACHE
+
 #ifdef DEBUG_ENABLED_VBIED
     #define DEBUG_MODE_FULL
 #endif

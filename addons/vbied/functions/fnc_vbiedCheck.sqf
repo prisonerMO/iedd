@@ -1,3 +1,4 @@
+#include "..\script_component.hpp"
 /*
  * Author: Prisoner
  * Check if VBIEDs are triggered by players or vehicles. Or if x vehicle is moving.
