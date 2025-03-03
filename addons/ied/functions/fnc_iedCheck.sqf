@@ -34,7 +34,9 @@ if (GVAR(bombs) isNotEqualTo []) then {
 				continue;
 			};
 		} else {
-			if (speed (attachedTo _object) > 45) then {
+			private _veh = attachedTo _object;
+			private _vehSpeed = speed _vehicle;
+			(_vehSpeed > 45|| _vehSpeed < -45)  then {
 				_object call FUNC(bomb);
 				_objectsToRemove pushBack _object;
 				continue;

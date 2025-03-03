@@ -29,8 +29,9 @@ if (GVAR(bombs) isNotEqualTo []) then {
 		private _veh = attachedTo _object;
 		TRACE_3("VBIED",_distance,_move,_veh);
 		if (_move) then {
-			private _speed = _object getVariable [QGVAR(speed),GVAR(defaultSpeed)];
-			if (speed _veh > _speed) then {
+			private _speed = _object getVariable [QGVAR(speed),GVAR(defaultSpeed)];			
+			private _vehSpeed = speed _vehicle;
+			if (_vehSpeed > _speed || _vehSpeed < -_speed) then {
 				TRACE_1("Vbied Speed",_speed);
 				_object call EFUNC(ied,bomb);
 				_objectsToRemove pushBack _object;
