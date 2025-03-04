@@ -23,8 +23,6 @@ class CfgAmmo {
 			"SmokeShellSoundLoop1",
 			1.0
 		};
-		/*
-		*/
 	};
 	class GVAR(Tiny_Ammo): R_PG32V_F {
 		author = AUTHOR;
