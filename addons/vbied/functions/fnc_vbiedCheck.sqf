@@ -38,6 +38,19 @@ if (GVAR(bombs) isNotEqualTo []) then {
 				continue;
 			};
 		};
+		if (GVAR(vehCheck)) then {
+			private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]);
+			private _nearVehicles = _nearVehicles - [_veh];
+			if ((_nearVehicles-[_veh]) isNotEqualTo []) then {
+				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
+				if (_index > -1) then {
+					TRACE_2("Vbied veh",_nearVehicles select _index,speed (_nearVehicles select _index));
+					_object call EFUNC(ied,bomb);
+					_objectsToRemove pushBack _object;
+					continue;
+				};
+			};
+		};
 		if (GVAR(plrCheck)) then {
 			private _nearPlrs = _players select {;;(_object distance _x) < _distance && {!(_x in _veh)}};
 			if (_nearPlrs isNotEqualTo []) then {
@@ -51,19 +64,6 @@ if (GVAR(bombs) isNotEqualTo []) then {
 						continue;
 					};
 				} forEach _nearPlrs;
-			};
-		};
-		if (GVAR(vehCheck)) then {
-			private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]);
-			private _nearVehicles = _nearVehicles - [_veh];
-			if ((_nearVehicles-[_veh]) isNotEqualTo []) then {
-				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
-				if (_index > -1) then {
-					TRACE_2("Vbied veh",_nearVehicles select _index,speed (_nearVehicles select _index));
-					_object call EFUNC(ied,bomb);
-					_objectsToRemove pushBack _object;
-					continue;
-				};
 			};
 		};
 	} forEach GVAR(bombs);

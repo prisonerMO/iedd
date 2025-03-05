@@ -35,11 +35,24 @@ if (GVAR(bombs) isNotEqualTo []) then {
 			};
 		} else {
 			private _veh = attachedTo _object;
-			private _vehSpeed = speed _vehicle;
-			(_vehSpeed > 45|| _vehSpeed < -45)  then {
-				_object call FUNC(bomb);
-				_objectsToRemove pushBack _object;
-				continue;
+			if (isNull attachedTo _veh) then {
+			private _vehSpeed = speed _veh;
+				if (_vehSpeed > 45|| _vehSpeed < -45)  then {
+					_object call FUNC(bomb);
+					_objectsToRemove pushBack _object;
+					continue;
+				};
+			};
+		};
+		if (GVAR(vehCheck)) then {
+			private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]);
+			if (_nearVehicles isNotEqualTo []) then {
+				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
+				if (_index > -1) then {
+					_object call FUNC(bomb);
+					_objectsToRemove pushBack _object;
+					continue;
+				};
 			};
 		};
 		if (GVAR(plrCheck)) then {
@@ -54,17 +67,6 @@ if (GVAR(bombs) isNotEqualTo []) then {
 						continue;
 					};
 				} forEach _nearPlrs;
-			};
-		};
-		if (GVAR(vehCheck)) then {
-			private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]);
-			if (_nearVehicles isNotEqualTo []) then {
-				private _index = _nearVehicles findIf {((crew _x) findIf {isPlayer _x} > -1) && {(speed _x > 8 || speed _x < -8)}};
-				if (_index > -1) then {
-					_object call FUNC(bomb);
-					_objectsToRemove pushBack _object;
-					continue;
-				};
 			};
 		};
 	} forEach GVAR(bombs);
