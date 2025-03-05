@@ -16,11 +16,6 @@
 [QGVAR(suicideAct), LINKFUNC(suicide)] call CBA_fnc_addEventHandler;
 [QGVAR(events), LINKFUNC(removeEvents)] call CBA_fnc_addEventHandler;
 
-[QGVAR(sound), {
-    params ["_sound", "_source"];
-    _source say3D _sound;
-}] call CBA_fnc_addEventHandler;
-
 [QGVAR(timer), {
 	params ["_object"];
 	private _type = typeOf _object;
@@ -155,4 +150,10 @@ if (isServer) then {
 if (!hasInterface) exitWith {};
 
 ["unit", {[ACE_player] call FUNC(addItems)},true] call CBA_fnc_addPlayerEventHandler;
+
+[QGVAR(sound), {
+    params ["_sound", "_source"];
+    _source say3D _sound;
+}] call CBA_fnc_addEventHandler;
+
 GVAR(fail) = false;
