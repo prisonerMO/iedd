@@ -135,8 +135,8 @@
                 <English>Activation speed</English>
             </Key>
             <Key ID="STR_iedd_vbied_Speed_ToolTip">
-                <Original>Speed of this vehicle when VBIED will be activated.</Original>
-                <English>Speed of this vehicle when VBIED will be activated.</English>
+                <Original>VBIED will be activated if speed of this vehicle gets over selected value.</Original>
+                <English>VBIED will be activated if speed of this vehicle gets over selected value.</English>
             </Key>
             <Key ID="STR_iedd_vbied_Timer_Tooltip">
                 <Original>Add countdown timer to VBIED.</Original>
@@ -205,8 +205,8 @@
                 <English>Activation speed</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultSpeed_Description">
-                <Original>Speed of vehicle when VBIED will be activated.</Original>
-                <English>Speed of vehicle when VBIED will be activated.</English>
+                <Original>VBIED will be activated if speed of this vehicle gets over selected value (if not defined somewhere else).</Original>
+                <English>VBIED will be activated if speed of this vehicle gets over selected value (if not defined somewhere else).</English>
             </Key>
             <Key ID="STR_iedd_vbied_DefaultTimer_Description">
                 <Original>Add countdown timer to VBIEDs (if not defined somewhere else).</Original>
