@@ -86,6 +86,10 @@
                 <Original>Rearm</Original>
                 <English>Rearm</English>
             </Key>
+            <Key ID="STR_iedd_ied_Dig_DisplayName">
+                <Original>Dig</Original>
+                <English>Dig</English>
+            </Key>
         </Container>
         <Container name="IEDD Notebook Dev Settings">
             <Key ID="STR_iedd_ied_EquipmentDebug">
@@ -253,7 +257,7 @@
             <Key ID="STR_iedd_ied_DefaultVariation_Description">
                 <Original>Set IED variation (if not defined somewhere else).</Original>
                 <English>Set IED variation (if not defined somewhere else).</English>
-            </Key>
+            </Key>            
             <Key ID="STR_iedd_ied_ExpMaxRange">
                 <Original>Maximum exploding distance</Original>
                 <English>Maximum exploding distance</English>
@@ -397,6 +401,30 @@
             <Key ID="STR_iedd_ied_WireCutTime_Description">
                 <Original>How long it takes to cut one wire. Min 1s, max 30s.</Original>
                 <English>How long it takes to cut one wire. Min 1s, max 30s.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Bury_DisplayName">
+                <Original>Bury</Original>
+                <English>Bury</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Bury_Tooltip">
+                <Original>Bury min 10%</Original>
+                <English>Bury min 10%</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DigTime">
+                <Original>Digging time</Original>
+                <English>Digging time</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DigTime_Description">
+                <Original>Digging time Des.</Original>
+                <English>Digging time Des.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Entrenching">
+                <Original>Require entrenching tool</Original>
+                <English>Require entrenching tool</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Entrenching_Description">
+                <Original>Require entrenching tool des.</Original>
+                <English>Require entrenching tool des.</English>
             </Key>
         </Container>
         <Container name="IEDD Options Charge">

@@ -12,7 +12,7 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			displayName = "$STR_ace_interaction_MainAction";
 			selection = "";
 			distance = 2;
-			condition = QUOTE(true);
+			condition =  QUOTE(!(_target getVariable [ARR_2(QQGVAR(bury),-1)] > -1));
 			class IEDD_DisarmMenu {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Disarm_DisplayName);
@@ -22,13 +22,20 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			class GVAR(open) {
 				displayName = CSTRING(Action_Open);
 				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 0);
-				statement = QUOTE(ARR_3([_target,_player,1]) call FUNC(openCloseBucket));
+				statement = QUOTE([ARR_3(_target,_player,1)] call FUNC(openCloseBucket));
 			};
 			class GVAR(close) {
 				displayName = CSTRING(Action_Close);
 				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 1);
-				statement = QUOTE(ARR_3([_target,_player,0]) call FUNC(openCloseBucket));
-			};
+				statement = QUOTE([ARR_3(_target,_player,0)] call FUNC(openCloseBucket));
+			};			
+		};
+		class GVAR(Dig) {
+			displayName = "$STR_ace_interaction_MainAction";
+			selection = "";
+			distance = 2;
+			condition = QUOTE(_target getVariable [ARR_2(QQGVAR(bury),-1)] > -1);
+			insertChildren = QUOTE(_this call FUNC(getDigActions));
 		};
 	};
 	ace_dragging_canDrag = 1;
@@ -42,6 +49,7 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 	ace_cargo_noRename = 1;
 	ace_cargo_blockUnloadCarry = 0;
 	iedd_ied_default = QGVAR(Bucket_Fake); //No needed?
+	iedd_ied_buryDepth = 0.004;
 	class Attributes {
 		class GVAR(ied_SubCategory) {
 			data = "AttributeSystemSubcategory";
@@ -247,7 +255,7 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			displayName = CSTRING(TimerValue);
 			tooltip = CSTRING(TimerValue_Tooltip);
 			property = QGVAR(timerValue);
-			control = QGVAR(timeSlider); // TODO time_slider min - max
+			control = QGVAR(timeSlider);
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerValue);
 			typeName = "NUMBER";
@@ -279,7 +287,7 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			displayName = CSTRING(RandomTimerMin);
 			tooltip = CSTRING(RandomTimerMin_Tooltip);
 			property = QGVAR(randomTimerMin);
-			control = QGVAR(timeSlider); // TODO time_slider min - max
+			control = QGVAR(timeSlider);
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerMin);
 			typeName = "NUMBER";
@@ -288,10 +296,24 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			displayName = CSTRING(RandomTimerMax);
 			tooltip = CSTRING(RandomTimerMax_Tooltip);
 			property = QGVAR(randomTimerMax);
-			control = QGVAR(timeSlider); // TODO time_slider min - max
+			control = QGVAR(timeSlider);
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = QGVAR(defaultTimerMax);
 			typeName = "NUMBER";
+		};
+		/**********BURY SETTINGS ********/
+		class GVAR(bury_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Bury IED";//CSTRING(Bury_Category);
+		};
+		class GVAR(bury) {
+			displayName = CSTRING(Bury_displayName);
+			tooltip = CSTRING(Bury_Tooltip);
+			property = QGVAR(bury);
+			control = QGVAR(burySlider); //If we dont need change anything then "Slider";
+			expression = QUOTE(if (is3DEN) then {[ARR_2(_this,parseNumber(_value toFixed 2))] call FUNC(buryIED)} else {_this setVariable [ARR_2('%s',parseNumber(_value toFixed 2))]});//QUOTE(if (isServer && _value > 0.045) then {_this enableSimulation false; ARR_2([_this,_value] call FUNC(buryIED)}));
+			defaultValue = 0;
 		};
 	};
 };
@@ -330,12 +352,12 @@ class GVAR(Bucket_Fake):Land_PlasticBucket_01_closed_F {
 			class GVAR(open) {
 				displayName = CSTRING(Action_Open);
 				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 0);
-				statement = QUOTE(ARR_3([_target,_player,1]) call FUNC(openCloseBucket));
+				statement = QUOTE([ARR_3(_target,_player,1)] call FUNC(openCloseBucket));
 			};
 			class GVAR(close) {
 				displayName = CSTRING(Action_Close);
 				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 1);
-				statement = QUOTE(ARR_3([_target,_player,0]) call FUNC(openCloseBucket));
+				statement = QUOTE([ARR_3(_target,_player,0)] call FUNC(openCloseBucket));
 			};
 		};
 	};

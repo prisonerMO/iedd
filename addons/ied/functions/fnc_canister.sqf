@@ -28,6 +28,8 @@ if (!isServer) exitWith {};
     private _isFake = _bombObj getVariable [QGVAR(fake), GVAR(defaultFake)];
     private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
     private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
+    private _buryValue  = _bombObj getVariable [QGVAR(bury), -1];
+    TRACE_3("Bury Values:",_bombObj,_isBury,_value);
     TRACE_6("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer);
     if (_isFake > random 1) exitWith {
         private _type = getText (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_default");
@@ -41,19 +43,25 @@ if (!isServer) exitWith {};
         };
         [{isNull (_this select 0)},
         {
-            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp"];
-            private  _fakeBombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
-            if (_setDir) then {
+            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_buryValue"];
+            private _fakeBombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
+            private _isBury = _buryValue > 0.09;
+            if (_setDir && !_isBury) then {
                 _fakeBombObj setDir random 359;
             } else {
                 _fakeBombObj setDir _dir;
             };
             _fakeBombObj setVectorDirAndUp _vectorDirAndUp;
             _fakeBombObj setPosATL _bombPos;
-            if (_decals) then {
-                [_fakeBombObj] call FUNC(decals);
-            };
-        }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp]] call CBA_fnc_waitUntilAndExecute;
+            if (_isBury) then {
+                _bombObj enableSimulationGlobal false;
+                [_bombObj,_buryValue] call FUNC(buryIED);
+            } else {
+                if (_decals) then {
+                    [_fakeBombObj] call FUNC(decals);
+                };
+            }
+        }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_buryValue]] call CBA_fnc_waitUntilAndExecute;
     };
 
     if (GVAR(isDetectable)) then {
@@ -143,21 +151,31 @@ if (!isServer) exitWith {};
             speed (_this select 0) == 0
         },
         {
-            params ["_bombObj","_decals", "_setDir", "_wireSet"];
-            if (_setDir) then {
-                private _bombPos = getPosATL _bombObj;
-                _bombObj setDir random 359;
-                _bombObj setPosATL _bombPos;
-            };
-            if (_decals) then {
-                [_bombObj] call FUNC(decals);
-            };
+            params ["_bombObj","_decals", "_setDir", "_wireSet","_buryValue"];
+            private _isBury = _buryValue > 0.09;
+            if (_isBury) then {
+                _bombObj enableSimulationGlobal false;
+                private _attachedObjects = attachedObjects _bombObj;
+                {
+                    ["iedd_ied_hideObject",[_x, true]] call CBA_fnc_globalEvent;
+                } forEach _attachedObjects;
+                [_bombObj,_buryValue] call FUNC(buryIED);
+            } else {           
+                if (_setDir) then {
+                    private _bombPos = getPosATL _bombObj;
+                    _bombObj setDir random 359;
+                    _bombObj setPosATL _bombPos;
+                };           
+                if (_decals) then {
+                    [_bombObj] call FUNC(decals);
+                };
+            }; 
             private _text = localize LSTRING(Name_Long);
             private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
             [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;
         }, _this] call CBA_fnc_waitUntilAndExecute;
-    }, [_bombObj, _decals, _setDir, _wireSet], 1] call CBA_fnc_waitAndExecute;
+    }, [_bombObj, _decals, _setDir, _wireSet, _buryValue], 1] call CBA_fnc_waitAndExecute;
 
 },[_bombObj],0.1] call CBA_fnc_waitAndExecute;
 true;
