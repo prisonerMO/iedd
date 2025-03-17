@@ -34,18 +34,18 @@ private _userCount = _count - 1;
 private _preDef = _preCount - 1;
 // TO-DO -> private _result = ["Are you sure?", "Confirm", true, true, ctrlParent _ctrl,true] call BIS_fnc_guiMessage;
 if (_curSel > _preDef) then {
-	private _userVal = _ctrlCombo lbValue _curSel; // value 0-4
-	private _userData = _data get _userVal;
-	if (_userVal < _userCount) then { // if data between 0-4 (not last)
-		for "_n" from _userVal+1 to _userCount do {
-			private _preData = _data get _n;
-			_data set [_n-1,_preData];
-		};
-		_data deleteAt _userCount;  // DELETE DATA 0-4
-	} else {
-		_data deleteAt _userVal;  // DELETE DATA 0-4
-	};
-	lbClear _ctrlCombo;
-	private _grp = _all select {ctrlIDC _x == 95441} select 0;
-	[_grp,0] call FUNC(pos_onAttributeLoad);
+    private _userVal = _ctrlCombo lbValue _curSel; // value 0-4
+    private _userData = _data get _userVal;
+    if (_userVal < _userCount) then { // if data between 0-4 (not last)
+        for "_n" from _userVal+1 to _userCount do {
+            private _preData = _data get _n;
+            _data set [_n-1,_preData];
+        };
+        _data deleteAt _userCount;  // DELETE DATA 0-4
+    } else {
+        _data deleteAt _userVal;  // DELETE DATA 0-4
+    };
+    lbClear _ctrlCombo;
+    private _grp = _all select {ctrlIDC _x == 95441} select 0;
+    [_grp,0] call FUNC(pos_onAttributeLoad);
 };

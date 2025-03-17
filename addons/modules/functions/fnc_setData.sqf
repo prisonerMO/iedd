@@ -34,9 +34,9 @@ private _index = _model select 0;
 private _data = EGVAR(vbied,preDefined) getOrDefault [_index,[]];
 private _count = count _data;
 if (_value > _count-1) then {
-	private _userModel = _model select 1;
-	_data = EGVAR(vbied,userDefined) get _userModel;
-	_loc = _value - _count;
+    private _userModel = _model select 1;
+    _data = EGVAR(vbied,userDefined) get _userModel;
+    _loc = _value - _count;
 };
 private _s = _data get _loc;
 private _pos = _s get "pos";

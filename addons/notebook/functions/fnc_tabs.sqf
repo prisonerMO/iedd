@@ -6,7 +6,7 @@
  * Arguments:
  * 0: Varition <STRING> (default: "home")
  * 1: Current <NUMBER> (default: 0)
- * 
+ *
  * Return Value:
  * None
  *
@@ -28,14 +28,14 @@ private _arrowL = _display displayCtrl NOTEBOOK_IDC_PREV;
 private _arrowR = _display displayCtrl NOTEBOOK_IDC_NEXT;
 
 if (_current == 0) then {
-	_arrowL ctrlShow false;
+    _arrowL ctrlShow false;
 } else {
-	_arrowL ctrlShow true;
+    _arrowL ctrlShow true;
 };
 if !((fileExists format[QPATHTOF(images\%1\%2%3.paa), _var, _var, _current+1])) then {
-	_arrowR ctrlShow false;
+    _arrowR ctrlShow false;
 } else {
-	_arrowR ctrlShow true;
+    _arrowR ctrlShow true;
 };
 
 GVAR(pages) set [_var, _current];

@@ -32,20 +32,20 @@ private _page = GVAR(pages) getOrDefault [_var, 0, true];
 private _current = _page+_selectDir;
 
 if (fileExists format[QPATHTOF(images\%1\%2%3.paa), _var, _var, _current]) then {
-	_ctrl ctrlSetText format [QPATHTOF(images\%1\%2%3.paa), _var, _var, _current];
+    _ctrl ctrlSetText format [QPATHTOF(images\%1\%2%3.paa), _var, _var, _current];
 } else {
-	_current = _current-_selectDir;
+    _current = _current-_selectDir;
 };
 
 if (_current == 0) then {
-	_arrowL ctrlShow false;
+    _arrowL ctrlShow false;
 } else {
-	_arrowL ctrlShow true;
+    _arrowL ctrlShow true;
 };
 if !((fileExists format[QPATHTOF(images\%1\%2%3.paa), _var, _var, _current+1])) then {
-	_arrowR ctrlShow false;
+    _arrowR ctrlShow false;
 } else {
-	_arrowR ctrlShow true;
+    _arrowR ctrlShow true;
 };
 
 GVAR(pages) set [_var, _current];
