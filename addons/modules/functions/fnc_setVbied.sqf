@@ -58,21 +58,19 @@ private _model = getModelInfo _vehicle select 0;
 private _index = VBIED_MODELS findIf {_model in _x};
 private _type = typeOf _vehicle;
 EGVAR(vbied,preDefined) set ["model",[_index,_model,_type]];
-/*TODO - Check if vehicle have not predefined positions*/
-[{
-    params ["_display","_logic"];
-    private _posCtrl = _display displayCtrl 52520;
-    private _sel = lbCurSel _posCtrl;
-    private _value = _posCtrl lbValue _sel;
-    private _data = [_posCtrl,_value] call FUNC(setData);
-    TRACE_1("Data",_data);
-    if (_data isEqualTo []) exitWith {
-        private _message = "No predefined positions for this vehicle";
-        deleteVehicle _logic;
-        [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
-        _display closeDisplay 2;
-    };
-}, [_display,_logic]] call CBA_fnc_execNextFrame;
+
+/*TODO - Check if vehicle have not predefined positions - Fix remove ExecNextFrame*/
+private _posCtrl = _display displayCtrl 52520;
+private _sel = lbCurSel _posCtrl;
+private _value = _posCtrl lbValue _sel;
+private _data = [_posCtrl,_value] call FUNC(setData);
+TRACE_1("Data",_data);
+if (_data isEqualTo []) exitWith {
+    private _message = "No predefined positions for this vehicle";
+    deleteVehicle _logic;
+    [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 2;
+};
 
 //Specific dud :
 private _fnc_sliderMove = {
