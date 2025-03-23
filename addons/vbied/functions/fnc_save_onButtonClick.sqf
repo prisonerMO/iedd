@@ -57,13 +57,13 @@ if (_count > 4) then {
     ] call BIS_fnc_3DENShowMessage;
 } else {
     private _text = if (ctrlText _editCtrl == "") then {
-        format [LSTRING(User_Defined) + " %1",_count+1];
+        format [LLSTRING(User_Defined) + " %1",_count+1];
     } else {
         ctrlText _editCtrl
     };
     private _setCur = lbSize _ctrlCombo;
     _ctrlCombo lbAdd _text;
-    _ctrlCombo lbSetTooltip [_setCur,LSTRING(User_Defined_Tooltip)];
+    _ctrlCombo lbSetTooltip [_setCur,LLSTRING(User_Defined_Tooltip)];
     _ctrlCombo lbSetValue [_setCur, _count];
     [_model, _count, _pos, _dir, _up, _text] call FUNC(userDefined);
     _ctrlCombo lbSetCurSel _setCur;
