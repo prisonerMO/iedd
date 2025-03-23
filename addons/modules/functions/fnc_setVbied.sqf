@@ -60,6 +60,16 @@ private _index = VBIED_MODELS findIf {_model in _x};
 private _type = typeOf _vehicle;
 EGVAR(vbied,preDefined) set ["model",[_index,_model,_type]]; //Set model
 
+/*TODO - Check if vehicle have not predefined positions - Fix remove ExecNextFrame*/
+private _data = [_display] call FUNC(setData);
+TRACE_1("Data",_data);
+if (_data isEqualTo []) exitWith {
+    private _message = "No predefined positions for this vehicle";
+    deleteVehicle _logic;
+    [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 2;
+};
+
 //Specific dud :
 private _fnc_sliderMove = {
     params ["_slider"];
@@ -159,13 +169,3 @@ private _fnc_onConfirm = {
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];
 _ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
-
-/*TODO - Check if vehicle have not predefined positions - Fix remove ExecNextFrame*/
-private _data = [_display] call FUNC(setData);
-TRACE_1("Data",_data);
-if (_data isEqualTo []) exitWith {
-    private _message = "No predefined positions for this vehicle";
-    deleteVehicle _logic;
-    [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
-    _display closeDisplay 2;
-};
