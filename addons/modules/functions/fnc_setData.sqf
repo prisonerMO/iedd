@@ -39,7 +39,7 @@ if (_value > _count-1) then {
     _data = EGVAR(vbied,userDefined) getOrDefault [_userModel,[]];
     _loc = _value - _count;
 };
-if (_data isEqualTo []) exitWith {_data};
+if (_data isEqualTo []) exitWith {_data}; //here you could return an "default position" if you want
 private _s = _data get _loc;
 private _pos = _s get "pos";
 private _dir = _s get "dir";
