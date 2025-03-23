@@ -33,14 +33,6 @@ class GVAR(RcsVbied): RscDisplayAttributes {
                             colorBackground[] = {0, 0, 0, 0.7};
                             onLBSelChanged = QUOTE(_this call FUNC(vbiedSelected));
                             onLoad = QUOTE(ARR_2([{call FUNC(vbiedSelected)},ARR_2([_this select 0,0])]) call CBA_fnc_execNextFrame);
-                            class Items {
-                                /*TO-DO GET ALL VBIEDS POSITIONS*/
-                                class 0 {
-                                    value = -1;
-                                    text = "THERE IS NO VBIED POSITIONS";
-                                    default = 1;
-                                };
-                            };
                         };
 
                         class GVAR(variationL): GVAR(posL) {

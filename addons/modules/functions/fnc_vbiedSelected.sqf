@@ -18,10 +18,8 @@
 
 params ["_control","_value"];
 TRACE_1("fnc_vbiedSelected",_this);
-
 private _display = ctrlParent _control;
 lbClear	_control;
-
 private _model = EGVAR(vbied,preDefined) get "model";
 private _index = _model select 0;
 private _data = EGVAR(vbied,preDefined) getOrDefault [_index,[]];
@@ -48,7 +46,7 @@ if (_countUser > 0) then {
         _control lbSetTooltip [_id,format ["UserDefinedPos %1",_i+1]];
     };
 };
-if (_count+_countUser == 0) then {
+if (_count+_countUser == 0) exitWith {
     _control lbAdd "NO POSITIONS ON THIS MODEL!";
     _control lbSetValue [0,-1];
     _control lbSetCurSel 0;

@@ -54,23 +54,11 @@ if (_index > -1) exitWith {
 	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
     _display closeDisplay 2;
 };
+
 private _model = getModelInfo _vehicle select 0;
 private _index = VBIED_MODELS findIf {_model in _x};
 private _type = typeOf _vehicle;
-EGVAR(vbied,preDefined) set ["model",[_index,_model,_type]];
-
-/*TODO - Check if vehicle have not predefined positions - Fix remove ExecNextFrame*/
-private _posCtrl = _display displayCtrl 52520;
-private _sel = lbCurSel _posCtrl;
-private _value = _posCtrl lbValue _sel;
-private _data = [_posCtrl,_value] call FUNC(setData);
-TRACE_1("Data",_data);
-if (_data isEqualTo []) exitWith {
-    private _message = "No predefined positions for this vehicle";
-    deleteVehicle _logic;
-    [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
-    _display closeDisplay 2;
-};
+EGVAR(vbied,preDefined) set ["model",[_index,_model,_type]]; //Set model
 
 //Specific dud :
 private _fnc_sliderMove = {
@@ -144,10 +132,7 @@ private _fnc_onConfirm = {
     private _display = ctrlParent _ctrlButtonOK;
     if (isNull _display) exitWith {};
     private _vehicle = attachedTo _logic;
-    private _posCtrl = _display displayCtrl 52520;
-    private _sel = lbCurSel _posCtrl;
-    private _value = _posCtrl lbValue _sel;
-    private _data = [_posCtrl,_value] call FUNC(setData);
+    private _data = [_display] call FUNC(setData);
     TRACE_1("Data:",_data);
     private _varCtrl = _display displayCtrl 52521;
     private _variation = lbCurSel _varCtrl;
@@ -174,3 +159,13 @@ private _fnc_onConfirm = {
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];
 _ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
+
+/*TODO - Check if vehicle have not predefined positions - Fix remove ExecNextFrame*/
+private _data = [_display] call FUNC(setData);
+TRACE_1("Data",_data);
+if (_data isEqualTo []) exitWith {
+    private _message = "No predefined positions for this vehicle";
+    deleteVehicle _logic;
+    [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 2;
+};
