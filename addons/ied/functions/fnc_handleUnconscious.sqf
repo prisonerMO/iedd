@@ -23,6 +23,6 @@ if (!local _unit || {!_isUnconscious}) exitWith {}; //Douple check?
 private _attachedObjects = attachedObjects _unit;
 private _index = _attachedObjects findIf {typeOf _x == QGVAR(Charge)};
 if (_index > -1) then {
-	_unit setDamage 1;
+    _unit setDamage 1;
 };
 

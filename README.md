@@ -50,7 +50,37 @@ The project is entirely **open-source** and all contributions are welcome. Feel 
 - Adjustable wire cut failure option for other units.
 - Adjustable possibility for activate IED after failed wire cut.
 - "Just keep talking and nobody explodes-mode" = IEDD Notebook can't be opened near IEDs.
-- Bomb vest (found under units attributes). Target with bomb vest can be escorted and unlike other IEDs in the mod, this doesn't activate by moving/running near. Drive carefully! (max. 45km/h)
+- Bomb vest (found under units attributes). Target with bomb vest can be escorted and unlike other IEDs in the mod, this doesn’t activate by moving/running near. Drive carefully! (max. - 45km/h)
+- Option to add (adjustable) countdown timer to IEDs (found in object attributes). Timer starts after first wire cut.
+- Option to change default IED-settings via CBA Settings.
+- Adjustable activation distance for single IED in editor (found in object attributes).
+- Adjustable activation distance for single IED in Zeus (Place IED-module).
+- Add bomb vest-module for Zeus.
+- Small electric crackling sound if wire cut is going to fail.
+- Option to set countdown timer for Zeus placed IEDs and bomb vests.
+- Variation X to all IED-types, excluding bomb vest. Variation X can’t be defused.
+- Info to not touch to IED which isn’t in the notebook (About IEDs).
+- Adjustable chance for spawning variation X when random is selected.
+- Training IEDs (found in editor and Zeus, under props). Doesn't explode, pops only a red smoke if failed disarm. Training IEDs can be rearmed with same variation or random variation. - (Bele)
+- New explosion size, "Tiny". (Bele)
+- Option to totally ignore wire cutting orders for IEDs (for easier gameplay). (Bele)
+- Suicide bomber (found under units attributes - IEDD Notebook Options).
+- Zeus module for suicide bomber (found under modules - IEDD Notebook).
+- Addon options for suicide bomber.
+- Option to define activation side(s) for suicide bomber (unit attributes).
+- Option to define activation side(s) for suicide bomber (Zeus).
+- Addon option to include/exclude Zeus for activating suicide bomber.
+- VBIEDs, Vehicle-borne improvised explosive devices (found under vehicle attributes).
+- Predefined VBIED positions for vanilla civilian cars.
+- Couple of activation options for VBIED (works with AI too).
+- Option to make custom VBIED to any vehicle.
+- Options to name and save/delete custom positions.
+- Addon options for VBIEDs.
+- Zeus module - Add VBIED (including custom positions).
+- Zeus module - Activate VBIED.
+- Zeus module - Explode VBIED.
+- New IED type: Bucket.
+- Few addon options for bucket IED.
 
 ***and more coming...***
 

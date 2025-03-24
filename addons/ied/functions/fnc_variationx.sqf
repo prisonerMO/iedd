@@ -20,12 +20,12 @@ TRACE_1("fnc_variationx",_this);
 
 private _colors = [];
 for "_i" from 0 to _count do {
-	private _color = if (_i > 4) then {
-		selectRandom ["Red","Green","Yellow","Blue"];
-	} else {
-		selectRandom ["Red","Green","Yellow","Black","Blue"];
-	};
-	_colors pushBack _color;
+    private _color = if (_i > 4) then {
+        selectRandom ["Red","Green","Yellow","Blue"];
+    } else {
+        selectRandom ["Red","Green","Yellow","Black","Blue"];
+    };
+    _colors pushBack _color;
 };
 _order = [];
 _order resize _count+1;

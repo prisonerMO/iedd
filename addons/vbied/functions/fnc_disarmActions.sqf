@@ -1,6 +1,23 @@
 #include "..\script_component.hpp"
-//currenlty not in use
+/*
+ * Author: Prisoner
+ * Returns children actions for VBIED.
+ *
+ * Arguments:
+ * 0: Target <OBJECT>
+ *
+ * Return Value:
+ * Actions <ARRAY>
+ *
+ * Example:
+ * [_target] call iedd_vbied_fnc_disarmActions;
+ *
+ * Public: No
+ */
+
 params ["_target"];
+TRACE_1("fnc_disarmActions",_this);
+
 private _actions = [];
 private _bombObj = attachedTo _target;
 if (isNull _bombObj) exitWith {_actions};
@@ -70,7 +87,7 @@ for "_i" from 0 to _countWires do {
                     /* NOT IN USE , -> CANCEL CHANCE EXPLODE?
                     if (!GVAR(fail)) then {
                         GVAR(fail) = true;
-                        [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
+                        [QEGVAR(ied,sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
                     };
                     [{
                         params ["_isFail","_bombObj"];

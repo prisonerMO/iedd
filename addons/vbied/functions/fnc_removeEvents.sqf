@@ -1,5 +1,23 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Remove events from the vehicle.
+ *
+ * Arguments:
+ * 0: Vehicle <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_vehicle] call iedd_vbied_fnc_removeEvents;
+ *
+ * Public: No
+ */
+
 params ["_vehicle"];
+TRACE_1("fnc_removeEvents",_this);
+
 private _getInEhId = _vehicle getVariable [QGVAR(getInEhId), -1];
 if (_getInEhId > -1) then {
     _vehicle removeEventHandler ["GetIn", _getInEhId];
