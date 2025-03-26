@@ -14,18 +14,18 @@
  *
  * Public: No
  */
- 
+
 params ["_player"];
 TRACE_1("fnc_canDisarm",_this);
 
 if (GVAR(isEOD) &&
-	{!([_player] call ace_common_fnc_isEOD) &&
-	{!(_player getUnitTrait "explosiveSpecialist")}}) exitWith {
-	false;
+    {!([_player] call ace_common_fnc_isEOD) &&
+    {!(_player getUnitTrait "explosiveSpecialist")}}) exitWith {
+    false;
 };
-if (GVAR(isDefusalKit) && 
-	{!("ACE_DefusalKit" in (items _player))}) exitWith { 
-	false; 
+if (GVAR(isDefusalKit) &&
+    {!("ACE_DefusalKit" in (items _player))}) exitWith {
+    false;
 };
 true;
 

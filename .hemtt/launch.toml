@@ -21,4 +21,4 @@ parameters = [ #modify dev launch as you like
     "-limitFPS=144",
 ]
 executable = "arma3profiling_x64"
-mission = "0001_IEDD_DEV.Stratis" #Need create mission file .hemtt/missions/0001_IEDD_DEV.Stratis/mission.sqm to use.
+#mission = "0001_IEDD_DEV.Stratis" #Need create mission file .hemtt/missions/0001_IEDD_DEV.Stratis/mission.sqm to use.

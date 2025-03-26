@@ -2,6 +2,9 @@
 #define COMPONENT_NAME "IEDD Equipment"
 #include "\x\iedd\addons\main\script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
+
+//#define DISABLE_COMPILE_CACHE
+
 #ifdef DEBUG_ENABLED_EQUIPMENT
     #define DEBUG_MODE_FULL
 #endif
@@ -11,4 +14,3 @@
 #endif
 
 #include "\x\iedd\addons\main\script_macros.hpp"
-

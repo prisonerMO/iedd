@@ -1,5 +1,24 @@
 #include "..\script_component.hpp"
+/*
+ * Author: Prisoner
+ * Add detach action to defused VBIED
+ *
+ * Arguments:
+ * 0: Box <OBJECT>
+ * 1: Vehicle <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [_box,_vehicle] call iedd_vbied_fnc_detachAction;
+ *
+ * Public: No
+ */
+
 params ["_box","_vehicle"];
+TRACE_1("fnc_detachAction",_this);
+
 if (!hasInterface) exitWith {};
 private _condition = {
     params ["_target", "_player", "_actionParams"];

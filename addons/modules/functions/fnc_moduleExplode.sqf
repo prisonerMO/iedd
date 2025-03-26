@@ -28,9 +28,9 @@ if (isNull _unit) exitWith {
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
 if !(typeOf _unit in IEDD_CLASSES) exitWith {
-	_message = "Type of unit is not IED";
-	deleteVehicle _logic;
-	[ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _message = "Type of unit is not IED";
+    deleteVehicle _logic;
+    [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
 [QGVAR(explode), [_unit]] call CBA_fnc_serverEvent;

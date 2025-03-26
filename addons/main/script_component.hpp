@@ -2,6 +2,9 @@
 #define COMPONENT_NAME "Main"
 #include "script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
+
+//#define DISABLE_COMPILE_CACHE
+
 #ifdef DEBUG_ENABLED_MAIN
     #define DEBUG_MODE_FULL
 #endif
