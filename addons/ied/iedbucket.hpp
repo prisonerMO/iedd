@@ -28,7 +28,7 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 				displayName = CSTRING(Action_Close);
 				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 1);
 				statement = QUOTE([ARR_3(_target,_player,0)] call FUNC(openCloseBucket));
-			};			
+			};
 		};
 		class GVAR(Dig) {
 			displayName = "$STR_ace_interaction_MainAction";

@@ -1,34 +1,34 @@
-class CfgAmmo { 
-	class DemoCharge_Remote_Ammo;
-	class SmokeShellRed;
-	class R_PG32V_F;
-	class GVAR(Charge_Ammo):DemoCharge_Remote_Ammo {
-		author = AUTHOR;
-		scope = 1;
-		mass = 0;
-		displayName = CSTRING(Charge_Ammo_DisplayName);
-	};
-	class GVAR(Training_IED_Ammo):SmokeShellRed {
-		explosionTime=0.00001;
-		timeToLive=4;
-		SmokeShellSoundLoop1[]=
-		{
-			"x\iedd\addons\ied\sounds\whistle.wss",
-			100,
-			1,
-			15
-		};
-		grenadeBurningSound[]=
-		{
-			"SmokeShellSoundLoop1",
-			1.0
-		};
-	};
-	class GVAR(Tiny_Ammo): R_PG32V_F {
-		author = AUTHOR;
-		hit = 3;
-		indirectHit = 2;
-		indirectHitRange = 10;
-	};
+class CfgAmmo {
+    class DemoCharge_Remote_Ammo;
+    class SmokeShellRed;
+    class R_PG32V_F;
+    class GVAR(Charge_Ammo):DemoCharge_Remote_Ammo {
+        author = AUTHOR;
+        scope = 1;
+        mass = 0;
+        displayName = CSTRING(Charge_Ammo_DisplayName);
+    };
+    class GVAR(Training_IED_Ammo):SmokeShellRed {
+        explosionTime=0.00001;
+        timeToLive=4;
+        SmokeShellSoundLoop1[]=
+        {
+            "x\iedd\addons\ied\sounds\whistle.wss",
+            100,
+            1,
+            15
+        };
+        grenadeBurningSound[]=
+        {
+            "SmokeShellSoundLoop1",
+            1.0
+        };
+    };
+    class GVAR(Tiny_Ammo): R_PG32V_F {
+        author = AUTHOR;
+        hit = 3;
+        indirectHit = 2;
+        indirectHitRange = 10;
+    };
 };
 

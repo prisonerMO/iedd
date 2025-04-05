@@ -87,7 +87,7 @@ for "_i" from 0 to _countWires do {
                     /* NOT IN USE , -> CANCEL CHANCE EXPLODE?
                     if (!GVAR(fail)) then {
                         GVAR(fail) = true;
-                        [QGVAR(sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
+                        [QEGVAR(ied,sound), [QGVAR(fail1),_bombObj]] call CBA_fnc_globalEvent;
                     };
                     [{
                         params ["_isFail","_bombObj"];

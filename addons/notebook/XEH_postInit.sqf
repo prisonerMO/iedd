@@ -16,8 +16,3 @@ if (!hasInterface) exitWith {};
 },
 {false},
 [208, [true, false, false]], true] call CBA_fnc_addKeybind;
-
-[QGVAR(sound), {
-    params ["_sound", "_source"];
-        _source say3D _sound;
-}] call CBA_fnc_addEventHandler;
