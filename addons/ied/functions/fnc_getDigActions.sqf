@@ -29,17 +29,17 @@ private _statement = {
     private _buryValue = _target getVariable [QGVAR(bury),-1];
     private _count = round(_buryValue*10);
     private _pos = getPosATL _target;
-    private _depth = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "iedd_ied_buryDepth")*10;
+    private _depth = (getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "iedd_ied_buryDepth"))*10;
     [_target, _count, _pos, _depth] call FUNC(dig)
 };
 
 private _action = [
-        _target, 
-        LLSTRING(Dig_DisplayName), 
-        "", 
-        _statement, 
-        _condition, 
-        {}, 
+        _target,
+        LLSTRING(Dig_DisplayName),
+        "",
+        _statement,
+        _condition,
+        {},
         _target
     ] call ace_interact_menu_fnc_createAction;
 
