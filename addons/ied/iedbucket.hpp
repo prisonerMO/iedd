@@ -12,7 +12,7 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			displayName = "$STR_ace_interaction_MainAction";
 			selection = "";
 			distance = 2;
-			condition =  QUOTE(!(_target getVariable [ARR_2(QQGVAR(bury),-1)] > -1));
+			condition =  QUOTE(_target getVariable [ARR_2(QQGVAR(bury),-1)] == -1);
 			class IEDD_DisarmMenu {
 				exceptions[] = {"isNotSwimming"};
 				displayName = CSTRING(Disarm_DisplayName);
@@ -49,7 +49,7 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 	ace_cargo_noRename = 1;
 	ace_cargo_blockUnloadCarry = 0;
 	iedd_ied_default = QGVAR(Bucket_Fake); //No needed?
-	iedd_ied_buryDepth = 0.004;
+	iedd_ied_buryDepth = 0.0044;
 	class Attributes {
 		class GVAR(ied_SubCategory) {
 			data = "AttributeSystemSubcategory";
@@ -301,7 +301,6 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			defaultValue = QGVAR(defaultTimerMax);
 			typeName = "NUMBER";
 		};
-		/**********BURY SETTINGS ********/
 		class GVAR(bury_SubCategory) {
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";

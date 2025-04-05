@@ -7,20 +7,37 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
     class EventHandlers {
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
     };
-    class ACE_Actions {
-        class ACE_MainActions {
-            displayName = "$STR_ace_interaction_MainAction";
-            selection = "";
-            distance = 2;
-            condition = QUOTE(true);
-            class IEDD_DisarmMenu {
-                exceptions[] = {"isNotSwimming"};
-                displayName = CSTRING(Disarm_DisplayName);
-                condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call FUNC(canDisarm)});
-                statement = "";
-            };
-        };
-    };
+	class ACE_Actions {
+		class ACE_MainActions {
+			displayName = "$STR_ace_interaction_MainAction";
+			selection = "";
+			distance = 2;
+			condition =  QUOTE(_target getVariable [ARR_2(QQGVAR(bury),-1)] == -1);
+			class IEDD_DisarmMenu {
+				exceptions[] = {"isNotSwimming"};
+				displayName = CSTRING(Disarm_DisplayName);
+				condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call FUNC(canDisarm) && {_target animationPhase 'bucketlid_hide' == 1}});
+				statement = "";
+			};
+			class GVAR(open) {
+				displayName = CSTRING(Action_Open);
+				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 0);
+				statement = QUOTE([ARR_3(_target,_player,1)] call FUNC(openCloseBucket));
+			};
+			class GVAR(close) {
+				displayName = CSTRING(Action_Close);
+				condition = QUOTE(_target animationPhase 'bucketlid_hide' == 1);
+				statement = QUOTE([ARR_3(_target,_player,0)] call FUNC(openCloseBucket));
+			};
+		};
+		class GVAR(Dig) {
+			displayName = "$STR_ace_interaction_MainAction";
+			selection = "";
+			distance = 2;
+			condition = QUOTE(_target getVariable [ARR_2(QQGVAR(bury),-1)] > -1);
+			insertChildren = QUOTE(_this call FUNC(getDigActions));
+		};
+	};
     ace_dragging_canDrag = 1;
     ace_dragging_dragPosition[] = {0, 1, 0};
     ace_dragging_dragDirection = 0;
@@ -32,6 +49,7 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
     iedd_ied_default = "Land_CanisterFuel_F";
+    iedd_ied_buryDepth = 0.0055;
     class Attributes {
         class GVAR(ied_SubCategory) {
             data = "AttributeSystemSubcategory";
@@ -194,7 +212,6 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
             typeName = "NUMBER";
             defaultValue = "0";
         };
-        /**********TIMER SETTINGS ********/
         class GVAR(timer_SubCategory) {
             data = "AttributeSystemSubcategory";
             control = "SubCategory";
@@ -273,6 +290,19 @@ class GVAR(CanisterFuel):Land_CanisterFuel_F {
             defaultValue = QGVAR(defaultTimerMax);
             typeName = "NUMBER";
         };
+        class GVAR(bury_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Bury IED";//CSTRING(Bury_Category);
+		};
+		class GVAR(bury) {
+			displayName = CSTRING(Bury_displayName);
+			tooltip = CSTRING(Bury_Tooltip);
+			property = QGVAR(bury);
+			control = QGVAR(burySlider); //If we dont need change anything then "Slider";
+			expression = QUOTE(if (is3DEN) then {[ARR_2(_this,parseNumber(_value toFixed 2))] call FUNC(buryIED)} else {_this setVariable [ARR_2('%s',parseNumber(_value toFixed 2))]});//QUOTE(if (isServer && _value > 0.045) then {_this enableSimulation false; ARR_2([_this,_value] call FUNC(buryIED)}));
+			defaultValue = 0;
+		};
     };
 };
 class GVAR(Training_CanisterFuel):GVAR(CanisterFuel) {
