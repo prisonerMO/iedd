@@ -3,7 +3,7 @@
 #include "\x\iedd\addons\main\script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
 
-//#define DISABLE_COMPILE_CACHE
+#define DISABLE_COMPILE_CACHE
 
 #ifdef DEBUG_ENABLED_IED
     #define DEBUG_MODE_FULL

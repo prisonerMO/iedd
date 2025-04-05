@@ -237,6 +237,27 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+/*IED Default Bury VALUES*/
+/*IED Default Bury %*/
+[
+    QGVAR(digTime),
+    "TIME",
+    [LSTRING(DigTime), LSTRING(DigTime_Description)],
+	[localize "STR_iedd_main_Category_Main","Buries IEDs"],
+    [1, 30, 3],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(entrenching),
+    "CHECKBOX",
+    [LSTRING(Entrenching), LSTRING(Entrenching_Description)],
+    [localize "STR_iedd_main_Category_Main","Buries IEDs"],
+    true,
+    true,
+    {},
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
 
 /*** IED Default values ***/
 /*IED Default Variation*/
@@ -329,7 +350,6 @@
     true,
     {},
     true // Needs mission restart
-
 ] call CBA_fnc_addSetting;
 
 /*IED Default Fake Prob %*/
@@ -342,7 +362,6 @@
     true,
     {},
     true // Needs mission restart
-
 ] call CBA_fnc_addSetting;
 
 /*IED Canister Default Color*/
@@ -359,7 +378,6 @@
     true,
     {},
     true // Needs mission restart
-
 ] call CBA_fnc_addSetting;
 
 /*IED Timer Default BOOLEAN*/
@@ -376,7 +394,6 @@
     true,
     {},
     true // Needs mission restart
-
 ] call CBA_fnc_addSetting;
 
 /*IED Timer Countdown Time*/
@@ -424,6 +441,7 @@
     [1, 300, 150],
     2
 ] call CBA_fnc_addSetting;
+
 
 /*IEDD DEBUG*/
 #ifdef ENABLE_IEDD_DEBUG
