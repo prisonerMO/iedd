@@ -28,7 +28,7 @@ if (_hasWpn) then {
 [{
     params ["_target", "_player", "_state"];
     private _text = ["Closing lid...", "Opening lid..."] select _state;
-    private _lid = _target getVariable [QGVAR(lid), [QGVAR(openCloseEOD), GVAR(defaultOpenCloseEOD)]];
+    private _lid = _target getVariable [QGVAR(lid), [GVAR(defaultOpenClose), GVAR(defaultOpenCloseEOD)]];
     private _expChance = _lid select ([_player] call ace_common_fnc_isEOD || _player getUnitTrait "explosiveSpecialist");
     TRACE_1("params:",_this);
     private _isExp = random 1 < _expChance;
