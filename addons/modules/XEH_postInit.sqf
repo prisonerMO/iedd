@@ -43,7 +43,7 @@
         _bombObj setVariable ["iedd_ied_color",_color];
     };
     if (_type == QEGVAR(ied,Bucket)) then {
-        _bombObj setVariable ["iedd_ied_lidState",_lidState];        
+        _bombObj setVariable ["iedd_ied_lidState",_lidState];
         _bombObj setVariable ["iedd_ied_openCloseEOD",_oce];
         _bombObj setVariable ["iedd_ied_openClose",_oc];
     };
@@ -55,5 +55,5 @@
         _object setVariable [QEGVAR(ied,bomb), true];
     };
     _object setVariable [QEGVAR(ied,dud),0];
-	_object call EFUNC(ied,bomb);
+	[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
 }] call CBA_fnc_addEventHandler;
