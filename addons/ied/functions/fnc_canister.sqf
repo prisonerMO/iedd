@@ -160,16 +160,16 @@ if (!isServer) exitWith {};
                     ["iedd_ied_hideObject",[_x, true]] call CBA_fnc_globalEvent;
                 } forEach _attachedObjects;
                 [_bombObj,_buryValue] call FUNC(buryIED);
-            } else {           
+            } else {
                 if (_setDir) then {
                     private _bombPos = getPosATL _bombObj;
                     _bombObj setDir random 359;
                     _bombObj setPosATL _bombPos;
-                };           
+                };
                 if (_decals) then {
                     [_bombObj] call FUNC(decals);
                 };
-            }; 
+            };
             private _text = localize LSTRING(Name_Long);
             private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;

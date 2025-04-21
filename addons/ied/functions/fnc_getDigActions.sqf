@@ -29,7 +29,7 @@ private _statement = {
     private _buryValue = _target getVariable [QGVAR(bury),-1];
     private _count = round(_buryValue*10);
     private _pos = getPosATL _target;
-    private _depth = (getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "iedd_ied_buryDepth"))*10;
+    private _depth = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "iedd_ied_buryDepth");
     [_target, _count, _pos, _depth] call FUNC(dig)
 };
 

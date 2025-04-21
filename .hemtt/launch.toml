@@ -12,7 +12,7 @@ workshop = [
     "623475643", # 3den Echanted
 ]
 parameters = [ #modify dev launch as you like
-    "-name=prisoner", 
+    "-name=prisoner",
     "-hugePages",
     "-noPause",
     "-malloc=mimalloc_v219_20250213",
@@ -22,3 +22,4 @@ parameters = [ #modify dev launch as you like
 ]
 executable = "arma3profiling_x64"
 #mission = "0001_IEDD_DEV.Stratis" #Need create mission file .hemtt/missions/0001_IEDD_DEV.Stratis/mission.sqm to use.
+mission = "01_IEDD_BURY.Stratis"

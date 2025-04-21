@@ -49,7 +49,8 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 	ace_cargo_noRename = 1;
 	ace_cargo_blockUnloadCarry = 0;
 	iedd_ied_default = QGVAR(Bucket_Fake); //No needed?
-	iedd_ied_buryDepth = 0.0044;
+	iedd_ied_buryDepth = 0.00445;
+    iedd_ied_digDepth = 0.12; // This will be defined with the bury depth in the future
 	class Attributes {
 		class GVAR(ied_SubCategory) {
 			data = "AttributeSystemSubcategory";
@@ -182,7 +183,6 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			typeName = "NUMBER";
 			defaultValue = "0";
 		};
-		/**********BUCKET OPEN / CLOSE ********/
 		class GVAR(lidState) {
 			displayName = CSTRING(LidState);
 			tooltip = CSTRING(LidState_Tooltip);
@@ -222,7 +222,6 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 			control = "Slider";
 			defaultValue = QGVAR(defaultOpenClose);
 		};
-		/**********TIMER SETTINGS ********/
 		class GVAR(timer_SubCategory) {
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
