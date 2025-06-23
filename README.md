@@ -1,16 +1,36 @@
 
 
 <p align="center">
-    <img src="https://github.com/prisonerMO/iedd/raw/main/extras/assets/logo/logo.png" width="480" alt="IEDD logo">
+    <img src="https://github.com/prisonerMO/iedd/raw/main/extras/assets/logo/logo.png" width="740" alt="IEDD logo">
 </p>
 
 
-***
-# Arma 3 mod: Improvised Explosive Device Disposal
+</p>
 
-The project is entirely **open-source** and all contributions are welcome. Feel free to maintain your own custom version as long as the changes you make are open to the public in accordance with the <a href="LICENSE.txt">GNU General Public License</a>.
-* Requires the latest version of CBA A3 mod [git][mod-cba-url-git] / [Steam workshop][mod-cba-url-ws]
-* Requires the latest version of ACE 3 mod [git][mod-ace-url-git] / [Steam workshop][mod-ace-url-ws]
+<p align="center">
+    <a href="https://steamcommunity.com/workshop/filedetails/?id=3048818056">
+        <img src="https://img.shields.io/steam/subscriptions/3048818056?style=for-the-badge&logo=steam&label=Subscribers&color=%23ae9b7d&link=https%3A%2F%2Fsteamcommunity.com%2Fsharedfiles%2Ffiledetails%2F%3Fid%3D3375788189" alt="IEDD Handbook - Steam Workshop Subscribers">
+    <a href="https://discord.gg/SU3WJxHqtS">
+        <img src="https://img.shields.io/badge/Join!-text?style=for-the-badge&logo=Discord&label=Discord&logoColor=%23ffffff&color=%23ae9b7d" alt="IEDD Handbook - Discord">
+    <a href="https://github.com/prisonerMO/iedd/releases">
+        <img src="https://img.shields.io/github/release/prisonerMO/iedd.svg?style=for-the-badge&label=Version&color=%23ae9b7d" alt="IEDD Handbook - Version">
+    </a>
+    <a href="https://github.com/prisonerMO/iedd/issues">
+        <img src="https://img.shields.io/github/issues-raw/prisonerMO/iedd.svg?style=for-the-badge&label=Issues&color=%23ae9b7d" alt="IEDD Handbook - Issues">
+    </a>
+    </a>
+    <a href="https://github.com/prisonerMO/iedd/blob/master/LICENSE">
+        <img src="https://img.shields.io/badge/License-GPLv3-red.svg?style=for-the-badge&color=%23ae9b7d" alt="IEDD Handbook - License">
+    </a>
+</p>
+
+**Improvised Explosive Device Disposal - Handbook**, also known as **IEDD - Handbook** or **IEDD** is an [Arma 3][arma3-link-steam] modification with the goal to make the gameplay and interaction with IEDs more tense, immersive and challenging by providing more inconspicuous objects which can house those IEDs as wwell as more in-depth mechanics like cutting the wires in the right order. It also comes with an in-game handbook item which provides the players in the field with means to identify and defuse these new and challenging hazards safely... *most of the time*.
+
+<!-- To Be added once Guides are done -->
+<!-- Also a worthwhile question: Use readme.md files or use a github wiki instead? -->
+<!-- You can find more detailed guidance and informations here: ~link-to-somewhere~ -->
+
+**IEDD - Handbook** is entirely **open-source** and all contributions are welcome. Feel free to maintain your own custom version as long as the changes you make are open to the public in accordance with the <a href="LICENSE.txt">GNU General Public License</a>.
 
 ## Core features
 - You have to move slowly nearby (walk)
@@ -86,7 +106,14 @@ The project is entirely **open-source** and all contributions are welcome. Feel 
 
 ## Getting started
 
-IEDD Notebook requires [Arma 3][arma3-link-steam], the latest version of [CBA A3][mod-cba-url-ws] and the latest version of [ACE3][mod-ace-url-ws].
+### Requirements 
+IEDD Notebook requires
+- [Arma 3][arma3-link-steam]
+- Requires the latest version of CBA A3 mod [git][mod-cba-url-git] / [Steam workshop][mod-cba-url-ws]
+- Requires the latest version of ACE 3 mod [git][mod-ace-url-git] / [Steam workshop][mod-ace-url-ws]
+
+
+the latest version of [CBA A3][mod-cba-url-ws] and the latest version of [ACE3][mod-ace-url-ws].
 - You can use this mod [published version][mod-iedd-url-ws] simply by subscribing it from Steam Workshop and activating it in Arma3 Launcher.
 - If you want to compile your own version you can clone this source and use [HEMTT][hemtt-releases-link] to compile it.
 
@@ -107,8 +134,22 @@ An instruction to find your RPT files can be found from [BI Studio wiki][bistudi
 
 ### Get in touch
 
-| [Discord][discord-link] | We have a public Discord server that anyone can join. This is where all our developers and contributors hang out and where we make announcements |
-| :---: | :---- |
+
+<table>
+  <tr>
+    <td><a href="https://acemod.org/discord">Discord</a></td>
+    <td>We have a public Discord server that anyone can join. This is where all our developers and contributors hang out and where we make announcements</td>
+  </tr>
+  <tr>
+    <td><a href="https://steamcommunity.com/workshop/filedetails/?id=3048818056">Steam Workshop</a></td>
+    <td>Here you can find the mod on the steam workshop and subsribe to it</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/prisonerMO/iedd">Github Repository</a></td>
+    <td>Here you can find the github repository for IEDD Handbook</td>
+  </tr>
+</table>
+
 
 
 ## License
