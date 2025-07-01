@@ -1,5 +1,5 @@
 #define COMPONENT vbied
-#define COMPONENT_NAME "IEDD Handbook - VBIEDs"
+#define COMPONENT_NAME "IEDD Notebook - VBIEDs"
 #include "\x\iedd\addons\main\script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
 
