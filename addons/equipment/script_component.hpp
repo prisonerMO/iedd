@@ -1,5 +1,5 @@
 #define COMPONENT equipment
-#define COMPONENT_NAME "IEDD Equipment"
+#define COMPONENT_NAME "IEDD Handbook - Equipment"
 #include "\x\iedd\addons\main\script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
 

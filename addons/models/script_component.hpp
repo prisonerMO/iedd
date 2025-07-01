@@ -1,5 +1,5 @@
 #define COMPONENT models
-#define COMPONENT_NAME "IEDD Models"
+#define COMPONENT_NAME "IEDD Handbook - Models"
 #include "\x\iedd\addons\main\script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
 
