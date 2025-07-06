@@ -1,5 +1,5 @@
 #define COMPONENT notebook
-#define COMPONENT_NAME "IEDD Notebook"
+#define COMPONENT_NAME "IEDD Notebook - Notebook"
 #include "\x\iedd\addons\main\script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
 

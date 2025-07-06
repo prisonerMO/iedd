@@ -1,5 +1,5 @@
 #define COMPONENT vbied
-#define COMPONENT_NAME "IEDD Vehicle-Borne Improvised Explosive Device"
+#define COMPONENT_NAME "IEDD Notebook - VBIEDs"
 #include "\x\iedd\addons\main\script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
 
