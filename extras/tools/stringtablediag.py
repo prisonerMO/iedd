@@ -54,9 +54,12 @@ def check_module(projectpath, module, languages):
 
 def main():
     scriptpath = os.path.realpath(__file__)
-    projectpath = os.path.dirname(os.path.dirname(scriptpath))
-    projectpath = os.path.join(projectpath, "addons")
+    projectpath = os.path.abspath(os.path.join(os.path.dirname(scriptpath), "..", "..", "addons"))
 
+    if not os.path.isdir(projectpath):
+    print(f"ERROR: Directory not found: {projectpath}")
+    sys.exit(1)
+    
     if "--markdown" not in sys.argv:
         print("#########################")
         print("# Stringtable Diag Tool #")
