@@ -169,6 +169,17 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(disableMineDetectorDisplay),
+    "CHECKBOX",
+    [LSTRING(DisableMineDetectorDisplay), LSTRING(DisableMineDetectorDisplay_Description)],
+    [localize "STR_iedd_main_Category_Main","Items"],
+    true,
+    true,
+    FUNC(disableMineDetectorDisplay),
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(isEod),
     "CHECKBOX",
     [LSTRING(IsEod), LSTRING(IsEod_Description)],
