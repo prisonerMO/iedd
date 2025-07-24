@@ -16,6 +16,8 @@
  * Public: No
  */
 
+if (!hasInterface) exitWith {};
+
 params [
     ["_disabled", true, [true]],
     ["_unit", ACE_player, [objNull]]
