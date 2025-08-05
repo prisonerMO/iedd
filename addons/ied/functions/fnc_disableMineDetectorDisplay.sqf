@@ -11,17 +11,20 @@
  * None
  *
  * Example:
- * [_bombObj] call iedd_ied_fnc_disarmAction;
+ * [true, ACE_player] call iedd_ied_fnc_disableMineDetectorDisplay;
  *
  * Public: No
  */
-
-if (!hasInterface) exitWith {};
 
 params [
     ["_disabled", true, [true]],
     ["_unit", ACE_player, [objNull]]
  ];
 
+TRACE_1(QGVAR(disableMineDetectorDisplay),_disabled);
+
+if (!hasInterface) exitWith {
+    TRACE_1(QGVAR(disableMineDetectorDisplay),"No interface available");
+};
 _unit enableInfoPanelComponent ["left", "MineDetectorDisplay", !_disabled];
 _unit enableInfoPanelComponent ["right", "MineDetectorDisplay", !_disabled];
