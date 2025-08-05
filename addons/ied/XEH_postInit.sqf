@@ -149,6 +149,11 @@ if (isServer) then {
 
 if (!hasInterface) exitWith {};
 
+ACE_player addEventHandler ["Respawn", {
+    params ["_unit", ""];
+    [QGVAR(disableMineDetectorDisplay), _unit] call FUNC(disableMineDetectorDisplay);
+}];
+
 ["unit", {[ACE_player] call FUNC(addItems)},true] call CBA_fnc_addPlayerEventHandler;
 
 [QGVAR(sound), {
@@ -157,3 +162,4 @@ if (!hasInterface) exitWith {};
 }] call CBA_fnc_addEventHandler;
 
 GVAR(fail) = false;
+

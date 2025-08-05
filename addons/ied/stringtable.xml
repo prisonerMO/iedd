@@ -162,6 +162,14 @@
                 <Original>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</Original>
                 <English>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</English>
             </Key>
+            <Key ID="STR_iedd_ied_DisableMineDetectorDisplay">
+                <Original>Disable MineDetector Display</Original>
+                <English>Disable MineDetector Display</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DisableMineDetectorDisplay_Description">
+                <Original>Disables the Side Panel Mine Detector Radar which are used by Vanilla Mine Detector.</Original>
+                <English>Disables the Side Panel Mine Detector Radar which are used by Vanilla Mine Detector.</English>
+            </Key>
             <Key ID="STR_iedd_ied_AddNotebook">
                 <Original>Add IEDD Notebook to EODs/Explosive specialists</Original>
                 <English>Add IEDD Notebook to EODs/Explosive specialists</English>
