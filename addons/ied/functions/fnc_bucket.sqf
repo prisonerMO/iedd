@@ -32,7 +32,8 @@ if (!isServer) exitWith {};
     private _lidStateValue = _bombObj getVariable [QGVAR(lidState), 0];
     private _lidState = if (_timerValue > 1) then {selectRandom [0,1]} else {_lidStateValue};
     private _isEOD = _bombObj getVariable [QGVAR(openCloseEOD), GVAR(defaultOpenCloseEOD)];
-    TRACE_6("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer);
+    private _buryValue  = _bombObj getVariable [QGVAR(bury), 0];
+    TRACE_7("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer,_buryValue);
     if (_isFake > random 1) exitWith {
         private _type = getText (configFile >> "CfgVehicles" >> typeOf _bombObj >> "iedd_ied_default");
         private _dir = getDir _bombObj;
@@ -45,20 +46,26 @@ if (!isServer) exitWith {};
         };
         [{isNull (_this select 0)},
         {
-            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_lidState"];
+            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_lidState","_buryValue"];
             private  _fakeBombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
-            if (_setDir) then {
+            private _isBury = _buryValue > 0.09;
+            if (_setDir && !_isBury) then {
                 _fakeBombObj setDir random 359;
             } else {
                 _fakeBombObj setDir _dir;
             };
             _fakeBombObj setVectorDirAndUp _vectorDirAndUp;
             _fakeBombObj setPosATL _bombPos;
-            if (_decals) then {
-                [_fakeBombObj] call FUNC(decals);
-            };
             _bombObj animate ["bucketlid_hide", _lidState];
-        }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_lidState]] call CBA_fnc_waitUntilAndExecute;
+            if (_isBury) then {
+                _bombObj enableSimulationGlobal false;
+                [_bombObj,_buryValue] call FUNC(buryIED);
+            } else {
+                if (_decals) then {
+                    [_fakeBombObj] call FUNC(decals);
+                };            
+            };
+        }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_lidState,_buryValue]] call CBA_fnc_waitUntilAndExecute;
     };
 
     if (GVAR(isDetectable)) then {
@@ -157,22 +164,32 @@ if (!isServer) exitWith {};
             speed (_this select 0) == 0
         },
         {
-            params ["_bombObj","_decals", "_setDir", "_wireSet","_lidState"];
-            if (_setDir) then {
-                private _bombPos = getPosATL _bombObj;
-                _bombObj setDir random 359;
-                _bombObj setPosATL _bombPos;
-            };
-            if (_decals) then {
-                [_bombObj] call FUNC(decals);
-            };
+            params ["_bombObj","_decals", "_setDir", "_wireSet","_lidState","_buryValue"];
+            _bombObj animate ["bucketlid_hide", _lidState];
+            private _isBury = _buryValue > 0.09;
+            if (_isBury) then {
+                _bombObj enableSimulationGlobal false;
+                private _attachedObjects = attachedObjects _bombObj;
+                {
+                    ["iedd_ied_hideObject",[_x, true]] call CBA_fnc_globalEvent;
+                } forEach _attachedObjects;
+                [_bombObj,_buryValue] call FUNC(buryIED);
+            } else {           
+                if (_setDir) then {
+                    private _bombPos = getPosATL _bombObj;
+                    _bombObj setDir random 359;
+                    _bombObj setPosATL _bombPos;
+                };           
+                if (_decals) then {
+                    [_bombObj] call FUNC(decals);
+                };
+            };          
             private _text = localize LSTRING(Name_Long);
             private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
             [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;
-            _bombObj animate ["bucketlid_hide", _lidState];
         }, _this] call CBA_fnc_waitUntilAndExecute;
-    }, [_bombObj, _decals, _setDir, _wireSet,_lidState], 1] call CBA_fnc_waitAndExecute;
+    }, [_bombObj, _decals, _setDir, _wireSet,_lidState,_buryValue], 1] call CBA_fnc_waitAndExecute;
 
 },[_bombObj],0.1] call CBA_fnc_waitAndExecute;
 true;

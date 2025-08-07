@@ -75,5 +75,3 @@ if (GVAR(bombs) isNotEqualTo []) then {
 };
 TRACE_3("Current objects",count GVAR(bombs),time,_checkTime);
 [FUNC(iedCheck), [], _checkTime] call CBA_fnc_waitAndExecute;
-
-

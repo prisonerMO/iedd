@@ -70,6 +70,10 @@
                 <Original>Detach bombs</Original>
                 <English>Detach bombs</English>
             </Key>
+            <Key ID="STR_iedd_ied_Dig_DisplayName">
+                <Original>Dig</Original>
+                <English>Dig</English>
+            </Key>
             <Key ID="STR_iedd_ied_Disarm_DisplayName">
                 <Original>Disarm</Original>
                 <English>Disarm</English>
@@ -178,6 +182,14 @@
                 <Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</Original>
                 <English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</English>
             </Key>
+            <Key ID="STR_iedd_ied_Bury_DisplayName">
+                <Original>Bury</Original>
+                <English>Bury</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Bury_Tooltip">
+                <Original>Bury min 10%</Original>
+                <English>Bury min 10%</English>
+            </Key>
             <Key ID="STR_iedd_ied_DefaultColor">
                 <Original>Color (Fuel canisters only)</Original>
                 <English>Color (Fuel canisters only)</English>
@@ -261,6 +273,22 @@
             <Key ID="STR_iedd_ied_DefaultVariation_Description">
                 <Original>Set IED variation (if not defined somewhere else).</Original>
                 <English>Set IED variation (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DigTime">
+                <Original>Digging time</Original>
+                <English>Digging time</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DigTime_Description">
+                <Original>Digging time Des.</Original>
+                <English>Digging time Des.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Entrenching">
+                <Original>Require entrenching tool</Original>
+                <English>Require entrenching tool</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Entrenching_Description">
+                <Original>Require entrenching tool des.</Original>
+                <English>Require entrenching tool des.</English>
             </Key>
             <Key ID="STR_iedd_ied_ExpMaxRange">
                 <Original>Maximum exploding distance</Original>
