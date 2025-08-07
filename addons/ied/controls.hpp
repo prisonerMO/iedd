@@ -270,7 +270,6 @@ class GVAR(distSides): Checkbox {
 		};
     };
 };
-
 class GVAR(burySlider): Slider {};/*
     attributeLoad = "params [""_ctrlGroup""];\
     private _slider = _ctrlGroup controlsGroupCtrl 100;\
@@ -298,3 +297,4 @@ class GVAR(burySlider): Slider {};/*
         _edit ctrlSetText ([(_value*10), 0] call CBA_fnc_formatNumber) + '%';\
     }];";
 };*/
+

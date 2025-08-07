@@ -42,7 +42,7 @@ class GVAR(Metal):Land_GarbageBarrel_01_F {
     ace_dragging_dragPosition[] = {0, 1, 0};
     ace_dragging_dragDirection = 0;
     ace_dragging_canCarry = 1;
-    ace_dragging_carryPosition[] = {0, 0.6, 0};
+    ace_dragging_carryPosition[] = {0, 0.9, 0};
     ace_dragging_carryDirection = 0;
     ace_cargo_size = 2;
     ace_cargo_canLoad = 1;

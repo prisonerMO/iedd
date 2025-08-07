@@ -17,6 +17,7 @@ PREP(deleted);
 PREP(detachAction);
 PREP(dig);
 PREP(disarmAction);
+PREP(disableMineDetectorDisplay);
 PREP(dud);
 PREP(dudWires);
 PREP(explosion);
