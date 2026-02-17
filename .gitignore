@@ -4,6 +4,7 @@
 hemtt
 hemtt.exe
 *.biprivatekey
+.hemttprivatekey
 release/*
 releases/*
 *.zip
