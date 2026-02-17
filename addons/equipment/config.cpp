@@ -5,11 +5,9 @@ class CfgPatches {
         authors[] = {"Prisoner","Lion"};
         name = COMPONENT_NAME;
         units[] = {
-            "iedd_equipment_Base",
             "iedd_equipment_Box",
             "iedd_item_Base",
-            "iedd_item_Notebook",
-            "iedd_equipment_mine"
+            "iedd_item_Notebook"
         };
         weapons[] = {
             "iedd_item_notebook"
