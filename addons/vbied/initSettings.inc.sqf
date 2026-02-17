@@ -175,7 +175,7 @@
     [ELSTRING(ied,TimerValue), ELSTRING(ied,DefaultTimerValue_Description)],
 	[LSTRING(Main_Category),"VBIED Default Values"],
     [1, 300, 120],
-    2
+    1
 ] call CBA_fnc_addSetting;
 
 //VBIED Timer Is Actived BOOLEAN
@@ -201,7 +201,7 @@
     [ELSTRING(ied,RandomTimerMin), ELSTRING(ied,DefaultTimerMin_Description)],
 	[LSTRING(Main_Category),"VBIED Default Values"],
     [1, 300, 60],
-    2
+    1
 ] call CBA_fnc_addSetting;
 
 //VBIED Timer Max Range
@@ -211,5 +211,5 @@
     [ELSTRING(ied,RandomTimerMax), ELSTRING(ied,DefaultTimerMax_Description)],
 	[LSTRING(Main_Category),"VBIED Default Values"],
     [1, 300, 150],
-    2
+    1
 ] call CBA_fnc_addSetting;
