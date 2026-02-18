@@ -137,7 +137,7 @@ An instruction to find your RPT files can be found from [BI Studio wiki][bistudi
 
 <table>
   <tr>
-    <td><a href="https://acemod.org/discord">Discord</a></td>
+    <td><a href="https://discord.gg/SU3WJxHqtS">Discord</a></td>
     <td>We have a public Discord server that anyone can join. This is where all our developers and contributors hang out and where we make announcements</td>
   </tr>
   <tr>

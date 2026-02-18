@@ -67,8 +67,7 @@ class CfgPatches
             "IEDD_WireCYellow",
             "IEDD_WireCGreen",
             "IEDD_WireCBlue",
-            "IEDD_WireCBlack",
-            "IEDD_Notebook"
+            "IEDD_WireCBlack"
             };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

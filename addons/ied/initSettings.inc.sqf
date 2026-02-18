@@ -386,7 +386,7 @@
     [LSTRING(TimerValue), LSTRING(DefaultTimerValue_Description)],
 	[localize "STR_iedd_main_Category_Main","IED Default Values"],
     [1, 300, 120],
-    2
+    1
 ] call CBA_fnc_addSetting;
 
 /*IED Timer Is Actived BOOLEAN*/
@@ -412,7 +412,7 @@
     [LSTRING(RandomTimerMin), LSTRING(DefaultTimerMin_Description)],
 	[localize "STR_iedd_main_Category_Main","IED Default Values"],
     [1, 300, 60],
-    2
+    1
 ] call CBA_fnc_addSetting;
 
 /*IED Timer Max Range*/
@@ -422,7 +422,7 @@
     [LSTRING(RandomTimerMax), LSTRING(DefaultTimerMax_Description)],
 	[localize "STR_iedd_main_Category_Main","IED Default Values"],
     [1, 300, 150],
-    2
+    1
 ] call CBA_fnc_addSetting;
 
 /*IEDD DEBUG*/
