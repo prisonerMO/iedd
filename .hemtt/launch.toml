@@ -9,7 +9,7 @@ mission="0000_IEDD_NOTEBOOK_TEST.Stratis"
 extends = "default"
 workshop = [
     "2369477168", # Advanced Developer Tools
-    "623475643", # 3den Echanted
+    "3499977893", # 3den Echanted
 ]
 parameters = [ #modify dev launch as you like
     "-name=prisoner", 
