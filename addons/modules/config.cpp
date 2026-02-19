@@ -5,6 +5,7 @@ class CfgPatches {
 		authors[] = {"Prisoner","Lion"};
 		name = COMPONENT_NAME;
 		units[] = {
+            QGVAR(moduleBase),
             QGVAR(multi)
         };
 		weapons[] = {};

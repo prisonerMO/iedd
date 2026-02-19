@@ -13,7 +13,7 @@
 [QGVAR(explosion), LINKFUNC(bomb)] call CBA_fnc_addEventHandler;
 /*Suicide functions*/
 [QGVAR(addPFH), LINKFUNC(addPFH)] call CBA_fnc_addEventHandler;
-[QGVAR(suicideAct), LINKFUNC(suicide)] call CBA_fnc_addEventHandler;
+[QGVAR(suicideAct), LINKFUNC(suicideAct)] call CBA_fnc_addEventHandler;
 [QGVAR(events), LINKFUNC(removeEvents)] call CBA_fnc_addEventHandler;
 
 [QGVAR(timer), {
@@ -126,7 +126,7 @@
         [_unit] joinSilent _suicideGrp;
     } else {
         if (count units _group > 1) then {
-            [_unit] joinSilent [grpNull];
+            [_unit] joinSilent grpNull;
         };
     };
     {
