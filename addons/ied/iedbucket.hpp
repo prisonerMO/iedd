@@ -21,15 +21,23 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
             };
             class GVAR(open) {
                 displayName = CSTRING(Action_Open);
-                condition = QUOTE(_target animationPhase 'bucketlid_hide' == 0);
+                condition = QUOTE(_target getVariable [ARR_2(QQGVAR(bury),-1)] == -1 && _target animationPhase 'bucketlid_hide' == 0);
                 statement = QUOTE([ARR_3(_target,_player,1)] call FUNC(openCloseBucket));
             };
             class GVAR(close) {
                 displayName = CSTRING(Action_Close);
-                condition = QUOTE(_target animationPhase 'bucketlid_hide' == 1);
+                condition = QUOTE(_target getVariable [ARR_2(QQGVAR(bury),-1)] == -1 && _target animationPhase 'bucketlid_hide' == 1);
                 statement = QUOTE([ARR_3(_target,_player,0)] call FUNC(openCloseBucket));
             };
         };
+        // Maybe add later
+        // class GVAR(bury) {
+		// 	displayName = "$STR_ace_interaction_MainAction";
+		// 	selection = "";
+		// 	distance = 2;
+		// 	condition = QUOTE(_target getVariable [ARR_2(QQGVAR(bury),-1)] == -1);
+		// 	insertChildren = QUOTE(_this call FUNC(getBuryActions));
+		// };
     };
     ace_dragging_canDrag = 1;
     ace_dragging_dragPosition[] = {0, 1, 0};
@@ -42,6 +50,8 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
     iedd_ied_default = QGVAR(Bucket_Fake); //No needed?
+    iedd_ied_buryDepth[] = {0.388186,0.398341,0.449231};
+    iedd_ied_buryDepth3DEN[]= {0.388186,0.398341,0.449231};
     class Attributes {
         class GVAR(ied_SubCategory) {
             data = "AttributeSystemSubcategory";
@@ -293,7 +303,53 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
             defaultValue = QGVAR(defaultTimerMax);
             typeName = "NUMBER";
         };
-    };
+                /**********BURY SETTINGS ********/
+		class GVAR(bury_SubCategory) {
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Bury IED";//CSTRING(Bury_Category);
+		};
+        class GVAR(depth) {
+            // data = QGVAR(bury_rot);
+            property = QGVAR(depth);
+            control = QGVAR(depth);
+            displayName = "DEPTH GAME";
+            expression = "_this setVariable ['%s', _value];";
+            defaultValue = "[0.0,0.0,0.0]";
+            typeName = "ARRAY";
+        };
+        class GVAR(depth3DEN) {
+            // data = QGVAR(bury_rot_eden);
+            property = QGVAR(depth3DEN);
+            control = QGVAR(depth);
+            displayName = "DEPTH EDEN";
+            expression = "_this setVariable ['%s', _value];";
+            defaultValue = "[0.0,0.0,0.0]";
+            typeName = "ARRAY";
+        };
+        class GVAR(isBury) {
+            property = QGVAR(isBury);
+            control = QGVAR(isBury);
+            displayName = "Bury";//CSTRING(isBury_DisplayName);
+            tooltip = "Tooltip";//CSTRING(isBury_Description);
+            expression = "_this setVariable ['%s',_value];";
+            typeName = "BOOL";
+            defaultValue = "(false)";
+        };            
+		class GVAR(bury) {
+			displayName = CSTRING(Bury_displayName);
+			tooltip = CSTRING(Bury_Tooltip);
+			property = QGVAR(bury);
+			control = QGVAR(burySlider); //If we dont need change anything then "Slider";
+			expression = QUOTE(if (is3DEN) then {\
+                [ARR_2(_this,_value)] call FUNC(buryIED3DEN);\
+            } else {\
+                _this setVariable [ARR_2('%s',[ARR_2(parseNumber(_value toFixed 2),ARR_2(vectorDir _this,vectorUp _this))])];\
+            });
+			defaultValue = 5;
+            enable = 0;
+		};
+    };    
 };
 
 class GVAR(Training_Bucket):GVAR(Bucket) {

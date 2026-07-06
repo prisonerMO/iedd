@@ -8,6 +8,29 @@ class CfgVehicles {
         displayName = "TODO";
         scope = 0;
     };
+    class Helper_Base_F;
+    class GVAR(helper): Helper_Base_F
+    {
+        author = AUTHOR;
+        scope = 1;
+        scopeCurator = 0;
+        displayName = "IED Helper";
+        useAction = 0;
+        ace_dragging_canDrag = 0;
+		ace_dragging_canCarry = 0;
+        class ACE_Actions {
+            class ACE_MainActions {
+                displayName = "$STR_ace_interaction_MainAction";
+                selection = "";
+                distance = 2;
+                condition = QUOTE(true);
+                insertChildren = QUOTE(call FUNC(getDigActions));
+            };
+        };
+        class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+        };
+    };
     #include "iedbarrel.hpp"
     #include "iedbucket.hpp"
     #include "iedcan.hpp"

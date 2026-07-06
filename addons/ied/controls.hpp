@@ -267,3 +267,47 @@ class GVAR(distSides): Checkbox {
 		};
     };
 };
+class GVAR(burySlider): Slider {
+    attributeLoad = "params [""_ctrlGroup""];\
+    private _slider = _ctrlGroup controlsGroupCtrl 100;\
+    private _edit = _ctrlGroup controlsGroupCtrl 101;\
+    _slider sliderSetPosition _value;\
+    _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'step';";
+    attributeSave = "params [""_ctrlGroup""];\
+    sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
+    onLoad = "params [""_ctrlGroup""];\
+    private _slider = _ctrlGroup controlsGroupCtrl 100;\
+    private _edit = _ctrlGroup controlsGroupCtrl 101;\
+    _slider sliderSetSpeed [1, 1, 1];\
+    _slider sliderSetRange [5, 20];\
+    _slider ctrlAddEventHandler [""SliderPosChanged"", {\
+        params [""_slider""];\
+        private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
+        private _value = sliderPosition _slider;\
+        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'step';\
+    }];\
+    _edit ctrlAddEventHandler [""KillFocus"", {\
+        params [""_edit""];\
+        private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
+        private _value = ((parseNumber ctrlText _edit) min 5) max 20;\
+        _slider sliderSetPosition _value;\
+        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'step';\
+    }];";
+};  //just a slider with no special functionality
+
+class GVAR(isBury): Checkbox {
+    class Controls: Controls
+    {
+        class Title: Title{};
+        class Value: Value
+        {
+            onCheckedChanged = QUOTE(call FUNC(isBuryOnChanged));
+            onLoad = QUOTE(call FUNC(isBuryOnLoad));
+        };
+    };
+};
+
+
+//FOR DEBUG
+class EditXYZ;
+class GVAR(depth): EditXYZ {};

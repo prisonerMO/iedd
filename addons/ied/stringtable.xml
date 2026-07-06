@@ -70,6 +70,10 @@
                 <Original>Detach bombs</Original>
                 <English>Detach bombs</English>
             </Key>
+            <Key ID="STR_iedd_ied_Dig_DisplayName">
+                <Original>Dig</Original>
+                <English>Dig</English>
+            </Key>
             <Key ID="STR_iedd_ied_Disarm_DisplayName">
                 <Original>Disarm</Original>
                 <English>Disarm</English>
@@ -169,6 +173,14 @@
             <Key ID="STR_iedd_ied_AddNotebook_Description">
                 <Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</Original>
                 <English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Bury_DisplayName">
+                <Original>Bury</Original>
+                <English>Bury</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Bury_Tooltip">
+                <Original>Bury min 10%</Original>
+                <English>Bury min 10%</English>
             </Key>
             <Key ID="STR_iedd_ied_DefaultColor">
                 <Original>Color (Fuel canisters only)</Original>
