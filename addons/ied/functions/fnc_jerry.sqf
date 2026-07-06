@@ -29,6 +29,7 @@ if (!isServer) exitWith {};
     private _color = _bombObj getVariable [QGVAR(color), GVAR(defaultColor)];
     private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
     private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
+    private _isBury = _bombObj getVariable [QGVAR(isBury), false];
     TRACE_6("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer);
     if (_color in [CSTRING(Name_Random),"random"]) then {
         _color = selectRandom ["green", "Blue", "red", "White"];
@@ -41,27 +42,32 @@ if (!isServer) exitWith {};
         private _vectorUp = vectorUp _bombObj;
         private _vectorDirAndUp = [_vectorDir,_vectorUp];
         private _bombPos = getPosATL _bombObj;
+        private _bury = _bombObj getVariable [QGVAR(bury), [-1,[0,0,0],[0,0,0]]];
         if (!isNull _bombObj) then {
             deleteVehicle _bombObj;
         };
         [{isNull (_this select 0)},
         {
-            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_color"];
+            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_color","_isBury","_bury"];
             private  _fakeBombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
-            if (_setDir) then {
-                _fakeBombObj setDir random 359;
-            } else {
-                _fakeBombObj setDir _dir;
-            };
-            _fakeBombObj setVectorDirAndUp _vectorDirAndUp;
-            _fakeBombObj setPosATL _bombPos;
-            if (_decals) then {
-                [_fakeBombObj] call FUNC(decals);
+            if (_isBury) then {
+                _fakeBombObj setVariable [QGVAR(isBury),true,true];
+                _fakeBombObj setVariable [QGVAR(bury),_bury,true];
+                [_fakeBombObj] call FUNC(buryIED);
+            } else { 
+                if (_setDir) then {
+                    private _bombPos = getPosATL _fakeBombObj;
+                    _fakeBombObj setDir random 359;
+                    _fakeBombObj setPosATL _bombPos;
+                } else {
+                    _fakeBombObj setVectorDirAndUp _vectorDirAndUp;
+                    _fakeBombObj setPosATL _bombPos;
+                }
             };
             if (_color != "green") then {
                 _fakeBombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]
             };
-        }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_color]] call CBA_fnc_waitUntilAndExecute;
+        }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_color,_isBury,_bury]] call CBA_fnc_waitUntilAndExecute;
     };
 
     if (GVAR(isDetectable)) then {
@@ -153,11 +159,15 @@ if (!isServer) exitWith {};
             speed (_this select 0) == 0
         },
         {
-            params ["_bombObj","_decals", "_setDir", "_wireSet", "_color"];
-            if (_setDir) then {
-                private _bombPos = getPosATL _bombObj;
-                _bombObj setDir random 359;
-                _bombObj setPosATL _bombPos;
+            params ["_bombObj","_decals", "_setDir", "_wireSet","_color","_isBury"];            
+            if (_isBury) then {
+                [_bombObj] call FUNC(buryIED);
+            } else { 
+                if (_setDir) then {
+                    private _bombPos = getPosATL _bombObj;
+                    _bombObj setDir random 359;
+                    _bombObj setPosATL _bombPos;
+                };
             };
             if (_decals) then {
                 [_bombObj] call FUNC(decals);
@@ -170,7 +180,7 @@ if (!isServer) exitWith {};
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
             [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;
         }, _this] call CBA_fnc_waitUntilAndExecute;
-    }, [_bombObj, _decals, _setDir, _wireSet, _color], 1] call CBA_fnc_waitAndExecute;
+    }, [_bombObj, _decals, _setDir, _wireSet, _color, _isBury], 1] call CBA_fnc_waitAndExecute;
 
 },[_bombObj],0.1] call CBA_fnc_waitAndExecute;
 true;
