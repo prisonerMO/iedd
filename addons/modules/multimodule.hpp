@@ -105,44 +105,44 @@ class GVAR(multi): Module_F {
             control = "SubCategory";
             displayName = CSTRING(Fake_Category);
         };
-        class Land_CanisterPlastic_F:Checkbox {
-            property = QGVAR(CanisterPlastic_F);
+        class GVAR(CanisterPlastic_Fake):Checkbox {
+            property = QGVAR(CanisterPlastic_Fake);
             displayName = ECSTRING(ied,PlasticCanister_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class Land_CanisterFuel_F:Checkbox {
-            property = QGVAR(CanisterFuel_F);
+        class GVAR(CanisterFuel_Fake):Checkbox {
+            property = QGVAR(CanisterFuel_Fake);
             displayName = ECSTRING(ied,FuelCanister_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class Land_PaperBox_01_small_ransacked_brown_F:Checkbox {
-            property = QGVAR(PaperBox_01_small_ransacked_brown_F);
+        class GVAR(Cardboard_Fake):Checkbox {
+            property = QGVAR(Cardboard_Fake);
             displayName = ECSTRING(ied,Cardboard_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class Land_CinderBlock_01_F:Checkbox {
-            property = QGVAR(CinderBlock_01_F);
+        class GVAR(Cinder_Fake):Checkbox {
+            property = QGVAR(Cinder_Fake);
             displayName = ECSTRING(ied,Cinder_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class Land_GarbageBarrel_01_F:Checkbox {
-            property = QGVAR(GarbageBarrel_01_F);
+        class GVAR(Metal_Fake):Checkbox {
+            property = QGVAR(Metal_Fake);
             displayName = ECSTRING(ied,Barrel_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class Land_BarrelEmpty_F:Checkbox {
-            property = QGVAR(BarrelEmpty_F);
+        class GVAR(Barrel_Fake):Checkbox {
+            property = QGVAR(Barrel_Fake);
             displayName = ECSTRING(ied,MetalBarrel_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class Land_PlasticBucket_01_closed_F:Checkbox {
-            property = QGVAR(Land_PlasticBucket_01_closed_F);
+        class GVAR(Bucket_Fake):Checkbox {
+            property = QGVAR(Bucket_Fake);
             displayName = ECSTRING(ied,Bucket_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;

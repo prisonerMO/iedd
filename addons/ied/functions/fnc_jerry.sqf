@@ -50,19 +50,20 @@ if (!isServer) exitWith {};
         {
             params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_color","_isBury","_bury"];
             private  _fakeBombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
+            if (_setDir && !_isBury) then {
+                _fakeBombObj setDir random 359;
+            } else {
+                _fakeBombObj setDir _dir;
+            };
+            _fakeBombObj setVectorDirAndUp _vectorDirAndUp;
+            _fakeBombObj setPosATL _bombPos;
+            if (_decals) then {
+                [_fakeBombObj] call FUNC(decals);
+            };
             if (_isBury) then {
                 _fakeBombObj setVariable [QGVAR(isBury),true,true];
                 _fakeBombObj setVariable [QGVAR(bury),_bury,true];
                 [_fakeBombObj] call FUNC(buryIED);
-            } else { 
-                if (_setDir) then {
-                    private _bombPos = getPosATL _fakeBombObj;
-                    _fakeBombObj setDir random 359;
-                    _fakeBombObj setPosATL _bombPos;
-                } else {
-                    _fakeBombObj setVectorDirAndUp _vectorDirAndUp;
-                    _fakeBombObj setPosATL _bombPos;
-                }
             };
             if (_color != "green") then {
                 _fakeBombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]

@@ -20,6 +20,16 @@
     "iedd_ied_Bucket"\
 ]
 
+#define IEDD_FAKE_CLASSES [\
+    "iedd_ied_CanisterPlastic_Fake",\
+    "iedd_ied_CanisterFuel_Fake",\
+    "iedd_ied_Cardboard_Fake",\
+    "iedd_ied_Cinder_Fake",\
+    "iedd_ied_Metal_Fake",\
+    "iedd_ied_Barrel_Fake",\
+    "iedd_ied_Bucket_Fake"\
+]
+
 #define IEDD_DECALS [\
     "Land_Decal_RoadEdge_Dirt_03_F",\
     "Land_Garbage_square3_F",\
@@ -36,17 +46,6 @@
     "Land_Decal_RoadEdge_Dirt_01_F",\
     "Land_Decal_RoadEdge_Dirt_02_F",\
     "Land_Decal_RoadEdge_Dirt_10_F"\
-]
-
-#define IEDD_FAKE_CLASSES [\
-    "Land_CanisterPlastic_F",\
-    "Land_CanisterFuel_F",\
-    "Land_PaperBox_01_small_ransacked_brown_F",\
-    "Land_CinderBlock_01_F",\
-    "Land_GarbageBarrel_01_F",\
-    "Land_BarrelEmpty_F",\
-    "Land_CanisterPlastic_F",\
-    "iedd_ied_Bucket_Fake"\
 ]
 
 #define VBIED_MODELS [\

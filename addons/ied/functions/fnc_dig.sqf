@@ -28,10 +28,11 @@ TRACE_1("fnc_dig",_this);
 diag_log format ["IEDD: Digging IED %1",_this];
 if (isNull _ied) exitWith {"systemChat 'Object is null'";};
 if (isNull _helper) exitWith {"systemChat 'Helper is null'";};
-_pos set [2,0];
-private _bury = _ied getVariable "iedd_ied_bury";
-_bury params ["_step","_relDir","_relUp","_depth"];
+
 if (_step < 1) exitWith {
+    _pos set [2,0];
+    private _bury = _ied getVariable "iedd_ied_bury";
+    _bury params ["","_relDir","_relUp",""];
     _ied setPosATL _pos;
     _ied setVectorDirAndUp [_relDir,_relUp];    
     _ied setVariable [QGVAR(isBury),false,true];
@@ -44,7 +45,7 @@ private _end = _finalHeight - _start;
 diag_log format ["IEDD: Digging IED %1, step %2, final height %3, start %4, end %5",_ied,_step,_finalHeight,_start,_end];
 private _relDirUp = [vectorDir _ied, vectorUp _ied];
 _ied attachTo [_helper, [0,0,_end]];
-_ied setVectorDirAndUp _relDirUp;
+// _ied setVectorDirAndUp _relDirUp;
 
 [{call FUNC(dig)},[_helper,_ied,_step,_pos,_depth],1] call CBA_fnc_waitAndExecute;
 

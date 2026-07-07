@@ -1,5 +1,7 @@
 class Land_PlasticBucket_01_closed_F;
-class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
+class GVAR(Bucket_Fake):Land_PlasticBucket_01_closed_F {
+    scope = 1;
+    scopeCurator = 0;    
     displayName = CSTRING(Bucket_DisplayName);
     author = AUTHOR;
     editorCategory = "IEDD_MAINCATEGORY";
@@ -12,22 +14,42 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
             displayName = "$STR_ace_interaction_MainAction";
             selection = "";
             distance = 2;
-            condition = QUOTE(true);
+            condition = QUOTE(!(_target getVariable [ARR_2(QQGVAR(isBury),false)]));//QUOTE(true);
+            class GVAR(open) {
+                displayName = CSTRING(Action_Open);
+                condition = QUOTE(_target animationPhase 'bucketlid_hide' == 0);
+                statement = QUOTE([ARR_3(_target,_player,1)] call FUNC(openCloseBucket));
+            };
+            class GVAR(close) {
+                displayName = CSTRING(Action_Close);
+                condition = QUOTE(_target animationPhase 'bucketlid_hide' == 1);
+                statement = QUOTE([ARR_3(_target,_player,0)] call FUNC(openCloseBucket));
+            };
+        };
+    };
+    ace_dragging_canDrag = 1;
+    ace_dragging_dragPosition[] = {0, 1, 0};
+    ace_dragging_dragDirection = 0;
+    ace_dragging_canCarry = 1;
+    ace_dragging_carryPosition[] = {0, 0.6, 0};
+    ace_dragging_carryDirection = 0;
+    ace_cargo_size = 2;
+    ace_cargo_canLoad = 1;
+    ace_cargo_noRename = 1;
+    ace_cargo_blockUnloadCarry = 0;
+    iedd_ied_buryDepth[] = {0.388186,0.398341,0.449231};
+    iedd_ied_buryDepth3DEN[]= {0.388186,0.398341,0.449231};
+};
+class GVAR(Bucket):GVAR(Bucket_Fake) {
+    scope = 2;
+    scopeCurator = 2;
+    class ACE_Actions:ACE_Actions {
+        class ACE_MainActions:ACE_MainActions {
             class IEDD_DisarmMenu {
                 exceptions[] = {"isNotSwimming"};
                 displayName = CSTRING(Disarm_DisplayName);
                 condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call FUNC(canDisarm) && {_target animationPhase 'bucketlid_hide' == 1}});
                 statement = "";
-            };
-            class GVAR(open) {
-                displayName = CSTRING(Action_Open);
-                condition = QUOTE(_target getVariable [ARR_2(QQGVAR(bury),-1)] == -1 && _target animationPhase 'bucketlid_hide' == 0);
-                statement = QUOTE([ARR_3(_target,_player,1)] call FUNC(openCloseBucket));
-            };
-            class GVAR(close) {
-                displayName = CSTRING(Action_Close);
-                condition = QUOTE(_target getVariable [ARR_2(QQGVAR(bury),-1)] == -1 && _target animationPhase 'bucketlid_hide' == 1);
-                statement = QUOTE([ARR_3(_target,_player,0)] call FUNC(openCloseBucket));
             };
         };
         // Maybe add later
@@ -39,19 +61,6 @@ class GVAR(Bucket):Land_PlasticBucket_01_closed_F {
 		// 	insertChildren = QUOTE(_this call FUNC(getBuryActions));
 		// };
     };
-    ace_dragging_canDrag = 1;
-    ace_dragging_dragPosition[] = {0, 1, 0};
-    ace_dragging_dragDirection = 0;
-    ace_dragging_canCarry = 1;
-    ace_dragging_carryPosition[] = {0, 0.7, 0};
-    ace_dragging_carryDirection = 0;
-    ace_cargo_size = 2;
-    ace_cargo_canLoad = 1;
-    ace_cargo_noRename = 1;
-    ace_cargo_blockUnloadCarry = 0;
-    iedd_ied_default = QGVAR(Bucket_Fake); //No needed?
-    iedd_ied_buryDepth[] = {0.388186,0.398341,0.449231};
-    iedd_ied_buryDepth3DEN[]= {0.388186,0.398341,0.449231};
     class Attributes {
         class GVAR(ied_SubCategory) {
             data = "AttributeSystemSubcategory";
@@ -371,38 +380,3 @@ class GVAR(Training_Bucket):GVAR(Bucket) {
     };
 };
 
-class GVAR(Bucket_Fake):Land_PlasticBucket_01_closed_F {
-    displayName = CSTRING(Bucket_Fake_DisplayName);
-    author = AUTHOR;
-    class EventHandlers {
-        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
-    };
-    class ACE_Actions {
-        class ACE_MainActions {
-            displayName = "$STR_ace_interaction_MainAction";
-            selection = "";
-            distance = 2;
-            condition = QUOTE(true);
-            class GVAR(open) {
-                displayName = CSTRING(Action_Open);
-                condition = QUOTE(_target animationPhase 'bucketlid_hide' == 0);
-                statement = QUOTE([ARR_3(_target,_player,1)] call FUNC(openCloseBucket));
-            };
-            class GVAR(close) {
-                displayName = CSTRING(Action_Close);
-                condition = QUOTE(_target animationPhase 'bucketlid_hide' == 1);
-                statement = QUOTE([ARR_3(_target,_player,0)] call FUNC(openCloseBucket));
-            };
-        };
-    };
-    ace_dragging_canDrag = 1;
-    ace_dragging_dragPosition[] = {0, 1, 0};
-    ace_dragging_dragDirection = 0;
-    ace_dragging_canCarry = 1;
-    ace_dragging_carryPosition[] = {0, 0.6, 0};
-    ace_dragging_carryDirection = 0;
-    ace_cargo_size = 2;
-    ace_cargo_canLoad = 1;
-    ace_cargo_noRename = 1;
-    ace_cargo_blockUnloadCarry = 0;
-};

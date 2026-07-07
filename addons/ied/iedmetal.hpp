@@ -1,9 +1,30 @@
 class Land_GarbageBarrel_01_F;
-class GVAR(Metal):Land_GarbageBarrel_01_F {
+class GVAR(Metal_Fake):Land_GarbageBarrel_01_F {
     displayName = CSTRING(MetalBarrel_DisplayName);
     author = AUTHOR;
     editorCategory = "IEDD_MAINCATEGORY";
     editorSubcategory = "IEDD_IEDS";
+    class EventHandlers {
+        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+    };
+    class ACE_Actions {
+        class ACE_MainActions {
+            selection = "";
+            position = "[0,0,0.5]";
+            displayName = "$STR_ace_interaction_MainAction";
+            distance = 2;
+            condition = QUOTE(!(_target getVariable [ARR_2(QQGVAR(isBury),false)]));//QUOTE(true);
+        };
+    };
+    iedd_ied_buryDepth[] = {0.784926,0.779376,1.22769};    
+    iedd_ied_buryDepth3DEN[] = {0.784926,0.779376,1.22769};
+};
+class GVAR(Metal_English_Fake):GVAR(Metal_Fake) {
+    model = "\A3\Structures_F_EPB\Items\Vessels\GarbageBarrel_01_grey_F.p3d";
+};
+class GVAR(Metal):GVAR(Metal_Fake) {
+    scope = 2;
+    scopeCurator = 2;
     class EventHandlers {
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
     };
@@ -30,19 +51,7 @@ class GVAR(Metal):Land_GarbageBarrel_01_F {
 		// 	insertChildren = QUOTE(_this call FUNC(getBuryActions));
 		// };
     };
-    ace_dragging_canDrag = 1;
-    ace_dragging_dragPosition[] = {0, 1, 0};
-    ace_dragging_dragDirection = 0;
-    ace_dragging_canCarry = 1;
-    ace_dragging_carryPosition[] = {0, 0.9, 0};
-    ace_dragging_carryDirection = 0;
-    ace_cargo_size = 2;
-    ace_cargo_canLoad = 1;
-    ace_cargo_noRename = 1;
-    ace_cargo_blockUnloadCarry = 0;
-    iedd_ied_default = "Land_GarbageBarrel_01_F";
-    iedd_ied_buryDepth[] = {0.784926,0.779376,1.22769};
-    iedd_ied_buryDepth3DEN[] = {0.784926,0.779376,1.22769};
+    iedd_ied_default = QGVAR(Metal_Fake);
     class Attributes {
         class GVAR(ied_SubCategory) {
             data = "AttributeSystemSubcategory";

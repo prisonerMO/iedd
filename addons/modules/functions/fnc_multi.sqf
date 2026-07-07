@@ -177,11 +177,11 @@ switch _mode do {
                 private _color = "";
                 for "_i" from 1 to _fakeCount do {
                     _type = selectRandom _fakeTypes;
-                    if (_type == "Land_GarbageBarrel_01_F") then {
-                        _type = selectRandom ["Land_GarbageBarrel_01_F","Land_GarbageBarrel_01_english_F"];
+                    if (_type == QGVAR(Metal_Fake)) then {
+                        _type = selectRandom [QGVAR(Metal_Fake),QGVAR(Metal_English_Fake)];
                     };
-                    if (_type == "Land_BarrelEmpty_F") then {
-                        _type = selectRandom ["Land_BarrelEmpty_F","Land_BarrelEmpty_grey_F"];
+                    if (_type == QGVAR(Barrel_Fake)) then {
+                        _type = selectRandom [QGVAR(Barrel_Fake),QGVAR(Barrel_English_Fake)];
                     };
                     _bombPos = [[_area],_blacklist+["water"],{_fakePositions findIf {_this distance _x < _distance} == -1}] call BIS_fnc_randomPos;
                     _fakePositions pushBack _bombPos;
@@ -211,7 +211,7 @@ switch _mode do {
                         _bombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
                         _bombObj setDir random 359;
                         _bombObj setPosATL _fakePos;
-                    if (_type == "Land_CanisterFuel_F") then {
+                    if (_type == QGVAR(CanisterFuel_Fake)) then {
                         _color = selectRandom ["green", "Blue", "red", "White"];
                         if (_color != "green") then {
                             _bombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"];
