@@ -1,6 +1,6 @@
 class Land_PaperBox_01_small_ransacked_brown_F;
 class GVAR(Cardboard_Fake):Land_PaperBox_01_small_ransacked_brown_F {
-    scope = 1;
+    scope = 0;
     scopeCurator = 0;    
     displayName = CSTRING(Cardboard_DisplayName);
     author = AUTHOR;
@@ -272,6 +272,12 @@ class GVAR(Cardboard): GVAR(Cardboard_Fake) {
 			control = "SubCategory";
 			displayName = "Bury IED";//CSTRING(Bury_Category);
 		};
+        class GVAR(defaultBury) {
+            property = QGVAR(defaultBury);
+            control = "Edit";
+            displayName = "Default Bury Depth";//CSTRING(DefaultBury_DisplayName);;            
+            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",1.08345,0.830918,0.428158]";
+        };
         class GVAR(depth) {
             // data = QGVAR(bury_rot);
             property = QGVAR(depth);
@@ -295,7 +301,7 @@ class GVAR(Cardboard): GVAR(Cardboard_Fake) {
             control = QGVAR(isBury);
             displayName = "Bury";//CSTRING(isBury_DisplayName);
             tooltip = "Tooltip";//CSTRING(isBury_Description);
-            expression = "_this setVariable ['%s',_value];";
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)];if (is3DEN && _value) then { if ((_this get3DENAttribute 'iedd_ied_bury') select 0 < 5) then {_this set3DENAttribute [ARR_2('iedd_ied_bury',5)];};});
             typeName = "BOOL";
             defaultValue = "(false)";
         };            
@@ -309,8 +315,7 @@ class GVAR(Cardboard): GVAR(Cardboard_Fake) {
             } else {\
                 _this setVariable [ARR_2('%s',[ARR_2(parseNumber(_value toFixed 2),ARR_2(vectorDir _this,vectorUp _this))])];\
             });
-			defaultValue = 5;
-            enable = 0;
+			defaultValue = -1;
 		};
     };
 };

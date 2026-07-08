@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
- * Author: Prisoner 404
- * Bury IED
+ * Author: Prisoner
+ * Initialize Bury IED control
  *
  *
  * Arguments:
@@ -18,7 +18,7 @@
 
 //params [];
 params ["_ctrlCheckbox"];
-//TRACE_1("fnc_isBuryOnLoad",_this);
+TRACE_1("fnc_isBuryOnLoad",_this);
 _this spawn {
     params ["_ctrlCheckbox"];
     disableSerialization;

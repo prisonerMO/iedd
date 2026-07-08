@@ -1,6 +1,6 @@
 class Land_BarrelEmpty_F;
 class GVAR(Barrel_Fake):Land_BarrelEmpty_F {
-    scope = 1;
+    scope = 0;
     scopeCurator = 0;
     displayName = CSTRING(Barrel_DisplayName);
     author = AUTHOR;
@@ -63,7 +63,7 @@ class GVAR(Barrel):GVAR(Barrel_Fake) {
     ace_cargo_canLoad = 1;
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
-    iedd_ied_default = "Land_BarrelEmpty_Fake";
+    iedd_ied_default = QGVAR(Barrel_Fake);
     iedd_ied_buryDepth3DEN[]= {0.784926,0.779376,1.22769};
     class Attributes {
         class GVAR(ied_SubCategory) {
@@ -282,6 +282,12 @@ class GVAR(Barrel):GVAR(Barrel_Fake) {
 			control = "SubCategory";
 			displayName = "Bury IED";//CSTRING(Bury_Category);
 		};
+        class GVAR(defaultBury) {
+            property = QGVAR(defaultBury);
+            control = "Edit";
+            displayName = "Default Bury Depth";//CSTRING(DefaultBury_DisplayName);;            
+            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",0.536856,0.536856,0.809505]";
+        };
         class GVAR(depth) {
             // data = QGVAR(bury_rot);
             property = QGVAR(depth);
@@ -305,7 +311,7 @@ class GVAR(Barrel):GVAR(Barrel_Fake) {
             control = QGVAR(isBury);
             displayName = "Bury";//CSTRING(isBury_DisplayName);
             tooltip = "Tooltip";//CSTRING(isBury_Description);
-            expression = "_this setVariable ['%s',_value];";
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)];if (is3DEN && _value) then { if ((_this get3DENAttribute 'iedd_ied_bury') select 0 < 5) then {_this set3DENAttribute [ARR_2('iedd_ied_bury',5)];};});
             typeName = "BOOL";
             defaultValue = "(false)";
         };            
@@ -319,8 +325,7 @@ class GVAR(Barrel):GVAR(Barrel_Fake) {
             } else {\
                 _this setVariable [ARR_2('%s',[ARR_2(parseNumber(_value toFixed 2),ARR_2(vectorDir _this,vectorUp _this))])];\
             });
-			defaultValue = 5;
-            enable = 0;
+			defaultValue = -1;
 		};
     };
 };
@@ -328,7 +333,7 @@ class GVAR(Barrel_Grey):GVAR(Barrel) {
     displayName = CSTRING(BarrelGrey_DisplayName);
     editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_BarrelEmpty_grey_F.jpg";
     model = "\A3\Structures_F_EPB\Items\Vessels\BarrelEmpty_grey_F.p3d";
-    iedd_ied_default = "Land_Barrel_Grey_F";
+    iedd_ied_default = QGVAR(Barrel_Grey_Fake);
 };
 class GVAR(Training_Barrel):GVAR(Barrel) {
     displayName = CSTRING(Training_Barrel_DisplayName);

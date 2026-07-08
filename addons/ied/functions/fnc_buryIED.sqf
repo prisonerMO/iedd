@@ -28,6 +28,7 @@ private _pos = getPosATL _ied;
 _pos set [2,0];
 private _bury = _ied getVariable [QGVAR(bury), [-1,[0,0,0],[0,0,0]]];
 _bury params ["_value","_vectorDir","_vectorUp"];
+diag_log format["IEDD: Bury IED with helper: %1", _bury];
 if (_value < 5) exitWith {
     _ied setPosATL _pos;
     _ied setVectorDirAndUp [_vectorDir,_vectorUp];

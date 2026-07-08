@@ -18,7 +18,7 @@
 
 params [
     ["_obj",objNull],
-    ["_value",-1]
+    ["_value",5]
 ];
 
 if (isNull _obj) exitWith {"systemChat 'Object is null'";};

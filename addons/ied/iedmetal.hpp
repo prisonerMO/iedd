@@ -1,5 +1,7 @@
 class Land_GarbageBarrel_01_F;
 class GVAR(Metal_Fake):Land_GarbageBarrel_01_F {
+    scope = 0;
+    scopeCurator = 0;
     displayName = CSTRING(MetalBarrel_DisplayName);
     author = AUTHOR;
     editorCategory = "IEDD_MAINCATEGORY";
@@ -269,6 +271,12 @@ class GVAR(Metal):GVAR(Metal_Fake) {
 			control = "SubCategory";
 			displayName = "Bury IED";//CSTRING(Bury_Category);
 		};
+        class GVAR(defaultBury) {
+            property = QGVAR(defaultBury);
+            control = "Edit";
+            displayName = "Default Bury Depth";//CSTRING(DefaultBury_DisplayName);;            
+            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",0.784926,0.779376,1.22769]";
+        };
         class GVAR(depth) {
             // data = QGVAR(bury_rot);
             property = QGVAR(depth);
@@ -292,7 +300,7 @@ class GVAR(Metal):GVAR(Metal_Fake) {
             control = QGVAR(isBury);
             displayName = "Bury";//CSTRING(isBury_DisplayName);
             tooltip = "Tooltip";//CSTRING(isBury_Description);
-            expression = "_this setVariable ['%s',_value];";
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)];if (is3DEN && _value) then { if ((_this get3DENAttribute 'iedd_ied_bury') select 0 < 5) then {_this set3DENAttribute [ARR_2('iedd_ied_bury',5)];};});
             typeName = "BOOL";
             defaultValue = "(false)";
         };            
@@ -306,8 +314,7 @@ class GVAR(Metal):GVAR(Metal_Fake) {
             } else {\
                 _this setVariable [ARR_2('%s',[ARR_2(parseNumber(_value toFixed 2),ARR_2(vectorDir _this,vectorUp _this))])];\
             });
-			defaultValue = 5;
-            enable = 0;
+			defaultValue = -1;
 		};
     };
 };
@@ -315,7 +322,7 @@ class GVAR(Metal_English):GVAR(Metal) {
     displayName = CSTRING(MetalBarrelEnglish_DisplayName);
     editorPreview = "\A3\EditorPreviews_F_Argo\Data\CfgVehicles\Land_GarbageBarrel_01_english_F.jpg";
     model = "\A3\Structures_F_Argo\Civilian\Garbage\GarbageBarrel_01_english_F.p3d";
-    iedd_ied_default = "Land_GarbageBarrel_01_english_F";
+    iedd_ied_default = QGVAR(Metal_English_Fake);
 };
 class GVAR(Training_Metal):GVAR(Metal) {
     displayName = CSTRING(Training_MetalBarrel_DisplayName);
