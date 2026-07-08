@@ -272,7 +272,7 @@ class GVAR(burySlider): Slider {
     private _slider = _ctrlGroup controlsGroupCtrl 100;\
     private _edit = _ctrlGroup controlsGroupCtrl 101;\
     _slider sliderSetPosition _value;\
-    _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'step';";
+    _edit ctrlSetText (if (_value < 5) then {([5, 0] call CBA_fnc_formatNumber) + 'step'} else {([_value, 0] call CBA_fnc_formatNumber) + 'step'});";
     attributeSave = "params [""_ctrlGroup""];\
     sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
     onLoad = "params [""_ctrlGroup""];\
