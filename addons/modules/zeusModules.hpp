@@ -55,3 +55,11 @@ class GVAR(explodeVbied):GVAR(activateVbied) {
     function = QFUNC(explodeVbied);
     displayName = CSTRING(Zeus_Vbied_Explode);
 };
+//Test bury ied
+class GVAR(BuryIED): GVAR(moduleBase) {    
+    displayName = "BURY IED";        
+    category = QGVAR(ieds);
+    curatorCanAttach = 1;
+    curatorInfoType = QGVAR(RcsBuryIED);
+    icon = QPATHTOF(UI\moduleicon.paa);
+};

@@ -3,6 +3,7 @@ class RscText;
 class RscCombo;
 class RscXSliderH;
 class RscCheckBox;
+class RscEdit;
 
 class RscDisplayAttributes {
     class Controls {
@@ -18,3 +19,4 @@ class RscDisplayAttributes {
 #include "RcsDecals.hpp"
 #include "RcsCharge.hpp"
 #include "RcsSuicide.hpp"
+#include "RcsBuryIED.hpp"

@@ -29,10 +29,10 @@ class CfgPatches {
             QGVAR(suicide),
             QGVAR(vbied),
             QGVAR(activateVbied),
-            QGVAR(explodeVbied)
+            QGVAR(explodeVbied),            
+            QGVAR(buryIED)
         };
- };
-
+    };
 };
 class Cfg3DEN
 {

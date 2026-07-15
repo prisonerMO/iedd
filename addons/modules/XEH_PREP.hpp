@@ -1,5 +1,6 @@
 PREP(attributes);
 PREP(activateVbied);
+PREP(buryIED);
 PREP(explodeVbied);
 PREP(moduleActivate);
 PREP(moduleExplode);

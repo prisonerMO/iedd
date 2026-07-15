@@ -57,3 +57,11 @@
     _object setVariable [QEGVAR(ied,dud),0];
 	[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
 }] call CBA_fnc_addEventHandler;
+
+
+//Test for Bury
+[QGVAR(setRotation), {
+    params ["_object", "_pitch", "_roll", "_yaw"];
+    _object setDir _yaw;
+    [_object, _pitch, _roll] call BIS_fnc_setPitchBank;
+}] call CBA_fnc_addEventHandler;
