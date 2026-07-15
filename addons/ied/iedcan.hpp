@@ -1,6 +1,6 @@
 class Land_CanisterPlastic_F;
 class GVAR(CanisterPlastic_Fake):Land_CanisterPlastic_F {
-    scope = 0;
+    scope = 1;
     scopeCurator = 0;
     displayName = CSTRING(PlasticCanister_DisplayName);
     author = AUTHOR;

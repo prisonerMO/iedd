@@ -24,6 +24,7 @@ TRACE_1("fnc_buryIED",_this);
 if (isNull _ied) exitWith {"systemChat 'Object is null'";};
 private _isBury = _ied getVariable ["iedd_ied_isBury", false];
 if !(_isBury) exitWith {diag_log format["IEDD: Bury IED with helper: %1", _isBury];};
+// _worldPos = _ied modelToWorld [0,0,0]; //Need to test
 private _pos = getPosATL _ied;
 _pos set [2,0];
 private _bury = _ied getVariable [QGVAR(bury), [-1,[0,0,0],[0,0,0]]];
@@ -31,10 +32,11 @@ _bury params ["_value","_vectorDir","_vectorUp"];
 diag_log format["IEDD: Bury IED with helper: %1", _bury];
 if (_value < 5) exitWith {
     _ied setPosATL _pos;
+    // _ied setPosASL _worldPos;
     _ied setVectorDirAndUp [_vectorDir,_vectorUp];
 };
 //private _depth = getArray (configOf _ied >> "iedd_ied_buryDepth");
-private _depth= _ied getVariable ["iedd_ied_depth",[0,0,0]];
+private _depth = _ied getVariable ["iedd_ied_depth",[0,0,0]];
 private _xv = abs(_vectorUp #0);
 private _yv = abs(_vectorUp #1);
 private _zv = abs(_vectorUp #2);
@@ -60,6 +62,7 @@ private _end = _start - _finalHeight;
 
 private _helper = "iedd_ied_helper" createVehicle [0,0,0];
 _helper setPosATL _pos;
+// _helper setPosASL _worldPos;
 _helper setVectorUp (surfaceNormal getPosASL _helper);
 
 private _ref = "iedd_ied_helper" createVehicle (getPosASL _helper);

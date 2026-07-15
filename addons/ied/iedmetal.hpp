@@ -1,6 +1,6 @@
 class Land_GarbageBarrel_01_F;
 class GVAR(Metal_Fake):Land_GarbageBarrel_01_F {
-    scope = 0;
+    scope = 1;
     scopeCurator = 0;
     displayName = CSTRING(MetalBarrel_DisplayName);
     author = AUTHOR;

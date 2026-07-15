@@ -21,7 +21,7 @@
      false;
  };
 private _ied = _objects select 0;
-private _index = IEDD_CLASSES findIf {typeOf _ied == _x};
+private _index = IEDD_CLASSES+IEDD_FAKE_CLASSES findIf {typeOf _ied == _x};
 if (_index == -1) exitWith {
     false;
 };

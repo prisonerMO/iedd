@@ -1,6 +1,6 @@
 class Land_CanisterFuel_F;
 class GVAR(CanisterFuel_Fake):Land_CanisterFuel_F {
-    scope = 0;
+    scope = 1;
     scopeCurator = 0;
     displayName = CSTRING(FuelCanister_DisplayName);
     author = AUTHOR;

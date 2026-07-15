@@ -1,6 +1,6 @@
 class Land_CinderBlock_01_F;
 class GVAR(Cinder_Fake):Land_CinderBlock_01_F {
-    scope = 0;
+    scope = 1;
     scopeCurator = 0;
     displayName = CSTRING(Cinder_DisplayName);
     author = AUTHOR;

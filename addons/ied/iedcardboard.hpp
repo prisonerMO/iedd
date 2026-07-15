@@ -1,6 +1,6 @@
 class Land_PaperBox_01_small_ransacked_brown_F;
 class GVAR(Cardboard_Fake):Land_PaperBox_01_small_ransacked_brown_F {
-    scope = 0;
+    scope = 1;
     scopeCurator = 0;    
     displayName = CSTRING(Cardboard_DisplayName);
     author = AUTHOR;

@@ -1,6 +1,6 @@
 class Land_PlasticBucket_01_closed_F;
 class GVAR(Bucket_Fake):Land_PlasticBucket_01_closed_F {
-    scope = 0;
+    scope = 1;
     scopeCurator = 0;    
     displayName = CSTRING(Bucket_DisplayName);
     author = AUTHOR;

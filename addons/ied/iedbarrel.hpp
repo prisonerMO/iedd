@@ -1,6 +1,6 @@
 class Land_BarrelEmpty_F;
 class GVAR(Barrel_Fake):Land_BarrelEmpty_F {
-    scope = 0;
+    scope = 1;
     scopeCurator = 0;
     displayName = CSTRING(Barrel_DisplayName);
     author = AUTHOR;
