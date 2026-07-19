@@ -1,10 +1,13 @@
 class GVAR(RcsBuryIED): RscDisplayAttributes {
     onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RcsBuryIED))] call FUNC(attributes));
     onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RcsBuryIED))] call FUNC(attributes));
+    movingEnable = 1;
     class Controls: Controls {
-        class Background: Background {};
+        class Background: Background {            
+            colorBackground[] = {0, 0, 0, 0.1};
+        };
         class Title: Title {};
-        class Content: Content {
+        class Content: Content {            
             class Controls {
                 class GVAR(scroll): RscControlsGroupNoScrollbars {
                     onSetFocus = QUOTE(_this call FUNC(buryIED));
@@ -14,7 +17,6 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
                     w = QUOTE(W_PART(26));
                     h = QUOTE(H_PART(4.3));
                     //h = QUOTE(H_PART(7.7));
-                    //colorBackground[] = {0, 0, 0, 0.1};
                     class controls {
                         class GVAR(pitchL): RscText {
                             idc = -1;
@@ -33,6 +35,9 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
                             y = 0;
                             w = QUOTE(W_PART(16.1));
                             h = QUOTE(H_PART(1));
+                            color[] = {1,1,1,0.4};
+                            colorActive[] = {1,1,1,0.6};
+                            colorDisable[] = {1,1,1,0.2};
                         };
                         class GVAR(pitchEdit): RscEdit {
                             idc = 72521;

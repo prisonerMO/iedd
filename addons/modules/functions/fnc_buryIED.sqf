@@ -17,9 +17,10 @@
 
 params ["_control"];
 TRACE_1("fnc_buryIED",_this);
-
+//TO-DO _this call iedd_modules_fnc_DisplayInit; --> To fix position of the display
 private _display = ctrlParent _control;
 private _ctrlButtonOK = _display displayCtrl 1; // IDC_OK
+private _ctrlButtonCancel = _display displayCtrl 2; // IDC_CANCEL
 _control ctrlRemoveAllEventHandlers "SetFocus";
 
 private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
@@ -38,6 +39,14 @@ if !(typeOf _unit in IEDD_CLASSES + IEDD_FAKE_CLASSES) exitWith {
     deleteVehicle _logic;
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
+
+if (_unit getVariable [QEGVAR(ied,isBury), false]) exitWith {
+    _message = "IED is already buried";
+    deleteVehicle _logic;
+    [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+};
+
+//TO-DO: If buried then make it unburied and reset the position to the original position/ make it modify bury depth and orientation. 
 
 [QEGVAR(ied,hideObject), [_unit, true], ACE_player] call CBA_fnc_targetEvent;
 
@@ -250,5 +259,16 @@ private _fnc_onConfirm = {
     _unit setVariable [QEGVAR(ied,isBury),true, true];
 };
 
+private _fnc_onCancel = {
+    params [["_ctrlButtonCancel", controlNull, [controlNull]]];
+    private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
+    if (isNull _logic) exitWith {};
+    private _display = ctrlParent _ctrlButtonCancel;
+    if (isNull _display) exitWith {};
+    private _helper = _display getVariable [QGVAR(helper), objNull];
+    if (!isNull _helper) then {deleteVehicle _helper;};
+};
+
 _display displayAddEventHandler ["Unload", _fnc_onUnload];
 _ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
+_ctrlButtonCancel ctrlAddEventHandler ["ButtonClick", _fnc_onCancel];
