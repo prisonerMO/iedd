@@ -83,8 +83,8 @@ _ref setVectorDirAndUp [_vectorDir, _vectorUp];
 private _relDirUp = [_ref, _helper] call BIS_fnc_vectorDirAndUpRelative;
 deleteVehicle _ref;
 
-private _depthStart = 1;
-private _endStart = _start - (_vector * (_depthStart / 20));
+private _depthStart = 0;
+private _endStart = _start - (_vector * 0.01);
 
 _dummy attachTo [_helper, [0, 0, _endStart]];
 _dummy setVectorDirAndUp _relDirUp;
@@ -124,8 +124,8 @@ private _fnc_sliderRotate = {
         case 72524: { _yaw   = _pos; };
     };
     private _textCtrl = _display displayCtrl (_idc + 1);
-    _textCtrl ctrlSetText format ["%1°", round _pos];
-    _slider ctrlSetTooltip format ["%1%2", round _pos, "°"];
+    _textCtrl ctrlSetText format [" %1%2", round _pos, "°"];
+    _slider ctrlSetTooltip format [" %1%2", round _pos, "°"];
 
 
     // dir/up composed from pitch/roll/yaw, applied relative to the helper
@@ -138,10 +138,10 @@ private _fnc_sliderRotate = {
         (-sin(_roll) * cos(_yaw)) - (cos(_roll) * sin(_pitch) * sin(_yaw)),
         ( sin(_roll) * sin(_yaw)) - (cos(_roll) * sin(_pitch) * cos(_yaw)),
         cos(_roll) * cos(_pitch)
-    ];
+    ];    
     _dummy setVectorDirAndUp [_dv, _uv];
-
-    _display setVariable [QGVAR(roll), [_pitch, _roll, _yaw]];
+    _display setVariable [QGVAR(roll), [_pitch, _roll, _yaw]];    
+     diag_log format ["IEDD module _dummy: %1, _pos: %2, _modelToWorld: %3", _dummy, getPosATL _dummy,  _dummy modelToWorld[0,0,0]];
 };
 
 private _fnc_sliderBury = {
@@ -156,10 +156,10 @@ private _fnc_sliderBury = {
     _values params ["_vector", "_start", "_depth", "_end", "_configDepth"];
 
     _sliderDepth = sliderPosition _slider;
-    _slider ctrlSetTooltip format ["%1%2", round (_sliderDepth), "%"];
+    _slider ctrlSetTooltip format [" %1 %2", round (_sliderDepth), "Step"];
     private _textCtrl = _display displayCtrl 72527;
-    _textCtrl ctrlSetText format [" %1%2", round (_sliderDepth), "%"];
-    private _depth = round(_sliderDepth/5);
+    _textCtrl ctrlSetText format [" %1 %2", round (_sliderDepth), "Step"];
+    private _depth = _sliderDepth;
     private _vectorUp = vectorUp _dummy;
     private _xv = abs (_vectorUp # 0);
     private _yv = abs (_vectorUp # 1);
@@ -208,11 +208,12 @@ _yawEdit ctrlSetText format [" %1°", round _yaw];
 _yawEdit setVariable [QGVAR(values), [_sliderYaw, _fnc_sliderRotate]];
 _yawEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
 
-_sliderBury sliderSetSpeed [10,5];
-_sliderBury sliderSetRange [0, 100];
+_sliderBury sliderSetSpeed [1,1];
+_sliderBury sliderSetRange [0, 20];
 _sliderBury sliderSetPosition _depthStart;
+private _sliderDepth = sliderPosition _sliderBury;
 _sliderBury ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderBury];
-_buryEdit ctrlSetText format [" %1%2", round _depthStart, "%"];
+_buryEdit ctrlSetText format [" %1 %2", _sliderDepth, "Step"];
 _buryEdit setVariable [QGVAR(values), [_sliderBury, _fnc_sliderBury]];
 _buryEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
 
