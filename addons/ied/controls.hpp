@@ -272,14 +272,14 @@ class GVAR(burySlider): Slider {
     private _slider = _ctrlGroup controlsGroupCtrl 100;\
     private _edit = _ctrlGroup controlsGroupCtrl 101;\
     _slider sliderSetPosition _value;\
-    _edit ctrlSetText (if (_value < 5) then {([5, 0] call CBA_fnc_formatNumber) + 'step'} else {([_value, 0] call CBA_fnc_formatNumber) + 'step'});";
+    _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'step';";
     attributeSave = "params [""_ctrlGroup""];\
     sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
     onLoad = "params [""_ctrlGroup""];\
     private _slider = _ctrlGroup controlsGroupCtrl 100;\
     private _edit = _ctrlGroup controlsGroupCtrl 101;\
     _slider sliderSetSpeed [1, 1, 1];\
-    _slider sliderSetRange [5, 20];\
+    _slider sliderSetRange [0, 20];\
     _slider ctrlAddEventHandler [""SliderPosChanged"", {\
         params [""_slider""];\
         private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
@@ -289,7 +289,7 @@ class GVAR(burySlider): Slider {
     _edit ctrlAddEventHandler [""KillFocus"", {\
         params [""_edit""];\
         private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
-        private _value = ((parseNumber ctrlText _edit) min 5) max 20;\
+        private _value = ((parseNumber ctrlText _edit) min 0) max 20;\
         _slider sliderSetPosition _value;\
         _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'step';\
     }];";

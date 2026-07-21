@@ -18,7 +18,7 @@ class GVAR(Metal_Fake):Land_GarbageBarrel_01_F {
             condition = QUOTE(!(_target getVariable [ARR_2(QQGVAR(isBury),false)]));//QUOTE(true);
         };
     };
-    iedd_ied_buryDepth[] = {0.784926,0.779376,1.22769};    
+    iedd_ied_buryDepth[] = {0.770159,0.771682,1.21519};    
     iedd_ied_buryDepth3DEN[] = {0.784926,0.779376,1.22769};
 };
 class GVAR(Metal_English_Fake):GVAR(Metal_Fake) {
@@ -275,7 +275,7 @@ class GVAR(Metal):GVAR(Metal_Fake) {
             property = QGVAR(defaultBury);
             control = "Edit";
             displayName = "Default Bury Depth";//CSTRING(DefaultBury_DisplayName);;            
-            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",0.784926,0.779376,1.22769]";
+            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",getArray (configOf _this >> 'iedd_ied_buryDepth') select 0,getArray (configOf _this >> 'iedd_ied_buryDepth') select 1,getArray (configOf _this >> 'iedd_ied_buryDepth') select 2];";
         };
         class GVAR(depth) {
             // data = QGVAR(bury_rot);
@@ -300,7 +300,7 @@ class GVAR(Metal):GVAR(Metal_Fake) {
             control = QGVAR(isBury);
             displayName = "Bury";//CSTRING(isBury_DisplayName);
             tooltip = "Tooltip";//CSTRING(isBury_Description);
-            expression = QUOTE(_this setVariable [ARR_2('%s',_value)];if (is3DEN && _value) then { if ((_this get3DENAttribute 'iedd_ied_bury') select 0 < 5) then {_this set3DENAttribute [ARR_2('iedd_ied_bury',5)];};});
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);
             typeName = "BOOL";
             defaultValue = "(false)";
         };            

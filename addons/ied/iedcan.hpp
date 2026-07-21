@@ -27,8 +27,8 @@ class GVAR(CanisterPlastic_Fake):Land_CanisterPlastic_F {
     ace_cargo_canLoad = 1;
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
-    iedd_ied_buryDepth[]= {0.536856,0.536856,0.809505};
-    iedd_ied_buryDepth3DEN[]= {0.536856,0.536856,0.809505};
+    iedd_ied_buryDepth[]= {0.4956,0.4956,0.717951};
+    iedd_ied_buryDepth3DEN[]= {0.5712,0.5712,0.778024};
 };
 class GVAR(CanisterPlastic):GVAR(CanisterPlastic_Fake) {
     scope = 2;
@@ -273,7 +273,7 @@ class GVAR(CanisterPlastic):GVAR(CanisterPlastic_Fake) {
             property = QGVAR(defaultBury);
             control = "Edit";
             displayName = "Default Bury Depth";//CSTRING(DefaultBury_DisplayName);;            
-            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",0.5712,0.5712,0.778024]";
+            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",getArray (configOf _this >> 'iedd_ied_buryDepth') select 0,getArray (configOf _this >> 'iedd_ied_buryDepth') select 1,getArray (configOf _this >> 'iedd_ied_buryDepth') select 2];";
         };
         class GVAR(depth) {
             // data = QGVAR(bury_rot);
@@ -298,7 +298,7 @@ class GVAR(CanisterPlastic):GVAR(CanisterPlastic_Fake) {
             control = QGVAR(isBury);
             displayName = "Bury";//CSTRING(isBury_DisplayName);
             tooltip = "Tooltip";//CSTRING(isBury_Description);
-            expression = QUOTE(_this setVariable [ARR_2('%s',_value)];if (is3DEN && _value) then { if ((_this get3DENAttribute 'iedd_ied_bury') select 0 < 5) then {_this set3DENAttribute [ARR_2('iedd_ied_bury',5)];};});
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);
             typeName = "BOOL";
             defaultValue = "(false)";
         };            

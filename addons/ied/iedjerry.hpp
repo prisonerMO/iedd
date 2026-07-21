@@ -27,7 +27,7 @@ class GVAR(CanisterFuel_Fake):Land_CanisterFuel_F {
     ace_cargo_canLoad = 1;
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
-    iedd_ied_buryDepth[] = {0.388626,0.164038,0.550739};
+    iedd_ied_buryDepth[] = {0.388626,0.157659,0.519143};
     iedd_ied_buryDepth3DEN[]= {0.388626,0.164038,0.550739};
 };
 class GVAR(CanisterFuel):GVAR(CanisterFuel_Fake) {
@@ -306,7 +306,7 @@ class GVAR(CanisterFuel):GVAR(CanisterFuel_Fake) {
             property = QGVAR(defaultBury);
             control = "Edit";
             displayName = "Default Bury Depth";//CSTRING(DefaultBury_DisplayName);;            
-            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",0.388626,0.164038,0.550739]";
+            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",getArray (configOf _this >> 'iedd_ied_buryDepth') select 0,getArray (configOf _this >> 'iedd_ied_buryDepth') select 1,getArray (configOf _this >> 'iedd_ied_buryDepth') select 2];";
         };
         class GVAR(depth) {
             // data = QGVAR(bury_rot);
@@ -331,7 +331,7 @@ class GVAR(CanisterFuel):GVAR(CanisterFuel_Fake) {
             control = QGVAR(isBury);
             displayName = "Bury";//CSTRING(isBury_DisplayName);
             tooltip = "Tooltip";//CSTRING(isBury_Description);
-            expression = QUOTE(_this setVariable [ARR_2('%s',_value)];if (is3DEN && _value) then { if ((_this get3DENAttribute 'iedd_ied_bury') select 0 < 5) then {_this set3DENAttribute [ARR_2('iedd_ied_bury',5)];};});
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);
             typeName = "BOOL";
             defaultValue = "(false)";
         };            

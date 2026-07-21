@@ -29,7 +29,7 @@ class GVAR(Cardboard_Fake):Land_PaperBox_01_small_ransacked_brown_F {
     ace_cargo_canLoad = 1;
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
-    iedd_ied_buryDepth[] = {1.08345,0.830918,0.428158};
+    iedd_ied_buryDepth[] = {0.88833,0.644156,0.421928};
     iedd_ied_buryDepth3DEN[]= {1.08345,0.830918,0.428158};
 };
 class GVAR(Cardboard): GVAR(Cardboard_Fake) {
@@ -266,7 +266,7 @@ class GVAR(Cardboard): GVAR(Cardboard_Fake) {
             defaultValue = QGVAR(defaultTimerMax);
             typeName = "NUMBER";
         };
-        /**********BURY SETTINGS ********/
+                /**********BURY SETTINGS ********/
 		class GVAR(bury_SubCategory) {
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
@@ -276,7 +276,7 @@ class GVAR(Cardboard): GVAR(Cardboard_Fake) {
             property = QGVAR(defaultBury);
             control = "Edit";
             displayName = "Default Bury Depth";//CSTRING(DefaultBury_DisplayName);;            
-            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",1.08345,0.830918,0.428158]";
+            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",getArray (configOf _this >> 'iedd_ied_buryDepth') select 0,getArray (configOf _this >> 'iedd_ied_buryDepth') select 1,getArray (configOf _this >> 'iedd_ied_buryDepth') select 2];";
         };
         class GVAR(depth) {
             // data = QGVAR(bury_rot);
@@ -301,7 +301,7 @@ class GVAR(Cardboard): GVAR(Cardboard_Fake) {
             control = QGVAR(isBury);
             displayName = "Bury";//CSTRING(isBury_DisplayName);
             tooltip = "Tooltip";//CSTRING(isBury_Description);
-            expression = QUOTE(_this setVariable [ARR_2('%s',_value)];if (is3DEN && _value) then { if ((_this get3DENAttribute 'iedd_ied_bury') select 0 < 5) then {_this set3DENAttribute [ARR_2('iedd_ied_bury',5)];};});
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);
             typeName = "BOOL";
             defaultValue = "(false)";
         };            
@@ -311,7 +311,7 @@ class GVAR(Cardboard): GVAR(Cardboard_Fake) {
 			property = QGVAR(bury);
 			control = QGVAR(burySlider); //If we dont need change anything then "Slider";
 			expression = QUOTE(if (is3DEN) then {\
-                 [ARR_2(_this,_value)] call FUNC(buryIED3DEN);\
+                [ARR_2(_this,_value)] call FUNC(buryIED3DEN);\
             } else {\
                 _this setVariable [ARR_2('%s',[ARR_2(parseNumber(_value toFixed 2),ARR_2(vectorDir _this,vectorUp _this))])];\
             });
