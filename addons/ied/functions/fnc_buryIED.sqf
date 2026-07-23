@@ -33,30 +33,36 @@ if (_value < 1) exitWith {
     _ied setPosATL _pos;
     _ied setVectorDirAndUp [_vectorDir,_vectorUp];
 };
-//private _depth = getArray (configOf _ied >> "iedd_ied_buryDepth");
-private _depth = _ied getVariable ["iedd_ied_depth",[0,0,0]];
-private _xv = abs(_vectorUp #0);
-private _yv = abs(_vectorUp #1);
-private _zv = abs(_vectorUp #2);
-private _max = selectMax [_xv,_yv,_zv];
-private _vector = switch (_max) do {
-    case _xv: {
-        hint format ["IEDD: Bury IED: X FACE=%1",_depth select 0];
-        _depth select 0;
-    };
 
-    case _yv: {
-        hint format ["IEDD: Bury IED: Y SIDE=%1",_depth select 1];
-        _depth select 1;
-    };
-    case _zv: {
-        hint format ["IEDD: Bury IED: Z NORMAL=%1",_depth select 2];
-        _depth select 2;
-    };
-};
-private _finalHeight = _vector * (_value / 20);
+// private _xv = abs(_vectorUp #0);
+// private _yv = abs(_vectorUp #1);
+// private _zv = abs(_vectorUp #2);
+// private _max = selectMax [_xv,_yv,_zv];
+// private _vector = switch (_max) do {
+//     case _xv: {
+//         hint format ["IEDD: Bury IED: X FACE=%1",_depth select 0];
+//         _depth select 0;
+//     };
+
+//     case _yv: {
+//         hint format ["IEDD: Bury IED: Y SIDE=%1",_depth select 1];
+//         _depth select 1;
+//     };
+//     case _zv: {
+//         hint format ["IEDD: Bury IED: Z NORMAL=%1",_depth select 2];
+//         _depth select 2;
+//     };
+// };
+private _configDepth  = _ied getVariable ["iedd_ied_depth",[0,0,0]];
+//private _configDepth = getArray (configOf _ied >> "iedd_ied_buryDepth");
+_configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
+private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
+private _vector =(abs (_vectorF #2)) * _sizeX +(abs (_vectorDir #2)) * _sizeY +(abs (_vectorUp #2)) * _sizeZ;
+diag_log format ["Burying IED with vectorUP %1, vectorDir %2, _vectorF %3, ied: %4", _vectorUp, _vectorDir, _vectorF, _ied];
+diag_log format ["Burying IED with _vector: %1, _value: %2, _configDepth: %3, ied: %4", _vector, _value, _configDepth, _ied];
 private _start = _vector/2;
-private _end = _start - _finalHeight;
+private _vectorEnd = _vector * (_value / 20);
+private _end = _start - _vectorEnd;
 
 private _helper = "iedd_ied_helper" createVehicle [0,0,0];
 _helper setPosATL _pos;
