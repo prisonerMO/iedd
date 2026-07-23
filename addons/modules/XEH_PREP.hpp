@@ -1,11 +1,11 @@
 PREP(attributes);
 PREP(activateVbied);
-PREP(buryIED);
 PREP(explodeVbied);
 PREP(moduleActivate);
 PREP(moduleExplode);
 PREP(multi);
 PREP(onSelVarChanged);
+PREP(setBuryIED);
 PREP(setCharge);
 PREP(setData);
 PREP(setGroundSign);

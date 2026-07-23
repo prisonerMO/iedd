@@ -50,12 +50,12 @@ if (_unit getVariable [QEGVAR(ied,isBury), false]) exitWith {
 
 [QEGVAR(ied,hideObject), [_unit, true], ACE_player] call CBA_fnc_targetEvent;
 
-private _dir        = getDir _unit;
-private _vectorDir  = vectorDir _unit;
-private _vectorUp   = vectorUp _unit;
-private _unitPos    = getPosATL _unit;
-private _type       = getModelInfo _unit select 1;
-private _yaw        = [getDir _unit] call CBA_fnc_simplifyAngle180;
+private _dir = getDir _unit;
+private _vectorDir = vectorDir _unit;
+private _vectorUp = vectorUp _unit;
+private _unitPos = getPosATL _unit;
+private _type = getModelInfo _unit select 1;
+private _yaw = [getDir _unit] call CBA_fnc_simplifyAngle180;
 (_unit call BIS_fnc_getPitchBank) params ["_pitch", "_roll"];
 
 private _configDepth = getArray (configOf _unit >> "iedd_ied_buryDepth"); // [x,y,z]
@@ -64,15 +64,12 @@ private _dummy = createSimpleObject [_type, _unitPos];
 _dummy setDir _dir;
 _dummy setVectorDirAndUp [_vectorDir, _vectorUp];
 _dummy setPosATL _unitPos;
-private _xv = abs (_vectorUp # 0);
-private _yv = abs (_vectorUp # 1);
-private _zv = abs (_vectorUp # 2);
-private _max = selectMax [_xv, _yv, _zv];
-private _vector = switch (_max) do {
-    case _xv: { _configDepth select 0 };
-    case _yv: { _configDepth select 1 };
-    case _zv: { _configDepth select 2 };
-};
+private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
+_configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
+private _vector =
+    (abs (_vectorF select 2)) * _sizeX +
+    (abs (_vectorDir select 2)) * _sizeY +
+    (abs (_vectorUp select 2)) * _sizeZ;
 private _start = _vector / 2;
 private _helper = "iedd_ied_helper" createVehicleLocal _unitPos;
 _helper setPosATL _unitPos;
@@ -83,15 +80,15 @@ _ref setVectorDirAndUp [_vectorDir, _vectorUp];
 private _relDirUp = [_ref, _helper] call BIS_fnc_vectorDirAndUpRelative;
 deleteVehicle _ref;
 
-private _depthStart = 0;
-private _endStart = _start - (_vector * 0.01);
+private _valueStart = 0;
+private _endStart = _start - (_vector * 0.001);
 
 _dummy attachTo [_helper, [0, 0, _endStart]];
 _dummy setVectorDirAndUp _relDirUp;
 
 
 private _rollValues = [_pitch, _roll, _yaw];
-private _buryValues = [_vector, _start,_depthStart, _endStart, _configDepth];
+private _buryValues = [_vector, _start,_valueStart, _endStart, _configDepth];
 _display setVariable [QGVAR(roll), _rollValues];
 _display setVariable [QGVAR(bury), _buryValues];
 _display setVariable [QGVAR(dummy), _dummy];
@@ -128,7 +125,7 @@ private _fnc_sliderRotate = {
     _slider ctrlSetTooltip format [" %1%2", round _pos, "°"];
 
 
-    // dir/up composed from pitch/roll/yaw, applied relative to the helper
+    // dir/up composed from pitch/roll/yaw
     private _dv = [
         sin(_yaw) * cos(_pitch),
         cos(_yaw) * cos(_pitch),
@@ -140,8 +137,7 @@ private _fnc_sliderRotate = {
         cos(_roll) * cos(_pitch)
     ];    
     _dummy setVectorDirAndUp [_dv, _uv];
-    _display setVariable [QGVAR(roll), [_pitch, _roll, _yaw]];    
-     diag_log format ["IEDD module _dummy: %1, _pos: %2, _modelToWorld: %3", _dummy, getPosATL _dummy,  _dummy modelToWorld[0,0,0]];
+    _display setVariable [QGVAR(roll), [_pitch, _roll, _yaw]];
 };
 
 private _fnc_sliderBury = {
@@ -153,27 +149,25 @@ private _fnc_sliderBury = {
     if (isNull _dummy || isNull _helper) exitWith {};
     private _values = _display getVariable [QGVAR(bury), []];
     if (_values isEqualTo []) exitWith {};
-    _values params ["_vector", "_start", "_depth", "_end", "_configDepth"];
+    _values params ["_vector", "_start", "_value", "_end", "_configDepth"];
 
     _sliderDepth = sliderPosition _slider;
     _slider ctrlSetTooltip format [" %1 %2", round (_sliderDepth), "Step"];
     private _textCtrl = _display displayCtrl 72527;
     _textCtrl ctrlSetText format [" %1 %2", round (_sliderDepth), "Step"];
-    private _depth = _sliderDepth;
+    private _value = _sliderDepth;
     private _vectorUp = vectorUp _dummy;
-    private _xv = abs (_vectorUp # 0);
-    private _yv = abs (_vectorUp # 1);
-    private _zv = abs (_vectorUp # 2);
-    private _max = selectMax [_xv, _yv, _zv];
-    private _vector = switch (_max) do {
-        case _xv: { _configDepth select 0 };
-        case _yv: { _configDepth select 1 };
-        case _zv: { _configDepth select 2 };
-    };
-    private _end = _start - (_vector * (_depth / 20));
+    private _vectorDir  = vectorDir _dummy;
+    private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
+    _configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
+    private _vector =
+    (abs (_vectorF select 2)) * _sizeX +
+    (abs (_vectorDir select 2)) * _sizeY +
+    (abs (_vectorUp select 2)) * _sizeZ;
+    private _vectorEnd = _vector * (_value / 20);
+    private _end = _start - _vectorEnd;
     _dummy attachTo [_helper, [0, 0, _end]]; 
-
-    _display setVariable [QGVAR(bury), [_vector, _start, _depth, _end, _configDepth]];
+    _display setVariable [QGVAR(bury), [_vector, _start, _value, _end, _configDepth]];
 };
 
 {
@@ -210,7 +204,7 @@ _yawEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
 
 _sliderBury sliderSetSpeed [1,1];
 _sliderBury sliderSetRange [0, 20];
-_sliderBury sliderSetPosition _depthStart;
+_sliderBury sliderSetPosition _valueStart;
 private _sliderDepth = sliderPosition _sliderBury;
 _sliderBury ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderBury];
 _buryEdit ctrlSetText format [" %1 %2", _sliderDepth, "Step"];
@@ -237,7 +231,6 @@ private _fnc_onUnload = {
 
 private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
-    diag_log format ["%1: %2", _ctrlButtonOK, _this];
 	private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
     if (isNull _logic) exitWith {systemChat "Logic is null";};
     private _display = ctrlParent _ctrlButtonOK;
@@ -246,8 +239,8 @@ private _fnc_onConfirm = {
     if (isNull _unit) exitWith {systemChat "Unit is null";};
     private _values = _display getVariable [QGVAR(bury), []];
     if (_values isEqualTo []) exitWith {deleteVehicle _logic; systemChat "No values found";};
-    _values params ["_vector", "_start", "_depth", "_end", "_configDepth"];
-    systemChat format ["Burying IED with _vector: %1, _start: %2, _depth: %3, _end: %4, _configDepth: %5", _vector, _start, _depth, _end, _configDepth];
+    _values params ["_vector", "_start", "_value", "_end", "_configDepth"];
+    diag_log format ["Burying IED with MODULE: _vector: %1, _start: %2, _value: %3, _end: %4, _configDepth: %5, _ied: %6", _vector, _start, _value, _end, _configDepth, _unit];
     private _dummy = _display getVariable [QGVAR(dummy), objNull];
     private _helper = _display getVariable [QGVAR(helper), objNull];
     if (isNull _helper) exitWith {systemChat "Helper is null";};

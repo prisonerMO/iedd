@@ -10,7 +10,7 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
         class Content: Content {            
             class Controls {
                 class GVAR(scroll): RscControlsGroupNoScrollbars {
-                    onSetFocus = QUOTE(_this call FUNC(buryIED));
+                    onSetFocus = QUOTE(_this call FUNC(setBuryIED));
                     idc = 72500;
                     x = 0;
                     y = 0;
