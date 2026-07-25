@@ -14,3 +14,4 @@
 #endif
 
 #include "\x\iedd\addons\main\script_macros.hpp"
+#include "\x\iedd\addons\ied\script_macros_config.hpp"
