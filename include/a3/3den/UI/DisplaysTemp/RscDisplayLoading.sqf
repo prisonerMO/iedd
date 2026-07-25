@@ -81,7 +81,6 @@ switch _mode do {
 
 			disableserialization;
 			_display = _this select 0;
-			_isMultiplayer = servertime > 0;
 
 			_ctrlMissionType = _display displayctrl IDC_LOADING_MISSIONGAMETYPE;
 			_ctrlMissionName = _display displayctrl IDC_LOADING_MISSIONNAME;
@@ -138,7 +137,7 @@ switch _mode do {
 				if (_loadingName == "") then {_loadingName = localize "STR_a3_rscdisplay_loading_noname";};
 				if (_loadingPicture == "") then {_loadingPicture = _pictureShot;};
 
-				if (_gameTypeName != "" && _isMultiplayer) then {
+				if (_gameTypeName != "" && isMultiplayer) then {
 					_ctrlMissionType ctrlsettext toupper _gameTypeName;
 				} else {
 					_ctrlMissionType ctrlshow false;
@@ -278,7 +277,7 @@ switch _mode do {
 				} else {
 
 					//--- When loading a different map, a rogue loading screen without progress bar appears. Move the progress bar by script.
-					_limit = [1,2] select _isMultiplayer;
+					_limit = [1,2] select isMultiplayer;
 					if (count (uinamespace getvariable "loading_displays") > _limit) then {
 						_progressMap ctrlshow false;
 						_progressMission ctrlsetposition _progressMapPos;
@@ -308,33 +307,54 @@ switch _mode do {
 			_ctrlDisclaimerDescription = _display displayctrl IDC_LOADING_DISCLAIMERDESCRIPTION;
 			_productVersionArray = productversion;
 			_versionNr = ctrltext ((finddisplay 0) displayctrl 118);
+			_branch = toLower (_productVersionArray select 8);
+			_modded = _productVersionArray select 5;
+			_32bit = (toLower (_productVersionArray select 7)) == "x86";
 
-			if (_productVersionArray select 4 == "Development") then
+			if ((_branch in ["development", "profiling"]) || cheatsEnabled) then 
 			{
-				_disclaimerName = format ["%1 - %2", localize "STR_A3_RSCDISPLAY_LOADING_DEV", _versionNr];
-
-				if(_productVersionArray select 5) then
+				_branchName = localize "STR_A3_RSCDISPLAY_LOADING_DEV_NEW"; //Was "STR_A3_RSCDISPLAY_LOADING_DEV" (old, now inconsistent)
+				_branchText = localize "STR_A3_RSCDISPLAY_LOADING_DEVINFO";
+				if (_branch == "profiling") then 
 				{
-					//Modded dev
+					_branchName = localize "STR_A3_RSCDISPLAY_LOADING_PROF";
+					_branchText = localize "STR_A3_RSCDISPLAY_LOADING_PROFINFO";
+				};
+				_disclaimerName = format ["%1 - %2", _branchName, _versionNr];
+
+				//Modded?
+				if (_modded) then
+				{
 					_disclaimerName = _disclaimerName + "<img image='A3\Ui_f\data\GUI\RscCommon\RscTrafficLight\TrafficLight_ca.paa'/>";
 				};
 
 				_ctrlDisclaimerName ctrlSetStructuredText parseText _disclaimerName;
-				_ctrlDisclaimerDescription ctrlsetstructuredtext parsetext localize "STR_A3_RSCDISPLAY_LOADING_DEVINFO";
+				_ctrlDisclaimerDescription ctrlsetstructuredtext parsetext _branchText;
 				_ctrlDisclaimerDescription ctrlsettextcolor [1,1,1,1];
 				[_ctrlDisclaimerDescription,0.01] call bis_fnc_ctrlFitToTextHeight;
 				_ctrlDisclaimer ctrlshow true;
 			}
 			else
 			{
-				if(_productVersionArray select 5) then
+				if (_32bit || _modded) then
 				{
+					_branchName = localize "STR_A3_RSCDISPLAY_LOADING_STABLE";
+					_branchText = localize "STR_A3_RSCDISPLAY_LOADING_MODDEDINFO";
+					if (_32bit) then 
+					{
+						_branchName = localize "STR_A3_RSCDISPLAY_LOADING_32BIT";
+						_branchText = localize "STR_A3_RSCDISPLAY_LOADING_32BITINFO";
+					};
+					_disclaimerName = format ["%1 - %2", _branchName, _versionNr];
+					
+					if (_modded) then
+					{
+						_disclaimerName = _disclaimerName + "<img image='A3\Ui_f\data\GUI\RscCommon\RscTrafficLight\TrafficLight_ca.paa'/>";
+					};
+					
 					//Modded stable
-					_ctrlDisclaimerName ctrlSetStructuredText parseText format ["%1 - %2%3", localize "STR_A3_RSCDISPLAY_LOADING_STABLE",
-														  _versionNr,
-														  "<img image='A3\Ui_f\data\GUI\RscCommon\RscTrafficLight\TrafficLight_ca.paa'/>"];
-
-					_ctrlDisclaimerDescription ctrlsetstructuredtext parsetext localize "STR_A3_RSCDISPLAY_LOADING_MODDEDINFO";
+					_ctrlDisclaimerName ctrlSetStructuredText parseText _disclaimerName;
+					_ctrlDisclaimerDescription ctrlsetstructuredtext parsetext _branchText;
 					_ctrlDisclaimerDescription ctrlsettextcolor [1,1,1,1];
 					[_ctrlDisclaimerDescription,0.01] call bis_fnc_ctrlFitToTextHeight;
 					_ctrlDisclaimer ctrlshow true;
