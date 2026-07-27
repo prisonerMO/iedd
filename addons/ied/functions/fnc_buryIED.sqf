@@ -33,26 +33,6 @@ if (_value < 1) exitWith {
     _ied setPosATL _pos;
     _ied setVectorDirAndUp [_vectorDir,_vectorUp];
 };
-
-// private _xv = abs(_vectorUp #0);
-// private _yv = abs(_vectorUp #1);
-// private _zv = abs(_vectorUp #2);
-// private _max = selectMax [_xv,_yv,_zv];
-// private _vector = switch (_max) do {
-//     case _xv: {
-//         hint format ["IEDD: Bury IED: X FACE=%1",_depth select 0];
-//         _depth select 0;
-//     };
-
-//     case _yv: {
-//         hint format ["IEDD: Bury IED: Y SIDE=%1",_depth select 1];
-//         _depth select 1;
-//     };
-//     case _zv: {
-//         hint format ["IEDD: Bury IED: Z NORMAL=%1",_depth select 2];
-//         _depth select 2;
-//     };
-// };
 private _configDepth  = _ied getVariable ["iedd_ied_depth",[0,0,0]];
 //private _configDepth = getArray (configOf _ied >> "iedd_ied_buryDepth");
 _configDepth params ["_sizeX", "_sizeY", "_sizeZ"];

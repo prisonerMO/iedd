@@ -28,6 +28,12 @@ if (_value < 1) exitWith {};
 private _edenPos = _obj get3DENAttribute "position" select 0;
 _edenPos set [2, 0];
 _obj set3DENAttribute ["position", _edenPos];
+if !(_obj call FUNC(canBuryIED)) exitWith {
+    ["IED cannot be buried here", 1] call BIS_fnc_3DENNotification;
+    //display red "area" under the object to indicate that it cannot be buried here
+    //set values to -1 ?
+};
+
 private _pos = _obj modelToWorld [0,0,0];
 private _worldPos = _pos #2;
 _edenPos set [2, -_worldPos];

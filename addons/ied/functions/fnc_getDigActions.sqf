@@ -25,7 +25,7 @@ private _condition = {
     if (_isDigging) exitWith {
         false;
     };
-    _target call FUNC(canDig);
+    _target call FUNC(canDigUp);
 };
 
 private _statement = {
