@@ -46,6 +46,13 @@ if (_unit getVariable [QEGVAR(ied,isBury), false]) exitWith {
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
+if !(_unit call EFUNC(ied,canBuryIED)) exitWith {
+    _message = "IED cannot be buried here";
+    deleteVehicle _logic;
+    [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    //create red "area" under the object to indicate that it cannot be buried here (on hover? HOW?)
+};
+
 //TO-DO: If buried then make it unburied and reset the position to the original position/ make it modify bury depth and orientation. 
 
 [QEGVAR(ied,hideObject), [_unit, true], ACE_player] call CBA_fnc_targetEvent;
