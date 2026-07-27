@@ -258,6 +258,7 @@ private _fnc_onConfirm = {
     _unit attachTo [_helper, [0,0, _end]];    
     _unit setVectorDirAndUp [_vectorDir, _vectorUp];
     _unit setVariable [QEGVAR(ied,isBury),true, true];
+    _unit setVariable [QEGVAR(ied,bury),[_value, _vectorDir, _vectorUp, _vector], true];
 };
 
 private _fnc_onCancel = {
