@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Prisoner
- * Dig buried IED.
+ * Dig up buried IED.
  *
  * Arguments:
  * 0: The target <OBJECT>
@@ -12,22 +12,24 @@
  * Return description <NONE>
  *
  * Example:
- * [params] call iedd_ied_fnc_dig
+ * [params] call iedd_ied_fnc_digUp;
  *
  * Public: No
  */
 
 params [
-    ["_helper",objNull],
-    ["_ied",objNull],
+    ["_player", objNull, [objNull]],
+    ["_helper", objNull, [objNull]],
+    ["_ied", objNull, [objNull]],
     ["_step",0],
     ["_pos", [0,0,0]],
     ["_depth",0]
 ];
-TRACE_1("fnc_dig",_this);
+TRACE_1("fnc_digUp",_this);
 diag_log format ["IEDD: Digging IED %1",_this];
 if (isNull _ied) exitWith {"systemChat 'Object is null'";};
 if (isNull _helper) exitWith {"systemChat 'Helper is null'";};
+if !(ACE_player getVariable [QGVAR(isDigging),false]) exitWith {"systemChat 'someone stopped digging'";};
 
 if (_step < 1) exitWith {
     _pos set [2,0];
@@ -47,7 +49,7 @@ private _relDirUp = [vectorDir _ied, vectorUp _ied];
 _ied attachTo [_helper, [0,0,_end]];
 // _ied setVectorDirAndUp _relDirUp;
 
-[{call FUNC(dig)},[_helper,_ied,_step,_pos,_depth],1] call CBA_fnc_waitAndExecute;
+[{call FUNC(digUp)},[_helper,_ied,_step,_pos,_depth],1] call CBA_fnc_waitAndExecute;
 
 
 

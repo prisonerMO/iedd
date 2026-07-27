@@ -70,9 +70,9 @@
                 <Original>Detach bombs</Original>
                 <English>Detach bombs</English>
             </Key>
-            <Key ID="STR_iedd_ied_Dig_DisplayName">
-                <Original>Dig</Original>
-                <English>Dig</English>
+            <Key ID="STR_iedd_ied_DigUp_DisplayName">
+                <Original>Dig up</Original>
+                <English>Dig up</English>
             </Key>
             <Key ID="STR_iedd_ied_Disarm_DisplayName">
                 <Original>Disarm</Original>
@@ -351,8 +351,8 @@
                 <English>Require Entrenching Tool</English>
             </Key>
             <Key ID="STR_iedd_ied_IsEntrenchingTool_Description">
-                <Original>Player must have entrenching tool to dig IEDs.</Original>
-                <English>Player must have entrenching tool to dig IEDs.</English>
+                <Original>Player must have entrenching tool to dig up IEDs.</Original>
+                <English>Player must have entrenching tool to dig up IEDs.</English>
             </Key>
             <Key ID="STR_iedd_ied_IsEod">
                 <Original>Require EOD/Explosive Specialist</Original>

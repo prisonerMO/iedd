@@ -18,7 +18,7 @@ PREP(decals);
 PREP(defuseAction);
 PREP(deleted);
 PREP(detachAction);
-PREP(dig);
+PREP(digUp);
 PREP(disarmAction);
 PREP(dud);
 PREP(dudWires);

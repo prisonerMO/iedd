@@ -25,11 +25,11 @@ private _condition = {
     if (_isDigging) exitWith {
         false;
     };
-    _target call FUNC(canDigUp);
+    [_player,_target] call FUNC(canDigUp);
 };
 
 private _statement = {
-     private _objects = attachedObjects _target;
+    private _objects = attachedObjects _target;
     diag_log format ["IEDD: dig ied for helper %1, attached IED %2", _target, _objects];
     if (_objects isEqualTo []) exitWith {
         false;
@@ -40,12 +40,12 @@ private _statement = {
     _bury params ["_step", "", "", "_depth"];
     private _pos = getPosATL _target;
     diag_log format ["IEDD: Dig action statement executed: step=%1, depth=%2, pos=%3", _step, _depth, _pos];
-    [_target, _ied, _step, _pos, _depth] call FUNC(dig);
+    [_player,_target, _ied, _step, _pos, _depth] call FUNC(digUp);
 };
 
 private _action = [
         _target,
-        LLSTRING(Dig_DisplayName),
+        LLSTRING(DigUp_DisplayName),
         "",
         _statement,
         _condition,

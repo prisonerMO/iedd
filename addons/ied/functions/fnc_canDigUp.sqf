@@ -4,18 +4,26 @@
  * Check if the player can dig the IED
  *
  * Arguments:
- * 0: helper <OBJECT>
+ * 0: player <OBJECT>
+ * 1: helper <OBJECT>
  *
  * Return Value:
  * True <BOOL> - Returns true if the player can dig the IED.
  *
  * Example:
- * [helper] call iedd_ied_fnc_canDigUp;
+ * [ACE_player, helperObject] call iedd_ied_fnc_canDigUp;
  *
  * Public: No
  */
-params ["_helper"];
+params [["_player", objNull, [objNull]], ["_helper", objNull, [objNull]]];
 TRACE_1("fnc_canDigUp",_this);
+
+if (isNull _player) exitWith {
+    false;
+};
+if (isNull _helper) exitWith {
+    false;
+};
 private _objects = attachedObjects _helper;
 if (_objects isEqualTo []) exitWith {
     false;
@@ -29,7 +37,7 @@ private _isBury = _ied getVariable [QGVAR(isBury),false];
 if (!_isBury) exitWith {
     false;
 };
-if (GVAR(isEntrenchingTool) && {!(ACE_player call ace_trenches_fnc_hasEntrenchingTool)}) exitWith {
+if (GVAR(isEntrenchingTool) && {!(_player call ace_trenches_fnc_hasEntrenchingTool)}) exitWith {
     false;
 };
 
