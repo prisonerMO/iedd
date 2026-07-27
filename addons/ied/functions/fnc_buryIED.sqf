@@ -59,4 +59,5 @@ _ied setVectorDirAndUp _relDirUp;
 
 _bury set [0, _value];
 _bury set [3, _vector];
+_bury set [4, _pos];
 _ied setVariable [QGVAR(bury),_bury,true];

@@ -190,6 +190,25 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+
+[
+    QGVAR(digTimeEOD),
+    "TIME",
+    [LSTRING(DigTimeEOD), LSTRING(DigTimeEOD_Description)],
+	[localize "STR_iedd_main_Category_Main","IEDs"],
+    [1, 30, 5],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(digTime),
+    "TIME",
+    [LSTRING(DigTime), LSTRING(DigTime_Description)],
+	[localize "STR_iedd_main_Category_Main","IEDs"],
+    [1, 30, 10],
+    1
+] call CBA_fnc_addSetting;
+
 [
     QGVAR(isEntrenchingTool),
     "CHECKBOX",

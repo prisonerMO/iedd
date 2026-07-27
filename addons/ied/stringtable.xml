@@ -266,6 +266,22 @@
                 <Original>Set IED variation (if not defined somewhere else).</Original>
                 <English>Set IED variation (if not defined somewhere else).</English>
             </Key>
+            <Key ID="STR_iedd_ied_DigTime">
+                <Original>Digging time for other units</Original>
+                <English>Digging time for other units</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DigTimeEOD">
+                <Original>Digging time for EODs/Explosive Specialists</Original>
+                <English>Digging time for EODs/Explosive Specialists</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DigTimeEOD_Description">
+                <Original>How long it takes to dig up an IED.</Original>
+                <English>How long it takes to dig up an IED.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_DigTime_Description">
+                <Original>How long it takes to dig up an IED.</Original>
+                <English>How long it takes to dig up an IED.</English>
+            </Key>
             <Key ID="STR_iedd_ied_ExpMaxRange">
                 <Original>Maximum exploding distance</Original>
                 <English>Maximum exploding distance</English>

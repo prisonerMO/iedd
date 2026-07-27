@@ -13,6 +13,7 @@ PREP(canister);
 PREP(cardboard);
 PREP(charge);
 PREP(cinder);
+PREP(continueDigUp);
 PREP(cutWire);
 PREP(decals);
 PREP(defuseAction);
