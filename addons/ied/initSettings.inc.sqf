@@ -189,6 +189,18 @@
     {},
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(isEntrenchingTool),
+    "CHECKBOX",
+    [LSTRING(IsEntrenchingTool), LSTRING(IsEntrenchingTool_Description)],
+    [localize "STR_iedd_main_Category_Main","Requirements"],
+    true,
+    true,
+    {},
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 /**SUICIDE */
 [
     QGVAR(expMinRange),
