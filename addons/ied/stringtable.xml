@@ -346,6 +346,14 @@
                 <Original>All IEDs are duds. Training purposes for example.</Original>
                 <English>All IEDs are duds. Training purposes for example.</English>
             </Key>
+            <Key ID="STR_iedd_ied_IsEntrenchingTool">
+                <Original>Require Entrenching Tool</Original>
+                <English>Require Entrenching Tool</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsEntrenchingTool_Description">
+                <Original>Player must have entrenching tool to dig IEDs.</Original>
+                <English>Player must have entrenching tool to dig IEDs.</English>
+            </Key>
             <Key ID="STR_iedd_ied_IsEod">
                 <Original>Require EOD/Explosive Specialist</Original>
                 <English>Require EOD/Explosive Specialist</English>
