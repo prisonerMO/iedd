@@ -29,17 +29,15 @@ if (isNull _helper) exitWith {"systemChat 'Helper is null'";};
 if (_helper getVariable [QGVAR(isDigging),false]) exitWith {"systemChat 'someone stopped digging'";};
 
 _helper setVariable [QGVAR(isDigging),true,true];
-private _digTime = [iedd_ied_digTime, iedd_ied_digTimeEOD] select ([_unit] call ace_common_fnc_isEOD || _unit getUnitTrait "explosiveSpecialist");
-if (_digTime < 1) then {
-    _digTime = 1;
-};
-
 private _bury = _ied getVariable [QGVAR(bury),[0,[0,0,0],[0,0,0],0,[0,0,0]]];
-private _pos = getPosATL _helper;
-_bury set [3, _pos];
 _bury params ["_step","_relDir","_relUp","_vector","_pos"];
-_ied setVariable [QGVAR(bury),_bury,true];
-private _digTimeLeft = round(_digTime / _step);
+private _digTime = [iedd_ied_digTime, iedd_ied_digTimeEOD] select ([_unit] call ace_common_fnc_isEOD || _unit getUnitTrait "explosiveSpecialist");
+private _digTimeLeft = _digTime * (_step / 20);
+if (_digTimeLeft < 1) then {
+    _digTimeLeft = 1;
+};
+private _stepTime = _digTimeLeft / _step;
+diag_log format ["IEDD: Digging IED %1, step %2, dig time %3, dig time left %4, steptime %5",_ied,_step,_digTime, _digTimeLeft, _stepTime];
 // Create progress bar
 private _fnc_onFinish = {
     (_this select 0) params ["_unit","_helper","_ied"];
@@ -81,9 +79,9 @@ private _fnc_condition = {
 
 [(_digTimeLeft + 0.5), _this, _fnc_onFinish, _fnc_onFailure, "DIGGIN UP IEEEDDDD", _fnc_condition] call ace_common_fnc_progressBar;
 
-[_unit,_helper,_ied,_step,_vector] call FUNC(DigUp);
+[{call FUNC(digUp)},[_unit,_helper,_ied,_step,_vector,_stepTime],_stepTime] call CBA_fnc_waitAndExecute;
 
-[_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
+[_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation; //TO-DO loop animation (HOW?)
 
 
 //[{call FUNC(digUp)},[_unit,_helper,_ied,_step,_pos,_vector],1] call CBA_fnc_waitAndExecute;

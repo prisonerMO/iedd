@@ -374,6 +374,14 @@
                 <Original>Require EOD/Explosive Specialist</Original>
                 <English>Require EOD/Explosive Specialist</English>
             </Key>
+            <Key ID="STR_iedd_ied_IsEodDigUp">
+                <Original>Require EOD/Explosive Specialist to dig up IEDs</Original>
+                <English>Require EOD/Explosive Specialist to dig up IEDs</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsEodDigUp_Description">
+                <Original>Player must be EOD and/or Explosive Specialist to dig up IEDs.</Original>
+                <English>Player must be EOD and/or Explosive Specialist to dig up IEDs.</English>
+            </Key>
             <Key ID="STR_iedd_ied_IsEod_Description">
                 <Original>Player must be EOD and/or Explosive Specialist to interact with IEDs.</Original>
                 <English>Player must be EOD and/or Explosive Specialist to interact with IEDs.</English>

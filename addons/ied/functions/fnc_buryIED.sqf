@@ -33,7 +33,7 @@ if (_value < 1) exitWith {
     _ied setPosATL _pos;
     _ied setVectorDirAndUp [_vectorDir,_vectorUp];
 };
-private _configDepth  = _ied getVariable ["iedd_ied_depth",[0,0,0]];
+private _configDepth  = _ied getVariable ["iedd_ied_depth",getArray (configOf _ied >> 'iedd_ied_buryDepth')];
 //private _configDepth = getArray (configOf _ied >> "iedd_ied_buryDepth");
 _configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
 private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
@@ -60,4 +60,5 @@ _ied setVectorDirAndUp _relDirUp;
 _bury set [0, _value];
 _bury set [3, _vector];
 _bury set [4, _pos];
+diag_log format ["IEDD: Bury IED with helper: IED %1 , _bury: %2, value: %3, vector: %4, pos: %5",_ied, _bury, _value, _vector, _pos];
 _ied setVariable [QGVAR(bury),_bury,true];

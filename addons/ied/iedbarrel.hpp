@@ -90,6 +90,6 @@ class GVAR(Training_Barrel):GVAR(Barrel) {
     };
 };
 
-class GVAR(Training_Barrel_Grey):GVAR(Barrel_Grey) {
+class GVAR(Training_Barrel_Grey):GVAR(Training_Barrel) {
     displayName = CSTRING(Training_BarrelGrey_DisplayName);
 };
