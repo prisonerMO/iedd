@@ -68,16 +68,28 @@ private _fnc_onFailure = {
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
 // condition
-private _fnc_condition = {
-    (_this select 0) params ["_unit","_helper","_ied"];
+private _fnc_perframeCheck = {
+    params ["_args", "_elapsedTime", "_totalTime"];
+    _args params ["_unit"];
+    if (_totalTime != 0 && {animationState _unit != "AinvPknlMstpSnonWnonDnon_medic4"}) then {
+        [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
+    };
     if (GVAR(isEntrenchingTool)) then {
         (_unit call ace_trenches_fnc_hasEntrenchingTool)
     } else {
-        true //do we need check canDigUp?
+        true;
     };
 };
 
-[(_digTimeLeft + 0.5), _this, _fnc_onFinish, _fnc_onFailure, "DIGGIN UP IEEEDDDD", _fnc_condition] call ace_common_fnc_progressBar;
+
+[
+    (_digTimeLeft + 0.5),
+    _this,
+    _fnc_onFinish,
+    _fnc_onFailure,
+    "DIGGIN UP IEEEDDDD",
+    _fnc_perframeCheck
+] call ace_common_fnc_progressBar;
 
 [{call FUNC(digUp)},[_unit,_helper,_ied,_step,_vector,_stepTime],_stepTime] call CBA_fnc_waitAndExecute;
 
