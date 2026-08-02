@@ -159,16 +159,24 @@
                 <English>Minimum distance to suicide bomber when it starts to approach player.</English>
             </Key>
             <Key ID="STR_iedd_ied_AddDefusalKit">
-                <Original>Add Defusal Kit to EODs/Explosive specialists</Original>
-                <English>Add Defusal Kit to EODs/Explosive specialists</English>
+                <Original>Defusal Kit</Original>
+                <English>Defusal Kit</English>
             </Key>
             <Key ID="STR_iedd_ied_AddDefusalKit_Description">
                 <Original>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</Original>
                 <English>Adds Defusal Kit to all players with EOD/Explosive Specialist trait on mission start.</English>
             </Key>
+            <Key ID="STR_iedd_ied_AddEntrenchingTool">
+                <Original>Entrenching Tool</Original>
+                <English>Entrenching Tool</English>
+            </Key>
+            <Key ID="STR_iedd_ied_AddEntrenchingTool_Description">
+                <Original>Adds Entrenching Tool to all players with EOD/Explosive Specialist trait on mission start.</Original>
+                <English>Adds Entrenching Tool to all players with EOD/Explosive Specialist trait on mission start.</English>
+            </Key>
             <Key ID="STR_iedd_ied_AddNotebook">
-                <Original>Add IEDD Notebook to EODs/Explosive specialists</Original>
-                <English>Add IEDD Notebook to EODs/Explosive specialists</English>
+                <Original>IEDD Notebook</Original>
+                <English>IEDD Notebook</English>
             </Key>
             <Key ID="STR_iedd_ied_AddNotebook_Description">
                 <Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</Original>
@@ -179,8 +187,12 @@
                 <English>Bury</English>
             </Key>
             <Key ID="STR_iedd_ied_Bury_Tooltip">
-                <Original>Bury min 10%</Original>
-                <English>Bury min 10%</English>
+                <Original>Set depth for IED.</Original>
+                <English>Set depth for IED.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Category_Items">
+                <Original>Items: Add for EODs/Explosive Specialists</Original>
+                <English>Items: Add for EODs/Explosive Specialists</English>
             </Key>
             <Key ID="STR_iedd_ied_DefaultColor">
                 <Original>Color (Fuel canisters only)</Original>
@@ -275,12 +287,16 @@
                 <English>Digging time for EODs/Explosive Specialists</English>
             </Key>
             <Key ID="STR_iedd_ied_DigTimeEOD_Description">
-                <Original>How long it takes to dig up an IED.</Original>
-                <English>How long it takes to dig up an IED.</English>
+                <Original>How long it takes EODs/Explosive Specialists to dig up fully buried IED.</Original>
+                <English>How long it takes EODs/Explosive Specialists to dig up fully buried IED.</English>
             </Key>
             <Key ID="STR_iedd_ied_DigTime_Description">
                 <Original>How long it takes to dig up an IED.</Original>
                 <English>How long it takes to dig up an IED.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Digging_DisplayName">
+                <Original>Digging IED</Original>
+                <English>Digging IED</English>
             </Key>
             <Key ID="STR_iedd_ied_ExpMaxRange">
                 <Original>Maximum exploding distance</Original>
@@ -337,6 +353,14 @@
             <Key ID="STR_iedd_ied_IsBlockedRange_Description">
                 <Original>IEDD Notebook can't be opened near IEDs.</Original>
                 <English>IEDD Notebook can't be opened near IEDs.</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsBury">
+                <Original>Bury IED</Original>
+                <English>Bury IED</English>
+            </Key>
+            <Key ID="STR_iedd_ied_IsBury_Tooltip">
+                <Original>Controls if IEDs are buried.</Original>
+                <English>Controls if IEDs are buried.</English>
             </Key>
             <Key ID="STR_iedd_ied_IsDefusalKit">
                 <Original>Require Defusal Kit</Original>

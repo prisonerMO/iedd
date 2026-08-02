@@ -28,7 +28,7 @@ class GVAR(CanisterPlastic_Fake):Land_CanisterPlastic_F {
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
     iedd_ied_buryDepth[]= {0.4956,0.4956,0.717951};
-    iedd_ied_buryDepth3DEN[]= {0.5712,0.5712,0.778024};
+    //iedd_ied_buryDepth3DEN[]= {0.5712,0.5712,0.778024};
 };
 class GVAR(CanisterPlastic):GVAR(CanisterPlastic_Fake) {
     scope = 2;

@@ -26,7 +26,6 @@ params [
     ["_stepTime",1]
 ];
 TRACE_1("fnc_digUp",_this);
-diag_log format ["IEDD: Digging IED %1",_this];
 if (!alive _unit) exitWith {"systemChat 'Unit is dead'";};
 if (isNull _ied) exitWith {"systemChat 'Object is null'";};
 if (isNull _helper) exitWith {"systemChat 'Helper is null'";};
@@ -36,7 +35,7 @@ _step = _step - 1;
 private _start = _vector/2;
 private _vectorEnd = _vector * (_step / 20);
 private _end = _start - _vectorEnd;
-diag_log format ["IEDD: Digging IED %1, step %2, final height %3, start %4, end %5",_ied,_step,_vectorEnd,_start,_end];
+TRACE_5("Digging IED",_ied,_step,_vectorEnd,_start,_end);
 //private _relDirUp = [vectorDir _ied, vectorUp _ied];
 _ied attachTo [_helper, [0,0,_end]];
 // _ied setVectorDirAndUp _relDirUp;

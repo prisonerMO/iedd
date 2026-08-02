@@ -38,7 +38,7 @@ class GVAR(Bucket_Fake):Land_PlasticBucket_01_closed_F {
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
     iedd_ied_buryDepth[] = {0.381293,0.361291,0.447162};
-    iedd_ied_buryDepth3DEN[]= {0.388186,0.398341,0.449231};
+    //iedd_ied_buryDepth3DEN[]= {0.388186,0.398341,0.449231};
 };
 class GVAR(Bucket):GVAR(Bucket_Fake) {
     scope = 2;

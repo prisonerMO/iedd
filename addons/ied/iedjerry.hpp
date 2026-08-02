@@ -28,7 +28,7 @@ class GVAR(CanisterFuel_Fake):Land_CanisterFuel_F {
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
     iedd_ied_buryDepth[] = {0.388626,0.157659,0.519143};
-    iedd_ied_buryDepth3DEN[]= {0.388626,0.164038,0.550739};
+    //iedd_ied_buryDepth3DEN[]= {0.388626,0.164038,0.550739};
 };
 class GVAR(CanisterFuel):GVAR(CanisterFuel_Fake) {
     scope = 2;

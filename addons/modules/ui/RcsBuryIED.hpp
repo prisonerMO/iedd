@@ -20,8 +20,8 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
                     class controls {
                         class GVAR(pitchL): RscText {
                             idc = -1;
-                            text = "PITCH";
-                            tooltip = "PITCH TOOLTIP";
+                            text = CSTRING(Pitch);
+                            tooltip = CSTRING(Rotate_Ied);                            
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(7));
@@ -29,7 +29,6 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
                             colorBackground[] = {0, 0, 0, 0.5};
                         };
                         class GVAR(pitchSlider): RscXSliderH {
-                            text = "PITCH";
                             idc = 72520;
                             x = QUOTE(W_PART(7.1));
                             y = 0;
@@ -41,7 +40,6 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
                         };
                         class GVAR(pitchEdit): RscEdit {
                             idc = 72521;
-                            text = "0";
                             x = QUOTE(W_PART(23.3));
                             y = 0;
                             w = QUOTE(W_PART(3));
@@ -56,12 +54,10 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
                         //     h = QUOTE(H_PART(1));
                         // };
                         class GVAR(rollL): GVAR(pitchL) {
-                            text = "ROLL";
-                            tooltip = "ROLL TOOLTIP";
+                            text = CSTRING(Roll);
                             y = QUOTE(H_PART(1.1));
                         };
                         class GVAR(rollSlider): GVAR(pitchSlider) {
-                            text = "ROLL";
                             idc = 72522;
                             y = QUOTE(H_PART(1.1));
                         };
@@ -74,12 +70,10 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
                         //     y = QUOTE(H_PART(1.1));
                         // };
                         class GVAR(yawL): GVAR(pitchL) {
-                            text = "YAW";
-                            tooltip = "YAW TOOLTIP";
+                            text = CSTRING(Yaw);
                             y = QUOTE(H_PART(2.2));
                         };
                         class GVAR(yawSlider): GVAR(pitchSlider) {
-                            text = "YAW";
                             idc = 72524;
                             y = QUOTE(H_PART(2.2));
                         };
@@ -88,12 +82,11 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
                             y = QUOTE(H_PART(2.2));
                         };
                         class GVAR(stepL): GVAR(pitchL) {
-                            text = "STEP";
-                            tooltip = "STEP TOOLTIP";
+                            text = CSTRING(Depth);
+                            tooltip = ECSTRING(ied,Bury_Tooltip);
                             y = QUOTE(H_PART(3.3));
                         };
                         class GVAR(stepSlider): GVAR(pitchSlider) {
-                            text = "STEP";
                             idc = 72526;
                             y = QUOTE(H_PART(3.3));
                         };

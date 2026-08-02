@@ -120,6 +120,10 @@
                 <Original>Road Crack 3</Original>
                 <English>Road Crack 3</English>
             </Key>
+            <Key ID="STR_iedd_modules_Depth">
+                <Original>DEPTH</Original>
+                <English>DEPTH</English>
+            </Key>
             <Key ID="STR_iedd_modules_DirtRocks_1">
                 <Original>Dirt Rocks 1</Original>
                 <English>Dirt Rocks 1</English>
@@ -148,6 +152,10 @@
                 <Original>LID ACTIVATION (EODS)</Original>
                 <English>LID ACTIVATION (EODS)</English>
             </Key>
+            <Key ID="STR_iedd_modules_Pitch">
+                <Original>PITCH</Original>
+                <English>PITCH</English>
+            </Key>
             <Key ID="STR_iedd_modules_RoadDirt_1">
                 <Original>Road Dirt 1</Original>
                 <English>Road Dirt 1</English>
@@ -175,6 +183,18 @@
             <Key ID="STR_iedd_modules_RoadDirt_7">
                 <Original>Road Dirt 7</Original>
                 <English>Road Dirt 7</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Roll">
+                <Original>ROLL</Original>
+                <English>ROLL</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Rotate_Ied">
+                <Original>Rotate IED</Original>
+                <English>Rotate IED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Yaw">
+                <Original>YAW</Original>
+                <English>YAW</English>
             </Key>
             <Key ID="STR_iedd_modules_Zeus_Act_Category">
                 <Original>ACTIVATION DISTANCE</Original>

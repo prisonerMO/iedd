@@ -23,11 +23,9 @@ params [
     ["_ied", objNull, [objNull]]
 ];
 TRACE_1("fnc_digUp",_this);
-diag_log format ["IEDD: Digging IED %1",_this];
-if (isNull _ied) exitWith {"systemChat 'Object is null'";};
-if (isNull _helper) exitWith {"systemChat 'Helper is null'";};
-if (_helper getVariable [QGVAR(isDigging),false]) exitWith {"systemChat 'someone stopped digging'";};
-
+if (isNull _ied) exitWith {};
+if (isNull _helper) exitWith {};
+if (_helper getVariable [QGVAR(isDigging),false]) exitWith {};
 _helper setVariable [QGVAR(isDigging),true,true];
 private _bury = _ied getVariable [QGVAR(bury),[0,[0,0,0],[0,0,0],0,[0,0,0]]];
 _bury params ["_step","_relDir","_relUp","_vector","_pos"];
@@ -37,7 +35,7 @@ if (_digTimeLeft < 1) then {
     _digTimeLeft = 1;
 };
 private _stepTime = _digTimeLeft / _step;
-diag_log format ["IEDD: Digging IED %1, step %2, dig time %3, dig time left %4, steptime %5",_ied,_step,_digTime, _digTimeLeft, _stepTime];
+TRACE_5("Continue Digging IED",_ied,_step,_digTime,_digTimeLeft,_stepTime);
 // Create progress bar
 private _fnc_onFinish = {
     (_this select 0) params ["_unit","_helper","_ied"];
@@ -87,7 +85,7 @@ private _fnc_perframeCheck = {
     _this,
     _fnc_onFinish,
     _fnc_onFailure,
-    "DIGGIN UP IEEEDDDD",
+    LLSTRING(Digging_DisplayName),
     _fnc_perframeCheck
 ] call ace_common_fnc_progressBar;
 
@@ -97,12 +95,10 @@ private _fnc_perframeCheck = {
 
 
 //[{call FUNC(digUp)},[_unit,_helper,_ied,_step,_pos,_vector],1] call CBA_fnc_waitAndExecute;
-
 // _step = _step - 1;
 // private _finalHeight = _vector * (_step / 20);
 // private _start = _vector/2;
 // private _end = _finalHeight - _start;
-// diag_log format ["IEDD: Digging IED %1, step %2, final height %3, start %4, end %5",_ied,_step,_finalHeight,_start,_end];
 // private _relDirUp = [vectorDir _ied, vectorUp _ied];
 // _ied attachTo [_helper, [0,0,_end]];
 // _ied setVectorDirAndUp _relDirUp;

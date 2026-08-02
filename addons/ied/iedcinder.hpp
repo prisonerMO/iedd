@@ -28,7 +28,7 @@ class GVAR(Cinder_Fake):Land_CinderBlock_01_F {
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
     iedd_ied_buryDepth[]= {0.171383,0.336744,0.218253};
-    iedd_ied_buryDepth3DEN[]= {0.171383,0.336744,0.218985};
+    // iedd_ied_buryDepth3DEN[]= {0.171383,0.336744,0.218985};
 };
 class GVAR(Cinder):GVAR(Cinder_Fake) {
     scope = 2;

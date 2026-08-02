@@ -21,17 +21,13 @@ TRACE_1("fnc_getDigActions",_this);
 private _actions = [];
 
 private _condition = {
-    private _isDigging = _target getVariable [QGVAR(isDigging),false];
-    if (_isDigging) exitWith {
-        false;
-    };
     [_player,_target] call FUNC(canDigUp);
 };
 
 private _statement = {
     params ["_target", "_player", "_actionParams"];
+    TRACE_1("fnc_getDigActions:",_this);
     private _objects = attachedObjects _target;
-    diag_log format ["IEDD: dig ied for helper %1, attached IED %2", _target, _objects];
     if (_objects isEqualTo []) exitWith {
         false;
     };    

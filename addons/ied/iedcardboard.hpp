@@ -30,7 +30,7 @@ class GVAR(Cardboard_Fake):Land_PaperBox_01_small_ransacked_brown_F {
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
     iedd_ied_buryDepth[] = {0.88833,0.644156,0.421928};
-    iedd_ied_buryDepth3DEN[]= {1.08345,0.830918,0.428158};
+    //iedd_ied_buryDepth3DEN[]= {1.08345,0.830918,0.428158};
 };
 class GVAR(Cardboard): GVAR(Cardboard_Fake) {
     scope = 2;
@@ -46,7 +46,6 @@ class GVAR(Cardboard): GVAR(Cardboard_Fake) {
         };
     };
     iedd_ied_default = QGVAR(Cardboard_Fake);
-    iedd_ied_buryDepth3DEN[] = {1.08345,0.830918,0.428158};
     class Attributes {
         IED_DEFAULT_CATEGORY(EMPTY_CLASS);
         IED_TIMER_CATEGORY;

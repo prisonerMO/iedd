@@ -150,7 +150,7 @@
     QGVAR(addNotebook),
     "CHECKBOX",
     [LSTRING(AddNotebook), LSTRING(AddNotebook_Description)],
-    [localize "STR_iedd_main_Category_Main","Items"],
+    [localize "STR_iedd_main_Category_Main",LSTRING(Category_Items)],
     true,
     true,
     {},
@@ -161,7 +161,18 @@
     QGVAR(addDefusalKit),
     "CHECKBOX",
     [LSTRING(AddDefusalKit), LSTRING(AddDefusalKit_Description)],
-    [localize "STR_iedd_main_Category_Main","Items"],
+    [localize "STR_iedd_main_Category_Main",LSTRING(Category_Items)],
+    true,
+    true,
+    {},
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(addEntrenchingTool),
+    "CHECKBOX",
+    [LSTRING(AddEntrenchingTool), LSTRING(AddEntrenchingTool_Description)],
+    [localize "STR_iedd_main_Category_Main",LSTRING(Category_Items)],
     true,
     true,
     {},

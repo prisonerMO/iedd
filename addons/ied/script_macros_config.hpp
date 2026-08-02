@@ -242,33 +242,11 @@ class GVAR(ied_SubCategory) {\
             control = "SubCategory";\
             displayName = "Bury IED";\
         };\
-        class GVAR(defaultBury) {\
-            property = QGVAR(defaultBury);\
-            control = "Edit";\
-            displayName = "Default Bury Depth";\
-            defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",getArray (configOf _this >> 'iedd_ied_buryDepth') select 0,getArray (configOf _this >> 'iedd_ied_buryDepth') select 1,getArray (configOf _this >> 'iedd_ied_buryDepth') select 2];";\
-        };\
-        class GVAR(depth) {\
-            property = QGVAR(depth);\
-            control = QGVAR(depth);\
-            displayName = "DEPTH GAME";\
-            expression = "_this setVariable ['%s', _value];";\
-            defaultValue = "getArray (configOf _this >> 'iedd_ied_buryDepth');";\
-            typeName = "ARRAY";\
-        };\
-        class GVAR(depth3DEN) {\
-            property = QGVAR(depth3DEN);\
-            control = QGVAR(depth);\
-            displayName = "DEPTH EDEN";\
-            expression = "_this setVariable ['%s', _value];";\
-            defaultValue = "getArray (configOf _this >> 'iedd_ied_buryDepth3DEN');";\
-            typeName = "ARRAY";\
-        };\
         class GVAR(isBury) {\
             property = QGVAR(isBury);\
             control = QGVAR(isBury);\
-            displayName = "Bury";\
-            tooltip = "Tooltip";\
+            displayName = CSTRING(isBury);\
+            tooltip = CSTRING(isBury_Tooltip);\
             expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);\
             typeName = "BOOL";\
             defaultValue = "(false)";\
@@ -301,3 +279,28 @@ class GVAR(ied_SubCategory) {\
             };\
         };\
     }
+
+/**********BURY DEBUG SETTINGS
+class GVAR(defaultBury) {\
+    property = QGVAR(defaultBury);\
+    control = "Edit";\
+    displayName = "Default Bury Depth";\
+    defaultValue = "format [""[X] %1 [Y] %2 [Z] %3"",getArray (configOf _this >> 'iedd_ied_buryDepth') select 0,getArray (configOf _this >> 'iedd_ied_buryDepth') select 1,getArray (configOf _this >> 'iedd_ied_buryDepth') select 2];";\
+};\
+class GVAR(depth) {\
+    property = QGVAR(depth);\
+    control = QGVAR(depth);\
+    displayName = "DEPTH GAME";\
+    expression = "_this setVariable ['%s', _value];";\
+    defaultValue = "getArray (configOf _this >> 'iedd_ied_buryDepth');";\
+    typeName = "ARRAY";\
+};\
+class GVAR(depth3DEN) {\
+    property = QGVAR(depth3DEN);\
+    control = QGVAR(depth);\
+    displayName = "DEPTH EDEN";\
+    expression = "_this setVariable ['%s', _value];";
+    defaultValue = "getArray (configOf _this >> 'iedd_ied_buryDepth3DEN');";\
+    typeName = "ARRAY";\
+};
+********/

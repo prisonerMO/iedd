@@ -21,25 +21,24 @@ params [
 ];
 TRACE_1("fnc_buryIED",_this);
 
-if (isNull _ied) exitWith {"systemChat 'Object is null'";};
+if (isNull _ied) exitWith {};
 private _isBury = _ied getVariable ["iedd_ied_isBury", false];
-if !(_isBury) exitWith {diag_log format["IEDD: Bury IED with helper: %1", _isBury];};
+if !(_isBury) exitWith {};
 private _bury = _ied getVariable [QGVAR(bury), [-1,[0,0,0],[0,0,0]]];
 _bury params ["_value","_vectorDir","_vectorUp"];
 private _pos = getPosATL _ied;
 _pos set [2,0];
-diag_log format["IEDD: Bury IED with helper: %1", _bury];
+TRACE_1("Bury params:",_bury);
 if (_value < 1) exitWith {
     _ied setPosATL _pos;
     _ied setVectorDirAndUp [_vectorDir,_vectorUp];
 };
-private _configDepth  = _ied getVariable ["iedd_ied_depth",getArray (configOf _ied >> 'iedd_ied_buryDepth')];
-//private _configDepth = getArray (configOf _ied >> "iedd_ied_buryDepth");
+private _configDepth = getArray (configOf _ied >> "iedd_ied_buryDepth");
+//private _configDepth  = _ied getVariable ["iedd_ied_depth",getArray (configOf _ied >> 'iedd_ied_buryDepth')];
 _configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
 private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
 private _vector =(abs (_vectorF #2)) * _sizeX +(abs (_vectorDir #2)) * _sizeY +(abs (_vectorUp #2)) * _sizeZ;
-diag_log format ["Burying IED with vectorUP %1, vectorDir %2, _vectorF %3, ied: %4", _vectorUp, _vectorDir, _vectorF, _ied];
-diag_log format ["Burying IED with _vector: %1, _value: %2, _configDepth: %3, ied: %4", _vector, _value, _configDepth, _ied];
+TRACE_4("IED: Bury IED",_vectorUp,_vectorDir,_vectorF,_ied);
 private _start = _vector/2;
 private _vectorEnd = _vector * (_value / 20);
 private _end = _start - _vectorEnd;
@@ -60,5 +59,5 @@ _ied setVectorDirAndUp _relDirUp;
 _bury set [0, _value];
 _bury set [3, _vector];
 _bury set [4, _pos];
-diag_log format ["IEDD: Bury IED with helper: IED %1 , _bury: %2, value: %3, vector: %4, pos: %5",_ied, _bury, _value, _vector, _pos];
+TRACE_1("Bury params end:",_bury);
 _ied setVariable [QGVAR(bury),_bury,true];

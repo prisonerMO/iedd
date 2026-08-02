@@ -16,12 +16,15 @@
  */
 params ["_unit"];
 TRACE_1("fnc_addItems",_this);
-
-if (GVAR(addNotebook) &&    
-    {([_unit] call ace_common_fnc_isEOD || _unit getUnitTrait "explosiveSpecialist")}) then {
-    	[QGVAR(add),[_unit,"iedd_item_notebook"]] call CBA_fnc_localEvent;
-};
-if (GVAR(addDefusalKit) &&    
-    {([_unit] call ace_common_fnc_isEOD || _unit getUnitTrait "explosiveSpecialist")}) then {
-    	[QGVAR(add),[_unit,"ACE_DefusalKit"]] call CBA_fnc_localEvent;
+private _isEOD = [_unit] call ace_common_fnc_isEOD || _unit getUnitTrait "explosiveSpecialist";
+if (_isEOD) then {
+    if (GVAR(addNotebook)) then {
+        [_unit,"iedd_item_notebook"] call CBA_fnc_addItemToUniform;
+    };
+    if (GVAR(addDefusalKit)) then {
+        [_unit,"ACE_DefusalKit"] call CBA_fnc_addItemToUniform;
+    };
+    if (GVAR(addEntrenchingTool)) then {
+        [_unit,"ACE_EntrenchingTool"] call CBA_fnc_addItemToUniform;
+    };
 };

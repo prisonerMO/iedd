@@ -19,7 +19,7 @@ class GVAR(Metal_Fake):Land_GarbageBarrel_01_F {
         };
     };
     iedd_ied_buryDepth[] = {0.770159,0.771682,1.21519};    
-    iedd_ied_buryDepth3DEN[] = {0.784926,0.779376,1.22769};
+    //iedd_ied_buryDepth3DEN[] = {0.784926,0.779376,1.22769};
 };
 class GVAR(Metal_English_Fake):GVAR(Metal_Fake) {
     model = "\A3\Structures_F_EPB\Items\Vessels\GarbageBarrel_01_grey_F.p3d";

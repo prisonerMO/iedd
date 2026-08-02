@@ -28,7 +28,7 @@ class GVAR(Barrel_Fake):Land_BarrelEmpty_F {
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
     iedd_ied_buryDepth[]= {0.528197,0.528197,0.809505};
-    iedd_ied_buryDepth3DEN[]= {0.528197,0.528197,0.809505};
+    //iedd_ied_buryDepth3DEN[]= {0.528197,0.528197,0.809505};
 };
 class GVAR(Barrel_Grey_Fake):GVAR(Barrel_Fake) {
     model = "\A3\Structures_F_EPB\Items\Vessels\BarrelEmpty_grey_F.p3d";
@@ -57,8 +57,6 @@ class GVAR(Barrel):GVAR(Barrel_Fake) {
     ace_cargo_noRename = 1;
     ace_cargo_blockUnloadCarry = 0;
     iedd_ied_default = QGVAR(Barrel_Fake);
-    iedd_ied_buryDepth3DEN[]= {0.784926,0.779376,1.22769};
-    iedd_ied_buryPosFix3DEN[]= {-0.1512,-0.1512,-0.1139};
     class Attributes {
         IED_DEFAULT_CATEGORY(EMPTY_CLASS);
         IED_TIMER_CATEGORY;

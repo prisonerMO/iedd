@@ -247,7 +247,7 @@ private _fnc_onConfirm = {
     private _values = _display getVariable [QGVAR(bury), []];
     if (_values isEqualTo []) exitWith {deleteVehicle _logic; systemChat "No values found";};
     _values params ["_vector", "_start", "_value", "_end", "_configDepth"];
-    diag_log format ["Burying IED with MODULE: _vector: %1, _start: %2, _value: %3, _end: %4, _configDepth: %5, _ied: %6", _vector, _start, _value, _end, _configDepth, _unit];
+    TRACE_5("Modules: Bury IED:" _vector,_start,_value,_end,_configDepth,_unit);
     private _dummy = _display getVariable [QGVAR(dummy), objNull];
     private _helper = _display getVariable [QGVAR(helper), objNull];
     if (isNull _helper) exitWith {systemChat "Helper is null";};
