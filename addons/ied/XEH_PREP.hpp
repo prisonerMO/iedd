@@ -26,6 +26,7 @@ PREP(dudWires);
 PREP(explosion);
 PREP(getDigActions);
 PREP(getTrainingActions);
+PREP(handleEntityCreated);
 PREP(handleGetInMan);
 PREP(handleKilled);
 PREP(handleUnconscious);
