@@ -291,8 +291,8 @@
                 <English>How long it takes EODs/Explosive Specialists to dig up fully buried IED.</English>
             </Key>
             <Key ID="STR_iedd_ied_DigTime_Description">
-                <Original>How long it takes to dig up an IED.</Original>
-                <English>How long it takes to dig up an IED.</English>
+                <Original>How long it takes other units to dig up fully buried IED.</Original>
+                <English>How long it takes other units to dig up fully buried IED.</English>
             </Key>
             <Key ID="STR_iedd_ied_Digging_DisplayName">
                 <Original>Digging IED</Original>

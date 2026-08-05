@@ -36,10 +36,10 @@ private _start = _vector/2;
 private _vectorEnd = _vector * (_step / 20);
 private _end = _start - _vectorEnd;
 TRACE_5("Digging IED",_ied,_step,_vectorEnd,_start,_end);
-//private _relDirUp = [vectorDir _ied, vectorUp _ied];
 _ied attachTo [_helper, [0,0,_end]];
-// _ied setVectorDirAndUp _relDirUp;
-
+private _bury = _ied getVariable [QGVAR(bury),[0,[0,0,0],[0,0,0],0,[0,0,0]]];
+_bury set [0,_step];
+_ied setVariable [QGVAR(bury),_bury,true];
 [{call FUNC(digUp)},[_unit,_helper,_ied,_step,_vector,_stepTime],_stepTime] call CBA_fnc_waitAndExecute;
 
 
