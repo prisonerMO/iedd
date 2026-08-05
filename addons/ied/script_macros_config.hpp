@@ -252,8 +252,8 @@ class GVAR(ied_SubCategory) {\
             defaultValue = "(false)";\
         };\
 		class GVAR(bury) {\
-			displayName = CSTRING(Bury_displayName);\
-			tooltip = CSTRING(Bury_Tooltip);\
+			displayName = CSTRING(Depth_DisplayName);\
+			tooltip = CSTRING(Depth_Tooltip);\
 			property = QGVAR(bury);\
 			control = QGVAR(burySlider);\
 			expression = QUOTE(if (is3DEN) then {\

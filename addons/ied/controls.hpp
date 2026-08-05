@@ -17,7 +17,14 @@ class CheckboxState: Checkbox
         class Value;
     };
 };
-class Slider;
+class Slider:Title
+{
+    class Controls:Controls {
+        class Title;
+        class Value;
+        class Edit;
+    };
+};
 class Combo;
 class GVAR(timeSlider): Slider {
     attributeLoad = "params [""_ctrlGroup""];\
@@ -272,7 +279,11 @@ class GVAR(burySlider): Slider {
     private _slider = _ctrlGroup controlsGroupCtrl 100;\
     private _edit = _ctrlGroup controlsGroupCtrl 101;\
     _slider sliderSetPosition _value;\
-    _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'step';";
+    if (_value < 1) then {\
+        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + ' step';\
+    } else {
+        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + ' steps';\
+    };";
     attributeSave = "params [""_ctrlGroup""];\
     sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
     onLoad = "params [""_ctrlGroup""];\
@@ -284,15 +295,33 @@ class GVAR(burySlider): Slider {
         params [""_slider""];\
         private _edit = (ctrlParentControlsGroup _slider) controlsGroupCtrl 101;\
         private _value = sliderPosition _slider;\
-        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'step';\
+        if (_value < 2) then {\
+            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + ' step';\
+        } else {
+            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + ' steps';\
+        };\
     }];\
     _edit ctrlAddEventHandler [""KillFocus"", {\
         params [""_edit""];\
         private _slider = (ctrlParentControlsGroup _edit) controlsGroupCtrl 100;\
         private _value = ((parseNumber ctrlText _edit) min 0) max 20;\
         _slider sliderSetPosition _value;\
-        _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + 'step';\
+        if (_value < 2) then {\
+            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + ' step';\
+        } else {
+            _edit ctrlSetText ([_value, 0] call CBA_fnc_formatNumber) + ' steps';\
+        };\
     }];";
+    class Controls: Controls {
+        class Title: Title {};
+        class Value: Value {
+            w = QUOTE((ATTRIBUTE_CONTENT_W - 12) * GRID_W);
+        };
+        class Edit: Edit {            
+            x= QUOTE((ATTRIBUTE_TITLE_W + ATTRIBUTE_CONTENT_W - 12) * GRID_W);
+            w= QUOTE(ATTRIBUTE_CONTENT_H*GRID_H*2.1);
+        };
+    };
 };  //just a slider with no special functionality
 
 class GVAR(isBury): Checkbox {

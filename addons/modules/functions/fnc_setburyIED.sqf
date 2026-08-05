@@ -159,9 +159,15 @@ private _fnc_sliderBury = {
     _values params ["_vector", "_start", "_value", "_end", "_configDepth"];
 
     _sliderDepth = sliderPosition _slider;
-    _slider ctrlSetTooltip format [" %1 %2", round (_sliderDepth), "Step"];
+    private _sliderValue = round(_sliderDepth);
+    private _sliderText = if (_sliderValue < 2) then {
+        format [" %1 %2", _sliderValue, "step"]
+    } else {
+        format [" %1 %2", _sliderValue, "steps"]
+    };
+    _slider ctrlSetTooltip _sliderText;
     private _textCtrl = _display displayCtrl 72527;
-    _textCtrl ctrlSetText format [" %1 %2", round (_sliderDepth), "Step"];
+    _textCtrl ctrlSetText _sliderText;
     private _value = _sliderDepth;
     private _vectorUp = vectorUp _dummy;
     private _vectorDir  = vectorDir _dummy;
@@ -214,7 +220,12 @@ _sliderBury sliderSetRange [0, 20];
 _sliderBury sliderSetPosition _valueStart;
 private _sliderDepth = sliderPosition _sliderBury;
 _sliderBury ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderBury];
-_buryEdit ctrlSetText format [" %1 %2", _sliderDepth, "Step"];
+private _sliderText = if (_sliderDepth < 2) then {
+    format [" %1 %2", _sliderDepth, "step"]
+} else {
+    format [" %1 %2", _sliderDepth, "steps"]
+};
+_buryEdit ctrlSetText _sliderText;
 _buryEdit setVariable [QGVAR(values), [_sliderBury, _fnc_sliderBury]];
 _buryEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
 

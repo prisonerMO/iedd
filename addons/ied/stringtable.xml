@@ -182,14 +182,6 @@
                 <Original>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</Original>
                 <English>Adds IEDD Notebook to all players with EOD/Explosive Specialist trait on mission start.</English>
             </Key>
-            <Key ID="STR_iedd_ied_Bury_DisplayName">
-                <Original>Bury</Original>
-                <English>Bury</English>
-            </Key>
-            <Key ID="STR_iedd_ied_Bury_Tooltip">
-                <Original>Set depth for IED.</Original>
-                <English>Set depth for IED.</English>
-            </Key>
             <Key ID="STR_iedd_ied_Category_Items">
                 <Original>Items: Add for EODs/Explosive Specialists</Original>
                 <English>Items: Add for EODs/Explosive Specialists</English>
@@ -277,6 +269,14 @@
             <Key ID="STR_iedd_ied_DefaultVariation_Description">
                 <Original>Set IED variation (if not defined somewhere else).</Original>
                 <English>Set IED variation (if not defined somewhere else).</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Depth_DisplayName">
+                <Original>Depth</Original>
+                <English>Depth</English>
+            </Key>
+            <Key ID="STR_iedd_ied_Depth_Tooltip">
+                <Original>Set depth for IED.</Original>
+                <English>Set depth for IED.</English>
             </Key>
             <Key ID="STR_iedd_ied_DigTime">
                 <Original>Digging time for other units</Original>

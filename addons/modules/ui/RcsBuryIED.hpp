@@ -83,7 +83,7 @@ class GVAR(RcsBuryIED): RscDisplayAttributes {
                         };
                         class GVAR(stepL): GVAR(pitchL) {
                             text = CSTRING(Depth);
-                            tooltip = ECSTRING(ied,Bury_Tooltip);
+                            tooltip = ECSTRING(ied,Depth_Tooltip);
                             y = QUOTE(H_PART(3.3));
                         };
                         class GVAR(stepSlider): GVAR(pitchSlider) {

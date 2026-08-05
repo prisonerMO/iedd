@@ -61,11 +61,11 @@ private _fnc_onFinish = {
 // on failure
 private _fnc_onFailure = {
     (_this select 0) params ["_unit","_helper","_ied"];
-    _helper setVariable [QGVAR(digging), false, true];
+    _helper setVariable [QGVAR(isDigging), false, true];
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
-// condition
+// condition 
 private _fnc_perframeCheck = {
     params ["_args", "_elapsedTime", "_totalTime"];
     _args params ["_unit"];

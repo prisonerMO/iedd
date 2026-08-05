@@ -21,7 +21,12 @@ private _posASL = _input;
 
 if ((_input isEqualType objNull) && {
     _posASL = getPosASL _input;
-    (getPosATL _input) select 2 > 0.05 ||
+    private _getPosATL = getPosATL _input;
+    private _pos = _input modelToWorld [0,0,0];
+    private _worldPos = _pos #2;
+    private _atlPos = _getPosATL #2;
+    _getPosATL set [2, _atlPos-_worldPos];
+    _getPosATL select 2 > 0.05 ||
     {surfaceIsWater _posASL}
 }) exitWith {false};
 

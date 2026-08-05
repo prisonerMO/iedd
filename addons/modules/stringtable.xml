@@ -189,8 +189,8 @@
                 <English>ROLL</English>
             </Key>
             <Key ID="STR_iedd_modules_Rotate_Ied">
-                <Original>Rotate IED</Original>
-                <English>Rotate IED</English>
+                <Original>Rotate IED.</Original>
+                <English>Rotate IED.</English>
             </Key>
             <Key ID="STR_iedd_modules_Yaw">
                 <Original>YAW</Original>
