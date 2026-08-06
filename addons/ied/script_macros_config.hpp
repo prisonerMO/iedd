@@ -247,7 +247,11 @@ class GVAR(ied_SubCategory) {\
             control = QGVAR(isBury);\
             displayName = CSTRING(isBury);\
             tooltip = CSTRING(isBury_Tooltip);\
-            expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);\
+            expression = QUOTE(if (is3DEN) then {\
+                [ARR_2(_this,_value)] call FUNC(bury3DEN);\
+            } else {\
+                _this setVariable [ARR_2('%s',_value)];\
+            });\
             typeName = "BOOL";\
             defaultValue = "(false)";\
         };\

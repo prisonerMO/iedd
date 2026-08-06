@@ -265,7 +265,8 @@ private _fnc_onConfirm = {
     if (isNull _dummy) exitWith {systemChat "Dummy is null";};
     private _vectorUp = vectorUp _dummy;
     private _vectorDir = vectorDir _dummy;
-    deleteVehicle _dummy;    
+    deleteVehicle _dummy;
+    if (_value < 1) exitWith {deleteVehicle _helper};
     _unit attachTo [_helper, [0,0, _end]];    
     _unit setVectorDirAndUp [_vectorDir, _vectorUp];
     _unit setVariable [QEGVAR(ied,isBury),true, true];

@@ -32,6 +32,7 @@ TRACE_1("Bury params:",_bury);
 if (_value < 1) exitWith {
     _ied setPosATL _pos;
     _ied setVectorDirAndUp [_vectorDir,_vectorUp];
+    _ied setVariable [QGVAR(isBury),false,true];
 };
 private _configDepth = getArray (configOf _ied >> "iedd_ied_buryDepth");
 //private _configDepth  = _ied getVariable ["iedd_ied_depth",getArray (configOf _ied >> 'iedd_ied_buryDepth')];
