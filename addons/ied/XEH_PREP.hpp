@@ -4,6 +4,7 @@ PREP(addPFH);
 PREP(barrel);
 PREP(bomb);
 PREP(bucket);
+PREP(bury3DEN);
 PREP(buryIED);
 PREP(buryIED3DEN);
 PREP(canBuryIED);
