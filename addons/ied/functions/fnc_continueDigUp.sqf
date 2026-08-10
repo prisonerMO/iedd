@@ -39,20 +39,14 @@ TRACE_5("Continue Digging IED",_ied,_step,_digTime,_digTimeLeft,_stepTime);
 // Create progress bar
 private _fnc_onFinish = {
     (_this select 0) params ["_unit","_helper","_ied"];
-    if (!isNull _helper) then {
-        detach _ied;
-        deleteVehicle _helper;
-    };
     if (!isNull _ied) then {
         _ied setVariable [QGVAR(isBury),false,true];
-        _pos set [2,0];
-        private _bury = _ied getVariable "iedd_ied_bury";
-        _bury params ["","_relDir","_relUp","","_pos"];
         detach _ied;
-        deleteVehicle _helper;
+        private _bury = _ied getVariable "iedd_ied_bury";
+        _bury params ["","_relDir","_relUp","","_pos"];        
+        _pos set [2,0];
         _ied setPosATL _pos;
-        _ied setVectorDirAndUp [_relDir,_relUp];    
-        _ied setVariable [QGVAR(isBury),false,true];
+        _ied setVectorDirAndUp [_relDir,_relUp];
     };
     //[QGVAR(finished), [_unit, _ied]] call CBA_fnc_globalEvent; //MAYBE TO-DO
     // Reset animation

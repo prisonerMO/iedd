@@ -44,11 +44,11 @@ private _start = _vector/2;
 private _vectorEnd = _vector * (_value / 20);
 private _end = _start - _vectorEnd;
 
-private _helper = "iedd_ied_helper" createVehicle [0,0,0];
+private _helper = QGVAR(helper) createVehicle [0,0,0];
 _helper setPosATL _pos;
 _helper setVectorUp (surfaceNormal getPosASL _helper);
 
-private _ref = "iedd_ied_helper" createVehicle (getPosASL _helper);
+private _ref = QGVAR(helper) createVehicle [0,0,0];
 _ref setPosASL (getPosASL _helper);
 _ref setVectorDirAndUp [_vectorDir, _vectorUp];
 private _relDirUp = [_ref, _helper] call BIS_fnc_vectorDirAndUpRelative;

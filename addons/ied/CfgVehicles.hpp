@@ -14,7 +14,7 @@ class CfgVehicles {
         author = AUTHOR;
         scope = 1;
         scopeCurator = 0;
-        displayName = "IED Helper";
+        displayName = "IED Bury Helper";
         useAction = 0;
         ace_dragging_canDrag = 0;
 		ace_dragging_canCarry = 0;

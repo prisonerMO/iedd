@@ -7,8 +7,11 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 if (isServer) then {
     {
-        [_x, "Deleted", {(_this select 0) call FUNC(deleted)}, true, [], true] call CBA_fnc_addClassEventHandler;
+        [_x, "Deleted", {call FUNC(deleted)}, true, [], true] call CBA_fnc_addClassEventHandler;
+        [_x, "Detached", {call FUNC(detached)}, true, [], true] call CBA_fnc_addClassEventHandler;
     } forEach IEDD_BASE_CLASSES;
+    [QGVAR(helper), "Deleted", {call EFUNC(ied,deleted_helper)}, true, [], true] call CBA_fnc_addClassEventHandler;
+    
     GVAR(bombs) = [];
 };
 
