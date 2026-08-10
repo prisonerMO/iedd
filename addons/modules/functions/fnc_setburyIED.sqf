@@ -78,10 +78,10 @@ private _vector =
     (abs (_vectorDir select 2)) * _sizeY +
     (abs (_vectorUp select 2)) * _sizeZ;
 private _start = _vector / 2;
-private _helper = "iedd_ied_helper" createVehicleLocal _unitPos;
+private _helper = QEGVAR(ied,helper) createVehicle [0,0,0];
 _helper setPosATL _unitPos;
 _helper setVectorUp (surfaceNormal getPosASL _helper);
-private _ref = "iedd_ied_helper" createVehicleLocal (getPosASL _helper);
+private _ref = QEGVAR(ied,helper) createVehicle [0,0,0];
 _ref setPosASL (getPosASL _helper);
 _ref setVectorDirAndUp [_vectorDir, _vectorUp];
 private _relDirUp = [_ref, _helper] call BIS_fnc_vectorDirAndUpRelative;
