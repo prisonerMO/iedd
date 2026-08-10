@@ -4,13 +4,14 @@
  * Handles deleted event. Deletes all attached objects to an entity.
  *
  * Arguments:
- * 0: The entity to delete the attached objects from <OBJECT>
+ * 0: The attached object <OBJECT>
+ * 1: The parent object <OBJECT>
  *
  * Return Value:
  * None
  *
  * Example:
- * [_entity] call iedd_ied_fnc_detached;
+ * [_attachedObj, _parentObj] call iedd_ied_fnc_detached;
  *
  * Public: No
  */
