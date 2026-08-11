@@ -8,17 +8,37 @@ mission="0000_IEDD_NOTEBOOK_TEST.Stratis"
 [dev]
 extends = "default"
 workshop = [
-    "2369477168", # Advanced Developer Tools
-    "3499977893", # 3den Echanted
+    "3499977893", # Advanced Developer Tools
+    "623475643", # 3den Echanted
 ]
 parameters = [ #modify dev launch as you like
     "-name=prisoner", 
     "-hugePages",
     "-noPause",
-    "-malloc=mimalloc_v219_20250213",
+    "-malloc=mimalloc_v219_20260716",
     "-maxFileCacheSize=8192",
     "-setThreadCharacteristics",
     "-limitFPS=144",
 ]
 executable = "arma3profiling_x64"
 #mission = "0001_IEDD_DEV.Stratis" #Need create mission file .hemtt/missions/0001_IEDD_DEV.Stratis/mission.sqm to use.
+
+
+[server]
+workshop = [
+    "450814997", # CBA_A3
+    "463939057", # ace
+]
+parameters = [
+    "-server",
+    "-port=2302",
+    "-config=D:\\arma\\server\\configs\\iedd_dev.cfg",
+    "-profiles=D:\\arma\\server\\profile",
+    "-hugePages",
+    "-noPause",
+    "-malloc=mimalloc_v219_20260716",
+    "-maxFileCacheSize=8192",
+    "-setThreadCharacteristics",
+    "-limitFPS=144",
+]
+executable = "arma3serverprofiling_x64"
