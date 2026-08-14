@@ -32,11 +32,6 @@ class GVAR(Metal):GVAR(Metal_Fake) {
     };
     class ACE_Actions {
         class ACE_MainActions {
-            selection = "";
-            position = "[0,0,0.5]";
-            displayName = "$STR_ace_interaction_MainAction";
-            distance = 2;
-            condition = QUOTE(true);
             class IEDD_DisarmMenu {
                 exceptions[] = {"isNotSwimming"};
                 displayName = CSTRING(Disarm_DisplayName);

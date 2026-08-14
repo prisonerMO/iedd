@@ -35,7 +35,6 @@ if (_value < 1) exitWith {
     _ied setVariable [QGVAR(isBury),false,true];
 };
 private _configDepth = getArray (configOf _ied >> "iedd_ied_buryDepth");
-//private _configDepth  = _ied getVariable ["iedd_ied_depth",getArray (configOf _ied >> 'iedd_ied_buryDepth')];
 _configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
 private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
 private _vector =(abs (_vectorF #2)) * _sizeX +(abs (_vectorDir #2)) * _sizeY +(abs (_vectorUp #2)) * _sizeZ;
@@ -48,7 +47,7 @@ private _helper = QGVAR(helper) createVehicle [0,0,0];
 _helper setPosATL _pos;
 _helper setVectorUp (surfaceNormal getPosASL _helper);
 
-private _ref = QGVAR(helper) createVehicle [0,0,0];
+private _ref = QGVAR(helper) createVehicleLocal [0,0,0];
 _ref setPosASL (getPosASL _helper);
 _ref setVectorDirAndUp [_vectorDir, _vectorUp];
 private _relDirUp = [_ref, _helper] call BIS_fnc_vectorDirAndUpRelative;
@@ -62,3 +61,4 @@ _bury set [3, _vector];
 _bury set [4, _pos];
 TRACE_1("Bury params end:",_bury);
 _ied setVariable [QGVAR(bury),_bury,true];
+_ied setVariable [QGVAR(isBury),true,true];
