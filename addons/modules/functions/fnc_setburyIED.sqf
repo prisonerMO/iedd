@@ -32,45 +32,40 @@ private _message = "No unit selected";
 if (isNull _unit) exitWith {
     deleteVehicle _logic;
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 0;
 };
 
 if !(typeOf _unit in IEDD_CLASSES + IEDD_FAKE_CLASSES) exitWith {
     _message = "Type of unit is not IED";
     deleteVehicle _logic;
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 0;
 };
 
 if (_unit getVariable [QEGVAR(ied,isBury), false]) exitWith {
     _message = "IED is already buried";
     deleteVehicle _logic;
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 0;
 };
 
 if !(_unit call EFUNC(ied,canBuryIED)) exitWith {
     _message = "IED cannot be buried here";
     deleteVehicle _logic;
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
+    _display closeDisplay 0;
     //create red "area" under the object to indicate that it cannot be buried here (on hover? HOW?)
 };
 
 //TO-DO: If buried then make it unburied and reset the position to the original position/ make it modify bury depth and orientation. 
-
-[QEGVAR(ied,hideObject), [_unit, true], ACE_player] call CBA_fnc_targetEvent;
-
+detach _unit;
 private _dir = getDir _unit;
 private _vectorDir = vectorDir _unit;
 private _vectorUp = vectorUp _unit;
 private _unitPos = getPosATL _unit;
-private _type = getModelInfo _unit select 1;
 private _yaw = [getDir _unit] call CBA_fnc_simplifyAngle180;
 (_unit call BIS_fnc_getPitchBank) params ["_pitch", "_roll"];
-
 private _configDepth = getArray (configOf _unit >> "iedd_ied_buryDepth"); // [x,y,z]
-
-private _dummy = createSimpleObject [_type, _unitPos];
-_dummy setDir _dir;
-_dummy setVectorDirAndUp [_vectorDir, _vectorUp];
-_dummy setPosATL _unitPos;
 private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
 _configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
 private _vector =
@@ -78,28 +73,21 @@ private _vector =
     (abs (_vectorDir select 2)) * _sizeY +
     (abs (_vectorUp select 2)) * _sizeZ;
 private _start = _vector / 2;
-private _helper = QEGVAR(ied,helper) createVehicle [0,0,0];
+private _helper = createVehicle [QEGVAR(ied,helper), [0,0,0], [], 0, "CAN_COLLIDE"];
 _helper setPosATL _unitPos;
 _helper setVectorUp (surfaceNormal getPosASL _helper);
-private _ref = QEGVAR(ied,helper) createVehicle [0,0,0];
-_ref setPosASL (getPosASL _helper);
-_ref setVectorDirAndUp [_vectorDir, _vectorUp];
-private _relDirUp = [_ref, _helper] call BIS_fnc_vectorDirAndUpRelative;
-deleteVehicle _ref;
-
+private _relDirUp = [_unit, _helper] call BIS_fnc_vectorDirAndUpRelative;
 private _valueStart = 0;
-private _endStart = _start - (_vector * 0.001);
-
-_dummy attachTo [_helper, [0, 0, _endStart]];
-_dummy setVectorDirAndUp _relDirUp;
-
-
+private _end = _start - (_vector * 0.001);
+[QGVAR(attach),[_unit,_helper,_end]] call CBA_fnc_globalEvent;
+[QGVAR(rotate),[_unit,[_vectorDir,_vectorUp]]] call CBA_fnc_globalEvent;
 private _rollValues = [_pitch, _roll, _yaw];
-private _buryValues = [_vector, _start,_valueStart, _endStart, _configDepth];
+private _buryValues = [_vector, _start,_valueStart, _end, _configDepth];
 _display setVariable [QGVAR(roll), _rollValues];
 _display setVariable [QGVAR(bury), _buryValues];
-_display setVariable [QGVAR(dummy), _dummy];
+_display setVariable [QGVAR(default), [_vectorDir, _vectorUp, _unitPos]];
 _display setVariable [QGVAR(helper), _helper];
+_display setVariable [QGVAR(unit), _unit];
 
 private _sliderPitch = _display displayCtrl 72520;
 private _sliderRoll  = _display displayCtrl 72522;
@@ -114,9 +102,7 @@ private _fnc_sliderRotate = {
     params ["_slider"];
     private _display = ctrlParent _slider;
     if (isNull _display) exitWith {};
-    private _dummy = _display getVariable [QGVAR(dummy), objNull];
-    if(isNull _dummy) exitWith {};
-
+    private _unit = _display getVariable [QGVAR(unit), objNull];
     private _values = _display getVariable [QGVAR(roll), [0,0,0]];
     _values params ["_pitch", "_roll", "_yaw"];
     
@@ -130,8 +116,6 @@ private _fnc_sliderRotate = {
     private _textCtrl = _display displayCtrl (_idc + 1);
     _textCtrl ctrlSetText format [" %1%2", round _pos, "°"];
     _slider ctrlSetTooltip format [" %1%2", round _pos, "°"];
-
-
     // dir/up composed from pitch/roll/yaw
     private _dv = [
         sin(_yaw) * cos(_pitch),
@@ -143,43 +127,41 @@ private _fnc_sliderRotate = {
         ( sin(_roll) * sin(_yaw)) - (cos(_roll) * sin(_pitch) * cos(_yaw)),
         cos(_roll) * cos(_pitch)
     ];    
-    _dummy setVectorDirAndUp [_dv, _uv];
+    private _helper = _display getVariable [QGVAR(helper), objNull];
+    [QGVAR(rotate),[_unit,[_dv, _uv]]] call CBA_fnc_globalEvent;
     _display setVariable [QGVAR(roll), [_pitch, _roll, _yaw]];
 };
 
 private _fnc_sliderBury = {
     params ["_slider"];
     private _display = ctrlParent _slider;
-    if (isNull _display) exitWith {};
-    private _dummy = _display getVariable [QGVAR(dummy), objNull];
     private _helper = _display getVariable [QGVAR(helper), objNull];
-    if (isNull _dummy || isNull _helper) exitWith {};
     private _values = _display getVariable [QGVAR(bury), []];
-    if (_values isEqualTo []) exitWith {};
+    private _unit = _display getVariable [QGVAR(unit), objNull];
     _values params ["_vector", "_start", "_value", "_end", "_configDepth"];
-
-    _sliderDepth = sliderPosition _slider;
-    private _sliderValue = round(_sliderDepth);
-    private _sliderText = if (_sliderValue < 2) then {
-        format [" %1 %2", _sliderValue, "step"]
+    private _currentValue = round(sliderPosition _slider);
+    if (_currentValue == _value) exitWith {};
+    _value = _currentValue;
+    private _sliderText = if (_value < 2) then {
+        format [" %1 %2", _value, "step"]
     } else {
-        format [" %1 %2", _sliderValue, "steps"]
+        format [" %1 %2", _value, "steps"]
     };
     _slider ctrlSetTooltip _sliderText;
     private _textCtrl = _display displayCtrl 72527;
     _textCtrl ctrlSetText _sliderText;
-    private _value = _sliderDepth;
-    private _vectorUp = vectorUp _dummy;
-    private _vectorDir  = vectorDir _dummy;
+
+    private _vectorUp = vectorUp _unit;
+    private _vectorDir  = vectorDir _unit;
     private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
     _configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
     private _vector =
-    (abs (_vectorF select 2)) * _sizeX +
-    (abs (_vectorDir select 2)) * _sizeY +
-    (abs (_vectorUp select 2)) * _sizeZ;
+        (abs (_vectorF select 2)) * _sizeX +
+        (abs (_vectorDir select 2)) * _sizeY +
+        (abs (_vectorUp select 2)) * _sizeZ;
     private _vectorEnd = _vector * (_value / 20);
     private _end = _start - _vectorEnd;
-    _dummy attachTo [_helper, [0, 0, _end]]; 
+    [QGVAR(attach),[_unit,_helper,_end]] call CBA_fnc_globalEvent;
     _display setVariable [QGVAR(bury), [_vector, _start, _value, _end, _configDepth]];
 };
 
@@ -230,47 +212,49 @@ _buryEdit setVariable [QGVAR(values), [_sliderBury, _fnc_sliderBury]];
 _buryEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
 
 private _fnc_onUnload = {
+    params ["_display", "_exitCode"];
     private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
-    private _unit = attachedTo _logic;
-    if (isNull _unit) exitWith {};
-    private _display = _this select 0;
-    private _dummy = _display getVariable [QGVAR(dummy), objNull];
+    private _unit = _display getVariable [QGVAR(unit), objNull];
     private _helper = _display getVariable [QGVAR(helper), objNull];
-    if !(isNull _dummy) then { deleteVehicle _dummy };
-    if !(isNull _helper) then { 
-        if (attachedObjects _helper select 0 != _unit) then {
+    private _bury = _display getVariable [QGVAR(bury), []];
+    _bury params ["_vector", "_start", "_value", "_end", "_configDepth"];
+    if (_value < 1) then {
+        if !(isNull _helper) then {
             deleteVehicle _helper;
         };
+        private _default = _display getVariable [QGVAR(default), []];
+        _default params ["_vectorDir", "_vectorUp", "_unitPos"];
+        _unit setPosATL _unitPos;
+        _unit setVectorDirAndUp [_vectorDir, _vectorUp];
     };
-    if (isNull _logic) exitWith {};
-    deleteVehicle _logic;
-    [QEGVAR(ied,hideObject), [_unit, false], ACE_player] call CBA_fnc_targetEvent;
+    if (isNull _logic) then {
+        deleteVehicle _logic;
+    };
 };
 
 private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
 	private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
-    if (isNull _logic) exitWith {systemChat "Logic is null";};
+    if (!isNull _logic) then {
+        deleteVehicle _logic;
+    };
     private _display = ctrlParent _ctrlButtonOK;
-    if (isNull _display) exitWith {systemChat "Display is null";};
-    private _unit = attachedTo _logic;
-    if (isNull _unit) exitWith {systemChat "Unit is null";};
+    if (isNull _display) exitWith {};
+    private _unit = _display getVariable [QGVAR(unit), objNull];
+    if (isNull _unit) exitWith {};
     private _values = _display getVariable [QGVAR(bury), []];
-    if (_values isEqualTo []) exitWith {deleteVehicle _logic; systemChat "No values found";};
+    if (_values isEqualTo []) exitWith {};
     _values params ["_vector", "_start", "_value", "_end", "_configDepth"];
     TRACE_5("Modules: Bury IED:" _vector,_start,_value,_end,_configDepth,_unit);
-    private _dummy = _display getVariable [QGVAR(dummy), objNull];
     private _helper = _display getVariable [QGVAR(helper), objNull];
-    if (isNull _helper) exitWith {systemChat "Helper is null";};
-    if (isNull _dummy) exitWith {systemChat "Dummy is null";};
-    private _vectorUp = vectorUp _dummy;
-    private _vectorDir = vectorDir _dummy;
-    deleteVehicle _dummy;
-    if (_value < 1) exitWith {deleteVehicle _helper};
-    _unit attachTo [_helper, [0,0, _end]];    
-    _unit setVectorDirAndUp [_vectorDir, _vectorUp];
+    if (isNull _helper) exitWith {};
+    if (_value < 1) exitWith {};
+    private _vectorUp = vectorUp _unit;
+    private _vectorDir = vectorDir _unit;
+    private _unitPos = getPosATL _unit;
+    _unitPos set [2, 0];
     _unit setVariable [QEGVAR(ied,isBury),true, true];
-    _unit setVariable [QEGVAR(ied,bury),[_value, _vectorDir, _vectorUp, _vector], true];
+    _unit setVariable [QEGVAR(ied,bury),[_value, _vectorDir, _vectorUp, _vector,_unitPos], true];
 };
 
 private _fnc_onCancel = {

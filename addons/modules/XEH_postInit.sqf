@@ -58,10 +58,12 @@
 	[QEGVAR(ied,explosion), [_object]] call CBA_fnc_serverEvent;
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(rotate), {
+    params ["_unit", "_vectorDirUp"];
+    _unit setVectorDirAndUp _vectorDirUp;
+}] call CBA_fnc_addEventHandler;
 
-//Test for Bury
-[QGVAR(setRotation), {
-    params ["_object", "_pitch", "_roll", "_yaw"];
-    _object setDir _yaw;
-    [_object, _pitch, _roll] call BIS_fnc_setPitchBank;
+[QGVAR(attach), {
+    params ["_unit", "_helper", "_end"];
+    _unit attachTo [_helper, [0, 0, _end]];
 }] call CBA_fnc_addEventHandler;
