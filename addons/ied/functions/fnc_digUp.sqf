@@ -26,10 +26,10 @@ params [
     ["_stepTime",1]
 ];
 TRACE_1("fnc_digUp",_this);
-if (!alive _unit) exitWith {"systemChat 'Unit is dead'";};
-if (isNull _ied) exitWith {"systemChat 'Object is null'";};
-if (isNull _helper) exitWith {"systemChat 'Helper is null'";};
-if !(_helper getVariable [QGVAR(isDigging),false]) exitWith {"systemChat 'someone stopped digging'";};
+if (!alive _unit) exitWith {};
+if (isNull _ied) exitWith {};
+if (isNull _helper) exitWith {};
+if !(_helper getVariable [QGVAR(isDigging),false]) exitWith {};
 if (_step < 1) exitWith {};
 _step = _step - 1;
 private _start = _vector/2;
