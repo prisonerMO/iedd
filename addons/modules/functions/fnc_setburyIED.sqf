@@ -64,6 +64,8 @@ private _dir = getDir _unit;
 private _vectorDir = vectorDir _unit;
 private _vectorUp = vectorUp _unit;
 private _unitPos = getPosATL _unit;
+_unitPos set [2, 0];
+private _worldPos = _unit modelToWorld [0,0,0];
 private _yaw = [getDir _unit] call CBA_fnc_simplifyAngle180;
 (_unit call BIS_fnc_getPitchBank) params ["_pitch", "_roll"];
 private _configDepth = getArray (configOf _unit >> "iedd_ied_buryDepth"); // [x,y,z]
@@ -78,14 +80,14 @@ private _helper = createVehicle [QEGVAR(ied,helper), [0,0,0], [], 0, "CAN_COLLID
 _helper setPosATL _unitPos;
 _helper setVectorUp (surfaceNormal getPosASL _helper);
 private _relDirUp = [_unit, _helper] call BIS_fnc_vectorDirAndUpRelative;
-private _end = _start - (_vector * 0.001);
+private _end = _start;
 [QGVAR(attach),[_unit,_helper,_end],[_unit,_helper]] call CBA_fnc_targetEvent;
 [QGVAR(rotate),[_unit,[_vectorDir,_vectorUp]],[_unit]] call CBA_fnc_targetEvent;
 private _rollValues = [_pitch, _roll, _yaw];
 private _buryValues = [0, _vector];
 _display setVariable [QGVAR(roll), _rollValues];
 _display setVariable [QGVAR(values), _buryValues];
-_display setVariable [QGVAR(default), [_vectorDir, _vectorUp, _unitPos]];
+_display setVariable [QGVAR(default), [_vectorDir, _vectorUp, _worldPos]];
 _display setVariable [QGVAR(helper), _helper];
 _display setVariable [QGVAR(unit), _unit];
 
@@ -224,9 +226,9 @@ private _fnc_onUnload = {
         private _unit = _display getVariable [QGVAR(unit), objNull];
         if !(isNull _unit) then {
             private _default = _display getVariable [QGVAR(default), []];
-            _default params ["_vectorDir", "_vectorUp", "_unitPos"];
+            _default params ["_vectorDir", "_vectorUp", "_worldPos"];
             detach _unit;
-            _unit setPosATL _unitPos;
+            _unit setPosWorld _worldPos;
             _unit setVectorDirAndUp [_vectorDir, _vectorUp];
         };
     };
@@ -248,7 +250,10 @@ private _fnc_onConfirm = {
     _values params ["_value", "_vector"];
     private _helper = _display getVariable [QGVAR(helper), objNull];
     if (isNull _helper) exitWith {};
-    if (_value < 1) exitWith {deleteVehicle _helper;};
+    if (_value < 1) exitWith {
+        detach _unit;
+        _unit setPosWorld (_unit modelToWorld [0,0,0]);    
+    };
     private _vectorUp = vectorUp _unit;
     private _vectorDir = vectorDir _unit;
     private _unitPos = getPosATL _unit;
@@ -257,25 +262,5 @@ private _fnc_onConfirm = {
     _unit setVariable [QEGVAR(ied,bury),[_value, _vectorDir, _vectorUp, _vector,_unitPos], true];
 };
 
-private _fnc_onCancel = {
-    params [["_ctrlButtonCancel", controlNull, [controlNull]]];
-    // private _display = ctrlParent _ctrlButtonCancel;
-    // if (isNull _display) exitWith {};
-    // // private _helper = _display getVariable [QGVAR(helper), objNull];
-    // // // if !(isNull _helper) then {
-    // // //     deleteVehicle _helper;
-    // // // };
-    // private _unit = _display getVariable [QGVAR(unit), objNull];
-    // if !(isNull _unit) then {
-    //     private _default = _display getVariable [QGVAR(default), []];
-    //     _default params ["_vectorDir", "_vectorUp", "_unitPos"];        
-    //     detach _unit;
-    //     _unit setPosATL _unitPos;
-    //     _unit setVectorDirAndUp [_vectorDir, _vectorUp];
-    // };
-
-};
-
 _display displayAddEventHandler ["Unload", _fnc_onUnload];
 _ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
-_ctrlButtonCancel ctrlAddEventHandler ["ButtonClick", _fnc_onCancel];
