@@ -25,7 +25,6 @@ _control ctrlRemoveAllEventHandlers "SetFocus";
 
 private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
 if !(local _logic) exitWith {};
-_display setVariable [QGVAR(logic), _logic];
 
 private _unit = attachedTo _logic;
 private _message = "No unit selected";
@@ -59,7 +58,6 @@ if !(_unit call EFUNC(ied,canBuryIED)) exitWith {
 };
 
 //TO-DO: If buried then make it unburied and reset the position to the original position/ make it modify bury depth and orientation. 
-detach _unit;
 private _dir = getDir _unit;
 private _vectorDir = vectorDir _unit;
 private _vectorUp = vectorUp _unit;
@@ -218,7 +216,7 @@ _buryEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
 private _fnc_onUnload = {
     params ["_display", "_exitCode"];
     systemChat format ["Modules: Bury IED: Unload display with exit code %1", _exitCode];
-    private _logic = _display getVariable [QGVAR(logic), objNull];
+    private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
     if (!isNull _logic) then {
         deleteVehicle _logic;
     };
@@ -238,10 +236,10 @@ private _fnc_onUnload = {
 
 private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
-	// private _logic = _display getVariable [QGVAR(logic), objNull];
-    // if (!isNull _logic) then {
-    //     deleteVehicle _logic;
-    // };
+	private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
+    if (!isNull _logic) then {
+        deleteVehicle _logic;
+    };
     private _display = ctrlParent _ctrlButtonOK;
     if (isNull _display) exitWith {};
     private _unit = _display getVariable [QGVAR(unit), objNull];
