@@ -19,8 +19,6 @@ params ["_control"];
 TRACE_1("fnc_buryIED",_this);
 //TO-DO _this call iedd_modules_fnc_DisplayInit; --> To fix position of the display
 private _display = ctrlParent _control;
-private _ctrlButtonOK = _display displayCtrl 1; // IDC_OK
-private _ctrlButtonCancel = _display displayCtrl 2; // IDC_CANCEL
 _control ctrlRemoveAllEventHandlers "SetFocus";
 
 private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
@@ -57,7 +55,12 @@ if !(_unit call EFUNC(ied,canBuryIED)) exitWith {
     //create red "area" under the object to indicate that it cannot be buried here (on hover? HOW?)
 };
 
-//TO-DO: If buried then make it unburied and reset the position to the original position/ make it modify bury depth and orientation. 
+//TO-DO: If buried then make it unburied and reset the position to the original position/ make it modify bury depth and orientation.
+[_unit, _display] spawn {
+    params ["_unit", "_display"];
+    sleep 0.1;
+private _ctrlButtonOK = _display displayCtrl 1; // IDC_OK
+private _ctrlButtonCancel = _display displayCtrl 2; // IDC_CANCEL
 private _dir = getDir _unit;
 private _vectorDir = vectorDir _unit;
 private _vectorUp = vectorUp _unit;
@@ -74,6 +77,7 @@ private _vector =
     (abs (_vectorDir select 2)) * _sizeY +
     (abs (_vectorUp select 2)) * _sizeZ;
 private _start = _vector / 2;
+sleep 0.1;
 private _helper = createVehicle [QEGVAR(ied,helper), [0,0,0], [], 0, "CAN_COLLIDE"];
 _helper setPosATL _unitPos;
 _helper setVectorUp (surfaceNormal getPosASL _helper);
@@ -88,7 +92,7 @@ _display setVariable [QGVAR(values), _buryValues];
 _display setVariable [QGVAR(default), [_vectorDir, _vectorUp, _worldPos]];
 _display setVariable [QGVAR(helper), _helper];
 _display setVariable [QGVAR(unit), _unit];
-
+sleep 0.1;
 private _sliderPitch = _display displayCtrl 72520;
 private _sliderRoll  = _display displayCtrl 72522;
 private _sliderYaw   = _display displayCtrl 72524;
@@ -183,7 +187,7 @@ private _fnc_editControl = {
     _value = sliderPosition _ctrlSlider;
     _ctrlSlider call _fnc_slider;
 };
-
+sleep 0.1;
 _sliderPitch sliderSetPosition _pitch;
 _pitchEdit ctrlSetText format [" %1°", round _pitch];
 _pitchEdit setVariable [QGVAR(values), [_sliderPitch, _fnc_sliderRotate]];
@@ -262,3 +266,4 @@ private _fnc_onConfirm = {
 
 _display displayAddEventHandler ["Unload", _fnc_onUnload];
 _ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
+}
