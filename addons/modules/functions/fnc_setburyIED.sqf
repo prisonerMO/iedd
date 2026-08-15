@@ -220,10 +220,6 @@ _buryEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
 private _fnc_onUnload = {
     params ["_display", "_exitCode"];
     systemChat format ["Modules: Bury IED: Unload display with exit code %1", _exitCode];
-    private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
-    if (!isNull _logic) then {
-        deleteVehicle _logic;
-    };
     if (_exitCode isEqualTo 2) then {
         private _unit = _display getVariable [QGVAR(unit), objNull];
         if !(isNull _unit) then {
@@ -234,6 +230,10 @@ private _fnc_onUnload = {
             _unit setVectorDirAndUp [_vectorDir, _vectorUp];
         };
     };
+    private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
+    if (!isNull _logic) then {
+        deleteVehicle _logic;
+    };
 
     
 };
@@ -241,9 +241,7 @@ private _fnc_onUnload = {
 private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
 	private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
-    if (!isNull _logic) then {
-        deleteVehicle _logic;
-    };
+    if (!isNull _logic) exitWith {};
     private _display = ctrlParent _ctrlButtonOK;
     if (isNull _display) exitWith {};
     private _unit = _display getVariable [QGVAR(unit), objNull];
