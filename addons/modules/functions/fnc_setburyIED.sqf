@@ -56,11 +56,6 @@ if !(_unit call EFUNC(ied,canBuryIED)) exitWith {
 };
 
 //TO-DO: If buried then make it unburied and reset the position to the original position/ make it modify bury depth and orientation.
-[_unit, _display] spawn {
-    params ["_unit", "_display"];
-    sleep 0.1;
-private _ctrlButtonOK = _display displayCtrl 1; // IDC_OK
-private _ctrlButtonCancel = _display displayCtrl 2; // IDC_CANCEL
 private _dir = getDir _unit;
 private _vectorDir = vectorDir _unit;
 private _vectorUp = vectorUp _unit;
@@ -77,7 +72,6 @@ private _vector =
     (abs (_vectorDir select 2)) * _sizeY +
     (abs (_vectorUp select 2)) * _sizeZ;
 private _start = _vector / 2;
-sleep 0.1;
 private _helper = createVehicle [QEGVAR(ied,helper), [0,0,0], [], 0, "CAN_COLLIDE"];
 _helper setPosATL _unitPos;
 _helper setVectorUp (surfaceNormal getPosASL _helper);
@@ -92,176 +86,193 @@ _display setVariable [QGVAR(values), _buryValues];
 _display setVariable [QGVAR(default), [_vectorDir, _vectorUp, _worldPos]];
 _display setVariable [QGVAR(helper), _helper];
 _display setVariable [QGVAR(unit), _unit];
-sleep 0.1;
-private _sliderPitch = _display displayCtrl 72520;
-private _sliderRoll  = _display displayCtrl 72522;
-private _sliderYaw   = _display displayCtrl 72524;
-private _sliderBury  = _display displayCtrl 72526;
-private _pitchEdit = _display displayCtrl 72521;
-private _rollEdit  = _display displayCtrl 72523;
-private _yawEdit   = _display displayCtrl 72525;
-private _buryEdit  = _display displayCtrl 72527;
 
-private _fnc_sliderRotate = {
-    params ["_slider"];
-    private _display = ctrlParent _slider;
-    if (isNull _display) exitWith {};
-    private _unit = _display getVariable [QGVAR(unit), objNull];
-    private _values = _display getVariable [QGVAR(roll), [0,0,0]];
-    _values params ["_pitch", "_roll", "_yaw"];
-    
-    private _pos = sliderPosition _slider;
-    private _idc = ctrlIDC _slider;
-    switch (_idc) do {
-        case 72520: { _pitch = _pos; };
-        case 72522: { _roll  = _pos; };
-        case 72524: { _yaw   = _pos; };
-    };
-    private _textCtrl = _display displayCtrl (_idc + 1);
-    _textCtrl ctrlSetText format [" %1%2", round _pos, "°"];
-    _slider ctrlSetTooltip format [" %1%2", round _pos, "°"];
-    // dir/up composed from pitch/roll/yaw
-    private _dv = [
-        sin(_yaw) * cos(_pitch),
-        cos(_yaw) * cos(_pitch),
-        sin(_pitch)
-    ];
-    private _uv = [
-        (-sin(_roll) * cos(_yaw)) - (cos(_roll) * sin(_pitch) * sin(_yaw)),
-        ( sin(_roll) * sin(_yaw)) - (cos(_roll) * sin(_pitch) * cos(_yaw)),
-        cos(_roll) * cos(_pitch)
-    ];    
-    private _helper = _display getVariable [QGVAR(helper), objNull];
-    [QGVAR(rotate),[_unit,[_dv, _uv]],[_unit]] call CBA_fnc_targetEvent;
-    _display setVariable [QGVAR(roll), [_pitch, _roll, _yaw]];
-};
+[{
+    params ["_display"];
+    private _ctrlButtonOK = _display displayCtrl 1; // IDC_OK
+    private _ctrlButtonCancel = _display displayCtrl 2; // IDC_CANCEL
+    private _sliderPitch = _display displayCtrl 72520;
+    private _sliderRoll  = _display displayCtrl 72522;
+    private _sliderYaw   = _display displayCtrl 72524;
+    private _sliderBury  = _display displayCtrl 72526;
+    private _pitchEdit = _display displayCtrl 72521;
+    private _rollEdit  = _display displayCtrl 72523;
+    private _yawEdit   = _display displayCtrl 72525;
+    private _buryEdit  = _display displayCtrl 72527;
+    private _rollValues = _display getVariable [QGVAR(roll), [0,0,0]];
+    _rollValues params ["_pitch", "_roll", "_yaw"];
 
-private _fnc_sliderBury = {
-    params ["_slider"];
-    private _display = ctrlParent _slider;
-    private _values = _display getVariable [QGVAR(values), [0,0]];
-    _values params ["_value", "_vector"];
-    private _currentValue = round(sliderPosition _slider);
-    if (_currentValue == _value) exitWith {};    
-    private _helper = _display getVariable [QGVAR(helper), objNull];
-    private _unit = _display getVariable [QGVAR(unit), objNull];
-    _value = _currentValue;
-    private _sliderText = if (_value < 2) then {
-        format [" %1 %2", _value, "step"]
-    } else {
-        format [" %1 %2", _value, "steps"]
-    };
-    _slider ctrlSetTooltip _sliderText;
-    private _textCtrl = _display displayCtrl 72527;
-    _textCtrl ctrlSetText _sliderText;
-
-    private _vectorUp = vectorUp _unit;
-    private _vectorDir  = vectorDir _unit;
-    private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
-    private _configDepth = getArray (configOf _unit >> "iedd_ied_buryDepth"); 
-    _configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
-    private _vector =
-        (abs (_vectorF select 2)) * _sizeX +
-        (abs (_vectorDir select 2)) * _sizeY +
-        (abs (_vectorUp select 2)) * _sizeZ;
-    private _vectorEnd = _vector * (_value / 20);
-    private _start = _vector/2;
-    private _end = _start - _vectorEnd;
-    [QGVAR(attach),[_unit,_helper,_end],[_unit,_helper]] call CBA_fnc_targetEvent;
-    _display setVariable [QGVAR(values), [_value, _vector]];
-};
-
-{
-    _x sliderSetSpeed [45,1];
-    _x sliderSetRange [-180, 180];
-    _x ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderRotate];
-} forEach [_sliderPitch, _sliderRoll, _sliderYaw];
-
-private _fnc_editControl = {
-    params ["_ctrlEdit"];
-    private _values = _ctrlEdit getVariable [QGVAR(values), []];
-    if (_values isEqualTo []) exitWith {};
-    _values params ["_ctrlSlider", "_fnc_slider"];
-    private _value = parseNumber (ctrlText _ctrlEdit);
-    _ctrlSlider sliderSetPosition _value;
-    _value = sliderPosition _ctrlSlider;
-    _ctrlSlider call _fnc_slider;
-};
-sleep 0.1;
-_sliderPitch sliderSetPosition _pitch;
-_pitchEdit ctrlSetText format [" %1°", round _pitch];
-_pitchEdit setVariable [QGVAR(values), [_sliderPitch, _fnc_sliderRotate]];
-_pitchEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
-
-_sliderRoll sliderSetPosition _roll;
-_rollEdit ctrlSetText format [" %1°", round _roll];
-_rollEdit setVariable [QGVAR(values), [_sliderRoll, _fnc_sliderRotate]];
-_rollEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
-
-_sliderYaw sliderSetPosition _yaw;
-_yawEdit ctrlSetText format [" %1°", round _yaw];
-_yawEdit setVariable [QGVAR(values), [_sliderYaw, _fnc_sliderRotate]];
-_yawEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
-
-_sliderBury sliderSetSpeed [1,1];
-_sliderBury sliderSetRange [0, 20];
-_sliderBury sliderSetPosition 0;
-private _sliderDepth = sliderPosition _sliderBury;
-_sliderBury ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderBury];
-private _sliderText = if (_sliderDepth < 2) then {
-    format [" %1 %2", _sliderDepth, "step"]
-} else {
-    format [" %1 %2", _sliderDepth, "steps"]
-};
-_buryEdit ctrlSetText _sliderText;
-_buryEdit setVariable [QGVAR(values), [_sliderBury, _fnc_sliderBury]];
-_buryEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
-
-private _fnc_onUnload = {
-    params ["_display", "_exitCode"];
-    systemChat format ["Modules: Bury IED: Unload display with exit code %1", _exitCode];
-    if (_exitCode isEqualTo 2) then {
+    private _fnc_sliderRotate = {
+        params ["_slider"];
+        diag_log format ["Slider Rotate: %1 Slider Position: %2", _slider, sliderPosition _slider];
+        private _display = ctrlParent _slider;
+        if (isNull _display) exitWith {};
         private _unit = _display getVariable [QGVAR(unit), objNull];
-        if !(isNull _unit) then {
-            private _default = _display getVariable [QGVAR(default), []];
-            _default params ["_vectorDir", "_vectorUp", "_worldPos"];
-            detach _unit;
-            _unit setPosWorld _worldPos;
-            _unit setVectorDirAndUp [_vectorDir, _vectorUp];
+        private _values = _display getVariable [QGVAR(roll), [0,0,0]];
+        _values params ["_pitch", "_roll", "_yaw"];
+        
+        private _pos = sliderPosition _slider;
+        private _idc = ctrlIDC _slider;
+        switch (_idc) do {
+            case 72520: { _pitch = _pos; };
+            case 72522: { _roll  = _pos; };
+            case 72524: { _yaw   = _pos; };
         };
-    };
-    private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
-    if (!isNull _logic) then {
-        deleteVehicle _logic;
+        private _textCtrl = _display displayCtrl (_idc + 1);
+        _textCtrl ctrlSetText format [" %1%2", round _pos, "°"];
+        _slider ctrlSetTooltip format [" %1%2", round _pos, "°"];
+        // dir/up composed from pitch/roll/yaw
+        private _dv = [
+            sin(_yaw) * cos(_pitch),
+            cos(_yaw) * cos(_pitch),
+            sin(_pitch)
+        ];
+        private _uv = [
+            (-sin(_roll) * cos(_yaw)) - (cos(_roll) * sin(_pitch) * sin(_yaw)),
+            ( sin(_roll) * sin(_yaw)) - (cos(_roll) * sin(_pitch) * cos(_yaw)),
+            cos(_roll) * cos(_pitch)
+        ];    
+        private _helper = _display getVariable [QGVAR(helper), objNull];
+        [QGVAR(rotate),[_unit,[_dv, _uv]],[_unit]] call CBA_fnc_targetEvent;
+        _display setVariable [QGVAR(roll), [_pitch, _roll, _yaw]];
     };
 
-    
-};
+    private _fnc_sliderBury = {
+        params ["_slider"];
+        diag_log format ["Slider Bury: %1 Slider Position: %2", _slider, sliderPosition _slider];
+        private _display = ctrlParent _slider;
+        private _values = _display getVariable [QGVAR(values), [0,0]];
+        _values params ["_value", "_vector"];
+        private _currentValue = round(sliderPosition _slider);
+        if (_currentValue == _value) exitWith {};    
+        private _helper = _display getVariable [QGVAR(helper), objNull];
+        private _unit = _display getVariable [QGVAR(unit), objNull];
+        _value = _currentValue;
+        private _sliderText = if (_value < 2) then {
+            format [" %1 %2", _value, "step"]
+        } else {
+            format [" %1 %2", _value, "steps"]
+        };
+        _slider ctrlSetTooltip _sliderText;
+        private _textCtrl = _display displayCtrl 72527;
+        _textCtrl ctrlSetText _sliderText;
 
-private _fnc_onConfirm = {
-    params [["_ctrlButtonOK", controlNull, [controlNull]]];
-	private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
-    if (!isNull _logic) exitWith {};
-    private _display = ctrlParent _ctrlButtonOK;
-    if (isNull _display) exitWith {};
-    private _unit = _display getVariable [QGVAR(unit), objNull];
-    if (isNull _unit) exitWith {};
-    private _values = _display getVariable [QGVAR(values), [0,0]];
-    _values params ["_value", "_vector"];
-    private _helper = _display getVariable [QGVAR(helper), objNull];
-    if (isNull _helper) exitWith {};
-    if (_value < 1) exitWith {
-        detach _unit;
-        _unit setPosWorld (_unit modelToWorld [0,0,0]);    
+        private _vectorUp = vectorUp _unit;
+        private _vectorDir  = vectorDir _unit;
+        private _vectorF = _vectorDir vectorCrossProduct _vectorUp;
+        private _configDepth = getArray (configOf _unit >> "iedd_ied_buryDepth"); 
+        _configDepth params ["_sizeX", "_sizeY", "_sizeZ"];
+        private _vector =
+            (abs (_vectorF select 2)) * _sizeX +
+            (abs (_vectorDir select 2)) * _sizeY +
+            (abs (_vectorUp select 2)) * _sizeZ;
+        private _vectorEnd = _vector * (_value / 20);
+        private _start = _vector/2;
+        private _end = _start - _vectorEnd;
+        [QGVAR(attach),[_unit,_helper,_end],[_unit,_helper]] call CBA_fnc_targetEvent;
+        _display setVariable [QGVAR(values), [_value, _vector]];
     };
-    private _vectorUp = vectorUp _unit;
-    private _vectorDir = vectorDir _unit;
-    private _unitPos = getPosATL _unit;
-    _unitPos set [2, 0];
-    _unit setVariable [QEGVAR(ied,isBury),true, true];
-    _unit setVariable [QEGVAR(ied,bury),[_value, _vectorDir, _vectorUp, _vector,_unitPos], true];
-};
 
-_display displayAddEventHandler ["Unload", _fnc_onUnload];
-_ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
-}
+
+    private _fnc_editControl = {
+        params ["_ctrlEdit"];
+        private _values = _ctrlEdit getVariable [QGVAR(values), []];
+        if (_values isEqualTo []) exitWith {};
+        _values params ["_ctrlSlider", "_fnc_slider"];
+        private _value = parseNumber (ctrlText _ctrlEdit);
+        _ctrlSlider sliderSetPosition _value;
+        _value = sliderPosition _ctrlSlider;
+        _ctrlSlider call _fnc_slider;
+    };
+
+    _sliderPitch sliderSetPosition _pitch;
+    _pitchEdit ctrlSetText format [" %1°", round _pitch];
+    _pitchEdit setVariable [QGVAR(values), [_sliderPitch, _fnc_sliderRotate]];
+    _pitchEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
+
+    _sliderRoll sliderSetPosition _roll;
+    _rollEdit ctrlSetText format [" %1°", round _roll];
+    _rollEdit setVariable [QGVAR(values), [_sliderRoll, _fnc_sliderRotate]];
+    _rollEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
+
+    _sliderYaw sliderSetPosition _yaw;
+    _yawEdit ctrlSetText format [" %1°", round _yaw];
+    _yawEdit setVariable [QGVAR(values), [_sliderYaw, _fnc_sliderRotate]];
+    _yawEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
+
+    _sliderBury sliderSetSpeed [1,1];
+    _sliderBury sliderSetRange [0, 20];
+    _sliderBury sliderSetPosition 0;
+    private _sliderDepth = sliderPosition _sliderBury;
+    _sliderBury ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderBury];
+    private _sliderText = if (_sliderDepth < 2) then {
+        format [" %1 %2", _sliderDepth, "step"]
+    } else {
+        format [" %1 %2", _sliderDepth, "steps"]
+    };
+
+    _buryEdit ctrlSetText _sliderText;
+    _buryEdit setVariable [QGVAR(values), [_sliderBury, _fnc_sliderBury]];
+    _buryEdit ctrlAddEventHandler ["KeyUp", _fnc_editControl];
+
+    {
+        _x sliderSetSpeed [45,1];
+        _x sliderSetRange [-180, 180];
+        _x ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderRotate];
+    } forEach [_sliderPitch, _sliderRoll, _sliderYaw];
+
+    private _fnc_onUnload = {
+        params ["_display", "_exitCode"];
+        systemChat format ["Modules: Bury IED: Unload display with exit code %1", _exitCode];
+
+        [{
+            params ["_display", "_exitCode"];
+            diag_log format ["Modules: Bury IED: Unload display with exit code %1, LOGIC: %2", _exitCode, missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull]];
+            if (_exitCode isEqualTo 2) then {
+            private _unit = _display getVariable [QGVAR(unit), objNull];
+            if !(isNull _unit) then {
+                private _default = _display getVariable [QGVAR(default), []];
+                _default params ["_vectorDir", "_vectorUp", "_worldPos"];
+                detach _unit;
+                _unit setPosWorld _worldPos;
+                _unit setVectorDirAndUp [_vectorDir, _vectorUp];
+            };
+            private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
+            if (!isNull _logic) then {
+                deleteVehicle _logic;
+            };
+        };
+        },_this] call CBA_fnc_execNextFrame;
+
+    };
+
+    private _fnc_onConfirm = {
+        params [["_ctrlButtonOK", controlNull, [controlNull]]];
+        private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
+        if (isNull _logic) then {
+            deleteVehicle _logic;
+        };
+        private _display = ctrlParent _ctrlButtonOK;
+        if (isNull _display) exitWith {};
+        private _unit = _display getVariable [QGVAR(unit), objNull];
+        if (isNull _unit) exitWith {};
+        private _values = _display getVariable [QGVAR(values), [0,0]];
+        _values params ["_value", "_vector"];
+        private _helper = _display getVariable [QGVAR(helper), objNull];
+        if (isNull _helper) exitWith {};
+        if (_value < 1) exitWith {
+            detach _unit;
+            _unit setPosWorld (_unit modelToWorld [0,0,0]);    
+        };
+        private _vectorUp = vectorUp _unit;
+        private _vectorDir = vectorDir _unit;
+        private _unitPos = getPosATL _unit;
+        _unitPos set [2, 0];
+        _unit setVariable [QEGVAR(ied,isBury),true, true];
+        _unit setVariable [QEGVAR(ied,bury),[_value, _vectorDir, _vectorUp, _vector,_unitPos], true];
+    };
+
+    _display displayAddEventHandler ["Unload", _fnc_onUnload];
+    _ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
+},[_display], 0.5] call CBA_fnc_waitAndExecute;
+
