@@ -54,6 +54,10 @@ if !(_unit call EFUNC(ied,canBuryIED)) exitWith {
     _display closeDisplay 0;
     //create red "area" under the object to indicate that it cannot be buried here (on hover? HOW?)
 };
+if (ace_player getVariable [QGVAR(RcsBuryIED), false]) exitWith {
+    _display closeDisplay 0;
+};
+ace_player setVariable [QGVAR(RcsBuryIED), true];
 
 //TO-DO: If buried then make it unburied and reset the position to the original position/ make it modify bury depth and orientation.
 private _dir = getDir _unit;
@@ -83,7 +87,7 @@ private _rollValues = [_pitch, _roll, _yaw];
 private _buryValues = [0, _vector];
 _display setVariable [QGVAR(roll), _rollValues];
 _display setVariable [QGVAR(values), _buryValues];
-_display setVariable [QGVAR(default), [_vectorDir, _vectorUp, _worldPos]];
+_display setVariable [QGVAR(default), [_dir, _vectorDir, _vectorUp, _worldPos]];
 _display setVariable [QGVAR(helper), _helper];
 _display setVariable [QGVAR(unit), _unit];
 
@@ -101,6 +105,7 @@ _display setVariable [QGVAR(unit), _unit];
     private _buryEdit  = _display displayCtrl 72527;
     private _rollValues = _display getVariable [QGVAR(roll), [0,0,0]];
     _rollValues params ["_pitch", "_roll", "_yaw"];
+    systemChat str ["Pitch: ", _pitch, " Roll: ", _roll, " Yaw: ", _yaw];
 
     private _fnc_sliderRotate = {
         params ["_slider"];
@@ -220,23 +225,26 @@ _display setVariable [QGVAR(unit), _unit];
     } forEach [_sliderPitch, _sliderRoll, _sliderYaw];
 
     private _fnc_onUnload = {
-        params ["_display", "_exitCode"];
+        params ["_display", "_exitCode"];        
+        TRACE_2("Unload display: ",_exitCode,(missionNamespace getVariable [ARR_2(QUOTE(BIS_fnc_initCuratorAttributes_target),objNull)]));
+        ace_player setVariable [QGVAR(RcsBuryIED), false];
         private _unit = _display getVariable [QGVAR(unit), objNull];
         private _default = _display getVariable [QGVAR(default), []];
+        private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
         [{
-            params ["_unit", "_default", "_exitCode"];
-            TRACE_2("Unload display: ",_exitCode,(missionNamespace getVariable [ARR_2(QUOTE(BIS_fnc_initCuratorAttributes_target),objNull)]));
-            if (_exitCode isEqualTo 2) then {           
-                private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
-                if (!isNull _unit && !isNull _logic) then {
-                    deleteVehicle _logic;
-                    _default params ["_vectorDir", "_vectorUp", "_worldPos"];
+            params ["_unit", "_default", "_logic", "_exitCode"];
+            if (_exitCode isEqualTo 2) then {                
+                if (!isNull _unit && !isNull _logic) then {                    
+                    _default params ["_dir", "_vectorDir", "_vectorUp", "_worldPos"];
+                    systemChat format ["Unit: %1 Resetting defaults %2",_unit,_default];
                     detach _unit;
-                    _unit setPosWorld _worldPos;
-                    _unit setVectorDirAndUp [_vectorDir, _vectorUp];
+                    _unit setDir _dir;
+                    _unit setVectorDirAndUp [_vectorDir, _vectorUp];                    
+                    _unit setPosATL _worldPos;
+                    deleteVehicle _logic;
                 };
             };
-        },[_unit,_default,_exitCode]] call CBA_fnc_execNextFrame;
+        },[_unit,_default,_logic,_exitCode]] call CBA_fnc_execNextFrame;
     };
 
     private _fnc_onConfirm = {
