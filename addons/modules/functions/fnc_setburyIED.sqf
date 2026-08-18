@@ -105,7 +105,6 @@ _display setVariable [QGVAR(unit), _unit];
     private _buryEdit  = _display displayCtrl 72527;
     private _rollValues = _display getVariable [QGVAR(roll), [0,0,0]];
     _rollValues params ["_pitch", "_roll", "_yaw"];
-    systemChat str ["Pitch: ", _pitch, " Roll: ", _roll, " Yaw: ", _yaw];
 
     private _fnc_sliderRotate = {
         params ["_slider"];
@@ -236,7 +235,6 @@ _display setVariable [QGVAR(unit), _unit];
             if (_exitCode isEqualTo 2) then {                
                 if (!isNull _unit && !isNull _logic) then {                    
                     _default params ["_dir", "_vectorDir", "_vectorUp", "_worldPos"];
-                    systemChat format ["Unit: %1 Resetting defaults %2",_unit,_default];
                     detach _unit;
                     _unit setDir _dir;
                     _unit setVectorDirAndUp [_vectorDir, _vectorUp];                    

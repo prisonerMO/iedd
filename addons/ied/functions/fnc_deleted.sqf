@@ -20,6 +20,7 @@ TRACE_1("fnc_deleted",_this);
 
 private _attachedObjects = attachedObjects _entity;
 {
-    _object = _x;
-    deleteVehicle _object;
+    if !(isNull _x) then {
+        deleteVehicle _x;
+    };
 } forEach _attachedObjects;

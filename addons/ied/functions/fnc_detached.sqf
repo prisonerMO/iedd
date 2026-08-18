@@ -19,5 +19,7 @@
 params ["_attachedObj", "_parentObj"];
 TRACE_1("fnc_detached",_this);
 if (typeOf _parentObj isEqualTo QGVAR(helper)) then {
-    deleteVehicle _parentObj;
+    if !(isNull _parentObj) then {
+        deleteVehicle _parentObj;
+    };
 };
