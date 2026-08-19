@@ -240,6 +240,10 @@
                 <Original>Explode IED</Original>
                 <English>Explode IED</English>
             </Key>
+            <Key ID="STR_iedd_modules_Zeus_ForceDefuse">
+                <Original>Force Defuse</Original>
+                <English>Force Defuse</English>
+            </Key>
             <Key ID="STR_iedd_modules_Zeus_GetIn">
                 <Original>GET IN</Original>
                 <English>GET IN</English>
@@ -260,6 +264,10 @@
                 <Original>Place IED</Original>
                 <English>Place IED</English>
             </Key>
+            <Key ID="STR_iedd_modules_Zeus_Place_Training_Ied">
+                <Original>Place Training IED</Original>
+                <English>Place Training IED</English>
+            </Key>
             <Key ID="STR_iedd_modules_Zeus_Place_Vbied">
                 <Original>Add VBIED</Original>
                 <English>Add VBIED</English>
@@ -271,6 +279,10 @@
             <Key ID="STR_iedd_modules_Zeus_Pos_Tooltip">
                 <Original>Set position for VBIED.</Original>
                 <English>Set position for VBIED.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Zeus_ResetTrainingIED">
+                <Original>Reset Training IED</Original>
+                <English>Reset Training IED</English>
             </Key>
             <Key ID="STR_iedd_modules_Zeus_Sides_Category">
                 <Original>ACTIVED BY SIDE</Original>

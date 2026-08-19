@@ -102,6 +102,14 @@
     TRACE_2("Defused: ",_unit,_object);
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(forceDefuse), {
+    _this call FUNC(forceDefuse);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(setBury), {
+    _this call FUNC(setBury);
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(addLocal), {
     params ["_unit"];
     private _killedEhId = _unit getVariable [QGVAR(KilledEhId), -1];
@@ -144,6 +152,7 @@
     _bombObj setDir _dir;
     _bombObj setVectorDirAndUp _vectorDirAndUp;
     _bombObj setPosATL _pos;
+    {_x addCuratorEditableObjects [[_bombObj], true]} forEach allCurators;
 }] call CBA_fnc_addEventHandler;
 
 if (isServer) then {

@@ -20,6 +20,18 @@
     "iedd_ied_Bucket"\
 ]
 
+#define IEDD_TRAINING_CLASSES [\
+    "iedd_ied_Training_CanisterPlastic",\
+    "iedd_ied_Training_CanisterFuel",\
+    "iedd_ied_Training_Cardboard",\
+    "iedd_ied_Training_Cinder",\
+    "iedd_ied_Training_Metal",\
+    "iedd_ied_Training_Metal_English",\
+    "iedd_ied_Training_Barrel",\
+    "iedd_ied_Training_Barrel_Grey",\
+    "iedd_ied_Training_Bucket"\
+]
+
 #define IEDD_FAKE_CLASSES [\
     "iedd_ied_CanisterPlastic_Fake",\
     "iedd_ied_CanisterFuel_Fake",\

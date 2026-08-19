@@ -47,6 +47,7 @@
         _bombObj setVariable ["iedd_ied_openCloseEOD",_oce];
         _bombObj setVariable ["iedd_ied_openClose",_oc];
     };
+    {_x addCuratorEditableObjects [[_bombObj], true]} forEach allCurators;
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(explode), {
