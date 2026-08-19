@@ -30,8 +30,8 @@ class GVAR(Metal):GVAR(Metal_Fake) {
     class EventHandlers {
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
     };
-    class ACE_Actions {
-        class ACE_MainActions {
+    class ACE_Actions:ACE_Actions {
+        class ACE_MainActions:ACE_MainActions {
             class IEDD_DisarmMenu {
                 exceptions[] = {"isNotSwimming"};
                 displayName = CSTRING(Disarm_DisplayName);
