@@ -196,6 +196,14 @@
                 <Original>YAW</Original>
                 <English>YAW</English>
             </Key>
+            <Key ID="STR_iedd_modules_ZenContextMenuEnabled">
+                <Original>Enable ZEN Context Menu</Original>
+                <English>Enable ZEN Context Menu</English>
+            </Key>
+            <Key ID="STR_iedd_modules_ZenContextMenuEnabled_Description">
+                <Original>Adds a "Spawn IED" action to Zeus Enhanced's (ZEN) right-click context menu.</Original>
+                <English>Adds a "Spawn IED" action to Zeus Enhanced's (ZEN) right-click context menu.</English>
+            </Key>
             <Key ID="STR_iedd_modules_Zeus_Act_Category">
                 <Original>ACTIVATION DISTANCE</Original>
                 <English>ACTIVATION DISTANCE</English>

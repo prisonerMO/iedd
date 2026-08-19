@@ -6,6 +6,10 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=5;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
 		nextID=4;
@@ -15,7 +19,7 @@ class EditorData
 		pos[]={1913.8051,53.913181,5762.4653};
 		dir[]={-0.63605744,-0.74849755,-0.18761359};
 		up[]={-0.71791911,0.66313916,-0.21175961};
-		aside[]={-0.28291476,6.9077942e-008,0.95915174};
+		aside[]={-0.28291476,6.9077942e-08,0.95915174};
 	};
 };
 binarizationWanted=0;
@@ -23,14 +27,13 @@ sourceName="0000_iedd_notebook_test";
 addons[]=
 {
 	"A3_Characters_F",
-	"ace_explosives",
 	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=2;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -39,13 +42,6 @@ class AddonsMetaData
 			url="https://www.arma3.com";
 		};
 		class Item1
-		{
-			className="ace_explosives";
-			name="ACE3 - Explosives";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item2
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
@@ -144,14 +140,14 @@ class Mission
 					};
 					id=1;
 					type="B_soldier_exp_F";
-					atlOffset=4.7683716e-007;
+					atlOffset=4.7683716e-07;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=0;
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
 		class Item1
 		{

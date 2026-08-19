@@ -14,3 +14,7 @@ PREP(setSuicide);
 PREP(setVbied);
 PREP(sliderMove);
 PREP(vbiedSelected);
+PREP(zenConfirmPlaceIed);
+PREP(zenIedTypes);
+PREP(zenOpenPlaceDialog);
+PREP(zenRegisterActions);

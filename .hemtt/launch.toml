@@ -42,3 +42,10 @@ parameters = [
     "-limitFPS=144",
 ]
 executable = "arma3serverprofiling_x64"
+
+[zen]
+extends = "dev"
+
+workshop = [
+    "1779063631" # Zeus Enhanced
+]
