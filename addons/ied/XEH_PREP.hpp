@@ -37,6 +37,8 @@ PREP(hideCharges);
 PREP(iedCheck);
 PREP(isBuryOnChanged);
 PREP(isBuryOnLoad);
+PREP(isPhoneOnChanged);
+PREP(isPhoneOnLoad);
 PREP(jerry);
 PREP(metal);
 PREP(moveCheck);

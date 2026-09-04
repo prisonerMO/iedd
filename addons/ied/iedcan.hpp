@@ -48,6 +48,7 @@ class GVAR(CanisterPlastic):GVAR(CanisterPlastic_Fake) {
         IED_DEFAULT_CATEGORY(EMPTY_CLASS);
         IED_TIMER_CATEGORY;
         IED_BURY_CATEGORY;
+        IED_PHONE_CATEGORY;
     };
 };
 

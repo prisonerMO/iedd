@@ -26,6 +26,8 @@ class Slider:Title
     };
 };
 class Combo;
+class Edit;
+
 class GVAR(timeSlider): Slider {
     attributeLoad = "params [""_ctrlGroup""];\
     private _slider = _ctrlGroup controlsGroupCtrl 100;\
@@ -336,6 +338,19 @@ class GVAR(isBury): Checkbox {
     };
 };
 
+class GVAR(isPhone): Checkbox {
+    class Controls: Controls
+    {
+        class Title: Title{};
+        class Value: Value
+        {
+            onCheckedChanged = QUOTE(call FUNC(isPhoneOnChanged));
+            onLoad = QUOTE(call FUNC(isPhoneOnLoad));
+        };
+    };
+};
+
+class GVAR(phoneEdit): Edit{};
 
 //FOR DEBUG
 class EditXYZ;

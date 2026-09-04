@@ -240,7 +240,7 @@ class GVAR(ied_SubCategory) {\
         class GVAR(bury_SubCategory) {\
             data = "AttributeSystemSubcategory";\
             control = "SubCategory";\
-            displayName = "Bury IED";\
+            displayName = CSTRING(Bury_Category);\
         };\
         class GVAR(isBury) {\
             property = QGVAR(isBury);\
@@ -267,6 +267,41 @@ class GVAR(ied_SubCategory) {\
             });\
 			defaultValue = -1;\
 		}
+        /**********PHONE SETTINGS ********/
+#define IED_PHONE_CATEGORY\
+        class GVAR(phone_SubCategory) {\
+            data = "AttributeSystemSubcategory";\
+            control = "SubCategory";\
+            displayName = CSTRING(Phone_Category);\
+        };\
+        class GVAR(isPhone) {\
+            displayName = CSTRING(isPhone);\
+            tooltip = CSTRING(isPhone_Tooltip);\
+            property = QGVAR(isPhone);\
+            control = QGVAR(isPhone);\
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);\
+            typeName = "BOOL";\
+            defaultValue = "(false)";\
+        };\
+        class GVAR(phoneNumber) {\
+            property = QGVAR(phoneNumber);\
+            control = QGVAR(phoneEdit);\
+            displayName = CSTRING(phoneNumber);\
+            tooltip = CSTRING(phoneNumber_Tooltip);\
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);\
+			typeName = "NUMBER";\
+            defaultValue = "1234";\
+            validate = "number";\
+        };\
+        class GVAR(phoneUnit) {\
+            property = QGVAR(phoneUnit);\
+            control = QGVAR(phoneEdit);\
+            displayName = CSTRING(phoneUnit);\
+            tooltip = CSTRING(phoneUnit_Tooltip);\
+            expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);\
+            typeName = "STRING";\
+            defaultValue = "''";\
+        }
 
 #define IED_TRAINING_ACTIONS\
     class ACE_Actions : ACE_Actions {\
