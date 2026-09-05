@@ -279,7 +279,12 @@ class GVAR(ied_SubCategory) {\
             tooltip = CSTRING(isPhone_Tooltip);\
             property = QGVAR(isPhone);\
             control = QGVAR(isPhone);\
-            expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);\
+            expression = QUOTE(\
+            if (is3DEN) then {\
+                [ARR_2(_this,_value)] call FUNC(isPhone3DEN);\
+            } else {\
+                _this setVariable [ARR_2('%s',_value)];\
+            });\
             typeName = "BOOL";\
             defaultValue = "(false)";\
         };\
