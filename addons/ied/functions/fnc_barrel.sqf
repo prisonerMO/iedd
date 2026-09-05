@@ -185,7 +185,7 @@ if (!isServer) exitWith {};
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
             [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;
         }, _this] call CBA_fnc_waitUntilAndExecute;
-    }, [_bombObj, _decals, _setDir, _wireSet, _isBury], 1] call CBA_fnc_waitAndExecute;
+    }, [_bombObj, _decals, _setDir, _wireSet, _isBury], 0.5] call CBA_fnc_waitAndExecute;
 
 },[_bombObj],0.1] call CBA_fnc_waitAndExecute;
 true;
