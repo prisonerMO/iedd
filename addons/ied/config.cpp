@@ -33,11 +33,13 @@ class CfgPatches {
             QGVAR(Training_CanisterFuel),
             QGVAR(Training_Metal),
             QGVAR(Training_Metal_English),
+            QGVAR(Phone),
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "A3_Characters_F",
+            "A3_Characters_F",            
+            "A3_Structures_F_Items_Electronics",
             "A3_Structures_F_Items_Vessels",
             "A3_Props_F_Orange_Humanitarian_Supplies",
             "A3_Props_F_Orange_Civilian_Constructions",

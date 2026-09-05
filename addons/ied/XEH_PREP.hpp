@@ -1,6 +1,7 @@
 
 PREP(addItems);
 PREP(addPFH);
+PREP(addPhone);
 PREP(barrel);
 PREP(bomb);
 PREP(bucket);

@@ -31,6 +31,24 @@ class CfgVehicles {
             class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
         };
     };
+    class Items_base_F;
+    class GVAR(Items_base): Items_base_F {
+        class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+        };
+        author = AUTHOR;        
+        scope = 0;
+        scopeCurator = 0;
+        displayName = "IEDD Dummy Object";
+        model = "\A3\Weapons_f\dummyweapon.p3d";
+    };
+    class GVAR(Phone): GVAR(Items_base) {
+        author = AUTHOR;        
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "IEDD Phone Object";
+        model = "\A3\Structures_F\Items\Electronics\MobilePhone_old_F.p3d";
+    };
     #include "iedbarrel.hpp"
     #include "iedbucket.hpp"
     #include "iedcan.hpp"
