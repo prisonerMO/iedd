@@ -57,3 +57,4 @@ class CfgPatches {
 #include "CfgMagazines.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgSounds.hpp"
+#include "iedPhoneUI.hpp"

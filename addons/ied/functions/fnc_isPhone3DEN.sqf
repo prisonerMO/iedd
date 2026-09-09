@@ -28,9 +28,11 @@ if (_state) then {
             params ['_object'];
             private _connections = get3DENConnections _object;
             private _units = flatten _connections select {_x isKindOf "CAManBase"};
-            private _phoneUnit = _object get3DENAttribute QGVAR(phoneUnit);
-            private _hasUnit = _units findIf {_x get3DENAttribute "name" isEqualTo _phoneUnit};
-            if (_hasUnit != -1) exitWith {systemChat format ['fnc_isPhone3DEN: %1 already has a phone unit connected',_object];};
+            private _phoneUnit = _object get3DENAttribute QGVAR(phoneUnit) select 0;
+            if (_phoneUnit != "") then {
+                private _hasUnit = _units findIf {(_x get3DENAttribute "name" select 0) isEqualTo _phoneUnit};
+                if (_hasUnit != -1) exitWith {systemChat format ['fnc_isPhone3DEN: %1 already has a phone unit connected',_object];};
+            };
             if (_units isNotEqualTo []) then {
                 private _unit = _units select 0;
                 private _name = _unit get3DENAttribute "name" select 0;
@@ -39,6 +41,6 @@ if (_state) then {
         }];
         _ied setVariable [QGVAR(connectionEH),_connectionEH];
     };
-}
+};
 
 
