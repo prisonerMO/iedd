@@ -281,7 +281,7 @@ class GVAR(ied_SubCategory) {\
             control = QGVAR(isPhone);\
             expression = QUOTE(\
             if (is3DEN) then {\
-                [ARR_2(_this,_value)] call FUNC(isPhone3DEN);\
+               [ARR_2(_this,_value)] spawn { waitUntil { !isNil 'iedd_ied_fnc_isPhone3DEN' }; call FUNC(isPhone3DEN); };\
             } else {\
                 _this setVariable [ARR_2('%s',_value)];\
             });\
