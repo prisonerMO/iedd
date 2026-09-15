@@ -930,13 +930,13 @@
                 <Original>Set if IED has a phone.</Original>
                 <English>Set if IED has a phone.</English>
             </Key>
-            <Key ID="STR_iedd_ied_phoneNumber">
-                <Original>Phone number</Original>
-                <English>Phone number</English>
+            <Key ID="STR_iedd_ied_phoneCode">
+                <Original>Phone code</Original>
+                <English>Phone code</English>
             </Key>
-            <Key ID="STR_iedd_ied_phoneNumber_Tooltip">
-                <Original>Set phone number for arming the IED.</Original>
-                <English>Set phone number for arming the IED.</English>
+            <Key ID="STR_iedd_ied_phoneCode_Tooltip">
+                <Original>Set phone code for arming the IED.</Original>
+                <English>Set phone code for arming the IED.</English>
             </Key>
             <Key ID="STR_iedd_ied_phoneUnit">
                 <Original>Phone user</Original>

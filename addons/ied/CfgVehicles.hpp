@@ -1,12 +1,24 @@
 class CBA_Extended_EventHandlers;
 class CfgVehicles {
     class Sound;
-    class GVAR(timerSound): Sound // class name to be used with createSoundSource
-    {
+    class GVAR(baseSound): Sound {
         author = AUTHOR;
-        sound = QGVAR(timer_SFX); // reference to CfgSFX class
-        displayName = "TODO";
         scope = 0;
+        scopeCurator = 0;
+        displayName = "TODO";
+        sound = "";
+    };
+    class GVAR(timerSound): GVAR(baseSound) // class name to be used with createSoundSource
+    {
+        sound = QGVAR(timer_SFX); // reference to CfgSFX class
+    };
+    class GVAR(ringSound): GVAR(baseSound) // class name to be used with createSoundSource
+    {
+        sound = QGVAR(ring_SFX); // reference to CfgSFX class
+    };
+    class GVAR(dialSound): GVAR(baseSound) // class name to be used with createSoundSource
+    {
+        sound = QGVAR(tone_SFX); // reference to CfgSFX class
     };
     class Helper_Base_F;
     class GVAR(helper): Helper_Base_F

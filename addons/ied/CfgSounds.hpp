@@ -49,9 +49,26 @@ class CfgSFX
 {
     class GVAR(timer_SFX)
     {
+        // { soundPath, soundVolume, soundPitch, maxDistance, probability, minDelay, midDelay, maxDelay }
         sounds[] = {QGVAR(Timer_Peep)};
         name = "TODO";
-        GVAR(Timer_Peep)[] = {QPATHTOF(sounds\peep1.ogg), 0.45, 1.0, 25, 1, 0.896, 0.896, 0.896};  // path to addon sound
+        GVAR(Timer_Peep)[] = {QPATHTOF(sounds\peep1.ogg), 0.45, 1.0, 25, 1, 0.896, 0.896, 0.896};
+        empty[] = {"",0,0,0,0,0,0,0};
+    };
+
+    class GVAR(ring_SFX)
+    {
+        sounds[] = {QGVAR(Phone_Ring)};
+        name = "TODO";
+        GVAR(Phone_Ring)[] = {"\z\ace\addons\explosives\Data\Audio\Cellphone_Ring.wss", 1, 1.0, 25, 1, 0.896, 0.896, 0.896};
+        empty[] = {"",0,0,0,0,0,0,0};
+    };
+
+    class GVAR(tone_SFX)
+    {
+        sounds[] = {QGVAR(Phone_DialTone)};
+        name = "TODO";
+        GVAR(Phone_DialTone)[] = {"\z\ace\addons\explosives\Data\Audio\DialTone.wss", 1, 1.0, 25, 1, 0.896, 0.896, 0.896};
         empty[] = {"",0,0,0,0,0,0,0};
     };
 };

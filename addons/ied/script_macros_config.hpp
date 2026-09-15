@@ -288,11 +288,11 @@ class GVAR(ied_SubCategory) {\
             typeName = "BOOL";\
             defaultValue = "(false)";\
         };\
-        class GVAR(phoneNumber) {\
-            property = QGVAR(phoneNumber);\
+        class GVAR(phoneCode) {\
+            property = QGVAR(phoneCode);\
             control = QGVAR(phoneEdit);\
-            displayName = CSTRING(phoneNumber);\
-            tooltip = CSTRING(phoneNumber_Tooltip);\
+            displayName = CSTRING(phoneCode);\
+            tooltip = CSTRING(phoneCode_Tooltip);\
             expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);\
 			typeName = "NUMBER";\
             defaultValue = "1234";\

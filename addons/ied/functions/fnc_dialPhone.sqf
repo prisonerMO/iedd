@@ -21,10 +21,9 @@ TRACE_2("params",_unit,_code);
 systemChat format ["%1: %2", "iedd_ied_fnc_dialPhone", format ["Dialing %1 with code %2", name _unit, _code]];
 if (!alive _unit || {!local _unit} || {_code == ""}) exitWith {};
 if (isNil QGVAR(phoneIEDs) || {!(_code in GVAR(phoneIEDs))}) exitWith {};
-if (_unit getVariable [QGVAR(dialing), false]) exitWith {}; //do we need this?
+if (_unit getVariable [QGVAR(dialing), false]) exitWith {};
+_unit call FUNC(startDial);
 
-_unit setVariable [QGVAR(dialing), true, true];
-//[["5546",[164073: ied_urban_big.p3d ACE_IEDUrbanBig_Command_Ammo,0.5]],["9189",[164080: ied_urban_big.p3d ACE_IEDUrbanBig_Command_Ammo,0.5]]]
 private _ied = GVAR(phoneIEDs) get _code;
 
 if (!isNull _ied) then {
@@ -36,39 +35,38 @@ if (!isNull _ied) then {
     for "_i" from 1 to _random do {
         _arr append [".", "..", "...", ""];
     };
-
-    private _ringtones = [];//getArray (_explosiveConfig >> QGVAR(ringtones)); to do random/ more ringtones
-
-    private _ringtone = if (_ringtones isEqualTo []) then {
-        ["\z\ace\addons\explosives\Data\Audio\Cellphone_Ring.wss", 0.75, 100, 1, 100] //to do own ringtone, volume, pitch, distance
-    } else {
-       selectRandom _ringtones;
+    private _isPlayer = _unit == ACE_player;
+    // UI is only open for player
+    if (_isPlayer) then {
+        ctrlSetText [96303, "Calling"];
     };
-    _ringtone params ["_ringtonePath", "_ringtoneLength", ["_volume", 100], ["_soundPitch", 1], ["_distance", 100]];
 
-    private _ringtoneDuration = (_ringtoneLength / 0.25);
     
-    TRACE_6("ringtone",_ringtonePath,_ringtoneLength,_volume,_soundPitch,_distance,_ringtoneDuration);
+    private _ringTone = _ied getVariable [QGVAR(phoneRingtone), QGVAR(dialSound)];
+    private _ringTonePos = getArray (configOf _ied >> QGVAR(phoneRingPos));
+    private _ringSound = createSoundSource [_ringTone , [0,0,0], [], 0]; // starts ringtone
+    _ringSound attachTo [_ied, _ringTonePos];
 
-// UI is only open for player
-if (_unit == ACE_player) then {
-    ctrlSetText [96303, "Calling"];
-};
-
+    private _dialTone = _ied getVariable [QGVAR(phoneRingtone), QGVAR(ringSound)];
+    private _dialTonePos = _unit modelToWorldVisualWorld (_unit selectionPosition "RightHand");
+    private _dialSound = createSoundSource [_dialTone , [0,0,0], [], 0]; // starts dialtone
+    _dialSound attachTo [_unit, _dialTonePos];
+    
     [{
         params ["_args", "_pfhID"];
-        _args params ["_unit", "_dialStep", "_arr", "_ied", "_explosiveObject", "_ringtoneDuration", "_ringtonePath", "_volume", "_soundPitch", "_distance"];
+        _args params ["_unit", "_isPlayer", "_dialStep", "_arr", "_ied", "_ringSound", "_dialSound"];
 
-        if (_dialStep % 4 == 0) then {
-            private _pos = _unit modelToWorldVisualWorld (_unit selectionPosition "RightHand");
-            playSound3D ["\z\ace\addons\explosives\Data\Audio\DialTone.wss", objNull, false, _pos, 100, 1, 100];  //to do own ringtone, volume, pitch, distance
+        private _isDialing = _unit getVariable [QGVAR(dialing), false];
+        if (!_isDialing) exitWith {
+            _pfhID call CBA_fnc_removePerFrameHandler;
+            deleteVehicle _ringSound;
+            deleteVehicle _dialSound;
         };
 
         // UI is only open for player
-        if (_unit == ACE_player) then {
+        if (_isPlayer) then {
             ctrlSetText [96303, format ["Calling%1", _arr select (_dialStep - 4)]];
         };
-
         // End call and detonate explosive
         if (_dialStep >= (count _arr + 2)) exitWith {
             _pfhID call CBA_fnc_removePerFrameHandler;
@@ -77,22 +75,15 @@ if (_unit == ACE_player) then {
                 [QGVAR(explosion), [_ied]] call CBA_fnc_serverEvent;
             };
 
-            _unit setVariable [QGVAR(dialing), nil, true];
-
+            _unit call FUNC(endDial);
             // UI is only open for player
-            if (_unit == ACE_player) then {
+            deleteVehicle _dialSound;
+            if (_isPlayer) then {
                 ctrlSetText [96303, "Call Ended!"];
             };
         };
-
-        if (
-            _dialStep == _ringtoneDuration &&
-            {!isNull _ied}
-        ) then {
-            playSound3D [_ringtonePath, objNull, false, getPosASL _ied, _volume, _soundPitch, _distance];
-        };
-
-        _args set [1, _dialStep + 1];
-    }, 0.25, [_unit, 4, _arr, _ied, _ied, _ringtoneDuration, _ringtonePath, _volume, _soundPitch, _distance]] call CBA_fnc_addPerFrameHandler;
+        //TO-DO: If player dies --> detach sound? phone? 
+        _args set [2, _dialStep + 1];
+    }, 0.25, [_unit, _isPlayer, 4, _arr, _ied, _ringSound, _dialSound]] call CBA_fnc_addPerFrameHandler;
 };
 nil

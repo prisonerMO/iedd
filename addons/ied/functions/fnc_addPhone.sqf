@@ -24,12 +24,12 @@ if (_unit isEqualTo "") then {
     private _getSyncedUnits = synchronizedObjects _ied;
     if (_getSyncedUnits isNotEqualTo []) then {
         _unit = _getSyncedUnits select 0;
+    } else {
+        _unit = objNull;
     };
-    if (_unit isEqualTo "") exitWith {
-        diag_log format ["IED: No synced unit found for %1", _ied];
-    }; 
+    _ied setVariable [QGVAR(phoneUnit), _unit];
 };
-private _number = _ied getVariable [QGVAR(phoneNumber), "1234"];
+private _number = _ied getVariable [QGVAR(phoneCode), "1234"];
 private _configOf = configOf _ied;
 private _pos = getArray (_configOf >> QGVAR(phonePos));
 private _dir = getArray (_configOf >> QGVAR(phoneDir));

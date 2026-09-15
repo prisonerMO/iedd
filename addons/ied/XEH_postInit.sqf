@@ -11,6 +11,7 @@
 [QGVAR(dudEffect), LINKFUNC(dud)] call CBA_fnc_addEventHandler;
 [QGVAR(decals), LINKFUNC(decals)] call CBA_fnc_addEventHandler;
 [QGVAR(explosion), LINKFUNC(bomb)] call CBA_fnc_addEventHandler;
+[QGVAR(dialPhone), LINKFUNC(dialPhone)] call CBA_fnc_addEventHandler;
 /*Suicide functions*/
 [QGVAR(addPFH), LINKFUNC(addPFH)] call CBA_fnc_addEventHandler;
 [QGVAR(suicideAct), LINKFUNC(suicideAct)] call CBA_fnc_addEventHandler;
@@ -144,6 +145,12 @@
     _bombObj setDir _dir;
     _bombObj setVectorDirAndUp _vectorDirAndUp;
     _bombObj setPosATL _pos;
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(attachPhone), {
+    params ["_unit","_phone","_pos","_dir","_up"];
+    _phone attachTo [_unit, _pos,"LeftHand",true]; //To-Do correct bone position (lefthand?)
+    _phone setVectorDirAndUp [_dir, _up];
 }] call CBA_fnc_addEventHandler;
 
 if (isServer) then {
