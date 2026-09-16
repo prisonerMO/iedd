@@ -21,14 +21,15 @@ if (GVAR(bombs) isNotEqualTo []) then {
     private _objectsToRemove = [];
     {
         private _object = _x;
-        if (isNull _object || !(_object getVariable [QEGVAR(ied,bomb),false])) exitWith {
+        if (isNull _object || !(_object getVariable [QEGVAR(ied,bomb),false])) then {
             _objectsToRemove pushBack _object;
+            continue;
         };
         private _distance = _object getVariable [QGVAR(dist),10];
         TRACE_2("Object distance",_object,_distance);
         private _var = _object getVariable [QGVAR(movable),false];
         if (!_var) then {
-            if (speed _object > 5 || isPlayer attachedTo _object) then {
+            if (speed _object > 5 || !isNull attachedTo _object) then {
                 [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
                 _objectsToRemove pushBack _object;
                 continue;
@@ -36,7 +37,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
         } else {
             private _veh = attachedTo _object;
             if (isNull attachedTo _veh) then {
-            private _vehSpeed = speed _veh;
+                private _vehSpeed = speed _veh;
                 if (_vehSpeed > 45|| _vehSpeed < -45)  then {
                     [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
                     _objectsToRemove pushBack _object;
@@ -71,7 +72,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
         };
     } forEach GVAR(bombs);
     GVAR(bombs) = GVAR(bombs) - _objectsToRemove;
-    _checkTime = 0.5;
+    _checkTime = 0.33;
 };
 TRACE_3("Current objects",count GVAR(bombs),time,_checkTime);
 [FUNC(iedCheck), [], _checkTime] call CBA_fnc_waitAndExecute;

@@ -11,14 +11,14 @@
  * Return description <NONE>
  *
  * Example:
- * [ctrl] call iedd_ied_fnc_isPhoneOnLoad;
+ * [ctrl] call iedd_ied_fnc_hasPhoneOnLoad;
  *
  * Public: No
  */
 
 //params [];
 params ["_ctrlCheckbox"];
-TRACE_1("fnc_isPhoneOnLoad",_this);
+TRACE_1("fnc_hasPhoneOnLoad",_this);
 _this spawn {
     params ["_ctrlCheckbox"];
     disableSerialization;

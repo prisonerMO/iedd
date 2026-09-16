@@ -922,11 +922,11 @@
                 <Original>Variation X</Original>
                 <English>Variation X</English>
             </Key>
-            <Key ID="STR_iedd_ied_isPhone">
+            <Key ID="STR_iedd_ied_hasPhone">
                 <Original>Add Phone</Original>
                 <English>Add Phone</English>
             </Key>
-            <Key ID="STR_iedd_ied_isPhone_Tooltip">
+            <Key ID="STR_iedd_ied_hasPhone_Tooltip">
                 <Original>Set if IED has a phone.</Original>
                 <English>Set if IED has a phone.</English>
             </Key>

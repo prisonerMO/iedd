@@ -274,14 +274,14 @@ class GVAR(ied_SubCategory) {\
             control = "SubCategory";\
             displayName = CSTRING(Phone_Category);\
         };\
-        class GVAR(isPhone) {\
-            displayName = CSTRING(isPhone);\
-            tooltip = CSTRING(isPhone_Tooltip);\
-            property = QGVAR(isPhone);\
-            control = QGVAR(isPhone);\
+        class GVAR(hasPhone) {\
+            displayName = CSTRING(hasPhone);\
+            tooltip = CSTRING(hasPhone_Tooltip);\
+            property = QGVAR(hasPhone);\
+            control = QGVAR(hasPhone);\
             expression = QUOTE(\
             if (is3DEN) then {\
-               [ARR_2(_this,_value)] spawn { waitUntil { !isNil 'iedd_ied_fnc_isPhone3DEN' }; call FUNC(isPhone3DEN); };\
+               [ARR_2(_this,_value)] spawn { waitUntil { !isNil 'iedd_ied_fnc_hasPhone3DEN' }; call FUNC(hasPhone3DEN); };\
             } else {\
                 _this setVariable [ARR_2('%s',_value)];\
             });\

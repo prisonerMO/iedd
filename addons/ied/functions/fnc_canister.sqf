@@ -29,8 +29,8 @@ if (!isServer) exitWith {};
     private _timerValue = _bombObj getVariable [QGVAR(timer), GVAR(defaultTimer)];
     private _isTimer = if (_timerValue > 1) then {selectRandom [false,true]} else {[false,true] select _timerValue};
     private _isBury = _bombObj getVariable [QGVAR(isBury), false];    
-    private _isPhone = _bombObj getVariable [QGVAR(isPhone), false];
-    TRACE_8("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer,_isBury,_isPhone);
+    private _hasPhone = _bombObj getVariable [QGVAR(hasPhone), false];
+    TRACE_8("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer,_isBury,_hasPhone);
     if (_isFake > random 1) exitWith {
         private _type = getText (configOf _bombObj >> "iedd_ied_default");
         private _dir = getDir _bombObj;
@@ -147,7 +147,7 @@ if (!isServer) exitWith {};
         _bombObj setVariable [QGVAR(timer),_isTimer, true];
     };
     
-    if (_isPhone) then {
+    if (_hasPhone) then {
         _bombObj call FUNC(addPhone);
     };
 

@@ -11,7 +11,7 @@
  * Return description <NONE>
  *
  * Example:
- * [ctrlCheckbox] call iedd_ied_fnc_isPhoneOnChanged;
+ * [ctrlCheckbox] call iedd_ied_fnc_hasPhoneOnChanged;
  *
  * Public: No
  */

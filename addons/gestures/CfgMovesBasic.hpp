@@ -67,14 +67,14 @@ class CfgGesturesMale {
         };
         class GVAR(phone_in): GVAR(base) {
             file = "a3\anims_f_epa\data\anim\sdr\cts\custom\a_in\acts_listeningtoradioin.rtm";
-            speed = 1.3;
+            speed = 0.5;
             interpolationRestart = 1;
             ConnectTo[] = {QGVAR(phone_loop), 0.001};
             //actions = "RifleLowStandActions";
         };
         class GVAR(phone_loop): GVAR(base) {
             file = "a3\anims_f_epa\data\anim\sdr\cts\custom\a_in\acts_listeningtoradioloop.rtm";
-            speed = 0.4;
+            speed = 0.05;
             mask = QGVAR(phoneBlend);
             ConnectTo[] = {QGVAR(phone_loop), 0.001};
             InterpolateTo[] = {QGVAR(phone_out), 0.001};
@@ -84,7 +84,7 @@ class CfgGesturesMale {
         };
         class GVAR(phone_out): GVAR(base) {
             file = "a3\anims_f_epa\data\anim\sdr\cts\custom\a_in\acts_listeningtoradioout.rtm";
-            speed = 0.8569;
+            speed = 0.5;
             minPlayTime = 1;
             mask = QGVAR(phoneBlend);
         };

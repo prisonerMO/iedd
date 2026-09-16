@@ -338,14 +338,14 @@ class GVAR(isBury): Checkbox {
     };
 };
 
-class GVAR(isPhone): Checkbox {
+class GVAR(hasPhone): Checkbox {
     class Controls: Controls
     {
         class Title: Title{};
         class Value: Value
         {
-            onCheckedChanged = QUOTE(call FUNC(isPhoneOnChanged));
-            onLoad = QUOTE(call FUNC(isPhoneOnLoad));
+            onCheckedChanged = QUOTE(call FUNC(hasPhoneOnChanged));
+            onLoad = QUOTE(call FUNC(hasPhoneOnLoad));
         };
     };
 };
