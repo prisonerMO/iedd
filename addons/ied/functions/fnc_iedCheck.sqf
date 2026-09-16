@@ -28,22 +28,10 @@ if (GVAR(bombs) isNotEqualTo []) then {
         private _distance = _object getVariable [QGVAR(dist),10];
         TRACE_2("Object distance",_object,_distance);
         private _var = _object getVariable [QGVAR(movable),false];
-        if (!_var) then {
-            if (speed _object > 5 || isPlayer attachedTo _object) then {
-                [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
-                _objectsToRemove pushBack _object;
-                continue;
-            };
-        } else {
-            private _veh = attachedTo _object;
-            if (isNull attachedTo _veh) then {
-                private _vehSpeed = speed _veh;
-                if (_vehSpeed > 45|| _vehSpeed < -45)  then {
-                    [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
-                    _objectsToRemove pushBack _object;
-                    continue;
-                };
-            };
+        if (!_var && speed _object > 5) then {
+            [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+            _objectsToRemove pushBack _object;
+            continue;
         };
         if (GVAR(vehCheck)) then {
             private _nearVehicles = (_object nearEntities [["Car", "Motorcycle", "Tank"], _distance]);

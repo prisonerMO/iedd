@@ -18,8 +18,13 @@
 
 params ["_attachedObj", "_parentObj"];
 TRACE_1("fnc_detached",_this);
-if (typeOf _parentObj isEqualTo QGVAR(helper)) then {
+if (typeOf _parentObj isEqualTo QGVAR(helper)) exitWith {
     if !(isNull _parentObj) then {
         deleteVehicle _parentObj;
     };
+};
+
+private _pfhID = _parentObj getVariable [QGVAR(speedPEH),-1];
+if (_pfhID < -1) then {
+    _pfhID call CBA_fnc_removePerFrameHandler;
 };

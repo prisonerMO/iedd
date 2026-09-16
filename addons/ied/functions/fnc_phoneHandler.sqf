@@ -27,52 +27,31 @@ if (isNull _ied) exitWith {};
 //     _unit addItem QGVAR(phone);
 // };
 
-private _units = _ied getVariable [QGVAR(phoneUnit),[]];
+private _units = _ied getVariable [QGVAR(phoneUnit), []] select {alive _x};
+private _phoneActDist = _ied getVariable [QGVAR(phoneActDist), 15];
 if (_units isEqualTo []) exitWith {};
 
+{
+    _x playMoveNow "Acts_PhoneSetup"    
+} forEach _units;
 
-// _group addEventHandler ["EnemyDetected", {
-// 	params ["_group", "_newTarget"];
-//     private _return = false;
-//     private _isPlayerGroup = _group findIf {isPlayer _x} != -1;
-//     if (!_isPlayerGroup) exitWith {
-//         _return;
-//     };
+[{
+    params ["_args", "_pfhID"];
+    _args params ["_ied", "_units", "_phoneActDist"];
+    if (_units isEqualTo []) exitWith {
+        _pfhID call CBA_fnc_removePerFrameHandler;
+    };
+    private _iedPos = getPosASL _ied;
+    private _players = call CBA_fnc_players;
+    {
+        private _object = _x;
+        private _index = _players findIf {_object distance _x < _phoneActDist} != -1;
+        if (_index) then {            
+            _units call FUNC(handleDial);
+            _pfhID call CBA_fnc_removePerFrameHandler;
+        };
+    } forEach _players;
+    private _aliveUnits = _units select {alive _x};
+    _args set [1, _aliveUnits];
+}, 0.5, [_ied,_units,_phoneActDist]] call CBA_fnc_addPerFrameHandler;
 
-//     private _ied = _group getVariable [QGVAR(ied), objNull];
-//     if (isNull _ied) exitWith {
-//         _group removeEventHandler [_thisEvent, _thisEventHandler];
-//         _return;
-//     };
-
-//     private _units = units _group select {alive _x && isPlayer _x};
-//     private _inArea = false;
-//     {
-//         private _unit = _x;
-//         if (_unit distance _ied < 20) exitWith {
-//             _inArea = true;
-//         };
-//     } forEach _units;
-//     if (!_inArea) exitWith {
-//         _return;
-//     };
-
-//     private _code = _ied getVariable [QGVAR(phoneCode), ""];
-//     if (_code == "") exitWith {
-//         _return;
-//     };
-//     private _unit = _group getVariable [QGVAR(unit), objNull];
-//     if (isNull _unit) exitWith {
-//         _return;
-//     };
-//     [_unit, _code] call FUNC(dialPhone);
-//     _return = true;
-
-//     _return
-
-// }];
-
-//Another Group Event Handler is TODO if enemyDetected not working <<-- KnowsAboutChanged
-// _group addEventHandler ["KnowsAboutChanged", {
-// 	params ["_group", "_targetUnit", "_newKnowsAbout", "_oldKnowsAbout"];
-// }];

@@ -25,26 +25,11 @@ if (GVAR(phoneBombs) isNotEqualTo []) then {
             _objectsToRemove pushBack _object;
             continue;
         };
-        private _removeCheck= _object getVariable [QGVAR(removeCheck),false];
-        if (_removeCheck) then {
-            private _var = _object getVariable [QGVAR(movable),false];        
-            if (!_var) then {
-                if (speed _object > 5 || isPlayer attachedTo _object) then {
-                    [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
-                    _objectsToRemove pushBack _object;
-                    continue;
-                };
-            } else {
-                private _veh = attachedTo _object;
-                if (isNull attachedTo _veh) then {
-                private _vehSpeed = speed _veh;
-                    if (_vehSpeed > 45|| _vehSpeed < -45)  then {
-                        [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
-                        _objectsToRemove pushBack _object;
-                        continue;
-                    };
-                };
-            }; 
+        private _var = _object getVariable [QGVAR(movable),false];
+        if (!_var && speed _object > 5) then {
+            [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
+            _objectsToRemove pushBack _object;
+            continue;
         };       
         private _distance = _object getVariable [QGVAR(phoneDist),25];
         TRACE_2("Phone distance",_object,_distance);
