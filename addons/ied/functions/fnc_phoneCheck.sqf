@@ -29,7 +29,7 @@ if (GVAR(phoneBombs) isNotEqualTo []) then {
         if (_removeCheck) then {
             private _var = _object getVariable [QGVAR(movable),false];        
             if (!_var) then {
-                if (speed _object > 5 || !isNull attachedTo _object) then {
+                if (speed _object > 5 || isPlayer attachedTo _object) then {
                     [QGVAR(explosion), [_object]] call CBA_fnc_serverEvent;
                     _objectsToRemove pushBack _object;
                     continue;
