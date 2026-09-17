@@ -938,11 +938,11 @@
                 <Original>Set phone code for arming the IED.</Original>
                 <English>Set phone code for arming the IED.</English>
             </Key>
-            <Key ID="STR_iedd_ied_phoneUnit">
+            <Key ID="STR_iedd_ied_phoneUnits">
                 <Original>Phone user</Original>
                 <English>Phone user</English>
             </Key>
-            <Key ID="STR_iedd_ied_phoneUnit_Tooltip">
+            <Key ID="STR_iedd_ied_phoneUnits_Tooltip">
                 <Original>Set unit that can arm the IED with phone.</Original>
                 <English>Set unit that can arm the IED with phone.</English>
             </Key>

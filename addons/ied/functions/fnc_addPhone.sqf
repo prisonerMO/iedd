@@ -19,7 +19,7 @@
     ["_ied",objNull]
 ];
 TRACE_1("fnc_addPhone",_this);
-private _unit = _ied getVariable [QGVAR(phoneUnit), ""];
+private _unit = _ied getVariable [QGVAR(phoneUnits), ""];
 if (_unit isEqualTo "") then {
     private _getSyncedUnits = synchronizedObjects _ied;
     if (_getSyncedUnits isNotEqualTo []) then {
@@ -27,7 +27,7 @@ if (_unit isEqualTo "") then {
     } else {
         _unit = objNull;
     };
-    _ied setVariable [QGVAR(phoneUnit), _unit];
+    _ied setVariable [QGVAR(phoneUnits), _unit];
 };
 private _number = _ied getVariable [QGVAR(phoneCode), "1234"];
 private _configOf = configOf _ied;

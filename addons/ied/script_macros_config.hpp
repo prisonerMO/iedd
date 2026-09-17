@@ -298,14 +298,32 @@ class GVAR(ied_SubCategory) {\
             defaultValue = "1234";\
             validate = "number";\
         };\
-        class GVAR(phoneUnit) {\
-            property = QGVAR(phoneUnit);\
+        class GVAR(phoneUnits) {\
+            property = QGVAR(phoneUnits);\
             control = QGVAR(phoneEdit);\
-            displayName = CSTRING(phoneUnit);\
-            tooltip = CSTRING(phoneUnit_Tooltip);\
+            displayName = CSTRING(phoneUnits);\
+            tooltip = CSTRING(phoneUnits_Tooltip);\
             expression = QUOTE(_this setVariable [ARR_2('%s',_value)]);\
             typeName = "STRING";\
             defaultValue = "''";\
+        };\
+        class GVAR(phoneGrab) {\
+            displayName = CSTRING(PhoneGrab);\
+            tooltip = CSTRING(PhoneGrab_Tooltip);\
+            property = QGVAR(phoneGrab);\
+            expression = "_this setVariable ['%s',_value];";\
+            control = QGVAR(phoneSlider);\
+            typeName = "NUMBER";\
+            defaultValue = "0";\
+        };\
+        class GVAR(phoneArm) {\
+            displayName = CSTRING(PhoneArm);\
+            tooltip = CSTRING(PhoneArm_Tooltip);\
+            property = QGVAR(phoneArm);\
+            expression = "_this setVariable ['%s',_value];";\
+            control = QGVAR(phoneSlider);\
+            typeName = "NUMBER";\
+            defaultValue = "0";\
         }
 
 #define IED_TRAINING_ACTIONS\

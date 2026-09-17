@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * call iedd_ied_fnc_phoneCheck
+ * call iedd_ied_fnc_iedPhoneCheck
  *
  * Public: No
  */
@@ -43,6 +43,6 @@ if (GVAR(phoneBombs) isNotEqualTo []) then {
     _checkTime = 0.33;
 };
 TRACE_3("Current objects",count GVAR(phoneBombs),time,_checkTime);
-[FUNC(phoneCheck), [], _checkTime] call CBA_fnc_waitAndExecute;
+[FUNC(iedPhoneCheck), [], _checkTime] call CBA_fnc_waitAndExecute;
 
 
