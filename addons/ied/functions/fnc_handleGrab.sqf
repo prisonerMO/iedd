@@ -46,7 +46,7 @@ if (_units isEqualTo []) exitWith {};
         private _object = _x;
         private _index = _players findIf {_object distance _x < _phoneGrabDist} != -1;
         if (_index) then {            
-            _units call FUNC(handleDial);
+            _units call FUNC(handleArm);
             _pfhID call CBA_fnc_removePerFrameHandler;
         };
     } forEach _players;

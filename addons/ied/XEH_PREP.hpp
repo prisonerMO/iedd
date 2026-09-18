@@ -36,7 +36,7 @@ PREP(getDigActions);
 PREP(getTrainingActions);
 PREP(handleEntityCreated);
 PREP(handleGetInMan);
-PREP(handleDial);
+PREP(handleArm);
 PREP(handleKilled);
 PREP(handleUnconscious);
 PREP(hideCharges);

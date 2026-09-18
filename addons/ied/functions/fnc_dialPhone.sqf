@@ -48,9 +48,8 @@ if (!isNull _ied) then {
     _ringSound attachTo [_ied, _ringTonePos];
 
     private _dialTone = _ied getVariable [QGVAR(phoneRingtone), QGVAR(ringSound)];
-    private _dialTonePos = _unit modelToWorldVisualWorld (_unit selectionPosition "RightHand");
     private _dialSound = createSoundSource [_dialTone , [0,0,0], [], 0]; // starts dialtone
-    _dialSound attachTo [_unit, _dialTonePos];
+    _dialSound attachTo [_unit, [0,0.02,-0.01],"LeftHand",true];
     
     [{
         params ["_args", "_pfhID"];

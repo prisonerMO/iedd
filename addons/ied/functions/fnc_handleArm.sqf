@@ -2,7 +2,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Prisoner
- * Checks if players are x radius away from the IED with phone. If so units handleDial is called to trigger the IED.
+ * Checks if players are x radius away from the IED with phone. If so units handleArm is called to trigger the IED.
  *
  * Arguments:
  * Object - IED <OBJECT>
@@ -11,12 +11,12 @@
  * None
  *
  * Example:
- * [ied] call iedd_ied_fnc_handleDial;
+ * [ied] call iedd_ied_fnc_handleArm;
  *
  * Public: Yes
  */
 params ["_ied"];
-TRACE_1("fnc_handleDial",_this);
+TRACE_1("fnc_handleArm",_this);
 private _units = _ied getVariable [QGVAR(phoneUnits), []];
 if (_units isEqualTo []) exitWith {};
 
@@ -34,10 +34,8 @@ private _handle =
         private _index = _players findIf {_object distance _x < _armDist} != -1;
         if (_index) then {            
             {
-                private _isCalling = _units findIf {(_x getVariable [QGVAR(phoneCalling), false])};
-                if (_isCalling > -1) then {
-                    continue;
-                };
+                private _isDialing= _units findIf {(_x getVariable [QGVAR(dialing), false])};
+                if (_isDialing > -1) exitWith {};
                 private _unit = _x;
                 _unit call FUNC(dialPhone);
             } forEach _units;
