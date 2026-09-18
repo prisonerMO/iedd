@@ -8,7 +8,11 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"iedd_main"};
+        requiredAddons[] = {
+            "iedd_main",
+            "A3_Anims_F", 
+            "A3_Anims_F_Config_Sdr"
+            };
         url = "https://community.bistudio.com/wiki";
         VERSION_CONFIG;
     };
