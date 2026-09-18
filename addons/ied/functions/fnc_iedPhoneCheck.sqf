@@ -33,12 +33,12 @@ if (GVAR(phoneBombs) isNotEqualTo []) then {
                 continue;
             };
         };
-        private _distance = _object getVariable [QGVAR(phoneDist),25];
+        private _distance = _object getVariable [QGVAR(phoneGrab),25];
         TRACE_2("Phone distance",_object,_distance);
         private _index = _players findIf {_object distance _x < _distance} != -1;
         if (_index) then {
             _objectsToRemove pushBack _object;
-            _object call FUNC(phoneHandler);
+            _object call FUNC(handleGrab);
         };
     } forEach GVAR(phoneBombs);
     GVAR(phoneBombs) = GVAR(phoneBombs) - _objectsToRemove;

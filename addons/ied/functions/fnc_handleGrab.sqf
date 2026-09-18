@@ -28,23 +28,22 @@ if (isNull _ied) exitWith {};
 // };
 
 private _units = _ied getVariable [QGVAR(phoneUnits), []] select {alive _x};
-private _phoneGrabDist = _ied getVariable [QGVAR(phoneGrab), 15];
 if (_units isEqualTo []) exitWith {};
-
 {
-    _x playMoveNow "Acts_PhoneSetup"    
+   _x playMoveNow "Acts_GrabAction"    
 } forEach _units;
+private _phoneArmDist = _ied getVariable [QGVAR(phoneArm), 15];
 
 [{
     params ["_args", "_pfhID"];
-    _args params ["_ied", "_units", "_phoneGrabDist"];
+    _args params ["_ied", "_units", "_phoneArmDist"];
     if (_units isEqualTo []) exitWith {
         _pfhID call CBA_fnc_removePerFrameHandler;
     };
     private _players = call CBA_fnc_players;
     {
         private _object = _x;
-        private _index = _players findIf {_object distance _x < _phoneGrabDist} != -1;
+        private _index = _players findIf {_object distance _x < _phoneArmDist} != -1;
         if (_index) then {            
             _units call FUNC(handleArm);
             _pfhID call CBA_fnc_removePerFrameHandler;
@@ -52,5 +51,5 @@ if (_units isEqualTo []) exitWith {};
     } forEach _players;
     private _aliveUnits = _units select {alive _x};
     _args set [1, _aliveUnits];
-}, 0.5, [_ied,_units,_phoneGrabDist]] call CBA_fnc_addPerFrameHandler;
+}, 0.5, [_ied,_units,_phoneArmDist]] call CBA_fnc_addPerFrameHandler;
 

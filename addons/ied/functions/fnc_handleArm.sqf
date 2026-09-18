@@ -15,32 +15,21 @@
  *
  * Public: Yes
  */
-params ["_ied"];
+params ["_units"];
 TRACE_1("fnc_handleArm",_this);
-private _units = _ied getVariable [QGVAR(phoneUnits), []];
 if (_units isEqualTo []) exitWith {};
-
-private _armDist = _ied getVariable [QGVAR(phoneArm), 15];
 private _handle =
 [{
     params ["_args", "_pfhID"];
-    _args params ["_ied", "_units", "_armDist"];
+    _args params ["_units"];
     if (_units isEqualTo []) exitWith {
         _pfhID call CBA_fnc_removePerFrameHandler;
+    };        
+    private _isDialing= _units findIf {(_x getVariable [QGVAR(dialing), false])};
+    if (_isDialing != -1) then {
+        private _unit = _units select 0;
+        _unit call FUNC(dialPhone);
     };
-    private _players = call CBA_fnc_players;
-    {
-        private _object = _x;
-        private _index = _players findIf {_object distance _x < _armDist} != -1;
-        if (_index) then {            
-            {
-                private _isDialing= _units findIf {(_x getVariable [QGVAR(dialing), false])};
-                if (_isDialing > -1) exitWith {};
-                private _unit = _x;
-                _unit call FUNC(dialPhone);
-            } forEach _units;
-        };
-    } forEach _players;
     private _aliveUnits = _units select {alive _x};
     _args set [1, _aliveUnits];
-}, 0.5, [_ied,_units,_armDist]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_units]] call CBA_fnc_addPerFrameHandler;
