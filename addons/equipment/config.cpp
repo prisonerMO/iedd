@@ -7,10 +7,12 @@ class CfgPatches {
         units[] = {
             "iedd_equipment_Box",
             "iedd_item_Base",
-            "iedd_item_Notebook"
+            "iedd_item_Notebook",
+            "iedd_item_Phone"
         };
         weapons[] = {
-            "iedd_item_notebook"
+            "iedd_item_notebook",
+            "iedd_item_phone"        
         };
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {

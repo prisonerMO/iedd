@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [ace_player, 'iedd_item_notebook'] call iedd_notebook_fnc_drop
+ * [ace_player, 'iedd_item_notebook'] call iedd_equipment_fnc_drop
  *
  * Public: No
  */

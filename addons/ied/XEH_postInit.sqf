@@ -153,6 +153,22 @@
     _phone setVectorDirAndUp [_dir, _up];
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(detachPhone), {
+    params ["_object"];
+    private _attachedObjects = attachedObjects _object;
+    private _index = _attachedObjects findIf {typeOf _x == QEGVAR(Equipment,Phone)};
+    if (_index > -1) then {
+        private _phone = _attachedObjects select _index;
+        deleteVehicle _phone;
+        private _holder = createVehicle ["groundweaponholder", [0,0,0], [], 0, "CAN_COLLIDE"];
+        _holder addMagazineCargoGlobal  ["DemoCharge_Remote_Mag",1];
+        _holder setPosWorld (_object modelToWorldWorld ([0,0,0])); //TODO get left hand position and use that instead of [0,0,0]
+        _memPos = getPosATL _holder;
+        _holder setDir (random 359);
+        _holder setPosATL [_memPos select 0, _memPos select 1, 0];
+    };
+}] call CBA_fnc_addEventHandler;
+
 if (isServer) then {
 
     [{

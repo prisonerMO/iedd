@@ -34,6 +34,6 @@ private _configOf = configOf _ied;
 private _pos = getArray (_configOf >> QGVAR(phonePos));
 private _dir = getArray (_configOf >> QGVAR(phoneDir));
 private _up = getArray (_configOf >> QGVAR(phoneUp));
-private _phone = createSimpleObject [QGVAR(Phone), [0,0,0]];
+private _phone = createSimpleObject ['iedd_item_Phone', [0,0,0]];
 _phone attachTo [_ied, _pos];
 _phone setVectorDirAndUp [_dir, _up];

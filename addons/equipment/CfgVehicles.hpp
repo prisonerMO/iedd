@@ -81,7 +81,32 @@ class CfgVehicles {
                 distance = 2;
                 position = "";
                 condition = QUOTE(true);
-                statement = QUOTE([ARR_2(_player,_target)] call EFUNC(notebook,pick));
+                statement = QUOTE([ARR_3(_player,_target,'iedd_item_notebook')] call FUNC(pick));
+            };
+        };
+        class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+        };
+    };
+    class iedd_Item_Phone: iedd_Item_Base {
+        author = AUTHOR;        
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "IEDD Phone Object";
+        model = "\A3\Structures_F\Items\Electronics\MobilePhone_old_F.p3d";
+        ace_dragging_canDrag = 0;
+        ace_dragging_canCarry = 0;
+        class TransportItems {
+            IEDD_ADDITEM(iedd_item_phone,1);
+        };
+        class ACE_Actions {
+            class ACE_MainActions {
+                displayName = CSTRING(PickUp);
+                icon = "\a3\ui_f\data\igui\cfg\actions\take_ca.paa";
+                distance = 2;
+                position = "";
+                condition = QUOTE(true);
+                statement = QUOTE([ARR_3(_player,_target,'iedd_item_phone')] call FUNC(pick));
             };
         };
         class EventHandlers {

@@ -19,9 +19,9 @@ class CfgVehicles {
                         exceptions[] = {"notOnMap", "isNotInside"};
                     };
                     class GVAR(drop) {
-                        condition = QUOTE([ARR_1(_player)] call FUNC(canDrop));
+                        condition = QUOTE([ARR_1(_player)] call EFUNC(equipment,canDrop));
                         displayName = CSTRING(Action_Drop);
-                        statement = QUOTE([ARR_2(_player,'iedd_item_notebook')] call FUNC(drop));
+                        statement = QUOTE([ARR_2(_player,'iedd_item_notebook')] call EFUNC(equipment,drop));
                         showDisabled = 0;
                         icon = "";
                         exceptions[] = {"notOnMap", "isNotInside"};

@@ -10,7 +10,7 @@
  * Can Drop <BOOLEAN>
  *
  * Example:
- * [ace_player] call iedd_notebook_fnc_canDrop
+ * [ace_player] call iedd_equipment_fnc_canDrop
  *
  * Public: No
  */

@@ -24,11 +24,11 @@ private _pos = [0,0.02,-0.01]; //To-Do correct position
 private _dir = [0.02,-0.1,0]; //To-Do correct direction
 private _up = [0.6,1,-1]; //To-Do correct up
 private _attached =  attachedObjects _unit;
-private _isAttached = _attached findIf {typeOf _x == "iedd_ied_Phone"};
+private _isAttached = _attached findIf {typeOf _x == "iedd_item_Phone"};
 private _phone = if (_isAttached != -1) then {
    _attached select _isAttached;
 } else {
-   createSimpleObject ["iedd_ied_Phone" ,[0,0,0]];
+   createSimpleObject ["iedd_item_Phone" ,[0,0,0]];
 };
 [QGVAR(attachPhone),[_unit,_phone,_pos,_dir,_up]] call CBA_fnc_globalEvent;
 

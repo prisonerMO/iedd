@@ -33,7 +33,6 @@ class CfgPatches {
             QGVAR(Training_CanisterFuel),
             QGVAR(Training_Metal),
             QGVAR(Training_Metal_English),
-            QGVAR(Phone),
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

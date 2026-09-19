@@ -14,4 +14,17 @@ class CfgWeapons {
             mass = 1;
         };
     };
+    class iedd_item_phone: CBA_MiscItem {
+        author = "prisoner";
+        // picture = QPATHTOEF(models,preview\phone.paa);
+        displayName = "IEDD Phone Object";
+        model = "\A3\Structures_F\Items\Electronics\MobilePhone_old_F.p3d";
+        // icon = QPATHTOEF(models,preview\phone.paa);
+        scope = 2;
+        // editorPreview =  QPATHTOEF(models,preview\phone.paa);
+        // descriptionShort = CSTRING(descriptionShort);
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 1;
+        };
+    };
 };
