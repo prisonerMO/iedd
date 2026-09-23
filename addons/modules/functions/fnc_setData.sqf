@@ -4,8 +4,7 @@
  * Set VBIED position data
  *
  * Arguments:
- * 0: Combo box control <CONTROL>
- * 1: Value <NUMBER>
+ * 0: Display <DISPLAY>
  *
  * Return Value:
  * [<POSITION ARRAY>, <DIRECTION ARRAY>, <UP VECTOR ARRAY>]
@@ -19,7 +18,7 @@
  * [[123.45, 678.90, 10.5], [0.98, 0.12, 0.0], [0.0, 0.0, 1.0]]
  *
  * Example:
- * [ctrlCombo, 0] call iedd_modules_fnc_setData
+ * [_display] call iedd_modules_fnc_setData
  *
  * Public: No
  */

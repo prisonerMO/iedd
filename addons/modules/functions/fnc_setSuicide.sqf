@@ -92,7 +92,7 @@ private _side = (side group _unit) call BIS_fnc_sideID;
     if (_side != _forEachIndex) then {
         _sideCtrl cbSetChecked true;
     }
-} forEach [62528,62527,62529,62530];
+} forEach [62527,62528,62529,62530];
 
 private _fnc_onUnload = {
     private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];

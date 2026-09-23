@@ -20,9 +20,9 @@ TRACE_1("fnc_deleted_helper",_this);
 
 private _attachedObjects = attachedObjects _entity;
 if (_attachedObjects isNotEqualTo []) then {
-    private _index = IEDD_CLASSES+IEDD_FAKE_CLASSES findIf {typeOf _entity == _x};
-    if (_index == -1) then {
-        private _object = _attachedObjects select _index;
+    private _object = _attachedObjects select 0;
+    private _index = IEDD_CLASSES+IEDD_FAKE_CLASSES findIf {typeOf _object == _x};
+    if (_index > -1) then {
         private _isBury = _object getVariable [QGVAR(isBury),false];
         if (_isBury) then {
             deleteVehicle _object;
