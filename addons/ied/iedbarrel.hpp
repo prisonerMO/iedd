@@ -72,20 +72,7 @@ class GVAR(Barrel_Grey):GVAR(Barrel) {
 class GVAR(Training_Barrel):GVAR(Barrel) {
     displayName = CSTRING(Training_Barrel_DisplayName);
     editorSubcategory = "IEDD_TRAINING_IEDS";
-    class ACE_Actions : ACE_Actions {
-        class ACE_MainActions : ACE_MainActions {
-            displayName = "$STR_ace_interaction_MainAction";
-            selection = "";
-            distance = 2;
-            condition = QUOTE(true);
-            class IEDD_ResetMenu {
-                exceptions[] = {"isNotSwimming"};
-                displayName = CSTRING(Reset_DisplayName);
-                condition = QUOTE(true);
-                insertChildren = QUOTE(_this call FUNC(getTrainingActions));
-            };
-        };
-    };
+    IED_TRAINING_ACTIONS;
 };
 
 class GVAR(Training_Barrel_Grey):GVAR(Training_Barrel) {

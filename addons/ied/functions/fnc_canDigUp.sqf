@@ -37,7 +37,7 @@ if (_objects isEqualTo []) exitWith {
 };
 
 private _ied = _objects select 0;
-private _index = IEDD_CLASSES+IEDD_FAKE_CLASSES findIf {typeOf _ied == _x};
+private _index = IEDD_FAKE_BASE_CLASSES findIf {_ied isKindOf _x};
 if (_index == -1) exitWith {
     false;
 };

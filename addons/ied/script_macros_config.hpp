@@ -271,10 +271,6 @@ class GVAR(ied_SubCategory) {\
 #define IED_TRAINING_ACTIONS\
     class ACE_Actions : ACE_Actions {\
         class ACE_MainActions : ACE_MainActions {\
-            displayName = "$STR_ace_interaction_MainAction";\
-            selection = "";\
-            distance = 2;\
-            condition = QUOTE(true);\
             class IEDD_ResetMenu {\
                 exceptions[] = {"isNotSwimming"};\
                 displayName = CSTRING(Reset_DisplayName);\
