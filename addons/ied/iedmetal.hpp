@@ -71,6 +71,8 @@ class GVAR(Training_Metal):GVAR(Metal) {
     IED_TRAINING_ACTIONS;
 };
 
-class GVAR(Training_Metal_English):GVAR(Training_Metal) {
+class GVAR(Training_Metal_English):GVAR(Metal_English) {
     displayName = CSTRING(Training_MetalBarrelEnglish_DisplayName);
+    editorSubcategory = "IEDD_TRAINING_IEDS";
+    IED_TRAINING_ACTIONS;
 };

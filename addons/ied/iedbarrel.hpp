@@ -75,6 +75,8 @@ class GVAR(Training_Barrel):GVAR(Barrel) {
     IED_TRAINING_ACTIONS;
 };
 
-class GVAR(Training_Barrel_Grey):GVAR(Training_Barrel) {
+class GVAR(Training_Barrel_Grey):GVAR(Barrel_Grey) {
     displayName = CSTRING(Training_BarrelGrey_DisplayName);
+    editorSubcategory = "IEDD_TRAINING_IEDS";
+    IED_TRAINING_ACTIONS;
 };
