@@ -33,7 +33,7 @@ if (isNull _unit) exitWith {
     _display closeDisplay 0;
 };
 
-if !(typeOf _unit in IEDD_CLASSES + IEDD_FAKE_CLASSES) exitWith {
+if (IEDD_FAKE_BASE_CLASSES findIf {_unit isKindOf _x} == -1) exitWith {
     _message = "Type of unit is not IED";
     deleteVehicle _logic;
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
