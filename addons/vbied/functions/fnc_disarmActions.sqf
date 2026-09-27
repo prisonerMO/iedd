@@ -106,7 +106,7 @@ for "_i" from 0 to _countWires do {
                     params ["_actionParams","_elapsedTime", "_totalTime"];
                     _actionParams #0 params ["", "_bombObj","","_isFail","_isFailTime"];
 
-                    if (_isFail && _elapsedTime > _isFailTime && !GVAR(fail)) then {
+                    if (_isFail && _elapsedTime > _isFailTime && !EGVAR(ied,fail)) then {
                         EGVAR(ied,fail) = true;
                         [QEGVAR(ied,sound), [QEGVAR(ied,fail1),_bombObj]] call CBA_fnc_globalEvent;
                     };

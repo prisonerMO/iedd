@@ -8,8 +8,8 @@
  * 1: Target <OBJECT>
  * 2: Waypoint [Group, Waypoint Index] <ARRAY>
  * 3: Wait Time <NUMBER>
- * 4: Previus distance <NUMBER>
- * 5: Next distance <NUMBER>
+ * 4: Next distance <NUMBER>
+ * 5: Previous distance <NUMBER>
  *
  * Return Value:
  * None

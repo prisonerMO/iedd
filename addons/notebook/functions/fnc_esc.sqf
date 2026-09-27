@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * ["iedd_notebook_display"] call iedd_notebook_fnc_esc
+ * [_display] call iedd_notebook_fnc_esc
  *
  * Public: No
  */

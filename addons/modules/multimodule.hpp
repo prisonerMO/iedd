@@ -180,9 +180,9 @@ class GVAR(multi): Module_F {
             defaultValue = 1;
         };
         class GVAR(extraCount):Default {
-            property = QGVAR(extraGroundSigns);
+            property = QGVAR(extraCount);
             displayName = CSTRING(ExtraCount);
-            tooltip = CSTRING(ExtraCount_ToolTip);
+            tooltip = CSTRING(ExtraCount_Tooltip);
             control = "EditShort";
             typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
             defaultValue = "0";

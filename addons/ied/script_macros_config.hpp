@@ -240,13 +240,13 @@ class GVAR(ied_SubCategory) {\
         class GVAR(bury_SubCategory) {\
             data = "AttributeSystemSubcategory";\
             control = "SubCategory";\
-            displayName = "Bury IED";\
+            displayName = CSTRING(IsBury);\
         };\
         class GVAR(isBury) {\
             property = QGVAR(isBury);\
             control = QGVAR(isBury);\
-            displayName = CSTRING(isBury);\
-            tooltip = CSTRING(isBury_Tooltip);\
+            displayName = CSTRING(IsBury);\
+            tooltip = CSTRING(IsBury_Tooltip);\
             expression = QUOTE(if (is3DEN) then {\
                 [ARR_2(_this,_value)] call FUNC(bury3DEN);\
             } else {\
