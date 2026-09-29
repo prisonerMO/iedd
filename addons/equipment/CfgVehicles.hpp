@@ -71,6 +71,9 @@ class CfgVehicles {
         editorPreview = QPATHTOEF(models,preview\notebook.paa);
         ace_dragging_canDrag = 0;
         ace_dragging_canCarry = 0;
+        class TransportItems {
+            IEDD_ADDITEM(iedd_item_notebook,1);
+        };
         class ACE_Actions {
             class ACE_MainActions {
                 displayName = CSTRING(PickUp);
