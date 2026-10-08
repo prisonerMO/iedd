@@ -43,6 +43,7 @@ class GVAR(Bucket_Fake):Land_PlasticBucket_01_closed_F {
 class GVAR(Bucket):GVAR(Bucket_Fake) {
     scope = 2;
     scopeCurator = 2;
+    iedd_ied_default = QGVAR(Bucket_Fake);
     class ACE_Actions:ACE_Actions {
         class ACE_MainActions:ACE_MainActions {
             class IEDD_DisarmMenu {

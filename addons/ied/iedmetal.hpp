@@ -18,7 +18,17 @@ class GVAR(Metal_Fake):Land_GarbageBarrel_01_F {
             condition = QUOTE(!(_target getVariable [ARR_2(QQGVAR(isBury),false)]));//QUOTE(true);
         };
     };
-    iedd_ied_buryDepth[] = {0.770159,0.771682,1.21519};    
+    ace_dragging_canDrag = 1;
+    ace_dragging_dragPosition[] = {0, 1, 0};
+    ace_dragging_dragDirection = 0;
+    ace_dragging_canCarry = 1;
+    ace_dragging_carryPosition[] = {0, 0.6, 0};
+    ace_dragging_carryDirection = 0;
+    ace_cargo_size = 2;
+    ace_cargo_canLoad = 1;
+    ace_cargo_noRename = 1;
+    ace_cargo_blockUnloadCarry = 0;
+    iedd_ied_buryDepth[] = {0.770159,0.771682,1.21519};
     //iedd_ied_buryDepth3DEN[] = {0.784926,0.779376,1.22769};
 };
 class GVAR(Metal_English_Fake):GVAR(Metal_Fake) {
@@ -61,6 +71,8 @@ class GVAR(Training_Metal):GVAR(Metal) {
     IED_TRAINING_ACTIONS;
 };
 
-class GVAR(Training_Metal_English):GVAR(Training_Metal) {
+class GVAR(Training_Metal_English):GVAR(Metal_English) {
     displayName = CSTRING(Training_MetalBarrelEnglish_DisplayName);
+    editorSubcategory = "IEDD_TRAINING_IEDS";
+    IED_TRAINING_ACTIONS;
 };

@@ -233,7 +233,7 @@ class GVAR(RcsVbied): RscDisplayAttributes {
                         };
                         class GVAR(speedL): GVAR(posL) {
                             text = CSTRING(Zeus_Speed);
-                            tooltip = ECSTRING(vbied,Speed_Tooltip);
+                            tooltip = ECSTRING(vbied,Speed_ToolTip);
                             y = QUOTE(H_PART(8.8));
                         };
                         class GVAR(speedSlider): RscXSliderH {

@@ -49,43 +49,43 @@ class GVAR(multi): Module_F {
             displayName = CSTRING(Ieds_Category); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
         };
         class EGVAR(ied,CanisterPlastic):Checkbox {
-            property = QGVAR(CanisterPlastic);
+            property = QEGVAR(ied,CanisterPlastic);
             displayName = ECSTRING(ied,PlasticCanister_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
         class EGVAR(ied,CanisterFuel):Checkbox {
-            property = QGVAR(CanisterFuel);
+            property = QEGVAR(ied,CanisterFuel);
             displayName = ECSTRING(ied,FuelCanister_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
         class EGVAR(ied,Cardboard):Checkbox {
-            property = QGVAR(Cardboard);
+            property = QEGVAR(ied,Cardboard);
             displayName = ECSTRING(ied,Cardboard_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
         class EGVAR(ied,Cinder):Checkbox {
-            property = QGVAR(Cinder);
+            property = QEGVAR(ied,Cinder);
             displayName = ECSTRING(ied,Cinder_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
         class EGVAR(ied,Barrel):Checkbox {
-            property = QGVAR(Barrel);
+            property = QEGVAR(ied,Barrel);
             displayName = ECSTRING(ied,Barrel_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
         class EGVAR(ied,Metal):Checkbox {
-            property = QGVAR(Metal);
+            property = QEGVAR(ied,Metal);
             displayName = ECSTRING(ied,MetalBarrel_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
         class EGVAR(ied,Bucket):Checkbox {
-            property = QGVAR(Bucket);
+            property = QEGVAR(ied,Bucket);
             displayName = ECSTRING(ied,Bucket_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
@@ -105,44 +105,44 @@ class GVAR(multi): Module_F {
             control = "SubCategory";
             displayName = CSTRING(Fake_Category);
         };
-        class GVAR(CanisterPlastic_Fake):Checkbox {
-            property = QGVAR(CanisterPlastic_Fake);
+        class EGVAR(ied,CanisterPlastic_Fake):Checkbox {
+            property = QEGVAR(ied,CanisterPlastic_Fake);
             displayName = ECSTRING(ied,PlasticCanister_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class GVAR(CanisterFuel_Fake):Checkbox {
-            property = QGVAR(CanisterFuel_Fake);
+        class EGVAR(ied,CanisterFuel_Fake):Checkbox {
+            property = QEGVAR(ied,CanisterFuel_Fake);
             displayName = ECSTRING(ied,FuelCanister_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class GVAR(Cardboard_Fake):Checkbox {
-            property = QGVAR(Cardboard_Fake);
+        class EGVAR(ied,Cardboard_Fake):Checkbox {
+            property = QEGVAR(ied,Cardboard_Fake);
             displayName = ECSTRING(ied,Cardboard_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class GVAR(Cinder_Fake):Checkbox {
-            property = QGVAR(Cinder_Fake);
+        class EGVAR(ied,Cinder_Fake):Checkbox {
+            property = QEGVAR(ied,Cinder_Fake);
             displayName = ECSTRING(ied,Cinder_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class GVAR(Metal_Fake):Checkbox {
-            property = QGVAR(Metal_Fake);
-            displayName = ECSTRING(ied,Barrel_DisplayName);
-            tooltip = CSTRING(Type_Tooltip);
-            defaultValue = 1;
-        };
-        class GVAR(Barrel_Fake):Checkbox {
-            property = QGVAR(Barrel_Fake);
+        class EGVAR(ied,Metal_Fake):Checkbox {
+            property = QEGVAR(ied,Metal_Fake);
             displayName = ECSTRING(ied,MetalBarrel_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
         };
-        class GVAR(Bucket_Fake):Checkbox {
-            property = QGVAR(Bucket_Fake);
+        class EGVAR(ied,Barrel_Fake):Checkbox {
+            property = QEGVAR(ied,Barrel_Fake);
+            displayName = ECSTRING(ied,MetalBarrel_DisplayName);
+            tooltip = CSTRING(Type_Tooltip);
+            defaultValue = 1;
+        };
+        class EGVAR(ied,Bucket_Fake):Checkbox {
+            property = QEGVAR(ied,Bucket_Fake);
             displayName = ECSTRING(ied,Bucket_DisplayName);
             tooltip = CSTRING(Type_Tooltip);
             defaultValue = 1;
@@ -180,9 +180,9 @@ class GVAR(multi): Module_F {
             defaultValue = 1;
         };
         class GVAR(extraCount):Default {
-            property = QGVAR(extraGroundSigns);
+            property = QGVAR(extraCount);
             displayName = CSTRING(ExtraCount);
-            tooltip = CSTRING(ExtraCount_ToolTip);
+            tooltip = CSTRING(ExtraCount_Tooltip);
             control = "EditShort";
             typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
             defaultValue = "0";

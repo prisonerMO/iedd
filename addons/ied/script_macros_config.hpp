@@ -240,13 +240,13 @@ class GVAR(ied_SubCategory) {\
         class GVAR(bury_SubCategory) {\
             data = "AttributeSystemSubcategory";\
             control = "SubCategory";\
-            displayName = "Bury IED";\
+            displayName = CSTRING(IsBury);\
         };\
         class GVAR(isBury) {\
             property = QGVAR(isBury);\
             control = QGVAR(isBury);\
-            displayName = CSTRING(isBury);\
-            tooltip = CSTRING(isBury_Tooltip);\
+            displayName = CSTRING(IsBury);\
+            tooltip = CSTRING(IsBury_Tooltip);\
             expression = QUOTE(if (is3DEN) then {\
                 [ARR_2(_this,_value)] call FUNC(bury3DEN);\
             } else {\
@@ -271,10 +271,6 @@ class GVAR(ied_SubCategory) {\
 #define IED_TRAINING_ACTIONS\
     class ACE_Actions : ACE_Actions {\
         class ACE_MainActions : ACE_MainActions {\
-            displayName = "$STR_ace_interaction_MainAction";\
-            selection = "";\
-            distance = 2;\
-            condition = QUOTE(true);\
             class IEDD_ResetMenu {\
                 exceptions[] = {"isNotSwimming"};\
                 displayName = CSTRING(Reset_DisplayName);\

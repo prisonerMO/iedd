@@ -20,7 +20,7 @@
     "iedd_ied_Bucket"\
 ]
 
-#define IEDD_FAKE_CLASSES [\
+#define IEDD_FAKE_BASE_CLASSES [\
     "iedd_ied_CanisterPlastic_Fake",\
     "iedd_ied_CanisterFuel_Fake",\
     "iedd_ied_Cardboard_Fake",\
@@ -28,6 +28,30 @@
     "iedd_ied_Metal_Fake",\
     "iedd_ied_Barrel_Fake",\
     "iedd_ied_Bucket_Fake"\
+]
+
+#define IEDD_FAKE_CLASSES [\
+    "iedd_ied_CanisterPlastic_Fake",\
+    "iedd_ied_CanisterFuel_Fake",\
+    "iedd_ied_Cardboard_Fake",\
+    "iedd_ied_Cinder_Fake",\
+    "iedd_ied_Metal_Fake",\
+    "iedd_ied_Metal_English_Fake",\
+    "iedd_ied_Barrel_Fake",\
+    "iedd_ied_Barrel_Grey_Fake",\
+    "iedd_ied_Bucket_Fake"\
+]
+
+#define IEDD_TRAINING_CLASSES [\
+    "iedd_ied_Training_Barrel",\
+    "iedd_ied_Training_Barrel_Grey",\
+    "iedd_ied_Training_Bucket",\
+    "iedd_ied_Training_CanisterPlastic",\
+    "iedd_ied_Training_Cardboard",\
+    "iedd_ied_Training_Cinder",\
+    "iedd_ied_Training_CanisterFuel",\
+    "iedd_ied_Training_Metal",\
+    "iedd_ied_Training_Metal_English"\
 ]
 
 #define IEDD_DECALS [\

@@ -7,7 +7,7 @@
  * 0: Type <STRING>
  * 1: Key <NUMBER>
  * 2: Position <ARRAY of NUMBERS>
- * 3: Direction <ARRAYo f NUMBERS>
+ * 3: Direction <ARRAY of NUMBERS>
  * 4: Up <ARRAY of NUMBERS>
  * 5: Position name <STRING>
  *

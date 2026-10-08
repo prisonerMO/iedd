@@ -23,7 +23,7 @@ TRACE_1("fnc_explosion",_this);
 private _dis = false;
 if (typeOf _source == "GrenadeHand") exitWith {_dis};
 if ((_vehicle distance _source) < 10 && {!isNull _vehicle}) then {
-    if (_vehicle getVariable QGVAR(bomb)) then {
+    if (_vehicle getVariable [QGVAR(bomb), false]) then {
         _vehicle setVariable [QGVAR(bomb), true, true];
     };
     _vehicle setVariable [QGVAR(dud),0,true];

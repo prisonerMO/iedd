@@ -178,7 +178,7 @@
     1
 ] call CBA_fnc_addSetting;
 
-//VBIED Timer Is Actived BOOLEAN
+//VBIED Timer Is Activated BOOLEAN
 [
     QGVAR(defaultRandomTimer),
     "LIST",

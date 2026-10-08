@@ -7,7 +7,7 @@
  * 0: Type <STRING>
  * 1: Key <NUMBER>
  * 2: Position <ARRAY of NUMBERS>
- * 3: Direction <ARRAYo f NUMBERS>
+ * 3: Direction <ARRAY of NUMBERS>
  * 4: Up <ARRAY of NUMBERS>
  * 5: Position name <STRING>
  *
@@ -15,7 +15,7 @@
  * Return description <NONE>
  *
  * Example:
- * ["van_01_transport_f.p3d",0,[0,0,0],[0,0,0],[0,0,0],"Front"] call iedd_vbied_fnc_preDefined;
+ * ["van_01_transport_f.p3d",0,[0,0,0],[0,0,0],[0,0,0],"Front"] call iedd_vbied_fnc_userDefined;
  *
  * Public: No
  */

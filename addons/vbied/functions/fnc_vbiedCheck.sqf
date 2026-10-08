@@ -52,7 +52,7 @@ if (GVAR(bombs) isNotEqualTo []) then {
             };
         };
         if (GVAR(plrCheck)) then {
-            private _nearPlrs = _players select {;;(_object distance _x) < _distance && {!(_x in _veh)}};
+            private _nearPlrs = _players select {(_object distance _x) < _distance && {!(_x in _veh)}};
             if (_nearPlrs isNotEqualTo []) then {
                 {
                     _nearPlr = _x;
