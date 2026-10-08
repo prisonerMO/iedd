@@ -1,7 +1,7 @@
 class CfgVehicles
 {
     class ThingX;
-    // Straigh
+    // Straight
     class IEDD_WireStraight_Base : ThingX
     {
         author = AUTHOR;

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Prisoner
- * Active selected IED via Ace Zeus Actions
+ * Activate selected IED via ACE Zeus Actions
  *
  * Arguments:
  * None

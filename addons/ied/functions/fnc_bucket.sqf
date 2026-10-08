@@ -47,7 +47,7 @@ if (!isServer) exitWith {};
         };
         [{isNull (_this select 0)},
         {
-            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_isBury","_bury"];
+            params ["_bombObj","_type","_bombPos","_decals","_setDir","_dir","_vectorDirAndUp","_lidState","_isBury","_bury"];
             private  _fakeBombObj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
             if (_setDir && !_isBury) then {
                 _fakeBombObj setDir random 359;
@@ -60,9 +60,14 @@ if (!isServer) exitWith {};
                 [_fakeBombObj] call FUNC(decals);
             };
             if (_isBury) then {
+                if (_fakeBombObj animationPhase 'bucketlid_hide' == 1) then {
+                    _fakeBombObj animate ["bucketlid_hide", 0];
+                };
                 _fakeBombObj setVariable [QGVAR(isBury),true,true];
                 _fakeBombObj setVariable [QGVAR(bury),_bury,true];
                 [_fakeBombObj] call FUNC(buryIED);
+            } else {
+                _fakeBombObj animate ["bucketlid_hide", _lidState];
             };
         }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_lidState,_isBury,_bury]] call CBA_fnc_waitUntilAndExecute;
     };
@@ -164,9 +169,11 @@ if (!isServer) exitWith {};
             speed (_this select 0) == 0
         },
         {
-            params ["_bombObj","_decals", "_setDir", "_wireSet","_lidState","_isBury"];
-            _bombObj animate ["bucketlid_hide", _lidState];
+            params ["_bombObj","_decals", "_setDir", "_wireSet","_lidState","_isBury"];            
             if (_isBury) then {
+                if (_bombObj animationPhase 'bucketlid_hide' == 1) then {
+                    _bombObj animate ["bucketlid_hide", 0];
+                };
                 [_bombObj] call FUNC(buryIED);
             } else { 
                 if (_setDir) then {

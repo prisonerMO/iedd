@@ -124,7 +124,7 @@ class iedd_vbied_attributes {
         };
         class GVAR(edit) {
             displayName = CSTRING(Defined_Name);
-            tooltip = CSTRING(Defined_Name_ToolTip);
+            tooltip = CSTRING(Defined_Name_Tooltip);
             property = QGVAR(edit);
             control = QGVAR(Edit);
             condition = "objectVehicle";
@@ -278,10 +278,10 @@ class iedd_vbied_attributes {
 		class GVAR(timerSub) {
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
-			displayName = ECSTRING(Ied,Timer_Category);
+			displayName = ECSTRING(ied,Timer_Category);
 		};
 		class GVAR(timer) {
-			displayName = ECSTRING(Ied,Timer);
+			displayName = ECSTRING(ied,Timer);
 			tooltip = CSTRING(Timer_Tooltip);
 			property = QGVAR(timer);
 			control = "Combo";
@@ -291,22 +291,22 @@ class iedd_vbied_attributes {
             condition = "objectVehicle";
 			class Values {
 				class 1	{
-					name = ECSTRING(Ied,Name_Disabled);
+					name = ECSTRING(ied,Name_Disabled);
 					value = 0;
 				};
 				class 2	{
-					name = ECSTRING(Ied,Name_Enabled);
+					name = ECSTRING(ied,Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = ECSTRING(Ied,Name_Random);
+					name = ECSTRING(ied,Name_Random);
 					value = 2;
 				};
 			};
 		};
 		class GVAR(timerValue) {
-			displayName = ECSTRING(Ied,TimerValue);
-			tooltip = ECSTRING(Ied,TimerValue_Tooltip);
+			displayName = ECSTRING(ied,TimerValue);
+			tooltip = ECSTRING(ied,TimerValue_Tooltip);
 			property = QGVAR(timerValue);
 			control = QGVAR(timeSlider);
 			expression = "_this setVariable ['%s',_value];";
@@ -315,8 +315,8 @@ class iedd_vbied_attributes {
             condition = "objectVehicle";
 		};
 		class GVAR(randomTimer) {
-			displayName = ECSTRING(Ied,RandomTimer);
-			tooltip =ECSTRING(Ied,RandomTimer_Tooltip);
+			displayName = ECSTRING(ied,RandomTimer);
+			tooltip =ECSTRING(ied,RandomTimer_Tooltip);
 			property = QGVAR(randomTimer);
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
@@ -325,22 +325,22 @@ class iedd_vbied_attributes {
             condition = "objectVehicle";
 			class Values {
 				class 1	{
-					name = ECSTRING(Ied,Name_Disabled);
+					name = ECSTRING(ied,Name_Disabled);
 					value = 0;
 				};
 				class 2	{
-					name = ECSTRING(Ied,Name_Enabled);
+					name = ECSTRING(ied,Name_Enabled);
 					value = 1;
 				};
 				class 3	{
-					name = ECSTRING(Ied,Name_Random);
+					name = ECSTRING(ied,Name_Random);
 					value = 2;
 				};
 			};
 		};
 		class GVAR(randomTimerMin) {
-			displayName = ECSTRING(Ied,RandomTimerMin);
-			tooltip = ECSTRING(Ied,RandomTimerMin_Tooltip);
+			displayName = ECSTRING(ied,RandomTimerMin);
+			tooltip = ECSTRING(ied,RandomTimerMin_Tooltip);
 			property = QGVAR(randomTimerMin);
 			control = QGVAR(timeSlider);
 			expression = "_this setVariable ['%s',_value];";
@@ -349,8 +349,8 @@ class iedd_vbied_attributes {
             condition = "objectVehicle";
 		};
 		class GVAR(randomTimerMax) {
-			displayName = ECSTRING(Ied,RandomTimerMax);
-			tooltip = ECSTRING(Ied,RandomTimerMax_Tooltip);
+			displayName = ECSTRING(ied,RandomTimerMax);
+			tooltip = ECSTRING(ied,RandomTimerMax_Tooltip);
 			property = QGVAR(randomTimerMax);
 			control = QGVAR(timeSlider);
 			expression = "_this setVariable ['%s',_value];";

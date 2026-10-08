@@ -5,13 +5,13 @@
  *
  * Arguments:
  * 0: Object <OBJECT>
- * 1: Item <STRING>
+ * 1: Item <OBJECT>
  *
  * Return Value:
  * None
  *
  * Example:
- * [ace_player, cursorObject, typeOf cursorObject] call iedd_equipment_fnc_pick
+ * [ace_player, _notebookObject] call iedd_notebook_fnc_pick
  *
  * Public: No
  */

@@ -57,7 +57,7 @@ class GVAR(explodeVbied):GVAR(activateVbied) {
 };
 //Test bury ied
 class GVAR(BuryIED): GVAR(moduleBase) {    
-    displayName = ECSTRING(ied,isBury);
+    displayName = ECSTRING(ied,IsBury);
     category = QGVAR(ieds);
     curatorCanAttach = 1;
     curatorInfoType = QGVAR(RcsBuryIED);

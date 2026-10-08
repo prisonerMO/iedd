@@ -4,7 +4,7 @@
  * Change the notebook tabs
  *
  * Arguments:
- * 0: Varition <STRING> (default: "home")
+ * 0: Variation <STRING> (default: "home")
  * 1: Current <NUMBER> (default: 0)
  *
  * Return Value:

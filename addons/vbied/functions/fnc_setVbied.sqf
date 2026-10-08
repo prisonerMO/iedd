@@ -101,7 +101,7 @@ TRACE_1("SetVbied",_this);
     _box setVariable [QEGVAR(ied,size), _size];
     _box setVariable [QEGVAR(ied,dud), _dud];
     //Set defuseaction
-    private _text = localize ELSTRING(Ied,Name_Long);
+    private _text = localize ELSTRING(ied,Name_Long);
     private _jipId = [QEGVAR(ied,defuseAction), [_box, _wireSet,_text]] call CBA_fnc_globalEventJIP;
     [_jipID, _box] call CBA_fnc_removeGlobalEventJIP;
     //Set eventhandlers on vehicle

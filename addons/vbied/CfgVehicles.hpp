@@ -53,7 +53,7 @@ class CfgVehicles {
                 condition = QUOTE(true);
                 class IEDD_DisarmMenu {
                     exceptions[] = {"isNotSwimming"};
-                    displayName = ECSTRING(Ied,Disarm_DisplayName);
+                    displayName = ECSTRING(ied,Disarm_DisplayName);
                     condition = QUOTE(_target getVariable [ARR_2(QQEGVAR(ied,bomb),false)] && {[_player] call EFUNC(ied,canDisarm)});
                     statement = "";
                 };

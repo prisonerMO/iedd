@@ -60,7 +60,6 @@ if (!isServer) exitWith {};
                 _fakeBombObj setVariable [QGVAR(bury),_bury,true];
                 [_fakeBombObj] call FUNC(buryIED);
             };
-            _bombObj animate ["bucketlid_hide", _lidState];
         }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_isBury,_bury]] call CBA_fnc_waitUntilAndExecute;
     };
 
