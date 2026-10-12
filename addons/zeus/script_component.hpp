@@ -1,5 +1,5 @@
-#define COMPONENT ied
-#define COMPONENT_NAME "IEDD Notebook - IEDs"
+#define COMPONENT zeus
+#define COMPONENT_NAME "IEDD Notebook - Zeus"
 #include "\x\iedd\addons\main\script_mod.hpp"
 #include "\x\iedd\addons\main\script_debug.hpp"
 
