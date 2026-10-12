@@ -4,6 +4,7 @@ import os
 import sys
 from xml.dom import minidom
 
+
 def get_all_languages(projectpath):
     """ Checks what languages exist in the repo. """
     languages = []
@@ -25,6 +26,7 @@ def get_all_languages(projectpath):
                     continue
     return languages
 
+
 def check_module(projectpath, module, languages):
     """ Checks the given module for all the different languages. """
     localized = []
@@ -37,6 +39,7 @@ def check_module(projectpath, module, languages):
     for language in languages:
         localized.append(len(xmldoc.getElementsByTagName(language)))
     return keynumber, localized
+
 
 def main():
     scriptpath = os.path.realpath(__file__)
@@ -102,6 +105,7 @@ def main():
             print(f"| {language} | 0 | - | 100% |")
         else:
             print(f"| {language} | {keysum - localizedsum[i]} | {', '.join(missing[i])} | {percent}% |")
+
 
 if __name__ == "__main__":
     main()

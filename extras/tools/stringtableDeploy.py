@@ -9,7 +9,6 @@
 
 import os
 import sys
-import shutil
 import traceback
 import subprocess as sp
 from github import Github
@@ -37,7 +36,7 @@ def main():
         token = os.environ["GH_TOKEN"]
         repo = Github(token).get_repo(REPOPATH)
     except:
-        print("Could not obtain token.")
+        print("Could not obtain token GH_TOKEN from env file.")
         print(traceback.format_exc())
         return 1
     else:
@@ -47,7 +46,7 @@ def main():
     try:
         update_translations(repo)
     except:
-        print("Failed to update translation issue.")
+        print("Failed to update translation issue using env file's token GH_TOKEN.")
         print(traceback.format_exc())
         return 1
     else:
