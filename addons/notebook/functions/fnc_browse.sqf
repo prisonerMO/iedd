@@ -27,26 +27,15 @@ private _display = uiNamespace getVariable "iedd_display";
 private _ctrl = _display displayCtrl NOTEBOOK_IDC_BACK;
 private _arrowL = _display displayCtrl NOTEBOOK_IDC_PREV;
 private _arrowR = _display displayCtrl NOTEBOOK_IDC_NEXT;
-private _var = GVAR(pages) getOrDefault ["iedd_tab", "home", true];
-private _page = GVAR(pages) getOrDefault [_var, 0, true];
+private _tab = GVAR(pages) get "iedd_tab";
+private _page = GVAR(pages) get "page";
+private _max = GVAR(pages) get _tab;
 private _current = _page+_selectDir;
 
-if (fileExists format[QPATHTOF(images\%1\%2%3.paa), _var, _var, _current]) then {
-    _ctrl ctrlSetText format [QPATHTOF(images\%1\%2%3.paa), _var, _var, _current];
-} else {
-    _current = _current-_selectDir;
-};
+private _showR = _current == _max;
+_arrowR ctrlShow !_showR;
+private _showL = _current == 0;
+_arrowL ctrlShow !_showL;
 
-if (_current == 0) then {
-    _arrowL ctrlShow false;
-} else {
-    _arrowL ctrlShow true;
-};
-if !((fileExists format[QPATHTOF(images\%1\%2%3.paa), _var, _var, _current+1])) then {
-    _arrowR ctrlShow false;
-} else {
-    _arrowR ctrlShow true;
-};
-
-GVAR(pages) set [_var, _current];
-_ctrl ctrlSetText format [QPATHTOF(images\%1\%2%3.paa), _var, _var, _current];
+GVAR(pages) set ["page", _current];
+CTRL_SET_TEXT(_ctrl,_tab,_current);

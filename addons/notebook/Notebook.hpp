@@ -68,7 +68,8 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\h.paa);
             tooltip = CSTRING(Introduction);
-            onButtonClick = QUOTE(['home'] call FUNC(tabs));
+            page_count = GET_IMAGES_COUNT(home);
+            onButtonClick = QUOTE([ARR_2('home',_this)] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
             colorDisabled[] = {1,1,1,1};
@@ -83,6 +84,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\i.paa);
             tooltip = CSTRING(Contents);
+            page_count = GET_IMAGES_COUNT(info);
             onButtonClick = QUOTE(['info'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -98,6 +100,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\a.paa);
             tooltip = CSTRING(About);
+            page_count = GET_IMAGES_COUNT(about);
             onButtonClick = QUOTE(['about'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -113,6 +116,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\1.paa);
             tooltip = CSTRING(PlasticCanister);
+            page_count = GET_IMAGES_COUNT(can);
             onButtonClick = QUOTE(['can'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -128,6 +132,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\2.paa);
             tooltip = CSTRING(FuelCanister);
+            page_count = GET_IMAGES_COUNT(jerry);
             onButtonClick = QUOTE(['jerry'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -143,6 +148,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\3.paa);
             tooltip = CSTRING(Cardboard);
+            page_count = GET_IMAGES_COUNT(cardboard);
             onButtonClick = QUOTE(['cardboard'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -158,6 +164,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\4.paa);
             tooltip = CSTRING(Cinder);
+            page_count = GET_IMAGES_COUNT(cinder);
             onButtonClick = QUOTE(['cinder'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -173,6 +180,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\5.paa);
             tooltip = CSTRING(PlasticBarrel);
+            page_count = GET_IMAGES_COUNT(barrel);
             onButtonClick = QUOTE(['barrel'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -188,6 +196,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\6.paa);
             tooltip = CSTRING(MetalBarrel);
+            page_count = GET_IMAGES_COUNT(metal);
             onButtonClick = QUOTE(['metal'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -203,6 +212,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\7.paa);
             tooltip = CSTRING(Charge);
+            page_count = GET_IMAGES_COUNT(charge);
             onButtonClick = QUOTE(['charge'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -218,6 +228,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\8.paa);
             tooltip = CSTRING(Vbied);
+            page_count = GET_IMAGES_COUNT(vbied);
             onButtonClick = QUOTE(['vbied'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -233,6 +244,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\9.paa);
             tooltip = CSTRING(Bucket);
+            page_count = GET_IMAGES_COUNT(bucket);
             onButtonClick = QUOTE(['bucket'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -249,6 +261,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\10.paa);
             tooltip = CSTRING(Empty);
+            page_count = GET_IMAGES_COUNT(empty4);
             onButtonClick = QUOTE(['empty4'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -266,6 +279,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\d.paa);
             tooltip = CSTRING(Dictionary);
+            page_count = GET_IMAGES_COUNT(dict);
             onButtonClick = QUOTE(['dict'] call FUNC(tabs));
             color[] = {0.99,0.99,0.99,0.99};
             colorActive[] = {0.2,0.2,0.2,0.2};
@@ -282,6 +296,7 @@ class GVAR(display) {
             style = 48;
             text = QPATHTOF(images\brside\c.paa);
             tooltip = CSTRING(Credits);
+            page_count = GET_IMAGES_COUNT(cred);
             onButtonClick = QUOTE(['cred'] call FUNC(tabs));
             color[] = {1,1,1,1};
             colorActive[] = {0.2,0.2,0.2,0.2};
