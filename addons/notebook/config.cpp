@@ -20,7 +20,6 @@ class CfgPatches {
     };
 };
 #include "CfgEventHandlers.hpp"
-#include "ACE_zeusActions.hpp"
 #include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"
 #include "BaseControls.hpp"
