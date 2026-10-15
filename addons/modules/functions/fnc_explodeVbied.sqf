@@ -38,11 +38,6 @@ if !(_vehicle in _allVehicles) exitWith { //Check vehicle , how
     deleteVehicle _logic;
     [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
-/*if (!alive _vehicle) exitWith {
-    _message = "Vehicle is not alive";
-    deleteVehicle _logic;
-    [ace_player, _message] call BIS_fnc_showCuratorFeedbackMessage;
-};*/
 private _attachedObjects = attachedObjects _vehicle;
 private _index = _attachedObjects findIf {typeOf _x == QEGVAR(vbied,box)};
 if (_index == -1) exitWith {
