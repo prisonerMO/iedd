@@ -10,8 +10,10 @@ if (isServer) then {
         [_x, "Deleted", {call FUNC(deleted)}, true, [], true] call CBA_fnc_addClassEventHandler;
         [_x, "Detached", {call FUNC(detached)}, true, [], true] call CBA_fnc_addClassEventHandler;
     } forEach IEDD_FAKE_BASE_CLASSES;
+    {                
+        [_x, "Attached", {call FUNC(attached)}, true, [], true] call CBA_fnc_addClassEventHandler;
+    } forEach IEDD_CLASSES;
     [QGVAR(helper), "Deleted", {call EFUNC(ied,deleted_helper)}, true, [], true] call CBA_fnc_addClassEventHandler;
-    
     GVAR(bombs) = [];
 };
 

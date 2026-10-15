@@ -1,6 +1,7 @@
 
 PREP(addItems);
 PREP(addPFH);
+PREP(attached);
 PREP(barrel);
 PREP(bomb);
 PREP(bucket);
