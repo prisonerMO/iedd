@@ -39,4 +39,4 @@
 #define GET_IMAGES_COUNT(category) __EVAL(count ((addonFiles ['x\iedd\addons\notebook\', '.paa']) select {QUOTE(category) in _x})-1;)
 #define GET_MAX_IMAGES_COUNT(category) getNumber(configFile >> QGVAR(display) >> "Controls" >> "iedd_notebook_"+category >> "page_count")
 #define CTRL_SET_TEXT(ctrl,category,page) ctrl ctrlSetText format [QPATHTOF(images\%1\%2%3.paa), category, category, page]
-#define NOTEBOOK_PAGES ["home","info","about","can","jerry","cardboard","cinder","barrel","metal","charge","vbied","bucket","empty4","dict","cred"]
+#define NOTEBOOK_TABS ["home","info","about","can","jerry","cardboard","cinder","barrel","metal","charge","vbied","bucket","empty4","dict","cred"]
