@@ -34,6 +34,13 @@
 #define GETPRVAR(var1,var2) (profileNamespace GETVAR_SYS(var1,var2))
 #define GETPAVAR(var1,var2) (parsingNamespace GETVAR_SYS(var1,var2))
 
+#define SIZEX ((safeZoneW / safeZoneH) min 1.2)
+#define SIZEY (SIZEX / 1.2)
+#define W_PART(num) (num * (SIZEX / 40))
+#define H_PART(num) (num * (SIZEY / 25))
+#define X_PART(num) (W_PART(num) + (safeZoneX + (safeZoneW - SIZEX) / 2))
+#define Y_PART(num) (H_PART(num) + (safeZoneY + (safeZoneH - SIZEY) / 2))
+
 #define IEDD_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \
     weapon = #WEAPON; \
     count = COUNT; \

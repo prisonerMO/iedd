@@ -1,6 +1,6 @@
 class GVAR(RscSetIED): RscDisplayAttributes {
-    onLoad = "[""onLoad"",_this,""iedd_zeus_RscSetIED"",'CuratorDisplays'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
-    onUnload = "[""onUnload"",_this,""iedd_zeus_RscSetIED"",'CuratorDisplays'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscSetIED))] call FUNC(attributes));
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscSetIED))] call FUNC(attributes));
     filterAttributes = 1;
     class Controls: Controls {
         class Background: Background {};
@@ -9,8 +9,6 @@ class GVAR(RscSetIED): RscDisplayAttributes {
             class Controls {
                 class GVAR(scroll): RscControlsGroupNoScrollbars {
                     onSetFocus = QUOTE(_this call FUNC(setIed));
-                    
-                            
                     onLoad = QUOTE(_this call FUNC(setIEDOnLoad));
                     idc = 52500;
                     x = 0;
