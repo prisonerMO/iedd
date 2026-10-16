@@ -1,6 +1,6 @@
-class GVAR(RcsDecals): RscDisplayAttributes {
-    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RcsDecals))] call FUNC(attributes));
-    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RcsDecals))] call FUNC(attributes));
+class GVAR(RscDecals): RscDisplayAttributes {
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscDecals))] call FUNC(attributes));
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscDecals))] call FUNC(attributes));
     class Controls: Controls {
         class Background: Background {};
         class Title: Title {};
@@ -16,8 +16,8 @@ class GVAR(RcsDecals): RscDisplayAttributes {
                     class controls {
                         class GVAR(typeL): RscText {
                             idc = -1;
-                            text = CSTRING(Zeus_Sign_Category);
-                            tooltip = CSTRING(Zeus_Sign_Category_Tooltip);
+                            text = ECSTRING(zeus,Sign_Category);
+                            tooltip = ECSTRING(zeus,Sign_Category_Tooltip);
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(10));

@@ -2,4 +2,9 @@ PREP(activate);
 PREP(canActivate);
 PREP(canExplode);
 PREP(explode);
+PREP(setburyIED);
+PREP(setIED);
+PREP(setIEDOnLoad);
+PREP(sliderMove);
+PREP(attributes);
 

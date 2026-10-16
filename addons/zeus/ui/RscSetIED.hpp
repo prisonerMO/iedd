@@ -1,35 +1,56 @@
-class GVAR(RscCharge): RscDisplayAttributes {
-    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscCharge))] call FUNC(attributes));
-    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscCharge))] call FUNC(attributes));
+class GVAR(RscSetIED): RscDisplayAttributes {
+    onLoad = "[""onLoad"",_this,""iedd_zeus_RscSetIED"",'CuratorDisplays'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
+    onUnload = "[""onUnload"",_this,""iedd_zeus_RscSetIED"",'CuratorDisplays'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
+    filterAttributes = 1;
     class Controls: Controls {
         class Background: Background {};
         class Title: Title {};
         class Content: Content {
             class Controls {
                 class GVAR(scroll): RscControlsGroupNoScrollbars {
-                    onSetFocus = QUOTE(_this call FUNC(setCharge));
-                    idc = 62500;
+                    onSetFocus = QUOTE(_this call FUNC(setIed));
+                    
+                            
+                    onLoad = QUOTE(_this call FUNC(setIEDOnLoad));
+                    idc = 52500;
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
                     h = QUOTE(H_PART(7.7));
-                    class controls {
-                        class GVAR(variationL): RscText {
+                    class controls {                        
+                        class GVAR(typeL): RscText {
                             idc = -1;
-                            text = CSTRING(Zeus_Variation);
-                            tooltip = CSTRING(Zeus_Ied_Var_Tooltip);
+                            text = CSTRING(Type);
+                            tooltip = CSTRING(Type_Tooltip);
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(10));
                             h = QUOTE(H_PART(1));
+                            colorBackground[] = {0, 0, 0, 0.5};
                         };
-                        class GVAR(variation): RscCombo {
-                            idc = 62521;
+                        class GVAR(type): RscText {
+                            text="TESTTEST";
+                            idc = 52520;
                             x = QUOTE(W_PART(10.1));
                             y = 0;
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.7};
+                        };
+
+                        class GVAR(variationL): GVAR(typeL) {
+                            text = CSTRING(Variation);
+                            tooltip = CSTRING(Ied_Var_Tooltip);
+                            y = QUOTE(H_PART(1.1));
+                        };
+                        class GVAR(variation): RscCombo {
+                            idc = 52521;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(1.1));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                            colorBackground[] = {0, 0, 0, 0.7};
+
                             class Items {
                                 class 1 {
                                     value = 0;
@@ -52,21 +73,26 @@ class GVAR(RscCharge): RscDisplayAttributes {
                                     text = ECSTRING(ied,Variation_5);
                                 };
                                 class 6 {
+                                    text = ECSTRING(ied,Variation_X);
                                     value = 5;
+                                };
+                                class 7 {
                                     text = ECSTRING(ied,Name_Random);
+                                    value = 6;
                                     default = 1;
                                 };
                             };
                         };
-                        class GVAR(sizeL): GVAR(variationL) {
-                            text = CSTRING(Zeus_Size);
-                            tooltip = CSTRING(Zeus_Size_Tooltip);
-                            y = QUOTE(H_PART(1.1));
+
+                        class GVAR(sizeL): GVAR(typeL) {
+                            text = CSTRING(Size);
+                            tooltip = CSTRING(Size_Tooltip);
+                            y = QUOTE(H_PART(2.2));
                         };
                         class GVAR(size): RscCombo {
-                            idc = 62522;
+                            idc = 52522;
                             x = QUOTE(W_PART(10.1));
-                            y = QUOTE(H_PART(1.1));
+                            y = QUOTE(H_PART(2.2));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.7};
@@ -90,34 +116,54 @@ class GVAR(RscCharge): RscDisplayAttributes {
                                     default = 1;
                                 };
                                 class 5 {
-                                    text = ECSTRING(ied,Name_Random);
+                                    text = ECSTRING(ied,Name_Huge);
                                     value = 4;
+                                };
+                                class 6 {
+                                    text = ECSTRING(ied,Name_Random);
+                                    value = 5;
                                 };
                             };
                         };
 
-                        class GVAR(dudL): GVAR(variationL) {
-                            text = CSTRING(Zeus_Dud_Category);
-                            tooltip = ECSTRING(ied,Dud_Tooltip);
-                            y = QUOTE(H_PART(2.2));
+                        class GVAR(dudL): GVAR(typeL) {
+                            text = CSTRING(Dud_Category);
+                            tooltip = CSTRING(Dud_Tooltip);
+                            y = QUOTE(H_PART(3.3));
                         };
                         class GVAR(dudSlider): RscXSliderH {
                             text = ECSTRING(ied,Dud);
-                            idc = 62523;
+                            idc = 52523;
                             x = QUOTE(W_PART(10.1));
-                            y = QUOTE(H_PART(2.2));
+                            y = QUOTE(H_PART(3.3));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
                         };
-                        class GVAR(timerL): GVAR(variationL) {
-                            text = CSTRING(Zeus_Timer);
-                            tooltip = CSTRING(Timer_Tooltip);
-                            y = QUOTE(H_PART(3.3));
+                         class GVAR(distanceL): GVAR(typeL) {
+                            text = CSTRING(Act_Category);
+                            tooltip = ECSTRING(ied,Distance_Tooltip);
+                            y = QUOTE(H_PART(4.4));
+                        };
+
+                        class GVAR(distanceSlider): RscXSliderH {
+                            sliderRange[] = {0, 30};
+                            text = ECSTRING(ied,Distance);
+                            idc = 52524;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(4.4));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                        };
+
+                        class GVAR(timerL): GVAR(typeL) {
+                            text = CSTRING(Timer_Category);
+                            tooltip = ECSTRING(ied,Timer_Tooltip);
+                            y = QUOTE(H_PART(5.5));
                         };
                         class GVAR(timer): RscCombo {
-                            idc = 62524;
+                            idc = 52525;
                             x = QUOTE(W_PART(10.1));
-                            y = QUOTE(H_PART(3.3));
+                            y = QUOTE(H_PART(5.5));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.7};
@@ -137,69 +183,20 @@ class GVAR(RscCharge): RscDisplayAttributes {
                                 };
                             };
                         };
-                        class GVAR(timerValueL): GVAR(variationL) {
-                            text = CSTRING(Zeus_TimerValue_Category);
-                            tooltip = CSTRING(Zeus_TimerValue_Tooltip);
-                            y = QUOTE(H_PART(4.4));
+
+                        class GVAR(TimerValueL): GVAR(typeL) {
+                            text = CSTRING(TimerValue_Category);
+                            tooltip = CSTRING(TimerValue_Tooltip);
+                            y = QUOTE(H_PART(6.6));
                         };
-                        class GVAR(timerValueSlider): RscXSliderH {
+                        class GVAR(TimerValueSlider): RscXSliderH {
                             sliderRange[] = {0, 300};
                             text = ECSTRING(ied,Timer);
-                            idc = 62525;
-                            x = QUOTE(W_PART(10.1));
-                            y = QUOTE(H_PART(4.4));
-                            w = QUOTE(W_PART(15.9));
-                            h = QUOTE(H_PART(1));
-                        };
-
-                        class GVAR(handcuffedL): GVAR(variationL) {
-                            text = CSTRING(Zeus_Handcuffed_Category);
-                            tooltip = ECSTRING(ied,isHandcuffed_Description);
-                            y = QUOTE(H_PART(5.5));
-                        };
-                        class GVAR(handcuffed):RscCombo {
-                            idc = 62526;
-                            x = QUOTE(W_PART(10.1));
-                            y = QUOTE(H_PART(5.5));
-                            w = QUOTE(W_PART(15.9));
-                            h = QUOTE(H_PART(1));
-                            colorBackground[] = {0, 0, 0, 0.7};
-                            class Items {
-                                class 1	{
-                                    text = ECSTRING(ied,Name_Disabled);
-                                    value = 0;
-                                    default = 1;
-                                };
-                                class 2	{
-                                    text = ECSTRING(ied,Name_Enabled);
-                                    value = 1;
-                                };
-                            };
-                        };
-
-                        class GVAR(surrenderedL): GVAR(variationL) {
-                            text = CSTRING(Zeus_Surrendered_Category);
-                            tooltip = ECSTRING(ied,isSurrendered_Description);
-                            y = QUOTE(H_PART(6.6));
-                        };
-                        class GVAR(surrendered):RscCombo {
-                            idc = 62527;
+                            idc = 52526;
                             x = QUOTE(W_PART(10.1));
                             y = QUOTE(H_PART(6.6));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
-                            colorBackground[] = {0, 0, 0, 0.7};
-                            class Items {
-                                class 1	{
-                                    text = ECSTRING(ied,Name_Disabled);
-                                    value = 0;
-                                    default = 1;
-                                };
-                                class 2	{
-                                    text = ECSTRING(ied,Name_Enabled);
-                                    value = 1;
-                                };
-                            };
                         };
                     };
                 };

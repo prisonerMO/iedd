@@ -16,5 +16,5 @@ class CfgPatches {
     };
 };
 #include "CfgEventHandlers.hpp"
-#include "ui\RcsAttributes.hpp"
+#include "ui\RscAttributes.hpp"
 #include "ACE_zeusActions.hpp"

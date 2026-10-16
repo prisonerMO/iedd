@@ -81,7 +81,7 @@ class CfgVehicles {
                 distance = 2;
                 position = "";
                 condition = QUOTE(true);
-                statement = QUOTE([ARR_2(_player,_target)] call EFUNC(notebook,pick));
+                statement = QUOTE([ARR_2(_player,_target)] call FUNC(pick));
             };
         };
         class EventHandlers {

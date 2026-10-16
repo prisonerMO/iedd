@@ -33,6 +33,8 @@ class GVAR(CanisterPlastic_Fake):Land_CanisterPlastic_F {
 class GVAR(CanisterPlastic):GVAR(CanisterPlastic_Fake) {
     scope = 2;
     scopeCurator = 2;
+    //curatorInfoType = QEGVAR(zeus,RscIeds);
+    curatorInfoTypeEmpty = QEGVAR(zeus,RscSetIED);
     class ACE_Actions:ACE_Actions {
         class ACE_MainActions:ACE_MainActions {
             class IEDD_DisarmMenu {

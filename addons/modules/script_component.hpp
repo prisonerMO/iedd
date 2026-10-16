@@ -14,6 +14,7 @@
 #endif
 
 #include "\x\iedd\addons\main\script_macros.hpp"
+#include "\x\iedd\addons\ied\script_macros_config.hpp"
 
 #define SIZEX ((safeZoneW / safeZoneH) min 1.2)
 #define SIZEY (SIZEX / 1.2)

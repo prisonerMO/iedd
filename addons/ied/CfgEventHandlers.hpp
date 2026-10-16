@@ -110,9 +110,4 @@ class Extended_InitPost_EventHandlers {
            serverInit = QUOTE(_this call FUNC(training));
         };
     };
-    // class ModuleCurator_F {
-    //     class ADDON {
-    //        serverInit = QUOTE(_this call FUNC(handleEntityCreated));
-    //     };
-    // };
 };

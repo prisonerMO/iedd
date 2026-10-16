@@ -54,10 +54,10 @@ if !(_unit call EFUNC(ied,canBuryIED)) exitWith {
     _display closeDisplay 0;
     //create red "area" under the object to indicate that it cannot be buried here (on hover? HOW?)
 };
-if (ace_player getVariable [QGVAR(RcsBuryIED), false]) exitWith {
+if (ace_player getVariable [QGVAR(RscBuryIED), false]) exitWith {
     _display closeDisplay 0;
 };
-ace_player setVariable [QGVAR(RcsBuryIED), true];
+ace_player setVariable [QGVAR(RscBuryIED), true];
 
 //TO-DO: If buried then make it unburied and reset the position to the original position/ make it modify bury depth and orientation.
 private _dir = getDir _unit;
@@ -226,7 +226,7 @@ _display setVariable [QGVAR(unit), _unit];
     private _fnc_onUnload = {
         params ["_display", "_exitCode"];        
         TRACE_2("Unload display: ",_exitCode,(missionNamespace getVariable [ARR_2(QUOTE(BIS_fnc_initCuratorAttributes_target),objNull)]));
-        ace_player setVariable [QGVAR(RcsBuryIED), false];
+        ace_player setVariable [QGVAR(RscBuryIED), false];
         private _unit = _display getVariable [QGVAR(unit), objNull];
         private _default = _display getVariable [QGVAR(default), []];
         private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];

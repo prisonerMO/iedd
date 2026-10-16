@@ -1,6 +1,6 @@
-class GVAR(RcsBuryIED): RscDisplayAttributes {
-    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RcsBuryIED))] call FUNC(attributes));
-    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RcsBuryIED))] call FUNC(attributes));
+class GVAR(RscBuryIED): RscDisplayAttributes {
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscBuryIED))] call FUNC(attributes));
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscBuryIED))] call FUNC(attributes));
     class Controls: Controls {
         class Background: Background {            
             colorBackground[] = {0, 0, 0, 0.1};

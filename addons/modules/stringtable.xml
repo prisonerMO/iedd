@@ -2,6 +2,10 @@
 <Project name="IEDD">
     <Package name="ied">
         <Container name="IEDD Multi Module">
+            <Key ID="STR_iedd_modules_Active">
+                <Original>Activate IED</Original>
+                <English>Activate IED</English>
+            </Key>
             <Key ID="STR_iedd_modules_Blacklist">
                 <Original>Blacklist Area(s)</Original>
                 <English>Blacklist Area(s)</English>
@@ -13,6 +17,10 @@
             <Key ID="STR_iedd_modules_Blacklist_Tooltip">
                 <Original>Marker(s) where IEDs, fake IEDs and ground signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</Original>
                 <English>Marker(s) where IEDs, fake IEDs and ground signs cannot spawn (example: myMarker1,myMarker2,myMarker3).</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Charge">
+                <Original>Add bomb vest</Original>
+                <English>Add bomb vest</English>
             </Key>
             <Key ID="STR_iedd_modules_Count">
                 <Original>Number of IEDs</Original>
@@ -33,6 +41,10 @@
             <Key ID="STR_iedd_modules_Dud_Tooltip">
                 <Original>Probability of IED being dud.</Original>
                 <English>Probability of IED being dud.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Explode">
+                <Original>Explode IED</Original>
+                <English>Explode IED</English>
             </Key>
             <Key ID="STR_iedd_modules_ExtraCount">
                 <Original>Extra Ground Signs In Area</Original>
@@ -78,6 +90,10 @@
                 <Original>IED Area</Original>
                 <English>IED Area</English>
             </Key>
+            <Key ID="STR_iedd_modules_Sign">
+                <Original>Ground sign</Original>
+                <English>Ground sign</English>
+            </Key>
             <Key ID="STR_iedd_modules_Signs">
                 <Original>IED Ground Signs</Original>
                 <English>IED Ground Signs</English>
@@ -89,6 +105,10 @@
             <Key ID="STR_iedd_modules_Signs_Tooltip">
                 <Original>Spawn ground signs under IEDs.</Original>
                 <English>Spawn ground signs under IEDs.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Suicide">
+                <Original>Suicide bomber</Original>
+                <English>Suicide bomber</English>
             </Key>
             <Key ID="STR_iedd_modules_Timer">
                 <Original>Add timer to IEDs</Original>
@@ -105,6 +125,14 @@
             <Key ID="STR_iedd_modules_Type_Tooltip">
                 <Original>Spawn this type of IEDs.</Original>
                 <English>Spawn this type of IEDs.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Vbied_Activate">
+                <Original>Activate VBIED</Original>
+                <English>Activate VBIED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Vbied_Explode">
+                <Original>Explode VBIED</Original>
+                <English>Explode VBIED</English>
             </Key>
         </Container>
         <Container name="IEDD Zeus Modules">
@@ -156,6 +184,14 @@
                 <Original>PITCH</Original>
                 <English>PITCH</English>
             </Key>
+            <Key ID="STR_iedd_modules_Place_Ied">
+                <Original>Place IED</Original>
+                <English>Place IED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Place_Vbied">
+                <Original>Add VBIED</Original>
+                <English>Add VBIED</English>
+            </Key>
             <Key ID="STR_iedd_modules_RoadDirt_1">
                 <Original>Road Dirt 1</Original>
                 <English>Road Dirt 1</English>
@@ -195,150 +231,6 @@
             <Key ID="STR_iedd_modules_Yaw">
                 <Original>YAW</Original>
                 <English>YAW</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Act_Category">
-                <Original>ACTIVATION DISTANCE</Original>
-                <English>ACTIVATION DISTANCE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Active">
-                <Original>Activate IED</Original>
-                <English>Activate IED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Charge">
-                <Original>Add bomb vest</Original>
-                <English>Add bomb vest</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Distance_Category">
-                <Original>ACTIVATION DISTANCE</Original>
-                <English>ACTIVATION DISTANCE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Dms_Category">
-                <Original>DEAD MAN SWITCH</Original>
-                <English>DEAD MAN SWITCH</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Dud_Category">
-                <Original>CHANCE OF DUD (%)</Original>
-                <English>CHANCE OF DUD (%)</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_EngineOn">
-                <Original>ENGINE ON</Original>
-                <English>ENGINE ON</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Exp_Category">
-                <Original>EXPLOSION DISTANCE</Original>
-                <English>EXPLOSION DISTANCE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Explode">
-                <Original>Explode IED</Original>
-                <English>Explode IED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_GetIn">
-                <Original>GET IN</Original>
-                <English>GET IN</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Handcuffed_Category">
-                <Original>UNIT HANDCUFFED</Original>
-                <English>UNIT HANDCUFFED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Ied_Var_Tooltip">
-                <Original>Select variation of IED.</Original>
-                <English>Select variation of IED.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Moving">
-                <Original>MOVING VEHICLE</Original>
-                <English>MOVING VEHICLE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Place_Ied">
-                <Original>Place IED</Original>
-                <English>Place IED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Place_Vbied">
-                <Original>Add VBIED</Original>
-                <English>Add VBIED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Pos">
-                <Original>VBIED POSITION</Original>
-                <English>VBIED POSITION</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Pos_Tooltip">
-                <Original>Set position for VBIED.</Original>
-                <English>Set position for VBIED.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Sides_Category">
-                <Original>ACTIVED BY SIDE</Original>
-                <English>ACTIVED BY SIDE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Sign">
-                <Original>Ground sign</Original>
-                <English>Ground sign</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Sign_Category">
-                <Original>GROUND SIGN TYPE</Original>
-                <English>GROUND SIGN TYPE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Sign_Category_Tooltip">
-                <Original>Select type of ground sign.</Original>
-                <English>Select type of ground sign.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Size">
-                <Original>EXPLOSION SIZE</Original>
-                <English>EXPLOSION SIZE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Size_Tooltip">
-                <Original>Select size of explosion.</Original>
-                <English>Select size of explosion.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Speed">
-                <Original>MOVING SPEED</Original>
-                <English>MOVING SPEED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Suicide">
-                <Original>Suicide bomber</Original>
-                <English>Suicide bomber</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Surrendered_Category">
-                <Original>UNIT SURRENDERED</Original>
-                <English>UNIT SURRENDERED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Timer">
-                <Original>COUNTDOWN TIMER</Original>
-                <English>COUNTDOWN TIMER</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_TimerValue_Category">
-                <Original>COUNTDOWN TIME</Original>
-                <English>COUNTDOWN TIME</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_TimerValue_Tooltip">
-                <Original>Set time for countdown timer.</Original>
-                <English>Set time for countdown timer.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Type">
-                <Original>IED TYPE</Original>
-                <English>IED TYPE</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Type_Tooltip">
-                <Original>Select type of IED.</Original>
-                <English>Select type of IED.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Variation">
-                <Original>BOMB VARIATION</Original>
-                <English>BOMB VARIATION</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Vbied_Activate">
-                <Original>Activate VBIED</Original>
-                <English>Activate VBIED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Vbied_Explode">
-                <Original>Explode VBIED</Original>
-                <English>Explode VBIED</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Zeus_Vbied_Var_Tooltip">
-                <Original>Select variation of VBIED.</Original>
-                <English>Select variation of VBIED.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_lidState">
-                <Original>LID STATE</Original>
-                <English>LID STATE</English>
             </Key>
         </Container>
     </Package>

@@ -65,7 +65,7 @@ if (_state) then {
         (W_PART(10)),
         (H_PART(1))
     ];
-    _stateCtrl ctrlSetText LLSTRING(LidState);
+    _stateCtrl ctrlSetText LELSTRING(zeus,LidState);
     _stateCtrl ctrlSetTooltip LELSTRING(ied,LidState_Tooltip);
     _stateCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
     _stateCtrl ctrlCommit 0;
@@ -111,7 +111,7 @@ if (_state) then {
         (W_PART(10)),
         (H_PART(1))
     ];
-    _ocCtrl ctrlSetText LLSTRING(OpenClose);
+    _ocCtrl ctrlSetText LELSTRING(zeus,OpenClose);
     _ocCtrl ctrlSetTooltip LELSTRING(ied,OpenClose_Tooltip);
     _ocCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
     _ocCtrl ctrlCommit 0;

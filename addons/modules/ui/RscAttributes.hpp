@@ -14,9 +14,9 @@ class RscDisplayAttributes {
         class ButtonCancel;
     };
 };
-#include "RcsIeds.hpp"
-#include "RcsVbied.hpp"
-#include "RcsDecals.hpp"
-#include "RcsCharge.hpp"
-#include "RcsSuicide.hpp"
-#include "RcsBuryIED.hpp"
+#include "RscIeds.hpp"
+#include "RscVbied.hpp"
+#include "RscDecals.hpp"
+#include "RscCharge.hpp"
+#include "RscSuicide.hpp"
+#include "RscBuryIED.hpp"
