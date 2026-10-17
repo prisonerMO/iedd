@@ -22,6 +22,7 @@ _control call FUNC(setIEDOnLoad);
     params ["_control"];
     private _display = ctrlParent _control;
     private _ctrlButtonOK = _display displayCtrl 1;
+    private _ctrlButtonCancel = _display displayCtrl 2;
     _control ctrlRemoveAllEventHandlers "SetFocus";
     private _unit = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
     //Load variables from server
@@ -95,6 +96,7 @@ _control call FUNC(setIEDOnLoad);
     
     private _fnc_onConfirm = {
         params [["_ctrlButtonOK", controlNull, [controlNull]]];
+        GVAR(data) = [];
         private _unit = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
         private _display = ctrlParent _ctrlButtonOK;
         if (isNull _display) exitWith {};
@@ -116,6 +118,13 @@ _control call FUNC(setIEDOnLoad);
         private _openClose = sliderPosition (_display displayCtrl 52532);
         [QGVAR(setIed), [_variation,_dud,_size,_timer,_timerValue,_dist,_lidState,_openCloseEOD,_openClose]] call CBA_fnc_serverEvent;
     };
+
+    private _fnc_onUnload = {
+        params [["_ctrlButtonCancel", controlNull, [controlNull]]];
+        GVAR(data) = [];   
+    };
+
     _ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];
+    _display displayAddEventHandler ["Unload", _fnc_onUnload];
 
 },[_control]] call CBA_fnc_execNextFrame;
