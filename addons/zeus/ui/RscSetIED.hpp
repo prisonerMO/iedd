@@ -9,7 +9,6 @@ class GVAR(RscSetIED): RscDisplayAttributes {
             class Controls {
                 class GVAR(scroll): RscControlsGroupNoScrollbars {
                     onSetFocus = QUOTE(_this call FUNC(setIed));
-                    //onLoad = QUOTE([ARR_2({call FUNC(setIEDOnLoad)},[ARR_1(_this select 0)])] call CBA_fnc_execNextFrame);
                     idc = 52500;
                     x = 0;
                     y = 0;
