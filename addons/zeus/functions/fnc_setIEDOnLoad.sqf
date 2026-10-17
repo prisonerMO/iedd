@@ -18,9 +18,6 @@
 
 params ["_control"];
 TRACE_1("fnc_setIEDOnLoad",_this);
-_this spawn {
-    params ["_control"];
-sleep .1;
 private _display = ctrlParent _control;
 private _typeCtrl = _display displayCtrl 52520;
 private _unit = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
@@ -174,4 +171,3 @@ if (_state) then {
     ];
     _grpCtrl ctrlCommit 0;
 };
-}

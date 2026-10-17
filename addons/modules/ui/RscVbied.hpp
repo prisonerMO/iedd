@@ -32,7 +32,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.7};
                             onLBSelChanged = QUOTE(_this call FUNC(vbiedSelected));
-                            onLoad = QUOTE(ARR_2([{call FUNC(vbiedSelected)},ARR_2([_this select 0,0])]) call CBA_fnc_execNextFrame);
+                            onLoad = QUOTE([ARR_2({call FUNC(vbiedSelected)},[ARR_2(_this select 0,0)])] call CBA_fnc_execNextFrame);
                         };
 
                         class GVAR(variationL): GVAR(posL) {

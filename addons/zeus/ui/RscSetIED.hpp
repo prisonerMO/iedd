@@ -1,6 +1,6 @@
 class GVAR(RscSetIED): RscDisplayAttributes {
-    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscSetIED))] call FUNC(attributes));
-    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscSetIED))] call FUNC(attributes));
+    onLoad = QUOTE([ARR_2({call FUNC(attributes)},[ARR_3('onLoad',_this,QQGVAR(RscSetIED))])] call CBA_fnc_execNextFrame);
+    onUnload = QUOTE([ARR_2({call FUNC(attributes)},[ARR_3('onUnload',_this,QQGVAR(RscSetIED))])] call CBA_fnc_execNextFrame);
     filterAttributes = 1;
     class Controls: Controls {
         class Background: Background {};
@@ -9,7 +9,7 @@ class GVAR(RscSetIED): RscDisplayAttributes {
             class Controls {
                 class GVAR(scroll): RscControlsGroupNoScrollbars {
                     onSetFocus = QUOTE(_this call FUNC(setIed));
-                    onLoad = QUOTE(_this call FUNC(setIEDOnLoad));
+                    //onLoad = QUOTE([ARR_2({call FUNC(setIEDOnLoad)},[ARR_1(_this select 0)])] call CBA_fnc_execNextFrame);
                     idc = 52500;
                     x = 0;
                     y = 0;
@@ -27,7 +27,6 @@ class GVAR(RscSetIED): RscDisplayAttributes {
                             colorBackground[] = {0, 0, 0, 0.5};
                         };
                         class GVAR(type): RscText {
-                            text="TESTTEST";
                             idc = 52520;
                             x = QUOTE(W_PART(10.1));
                             y = 0;
