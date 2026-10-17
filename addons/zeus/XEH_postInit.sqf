@@ -9,11 +9,7 @@
 [QGVAR(getData), {
     params ["_unit","_player"];
     if (!isServer) exitWith {};
-    {
-        _x params ["_data","_default"];
-        private _value = _unit getVariable ["iedd_ied_"+_data,_default];
-        GVAR(data) set [_data,_value];
-    } forEach [
+    private _dumpData = createHashMapFromArray [
         ["color",""],
         ["dist",0],
         ["dud",0],
@@ -25,7 +21,23 @@
         ["oce",0],
         ["oc",0]
     ];
-    diag_log format ["%1: %2",_unit, GVAR(data)];
-    [QGVAR(setData),[GVAR(data), _player], _player] call CBA_fnc_targetEvent;
+    {
+        _x params ["_key","_default"];
+        private _value = _unit getVariable ["iedd_ied_"+_key,_default];
+        _dumpData set [_key, _value];
+    } forEach _dumpData;
+    diag_log format ["%1: %2",_unit, _dumpData];
+    [QGVAR(setData),[_dumpData, _player], _player] call CBA_fnc_targetEvent;
 }] call CBA_fnc_addEventHandler;
-if (!hasInterface) exitWith {};
+
+if (isServer) then {
+    [QGVAR(setServerData), {
+        params ["_unit","_data"];
+        {
+            private _key = _x;
+            private _value = _data get _key;
+            _unit setVariable ["iedd_ied_"+_key,_value];
+        } forEach _data;
+        diag_log format ["%1: %2",_unit, _data];
+    }] call CBA_fnc_addEventHandler;
+};

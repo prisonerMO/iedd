@@ -27,32 +27,50 @@ _control call FUNC(setIEDOnLoad);
     //Load variables from server
     [QGVAR(getData),[_unit, ace_player], ace_player] call CBA_fnc_targetEvent;
     diag_log format ["Unit: %1 Player: %2 Data: %3",_unit, ace_player, GVAR(data)];
+    
+
     //Set controls to current values
-    private _sliderDud = _display displayCtrl 52523;
-    private _pos = _unit getVariable [QEGVAR(ied,dud), 0];
-    [_sliderDud, _pos] call FUNC(sliderMove);
+    private _vartionCtrl = _display displayCtrl 52521;
+    private _variation = GVAR(data) get "variation";
+    _vartionCtrl lbSetCurSel _variation;
 
-    // private _fnc_sliderDistMove = {
-    //     params ["_slider"];
-    //     private _idc = ctrlIDC _slider;
-    //     _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider),"m"];
-    // };
-    // private _sliderDist = _display displayCtrl 52524;
-    // _sliderDist sliderSetSpeed [1,1];
-    // _sliderDist sliderSetPosition 0;
-    // _sliderDist ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderDistMove];
-    // _sliderDist call _fnc_sliderDistMove;
+    private _sizeCtrl = _display displayCtrl 52522;
+    private _size = GVAR(data) get "size";
+    _sizeCtrl lbSetCurSel _size;
 
-    // private _fnc_sliderValueMove = {
-    //     params ["_slider"];
-    //     private _idc = ctrlIDC _slider;
-    //     _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider),"s"];
-    // };
-    // private _sliderValue = _display displayCtrl 52526;
-    // _sliderValue sliderSetSpeed [1,1];
-    // _sliderValue sliderSetPosition iedd_ied_defaultTimerValue;
-    // _sliderValue ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
-    // _sliderValue call _fnc_sliderValueMove;
+    private _sliderDud = _display displayCtrl 52523;  
+    private _dud = GVAR(data) get "dud";  
+    [_sliderDud, _dud] call FUNC(sliderMove);
+
+    private _fnc_sliderDistMove = {
+        params ["_slider"];
+        private _idc = ctrlIDC _slider;
+        _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider),"m"];
+    };
+    private _sliderDist = _display displayCtrl 52524;
+    private _dist = GVAR(data) get "dist";
+    _sliderDist sliderSetSpeed [1,1];
+    _sliderDist sliderSetPosition _dist;
+    _sliderDist ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderDistMove];
+    _sliderDist call _fnc_sliderDistMove;
+
+    private _timerCtrl = _display displayCtrl 52525;
+    private _timer = GVAR(data) get "timer";
+    private _timerCurSel = [1,2] select _timer;
+    _timerCtrl lbSetCurSel _timerCurSel;
+
+    private _fnc_sliderValueMove = {
+        params ["_slider"];
+        private _idc = ctrlIDC _slider;
+        _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider),"s"];
+    };
+    private _sliderValue = _display displayCtrl 52526;
+    _sliderValue sliderSetSpeed [1,1];
+    private _timerValue = GVAR(data) get "timerValue";
+    _sliderValue sliderSetPosition _timerValue;
+    _sliderValue ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
+    _sliderValue call _fnc_sliderValueMove;
+
 
     // private _fnc_onUnload = {
     //     private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];

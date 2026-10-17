@@ -54,7 +54,7 @@ private _bgcolor = [[0, 0, 0, 0.2],[0, 0, 0, 0.5]] select _state;
 } forEach _ocCtrls;
 */
 if (_state) then {
- _bgCtrl ctrlSetPosition [W_PART(3.1667), H_PART(6.9875), W_PART(27), H_PART(12.125)];
+    _bgCtrl ctrlSetPosition [W_PART(3.1667), H_PART(6.9875), W_PART(27), H_PART(12.125)];
     _bgCtrl ctrlCommit 0;
     _titleCtrl ctrlSetPosition [W_PART(3.1667), H_PART(5.8875), W_PART(27), H_PART(1)];
     _titleCtrl ctrlCommit 0;
