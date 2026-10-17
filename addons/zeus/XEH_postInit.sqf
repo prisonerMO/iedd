@@ -18,13 +18,12 @@
         ["timerValue",0],
         ["variation",0],
         ["lidState",false],
-        ["oce",0],
-        ["oc",0]
+        ["openClose",0],
+        ["openCloseEOD",0]
     ];
-    {
-        _x params ["_key","_default"];
-        private _value = _unit getVariable ["iedd_ied_"+_key,_default];
-        _dumpData set [_key, _value];
+    {     
+        private _value = _unit getVariable ["iedd_ied_"+_x,_y];
+        _dumpData set [_x, _value];
     } forEach _dumpData;
     diag_log format ["%1: %2",_unit, _dumpData];
     [QGVAR(setData),[_dumpData, _player], _player] call CBA_fnc_targetEvent;

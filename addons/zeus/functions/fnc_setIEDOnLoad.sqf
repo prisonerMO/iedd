@@ -81,7 +81,6 @@ if (_state) then {
     _stateCombo ctrlSetBackgroundColor [0, 0, 0, 0.5];
     _stateCombo lbAdd LELSTRING(ied,LidClosed);
     _stateCombo lbAdd LELSTRING(ied,LidOpen);
-    _stateCombo lbAdd LELSTRING(ied,Name_Random);
     _stateCombo lbSetCurSel 0;
     _stateCombo ctrlCommit 0;
 

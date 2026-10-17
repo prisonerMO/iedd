@@ -32,8 +32,8 @@ class GVAR(CanisterPlastic_Fake):Land_CanisterPlastic_F {
 };
 class GVAR(CanisterPlastic):GVAR(CanisterPlastic_Fake) {
     scope = 2;
-    scopeCurator = 2;
-    //curatorInfoType = QEGVAR(zeus,RscIeds);
+    scopeCurator = 2;    
+    iedd_ied_default = QGVAR(CanisterPlastic_Fake);
     curatorInfoTypeEmpty = QEGVAR(zeus,RscSetIED);
     class ACE_Actions:ACE_Actions {
         class ACE_MainActions:ACE_MainActions {
@@ -45,7 +45,6 @@ class GVAR(CanisterPlastic):GVAR(CanisterPlastic_Fake) {
             };
         };
     };
-    iedd_ied_default = QGVAR(CanisterPlastic_Fake);
     class Attributes {
         IED_DEFAULT_CATEGORY(EMPTY_CLASS);
         IED_TIMER_CATEGORY;

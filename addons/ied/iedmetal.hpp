@@ -36,7 +36,9 @@ class GVAR(Metal_English_Fake):GVAR(Metal_Fake) {
 };
 class GVAR(Metal):GVAR(Metal_Fake) {
     scope = 2;
-    scopeCurator = 2;
+    scopeCurator = 2;    
+    iedd_ied_default = QGVAR(Metal_Fake);
+    curatorInfoTypeEmpty = QEGVAR(zeus,RscSetIED);
     class EventHandlers {
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
     };
@@ -50,7 +52,6 @@ class GVAR(Metal):GVAR(Metal_Fake) {
             };
         };
     };
-    iedd_ied_default = QGVAR(Metal_Fake);
     class Attributes {
         IED_DEFAULT_CATEGORY(EMPTY_CLASS);
         IED_TIMER_CATEGORY;

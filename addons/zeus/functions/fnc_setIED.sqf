@@ -28,8 +28,23 @@ _control call FUNC(setIEDOnLoad);
     [QGVAR(getData),[_unit, ace_player], ace_player] call CBA_fnc_targetEvent;
     diag_log format ["Unit: %1 Player: %2 Data: %3",_unit, ace_player, GVAR(data)];
     
-
     //Set controls to current values
+    private _type = typeOf _unit;
+    if (_type == QEGVAR(ied,CanisterFuel)) then {
+        private _color = ["w","b","r"];
+        private _texture = getObjectTextures _unit select 0;
+        private _names = [LELSTRING(ied,FuelCanister_White),LELSTRING(ied,FuelCanister_Blue),LELSTRING(ied,FuelCanister_Red)];
+        private _displayName = LELSTRING(ied,FuelCanister_Green);
+        {
+            if (_texture find [_x,58] == 58) exitWith {
+                _displayName = _names select _forEachIndex;
+            };
+        } forEach _color;
+        private _typeCtrl = _display displayCtrl 52520;
+        _typeCtrl ctrlSetText _displayName;
+        _typeCtrl ctrlCommit 0;
+    };
+
     private _vartionCtrl = _display displayCtrl 52521;
     private _variation = GVAR(data) get "variation";
     _vartionCtrl lbSetCurSel _variation;
@@ -56,8 +71,8 @@ _control call FUNC(setIEDOnLoad);
 
     private _timerCtrl = _display displayCtrl 52525;
     private _timer = GVAR(data) get "timer";
-    private _timerCurSel = [1,2] select _timer;
-    _timerCtrl lbSetCurSel _timerCurSel;
+    private _timerValue = [0,1] select _timer;
+    _timerCtrl lbSetCurSel _timerValue;
 
     private _fnc_sliderValueMove = {
         params ["_slider"];
@@ -71,7 +86,20 @@ _control call FUNC(setIEDOnLoad);
     _sliderValue ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
     _sliderValue call _fnc_sliderValueMove;
 
+    if (_type == QEGVAR(ied,Bucket)) then {
+        private _lidStateCtrl = _display displayCtrl 52528;
+        private _lidState = GVAR(data) get "lidState";
+        private _lidStateValue = [0,1] select _lidState;
+        _lidStateCtrl lbSetCurSel _lidStateValue;
 
+        private _sliderOce = _display displayCtrl 52530;
+        private _oce = GVAR(data) get "openCloseEOD";
+        [_sliderOce, _oce] call FUNC(sliderMove);
+
+        private _sliderOc = _display displayCtrl 52532;
+        private _oc = GVAR(data) get "openClose";
+        [_sliderOc, _oc] call FUNC(sliderMove);
+    };
     // private _fnc_onUnload = {
     //     private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target",objNull];
     //     if (isNull _logic) exitWith {};

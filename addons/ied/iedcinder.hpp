@@ -32,7 +32,9 @@ class GVAR(Cinder_Fake):Land_CinderBlock_01_F {
 };
 class GVAR(Cinder):GVAR(Cinder_Fake) {
     scope = 2;
-    scopeCurator = 2;
+    scopeCurator = 2;    
+    iedd_ied_default = QGVAR(Cinder_Fake);
+    curatorInfoTypeEmpty = QEGVAR(zeus,RscSetIED);
     class ACE_Actions:ACE_Actions {
         class ACE_MainActions:ACE_MainActions {
             class IEDD_DisarmMenu {
@@ -43,7 +45,6 @@ class GVAR(Cinder):GVAR(Cinder_Fake) {
             };
         };
     };
-    iedd_ied_default = QGVAR(Cinder_Fake);
     class Attributes {
         IED_DEFAULT_CATEGORY(EMPTY_CLASS);
         IED_TIMER_CATEGORY;

@@ -35,7 +35,9 @@ class GVAR(Barrel_Grey_Fake):GVAR(Barrel_Fake) {
 };
 class GVAR(Barrel):GVAR(Barrel_Fake) {
     scope = 2;
-    scopeCurator = 2;
+    scopeCurator = 2;    
+    iedd_ied_default = QGVAR(Barrel_Fake);
+    curatorInfoTypeEmpty = QEGVAR(zeus,RscSetIED);
     class ACE_Actions:ACE_Actions {
         class ACE_MainActions:ACE_MainActions {
             class IEDD_DisarmMenu {
@@ -46,17 +48,6 @@ class GVAR(Barrel):GVAR(Barrel_Fake) {
             };
         };
     };
-    ace_dragging_canDrag = 1;
-    ace_dragging_dragPosition[] = {0, 1, 0};
-    ace_dragging_dragDirection = 0;
-    ace_dragging_canCarry = 1;
-    ace_dragging_carryPosition[] = {0, 0.6, 0};
-    ace_dragging_carryDirection = 0;
-    ace_cargo_size = 2;
-    ace_cargo_canLoad = 1;
-    ace_cargo_noRename = 1;
-    ace_cargo_blockUnloadCarry = 0;
-    iedd_ied_default = QGVAR(Barrel_Fake);
     class Attributes {
         IED_DEFAULT_CATEGORY(EMPTY_CLASS);
         IED_TIMER_CATEGORY;

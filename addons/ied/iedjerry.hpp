@@ -32,7 +32,9 @@ class GVAR(CanisterFuel_Fake):Land_CanisterFuel_F {
 };
 class GVAR(CanisterFuel):GVAR(CanisterFuel_Fake) {
     scope = 2;
-    scopeCurator = 2;
+    scopeCurator = 2;    
+    iedd_ied_default = QGVAR(CanisterFuel_Fake);    
+    curatorInfoTypeEmpty = QEGVAR(zeus,RscSetIED);
     class EventHandlers {
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
     };
@@ -46,7 +48,6 @@ class GVAR(CanisterFuel):GVAR(CanisterFuel_Fake) {
             };
         };
     };
-    iedd_ied_default = QGVAR(CanisterFuel_Fake);
     class Attributes { 
         IED_DEFAULT_CATEGORY(IED_COLOR_CLASS);
         IED_TIMER_CATEGORY;
