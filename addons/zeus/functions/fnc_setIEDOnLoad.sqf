@@ -43,16 +43,6 @@ private _titleCtrl = _display displayCtrl 30002;
 private _contCtrl = _display displayCtrl 30003;
 private _ctrlOK = _display displayCtrl 1;
 private _ctrlCancel = _display displayCtrl 2;
-/*
-private _ocCtrls = allControls _grpCtrl select {"openClose" in (ctrlClassName _x)};
-private _color = [[0, 0, 0, 0.5],[1,1,1,1]] select _state; //TO DO GET CORRECT COLORS!
-private _bgcolor = [[0, 0, 0, 0.2],[0, 0, 0, 0.5]] select _state; 
-{
-    _x ctrlSetTextColor _color;
-    _x ctrlSetBackgroundColor _bgcolor;
-    _x ctrlEnable _state;
-} forEach _ocCtrls;
-*/
 if (_state) then {
     _bgCtrl ctrlSetPosition [W_PART(3.1667), H_PART(6.9875), W_PART(27), H_PART(12.125)];
     _bgCtrl ctrlCommit 0;
@@ -138,35 +128,79 @@ if (_state) then {
     ];
     _grpCtrl ctrlCommit 0;
 } else {
-    private _isOC = _grpCtrl controlsGroupCtrl 52527;
-    if (!isNull _isOC) then {
-        for "_i" from 52527 to 52532 do {
-            private _ctrl = _display displayCtrl _i;
-            ctrlDelete _ctrl;
-        }; 
+    if (_type == QEGVAR(ied,CanisterFuel)) then {
+        {
+            private _ctrl = _display displayCtrl _x;
+            private _ctrlPos = ctrlPosition _ctrl;
+            private _newY = (_ctrlPos select 1) + (H_PART(1.1));
+            _ctrlPos set [1, _newY];
+            _ctrl ctrlSetPosition _ctrlPos;
+            _ctrl ctrlCommit 0;
+        } forEach [52511,52512,52513,52514,52515,52516,52521,52522,52523,52524,52525,52526];
+        private _colorCtrl = _display ctrlCreate ["RscText", 52533, _grpCtrl];
+        _colorCtrl ctrlSetPosition [
+            0,
+            (H_PART(1.1)),
+            (W_PART(10)),
+            (H_PART(1))
+        ];
+        _colorCtrl ctrlSetText LELSTRING(ied,Color);
+        _colorCtrl ctrlSetTooltip LELSTRING(ied,Color_Tooltip);
+        _colorCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
+        _colorCtrl ctrlCommit 0;
+        private _colorCombo = _display ctrlCreate ["RscCombo", 52534, _grpCtrl];
+        _colorCombo ctrlSetPosition [
+            (W_PART(10.1)),
+            (H_PART(1.1)),
+            (W_PART(15.9)),
+            (H_PART(1))
+        ];
+        _colorCombo ctrlSetBackgroundColor [0, 0, 0, 0.5];        
+        _colorCombo lbAdd LELSTRING(ied,Name_Green);
+        _colorCombo lbSetData [0, "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_co.paa"];
+        _colorCombo lbAdd LELSTRING(ied,Name_Blue);
+        _colorCombo lbSetData [1, "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_Blue_co.paa"];
+        _colorCombo lbAdd LELSTRING(ied,Name_Red);
+        _colorCombo lbSetData [2, "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_red_co.paa"];
+        _colorCombo lbAdd LELSTRING(ied,Name_White);
+        _colorCombo lbSetData [3, "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_White_co.paa"];
+        _colorCombo lbSetCurSel 0;
+        _colorCombo ctrlCommit 0;
+
+        _bgCtrl ctrlSetPosition [W_PART(3.1667), H_PART(7.72083), W_PART(27), H_PART(9.925)];
+        _bgCtrl ctrlCommit 0;
+        _titleCtrl ctrlSetPosition [W_PART(3.1667), H_PART(6.62083), W_PART(27), H_PART(1)];
+        _titleCtrl ctrlCommit 0;
+        _contCtrl ctrlSetPosition [W_PART(3.6667), H_PART(7.72083), W_PART(27), H_PART(9.925)];
+        _contCtrl ctrlCommit 0;
+        _ctrlOK ctrlSetPosition [W_PART(25.1667), H_PART(17.74583), W_PART(5), H_PART(1)];
+        _ctrlOK ctrlCommit 0;
+        _ctrlCancel ctrlSetPosition [W_PART(3.1667), H_PART(17.74583), W_PART(5), H_PART(1)];
+        _ctrlCancel ctrlCommit 0;
+        _grpCtrl ctrlSetPosition [
+            0,
+            (H_PART(0.5)),
+            (W_PART(26)),
+            (H_PART(8.8))
+        ];
+        _grpCtrl ctrlCommit 0;
+    } else {
+        _bgCtrl ctrlSetPosition [W_PART(3.1667), H_PART(8.0875), W_PART(27), H_PART(8.825)];
+        _bgCtrl ctrlCommit 0;
+        _titleCtrl ctrlSetPosition [W_PART(3.1667), H_PART(6.9875), W_PART(27), H_PART(1)];
+        _titleCtrl ctrlCommit 0;
+        _contCtrl ctrlSetPosition [W_PART(3.6667), H_PART(8.0875), W_PART(27), H_PART(8.825)];
+        _contCtrl ctrlCommit 0;
+        _ctrlOK ctrlSetPosition [W_PART(25.1667), H_PART(17.0125), W_PART(5), H_PART(1)];
+        _ctrlOK ctrlCommit 0;
+        _ctrlCancel ctrlSetPosition [W_PART(3.1667), H_PART(17.0125), W_PART(5), H_PART(1)];
+        _ctrlCancel ctrlCommit 0;
+        _grpCtrl ctrlSetPosition [
+            0,
+            (H_PART(0.5)),
+            (W_PART(26)),
+            (H_PART(7.7))
+        ];        
+        _grpCtrl ctrlCommit 0;
     };
-    _bgCtrl ctrlSetPosition [W_PART(3.1667), H_PART(8.0875), W_PART(27), H_PART(8.825)];
-    _bgCtrl ctrlCommit 0;
-    _titleCtrl ctrlSetPosition [W_PART(3.1667), H_PART(6.9875), W_PART(27), H_PART(1)];
-    _titleCtrl ctrlCommit 0;
-    _contCtrl ctrlSetPosition [W_PART(3.6667), H_PART(8.0875), W_PART(27), H_PART(8.825)];
-    _contCtrl ctrlCommit 0;
-    // _grpCtrl ctrlSetPosition [
-    //     0,
-    //     0,
-    //     (W_PART(26)),
-    //     (H_PART(7.7))
-    // ];
-    // _grpCtrl ctrlCommit 0.1;
-    _ctrlOK ctrlSetPosition [W_PART(25.1667), H_PART(17.0125), W_PART(5), H_PART(1)];
-    _ctrlOK ctrlCommit 0;
-    _ctrlCancel ctrlSetPosition [W_PART(3.1667), H_PART(17.0125), W_PART(5), H_PART(1)];
-    _ctrlCancel ctrlCommit 0;
-    _grpCtrl ctrlSetPosition [
-        0,
-        (H_PART(0.5)),
-        (W_PART(26)),
-        (H_PART(7.7))
-    ];
-    _grpCtrl ctrlCommit 0;
 };

@@ -7,4 +7,4 @@ PREP(setIED);
 PREP(setIEDOnLoad);
 PREP(sliderMove);
 PREP(attributes);
-
+PREP(setIEDServer);

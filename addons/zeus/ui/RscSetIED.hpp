@@ -16,7 +16,7 @@ class GVAR(RscSetIED): RscDisplayAttributes {
                     h = QUOTE(H_PART(7.7));
                     class controls {                        
                         class GVAR(typeL): RscText {
-                            idc = -1;
+                            idc = 52510;
                             text = CSTRING(Type);
                             tooltip = CSTRING(Type_Tooltip);
                             x = 0;
@@ -35,6 +35,7 @@ class GVAR(RscSetIED): RscDisplayAttributes {
                         };
 
                         class GVAR(variationL): GVAR(typeL) {
+                            idc = 52511;
                             text = CSTRING(Variation);
                             tooltip = CSTRING(Ied_Var_Tooltip);
                             y = QUOTE(H_PART(1.1));
@@ -81,6 +82,7 @@ class GVAR(RscSetIED): RscDisplayAttributes {
                         };
 
                         class GVAR(sizeL): GVAR(typeL) {
+                            idc = 52512;
                             text = CSTRING(Size);
                             tooltip = CSTRING(Size_Tooltip);
                             y = QUOTE(H_PART(2.2));
@@ -123,6 +125,7 @@ class GVAR(RscSetIED): RscDisplayAttributes {
                         };
 
                         class GVAR(dudL): GVAR(typeL) {
+                            idc = 52513;
                             text = CSTRING(Dud_Category);
                             tooltip = CSTRING(Dud_Tooltip);
                             y = QUOTE(H_PART(3.3));
@@ -136,6 +139,7 @@ class GVAR(RscSetIED): RscDisplayAttributes {
                             h = QUOTE(H_PART(1));
                         };
                          class GVAR(distanceL): GVAR(typeL) {
+                            idc = 52514;
                             text = CSTRING(Act_Category);
                             tooltip = ECSTRING(ied,Distance_Tooltip);
                             y = QUOTE(H_PART(4.4));
@@ -152,6 +156,7 @@ class GVAR(RscSetIED): RscDisplayAttributes {
                         };
 
                         class GVAR(timerL): GVAR(typeL) {
+                            idc = 52515;
                             text = CSTRING(Timer_Category);
                             tooltip = ECSTRING(ied,Timer_Tooltip);
                             y = QUOTE(H_PART(5.5));
@@ -177,6 +182,7 @@ class GVAR(RscSetIED): RscDisplayAttributes {
                         };
 
                         class GVAR(TimerValueL): GVAR(typeL) {
+                            idc = 52516;
                             text = CSTRING(TimerValue_Category);
                             tooltip = CSTRING(TimerValue_Tooltip);
                             y = QUOTE(H_PART(6.6));
