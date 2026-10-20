@@ -32,7 +32,7 @@ if (!isServer) exitWith {};
     private _isBury = _bombObj getVariable [QGVAR(isBury), false];
     TRACE_6("CBA Default values",_variation,_decals,_setDir,_isFake,_timerValue,_isTimer);
     if (_color in [CSTRING(Name_Random),"random"]) then {
-        _color = selectRandom ["green", "Blue", "red", "White"];
+        _color = selectRandom ["green", "blue", "red", "white"];
     };
 
     if (_isFake > random 1) exitWith {
@@ -66,7 +66,7 @@ if (!isServer) exitWith {};
                 [_fakeBombObj] call FUNC(buryIED);
             };
             if (_color != "green") then {
-                _fakeBombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]
+                _fakeBombObj setObjectTextureGlobal ["camo", "a3\props_f_orange\humanitarian\supplies\data\canisterfuel_"+_color+"_co.paa"]
             };
         }, [_bombObj,_type,_bombPos,_decals,_setDir,_dir,_vectorDirAndUp,_color,_isBury,_bury]] call CBA_fnc_waitUntilAndExecute;
     };
@@ -174,7 +174,7 @@ if (!isServer) exitWith {};
                 [_bombObj] call FUNC(decals);
             };
             if (_color != "green") then {
-                _bombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"]
+                _bombObj setObjectTextureGlobal ["camo", "a3\props_f_orange\humanitarian\supplies\data\canisterfuel_"+_color+"_co.paa"]
             };
             private _text = localize LSTRING(Name_Long);
             private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;

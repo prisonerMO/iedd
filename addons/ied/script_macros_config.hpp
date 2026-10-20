@@ -10,9 +10,9 @@
         typeName = "STRING";\
         class Values {\
             class 1	{name = CSTRING(Name_Green); value = "green";};\
-            class 2	{name = CSTRING(Name_Blue); value = "Blue";};\
+            class 2	{name = CSTRING(Name_Blue); value = "blue";};\
             class 3	{name = CSTRING(Name_Red); value = "red";};\
-            class 4	{name = CSTRING(Name_White); value = "White";};\
+            class 4	{name = CSTRING(Name_White); value = "white";};\
             class 5 {name = CSTRING(Name_Random); value = "random";};\
         };\
     };

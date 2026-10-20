@@ -157,7 +157,7 @@ if (_state) then {
         ];
         _colorCombo ctrlSetBackgroundColor [0, 0, 0, 0.5];        
         _colorCombo lbAdd LELSTRING(ied,Name_Green);
-        _colorCombo lbSetData [0, "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_co.paa"];
+        _colorCombo lbSetData [0, "a3\structures_f\items\vessels\data\canisterfuel_co.paa"];
         _colorCombo lbAdd LELSTRING(ied,Name_Blue);
         _colorCombo lbSetData [1, "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_Blue_co.paa"];
         _colorCombo lbAdd LELSTRING(ied,Name_Red);

@@ -1,4 +1,7 @@
 #include "script_component.hpp"
+
+[QGVAR(setVariation),LINKFUNC(setVariation)] call CBA_fnc_addEventHandler;
+
 [QGVAR(setData), {
     params ["_data","_player"];
     diag_log format ["%1: %2",_player, _data];
@@ -29,6 +32,9 @@
     [QGVAR(setData),[_dumpData, _player], _player] call CBA_fnc_targetEvent;
 }] call CBA_fnc_addEventHandler;
 
+
+
 if (isServer) then {
     [QGVAR(setIEDServer), LINKFUNC(setIEDServer)] call CBA_fnc_addEventHandler;
+
 };

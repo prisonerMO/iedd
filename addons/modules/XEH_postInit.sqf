@@ -39,7 +39,7 @@
     _bombObj setVariable ["iedd_ied_fake",0]; //Override CBA settings default value
     _bombObj setVariable ["iedd_ied_decals",false]; //Override CBA settings default value
     if (_type == QEGVAR(ied,CanisterFuel)) then {
-        private _color = ["green", "Blue", "red", "White"] select _typeNum-1;
+        private _color = ["green", "blue", "red", "white"] select _typeNum-1;
         _bombObj setVariable ["iedd_ied_color",_color];
     };
     if (_type == QEGVAR(ied,Bucket)) then {

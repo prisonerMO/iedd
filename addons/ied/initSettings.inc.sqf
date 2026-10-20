@@ -404,7 +404,7 @@
     [LSTRING(DefaultColor), LSTRING(DefaultColor_Description)],
     [localize "STR_iedd_main_Category_Main","IED Default Values"],
     [
-        ["green","Blue","red","White","random"],
+        ["green","blue","red","white","random"],
         [LSTRING(Name_Green), LSTRING(Name_Blue), LSTRING(Name_Red), LSTRING(Name_White), LSTRING(Name_Random)],
         0
     ],

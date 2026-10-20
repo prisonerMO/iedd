@@ -212,9 +212,9 @@ switch _mode do {
                         _bombObj setDir random 359;
                         _bombObj setPosATL _fakePos;
                     if (_type == QGVAR(CanisterFuel_Fake)) then {
-                        _color = selectRandom ["green", "Blue", "red", "White"];
+                        _color = selectRandom ["green", "blue", "red", "white"];
                         if (_color != "green") then {
-                            _bombObj setObjectTextureGlobal ["camo", "a3\Props_F_Orange\Humanitarian\Supplies\Data\canisterfuel_"+_color+"_co.paa"];
+                            _bombObj setObjectTextureGlobal ["camo", "a3\props_f_orange\humanitarian\supplies\data\canisterfuel_"+_color+"_co.paa"];
                         };
                     };
                     if (_fakeSigns) then {

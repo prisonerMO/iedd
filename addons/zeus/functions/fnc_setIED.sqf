@@ -50,11 +50,13 @@ _control call FUNC(setIEDOnLoad);
         _typeCtrl ctrlCommit 0;
     };
 
-    private _vartionCtrl = _display displayCtrl 52521;
-    _vartionCtrl lbSetCurSel _variation;
+    private _variationCtrl = _display displayCtrl 52521;
+    _variationCtrl lbSetCurSel _variation;
+    _variationCtrl ctrlCommit 1;
 
     private _sizeCtrl = _display displayCtrl 52522;
     _sizeCtrl lbSetCurSel _size;
+    _sizeCtrl ctrlCommit 1;
 
     private _sliderDud = _display displayCtrl 52523;  
     [_sliderDud, _dud] call FUNC(sliderMove);
@@ -106,6 +108,7 @@ _control call FUNC(setIEDOnLoad);
         if (isNull _unit) exitWith {};
         private _type = typeOf _unit;
         private _variation = lbCurSel (_display displayCtrl 52521);
+        diag_log ["VARITION "+str _variation];
         private _varData = "getText (_x >> 'name') isEqualTo localize 'STR_iedd_ied_Name_Random'" configClasses (configOf _unit >> "Attributes" >> "iedd_ied_variation" >> "Values") apply {getNumber (_x >> 'value')};
         private _random = _varData select 0;
         if (_variation == _random) then {
@@ -119,9 +122,11 @@ _control call FUNC(setIEDOnLoad);
         private _timerValue = round(sliderPosition (_display displayCtrl 52526));
         private _lidState = lbCurSel (_display displayCtrl 52528);
         private _openCloseEOD = sliderPosition (_display displayCtrl 52530);    
-        private _openClose = sliderPosition (_display displayCtrl 52532);        
-        private _color = lbCurSel (_display displayCtrl 52534);
-        [QGVAR(setIed), [_unit,_type,_variation,_dud,_size,_timer,_timerValue,_dist,_lidState,_openCloseEOD,_openClose,_color]] call CBA_fnc_serverEvent;
+        private _openClose = sliderPosition (_display displayCtrl 52532);
+        private _colorCtrl =  _display displayCtrl 52534;     
+        private _color = _colorCtrl lbData (lbCurSel _colorCtrl);
+        diag_log format ["COLOR in set %1", _color];
+        [QGVAR(setIEDServer), [_unit,_type,_variation,_dud,_size,_timer,_timerValue,_dist,_lidState,_openCloseEOD,_openClose,_color]] call CBA_fnc_serverEvent;
     };
 
     private _fnc_onUnload = {
