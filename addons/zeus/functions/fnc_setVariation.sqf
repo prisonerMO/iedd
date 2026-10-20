@@ -24,16 +24,16 @@ diag_log format ["Varation: %1", _this];
 private _ieddWires = _obj getVariable [QEGVAR(ied,wires),[]];
 if (count _ieddWires != 7) exitWith {TRACE_1("already started defuse.",_obj);};
 private _vars = switch (_type) do {
-    case QEGVAR(ied,CanisterFuel): {IEDD_JERRYVARS select 0 select 0};
-    case QEGVAR(ied,CanisterPlastic): {IEDD_CANVARS  select 0 select 0};
-    case QEGVAR(ied,Cardboard): {IEDD_CDVARS select 0 select 0};
-    case QEGVAR(ied,Cinder): {IEDD_CINDERVARS select 0 select 0};
-    case QEGVAR(ied,Metal): {IEDD_METALVARS select 0 select 0};
-    case QEGVAR(ied,Metal_English): {IEDD_METALVARS select 0 select 0};
-    case QEGVAR(ied,Barrel): {IEDD_BARRELVARS select 0 select 0};
-    case QEGVAR(ied,Barrel_Grey): {IEDD_BARRELVARS select 0 select 0};
-    case QEGVAR(ied,Charge): {IEDD_CHARGE select 0 select 0};
-    case QEGVAR(ied,Bucket): {IEDD_BUCKET select 0 select 0};
+    case QEGVAR(ied,CanisterFuel): {IEDD_JERRYVARS select _variation select 0};
+    case QEGVAR(ied,CanisterPlastic): {IEDD_CANVARS  select _variation select 0};
+    case QEGVAR(ied,Cardboard): {IEDD_CDVARS select _variation select 0};
+    case QEGVAR(ied,Cinder): {IEDD_CINDERVARS select _variation select 0};
+    case QEGVAR(ied,Metal): {IEDD_METALVARS select _variation select 0};
+    case QEGVAR(ied,Metal_English): {IEDD_METALVARS select _variation select 0};
+    case QEGVAR(ied,Barrel): {IEDD_BARRELVARS select _variation select 0};
+    case QEGVAR(ied,Barrel_Grey): {IEDD_BARRELVARS select _variation select 0};
+    case QEGVAR(ied,Charge): {IEDD_CHARGE select _variation select 0};
+    case QEGVAR(ied,Bucket): {IEDD_BUCKET select _variation select 0};
     default {[]};
 };
 if (_vars isNotEqualTo []) then {
