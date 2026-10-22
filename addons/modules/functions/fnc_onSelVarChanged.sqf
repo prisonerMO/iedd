@@ -90,7 +90,7 @@ if (_state) then {
         (W_PART(10)),
         (H_PART(1))
     ];
-    _oceCtrl ctrlSetText LLSTRING(OpenCloseEOD);
+    _oceCtrl ctrlSetText LELSTRING(zeus,OpenCloseEOD);
     _oceCtrl ctrlSetTooltip LELSTRING(ied,OpenCloseEOD_Tooltip);
     _oceCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
     _oceCtrl ctrlCommit 0;

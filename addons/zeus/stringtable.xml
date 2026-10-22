@@ -54,14 +54,6 @@
                 <Original>PITCH</Original>
                 <English>PITCH</English>
             </Key>
-            <Key ID="STR_iedd_zeus_Place_Ied">
-                <Original>Place IED</Original>
-                <English>Place IED</English>
-            </Key>
-            <Key ID="STR_iedd_zeus_Place_Vbied">
-                <Original>Add VBIED</Original>
-                <English>Add VBIED</English>
-            </Key>
             <Key ID="STR_iedd_zeus_Pos">
                 <Original>VBIED POSITION</Original>
                 <English>VBIED POSITION</English>
@@ -152,10 +144,6 @@
                 <Original>Activate IED(s)</Original>
                 <English>Activate IED(s)</English>
             </Key>
-            <Key ID="STR_iedd_zeus_Action_Drop">
-                <Original>Drop IEDD Notebook</Original>
-                <English>Drop IEDD Notebook</English>
-            </Key>
             <Key ID="STR_iedd_zeus_Action_Explode">
                 <Original>Explode IED(s)</Original>
                 <English>Explode IED(s)</English>
@@ -167,16 +155,6 @@
             <Key ID="STR_iedd_zeus_Action_Open">
                 <Original>Open IEDD Notebook</Original>
                 <English>Open IEDD Notebook</English>
-            </Key>
-        </Container>
-        <Container name="Zeus Attributes">
-            <Key ID="STR_iedd_zeus_Dud">
-                <Original>Chance of dud (%)</Original>
-                <English>Chance of dud (%)</English>
-            </Key>
-            <Key ID="STR_iedd_zeus_Dud_Tooltip">
-                <Original>Probability of IED being dud.</Original>
-                <English>Probability of IED being dud.</English>
             </Key>
         </Container>
     </Package>

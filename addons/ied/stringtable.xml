@@ -554,10 +554,6 @@
                 <Original>Bucket</Original>
                 <English>Bucket</English>
             </Key>
-            <Key ID="STR_iedd_ied_Bucket_Fake_DisplayName">
-                <Original>Plastic Bucket (Fake)</Original>
-                <English>Plastic Bucket (Fake)</English>
-            </Key>
             <Key ID="STR_iedd_ied_Cardboard_DisplayName">
                 <Original>Cardboard Box</Original>
                 <English>Cardboard Box</English>
@@ -781,10 +777,6 @@
             <Key ID="STR_iedd_ied_PlasticCanister_DisplayName">
                 <Original>Plastic Canister</Original>
                 <English>Plastic Canister</English>
-            </Key>
-            <Key ID="STR_iedd_ied_PlasticCanister_Fake_DisplayName">
-                <Original>Plastic Canister (Fake)</Original>
-                <English>Plastic Canister (Fake)</English>
             </Key>
             <Key ID="STR_iedd_ied_RandomTimer">
                 <Original>Random countdown time</Original>

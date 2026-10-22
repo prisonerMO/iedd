@@ -127,7 +127,7 @@ class GVAR(RscSetIED): RscDisplayAttributes {
                         class GVAR(dudL): GVAR(typeL) {
                             idc = 52513;
                             text = CSTRING(Dud_Category);
-                            tooltip = CSTRING(Dud_Tooltip);
+                            tooltip = ECSTRING(ied,Dud_Tooltip);
                             y = QUOTE(H_PART(3.3));
                         };
                         class GVAR(dudSlider): RscXSliderH {

@@ -195,8 +195,8 @@ class GVAR(multi): Module_F {
         };
         class GVAR(dud):Combo {
             property = QGVAR(dud);
-            displayName = CSTRING(Dud);
-            tooltip = CSTRING(Dud_Tooltip);
+            displayName = ECSTRING(ied,Dud);
+            tooltip = ECSTRING(ied,Dud_Tooltip);
             defaultValue = "0.15";
             control = "Slider";
         };

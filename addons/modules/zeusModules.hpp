@@ -15,7 +15,7 @@ class GVAR(ieds):GVAR(moduleBase) {
 };
 class GVAR(decals):GVAR(ieds) {
     curatorInfoType = QGVAR(RscDecals);
-    displayName = CSTRING(Sign);
+    displayName = CSTRING(Signs);
 };
 class GVAR(activate):GVAR(moduleBase) {
     curatorCanAttach = 1;

@@ -2,17 +2,9 @@
 <Project name="IEDD">
     <Package name="Notebook">
         <Container name="Notebook Action Names">
-            <Key ID="STR_iedd_notebook_Action_Active">
-                <Original>Activate IED(s)</Original>
-                <English>Activate IED(s)</English>
-            </Key>
             <Key ID="STR_iedd_notebook_Action_Drop">
                 <Original>Drop IEDD Notebook</Original>
                 <English>Drop IEDD Notebook</English>
-            </Key>
-            <Key ID="STR_iedd_notebook_Action_Explode">
-                <Original>Explode IED(s)</Original>
-                <English>Explode IED(s)</English>
             </Key>
             <Key ID="STR_iedd_notebook_Action_Menu">
                 <Original>IEDD Notebook Menu</Original>
