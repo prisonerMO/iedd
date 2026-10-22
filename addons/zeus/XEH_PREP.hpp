@@ -9,3 +9,4 @@ PREP(sliderMove);
 PREP(attributes);
 PREP(setIEDServer);
 PREP(setVariation);
+PREP(setData);

@@ -27,9 +27,7 @@ _control call FUNC(setIEDOnLoad);
     private _unit = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
     //Load variables from server
     [QGVAR(getData),[_unit, ace_player], ace_player] call CBA_fnc_targetEvent;    
-    GVAR(data) params ["_dist","_dud","_size","_timer","_timerValue","_variation","_lidState","_openClose","_openCloseEOD","_color"];
     diag_log format ["Unit: %1 Player: %2 Data: %3",_unit, ace_player, GVAR(data)];
-    
     //Set controls to current values
     private _type = typeOf _unit;
     if (_type == QEGVAR(ied,CanisterFuel)) then {
@@ -41,24 +39,27 @@ _control call FUNC(setIEDOnLoad);
             if (_texture find [_x,58] == 58) exitWith {                
                 _displayName = _names select _forEachIndex;
                 private _colorCombo = _display displayCtrl 52534;
-                _colorCombo lbSetCurSel _forEachIndex;
-                _color = _forEachIndex;            
+                _colorCombo lbSetCurSel _forEachIndex;                  
             };
         } forEach _colors;
         private _typeCtrl = _display displayCtrl 52520;
         _typeCtrl ctrlSetText _displayName;
         _typeCtrl ctrlCommit 0;
+        GVAR(data) set ["color",_texture];
     };
 
     private _variationCtrl = _display displayCtrl 52521;
+    private _variation = GVAR(data) get "variation";
     _variationCtrl lbSetCurSel _variation;
     _variationCtrl ctrlCommit 1;
 
     private _sizeCtrl = _display displayCtrl 52522;
+    private _size = GVAR(data) get "size";
     _sizeCtrl lbSetCurSel _size;
     _sizeCtrl ctrlCommit 1;
 
     private _sliderDud = _display displayCtrl 52523;  
+    private _dud = GVAR(data) get "dud";
     [_sliderDud, _dud] call FUNC(sliderMove);
 
     private _fnc_sliderDistMove = {
@@ -67,12 +68,14 @@ _control call FUNC(setIEDOnLoad);
         _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider),"m"];
     };
     private _sliderDist = _display displayCtrl 52524;
+    private _dist = GVAR(data) get "dist";
     _sliderDist sliderSetSpeed [1,1];
     _sliderDist sliderSetPosition _dist;
     _sliderDist ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderDistMove];
     _sliderDist call _fnc_sliderDistMove;
 
     private _timerCtrl = _display displayCtrl 52525;
+    private _timer = GVAR(data) get "timer";
     private _timerValue = [0,1] select _timer;
     _timerCtrl lbSetCurSel _timerValue;
 
@@ -82,55 +85,67 @@ _control call FUNC(setIEDOnLoad);
         _slider ctrlSetTooltip format ["%1%2", round(sliderPosition _slider),"s"];
     };
     private _sliderTimerValue = _display displayCtrl 52526;
-    _sliderTimerValue  sliderSetSpeed [1,1];
+    private _timer = GVAR(data) get "timerValue";
+    _sliderTimerValue sliderSetSpeed [1,1];
     _sliderTimerValue sliderSetPosition _timerValue;
     _sliderTimerValue ctrlAddEventHandler ["SliderPosChanged", _fnc_sliderValueMove];
     _sliderTimerValue call _fnc_sliderValueMove;
 
     if (_type == QEGVAR(ied,Bucket)) then {
         private _lidStateCtrl = _display displayCtrl 52528;
+        private _lidState = GVAR(data) get "lidState";
         private _lidStateValue = [0,1] select _lidState;
         _lidStateCtrl lbSetCurSel _lidStateValue;
 
         private _sliderOce = _display displayCtrl 52530;
+        private _openCloseEOD = GVAR(data) get "openCloseEOD";
         [_sliderOce, _openCloseEOD] call FUNC(sliderMove);
 
         private _sliderOc = _display displayCtrl 52532;
+        private _openClose = GVAR(data) get "openCloseEOD";
         [_sliderOc, _openClose] call FUNC(sliderMove);
     };
     
     private _fnc_onConfirm = {
         params [["_ctrlButtonOK", controlNull, [controlNull]]];
-        GVAR(data) = [];
-        private _unit = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
+        private _obj = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
         private _display = ctrlParent _ctrlButtonOK;
         if (isNull _display) exitWith {};
-        if (isNull _unit) exitWith {};
-        private _type = typeOf _unit;
+        if (isNull _obj) exitWith {};
+        private _type = typeOf _obj ;
         private _variation = lbCurSel (_display displayCtrl 52521);
-        diag_log ["VARITION "+str _variation];
-        private _varData = "getText (_x >> 'name') isEqualTo localize 'STR_iedd_ied_Name_Random'" configClasses (configOf _unit >> "Attributes" >> "iedd_ied_variation" >> "Values") apply {getNumber (_x >> 'value')};
+        private _varData = "getText (_x >> 'name') isEqualTo localize 'STR_iedd_ied_Name_Random'" configClasses (configOf _obj >> "Attributes" >> "iedd_ied_variation" >> "Values") apply {getNumber (_x >> 'value')};
         private _random = _varData select 0;
         if (_variation == _random) then {
             _variation = floor (random _random);
         };
+        private _clientData = [];
         private _size = lbCurSel (_display displayCtrl 52522);
-        private _timer = lbCurSel (_display displayCtrl 52525);
         private _dud = sliderPosition (_display displayCtrl 52523);
-        private _dist = round(sliderPosition (_display displayCtrl 52524));
-        private _timer = lbCurSel (_display displayCtrl 52525);
+        private _dist = round(sliderPosition (_display displayCtrl 52524));        
+        private _timer = [false,true] select lbCurSel (_display displayCtrl 52525);
+        _obj setVariable [QEGVAR(ied,timer),_timer,true];
         private _timerValue = round(sliderPosition (_display displayCtrl 52526));
-        private _lidState = lbCurSel (_display displayCtrl 52528);
-        private _openCloseEOD = sliderPosition (_display displayCtrl 52530);    
-        private _openClose = sliderPosition (_display displayCtrl 52532);
-        private _colorCtrl =  _display displayCtrl 52534;     
-        private _color = _colorCtrl lbData (lbCurSel _colorCtrl);
-        diag_log format ["COLOR in set %1", _color];
-        [QGVAR(setIEDServer), [_unit,_type,_variation,_dud,_size,_timer,_timerValue,_dist,_lidState,_openCloseEOD,_openClose,_color]] call CBA_fnc_serverEvent;
+        if (_type == QEGVAR(ied,CanisterFuel)) then {
+            private _colorCtrl =  _display displayCtrl 52534;     
+            private _color = _colorCtrl lbData (lbCurSel _colorCtrl);
+            private _texture = GVAR(data) get "color";
+            if (_texture != _color) then {
+                _obj setObjectTextureGlobal ["camo", _color];
+            };
+        }; 
+        if (_type == QEGVAR(ied,Bucket)) then {
+            private _lidState = lbCurSel (_display displayCtrl 52528);
+            private _openCloseEOD = sliderPosition (_display displayCtrl 52530);    
+            private _openClose = sliderPosition (_display displayCtrl 52532);
+            _obj animate ["bucketlid_hide", _lidState];
+            _obj setVariable [QGVAR(lid), [_openClose,_openCloseEOD], true];
+        };
+        [QGVAR(setIEDServer), [_obj,_type,_size,_dud,_dist,_timerValue]] call CBA_fnc_serverEvent;
     };
 
     private _fnc_onUnload = {
-        GVAR(data) = [];   
+        call FUNC(setData);   
     };
 
     _ctrlButtonOK ctrlAddEventHandler ["ButtonClick", _fnc_onConfirm];

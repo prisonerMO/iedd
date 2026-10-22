@@ -25,7 +25,8 @@ if (_attachedObjects isNotEqualTo []) then {
     if (_index > -1) then {
         private _isBury = _object getVariable [QGVAR(isBury),false];
         if (_isBury) then {
-            deleteVehicle _object;
+            _object setPosWorld (_object modelToWorld [0,0,0]);
+            _object setVariable [QGVAR(isBury),false,true];
         };
     };
 };
