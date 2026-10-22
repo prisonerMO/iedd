@@ -1,12 +1,12 @@
 PREP(activate);
+PREP(attributes);
 PREP(canActivate);
 PREP(canExplode);
 PREP(explode);
-PREP(setburyIED);
+PREP(setBuryIED);
 PREP(setIED);
 PREP(setIEDOnLoad);
 PREP(sliderMove);
-PREP(attributes);
 PREP(setIEDServer);
 PREP(setVariation);
 PREP(setData);

@@ -18,9 +18,8 @@ class CfgVehicles {
         useAction = 0;
         ace_dragging_canDrag = 0;
 		ace_dragging_canCarry = 0;
-        curatorInfoType = QEGVAR(zeus,RscBuryIED);
+        //curatorInfoType = QEGVAR(zeus,RscBuryIED);
         //curatorInfoTypeEmpty = QEGVAR(zeus,RscBuryIED);
-        filterAttributes = 1;
         class ACE_Actions {
             class ACE_MainActions {
                 displayName = "$STR_ace_interaction_MainAction";

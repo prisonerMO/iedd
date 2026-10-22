@@ -1,3 +1,4 @@
+/*DEBUG , Not in use */
 class RscText {};
 class RscControlsGroup {};
 class RscControlsGroupNoScrollbars: RscControlsGroup {};
@@ -32,8 +33,5 @@ class iedd_modules_RscIeds: RscDisplayAttributes {
 	};
 };
 
-
-
-QUOTE(
-    [ARR_2({call FUNC(attributes)},[ARR_3('onUnload',_this,QQGVAR(RscSetIED))])] call CBA_fnc_execNextFrame);
-    onLoad = QUOTE([ARR_2({call FUNC(vbiedSelected)},[ARR_2(_this select 0,0)])] call CBA_fnc_execNextFrame);
+onLoad = QUOTE([ARR_2({call FUNC(vbiedSelected)},[ARR_2(_this select 0,0)])] call CBA_fnc_execNextFrame);
+onUnload = QUOTE([ARR_2({call FUNC(attributes)},[ARR_3('onUnload',_this,QQGVAR(RscSetIED))])] call CBA_fnc_execNextFrame);
