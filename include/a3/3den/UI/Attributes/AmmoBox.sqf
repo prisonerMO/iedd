@@ -11,7 +11,7 @@ params ["_mode", "_params"];
 switch _mode do 
 {
 	case "onLoad": 
-	{	
+	{
 		//--- Selected ammobox
 		private _entity = get3DENSelected "object" select 0;
 		
@@ -126,6 +126,8 @@ switch _mode do
 				];
 				
 				private _CfgWeapons = configfile >> "CfgWeapons";
+				// Each list entry is [name, className, type, isDuplicate]
+				// type is 0 (Weapons), 1 (Binocular + Inventory Items), 2 (magazines), 3 (Glasses+Backpacks)
 				private _list = [[],[],[],[],[],[],[],[],[],[],[],[]];
 
 				//--- Weapons, magazines and items
@@ -165,7 +167,7 @@ switch _mode do
 										([gettext (_weaponCfg >> "displayName")] + (((_weaponCfg >> "linkeditems") call bis_fnc_returnchildren) apply { getText (_CfgWeapons >> getText (_x >> "item") >> "displayName") })) joinString " + ",
 										_weapon, 
 										getText (_weaponCfg >> "picture"), 
-										parseNumber (getnumber (_weaponCfg >> "type") in [4096,131072]), 
+										parseNumber (getnumber (_weaponCfg >> "type") in [4096,131072]), // WeaponSlotBinocular/WeaponSlotInventory. If it fits into those slots, its an item, otherwise its a weapon. false = Weapon
 										false
 									];
 								};
@@ -194,7 +196,7 @@ switch _mode do
 														getText (_magCfg >> "displayName"),
 														_mag,
 														getText (_magCfg >> "picture"),
-														2,
+														2, // All magazines are type 2
 														_mag in _magazines
 													];
 													
@@ -232,7 +234,7 @@ switch _mode do
 									gettext (_weaponCfg >> "displayName"),
 									_weapon,
 									gettext (_weaponCfg >> "picture"),
-									3,
+									3, // Backpacks are type 3
 									false
 								];
 							};
@@ -256,7 +258,7 @@ switch _mode do
 							gettext (_weaponCfg >> "displayName"),
 							_weapon,
 							gettext (_weaponCfg >> "picture"),
-							3,
+							3, // Glasses are type 3, just like backpacks (?)
 							false
 						];
 					};
@@ -301,71 +303,95 @@ switch _mode do
 		private _ctrlList = _ctrlGroup controlsGroupCtrl 101;
 		//_ctrlLoad = _ctrlGroup controlsGroupCtrl 102;
 		//_ctrlFilterBackground = _ctrlGroup controlsGroupCtrl IDC_RSCATTRIBUTEINVENTORY_FILTERBACKGROUND;
-		private _list = uinamespace getvariable ["AmmoBox_list",[[],[],[],[],[],[],[],[],[],[],[],[]]];
-		private _items = [];
 
-		if (_cursel > 0) then 
-		{
-			_items = _list select (_cursel - 1); //--- Process items in specific category
-		} 
-		else 
-		{
-			{ _items append _x } foreach _list; //--- Process all items, and later pick the ones which are in the box
-		};
+		// _list is 12 arrays, seperated according to _types (see above)
+		// [Rifles, MachineGun, SnipeRifle, Launchers, Handguns, UnknownWeapons, Accessories, Uniforms, Vests, Backpacks, Headgear, ExtraGear]
+		private _list = uinamespace getvariable ["AmmoBox_list",[[],[],[],[],[],[],[],[],[],[],[],[]]];
 
 		lnbclear _ctrlList;
-		
+
 		{
 			private _types = _x;
-			
-			{	
-				_x params ["_displayName", "_class", "_picture", "_type", "_isDuplicate"];
+			// We don't need to iterate all item arrays. When looking for weapons, we don't need to iterate Accessories and Uniforms, we won't find any weapons there.
+			// When looking for Items, we don't need to iterate Weapons.
+			//#TODO I don't see what the point of iterating 3 times (Weapons, Items+Backpacks, Magazines) is, it does not seem like it would make a difference to just do all at once.
+			private _indexes = switch (_forEachIndex) do
+			{
+				case 1: { [6,7,8,9,10,11] }; // Items + Backpacks
+				default { [0,1,2,3,4,5] }; // Weapons + Magazines
+			};
 
-				if (_type in _types && (!_isDuplicate || _cursel > 0)) then 
+			{
+				// Here we iterate per item type list, according to the types above in _list. _x is the index of our type we should check now
+
+				if (_cursel > 0) then // If a specific category is selected in the UI
 				{
-					RscAttributeInventory_cargo params ["_classes", "_values"];
-
-					private _index = _classes find _class;
-					private _value = if (_index < 0) then 
+					if (_cursel - 1 != _x) then // And the selected index (first is BoxContent, second is where the type array starts Rifles, MachineGun,...) doesn't match this item list
 					{
-						_index = count _classes;
-						_classes set [_index, _class];
-						_values set [_index, 0];
-						0
-					} else {
-						_values select _index
-					};
-					
-					if ((_cursel == 0 && _value != 0) || (_cursel > 0)) then 
-					{
-						private _valueText = if (AmmoBox_type > 0) then { [SYMBOL_VIRTUAL_0, SYMBOL_VIRTUAL_1] select (_value > 0) } else { str _value };
-						private _lnbAdd = _ctrlList lnbaddrow ["",_displayName,_valueText,""];
-						_ctrlList lnbsetdata [[_lnbAdd,0],_class];
-						_ctrlList lnbsetvalue [[_lnbAdd,0],_value];
-						_ctrlList lnbsetvalue [[_lnbAdd,1],_type];
-						_ctrlList lnbsetpicture [[_lnbAdd,0],_picture];
-						private _alpha = if (_value != 0) then {1} else {0.5};
-						_ctrlList lnbsetcolor [[_lnbAdd,1],[1,1,1,_alpha]];
-						_ctrlList lnbsetcolor [[_lnbAdd,2],[1,1,1,_alpha]];
-						_ctrlList lnbsettooltip [[_lnbAdd,0],_displayName];
-
-						//if (_cursel == 0 && _value != 0) then 
-						//{
-							//_coef = switch _type do 
-							//{
-								//case 0: {RscAttributeInventory_loadWeapon};
-								//case 1: {0};
-								//case 2: {RscAttributeInventory_loadMagazine};
-								//case 3: {RscAttributeInventory_loadBackpack};
-								//default {0};
-							//};
-							//_ctrlLoad progresssetposition (progressposition _ctrlLoad + (_value max 0) * _coef);
-						//};
+						continue; // Then skip it. We won't find Rifles in the Headgear list.
 					};
 				};
-			} 
-			foreach _items;
-		} 
+
+				private _items = _list select _x;
+
+
+				RscAttributeInventory_cargo params ["_classes", "_values"];
+				{
+					_x params ["_displayName", "_class", "_picture", "_type", "_isDuplicate"];
+
+					if (_type in _types && (!_isDuplicate || _cursel > 0)) then 
+					{
+						private _index = _classes find _class;
+						private _value = if (_index < 0) then 
+						{
+							// The class was not found (meaning it is not in the box), add it even though the count is zero
+							//#TODO why?? The "fix" skipped doing it, but I don't know what the purpose is so keeping this for now
+
+							//if (_cursel == 0) then // If we didn't find the class in the list, then we have zero items. But in the first tab, we only display items with count > 0
+							//{
+							//	continue; // So we can skip this item right away
+							//};
+
+							_index = count _classes;
+							_classes set [_index, _class];
+							_values set [_index, 0];
+							0
+						} else {
+							_values select _index
+						};
+						
+						if ((_cursel == 0 && _value != 0) || (_cursel > 0)) then 
+						{
+							private _valueText = if (AmmoBox_type > 0) then { [SYMBOL_VIRTUAL_0, SYMBOL_VIRTUAL_1] select (_value > 0) } else { str _value };
+							private _lnbAdd = _ctrlList lnbaddrow ["",_displayName,_valueText,""];
+							_ctrlList lnbsetdata [[_lnbAdd,0],_class];
+							_ctrlList lnbsetvalue [[_lnbAdd,0],_value];
+							_ctrlList lnbsetvalue [[_lnbAdd,1],_type];
+							_ctrlList lnbsetpicture [[_lnbAdd,0],_picture];
+							private _alpha = if (_value != 0) then {1} else {0.5};
+							_ctrlList lnbsetcolor [[_lnbAdd,1],[1,1,1,_alpha]];
+							_ctrlList lnbsetcolor [[_lnbAdd,2],[1,1,1,_alpha]];
+							_ctrlList lnbsettooltip [[_lnbAdd,0],_displayName];
+
+							//if (_cursel == 0 && _value != 0) then 
+							//{
+								//_coef = switch _type do 
+								//{
+									//case 0: {RscAttributeInventory_loadWeapon};
+									//case 1: {0};
+									//case 2: {RscAttributeInventory_loadMagazine};
+									//case 3: {RscAttributeInventory_loadBackpack};
+									//default {0};
+								//};
+								//_ctrlLoad progresssetposition (progressposition _ctrlLoad + (_value max 0) * _coef);
+							//};
+						};
+					};
+				}
+				forEach _items;
+			}
+			forEach _indexes;
+		}
 		foreach [[0],[1,3],[2]]; // 0 - Weapons, 1 - Items, 2 - Magazines, 3 - Backpacks
 		
 		_ctrlList lnbSort [1, false];

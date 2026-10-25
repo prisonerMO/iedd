@@ -58,6 +58,10 @@ class DefaultFont
 	font = GUI_FONT_NORMAL;
 };
 
+class DebugFont
+{
+	font = EtelkaMonospaceProBold; // Used to be LucidaConsoleB, but it doesn't support unicode
+};
 
 ///////////////////////////////////////////////////////////////////////////
 /// Sizes
