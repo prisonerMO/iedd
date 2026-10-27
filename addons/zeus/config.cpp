@@ -11,6 +11,7 @@ class CfgPatches {
             "iedd_main",
             "iedd_modules",
         };
+        //skipWhenAnyAddonPresent[] = {"iedd_zen_compat_main"}; not tested yet, but may cause issues with other mods that use the same modules/rsc, so disabled for now
         url = "https://community.bistudio.com/wiki";
         VERSION_CONFIG;
     };

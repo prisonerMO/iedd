@@ -34,10 +34,6 @@
                 <Original>UNIT HANDCUFFED</Original>
                 <English>UNIT HANDCUFFED</English>
             </Key>
-            <Key ID="STR_iedd_zeus_Ied_Var_Tooltip">
-                <Original>Select variation of IED.</Original>
-                <English>Select variation of IED.</English>
-            </Key>
             <Key ID="STR_iedd_zeus_Moving">
                 <Original>MOVING VEHICLE</Original>
                 <English>MOVING VEHICLE</English>
@@ -57,10 +53,6 @@
             <Key ID="STR_iedd_zeus_Pos">
                 <Original>VBIED POSITION</Original>
                 <English>VBIED POSITION</English>
-            </Key>
-            <Key ID="STR_iedd_zeus_Pos_Tooltip">
-                <Original>Set position for VBIED.</Original>
-                <English>Set position for VBIED.</English>
             </Key>
             <Key ID="STR_iedd_zeus_Roll">
                 <Original>ROLL</Original>
@@ -86,10 +78,6 @@
                 <Original>EXPLOSION SIZE</Original>
                 <English>EXPLOSION SIZE</English>
             </Key>
-            <Key ID="STR_iedd_zeus_Size_Tooltip">
-                <Original>Select size of explosion.</Original>
-                <English>Select size of explosion.</English>
-            </Key>
             <Key ID="STR_iedd_zeus_Speed">
                 <Original>MOVING SPEED</Original>
                 <English>MOVING SPEED</English>
@@ -106,10 +94,6 @@
                 <Original>COUNTDOWN TIME</Original>
                 <English>COUNTDOWN TIME</English>
             </Key>
-            <Key ID="STR_iedd_zeus_TimerValue_Tooltip">
-                <Original>Set time for countdown timer.</Original>
-                <English>Set time for countdown timer.</English>
-            </Key>
             <Key ID="STR_iedd_zeus_Timer_Category">
                 <Original>COUNTDOWN TIMER</Original>
                 <English>COUNTDOWN TIMER</English>
@@ -125,10 +109,6 @@
             <Key ID="STR_iedd_zeus_Variation">
                 <Original>BOMB VARIATION</Original>
                 <English>BOMB VARIATION</English>
-            </Key>
-            <Key ID="STR_iedd_zeus_Vbied_Var_Tooltip">
-                <Original>Select variation of VBIED.</Original>
-                <English>Select variation of VBIED.</English>
             </Key>
             <Key ID="STR_iedd_zeus_Yaw">
                 <Original>YAW</Original>
@@ -151,10 +131,6 @@
             <Key ID="STR_iedd_zeus_Action_Menu">
                 <Original>IEDD Notebook Menu</Original>
                 <English>IEDD Notebook Menu</English>
-            </Key>
-            <Key ID="STR_iedd_zeus_Action_Open">
-                <Original>Open IEDD Notebook</Original>
-                <English>Open IEDD Notebook</English>
             </Key>
         </Container>
     </Package>

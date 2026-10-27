@@ -87,7 +87,7 @@ class GVAR(RscIeds): RscDisplayAttributes {
 
                         class GVAR(variationL): GVAR(typeL) {
                             text = ECSTRING(zeus,Variation);
-                            tooltip = ECSTRING(zeus,Ied_Var_Tooltip);
+                            tooltip = ECSTRING(ied,Variation_Tooltip);
                             y = QUOTE(H_PART(1.1));
                         };
                         class GVAR(variation): RscCombo {
@@ -133,7 +133,7 @@ class GVAR(RscIeds): RscDisplayAttributes {
 
                         class GVAR(sizeL): GVAR(typeL) {
                             text = ECSTRING(zeus,Size);
-                            tooltip = ECSTRING(zeus,Size_Tooltip);
+                            tooltip = ECSTRING(ied,Size_Tooltip);
                             y = QUOTE(H_PART(2.2));
                         };
                         class GVAR(size): RscCombo {
@@ -233,7 +233,7 @@ class GVAR(RscIeds): RscDisplayAttributes {
 
                         class GVAR(TimerValueL): GVAR(typeL) {
                             text = ECSTRING(zeus,TimerValue_Category);
-                            tooltip = ECSTRING(zeus,TimerValue_Tooltip);
+                            tooltip = ECSTRING(ied,TimerValue_Tooltip);
                             y = QUOTE(H_PART(6.6));
                         };
                         class GVAR(TimerValueSlider): RscXSliderH {

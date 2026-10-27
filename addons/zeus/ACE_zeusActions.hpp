@@ -4,7 +4,7 @@ class ACE_ZeusActions {
         icon = QPATHTOEF(models,preview\notebook.paa);
         condition = QUOTE(!isNull findDisplay 312);
         class GVAR(notebook) {
-            displayName = CSTRING(Action_Open);
+            displayName = ECSTRING(notebook,Action_Open);
             condition = QUOTE(true);
             statement = QUOTE(createDialog QQEGVAR(notebook,display));
         };
