@@ -22,6 +22,7 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"
+#include "aceZeusActions.hpp"
 #include "controls.hpp"
 #include "notebook.hpp"
 #include "edenMenu.hpp"

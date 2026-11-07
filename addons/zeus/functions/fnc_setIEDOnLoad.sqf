@@ -144,7 +144,7 @@ if (_state) then {
             (W_PART(10)),
             (H_PART(1))
         ];
-        _colorCtrl ctrlSetText LELSTRING(ied,Color);
+        _colorCtrl ctrlSetText toUpper LELSTRING(ied,Color);
         _colorCtrl ctrlSetTooltip LELSTRING(ied,Color_Tooltip);
         _colorCtrl ctrlSetBackgroundColor [0, 0, 0, 0.5];
         _colorCtrl ctrlCommit 0;

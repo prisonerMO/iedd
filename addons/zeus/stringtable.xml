@@ -10,10 +10,6 @@
                 <Original>Explode IED(s)</Original>
                 <English>Explode IED(s)</English>
             </Key>
-            <Key ID="STR_iedd_zeus_Action_Menu">
-                <Original>IEDD Notebook Menu</Original>
-                <English>IEDD Notebook Menu</English>
-            </Key>
         </Container>
     </Package>
 </Project>

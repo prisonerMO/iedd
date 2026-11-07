@@ -9,13 +9,14 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "iedd_main",
-            "iedd_modules",
+            "iedd_modules",            
+            "iedd_notebook",
         };
-        //skipWhenAnyAddonPresent[] = {"iedd_zen_compat_main"}; not tested yet, but may cause issues with other mods that use the same modules/rsc, so disabled for now
+        skipWhenAnyAddonPresent[] = {"iedd_zen_compat"};
         url = "https://community.bistudio.com/wiki";
         VERSION_CONFIG;
     };
 };
 #include "CfgEventHandlers.hpp"
 #include "ui\RscAttributes.hpp"
-#include "ACE_zeusActions.hpp"
+#include "aceZeusActions.hpp"

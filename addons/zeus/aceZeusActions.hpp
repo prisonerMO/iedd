@@ -1,13 +1,5 @@
 class ACE_ZeusActions {
-    class GVAR(zeus) {
-        displayName = CSTRING(Action_Menu);
-        icon = QPATHTOEF(models,preview\notebook.paa);
-        condition = QUOTE(!isNull findDisplay 312);
-        class GVAR(notebook) {
-            displayName = ECSTRING(notebook,Action_Open);
-            condition = QUOTE(true);
-            statement = QUOTE(createDialog QQEGVAR(notebook,display));
-        };
+    class EGVAR(notebook,zeus) {
         class GVAR(activate) {
             displayName = CSTRING(Action_Active);
             condition = QUOTE(call FUNC(canActivate));
