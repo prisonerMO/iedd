@@ -186,7 +186,7 @@ if (!isServer) exitWith {};
             if (_decals) then {
                 [_bombObj] call FUNC(decals);
             };
-            private _text = localize LSTRING(Name_Long);
+            private _text = LLSTRING(Name_Long);
             private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
             [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;

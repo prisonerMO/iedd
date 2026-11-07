@@ -25,4 +25,3 @@
     [["Red","Blue","Black","Yellow","Green","Black","Red"],    [6,4,3,2,1,5,0]]\
 ]
 
-//localize LSTRING(FrontLeft)

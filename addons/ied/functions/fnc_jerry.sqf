@@ -176,7 +176,7 @@ if (!isServer) exitWith {};
             if (_color != "green") then {
                 _bombObj setObjectTextureGlobal ["camo", "a3\props_f_orange\humanitarian\supplies\data\canisterfuel_"+_color+"_co.paa"]
             };
-            private _text = localize LSTRING(Name_Long);
+            private _text = LLSTRING(Name_Long);
             private _jipId = [QGVAR(defuseAction), [_bombObj, _wireSet,_text]] call CBA_fnc_globalEventJIP;
             [_jipID, _bombObj] call CBA_fnc_removeGlobalEventJIP;
             [QGVAR(updateBombList), [_bombObj]] call CBA_fnc_serverEvent;
