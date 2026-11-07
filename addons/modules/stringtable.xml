@@ -30,7 +30,7 @@
                 <Original>Amount of IEDs in the area.</Original>
                 <English>Amount of IEDs in the area.</English>
             </Key>
-            <Key ID="STR_iedd_modules_Dud_Category">
+            <Key ID="STR_iedd_modules_Duds_Category">
                 <Original>DUDS</Original>
                 <English>DUDS</English>
             </Key>
@@ -74,6 +74,10 @@
                 <Original>FAKE IEDS</Original>
                 <English>FAKE IEDS</English>
             </Key>
+            <Key ID="STR_iedd_modules_Ied_Type_Tooltip">
+                <Original>Spawn this type of IEDs.</Original>
+                <English>Spawn this type of IEDs.</English>
+            </Key>
             <Key ID="STR_iedd_modules_Ieds_Category">
                 <Original>IEDS</Original>
                 <English>IEDS</English>
@@ -109,10 +113,6 @@
             <Key ID="STR_iedd_modules_Timer_Tooltip">
                 <Original>Add countdown timer to IED. Time values from addon options will be used.</Original>
                 <English>Add countdown timer to IED. Time values from addon options will be used.</English>
-            </Key>
-            <Key ID="STR_iedd_modules_Type_Tooltip">
-                <Original>Spawn this type of IEDs.</Original>
-                <English>Spawn this type of IEDs.</English>
             </Key>
             <Key ID="STR_iedd_modules_Vbied_Activate">
                 <Original>Activate VBIED</Original>
@@ -191,6 +191,116 @@
             <Key ID="STR_iedd_modules_RoadDirt_7">
                 <Original>Road Dirt 7</Original>
                 <English>Road Dirt 7</English>
+            </Key>
+        </Container>
+        <Container name="IEDD Zeus RSC">
+            <Key ID="STR_iedd_modules_Act_Category">
+                <Original>ACTIVATION DISTANCE</Original>
+                <English>ACTIVATION DISTANCE</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Depth">
+                <Original>DEPTH</Original>
+                <English>DEPTH</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Dms_Category">
+                <Original>DEAD MAN SWITCH</Original>
+                <English>DEAD MAN SWITCH</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Dud_Category">
+                <Original>CHANCE OF DUD (%)</Original>
+                <English>CHANCE OF DUD (%)</English>
+            </Key>
+            <Key ID="STR_iedd_modules_EngineOn">
+                <Original>ENGINE ON</Original>
+                <English>ENGINE ON</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Exp_Category">
+                <Original>EXPLOSION DISTANCE</Original>
+                <English>EXPLOSION DISTANCE</English>
+            </Key>
+            <Key ID="STR_iedd_modules_GetIn">
+                <Original>GET IN</Original>
+                <English>GET IN</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Handcuffed_Category">
+                <Original>UNIT HANDCUFFED</Original>
+                <English>UNIT HANDCUFFED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Moving">
+                <Original>MOVING VEHICLE</Original>
+                <English>MOVING VEHICLE</English>
+            </Key>
+            <Key ID="STR_iedd_modules_OpenClose">
+                <Original>LID ACTIVATION (OTHER UNITS)</Original>
+                <English>LID ACTIVATION (OTHER UNITS)</English>
+            </Key>
+            <Key ID="STR_iedd_modules_OpenCloseEOD">
+                <Original>LID ACTIVATION (EODS)</Original>
+                <English>LID ACTIVATION (EODS)</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Pitch">
+                <Original>PITCH</Original>
+                <English>PITCH</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Pos">
+                <Original>VBIED POSITION</Original>
+                <English>VBIED POSITION</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Roll">
+                <Original>ROLL</Original>
+                <English>ROLL</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Rotate_Ied">
+                <Original>Rotate IED.</Original>
+                <English>Rotate IED.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Sides_Category">
+                <Original>ACTIVED BY SIDE</Original>
+                <English>ACTIVED BY SIDE</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Sign_Category">
+                <Original>GROUND SIGN TYPE</Original>
+                <English>GROUND SIGN TYPE</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Sign_Category_Tooltip">
+                <Original>Select type of ground sign.</Original>
+                <English>Select type of ground sign.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Size">
+                <Original>EXPLOSION SIZE</Original>
+                <English>EXPLOSION SIZE</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Speed">
+                <Original>MOVING SPEED</Original>
+                <English>MOVING SPEED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Surrendered_Category">
+                <Original>UNIT SURRENDERED</Original>
+                <English>UNIT SURRENDERED</English>
+            </Key>
+            <Key ID="STR_iedd_modules_TimerValue_Category">
+                <Original>COUNTDOWN TIME</Original>
+                <English>COUNTDOWN TIME</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Type">
+                <Original>IED TYPE</Original>
+                <English>IED TYPE</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Type_Tooltip">
+                <Original>Select type of IED.</Original>
+                <English>Select type of IED.</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Variation">
+                <Original>BOMB VARIATION</Original>
+                <English>BOMB VARIATION</English>
+            </Key>
+            <Key ID="STR_iedd_modules_Yaw">
+                <Original>YAW</Original>
+                <English>YAW</English>
+            </Key>
+            <Key ID="STR_iedd_modules_lidState">
+                <Original>LID STATE</Original>
+                <English>LID STATE</English>
             </Key>
         </Container>
     </Package>

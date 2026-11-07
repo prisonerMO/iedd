@@ -16,8 +16,8 @@ class GVAR(RscDecals): RscDisplayAttributes {
                     class controls {
                         class GVAR(typeL): RscText {
                             idc = -1;
-                            text = ECSTRING(zeus,Sign_Category);
-                            tooltip = ECSTRING(zeus,Sign_Category_Tooltip);
+                            text = CSTRING(Sign_Category);
+                            tooltip = CSTRING(Sign_Category_Tooltip);
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(10));
