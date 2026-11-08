@@ -16,7 +16,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                     class controls {
                         class GVAR(variationL): RscText {
                             idc = -1;
-                            text = CSTRING(Variation);
+                            text = TOUPPERLL(Variation);
                             tooltip = ECSTRING(ied,Variation_Tooltip);
                             x = 0;
                             y = 0;
@@ -59,7 +59,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                             };
                         };
                         class GVAR(sizeL): GVAR(variationL) {
-                            text = CSTRING(Size);
+                            text = TOUPPERLEL(ied,Size);
                             tooltip = ECSTRING(ied,Size_Tooltip);
                             y = QUOTE(H_PART(1.1));
                         };
@@ -97,7 +97,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                         };
 
                         class GVAR(dudL): GVAR(variationL) {
-                            text = CSTRING(Dud_Category);
+                            text = TOUPPERLEL(ied,Dud);
                             tooltip = ECSTRING(ied,Dud_Tooltip);
                             y = QUOTE(H_PART(2.2));
                         };
@@ -110,7 +110,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                             h = QUOTE(H_PART(1));
                         };
                         class GVAR(actL): GVAR(variationL) {
-                            text = CSTRING(Act_Category);
+                            text = TOUPPERLEL(ied,Distance);
                             tooltip = ECSTRING(ied,DistanceActivate_Tooltip);
                             y = QUOTE(H_PART(3.3));
                         };
@@ -124,7 +124,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                             h = QUOTE(H_PART(1));
                         };
                         class GVAR(expL): GVAR(variationL) {
-                            text = CSTRING(Exp_Category);
+                            text = TOUPPERLL(Explosion_Distance);
                             tooltip = ECSTRING(ied,DistanceExplosion_Tooltip);
                             y = QUOTE(H_PART(4.4));
                         };
@@ -138,7 +138,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                             h = QUOTE(H_PART(1));
                         };
                         class GVAR(dmsL): GVAR(variationL) {
-                            text = CSTRING(Dms_Category);
+                            text = TOUPPERLEL(ied,isDeadManSwitch_DisplayName);
                             tooltip = ECSTRING(ied,isDeadManSwitch_Description);
                             y = QUOTE(H_PART(5.5));
                         };
@@ -162,7 +162,7 @@ class GVAR(RscSuicide): RscDisplayAttributes {
                             };
                         };
                         class GVAR(sideL): GVAR(variationL) {
-                            text = CSTRING(Sides_Category);
+                            text = TOUPPERLEL(ied,Sides_DisplayName);
                             tooltip = ECSTRING(ied,Sides_Description);
                             y = QUOTE(H_PART(6.6));
                         };

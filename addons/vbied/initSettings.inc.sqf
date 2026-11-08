@@ -71,7 +71,7 @@
 [
     QGVAR(defaultSize),
     "LIST",
-    [LSTRING(DefaultSize), LSTRING(DefaultSize_Description)],
+    [ELSTRING(ied,DefaultSize), LSTRING(DefaultSize_Description)],
     [LSTRING(Main_Category),"VBIED Default Values"],
     [
         [0,1,2,3,4,5],

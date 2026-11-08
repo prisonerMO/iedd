@@ -46,7 +46,7 @@ class GVAR(multi): Module_F {
         class GVAR(iedsEmpty_SubCategory) {
             data = "AttributeSystemSubcategory"; // This is needed for the attribute to work
             control = "SubCategory";
-            displayName = CSTRING(Ieds_Category); // Visible text. Despite the attribute code saying the property should be title, displayName is correct
+            displayName = TOUPPERLEL(main,Category_IEDs);
         };
         class EGVAR(ied,CanisterPlastic):Checkbox {
             property = QEGVAR(ied,CanisterPlastic);
@@ -103,7 +103,7 @@ class GVAR(multi): Module_F {
         class GVAR(fakeIeds_SubCategory) {
             data = "AttributeSystemSubcategory";
             control = "SubCategory";
-            displayName = CSTRING(Fake_Category);
+            displayName = TOUPPERLL(Fake_Ieds);
         };
         class EGVAR(ied,CanisterPlastic_Fake):Checkbox {
             property = QEGVAR(ied,CanisterPlastic_Fake);
@@ -159,7 +159,7 @@ class GVAR(multi): Module_F {
         class GVAR(Signs_SubCategory) {
             data = "AttributeSystemSubcategory";
             control = "SubCategory";
-            displayName = CSTRING(Signs_Category);
+            displayName = TOUPPERLL(Signs_Category);
         };
         class GVAR(signs):Checkbox {
             property = QGVAR(signs);
@@ -191,7 +191,7 @@ class GVAR(multi): Module_F {
         class GVAR(Dud_SubCategory) {
             data = "AttributeSystemSubcategory";
             control = "SubCategory";
-            displayName = CSTRING(Duds_Category);
+            displayName = TOUPPERLL(Duds);
         };
         class GVAR(dud):Combo {
             property = QGVAR(dud);
@@ -204,7 +204,7 @@ class GVAR(multi): Module_F {
         class GVAR(Timer_SubCategory) {
             data = "AttributeSystemSubcategory";
             control = "SubCategory";
-            displayName = CSTRING(Timer_Category);
+            displayName = TOUPPERLEL(ied,Timer);
         };
         class GVAR(timer) {
             displayName = CSTRING(Timer);
@@ -285,14 +285,14 @@ class GVAR(multi): Module_F {
         class GVAR(Blacklist_SubCategory) {
             data = "AttributeSystemSubcategory";
             control = "SubCategory";
-            displayName = CSTRING(Blacklist_Category);
+            displayName = TOUPPERLL(Blacklist);
         };
         class GVAR(black):Default {
             property = QGVAR(black);
             control = "Edit";
-            displayName = CSTRING(Blacklist);
+            displayName = CSTRING(Blacklist_Areas);
             description = "markerarea";
-            tooltip = CSTRING(Blacklist_Tooltip);
+            tooltip = CSTRING(Blacklist_Areas_Tooltip);
             typeName = "STRING"; // Value type, can be "NUMBER", "STRING" or "BOOL"
             defaultValue = "''";
         };

@@ -41,7 +41,8 @@
 #define X_PART(num) (W_PART(num) + (safeZoneX + (safeZoneW - SIZEX) / 2))
 #define Y_PART(num) (H_PART(num) + (safeZoneY + (safeZoneH - SIZEY) / 2))
 
-#define TOUPPER(text) __EVAL(toUpper text)
+#define TOUPPERLL(text) __EVAL(toUpper LLSTRING(text))
+#define TOUPPERLEL(var,text) __EVAL(toUpper LELSTRING(var,text))
 
 #define IEDD_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \
     weapon = #WEAPON; \

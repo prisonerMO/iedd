@@ -192,10 +192,6 @@
                 <Original>VBIEDs will be activated when vehicle is moving.</Original>
                 <English>VBIEDs will be activated when vehicle is moving.</English>
             </Key>
-            <Key ID="STR_iedd_vbied_DefaultSize">
-                <Original>Explosion size</Original>
-                <English>Explosion size</English>
-            </Key>
             <Key ID="STR_iedd_vbied_DefaultSize_Description">
                 <Original>Set explosion size for VBIEDs (if not defined somewhere else).</Original>
                 <English>Set explosion size for VBIEDs (if not defined somewhere else).</English>
