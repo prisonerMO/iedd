@@ -68,7 +68,7 @@ class GVAR(RscBuryIED): RscDisplayAttributes {
                             y = QUOTE(H_PART(2.2));
                         };
                         class GVAR(stepL): GVAR(pitchL) {
-                            text = TOUPPERLEL(ied,Depth);
+                            text = TOUPPERLEL(ied,Depth_DisplayName);
                             tooltip = ECSTRING(ied,Depth_Tooltip);
                             y = QUOTE(H_PART(3.3));
                         };
