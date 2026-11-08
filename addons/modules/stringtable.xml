@@ -210,10 +210,6 @@
                 <Original>Select type of ground sign.</Original>
                 <English>Select type of ground sign.</English>
             </Key>
-            <Key ID="STR_iedd_modules_Speed">
-                <Original>Moving Speed</Original>
-                <English>Moving Speed</English>
-            </Key>
             <Key ID="STR_iedd_modules_Type">
                 <Original>Ied type</Original>
                 <English>Ied type</English>

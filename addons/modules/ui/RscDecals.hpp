@@ -14,15 +14,11 @@ class GVAR(RscDecals): RscDisplayAttributes {
                     w = QUOTE(W_PART(26));
                     h = QUOTE(H_PART(0.9));
                     class controls {
-                        class GVAR(typeL): RscText {
-                            idc = -1;
-                            text = TOUPPERLL(Sign_Category);
+                        class GVAR(typeL): GVAR(label) {
+                            text = CSTRING(Sign_Category);
                             tooltip = CSTRING(Sign_Category_Tooltip);
-                            x = 0;
-                            y = 0;
                             w = QUOTE(W_PART(10));
                             h = QUOTE(H_PART(1));
-                            colorBackground[] = {0, 0, 0, 0.5};
                         };
                         class GVAR(type): RscCombo {
                             idc = 52620;

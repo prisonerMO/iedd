@@ -32,14 +32,7 @@ class GVAR(multi): Module_F {
         size3[]={500,500,-1};
         isRectangle=0;
     };
-    class AttributesBase:AttributesBase {
-        class GVAR(SubTitle):Default {
-            defaultValue = "''";
-            control = QGVAR(subTitle);
-            property = QGVAR(__LINE__);
-            displayName = "";
-        };
-    };
+    class AttributesBase:AttributesBase {};
     class Attributes: AttributesBase {
 
 /************ IEDS ***********************/

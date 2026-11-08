@@ -14,12 +14,9 @@ class GVAR(RscCharge): RscDisplayAttributes {
                     w = QUOTE(W_PART(26));
                     h = QUOTE(H_PART(7.7));
                     class controls {
-                        class GVAR(variationL): RscText {
-                            idc = -1;
-                            text = TOUPPERLL(Variation);
+                        class GVAR(variationL): GVAR(label) {
+                            text = CSTRING(Variation);
                             tooltip = ECSTRING(ied,Variation_Tooltip);
-                            x = 0;
-                            y = 0;
                             w = QUOTE(W_PART(10));
                             h = QUOTE(H_PART(1));
                         };
@@ -59,7 +56,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                             };
                         };
                         class GVAR(sizeL): GVAR(variationL) {
-                            text = TOUPPERLEL(ied,Size);
+                            text = ECSTRING(ied,Size);
                             tooltip = ECSTRING(ied,Size_Tooltip);
                             y = QUOTE(H_PART(1.1));
                         };
@@ -97,7 +94,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                         };
 
                         class GVAR(dudL): GVAR(variationL) {
-                            text = TOUPPERLEL(ied,Dud);
+                            text = ECSTRING(ied,Dud);
                             tooltip = ECSTRING(ied,Dud_Tooltip);
                             y = QUOTE(H_PART(2.2));
                         };
@@ -110,7 +107,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                             h = QUOTE(H_PART(1));
                         };
                         class GVAR(timerL): GVAR(variationL) {
-                            text = TOUPPERLEL(ied,Timer);
+                            text = ECSTRING(ied,Timer);
                             tooltip = CSTRING(Timer_Tooltip);
                             y = QUOTE(H_PART(3.3));
                         };
@@ -138,7 +135,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                             };
                         };
                         class GVAR(timerValueL): GVAR(variationL) {
-                            text = TOUPPERLEL(ied,TimerValue);
+                            text = ECSTRING(ied,TimerValue);
                             tooltip = ECSTRING(ied,TimerValue_Tooltip);
                             y = QUOTE(H_PART(4.4));
                         };
@@ -153,7 +150,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                         };
 
                         class GVAR(handcuffedL): GVAR(variationL) {
-                            text = TOUPPERLL(Unit_Handcuffed);
+                            text = CSTRING(Unit_Handcuffed);
                             tooltip = ECSTRING(ied,isHandcuffed_Description);
                             y = QUOTE(H_PART(5.5));
                         };
@@ -178,7 +175,7 @@ class GVAR(RscCharge): RscDisplayAttributes {
                         };
 
                         class GVAR(surrenderedL): GVAR(variationL) {
-                            text = TOUPPERLL(Unit_Surrendered);
+                            text = CSTRING(Unit_Surrendered);
                             tooltip = ECSTRING(ied,isSurrendered_Description);
                             y = QUOTE(H_PART(6.6));
                         };

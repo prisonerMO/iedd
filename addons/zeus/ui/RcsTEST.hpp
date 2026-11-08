@@ -35,3 +35,5 @@ class iedd_modules_RscIeds: RscDisplayAttributes {
 
 onLoad = QUOTE([ARR_2({call FUNC(vbiedSelected)},[ARR_2(_this select 0,0)])] call CBA_fnc_execNextFrame);
 onUnload = QUOTE([ARR_2({call FUNC(attributes)},[ARR_3('onUnload',_this,QQGVAR(RscSetIED))])] call CBA_fnc_execNextFrame);
+onLoad = "diag_log format['THIS: %1: TEXT: %2',_this, toUpper (gettext (_this select 1))];(_this select 0) spawn {_this ctrlSetText (ctrlText _this);_this ctrlcommit 0;}";
+[ARR_2({_control = _this select 0;_control ctrlSetText (ctrlText _control);_control ctrlcommit 0;},[ARR_2(_this)])] call CBA_fnc_execNextFrame;

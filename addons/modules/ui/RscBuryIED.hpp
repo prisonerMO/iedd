@@ -16,15 +16,11 @@ class GVAR(RscBuryIED): RscDisplayAttributes {
                     w = QUOTE(W_PART(26));
                     h = QUOTE(H_PART(4.3));
                     class controls {
-                        class GVAR(pitchL): RscText {
-                            idc = -1;
-                            text = TOUPPERLL(Pitch);
-                            tooltip = CSTRING(Rotate_Ied);                            
-                            x = 0;
-                            y = 0;
+                        class GVAR(pitchL): GVAR(label) {
+                            text = CSTRING(Pitch);
+                            tooltip = CSTRING(Rotate_Ied);
                             w = QUOTE(W_PART(7));
                             h = QUOTE(H_PART(1));
-                            colorBackground[] = {0, 0, 0, 0.5};
                         };
                         class GVAR(pitchSlider): RscXSliderH {
                             idc = 72520;
@@ -44,7 +40,7 @@ class GVAR(RscBuryIED): RscDisplayAttributes {
                             h = QUOTE(H_PART(1));
                         };
                         class GVAR(rollL): GVAR(pitchL) {
-                            text = TOUPPERLL(Roll);
+                            text = CSTRING(Roll);
                             y = QUOTE(H_PART(1.1));
                         };
                         class GVAR(rollSlider): GVAR(pitchSlider) {
@@ -56,7 +52,7 @@ class GVAR(RscBuryIED): RscDisplayAttributes {
                             y = QUOTE(H_PART(1.1));
                         };
                         class GVAR(yawL): GVAR(pitchL) {
-                            text = TOUPPERLL(Yaw);
+                            text = CSTRING(Yaw);
                             y = QUOTE(H_PART(2.2));
                         };
                         class GVAR(yawSlider): GVAR(pitchSlider) {
@@ -68,7 +64,7 @@ class GVAR(RscBuryIED): RscDisplayAttributes {
                             y = QUOTE(H_PART(2.2));
                         };
                         class GVAR(stepL): GVAR(pitchL) {
-                            text = TOUPPERLEL(ied,Depth_DisplayName);
+                            text = ECSTRING(ied,Depth_DisplayName);
                             tooltip = ECSTRING(ied,Depth_Tooltip);
                             y = QUOTE(H_PART(3.3));
                         };

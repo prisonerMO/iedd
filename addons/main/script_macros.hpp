@@ -40,6 +40,7 @@
 #define H_PART(num) (num * (SIZEY / 25))
 #define X_PART(num) (W_PART(num) + (safeZoneX + (safeZoneW - SIZEX) / 2))
 #define Y_PART(num) (H_PART(num) + (safeZoneY + (safeZoneH - SIZEY) / 2))
+#define GUI_TEXT_SIZE_MEDIUM QUOTE((GUI_GRID_H * 1))
 
 #define TOUPPERLL(text) __EVAL(toUpper LLSTRING(text))
 #define TOUPPERLEL(var,text) __EVAL(toUpper LELSTRING(var,text))

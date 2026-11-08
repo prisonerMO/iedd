@@ -14,15 +14,11 @@ class GVAR(RscVbied): RscDisplayAttributes {
                     w = QUOTE(W_PART(26));
                     h = QUOTE(H_PART(12.1));
                     class controls {
-                        class GVAR(posL): RscText {
-                            idc = -1;
-                            text = TOUPPERLEL(vbied,PositionSub);
+                        class GVAR(posL): GVAR(label) {
+                            text = ECSTRING(vbied,PositionSub);
                             tooltip = ECSTRING(vbied,Position_Tooltip);
-                            x = 0;
-                            y = 0;
                             w = QUOTE(W_PART(10));
                             h = QUOTE(H_PART(1));
-                            colorBackground[] = {0, 0, 0, 0.5};
                         };
                         class GVAR(pos): RscCombo {
                             idc = 52520;
@@ -36,7 +32,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                         };
 
                         class GVAR(variationL): GVAR(posL) {
-                            text = TOUPPERLEL(ied,Variation);
+                            text = ECSTRING(ied,Variation);
                             tooltip = ECSTRING(vbied,variation_Tooltip);
                             y = QUOTE(H_PART(1.1));
                         };
@@ -78,7 +74,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                         };
 
                         class GVAR(sizeL): GVAR(posL) {
-                            text = TOUPPERLEL(ied,Size);
+                            text = ECSTRING(ied,Size);
                             tooltip = ECSTRING(ied,Size_Tooltip);
                             y = QUOTE(H_PART(2.2));
                         };
@@ -120,7 +116,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                         };
 
                         class GVAR(dudL): GVAR(posL) {
-                            text = TOUPPERLEL(ied,Dud);
+                            text = ECSTRING(ied,Dud);
                             tooltip = ECSTRING(vbied,Dud_Tooltip);
                             y = QUOTE(H_PART(3.3));
                         };
@@ -132,7 +128,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                             h = QUOTE(H_PART(1));
                         };
                          class GVAR(distanceL): GVAR(posL) {
-                            text = TOUPPERLEL(ied,Distance);
+                            text = ECSTRING(ied,Distance);
                             tooltip = ECSTRING(vbied,Distance_Tooltip);
                             y = QUOTE(H_PART(4.4));
                         };
@@ -148,7 +144,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
 
                         /*EHS*/
                         class GVAR(getInL): GVAR(posL) {
-                            text = TOUPPERLEL(vbied,GetIn);
+                            text = ECSTRING(vbied,GetIn);
                             tooltip = ECSTRING(vbied,GetIn_Tooltip);
                             y = QUOTE(H_PART(5.5));
                         };
@@ -176,7 +172,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                             };
                         };
                         class GVAR(engineOnL): GVAR(posL) {
-                            text = TOUPPERLEL(vbied,EngineOn);
+                            text = ECSTRING(vbied,EngineOn);
                             tooltip = ECSTRING(vbied,EngineOn_Tooltip);
                             y = QUOTE(H_PART(6.6));
                         };
@@ -204,7 +200,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                             };
                         };
                         class GVAR(movingOnL): GVAR(posL) {
-                            text = TOUPPERLEL(vbied,Moving);
+                            text = ECSTRING(vbied,Moving);
                             tooltip = ECSTRING(vbied,Moving_Tooltip);
                             y = QUOTE(H_PART(7.7));
                         };
@@ -232,7 +228,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                             };
                         };
                         class GVAR(speedL): GVAR(posL) {
-                            text = TOUPPERLEL(vbied,Speed);
+                            text = ECSTRING(vbied,Speed);
                             tooltip = ECSTRING(vbied,Speed_ToolTip);
                             y = QUOTE(H_PART(8.8));
                         };
@@ -247,7 +243,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                         };
 
                         class GVAR(timerL): GVAR(posL) {
-                            text = TOUPPERLEL(ied,Timer);
+                            text = ECSTRING(ied,Timer);
                             tooltip = ECSTRING(vbied,Timer_Tooltip);
                             y = QUOTE(H_PART(9.9));
                         };
@@ -276,7 +272,7 @@ class GVAR(RscVbied): RscDisplayAttributes {
                         };
 
                         class GVAR(TimerValueL): GVAR(posL) {
-                            text = TOUPPERLEL(ied,TimerValue);
+                            text = ECSTRING(ied,TimerValue);
                             tooltip = ECSTRING(ied,TimerValue_Tooltip);
                             y = QUOTE(H_PART(11));
                         };

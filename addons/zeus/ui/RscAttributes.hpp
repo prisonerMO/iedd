@@ -2,8 +2,8 @@ class RscControlsGroupNoScrollbars;
 class RscText;
 class RscCombo;
 class RscXSliderH;
-// class RscCheckBox;
-// class RscEdit;
+class EGVAR(modules,label);
+class GVAR(label):EGVAR(modules,label) {};
 
 class RscDisplayAttributes {
     class Controls {
